@@ -17,13 +17,13 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/portfolio", changefreq: "weekly", priority: "0.9" },
+          { path: "/fotografo-corporativo", changefreq: "weekly", priority: "0.9" },
           { path: "/videos", changefreq: "weekly", priority: "0.9" },
           { path: "/blog", changefreq: "weekly", priority: "0.9" },
           { path: "/sobre", changefreq: "monthly", priority: "0.8" },
           { path: "/depoimentos", changefreq: "monthly", priority: "0.7" },
           { path: "/contato", changefreq: "monthly", priority: "0.8" },
-          ...categories.map((c) => ({ path: `/portfolio/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
+          ...categories.map((c) => ({ path: `/fotografo-corporativo/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
           ...videos.map((v) => ({ path: `/videos/${v.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
           ...posts.map((p) => ({ path: `/blog/${p.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
         ];

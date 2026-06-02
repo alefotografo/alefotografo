@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { videoBySlug, videos } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Video as VideoIcon } from "lucide-react";
+import { videoThumb, ytFallback } from "@/lib/videoThumb";
 
 export const Route = createFileRoute("/videos/$slug")({
   loader: ({ params }) => {
@@ -11,7 +12,7 @@ export const Route = createFileRoute("/videos/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
-    const image = loaderData.youtube ? `https://i.ytimg.com/vi/${loaderData.youtube}/hqdefault.jpg` : undefined;
+    const image = videoThumb(loaderData) ?? undefined;
     return {
       meta: buildMeta({
         title: loaderData.title,
@@ -104,10 +105,26 @@ function VideoPage() {
                 params={{ slug: o.slug }}
                 className="group block overflow-hidden rounded-sm bg-background ring-1 ring-border hover:ring-ember"
               >
-                <div className="aspect-video bg-black">
-                  {o.youtube && (
-                    <img src={`https://i.ytimg.com/vi/${o.youtube}/hqdefault.jpg`} alt={o.title} loading="lazy" className="h-full w-full object-cover" />
-                  )}
+                <div className="relative aspect-video bg-black">
+                  {(() => {
+                    const t = videoThumb(o);
+                    return t ? (
+                      <img
+                        src={t}
+                        alt={`Capa do vídeo ${o.title}`}
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          const next = ytFallback(img.src);
+                          if (next && next !== img.src) img.src = next;
+                        }}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center"><VideoIcon className="text-ember/60" /></div>
+                    );
+                  })()}
                 </div>
                 <div className="p-4">
                   <h3 className="line-clamp-2 text-sm font-medium group-hover:text-ember">{o.title}</h3>

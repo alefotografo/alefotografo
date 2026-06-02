@@ -19,17 +19,28 @@ function Home() {
   const featured = categories.filter((c) => c.cover).slice(0, 6);
   const recentPosts = posts.slice(0, 3);
   const recentVideos = videos.slice(0, 3);
+  const hero = featured[0];
+  const heroImg = hero?.cover ?? "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero — full-bleed portfolio image */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 -z-10 opacity-40">
-          <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-ember/20 blur-[120px]" />
-          <div className="absolute right-0 top-40 h-72 w-72 rounded-full bg-ember-glow/20 blur-[140px]" />
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={heroImg}
+            alt={hero ? `Fotografia corporativa — ${hero.title}` : "Fotografia corporativa em São Paulo"}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent" />
         </div>
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 md:grid-cols-12 md:gap-8 md:px-8 md:py-36">
-          <div className="md:col-span-7">
+
+        <div className="mx-auto max-w-7xl px-5 py-28 md:px-8 md:py-44">
+          <div className="max-w-3xl">
             <p className="mb-5 text-xs font-medium uppercase tracking-[0.25em] text-ember">
               30 anos · São Paulo
             </p>
@@ -37,7 +48,7 @@ function Home() {
               Fotografia e vídeo que <span className="gradient-text-ember">posicionam sua marca</span> com autoridade.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg text-pretty">
-              Alexandre Machado — Alê Fotógrafo. Retratos corporativos, fotografia para empresas, cobertura de eventos e vídeo institucional em São Paulo e Brasil.
+              Retratos corporativos, fotografia para empresas, cobertura de eventos e vídeo institucional em São Paulo e Brasil.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
@@ -49,12 +60,12 @@ function Home() {
               </Link>
               <Link
                 to="/fotografo-corporativo"
-                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
+                className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
               >
                 Ver portfólio
               </Link>
             </div>
-            <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-border pt-8 max-w-lg">
+            <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
               <div>
                 <dt className="text-xs uppercase tracking-wider text-muted-foreground">Experiência</dt>
                 <dd className="mt-1 font-display text-2xl font-semibold">30+ anos</dd>
@@ -68,23 +79,6 @@ function Home() {
                 <dd className="mt-1 font-display text-2xl font-semibold">{categories.length}</dd>
               </div>
             </dl>
-          </div>
-
-          <div className="relative md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
-              <img
-                src="https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG"
-                alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/60 to-transparent p-5">
-                <p className="text-xs uppercase tracking-wider text-ember">Alexandre Machado</p>
-                <p className="font-display text-lg">O fotógrafo por trás do Alê</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -103,6 +97,44 @@ function Home() {
               <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Quem está por trás — retrato do Alê */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-12 md:gap-16 md:px-8 md:py-28">
+          <div className="md:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+              <img
+                src="https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG"
+                alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute -bottom-3 -right-3 hidden h-24 w-24 border border-ember md:block" />
+            </div>
+          </div>
+          <div className="md:col-span-7 md:pt-6">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Quem está por trás</p>
+            <h2 className="font-display text-3xl font-semibold leading-tight text-balance md:text-5xl">
+              Alexandre Machado — três décadas traduzindo empresas em imagem.
+            </h2>
+            <p className="mt-6 text-base text-muted-foreground md:text-lg text-pretty">
+              Fotógrafo profissional em São Paulo, especializado em fotografia corporativa, retratos executivos e cobertura de eventos para empresas que precisam de imagens com intenção estratégica — não só estética.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Cada produção começa pelo entendimento do posicionamento, do público e do objetivo da comunicação. Resultado: fotos que transmitem autoridade, geram confiança e valorizam a marca.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/sobre" className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+                Conheça a trajetória <ArrowUpRight size={14} />
+              </Link>
+              <Link to="/depoimentos" className="inline-flex items-center gap-2 text-sm text-ember hover:underline">
+                Ver depoimentos de clientes
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

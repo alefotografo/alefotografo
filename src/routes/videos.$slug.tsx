@@ -3,6 +3,7 @@ import { videoBySlug, videos } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { ArrowLeft, Video as VideoIcon } from "lucide-react";
 import { videoThumb, ytFallback } from "@/lib/videoThumb";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 export const Route = createFileRoute("/videos/$slug")({
   loader: ({ params }) => {

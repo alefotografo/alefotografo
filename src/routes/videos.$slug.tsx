@@ -3,6 +3,7 @@ import { videoBySlug, videos } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { ArrowLeft, Video as VideoIcon } from "lucide-react";
 import { videoThumb, ytFallback } from "@/lib/videoThumb";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 export const Route = createFileRoute("/videos/$slug")({
   loader: ({ params }) => {
@@ -49,6 +50,7 @@ function VideoPage() {
 
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Vídeos", to: "/videos" }, { label: v.title }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 md:py-16">
           <Link to="/videos" className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">

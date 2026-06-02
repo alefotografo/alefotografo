@@ -12,7 +12,7 @@ export const Route = createFileRoute("/videos/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
-    const image = loaderData.youtube ? `https://i.ytimg.com/vi/${loaderData.youtube}/hqdefault.jpg` : undefined;
+    const image = videoThumb(loaderData) ?? undefined;
     return {
       meta: buildMeta({
         title: loaderData.title,

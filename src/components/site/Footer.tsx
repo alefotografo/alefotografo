@@ -36,6 +36,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
             <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
+            <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
             <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">LinkedIn</a></li>
             <li><a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram</a></li>
           </ul>

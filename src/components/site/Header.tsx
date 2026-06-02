@@ -5,7 +5,7 @@ import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Início" },
-  { to: "/fotografo-corporativo", label: "Portfólio" },
+  { to: "/fotografo-corporativo", label: "Fotos" },
   { to: "/videos", label: "Vídeos" },
   { to: "/blog", label: "Blog" },
   { to: "/sobre", label: "Sobre" },

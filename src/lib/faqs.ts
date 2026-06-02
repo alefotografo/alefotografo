@@ -13,7 +13,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Quanto tempo leva para receber as fotos finalizadas?",
-    a: "O prazo padrão de entrega é de 5 a 10 dias úteis após a sessão, já com tratamento profissional, ajuste de cor, retoques de pele e padronização para uso em LinkedIn, site, materiais institucionais e mídia. Para eventos e demandas urgentes, oferecemos entregas express em até 48 horas, com prévia selecionada no mesmo dia.",
+    a: "Para eventos corporativos, a entrega é imediata. Utilizamos um sistema próprio com reconhecimento facial que identifica automaticamente cada participante nas fotos, permitindo que os convidados acessem e acompanhem suas imagens em tempo real, ainda durante o evento. Para as demais especialidades — como retratos corporativos, fotografia industrial, arquitetura e institucional — o prazo de entrega das imagens tratadas e finalizadas é de 1 a 3 dias úteis, já com ajuste de cor, retoques profissionais e padronização para uso em LinkedIn, site, materiais de marketing e mídia.",
   },
   {
     q: "Os retratos corporativos podem ser feitos no escritório da empresa?",

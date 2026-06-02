@@ -111,10 +111,30 @@ export const categories: Category[] = data.cats.map(cleanItem).sort((a, b) => {
   return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
 });
 export const videos: Video[] = data.vids.map(cleanItem).filter((v) => !v.vimeo);
-export const posts: Post[] = data.posts.map((p) => ({
-  ...cleanItem(p),
-  body: p.body.map(decode),
-}));
+
+// Ordem oficial dos posts conforme alefotografo.com.br/blog
+const POST_ORDER: string[] = [
+  "10-lugares-em-sao-paulo-para-tirar-boas-fotos",
+  "fotografo-5-poses-para-retrato-corporativo",
+  "os-6-melhores-aplicativos-para-editar-videos-pelo-celular",
+  "7-lugares-incriveis-para-tirar-fotos-profissionais-em-sao-paulo",
+  "seu-icloud-esta-cheio-5-dicas-para-voce-ganhar-mais-armazenamento-para-suas-fotos-e-videos",
+  "7-dicas-para-maximizar-seu-perfil-no-linkedin",
+  "psicologia-das-cores-e-fotografia-saiba-como-elas-interagem",
+  "como-manter-sua-imagem-profissional-em-tempos-de-home-office",
+  "linkedin-como-criar-um-perfil-campeao-e-bombar-na-rede-de-negocios",
+  "posicionamento-de-imagem-profissional-o-que-e-e-como-aplicar",
+  "headhunter-o-que-e-o-que-faz-e-qual-seu-papel-no-mundo-corporativo",
+  "linguagem-corporal-na-fotografia-de-retratos",
+];
+
+export const posts: Post[] = data.posts
+  .map((p) => ({ ...cleanItem(p), body: p.body.map(decode) }))
+  .sort((a, b) => {
+    const ia = POST_ORDER.indexOf(a.slug);
+    const ib = POST_ORDER.indexOf(b.slug);
+    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+  });
 
 export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);
 export const videoBySlug = (slug: string) => videos.find((v) => v.slug === slug);

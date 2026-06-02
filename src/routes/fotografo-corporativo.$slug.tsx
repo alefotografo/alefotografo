@@ -51,13 +51,13 @@ function CategoryPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Portfólio", to: "/fotografo-corporativo" }, { label: cat.title }]} />
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotos", to: "/fotografo-corporativo" }, { label: cat.title }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
           <Link to="/fotografo-corporativo" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
             <ArrowLeft size={14} /> Todos os segmentos
           </Link>
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-ember">Portfólio</p>
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotos</p>
           <h1 className="mt-3 max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             {cat.title}
           </h1>

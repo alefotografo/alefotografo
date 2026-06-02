@@ -5,8 +5,8 @@ import { buildMeta } from "@/lib/seo";
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
     meta: buildMeta({
-      title: "Portfólio de Fotos — Fotógrafo Corporativo em São Paulo",
-      description: `Portfólio de fotografia corporativa com ${categories.length} categorias: retratos profissionais, advocacia, médicos, eventos, indústria, arquitetura, gastronomia e mais.`,
+      title: "Fotos — Fotógrafo Corporativo em São Paulo",
+      description: `Galeria de fotografia corporativa com ${categories.length} categorias: retratos profissionais, advocacia, médicos, eventos, indústria, arquitetura, gastronomia e mais.`,
       path: "/portfolio",
     }),
     links: [{ rel: "canonical", href: "/portfolio" }],

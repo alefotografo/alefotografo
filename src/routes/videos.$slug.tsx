@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { videoBySlug, videos } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Video as VideoIcon } from "lucide-react";
+import { videoThumb, ytFallback } from "@/lib/videoThumb";
 
 export const Route = createFileRoute("/videos/$slug")({
   loader: ({ params }) => {

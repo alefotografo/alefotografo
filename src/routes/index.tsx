@@ -75,18 +75,18 @@ function Home() {
                 Ver fotos
               </Link>
             </div>
-            <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
+            <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-border pt-8 sm:gap-6">
               <div>
-                <dt className="text-xs uppercase tracking-wider text-muted-foreground">Experiência</dt>
-                <dd className="mt-1 font-display text-2xl font-semibold">30+ anos</dd>
+                <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Experiência</dt>
+                <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">30+ anos</dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-wider text-muted-foreground">Empresas</dt>
-                <dd className="mt-1 font-display text-2xl font-semibold">500+</dd>
+                <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Empresas</dt>
+                <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">500+</dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-wider text-muted-foreground">Segmentos</dt>
-                <dd className="mt-1 font-display text-2xl font-semibold">{categories.length}</dd>
+                <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Segmentos</dt>
+                <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">{categories.length}</dd>
               </div>
             </dl>
           </div>

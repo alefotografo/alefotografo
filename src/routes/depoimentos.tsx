@@ -16,6 +16,30 @@ const testimonials = [
     link: "https://www.linkedin.com/in/maria-clara-cardoso-7869b225/",
   },
   {
+    name: "Anelise Duarte",
+    role: "Marketing and Sales Executive",
+    text: "Recentemente atualizei minhas fotos profissionais com o Alexandre. Achei o trabalho bastante profissional. Alexandre é pontual, possui um equipamento de qualidade e entrega o que promete. Recomendo o trabalho dele!",
+    link: "https://www.linkedin.com/in/aneliseduarte/",
+  },
+  {
+    name: "Julio Cesar Ponte Ferreira",
+    role: "Associado no IBGC — Instituto Brasileiro de Governança Corporativa",
+    text: "Profissional ético, paciente, dedicado, detalhista, preciso, com sensibilidade apurada e muito empenhado em entregar o melhor. Respeita o seu tempo.",
+    link: "https://www.linkedin.com/in/julio-cesar-ponte-ferreira-b6a96a194/",
+  },
+  {
+    name: "Carolina Sasdelli Marani",
+    role: "Marketing Sector Manager LATAM — Sealed Air Corporation",
+    text: "Alexandre tem sensibilidade artística e é perspicaz em planejar bem o movimento, a luz e o momento para gerar o melhor resultado. Profissional rápido, pontual, sério e focado em obter a melhor foto. O senso estético apurado permite a ele direcionar o cliente a fotografar com naturalidade. Entregou fotos profissionais que transmitem segurança e leveza.",
+    link: "https://www.linkedin.com/in/carolina-sasdelli-marani-a8a32611b/",
+  },
+  {
+    name: "Vanessa Cantieri",
+    role: "Coordenadora Administrativa — Rocha & Queiroz Advogados Associados",
+    text: "O fotógrafo Alexandre nos entregou um excelente trabalho! É muito carismático, transmite leveza e naturalidade às fotos. A segurança que ele passa resulta em fotos confiantes e ricas de detalhes. Surpreendente, pontual, cumpre o que promete!",
+    link: "https://www.linkedin.com/in/vanessa-cantieri-353b1753/",
+  },
+  {
     name: "Cliente corporativo",
     role: "Diretor de Marketing",
     text: "Trabalho de altíssima qualidade técnica e estratégica. As imagens elevaram instantaneamente a percepção da nossa marca em todos os canais digitais.",

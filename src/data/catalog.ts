@@ -67,7 +67,7 @@ function cleanItem<T extends { description?: string; seo_title?: string; subtitl
 }
 
 export const categories: Category[] = data.cats.map(cleanItem);
-export const videos: Video[] = data.vids.map(cleanItem);
+export const videos: Video[] = data.vids.map(cleanItem).filter((v) => !v.vimeo);
 export const posts: Post[] = data.posts.map((p) => ({
   ...cleanItem(p),
   body: p.body.map(decode),

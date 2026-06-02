@@ -104,7 +104,7 @@ function SobrePage() {
             Segmentos atendidos
           </h2>
           <Link to="/fotografo-corporativo" className="text-sm text-ember hover:underline">
-            Ver portfólio completo →
+            Ver fotos completas →
           </Link>
         </div>
         <div className="flex flex-wrap gap-3">

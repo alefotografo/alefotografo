@@ -5,8 +5,8 @@ import { buildMeta } from "@/lib/seo";
 export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo — Portfólio",
-      description: `Portfólio completo com ${categories.length} segmentos: retratos profissionais, fotografia para escritórios, médicos, advogados, indústria, eventos e mais.`,
+      title: "Fotógrafo Corporativo em São Paulo — Fotos",
+      description: `Galeria completa com ${categories.length} segmentos: retratos profissionais, fotografia para escritórios, médicos, advogados, indústria, eventos e mais.`,
       path: "/fotografo-corporativo",
     }),
     links: [{ rel: "canonical", href: "/fotografo-corporativo" }],
@@ -19,7 +19,7 @@ function PortfolioIndex() {
     <>
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Portfólio</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotos</p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             {categories.length} segmentos de fotografia corporativa em São Paulo
           </h1>

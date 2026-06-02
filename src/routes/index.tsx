@@ -72,7 +72,7 @@ function Home() {
                 to="/fotografo-corporativo"
                 className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
               >
-                Ver portfólio
+                Ver fotos
               </Link>
             </div>
             <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
@@ -148,11 +148,11 @@ function Home() {
         </div>
       </section>
 
-      {/* Portfolio preview */}
+      {/* Photos preview */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotos</p>
             <h2 className="font-display text-3xl font-semibold md:text-5xl text-balance">
               Trabalhos selecionados
             </h2>

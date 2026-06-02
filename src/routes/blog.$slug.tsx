@@ -90,7 +90,7 @@ function PostPage() {
             Solicitar orçamento
           </Link>
           <Link to="/fotografo-corporativo" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
-            Ver portfólio
+            Ver fotos
           </Link>
         </div>
       </article>

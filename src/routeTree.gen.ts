@@ -16,10 +16,13 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as VideosIndexRouteImport } from './routes/videos.index'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
+import { Route as FotografoCorporativoIndexRouteImport } from './routes/fotografo-corporativo.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo-corporativo.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
@@ -56,6 +59,12 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   path: '/portfolio/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotografoCorporativoIndexRoute =
+  FotografoCorporativoIndexRouteImport.update({
+    id: '/fotografo-corporativo/',
+    path: '/fotografo-corporativo/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -71,11 +80,23 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/portfolio/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotografoCorporativoSlugRoute =
+  FotografoCorporativoSlugRouteImport.update({
+    id: '/fotografo-corporativo/$slug',
+    path: '/fotografo-corporativo/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotografoCorporativoCategoriaSlugRoute =
+  FotografoCorporativoCategoriaSlugRouteImport.update({
+    id: '/fotografo-corporativo/categoria/$slug',
+    path: '/fotografo-corporativo/categoria/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -84,11 +105,14 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -97,11 +121,14 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/fotografo-corporativo': typeof FotografoCorporativoIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
+  '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -111,11 +138,14 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -126,11 +156,14 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
+    | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
     | '/blog/'
+    | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/fotografo-corporativo/categoria/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -139,11 +172,14 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
+    | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
     | '/blog'
+    | '/fotografo-corporativo'
     | '/portfolio'
     | '/videos'
+    | '/fotografo-corporativo/categoria/$slug'
   id:
     | '__root__'
     | '/'
@@ -152,11 +188,14 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
+    | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
     | '/blog/'
+    | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/fotografo-corporativo/categoria/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -166,11 +205,14 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  FotografoCorporativoSlugRoute: typeof FotografoCorporativoSlugRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   VideosSlugRoute: typeof VideosSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  FotografoCorporativoIndexRoute: typeof FotografoCorporativoIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   VideosIndexRoute: typeof VideosIndexRoute
+  FotografoCorporativoCategoriaSlugRoute: typeof FotografoCorporativoCategoriaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -224,6 +266,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fotografo-corporativo/': {
+      id: '/fotografo-corporativo/'
+      path: '/fotografo-corporativo'
+      fullPath: '/fotografo-corporativo/'
+      preLoaderRoute: typeof FotografoCorporativoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -245,11 +294,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fotografo-corporativo/$slug': {
+      id: '/fotografo-corporativo/$slug'
+      path: '/fotografo-corporativo/$slug'
+      fullPath: '/fotografo-corporativo/$slug'
+      preLoaderRoute: typeof FotografoCorporativoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-corporativo/categoria/$slug': {
+      id: '/fotografo-corporativo/categoria/$slug'
+      path: '/fotografo-corporativo/categoria/$slug'
+      fullPath: '/fotografo-corporativo/categoria/$slug'
+      preLoaderRoute: typeof FotografoCorporativoCategoriaSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -262,12 +325,26 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   BlogSlugRoute: BlogSlugRoute,
+  FotografoCorporativoSlugRoute: FotografoCorporativoSlugRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,
   VideosSlugRoute: VideosSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  FotografoCorporativoIndexRoute: FotografoCorporativoIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   VideosIndexRoute: VideosIndexRoute,
+  FotografoCorporativoCategoriaSlugRoute:
+    FotografoCorporativoCategoriaSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -66,7 +66,50 @@ function cleanItem<T extends { description?: string; seo_title?: string; subtitl
   };
 }
 
-export const categories: Category[] = data.cats.map(cleanItem);
+// Ordem oficial das categorias conforme alefotografo.com.br/fotografo-corporativo
+const CATEGORY_ORDER: string[] = [
+  "fotografia-para-escritorios-de-advocacia",
+  "ensaio-feminino",
+  "retrato-corporativo",
+  "retratos-de-medicos",
+  "retratos-de-medicas",
+  "fotos-para-clinicas-medicas",
+  "fotografia-corporativa-em-sao-paulo",
+  "fotografo-de-eventos-corporativos",
+  "fotografo-feiras-stands",
+  "totem-fotografico-totem-mania",
+  "foto-impressa-na-hora",
+  "fotografia-de-logistica",
+  "ensaio-fotografico-para-dentistas",
+  "fotografo-de-arquitetura-e-interiores",
+  "banco-de-imagens-para-empresas",
+  "fotografia-institucional-em-saopaulo",
+  "ensaio-fotografico-para-redes-sociais",
+  "fotos-aereas",
+  "empreendimentos-imobiliarios",
+  "fotografo-de-retratos-profissionais",
+  "eventos-corporativos",
+  "fotografo-festa-de-confraternizacao",
+  "fotografo-festa-de-confraternizacao-1-1",
+  "fotografo-profissional-em-sao-paulo",
+  "banco-de-imagens-para-escolas",
+  "fotografo-de-grupos-times-e-equipes",
+  "fotografia-industrial",
+  "fotos-de-paes",
+  "fotos-de-hamburguer",
+  "fotografo-de-drinks-coqueteis",
+  "fotografo-de-culinaria",
+  "fotos-para-restaurantes",
+  "fotografo-de-retratos-corporativos",
+  "fotografia-industrial-em-sp",
+  "fotos-profissionais-para-medicos",
+];
+
+export const categories: Category[] = data.cats.map(cleanItem).sort((a, b) => {
+  const ia = CATEGORY_ORDER.indexOf(a.slug);
+  const ib = CATEGORY_ORDER.indexOf(b.slug);
+  return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+});
 export const videos: Video[] = data.vids.map(cleanItem).filter((v) => !v.vimeo);
 export const posts: Post[] = data.posts.map((p) => ({
   ...cleanItem(p),

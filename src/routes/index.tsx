@@ -34,7 +34,7 @@ function Home() {
 
   return (
     <>
-      {/* Hero — full-bleed portfolio image */}
+      {/* Hero — full-bleed featured image */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img

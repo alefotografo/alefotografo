@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { ArrowLeft } from "lucide-react";
 
@@ -56,6 +57,7 @@ function PostPage() {
 
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog" }, { label: p.title }]} />
       <article className="mx-auto max-w-3xl px-5 py-12 md:px-8 md:py-16">
         <Link to="/blog" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft size={14} /> Voltar ao blog

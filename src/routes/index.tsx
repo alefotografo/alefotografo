@@ -260,6 +260,35 @@ function Home() {
         </div>
       </section>
 
+      {/* Social proof — depoimentos */}
+      <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Prova social</p>
+              <h2 className="font-display text-3xl font-semibold md:text-4xl">O que dizem nossos clientes</h2>
+            </div>
+            <Link to="/depoimentos" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+              Ver todos os depoimentos <ArrowUpRight size={14} />
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              { name: "Leandro Capolupo", role: "Gerente de Planejamento Financeiro", text: "Profissional super ágil, competente e focado na qualidade. O resultado foi ótimo." },
+              { name: "Maria Clara Cardoso", role: "Psicóloga e Palestrante", text: "Alexandre fez minhas fotos profissionais e o resultado foi incrível. Pontualidade, compromisso e amor ao trabalho marcam o profissional." },
+            ].map((t) => (
+              <figure key={t.name} className="rounded-sm border border-border bg-background p-7">
+                <blockquote className="text-base leading-relaxed text-foreground/90">"{t.text}"</blockquote>
+                <figcaption className="mt-5 border-t border-border pt-4">
+                  <p className="font-display font-semibold">{t.name}</p>
+                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 py-20 md:flex-row md:items-center md:px-8">

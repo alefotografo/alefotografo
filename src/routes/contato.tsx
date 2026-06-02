@@ -49,39 +49,55 @@ function Contato() {
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-5 md:px-8 md:py-24">
         <div className="md:col-span-3">
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5" noValidate>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Nome" name="nome" required />
-              <Field label="E-mail" name="email" type="email" required />
+              <Field label="Nome" name="nome" required autoComplete="name" />
+              <Field label="E-mail" name="email" type="email" required autoComplete="email" inputMode="email" />
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Empresa (opcional)" name="empresa" />
-              <Field label="Telefone (opcional)" name="telefone" type="tel" />
+              <Field label="Empresa (opcional)" name="empresa" autoComplete="organization" />
+              <Field label="Telefone (opcional)" name="telefone" type="tel" autoComplete="tel" inputMode="tel" />
             </div>
             <div>
-              <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <label htmlFor="mensagem" className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Mensagem
               </label>
               <textarea
+                id="mensagem"
                 name="mensagem"
                 required
                 rows={6}
                 placeholder="Conte sobre seu projeto, prazo, e quantas pessoas serão fotografadas."
-                className="w-full rounded-sm border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-ember focus:outline-none"
+                className="w-full rounded-sm border border-border bg-surface px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-ember focus:outline-none"
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3.5 font-medium text-accent-foreground transition-colors hover:bg-ember-glow"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-ember px-6 py-4 text-base font-medium text-accent-foreground transition-colors hover:bg-ember-glow sm:w-auto"
             >
               <MessageCircle size={18} />
               Enviar via WhatsApp
             </button>
             {sent && (
-              <p className="text-sm text-ember">
-                Abrindo o WhatsApp em uma nova aba…
-              </p>
+              <div role="status" aria-live="polite" className="rounded-sm border border-ember/40 bg-ember/10 p-4 text-sm">
+                <p className="font-medium text-foreground">Mensagem pronta para envio!</p>
+                <p className="mt-1 text-muted-foreground">
+                  Abrimos o WhatsApp em uma nova aba. Se não abriu,{" "}
+                  <a
+                    href={`https://wa.me/${site.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-ember underline hover:no-underline"
+                  >
+                    clique aqui para falar com Alexandre
+                  </a>
+                  .
+                </p>
+              </div>
             )}
+            <p className="text-xs text-muted-foreground">
+              Resposta normalmente em até 1 dia útil. Seus dados são usados apenas para responder seu contato.
+            </p>
           </form>
         </div>
 
@@ -126,15 +142,17 @@ function Contato() {
   );
 }
 
-function Field({ label, ...props }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+function Field({ label, name, ...props }: { label: string; name: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <label htmlFor={name} className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
         {label}
       </label>
       <input
+        id={name}
+        name={name}
         {...props}
-        className="w-full rounded-sm border border-border bg-surface px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-ember focus:outline-none"
+        className="w-full rounded-sm border border-border bg-surface px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-ember focus:outline-none"
       />
     </div>
   );

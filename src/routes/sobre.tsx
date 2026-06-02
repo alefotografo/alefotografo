@@ -103,7 +103,7 @@ function SobrePage() {
           <h2 className="max-w-2xl font-display text-3xl font-semibold md:text-4xl">
             Segmentos atendidos
           </h2>
-          <Link to="/portfolio" className="text-sm text-ember hover:underline">
+          <Link to="/fotografo-corporativo" className="text-sm text-ember hover:underline">
             Ver portfólio completo →
           </Link>
         </div>
@@ -111,7 +111,7 @@ function SobrePage() {
           {categories.map((c) => (
             <Link
               key={c.slug}
-              to="/portfolio/$slug"
+              to="/fotografo-corporativo/$slug"
               params={{ slug: c.slug }}
               className="rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted-foreground hover:border-ember hover:text-foreground"
             >

@@ -80,7 +80,7 @@ function PostPage() {
           <Link to="/contato" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
             Solicitar orçamento
           </Link>
-          <Link to="/portfolio" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+          <Link to="/fotografo-corporativo" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
             Ver portfólio
           </Link>
         </div>

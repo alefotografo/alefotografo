@@ -22,10 +22,10 @@ export function Footer() {
             Serviços
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/portfolio" className="hover:text-foreground">Fotografia corporativa</Link></li>
+            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Fotografia corporativa</Link></li>
             <li><Link to="/videos" className="hover:text-foreground">Vídeo institucional</Link></li>
-            <li><Link to="/portfolio" className="hover:text-foreground">Retratos profissionais</Link></li>
-            <li><Link to="/portfolio" className="hover:text-foreground">Cobertura de eventos</Link></li>
+            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Retratos profissionais</Link></li>
+            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Cobertura de eventos</Link></li>
           </ul>
         </div>
 

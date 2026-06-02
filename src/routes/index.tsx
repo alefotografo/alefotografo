@@ -48,7 +48,7 @@ function Home() {
                 <ArrowUpRight size={16} />
               </Link>
               <Link
-                to="/portfolio"
+                to="/fotografo-corporativo"
                 className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
               >
                 Ver portfólio
@@ -116,7 +116,7 @@ function Home() {
             </h2>
           </div>
           <Link
-            to="/portfolio"
+            to="/fotografo-corporativo"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
             Ver todos os segmentos <ArrowUpRight size={14} />
@@ -127,7 +127,7 @@ function Home() {
           {featured.map((c, i) => (
             <Link
               key={c.slug}
-              to="/portfolio/$slug"
+              to="/fotografo-corporativo/$slug"
               params={{ slug: c.slug }}
               className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >

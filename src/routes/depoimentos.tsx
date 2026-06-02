@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { buildMeta } from "@/lib/seo";
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
+import { getGoogleReviews } from "@/lib/google-reviews.functions";
 
 const testimonials = [
   {
@@ -39,31 +41,45 @@ const testimonials = [
     text: "O fotógrafo Alexandre nos entregou um excelente trabalho! É muito carismático, transmite leveza e naturalidade às fotos. A segurança que ele passa resulta em fotos confiantes e ricas de detalhes. Surpreendente, pontual, cumpre o que promete!",
     link: "https://www.linkedin.com/in/vanessa-cantieri-353b1753/",
   },
-  {
-    name: "Cliente corporativo",
-    role: "Diretor de Marketing",
-    text: "Trabalho de altíssima qualidade técnica e estratégica. As imagens elevaram instantaneamente a percepção da nossa marca em todos os canais digitais.",
-  },
-  {
-    name: "Cliente corporativo",
-    role: "Sócia de escritório de advocacia",
-    text: "Profissionalismo do início ao fim. Alexandre entendeu nosso posicionamento e entregou retratos que transmitem autoridade e confiança.",
-  },
 ];
+
+const googleReviewsQuery = queryOptions({
+  queryKey: ["google-reviews"],
+  queryFn: () => getGoogleReviews(),
+  staleTime: 1000 * 60 * 60, // 1h
+});
 
 export const Route = createFileRoute("/depoimentos")({
   head: () => ({
     meta: buildMeta({
       title: "Depoimentos de clientes — Alê Fotógrafo",
-      description: "O que dizem clientes que contrataram Alexandre Machado para fotografia e vídeo corporativo em São Paulo.",
+      description:
+        "O que dizem clientes que contrataram Alexandre Machado para fotografia e vídeo corporativo em São Paulo.",
       path: "/depoimentos",
     }),
     links: [{ rel: "canonical", href: "/depoimentos" }],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(googleReviewsQuery),
   component: Depoimentos,
 });
 
+function Stars({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5" aria-label={`${rating} de 5 estrelas`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={16}
+          className={i < Math.round(rating) ? "fill-ember text-ember" : "text-border"}
+        />
+      ))}
+    </div>
+  );
+}
+
 function Depoimentos() {
+  const { data: google } = useSuspenseQuery(googleReviewsQuery);
+
   return (
     <>
       <section className="border-b border-border">
@@ -75,10 +91,91 @@ function Depoimentos() {
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
             Profissionais e empresas que confiaram em Alexandre Machado para construir sua imagem.
           </p>
+          {google.total > 0 && (
+            <div className="mt-8 flex flex-wrap items-center gap-4 rounded-sm border border-border bg-surface px-5 py-4">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-3xl font-semibold">{google.rating.toFixed(1)}</span>
+                <div>
+                  <Stars rating={google.rating} />
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {google.total} avaliações no Google
+                  </p>
+                </div>
+              </div>
+              <a
+                href={google.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-ember hover:underline"
+              >
+                Ver no Google Meu Negócio →
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
+      {google.reviews.length > 0 && (
+        <section className="border-b border-border bg-surface">
+          <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+            <div className="mb-10 flex items-end justify-between gap-6">
+              <div>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+                  Google Meu Negócio
+                </p>
+                <h2 className="font-display text-2xl font-semibold md:text-3xl">
+                  Avaliações recentes do Google
+                </h2>
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {google.reviews.map((r, i) => (
+                <figure
+                  key={i}
+                  className="relative rounded-sm border border-border bg-background p-8"
+                >
+                  <Stars rating={r.rating} />
+                  <blockquote className="mt-4 text-base leading-relaxed text-foreground/90">
+                    "{r.text}"
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+                    {r.authorPhoto && (
+                      <img
+                        src={r.authorPhoto}
+                        alt={r.author}
+                        loading="lazy"
+                        className="h-10 w-10 rounded-full object-cover"
+                      />
+                    )}
+                    <div className="flex-1">
+                      <p className="font-display font-semibold">{r.author}</p>
+                      <p className="text-xs text-muted-foreground">{r.relativeTime}</p>
+                    </div>
+                    {r.url && (
+                      <a
+                        href={r.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-ember hover:underline"
+                      >
+                        Google →
+                      </a>
+                    )}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+        <div className="mb-10">
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.25em] text-ember">LinkedIn</p>
+          <h2 className="font-display text-2xl font-semibold md:text-3xl">
+            Depoimentos de clientes corporativos
+          </h2>
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           {testimonials.map((t, i) => (
             <figure

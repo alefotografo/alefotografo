@@ -3,6 +3,7 @@ import { categoryBySlug, categories, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
@@ -50,6 +51,7 @@ function CategoryPage() {
 
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Portfólio", to: "/fotografo-corporativo" }, { label: cat.title }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
           <Link to="/fotografo-corporativo" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">

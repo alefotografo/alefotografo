@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Início" },
@@ -28,11 +29,17 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link
           to="/"
-          className="group flex items-baseline gap-2 font-display text-lg font-semibold tracking-tight"
+          className="flex items-center"
           onClick={() => setOpen(false)}
+          aria-label="Alê Fotógrafo — Início"
         >
-          <span className="text-foreground">Alê</span>
-          <span className="gradient-text-ember">Fotógrafo</span>
+          <img
+            src={logo.url}
+            alt="Alê Fotógrafo"
+            width={160}
+            height={48}
+            className="h-10 w-auto md:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">

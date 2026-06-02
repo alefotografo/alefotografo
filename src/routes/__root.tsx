@@ -11,26 +11,31 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "../components/site/Header";
+import { Footer } from "../components/site/Footer";
+import { site } from "../data/catalog";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
+    <>
+      <Header />
+      <main className="flex min-h-[60vh] items-center justify-center bg-background px-4">
+        <div className="max-w-md text-center">
+          <p className="font-display text-sm uppercase tracking-[0.3em] text-ember">404</p>
+          <h1 className="mt-4 font-display text-4xl font-semibold">Página não encontrada</h1>
+          <p className="mt-3 text-sm text-muted-foreground">
+            O conteúdo que você procura foi movido ou nunca existiu.
+          </p>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="mt-6 inline-flex rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
-            Go home
+            Voltar para o início
           </Link>
         </div>
-      </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }
 
@@ -44,11 +49,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="font-display text-xl font-semibold">Esta página não carregou</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Algo deu errado. Tente recarregar ou volte ao início.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -56,15 +59,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="rounded-sm bg-ember px-4 py-2 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
-            Try again
+            Tentar novamente
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
+          <a href="/" className="rounded-sm border border-border px-4 py-2 text-sm">
+            Início
           </a>
         </div>
       </div>
@@ -77,19 +77,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { name: "theme-color", content: "#1a1a1a" },
+      { name: "author", content: "Alexandre Machado" },
+      { property: "og:site_name", content: site.name },
+      { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@alefotografo" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://i.ytimg.com" },
+      { rel: "dns-prefetch", href: "https://www.youtube-nocookie.com" },
+    ],
+    scripts: [
       {
-        rel: "stylesheet",
-        href: appCss,
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "@id": "https://alefotografo.com.br/#business",
+          name: site.fullName,
+          alternateName: site.name,
+          description: site.description,
+          image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
+          url: "https://alefotografo.com.br",
+          telephone: "+5511",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "São Paulo",
+            addressRegion: "SP",
+            addressCountry: "BR",
+          },
+          areaServed: ["São Paulo", "Grande São Paulo", "Brasil"],
+          founder: { "@type": "Person", name: "Alexandre Machado" },
+          sameAs: [site.instagram, site.linkedin],
+          priceRange: "$$",
+        }),
       },
     ],
   }),
@@ -101,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
@@ -118,8 +142,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <Header />
+      <main id="conteudo">
+        <Outlet />
+      </main>
+      <Footer />
     </QueryClientProvider>
   );
 }

@@ -43,11 +43,21 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
   component: CategoryPage,
 });
 
+function shorten(s: string, max = 180): string {
+  if (!s) return "";
+  const clean = s.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > 60 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:!?-]+$/, "") + "…";
+}
+
 function CategoryPage() {
   const cat = Route.useLoaderData();
   const idx = categories.findIndex((c) => c.slug === cat.slug);
   const prev = categories[(idx - 1 + categories.length) % categories.length];
   const next = categories[(idx + 1) % categories.length];
+  const related = relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6);
 
   return (
     <>
@@ -63,11 +73,25 @@ function CategoryPage() {
           </h1>
           {cat.subtitle && (
             <h2 className="mt-4 max-w-3xl font-display text-lg font-normal text-muted-foreground md:text-xl">
-              {cat.subtitle}
+              {shorten(cat.subtitle, 140)}
             </h2>
           )}
           {cat.description && (
-            <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">{cat.description}</p>
+            <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">{shorten(cat.description, 220)}</p>
+          )}
+          {related.length > 0 && (
+            <nav aria-label="Categorias relacionadas" className="mt-8 flex flex-wrap gap-2">
+              {related.slice(0, 5).map((r) => (
+                <Link
+                  key={r.slug}
+                  to="/fotografo-corporativo/$slug"
+                  params={{ slug: r.slug }}
+                  className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-ember hover:text-ember"
+                >
+                  {r.title}
+                </Link>
+              ))}
+            </nav>
           )}
         </div>
       </section>
@@ -75,11 +99,12 @@ function CategoryPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <Masonry images={cat.images} alt={cat.title} />
         <RelatedLinks
-          cats={relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6)}
+          cats={related}
           posts={relatedPosts(`${cat.title} ${cat.subtitle} ${cat.description}`, undefined, 4)}
           title={`Mais sobre ${cat.title.toLowerCase()}`}
         />
       </section>
+
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-4 px-5 py-12 md:grid-cols-2 md:px-8">

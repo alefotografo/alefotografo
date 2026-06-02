@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { relatedCategories, relatedPosts } from "@/lib/related";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({

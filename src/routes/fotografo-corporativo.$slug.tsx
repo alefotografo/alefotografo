@@ -2,6 +2,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { categoryBySlug, categories, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { Masonry } from "@/components/site/Masonry";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { relatedCategories, relatedPosts } from "@/lib/related";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
@@ -70,6 +72,11 @@ function CategoryPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <Masonry images={cat.images} alt={cat.title} />
+        <RelatedLinks
+          cats={relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6)}
+          posts={relatedPosts(`${cat.title} ${cat.subtitle} ${cat.description}`, undefined, 4)}
+          title={`Mais sobre ${cat.title.toLowerCase()}`}
+        />
       </section>
 
       <section className="border-t border-border bg-surface">

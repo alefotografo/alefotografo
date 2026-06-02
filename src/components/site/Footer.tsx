@@ -1,14 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { site } from "@/data/catalog";
+import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 export function Footer() {
   return (
     <footer className="mt-32 border-t border-border bg-surface">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-4 md:px-8">
         <div className="md:col-span-2">
-          <div className="font-display text-xl font-semibold">
-            Alê <span className="gradient-text-ember">Fotógrafo</span>
-          </div>
+          <img src={logo.url} alt="Alê Fotógrafo" width={200} height={60} className="h-14 w-auto" />
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             {site.description}
           </p>

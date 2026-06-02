@@ -62,15 +62,24 @@ export function Header() {
           Solicitar orçamento
         </Link>
 
-        <button
-          type="button"
-          className="rounded-sm border border-border p-2 text-foreground md:hidden"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <Link
+            to="/contato"
+            className="rounded-sm bg-ember px-3 py-2 text-xs font-medium text-accent-foreground hover:bg-ember-glow"
+            onClick={() => setOpen(false)}
+          >
+            Orçamento
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border text-foreground"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
       {open && (

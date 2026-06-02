@@ -101,13 +101,13 @@ function Depoimentos() {
           {testimonials.map((t, i) => (
             <figure
               key={i}
-              className="relative flex flex-col rounded-sm border border-border bg-surface p-8"
+              className="relative flex flex-col rounded-sm border border-border bg-surface p-6 sm:p-8"
             >
-              <Quote className="absolute right-6 top-6 text-ember/20" size={48} strokeWidth={1} />
-              <blockquote className="text-base leading-relaxed text-foreground/90 md:text-lg">
+              <Quote className="absolute right-4 top-4 text-ember/15 sm:right-6 sm:top-6" size={40} strokeWidth={1} aria-hidden="true" />
+              <blockquote className="relative text-base leading-relaxed text-foreground/90 md:text-lg">
                 "{t.text}"
               </blockquote>
-              <figcaption className="mt-auto flex items-center gap-4 border-t border-border pt-5 mt-6">
+              <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-5">
                 <Avatar name={t.name} />
                 <div className="min-w-0 flex-1">
                   <p className="font-display font-semibold leading-tight">{t.name}</p>
@@ -117,6 +117,7 @@ function Depoimentos() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-1 inline-block text-xs text-ember hover:underline"
+                    aria-label={`Ver perfil de ${t.name} no LinkedIn`}
                   >
                     Ver no LinkedIn →
                   </a>

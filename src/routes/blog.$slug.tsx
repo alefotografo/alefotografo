@@ -4,6 +4,7 @@ import { buildMeta } from "@/lib/seo";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
+import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({

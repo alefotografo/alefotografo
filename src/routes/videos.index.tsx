@@ -19,7 +19,12 @@ export const Route = createFileRoute("/videos/")({
       description: `${videos.length}+ produções audiovisuais para empresas: vídeos institucionais, depoimentos executivos, cobertura de eventos corporativos e conteúdo estratégico em São Paulo — por Alexandre Machado, 30 anos de experiência.`,
       path: "/videos",
     }),
-    links: [{ rel: "canonical", href: "/videos" }],
+    links: [
+      { rel: "canonical", href: "/videos" },
+      { rel: "dns-prefetch", href: "https://i.ytimg.com" },
+      { rel: "preconnect", href: "https://i.ytimg.com", crossOrigin: "" },
+      { rel: "dns-prefetch", href: "https://vumbnail.com" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -117,13 +122,18 @@ function VideosIndex() {
           </div>
         ) : (
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((v) => {
-              const thumb = videoThumb(v);
+            {filtered.map((v, i) => {
+              const thumb = videoThumb(v, "sm");
+              const eager = i < 6;
               return (
-                <li key={v.slug}>
+                <li
+                  key={v.slug}
+                  style={{ contentVisibility: i < 9 ? "visible" : "auto", containIntrinsicSize: "320px 280px" }}
+                >
                   <Link
                     to="/videos/$slug"
                     params={{ slug: v.slug }}
+                    preload="intent"
                     className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
                     aria-label={`Assistir: ${v.title}`}
                   >
@@ -132,7 +142,10 @@ function VideosIndex() {
                         <img
                           src={thumb}
                           alt={`Capa do vídeo: ${v.title}`}
-                          loading="lazy"
+                          width={320}
+                          height={180}
+                          loading={eager ? "eager" : "lazy"}
+                          fetchPriority={i < 3 ? "high" : "auto"}
                           decoding="async"
                           referrerPolicy="no-referrer"
                           onError={(e) => {
@@ -172,6 +185,7 @@ function VideosIndex() {
               );
             })}
           </ul>
+
         )}
       </section>
 

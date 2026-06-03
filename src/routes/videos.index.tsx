@@ -19,7 +19,12 @@ export const Route = createFileRoute("/videos/")({
       description: `${videos.length}+ produções audiovisuais para empresas: vídeos institucionais, depoimentos executivos, cobertura de eventos corporativos e conteúdo estratégico em São Paulo — por Alexandre Machado, 30 anos de experiência.`,
       path: "/videos",
     }),
-    links: [{ rel: "canonical", href: "/videos" }],
+    links: [
+      { rel: "canonical", href: "/videos" },
+      { rel: "dns-prefetch", href: "https://i.ytimg.com" },
+      { rel: "preconnect", href: "https://i.ytimg.com", crossOrigin: "" },
+      { rel: "dns-prefetch", href: "https://vumbnail.com" },
+    ],
     scripts: [
       {
         type: "application/ld+json",

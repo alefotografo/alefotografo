@@ -86,12 +86,15 @@ function VideoPage() {
               >
                 <div className="relative aspect-video bg-black">
                   {(() => {
-                    const t = videoThumb(o);
+                    const t = videoThumb(o, "sm");
                     return t ? (
                       <img
                         src={t}
                         alt={`Capa do vídeo ${o.title}`}
+                        width={320}
+                        height={180}
                         loading="lazy"
+                        decoding="async"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
                           const img = e.currentTarget;

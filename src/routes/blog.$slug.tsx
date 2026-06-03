@@ -81,7 +81,7 @@ function PostPage() {
         )}
 
         <div className="prose prose-invert mt-8 max-w-none text-foreground/90 space-y-5">
-          {p.body.map((para, i) => (
+          {p.body.map((para: string, i: number) => (
             <p key={i} className="text-base leading-relaxed text-muted-foreground">
               {autoLink(para, { usedSlugs, usedPhrases, maxLinks: 3 })}
             </p>

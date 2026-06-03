@@ -148,7 +148,7 @@ export const site = {
     "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Retratos profissionais, fotografia para empresas, cobertura de eventos e vídeo institucional.",
   city: "São Paulo",
   state: "SP",
-  whatsapp: "5511999999999", // placeholder — atualize com o número real
+  whatsapp: "5511913550533",
   email: "contato@alefotografo.com.br",
   instagram: "https://www.instagram.com/alefotografo",
   linkedin: "https://www.linkedin.com/in/alexandremachadofotografo",

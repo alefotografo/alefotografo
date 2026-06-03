@@ -5,6 +5,7 @@ import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
+import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
@@ -77,7 +78,9 @@ function CategoryPage() {
             </h2>
           )}
           {cat.description && (
-            <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">{shorten(cat.description, 220)}</p>
+            <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">
+              {autoLink(shorten(cat.description, 220), { excludeSlug: cat.slug, maxLinks: 3 })}
+            </p>
           )}
           {related.length > 0 && (
             <nav aria-label="Categorias relacionadas" className="mt-8 flex flex-wrap gap-2">

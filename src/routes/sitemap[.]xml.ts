@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { categories, videos, posts } from "@/data/catalog";
 
-// TODO: substitua pela URL final do projeto (ex: https://alefotografo.com.br)
-const BASE_URL = "";
+// Base URL do site publicado. Atualize se mudar o domínio final.
+const BASE_URL = "https://alefotografo.com.br";
 
 interface SitemapEntry {
   path: string;

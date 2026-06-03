@@ -5,6 +5,7 @@ import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
+import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({

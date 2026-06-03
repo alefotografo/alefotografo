@@ -110,7 +110,66 @@ export const categories: Category[] = data.cats.map(cleanItem).sort((a, b) => {
   const ib = CATEGORY_ORDER.indexOf(b.slug);
   return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
 });
-export const videos: Video[] = data.vids.map(cleanItem).filter((v) => !v.vimeo);
+// Ordem oficial dos vídeos conforme alefotografo.com.br/videos-para-empresas
+const VIDEO_ORDER: string[] = [
+  "9faznegocios",
+  "video-institucional-bmx-logistica",
+  "ativa-logistica-unidade-barueri",
+  "video-institucional-rocha-queiroz-advogados",
+  "sq-quimica-unidade-vinhedo",
+  "galena-35-anos",
+  "unitec-video-institucional",
+  "retratos-profissionais-em-estudio",
+  "ibis-botucatu-video-manifesto",
+  "teaser-ibis-botucatu-sp",
+  "ensaio-de-retratos-profissionais-ale-fotografo",
+  "9-forum-abradilan",
+  "retrato-corporativo-ensaio-fotografico",
+  "galena-celebra",
+  "15-convencao-abradilan-barcelo-bavaro-palace-punta-cana-01-a-06-nov-2022",
+  "professora-rita-curso-de-prestacao-de-contas-eleitorais-2024",
+  "ibde-mendoza-iii-congresso-internacional",
+  "encontro-farmarcas-2023",
+  "abradilan-25-anos",
+  "convencao-de-vendas-2023-tecnisa",
+  "faz-negocios-3",
+  "festa-de-confraternizacao-2022-tecnisa",
+  "encontro-farmarcas-2022",
+  "ii-congreso-brasileiro-de-direito-da-empresa",
+  "sq-quimica-34-premio-sitivesp-de-fornecedor-do-ano",
+  "onemba-class-2023-sao-paulo",
+  "sipat-2022-foseco",
+  "i-congresso-brasileiro-de-direito-da-empresa-no-novo-futebol-ibde",
+  "ativa-logistiva-video-do-programa-de-sustentabilidade",
+  "sq-quimica-na-abrafati-show-2022",
+  "confraternizacao-abradilan",
+  "salomao-concursos-aulao-em-sao-paulo",
+  "7-forum-abradilan",
+  "curso-de-prestacao-de-contas-eleitorais-com-a-professora-rita-goncalves",
+  "latin-sales-meeting-2022-em-punta-cana",
+  "jantar-febrafar-2022",
+  "renove-mudancas",
+  "sitivesp-80-anos",
+  "video-escritorio-rocha-e-queiroz",
+  "sustainable-foods-summit-edicao-sao-paulo",
+  "ativa-logistica",
+  "passion-for-excellence-latam-sales-meeting-2021-convatec",
+  "video-de-boas-festas-da-ativalog",
+  "encontro-de-craques-germed-1",
+  "video-corporativo-fcw-premio-almirante-alvaro-alberto",
+  "ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi",
+  "teaser-de-melhores-momentos-do-kick-off-bom-pra-credito",
+  "lobtec-35-anos",
+];
+
+export const videos: Video[] = data.vids
+  .map(cleanItem)
+  .filter((v) => !v.vimeo)
+  .sort((a, b) => {
+    const ia = VIDEO_ORDER.indexOf(a.slug);
+    const ib = VIDEO_ORDER.indexOf(b.slug);
+    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+  });
 
 // Ordem oficial dos posts conforme alefotografo.com.br/blog
 const POST_ORDER: string[] = [

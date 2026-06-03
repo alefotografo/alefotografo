@@ -145,7 +145,7 @@ export const site = {
   fullName: "Alexandre Machado — Alê Fotógrafo",
   tagline: "Fotografia e vídeo corporativo em São Paulo",
   description:
-    "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Retratos profissionais, fotografia para empresas, cobertura de eventos e vídeo institucional.",
+    "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
   city: "São Paulo",
   state: "SP",
   whatsapp: "5511913550533",

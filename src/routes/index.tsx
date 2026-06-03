@@ -17,6 +17,7 @@ export const Route = createFileRoute("/")({
       title: "Fotógrafo Corporativo em São Paulo | Alê Fotógrafo",
       description: site.description,
       path: "/",
+      image: HERO_IMG,
     }),
     links: [
       { rel: "canonical", href: "/" },
@@ -26,6 +27,30 @@ export const Route = createFileRoute("/")({
       {
         type: "application/ld+json",
         children: JSON.stringify(faqJsonLd(homeFaqs)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://alefotografo.com.br/#organization",
+          name: site.fullName,
+          alternateName: site.name,
+          url: "https://alefotografo.com.br",
+          logo: HERO_IMG,
+          image: HERO_IMG,
+          description: site.description,
+          email: site.email,
+          telephone: "+55" + site.whatsapp.slice(2),
+          sameAs: [site.instagram, site.linkedin],
+          founder: { "@type": "Person", name: "Alexandre Machado" },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "São Paulo",
+            addressRegion: "SP",
+            addressCountry: "BR",
+          },
+        }),
       },
     ],
   }),

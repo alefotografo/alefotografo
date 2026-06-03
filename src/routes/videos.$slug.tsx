@@ -64,31 +64,7 @@ function VideoPage() {
 
       <section className="mx-auto max-w-5xl px-5 py-12 md:px-8">
         <div className="aspect-video overflow-hidden rounded-sm bg-black ring-1 ring-border">
-          {v.youtube && (
-            <iframe
-              className="h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${v.youtube}`}
-              title={v.title}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          )}
-          {v.vimeo && (
-            <iframe
-              className="h-full w-full"
-              src={`https://player.vimeo.com/video/${v.vimeo}`}
-              title={v.title}
-              loading="lazy"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-          )}
-          {!v.youtube && !v.vimeo && (
-            <div className="flex h-full items-center justify-center text-muted-foreground">
-              Vídeo indisponível no momento.
-            </div>
-          )}
+          <VideoPlayer video={v} />
         </div>
         {v.description && (
           <div className="prose prose-invert mt-10 max-w-none">

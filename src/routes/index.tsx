@@ -37,7 +37,8 @@ function Home() {
   const recentPosts = posts.slice(0, 3);
   const recentVideos = videos.slice(0, 3);
   const hero = featured[0];
-  const heroImg = hero?.cover ?? "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
+  const heroImg = hero?.cover ?? HERO_IMG;
+
 
   return (
     <>

@@ -25,3 +25,5 @@ Allow: /
 
 User-agent: cohere-ai
 Allow: /
+
+Sitemap: https://alefotografo.com.br/sitemap.xml

@@ -53,8 +53,9 @@ function PostPage() {
   const relCats = relatedCategories(seed, undefined, 6);
   const relPostList = relatedPosts(seed, p.slug, 4);
   const more = (relPostList.length ? relPostList : posts.filter((x) => x.slug !== p.slug)).slice(0, 3);
-  // Use only the description and a short excerpt to avoid full reproduction
-  const excerpt = p.body[0] || p.description;
+  // Shared trackers so the same category isn't linked twice across paragraphs
+  const usedSlugs = new Set<string>();
+  const usedPhrases = new Set<string>();
 
   return (
     <>
@@ -68,7 +69,9 @@ function PostPage() {
         )}
         <h1 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">{p.title}</h1>
         {p.description && (
-          <p className="mt-6 text-lg text-muted-foreground text-pretty">{p.description}</p>
+          <p className="mt-6 text-lg text-muted-foreground text-pretty">
+            {autoLink(p.description, { usedSlugs, usedPhrases, maxLinks: 2 })}
+          </p>
         )}
 
         {p.cover && (
@@ -77,12 +80,17 @@ function PostPage() {
           </figure>
         )}
 
-        <div className="prose prose-invert mt-8 max-w-none text-foreground/90">
-          {excerpt && <p className="text-base leading-relaxed text-muted-foreground">{excerpt}</p>}
+        <div className="prose prose-invert mt-8 max-w-none text-foreground/90 space-y-5">
+          {p.body.map((para, i) => (
+            <p key={i} className="text-base leading-relaxed text-muted-foreground">
+              {autoLink(para, { usedSlugs, usedPhrases, maxLinks: 3 })}
+            </p>
+          ))}
           <p className="mt-8 rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
-            Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, entre em contato.
+            Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
           </p>
         </div>
+
 
         <RelatedLinks cats={relCats} posts={relPostList} title="Assuntos relacionados" />
 

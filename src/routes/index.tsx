@@ -7,6 +7,10 @@ import { faqs, faqJsonLd } from "@/lib/faqs";
 
 const homeFaqs = faqs.slice(0, 6);
 
+const FALLBACK_HERO =
+  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
+const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
@@ -14,7 +18,10 @@ export const Route = createFileRoute("/")({
       description: site.description,
       path: "/",
     }),
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",

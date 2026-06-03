@@ -1,0 +1,21 @@
+# Alê Fotógrafo — Alexandre Machado
+
+> Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.
+
+Site oficial do fotógrafo Alexandre Machado, especializado em fotografia corporativa, retratos executivos, cobertura de eventos empresariais e vídeo institucional em São Paulo e todo o Brasil. Atende empresas, escritórios de advocacia, clínicas médicas e odontológicas, indústrias, gastronomia, arquitetura e profissionais liberais.
+
+## Páginas
+
+- [Início](/): Visão geral dos serviços de fotografia e vídeo corporativo.
+- [Fotos](/fotografo-corporativo): Galeria por segmento — retratos, empresas, eventos, indústria, gastronomia, arquitetura.
+- [Vídeos](/videos): Produções audiovisuais corporativas, depoimentos e cobertura de eventos.
+- [Blog](/blog): Artigos sobre fotografia profissional, retrato corporativo, LinkedIn e imagem executiva.
+- [Sobre](/sobre): Trajetória de Alexandre Machado, 30 anos como fotógrafo corporativo.
+- [Depoimentos](/depoimentos): O que clientes dizem sobre o trabalho.
+- [Perguntas Frequentes](/faq): Prazos, preços, direitos de uso, drone e atendimento.
+- [Contato](/contato): WhatsApp, e-mail e formulário para orçamento.
+
+## Opcional
+
+- [Instagram](https://www.instagram.com/alefotografo)
+- [LinkedIn](https://www.linkedin.com/in/alexandremachadofotografo)

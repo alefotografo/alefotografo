@@ -79,6 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#1a1a1a" },
+      { name: "google-site-verification", content: "v9fgg9CFkZcU72isBJ8We8unyyHJmM9vtA140QnDzpY" },
       { name: "author", content: "Alexandre Machado" },
       { property: "og:site_name", content: site.name },
       { property: "og:locale", content: "pt_BR" },

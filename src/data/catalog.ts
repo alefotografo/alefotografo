@@ -173,6 +173,7 @@ export const videos: Video[] = data.vids
 
 // Ordem oficial dos posts conforme alefotografo.com.br/blog
 const POST_ORDER: string[] = [
+  "foto-perfil-linkedin-gestor-contratos",
   "10-lugares-em-sao-paulo-para-tirar-boas-fotos",
   "fotografo-5-poses-para-retrato-corporativo",
   "os-6-melhores-aplicativos-para-editar-videos-pelo-celular",

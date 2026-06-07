@@ -81,11 +81,22 @@ function PostPage() {
         )}
 
         <div className="prose prose-invert mt-8 max-w-none text-foreground/90 space-y-5">
-          {p.body.map((para: string, i: number) => (
-            <p key={i} className="text-base leading-relaxed text-muted-foreground">
-              {autoLink(para, { usedSlugs, usedPhrases, maxLinks: 3 })}
-            </p>
-          ))}
+          {p.body.map((para: string, i: number) => {
+            const img = p.images?.find((im: { after: number }) => im.after === i);
+            return (
+              <div key={i}>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  {autoLink(para, { usedSlugs, usedPhrases, maxLinks: 3 })}
+                </p>
+                {img && (
+                  <figure className="my-8 overflow-hidden rounded-sm ring-1 ring-border">
+                    <img src={img.src} alt={img.alt} loading="lazy" decoding="async" className="w-full" />
+                    <figcaption className="bg-surface px-4 py-2 text-xs text-muted-foreground">{img.alt}</figcaption>
+                  </figure>
+                )}
+              </div>
+            );
+          })}
           <p className="mt-8 rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
             Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
           </p>

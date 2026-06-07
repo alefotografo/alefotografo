@@ -150,7 +150,9 @@ function VideosIndex() {
 
 
 
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16" aria-label="Lista de vídeos">
+      <section id="portfolio" className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16 scroll-mt-20" aria-label="Lista de vídeos">
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
+        <h2 className="mb-6 font-display text-3xl font-semibold md:text-4xl">Trabalhos selecionados</h2>
         <p className="mb-6 text-xs uppercase tracking-[0.2em] text-muted-foreground" aria-live="polite">
           {filtered.length} {filtered.length === 1 ? "vídeo" : "vídeos"}
           {q && ` para "${q}"`}

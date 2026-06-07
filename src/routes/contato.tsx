@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contato")({
       description: "Fale com Alexandre Machado, o Alê Fotógrafo. Solicite orçamento para fotografia corporativa, retratos profissionais e vídeo institucional em São Paulo.",
       path: "/contato",
     }),
-    links: [{ rel: "canonical", href: "/contato" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/contato" }],
   }),
   component: Contato,
 });

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
       description: `Galeria completa com ${categories.length} segmentos: retratos profissionais, fotografia para escritórios, médicos, advogados, indústria, eventos e mais.`,
       path: "/fotografo-corporativo",
     }),
-    links: [{ rel: "canonical", href: "/fotografo-corporativo" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/fotografo-corporativo" }],
   }),
   component: PortfolioIndex,
 });

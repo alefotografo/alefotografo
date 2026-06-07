@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       path: "/",
     }),
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://alefotografos.com.br/" },
       { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
     ],
     scripts: [

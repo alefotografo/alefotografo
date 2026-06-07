@@ -20,7 +20,7 @@ export const Route = createFileRoute("/videos/")({
       path: "/videos",
     }),
     links: [
-      { rel: "canonical", href: "/videos" },
+      { rel: "canonical", href: "https://alefotografos.com.br/videos" },
       { rel: "dns-prefetch", href: "https://i.ytimg.com" },
       { rel: "preconnect", href: "https://i.ytimg.com", crossOrigin: "" },
       { rel: "dns-prefetch", href: "https://vumbnail.com" },

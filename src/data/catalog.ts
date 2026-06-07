@@ -28,6 +28,7 @@ export interface Post {
   seo_title: string;
   cover: string | null;
   body: string[];
+  images?: { src: string; alt: string; after: number }[];
 }
 
 const data = raw as { cats: Category[]; vids: Video[]; posts: Post[] };

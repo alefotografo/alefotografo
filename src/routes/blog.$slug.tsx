@@ -49,8 +49,9 @@ export const Route = createFileRoute("/blog/$slug")({
             "@id": `${SITE_ORIGIN}/blog/${params.slug}`,
             headline: loaderData.title,
             description: loaderData.description,
-            image: loaderData.cover || undefined,
+            image: loaderData.cover ? [loaderData.cover] : undefined,
             url: `${SITE_ORIGIN}/blog/${params.slug}`,
+            inLanguage: "pt-BR",
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": `${SITE_ORIGIN}/blog/${params.slug}`,
@@ -58,6 +59,7 @@ export const Route = createFileRoute("/blog/$slug")({
             author: {
               "@type": "Person",
               name: "Alexandre Machado",
+              url: `${SITE_ORIGIN}/sobre`,
             },
             publisher: {
               "@type": "Organization",
@@ -65,10 +67,12 @@ export const Route = createFileRoute("/blog/$slug")({
               logo: {
                 "@type": "ImageObject",
                 url: `${SITE_ORIGIN}${logoAsset.url}`,
+                width: 794,
+                height: 450,
               },
             },
-            datePublished: loaderData.date,
-            dateModified: loaderData.date,
+            datePublished: toISODate(loaderData.date),
+            dateModified: toISODate(loaderData.date),
           }),
         },
       ],

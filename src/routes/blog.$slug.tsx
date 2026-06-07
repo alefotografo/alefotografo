@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
-import { buildMeta } from "@/lib/seo";
+import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
+import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
@@ -28,16 +29,30 @@ export const Route = createFileRoute("/blog/$slug")({
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
+            "@id": `${SITE_ORIGIN}/blog/${params.slug}`,
             headline: loaderData.title,
             description: loaderData.description,
             image: loaderData.cover || undefined,
-            author: { "@type": "Person", name: "Alexandre Machado" },
+            url: `${SITE_ORIGIN}/blog/${params.slug}`,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${SITE_ORIGIN}/blog/${params.slug}`,
+            },
+            author: {
+              "@type": "Person",
+              name: "Alexandre Machado",
+            },
             publisher: {
               "@type": "Organization",
               name: site.name,
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_ORIGIN}${logoAsset.url}`,
+              },
             },
             datePublished: loaderData.date,
+            dateModified: loaderData.date,
           }),
         },
       ],

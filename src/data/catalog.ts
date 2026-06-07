@@ -174,6 +174,7 @@ export const videos: Video[] = data.vids
 
 // Ordem oficial dos posts conforme alefotografo.com.br/blog
 const POST_ORDER: string[] = [
+  "fotografia-imobiliaria-corporativa-aceleracao-vendas",
   "foto-perfil-linkedin-gestor-contratos",
   "10-lugares-em-sao-paulo-para-tirar-boas-fotos",
   "fotografo-5-poses-para-retrato-corporativo",

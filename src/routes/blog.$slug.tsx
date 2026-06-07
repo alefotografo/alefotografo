@@ -20,7 +20,6 @@ export const Route = createFileRoute("/blog/$slug")({
         title: loaderData.title,
         description: loaderData.description || loaderData.title,
         path: `/blog/${params.slug}`,
-        image: loaderData.cover || undefined,
         type: "article",
       }),
       links: [{ rel: "canonical", href: `/blog/${params.slug}` }],

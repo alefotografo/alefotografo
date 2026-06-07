@@ -107,12 +107,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "@id": "https://alefotografo.com.br/#business",
+          "@id": "https://alefotografos.com.br/#business",
           name: site.fullName,
           alternateName: site.name,
           description: site.description,
           image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-          url: "https://alefotografo.com.br",
+          url: "https://alefotografos.com.br",
           telephone: "+5511",
           address: {
             "@type": "PostalAddress",

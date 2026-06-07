@@ -33,10 +33,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://alefotografo.com.br/#organization",
+          "@id": "https://alefotografos.com.br/#organization",
           name: site.fullName,
           alternateName: site.name,
-          url: "https://alefotografo.com.br",
+          url: "https://alefotografos.com.br",
           logo: HERO_IMG,
           image: HERO_IMG,
           description: site.description,

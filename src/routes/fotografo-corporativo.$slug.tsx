@@ -33,7 +33,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             "@type": "ImageGallery",
             name: loaderData.title,
             description: loaderData.description,
-            url: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}`,
+            url: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}`,
             author: { "@type": "Person", name: "Alexandre Machado" },
             image: loaderData.images.slice(0, 8),
           }),

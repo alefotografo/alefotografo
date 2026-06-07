@@ -1,8 +1,8 @@
 import { site } from "@/data/catalog";
-import ogHomeAsset from "@/assets/og-home.jpg.asset.json";
+import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
 
 const SITE_ORIGIN = "https://alefotografos.com.br";
-export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${ogHomeAsset.url}`;
+export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${logoAsset.url}`;
 
 function toAbsolute(url: string) {
   if (/^https?:\/\//i.test(url)) return url;

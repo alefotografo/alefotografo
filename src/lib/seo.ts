@@ -1,8 +1,10 @@
 import { site } from "@/data/catalog";
-import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
+import ogAsset from "@/assets/og-alefotografo.jpg.asset.json";
 
 const SITE_ORIGIN = "https://alefotografos.com.br";
-export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${logoAsset.url}`;
+export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${ogAsset.url}`;
+export const DEFAULT_OG_IMAGE_WIDTH = 1200;
+export const DEFAULT_OG_IMAGE_HEIGHT = 630;
 
 function toAbsolute(url: string) {
   if (/^https?:\/\//i.test(url)) return url;
@@ -36,7 +38,9 @@ export function buildMeta({
     { property: "og:locale", content: "pt_BR" },
     { property: "og:image", content: absoluteImage },
     { property: "og:image:secure_url", content: absoluteImage },
-    { property: "og:image:type", content: "image/png" },
+    { property: "og:image:type", content: "image/jpeg" },
+    { property: "og:image:width", content: String(DEFAULT_OG_IMAGE_WIDTH) },
+    { property: "og:image:height", content: String(DEFAULT_OG_IMAGE_HEIGHT) },
     { property: "og:image:alt", content: fullTitle },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },

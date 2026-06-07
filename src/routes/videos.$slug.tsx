@@ -20,7 +20,6 @@ export const Route = createFileRoute("/videos/$slug")({
         title: loaderData.title,
         description: loaderData.description || `${loaderData.title} — Produção audiovisual por Alê Fotógrafo`,
         path: `/videos/${params.slug}`,
-        image,
         type: "article",
       }),
       links: [{ rel: "canonical", href: `/videos/${params.slug}` }],

@@ -21,7 +21,6 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
         title: loaderData.title,
         description: loaderData.description || `${loaderData.title} — ${site.description}`,
         path: `/fotografo-corporativo/${params.slug}`,
-        image: loaderData.cover || undefined,
         type: "article",
       }),
       links: [{ rel: "canonical", href: `/fotografo-corporativo/${params.slug}` }],

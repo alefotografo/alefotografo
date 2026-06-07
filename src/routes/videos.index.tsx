@@ -69,14 +69,22 @@ function VideosIndex() {
 
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Vídeo corporativo</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">+30 anos produzindo imagem corporativa</p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Produção audiovisual para empresas
+            Vídeos que fazem a sua empresa ser levada a sério.
           </h1>
-          <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            {videos.length} produções entregues: vídeos institucionais, depoimentos executivos, coberturas de eventos
-            e conteúdos estratégicos para empresas em {site.city} e em todo o Brasil.
+          <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
+            Produção de vídeo institucional, eventos corporativos e feiras de negócios. Roteiro, captação e edição com mais de 30 anos de bagagem — em {site.city} e em todo o Brasil.
           </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="#portfolio" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
+              Ver portfólio
+            </a>
+            <Link to="/contato" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Solicitar orçamento
+            </Link>
+          </div>
 
           <div className="mt-10 flex max-w-xl items-center gap-2 rounded-sm border border-border bg-surface px-3 py-2 focus-within:border-ember">
             <Search size={16} className="text-muted-foreground" aria-hidden="true" />
@@ -102,6 +110,45 @@ function VideosIndex() {
           </div>
         </div>
       </section>
+
+      <section className="border-b border-border bg-surface" aria-label="Empresas atendidas">
+        <div className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-12">
+          <p className="text-sm text-muted-foreground text-pretty md:text-base">
+            Mais de 30 anos atendendo empresas como <strong className="text-foreground">Tecnisa</strong>, <strong className="text-foreground">Convatec</strong>, <strong className="text-foreground">Accor</strong>, <strong className="text-foreground">ABRADILAN</strong>, <strong className="text-foreground">Galena</strong> e <strong className="text-foreground">Germed</strong> — em projetos por todo o Brasil.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border" aria-labelledby="servicos-video">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
+          <h2 id="servicos-video" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            Três frentes, um único padrão de qualidade.
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <article className="rounded-sm border border-border bg-surface p-6">
+              <h3 className="font-display text-lg font-semibold">Vídeo Institucional</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Conte a história, os valores e o diferencial da sua empresa em um filme que transmite credibilidade.
+              </p>
+            </article>
+            <article className="rounded-sm border border-border bg-surface p-6">
+              <h3 className="font-display text-lg font-semibold">Eventos Corporativos</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Cobertura completa de convenções, lançamentos e confraternizações, com entrega ágil e qualidade de cinema.
+              </p>
+            </article>
+            <article className="rounded-sm border border-border bg-surface p-6">
+              <h3 className="font-display text-lg font-semibold">Feiras de Negócios</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Registro e aftermovie da sua participação em feiras, para gerar conteúdo e provar resultado.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
 
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16" aria-label="Lista de vídeos">
         <p className="mb-6 text-xs uppercase tracking-[0.2em] text-muted-foreground" aria-live="polite">

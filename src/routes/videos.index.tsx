@@ -15,8 +15,8 @@ const featuredFaqs = faqs.filter((f) =>
 export const Route = createFileRoute("/videos/")({
   head: () => ({
     meta: buildMeta({
-      title: "Vídeo Institucional e Produção Audiovisual em São Paulo",
-      description: `Vídeos institucionais, depoimentos executivos e cobertura de eventos corporativos em São Paulo — por Alexandre Machado, há 30 anos.`,
+      title: "Vídeo Institucional, Eventos e Feiras Corporativas em SP",
+      description: `Produção de vídeo institucional, eventos corporativos e feiras de negócios. Roteiro, captação e edição com mais de 30 anos de bagagem.`,
       path: "/videos",
     }),
     links: [

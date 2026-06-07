@@ -17,7 +17,6 @@ export const Route = createFileRoute("/")({
       title: "Fotógrafo Corporativo em São Paulo | Alê Fotógrafo",
       description: site.description,
       path: "/",
-      image: HERO_IMG,
     }),
     links: [
       { rel: "canonical", href: "/" },

@@ -15,6 +15,7 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
 import { site } from "../data/catalog";
+import { DEFAULT_OG_IMAGE } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -92,6 +93,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: site.description },
       { name: "twitter:description", content: site.description },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:secure_url", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1216" },
+      { property: "og:image:height", content: "640" },
+      { property: "og:image:alt", content: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
+      { name: "twitter:image:alt", content: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

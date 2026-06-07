@@ -1,4 +1,13 @@
 import { site } from "@/data/catalog";
+import ogHomeAsset from "@/assets/og-home.jpg.asset.json";
+
+const SITE_ORIGIN = "https://alefotografos.com.br";
+export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${ogHomeAsset.url}`;
+
+function toAbsolute(url: string) {
+  if (/^https?:\/\//i.test(url)) return url;
+  return `${SITE_ORIGIN}${url.startsWith("/") ? "" : "/"}${url}`;
+}
 
 export function buildMeta({
   title,
@@ -14,22 +23,28 @@ export function buildMeta({
   type?: "website" | "article";
 }) {
   const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
+  const absoluteUrl = toAbsolute(path);
+  const absoluteImage = toAbsolute(image ?? DEFAULT_OG_IMAGE);
   const meta: Array<{ title?: string; name?: string; property?: string; content?: string }> = [
     { title: fullTitle },
     { name: "description", content: description },
     { property: "og:title", content: fullTitle },
     { property: "og:description", content: description },
     { property: "og:type", content: type },
-    { property: "og:url", content: path },
+    { property: "og:url", content: absoluteUrl },
     { property: "og:site_name", content: site.name },
     { property: "og:locale", content: "pt_BR" },
-    { name: "twitter:card", content: image ? "summary_large_image" : "summary" },
+    { property: "og:image", content: absoluteImage },
+    { property: "og:image:secure_url", content: absoluteImage },
+    { property: "og:image:type", content: "image/jpeg" },
+    { property: "og:image:width", content: "1216" },
+    { property: "og:image:height", content: "640" },
+    { property: "og:image:alt", content: fullTitle },
+    { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: description },
+    { name: "twitter:image", content: absoluteImage },
+    { name: "twitter:image:alt", content: fullTitle },
   ];
-  if (image) {
-    meta.push({ property: "og:image", content: image });
-    meta.push({ name: "twitter:image", content: image });
-  }
   return meta;
 }

@@ -9,9 +9,9 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: buildMeta({
-      title: "Perguntas Frequentes — Fotografia e Vídeo Corporativo em São Paulo",
+      title: "FAQ — Fotografia e Vídeo Corporativo em SP",
       description:
-        "Tire dúvidas sobre fotografia corporativa, retratos executivos, vídeo institucional, prazos, preços, direitos de uso, drone e atendimento em São Paulo. Respostas diretas para empresas.",
+        "Dúvidas sobre fotografia corporativa, retratos executivos, vídeo institucional, prazos, preços, direitos de uso e drone em São Paulo.",
       path: "/faq",
     }),
     links: [{ rel: "canonical", href: "/faq" }],

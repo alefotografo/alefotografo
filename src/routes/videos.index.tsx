@@ -16,7 +16,7 @@ export const Route = createFileRoute("/videos/")({
   head: () => ({
     meta: buildMeta({
       title: "Vídeo Institucional e Produção Audiovisual em São Paulo",
-      description: `${videos.length}+ produções audiovisuais para empresas: vídeos institucionais, depoimentos executivos, cobertura de eventos corporativos e conteúdo estratégico em São Paulo — por Alexandre Machado, 30 anos de experiência.`,
+      description: `Vídeos institucionais, depoimentos executivos e cobertura de eventos corporativos em São Paulo — por Alexandre Machado, há 30 anos.`,
       path: "/videos",
     }),
     links: [

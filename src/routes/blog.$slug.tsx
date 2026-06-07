@@ -35,7 +35,12 @@ export const Route = createFileRoute("/blog/$slug")({
     return {
       meta: buildMeta({
         title: loaderData.title,
-        description: loaderData.description || loaderData.title,
+        description: (() => {
+          const base = (loaderData.description || loaderData.title || "").trim();
+          if (base.length >= 50) return base;
+          const suffix = ` — dicas de Alexandre Machado, fotógrafo corporativo em São Paulo.`;
+          return `${base}${suffix}`.slice(0, 160);
+        })(),
         path: `/blog/${params.slug}`,
         type: "article",
       }),

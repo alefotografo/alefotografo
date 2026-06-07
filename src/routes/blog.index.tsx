@@ -9,7 +9,7 @@ export const Route = createFileRoute("/blog/")({
       description: "Artigos sobre fotografia profissional, retratos corporativos, LinkedIn, vídeo e dicas para fortalecer sua imagem profissional.",
       path: "/blog",
     }),
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/blog" }],
   }),
   component: BlogIndex,
 });

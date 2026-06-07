@@ -44,7 +44,7 @@ export const Route = createFileRoute("/blog/$slug")({
         path: `/blog/${params.slug}`,
         type: "article",
       }),
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://alefotografos.com.br/blog/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

@@ -23,7 +23,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
         path: `/fotografo-corporativo/${params.slug}`,
         type: "article",
       }),
-      links: [{ rel: "canonical", href: `/fotografo-corporativo/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

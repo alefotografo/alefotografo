@@ -12,7 +12,7 @@ export const Route = createFileRoute("/sobre")({
       image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
     }),
-    links: [{ rel: "canonical", href: "/sobre" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/sobre" }],
     scripts: [
       {
         type: "application/ld+json",

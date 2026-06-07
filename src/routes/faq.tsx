@@ -14,7 +14,7 @@ export const Route = createFileRoute("/faq")({
         "Dúvidas sobre fotografia corporativa, retratos executivos, vídeo institucional, prazos, preços, direitos de uso e drone em São Paulo.",
       path: "/faq",
     }),
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/faq" }],
     scripts: [
       {
         type: "application/ld+json",

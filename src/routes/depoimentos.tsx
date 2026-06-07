@@ -56,7 +56,7 @@ export const Route = createFileRoute("/depoimentos")({
         "O que dizem clientes que contrataram Alexandre Machado para fotografia e vídeo corporativo em São Paulo.",
       path: "/depoimentos",
     }),
-    links: [{ rel: "canonical", href: "/depoimentos" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/depoimentos" }],
   }),
   component: Depoimentos,
 });

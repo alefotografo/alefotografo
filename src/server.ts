@@ -37,8 +37,27 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+function redirectHttps(request: Request): Response | undefined {
+  const url = new URL(request.url);
+  const proto = request.headers.get("x-forwarded-proto") ?? url.protocol.slice(0, -1);
+  if (proto === "http") {
+    url.protocol = "https:";
+    return new Response(null, {
+      status: 301,
+      headers: {
+        location: url.toString(),
+        "cache-control": "max-age=3600",
+      },
+    });
+  }
+  return undefined;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const httpsRedirect = redirectHttps(request);
+    if (httpsRedirect) return httpsRedirect;
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

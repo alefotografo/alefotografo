@@ -2938,10 +2938,26 @@
         "Próximo evento? Alinhe o briefing com antecedência e garanta imagens que justifiquem o investimento na produção."
       ],
       "images": [
-        { "src": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Fotógrafo profissional com câmera em auditório de evento corporativo", "after": 0 },
-        { "src": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Palco de evento corporativo com palestrante e plateia", "after": 1 },
-        { "src": "https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Plateia de evento corporativo em momento de aplauso genuíno", "after": 2 },
-        { "src": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Fotógrafo e videomaker lado a lado em evento corporativo", "after": 3 }
+        {
+          "src": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Fotógrafo profissional com câmera em auditório de evento corporativo",
+          "after": 0
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Palco de evento corporativo com palestrante e plateia",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Plateia de evento corporativo em momento de aplauso genuíno",
+          "after": 2
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Fotógrafo e videomaker lado a lado em evento corporativo",
+          "after": 3
+        }
       ]
     },
     {
@@ -2959,10 +2975,26 @@
         "Solicite um orçamento para o seu escritório e transforme o site em uma ferramenta real de captação de clientes."
       ],
       "images": [
-        { "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Equipe de escritório contábil em reunião natural", "after": 0 },
-        { "src": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Contador em ambiente organizado e moderno", "after": 1 },
-        { "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Consultor entregando relatório a cliente em ambiente formal", "after": 2 },
-        { "src": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Mesa de trabalho de contador com relatórios e laptop", "after": 3 }
+        {
+          "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Equipe de escritório contábil em reunião natural",
+          "after": 0
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Contador em ambiente organizado e moderno",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Consultor entregando relatório a cliente em ambiente formal",
+          "after": 2
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Mesa de trabalho de contador com relatórios e laptop",
+          "after": 3
+        }
       ]
     },
     {
@@ -2980,10 +3012,26 @@
         "Agende a sessão do seu time executivo e garanta uma presença visual à altura da empresa que vocês construíram."
       ],
       "images": [
-        { "src": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "CEO em retrato executivo de alto nível, postura confiante", "after": 0 },
-        { "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Diretora executiva em retrato em ambiente corporativo elegante", "after": 1 },
-        { "src": "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Executivo em sessão fotográfica com iluminação profissional", "after": 2 },
-        { "src": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Série de retratos executivos de alto padrão", "after": 3 }
+        {
+          "src": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "CEO em retrato executivo de alto nível, postura confiante",
+          "after": 0
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Diretora executiva em retrato em ambiente corporativo elegante",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Executivo em sessão fotográfica com iluminação profissional",
+          "after": 2
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Série de retratos executivos de alto padrão",
+          "after": 3
+        }
       ]
     },
     {
@@ -3001,10 +3049,26 @@
         "Solicite uma proposta para o seu hotel e transforme a fotografia em alavanca direta de ocupação."
       ],
       "images": [
-        { "src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Quarto de hotel com cama impecável e iluminação aconchegante", "after": 0 },
-        { "src": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Piscina de hotel em golden hour", "after": 1 },
-        { "src": "https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Café da manhã em mesa com vista para jardim de hotel boutique", "after": 2 },
-        { "src": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Lobby de hotel boutique com design sofisticado", "after": 3 }
+        {
+          "src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Quarto de hotel com cama impecável e iluminação aconchegante",
+          "after": 0
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Piscina de hotel em golden hour",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Café da manhã em mesa com vista para jardim de hotel boutique",
+          "after": 2
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Lobby de hotel boutique com design sofisticado",
+          "after": 3
+        }
       ]
     },
     {
@@ -3022,10 +3086,26 @@
         "Quer fotografar sua indústria? Vamos planejar a produção sem parar a fábrica e gerar um banco de imagens à altura da operação."
       ],
       "images": [
-        { "src": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Linha de produção industrial com trabalhador e equipamentos de precisão", "after": 0 },
-        { "src": "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Engenheiro inspecionando equipamento industrial com EPI", "after": 1 },
-        { "src": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Vista aérea de complexo industrial e logístico", "after": 2 },
-        { "src": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Colaborador especializado operando maquinário de precisão", "after": 3 }
+        {
+          "src": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Linha de produção industrial com trabalhador e equipamentos de precisão",
+          "after": 0
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Engenheiro inspecionando equipamento industrial com EPI",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Vista aérea de complexo industrial e logístico",
+          "after": 2
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Colaborador especializado operando maquinário de precisão",
+          "after": 3
+        }
       ]
     },
     {
@@ -3043,10 +3123,26 @@
         "Solicite um orçamento personalizado e veja exatamente o que entra na sessão certa para o seu projeto."
       ],
       "images": [
-        { "src": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Câmera profissional com lentes e equipamentos em estúdio", "after": 0 },
-        { "src": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Fotógrafo entregando portfolio impresso ao cliente", "after": 1 },
-        { "src": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Fotógrafo ajustando iluminação em set corporativo", "after": 2 },
-        { "src": "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600", "alt": "Portfolio de fotografias corporativas profissionais impressas", "after": 3 }
+        {
+          "src": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Câmera profissional com lentes e equipamentos em estúdio",
+          "after": 0
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Fotógrafo entregando portfolio impresso ao cliente",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Fotógrafo ajustando iluminação em set corporativo",
+          "after": 2
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600",
+          "alt": "Portfolio de fotografias corporativas profissionais impressas",
+          "after": 3
+        }
       ]
     },
     {
@@ -4863,6 +4959,240 @@
         "Ambos os processos, posicionamento e reposicionamento, requer etapas a serem seguidas, como explorar sua comunicação visual (a escolha dos seus trajes e acessórios, cores das roupas etc.), verbal (tom de voz, expressões etc.) e linguagem corporal (poses, postura etc.).",
         "Agora que você já a diferença entre posicionamento e reposicionamento de imagem, que tal atualizar suas fotos profissionais e aproveitar para colocar em prática estas estratégias? Clique para solicitar um agendamento de sessão fotográfica.",
         "Alexandre Machado, o Ale Fotografo, e fotografo profissional e corporativo em Sao Paulo com mais de 30 anos de experiencia em retratos profissionais, fotografia corporativa, eventos corporativos e video para empresas."
+      ]
+    },
+    {
+      "slug": "retratos-executivos-linkedin-guia-definitivo",
+      "title": "Retratos executivos para LinkedIn: guia definitivo",
+      "date": "10 de junho de 2026",
+      "description": "Como produzir um retrato executivo que comunica autoridade, confiança e contemporaneidade no LinkedIn — da pose à iluminação ao tratamento final.",
+      "seo_title": "Retrato Executivo para LinkedIn: Guia Completo | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "No LinkedIn, sua foto de perfil é a primeira reunião. Antes de qualquer e-mail, antes do primeiro ‘bom dia’, um decisor abre seu perfil e, em frações de segundo, decide se você parece competente, acessível e no comando. Para um C-level, uma diretora jurídica ou um sócio de consultoria, um retrato executivo bem feito não é vaidade — é leitura de mercado.",
+        "Um retrato profissional resolve três percepções simultâneas: solidez (a empresa é séria), proximidade (dá para confiar nessa pessoa) e liderança (esse é alguém que entende do assunto). Isso encurta o ciclo de vendas, melhora a qualidade do lead e ainda atrai talentos que avaliam o perfil dos líderes antes de aceitar uma proposta.",
+        "Tecnicamente, o que separa o retrato amador do executivo são quatro variáveis: iluminação direcional e suave (que esculpe o rosto sem endurecer), direção de pose (postura, ângulo do ombro, queixo levemente projetado), enquadramento padronizado para a moldura circular do LinkedIn e tratamento de pele realista — nunca o filtro plástico que envelhece a imagem em seis meses.",
+        "O ensaio funciona melhor quando combinado a um vídeo curto de posicionamento — e é exatamente nesse ponto que faz sentido olhar também para o lado do vídeo corporativo, no projeto irmão videoscorporativos.com.br. Foto e vídeo, gravados no mesmo dia, abastecem meses de presença coerente em todos os canais."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop",
+          "alt": "Retrato executivo feminino em ambiente corporativo",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop",
+          "alt": "Executivo apresentando em sala de reunião",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "retrato-corporativo-percepacao-negocio",
+      "title": "Retrato corporativo: como a foto certa transforma a percepção do negócio",
+      "date": "09 de junho de 2026",
+      "description": "Por que diretores e C-levels de empresas de médio e grande porte precisam de um retrato corporativo atualizado — e o que muda nas decisões quando a foto é profissional.",
+      "seo_title": "Retrato Corporativo: a Foto que Muda a Percepção | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1648474484044-bb82df2f5a1f?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "Existe um detalhe que separa o perfil de um diretor que inspira confiança do perfil de um diretor que passa despercebido: a foto. Para um C-level de empresa de médio ou grande porte, uma selfie ou uma imagem desatualizada enfraquece a autoridade exatamente onde ela mais importa — diante de investidores, conselhos, clientes estratégicos e talentos.",
+        "Um retrato corporativo profissional não é um luxo: é um ativo de imagem que vive por anos no LinkedIn, no site institucional, em releases, apresentações de vendas e materiais de RI. Calculado por uso, é um dos investimentos de comunicação com maior retorno por real aplicado.",
+        "O processo começa antes da câmera: alinhamento de dress code, escolha de fundo (neutro elegante ou ambiente real da empresa), direção de pose pensada para cada cargo. Um sócio de escritório de advocacia precisa de uma leitura diferente da que serve a uma CMO de tecnologia — e a fotografia tem que respeitar isso.",
+        "Quando o retrato é combinado a um vídeo de posicionamento, o impacto multiplica. Por isso vale conhecer o trabalho complementar em videoscorporativos.com.br: foto e vídeo do mesmo executivo, no mesmo dia, falando a mesma língua visual."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop",
+          "alt": "Executiva em retrato corporativo profissional",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop",
+          "alt": "Retrato de CEO em ambiente corporativo",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "fotografia-medica-clinicas-hospitais",
+      "title": "Fotografia médica para clínicas e hospitais: ética, autoridade e confiança",
+      "date": "08 de junho de 2026",
+      "description": "Como produzir fotos de médicos, equipes e ambientes clínicos respeitando as diretrizes do CFM e construindo a autoridade que faz o paciente marcar a primeira consulta.",
+      "seo_title": "Fotografia Médica para Clínicas e Hospitais | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "O médico vive um paradoxo: precisa ser conhecido para atrair pacientes, mas opera sob regras rígidas de publicidade do Conselho Federal de Medicina. A fotografia profissional, feita com critério, é o caminho ético para construir autoridade sem cruzar nenhuma linha — porque autoridade não é propaganda.",
+        "Um ensaio bem planejado entrega três peças essenciais: o retrato profissional do médico (sério, acolhedor, atual), fotos reais do consultório ou da clínica (ambiente comunica cuidado) e imagens da equipe em atendimento humanizado. Esse conjunto faz o paciente chegar à primeira consulta já confiando.",
+        "A direção visual respeita o tom da medicina: luz natural valorizada, paleta sóbria, sem dramatização. Fundos limpos, equipamentos visíveis quando agregam autoridade técnica, e sempre o cuidado de não expor pacientes nem prometer resultado. Imagem ética é imagem que dura.",
+        "Para clínicas que também produzem conteúdo em vídeo — vídeos educativos, tour institucional, depoimentos de equipe — o projeto videoscorporativos.com.br trabalha o mesmo briefing em movimento, mantendo a coerência visual entre os dois formatos."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?w=800&q=80&auto=format&fit=crop",
+          "alt": "Médico com expressão acolhedora em retrato profissional",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop",
+          "alt": "Atendimento humanizado em consultório",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "fotografia-cultura-organizacional",
+      "title": "Fotografia de cultura organizacional: como mostrar quem sua empresa realmente é",
+      "date": "07 de junho de 2026",
+      "description": "Ensaios fotográficos de cultura interna ajudam a atrair talentos certos, fortalecer employer branding e dar veracidade à comunicação institucional.",
+      "seo_title": "Fotografia de Cultura Organizacional e Employer Branding | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "Toda empresa diz ter ‘pessoas no centro’. Poucas conseguem provar isso visualmente. Fotografia de cultura organizacional é o trabalho de mostrar, com imagens reais, como é trabalhar ali — e esse material é o que diferencia uma página de carreiras genérica de uma marca empregadora que atrai os profissionais certos.",
+        "O ensaio não é encenação. É observação direcionada: reuniões reais, conversas no café, mentoria entre áreas, ritual de comemoração, equipe operacional em campo. O fotógrafo entra como observador discreto e captura a verdade do ambiente, sem transformar todo mundo em modelo de banco de imagens.",
+        "O resultado abastece página de carreiras, posts de cultura no LinkedIn, materiais de onboarding, relatórios de sustentabilidade e ESG, e a comunicação interna que mostra o time para o próprio time. Em médio prazo, reduz custo de recrutamento e melhora retenção.",
+        "Quando o projeto inclui vídeo de cultura — entrevistas curtas com colaboradores, bastidores em movimento — o complemento natural é videoscorporativos.com.br, que trabalha o mesmo briefing visual para a peça em vídeo."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80&auto=format&fit=crop",
+          "alt": "Equipe em reunião colaborativa",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80&auto=format&fit=crop",
+          "alt": "Time corporativo engajado em conversa",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "retratos-corporativos-advogados-contadores",
+      "title": "Retratos corporativos para advogados e contadores: autoridade que abre portas",
+      "date": "06 de junho de 2026",
+      "description": "Como sócios de escritórios jurídicos e contábeis devem se posicionar visualmente no LinkedIn, site institucional e materiais de captação de clientes.",
+      "seo_title": "Retratos Corporativos para Advogados e Contadores | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "Em mercados regulados como o jurídico e o contábil, a propaganda direta é restrita — mas a imagem do profissional não é. Um retrato corporativo bem feito é uma das formas mais eficientes (e éticas) de comunicar competência, senioridade e confiabilidade ao cliente que pesquisa antes de marcar a primeira reunião.",
+        "O retrato de um sócio de escritório precisa ler ‘gravidade’: postura, dress code formal, luz que esculpe sem suavizar demais, fundo neutro ou ambiente que reforce autoridade (sala de reuniões, biblioteca, fachada do escritório). Cada detalhe importa porque o cliente final está, sem perceber, calculando risco.",
+        "Para escritórios com vários sócios, o ensaio deve seguir um padrão visual: mesma iluminação, mesmo enquadramento, mesmo tratamento. Isso constrói uma página ‘Time’ coesa, que comunica solidez institucional — algo que retratos avulsos, tirados em momentos diferentes, nunca conseguem.",
+        "Para escritórios que também querem produzir vídeos curtos de posicionamento por sócio (formato que vem ganhando tração no LinkedIn jurídico), o projeto videoscorporativos.com.br entrega o mesmo padrão visual em movimento."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80&auto=format&fit=crop",
+          "alt": "Advogado em escritório jurídico",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format&fit=crop",
+          "alt": "Equipe de advogados em reunião",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "como-escolher-fotografo-corporativo",
+      "title": "Como escolher um fotógrafo corporativo: checklist para gestores de marketing",
+      "date": "05 de junho de 2026",
+      "description": "Sete critérios objetivos para contratar um fotógrafo corporativo em São Paulo sem se decepcionar com o resultado, o prazo ou o uso das imagens.",
+      "seo_title": "Como Escolher um Fotógrafo Corporativo: Checklist | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1554048612-b6a482b224b8?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "Contratar fotografia corporativa parece simples até o briefing começar a falhar. Cada projeto — retratos de liderança, evento, banco de imagens institucional, fotos industriais — pede competências diferentes. Um fotógrafo de casamento, por mais talentoso, dificilmente domina iluminação industrial. O primeiro critério é especialização real, comprovada em portfólio do mesmo segmento.",
+        "Outros critérios objetivos: experiência com empresas do seu porte (logística de agenda muda), entrega no formato que o time de marketing usa (LinkedIn, site, RI, mídia paga), prazo de entrega contratualizado, cessão de direitos clara para uso institucional, e capacidade de dirigir executivos que não estão acostumados à câmera.",
+        "Peça referências do mesmo setor, cliente recente, e veja o material bruto entregue — não só o portfólio editado. Um bom fotógrafo corporativo entrega uma seleção curada, com critério, e não centenas de arquivos para o cliente escolher. Isso é parte do serviço.",
+        "Se o seu projeto envolve foto e vídeo (cada vez mais comum em comunicação executiva), considere fornecedores que dominem os dois ou que trabalhem em parceria estreita. O videoscorporativos.com.br atua justamente nesse complemento, mantendo direção visual coerente entre os formatos."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop",
+          "alt": "Direção de pose em ensaio corporativo",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format&fit=crop",
+          "alt": "Executivos em reunião corporativa",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "banco-de-imagens-corporativo",
+      "title": "Banco de imagens corporativo: por que sua empresa precisa do próprio",
+      "date": "04 de junho de 2026",
+      "description": "Construir um banco de imagens próprio reduz custo de comunicação, melhora a coerência visual e elimina a dependência de fotos genéricas de stock.",
+      "seo_title": "Banco de Imagens Corporativo Próprio | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "Toda empresa que comunica com frequência — site, redes, vendas, RH, RI, ESG, eventos — chega a um ponto em que comprar imagem de stock fica caro, repetitivo e descolado da realidade. A solução é construir um banco de imagens próprio: um ensaio planejado que abastece a comunicação por 12 a 24 meses.",
+        "Um bom briefing de banco mapeia personas (quem precisa aparecer), cenários (escritório, operação, cliente), formatos de uso (horizontal, vertical, quadrado, com espaço para texto) e o tom da marca. O ensaio acontece em um ou dois dias e entrega centenas de imagens utilizáveis, catalogadas por tema.",
+        "O ROI vem rápido: menos compra avulsa de stock, menos retrabalho de design (porque a imagem certa já existe), mais coerência visual em todos os canais, e uma identidade que ninguém mais tem — porque é literalmente da sua empresa, com gente sua, no seu ambiente.",
+        "Para times de marketing que também precisam de conteúdo em vídeo no mesmo escopo (vídeos curtos para social, depoimentos, b-roll institucional), vale combinar foto e vídeo no mesmo planejamento — é o que o videoscorporativos.com.br faz em parceria com o ensaio fotográfico."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?w=800&q=80&auto=format&fit=crop",
+          "alt": "Profissionais em ambiente corporativo",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&q=80&auto=format&fit=crop",
+          "alt": "Sala de reunião corporativa",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "fotografia-produto-corporativo-lancamento",
+      "title": "Fotografia de produto para lançamento corporativo: como vender antes do release",
+      "date": "03 de junho de 2026",
+      "description": "Em B2B e em produtos premium, a imagem do lançamento define a percepção de valor. Veja o que muda entre uma foto técnica e uma foto de campanha.",
+      "seo_title": "Fotografia de Produto para Lançamento Corporativo | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "O lançamento de um produto corporativo — equipamento industrial, linha premium, solução B2B, software com hardware — começa pela imagem. Antes do release técnico chegar à imprensa, antes do time comercial bater à porta do cliente, é a fotografia que abre a conversa. Uma imagem fraca não fecha negócio; uma imagem certa antecipa o ‘sim’.",
+        "A fotografia de produto corporativa trabalha em duas frentes: a foto técnica (fundo neutro, ângulos padronizados, ficha visual para catálogo e e-commerce B2B) e a foto de campanha (produto em contexto, iluminação dramática quando necessária, narrativa visual para topo de funil). As duas se complementam — e raramente saem do mesmo set sem planejamento.",
+        "O briefing precisa contemplar: usos previstos (site, mídia paga, feira, apresentação comercial, catálogo impresso), formato dos canais, paleta da marca, e o nível de pós-produção esperado. Renderizações, composições e tratamento avançado entram no escopo quando o material exige.",
+        "Para campanhas que combinam foto e vídeo (cada vez mais o padrão em lançamentos relevantes), o videoscorporativos.com.br trabalha o mesmo briefing em formato audiovisual, mantendo iluminação, paleta e direção de arte alinhadas com a foto."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80&auto=format&fit=crop",
+          "alt": "Produto corporativo em set fotográfico",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&q=80&auto=format&fit=crop",
+          "alt": "Iluminação profissional em fotografia de produto",
+          "after": 2
+        }
+      ]
+    },
+    {
+      "slug": "quanto-custa-sessao-fotos-corporativas",
+      "title": "Quanto custa uma sessão de fotos corporativas? Entenda a formação do preço",
+      "date": "02 de junho de 2026",
+      "description": "Faixas de preço, o que influencia o orçamento de fotografia corporativa em São Paulo e como evitar comparar propostas desiguais.",
+      "seo_title": "Quanto Custa uma Sessão de Fotos Corporativas | Alê Fotógrafo",
+      "cover": "https://images.unsplash.com/photo-1554048612-b6a482b224b8?w=1600&q=80&auto=format&fit=crop",
+      "body": [
+        "A pergunta ‘quanto custa uma sessão corporativa’ não tem resposta única porque o escopo varia muito. Um retrato individual de executivo, um ensaio de equipe com 20 colaboradores, fotos de evento de dia inteiro e a construção de um banco institucional são projetos diferentes — e cobrar todos pela mesma diária é o primeiro sinal de que a proposta foi feita sem critério.",
+        "A formação do preço considera: tempo de captação, tamanho da equipe (fotógrafo, assistente, produção), equipamento (iluminação, lentes específicas, drone), pós-produção (seleção, tratamento, retoque), entrega (quantidade de imagens finais, formatos) e a licença de uso (institucional, mídia paga, prazo).",
+        "Comparar orçamentos exige listar esses itens lado a lado. Uma proposta 40% mais barata pode estar entregando metade das imagens finais, sem retoque profissional, com cessão limitada — ou simplesmente sem assistente, o que reduz a qualidade da iluminação. Preço só faz sentido com escopo equivalente.",
+        "Para projetos que combinam foto e vídeo (formato que costuma reduzir custo total por sinergia de equipe e equipamento), vale solicitar orçamentos integrados — e o videoscorporativos.com.br trabalha exatamente nesse modelo de combinação, geralmente no mesmo dia de captação."
+      ],
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop",
+          "alt": "Direção de ensaio corporativo profissional",
+          "after": 1
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&auto=format&fit=crop",
+          "alt": "Equipamento profissional de fotografia",
+          "after": 2
+        }
       ]
     }
   ]

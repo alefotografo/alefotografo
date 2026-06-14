@@ -129,6 +129,34 @@ function Contato() {
               </li>
             </ul>
           </div>
+
+          <div className="overflow-hidden rounded-sm border border-border bg-surface">
+            <img
+              src="https://staticmap.openstreetmap.de/?center=-23.5952265,-46.6885604&zoom=16&size=600x400&markers=-23.5952265,-46.6885604,lightblue1"
+              alt="Mapa mostrando a localização em Vila Olímpia, São Paulo"
+              width={600}
+              height={400}
+              className="w-full object-cover"
+              loading="lazy"
+            />
+            <div className="space-y-3 p-6">
+              <p className="text-sm text-muted-foreground">
+                R. Gomes de Carvalho, 1629<br />
+                Vila Olímpia, São Paulo — SP<br />
+                CEP 04547-006
+              </p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=R.+Gomes+de+Carvalho,+1629+-+Vila+Ol%C3%ADmpia,+S%C3%A3o+Paulo+-+SP,+04547-006"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow"
+              >
+                <MapPin size={16} />
+                Abrir no Google Maps
+              </a>
+            </div>
+          </div>
+
           <div className="rounded-sm border border-border bg-gradient-to-br from-surface to-background p-6">
             <h2 className="font-display text-lg font-semibold">Horário de atendimento</h2>
             <p className="mt-3 text-sm text-muted-foreground">

@@ -4,6 +4,47 @@ import { buildMeta } from "@/lib/seo";
 import { site } from "@/data/catalog";
 import { Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react";
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Alê Fotógrafo — Alexandre Machado",
+  "description": "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
+  "url": "https://alefotografos.com.br",
+  "telephone": "+55-11-91355-0533",
+  "email": "contato@alefotografo.com.br",
+  "image": "https://alefotografos.com.br/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Gomes de Carvalho, 1629",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "04547-006",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-23.5952265",
+    "longitude": "-46.6885604"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/alefotografo",
+    "https://www.linkedin.com/in/alexandremachadofotografo"
+  ],
+  "priceRange": "R$",
+  "areaServed": {
+    "@type": "City",
+    "name": "São Paulo"
+  }
+};
+
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: buildMeta({
@@ -12,6 +53,12 @@ export const Route = createFileRoute("/contato")({
       path: "/contato",
     }),
     links: [{ rel: "canonical", href: "https://alefotografos.com.br/contato" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(localBusinessSchema),
+      },
+    ],
   }),
   component: Contato,
 });

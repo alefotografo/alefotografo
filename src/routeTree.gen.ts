@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
+import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -33,6 +35,16 @@ const SobreRoute = SobreRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapVideosDotxmlRoute = SitemapVideosDotxmlRouteImport.update({
+  id: '/sitemap-videos.xml',
+  path: '/sitemap-videos.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
+  id: '/sitemap-index.xml',
+  path: '/sitemap-index.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -109,6 +121,8 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
+  '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -126,6 +140,8 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
+  '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -144,6 +160,8 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
+  '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -163,6 +181,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/sitemap-index.xml'
+    | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
@@ -180,6 +200,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/sitemap-index.xml'
+    | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
@@ -197,6 +219,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/sitemap-index.xml'
+    | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
@@ -215,6 +239,8 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
+  SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
+  SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -242,6 +268,20 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-videos.xml': {
+      id: '/sitemap-videos.xml'
+      path: '/sitemap-videos.xml'
+      fullPath: '/sitemap-videos.xml'
+      preLoaderRoute: typeof SitemapVideosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-index.xml': {
+      id: '/sitemap-index.xml'
+      path: '/sitemap-index.xml'
+      fullPath: '/sitemap-index.xml'
+      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -343,6 +383,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
+  SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
+  SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   BlogSlugRoute: BlogSlugRoute,

@@ -15,7 +15,7 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
 import { site } from "../data/catalog";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_WIDTH, DEFAULT_OG_IMAGE_HEIGHT } from "../lib/seo";
+
 
 function NotFoundComponent() {
   return (
@@ -86,21 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
       { name: "twitter:site", content: "@alefotografo" },
-      { title: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
-      { property: "og:title", content: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
-      { name: "twitter:title", content: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
-      { name: "description", content: site.description },
-      { property: "og:description", content: site.description },
-      { name: "twitter:description", content: site.description },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: DEFAULT_OG_IMAGE },
-      { property: "og:image:secure_url", content: DEFAULT_OG_IMAGE },
-      { property: "og:image:type", content: "image/jpeg" },
-      { property: "og:image:width", content: String(DEFAULT_OG_IMAGE_WIDTH) },
-      { property: "og:image:height", content: String(DEFAULT_OG_IMAGE_HEIGHT) },
-      { property: "og:image:alt", content: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
-      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
-      { name: "twitter:image:alt", content: "Alê Fotógrafo — Fotografia Corporativa em São Paulo" },
+      { title: site.name },
+      { name: "description", content: "Fotografia e vídeo corporativo em São Paulo." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

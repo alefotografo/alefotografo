@@ -14,8 +14,9 @@ const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo | Alê Fotógrafo",
-      description: site.description,
+      title: "Fotógrafo Corporativo em São Paulo",
+      description:
+        "Retratos executivos, eventos e vídeo corporativo em São Paulo com Alê Fotógrafo. Atendimento ágil, entrega rápida e padrão editorial para empresas.",
       path: "/",
     }),
     links: [

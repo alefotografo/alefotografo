@@ -24,7 +24,8 @@ export function buildMeta({
   image?: string;
   type?: "website" | "article";
 }) {
-  const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
+  const withBrand = `${title} | ${site.name}`;
+  const fullTitle = title.includes(site.name) || withBrand.length > 60 ? title : withBrand;
   const absoluteUrl = toAbsolute(path);
   const absoluteImage = toAbsolute(image ?? DEFAULT_OG_IMAGE);
   const meta: Array<{ title?: string; name?: string; property?: string; content?: string }> = [

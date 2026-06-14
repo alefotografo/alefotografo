@@ -113,8 +113,17 @@ export const categories: Category[] = data.cats.map(cleanItem).sort((a, b) => {
 });
 // Ordem oficial dos vídeos conforme alefotografo.com.br/videos-para-empresas
 const VIDEO_ORDER: string[] = [
+  "11-forum-abradilan-2026",
+  "fiorde-logistica-solucoes-logisticas-integradas-para-empresas",
+  "nitriflex-industria-quimica-de-polimeros-especiais-e-borrachas-nitrilicas",
+  "ativa-log",
+  "video-manifesto-empreendimento-estrutura-e-proposito",
+  "curso-de-prestacao-de-contas-eleitorais-2026-com-professora-rita-producao-ale-fotografo",
+  "ibde-rio2026",
   "9faznegocios",
   "video-institucional-bmx-logistica",
+  "22-forum-de-comprasive-university",
+  "onemba",
   "ativa-logistica-unidade-barueri",
   "video-institucional-rocha-queiroz-advogados",
   "sq-quimica-unidade-vinhedo",

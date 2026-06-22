@@ -24,6 +24,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo-corporativo.$slug'
+import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 
@@ -104,6 +105,11 @@ const FotografoCorporativoSlugRoute =
     path: '/fotografo-corporativo/$slug',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogRssDotxmlRoute = BlogRssDotxmlRouteImport.update({
+  id: '/blog/rss.xml',
+  path: '/blog/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
@@ -165,6 +173,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
+    | '/blog/rss.xml'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
+    | '/blog/rss.xml'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
+    | '/blog/rss.xml'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   FotografoCorporativoSlugRoute: typeof FotografoCorporativoSlugRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   VideosSlugRoute: typeof VideosSlugRoute
@@ -361,6 +374,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FotografoCorporativoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/rss.xml': {
+      id: '/blog/rss.xml'
+      path: '/blog/rss.xml'
+      fullPath: '/blog/rss.xml'
+      preLoaderRoute: typeof BlogRssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -388,6 +408,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   BlogSlugRoute: BlogSlugRoute,
+  BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   FotografoCorporativoSlugRoute: FotografoCorporativoSlugRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,
   VideosSlugRoute: VideosSlugRoute,
@@ -401,13 +422,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

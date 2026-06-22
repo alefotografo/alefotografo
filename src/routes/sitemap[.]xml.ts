@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { categories, videos, posts } from "@/data/catalog";
+import { postDateISO } from "@/lib/postDate";
 
 // Base URL do site publicado. Atualize se mudar o domínio final.
 const BASE_URL = "https://alefotografos.com.br";
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...categories.map((c) => ({ path: `/fotografo-corporativo/categoria/${c.slug}`, changefreq: "monthly" as const, priority: "0.5" })),
           ...categories.map((c) => ({ path: `/portfolio/${c.slug}`, changefreq: "monthly" as const, priority: "0.5" })),
           ...videos.map((v) => ({ path: `/videos/${v.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
-          ...posts.map((p) => ({ path: `/blog/${p.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
+          ...posts.map((p) => ({ path: `/blog/${p.slug}`, lastmod: postDateISO(p.date), changefreq: "monthly" as const, priority: "0.7" })),
         ];
 
         const urls = entries.map((e) =>

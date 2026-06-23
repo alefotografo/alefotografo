@@ -179,7 +179,7 @@ function Contato() {
 
           <div className="overflow-hidden rounded-sm border border-border bg-surface">
             <img
-              src="https://staticmap.openstreetmap.de/?center=-23.5952265,-46.6885604&zoom=16&size=600x400&markers=-23.5952265,-46.6885604,lightblue1"
+              src="/api/public/staticmap?center=-23.5952265,-46.6885604&zoom=16&size=600x400&markers=color:0xff6a00%7C-23.5952265,-46.6885604"
               alt="Mapa mostrando a localização em Vila Olímpia, São Paulo"
               width={600}
               height={400}

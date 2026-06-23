@@ -178,13 +178,15 @@ function Contato() {
           </div>
 
           <div className="overflow-hidden rounded-sm border border-border bg-surface">
-            <img
-              src="/api/public/staticmap?center=-23.5952265,-46.6885604&zoom=16&size=600x400&markers=color:0xff6a00%7C-23.5952265,-46.6885604"
-              alt="Mapa mostrando a localização em Vila Olímpia, São Paulo"
+            <iframe
+              title="Mapa mostrando a localização em Vila Olímpia, São Paulo"
+              src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY}&q=R.+Gomes+de+Carvalho,+1629+-+Vila+Olimpia,+Sao+Paulo+-+SP&zoom=16`}
               width={600}
-              height={400}
-              className="w-full object-cover"
+              height={320}
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block h-[320px] w-full border-0"
+              allowFullScreen
             />
             <div className="space-y-3 p-6">
               <p className="text-sm text-muted-foreground">

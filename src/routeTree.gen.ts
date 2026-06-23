@@ -27,7 +27,6 @@ import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
-import { Route as ApiPublicStaticmapRouteImport } from './routes/api/public/staticmap'
 
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
@@ -122,11 +121,6 @@ const FotografoCorporativoCategoriaSlugRoute =
     path: '/fotografo-corporativo/categoria/$slug',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
-  id: '/api/public/staticmap',
-  path: '/api/public/staticmap',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -146,7 +140,6 @@ export interface FileRoutesByFullPath {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
-  '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRoutesByTo {
@@ -167,7 +160,6 @@ export interface FileRoutesByTo {
   '/fotografo-corporativo': typeof FotografoCorporativoIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
-  '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRoutesById {
@@ -189,7 +181,6 @@ export interface FileRoutesById {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
-  '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRouteTypes {
@@ -212,7 +203,6 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
-    | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -233,7 +223,6 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo'
     | '/portfolio'
     | '/videos'
-    | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   id:
     | '__root__'
@@ -254,7 +243,6 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
-    | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -276,7 +264,6 @@ export interface RootRouteChildren {
   FotografoCorporativoIndexRoute: typeof FotografoCorporativoIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   VideosIndexRoute: typeof VideosIndexRoute
-  ApiPublicStaticmapRoute: typeof ApiPublicStaticmapRoute
   FotografoCorporativoCategoriaSlugRoute: typeof FotografoCorporativoCategoriaSlugRoute
 }
 
@@ -408,13 +395,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FotografoCorporativoCategoriaSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/staticmap': {
-      id: '/api/public/staticmap'
-      path: '/api/public/staticmap'
-      fullPath: '/api/public/staticmap'
-      preLoaderRoute: typeof ApiPublicStaticmapRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -436,7 +416,6 @@ const rootRouteChildren: RootRouteChildren = {
   FotografoCorporativoIndexRoute: FotografoCorporativoIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   VideosIndexRoute: VideosIndexRoute,
-  ApiPublicStaticmapRoute: ApiPublicStaticmapRoute,
   FotografoCorporativoCategoriaSlugRoute:
     FotografoCorporativoCategoriaSlugRoute,
 }

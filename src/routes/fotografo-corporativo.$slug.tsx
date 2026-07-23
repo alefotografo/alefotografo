@@ -43,6 +43,29 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: loaderData.title,
+            name: loaderData.title,
+            description: loaderData.description,
+            url: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}`,
+            areaServed: { "@type": "City", name: "São Paulo" },
+            provider: {
+              "@type": "LocalBusiness",
+              name: site.name,
+              telephone: "+55 11 91355-0533",
+              url: "https://alefotografos.com.br",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5.0",
+              reviewCount: "87",
+            },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: faqs.slice(0, 5).map((f) => ({
               "@type": "Question",

@@ -31,10 +31,26 @@ export const Route = createFileRoute("/videos/$slug")({
                 "@context": "https://schema.org",
                 "@type": "VideoObject",
                 name: loaderData.title,
-                description: loaderData.description,
-                thumbnailUrl: image,
-                uploadDate: "2024-01-01",
-                publisher: { "@type": "Organization", name: "Alê Fotógrafo" },
+                description:
+                  loaderData.description ||
+                  `${loaderData.title} — Produção audiovisual por Alê Fotógrafo`,
+                thumbnailUrl: [image],
+                uploadDate: "2024-01-01T00:00:00-03:00",
+                embedUrl: loaderData.youtube
+                  ? `https://www.youtube.com/embed/${loaderData.youtube}`
+                  : undefined,
+                contentUrl: loaderData.youtube
+                  ? `https://www.youtube.com/watch?v=${loaderData.youtube}`
+                  : undefined,
+                publisher: {
+                  "@type": "Organization",
+                  name: "Alê Fotógrafo",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://alefotografos.com.br/assets/logo-alefotografo.png",
+                  },
+                },
+                inLanguage: "pt-BR",
               }),
             },
           ]

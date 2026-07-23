@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:site", content: "@alefotografo" },
       { title: site.name },
-      { name: "description", content: "Fotografia e vídeo corporativo em São Paulo." },
+      { name: "description", content: "Alexandre Machado, o Alê Fotógrafo: 30 anos de fotografia e vídeo corporativo em São Paulo — retratos executivos, eventos, produto e institucional." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

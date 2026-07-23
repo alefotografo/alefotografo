@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:site", content: "@alefotografo" },
       { title: site.name },
-      { name: "description", content: "Fotografia e vídeo corporativo em São Paulo." },
+      { name: "description", content: "Alexandre Machado, o Alê Fotógrafo: 30 anos de fotografia e vídeo corporativo em São Paulo — retratos executivos, eventos, produto e institucional." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description: site.description,
           image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
           url: "https://alefotografos.com.br",
-          telephone: "+5511",
+          telephone: "+55-11-91355-0533",
           address: {
             "@type": "PostalAddress",
             addressLocality: "São Paulo",

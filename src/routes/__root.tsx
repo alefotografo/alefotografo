@@ -21,20 +21,44 @@ function NotFoundComponent() {
   return (
     <>
       <Header />
-      <main className="flex min-h-[60vh] items-center justify-center bg-background px-4">
-        <div className="max-w-md text-center">
-          <p className="font-display text-sm uppercase tracking-[0.3em] text-ember">404</p>
-          <h1 className="mt-4 font-display text-4xl font-semibold">Página não encontrada</h1>
-          <p className="mt-3 text-sm text-muted-foreground">
-            O conteúdo que você procura foi movido ou nunca existiu.
-          </p>
-          <Link
-            to="/"
-            className="mt-6 inline-flex rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
-          >
-            Voltar para o início
-          </Link>
-        </div>
+      <main className="mx-auto flex min-h-[60vh] max-w-3xl flex-col items-center justify-center px-5 py-20 text-center md:px-8">
+        <p className="font-display text-sm uppercase tracking-[0.3em] text-ember">404</p>
+        <h1 className="mt-4 font-display text-4xl font-semibold md:text-5xl">Página não encontrada</h1>
+        <p className="mt-3 max-w-md text-sm text-muted-foreground">
+          O conteúdo que você procura foi movido ou nunca existiu. Talvez alguma destas páginas ajude:
+        </p>
+        <ul className="mt-8 grid w-full gap-3 sm:grid-cols-2">
+          <li>
+            <Link to="/fotografo-corporativo" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+              <span className="text-xs uppercase tracking-wider text-ember">Fotos</span>
+              <p className="mt-1 font-display font-semibold">Galeria por segmento</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+              <span className="text-xs uppercase tracking-wider text-ember">Blog</span>
+              <p className="mt-1 font-display font-semibold">Artigos sobre fotografia</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/quem-e-o-ale" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+              <span className="text-xs uppercase tracking-wider text-ember">Sobre</span>
+              <p className="mt-1 font-display font-semibold">Quem é o Alê</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/contato" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+              <span className="text-xs uppercase tracking-wider text-ember">Contato</span>
+              <p className="mt-1 font-display font-semibold">Solicitar orçamento</p>
+            </Link>
+          </li>
+        </ul>
+        <Link
+          to="/"
+          className="mt-10 inline-flex rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+        >
+          Voltar para o início
+        </Link>
       </main>
       <Footer />
     </>
@@ -91,6 +115,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "alternate", hrefLang: "pt-BR", href: "https://alefotografos.com.br" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://alefotografos.com.br" },
       { rel: "preconnect", href: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com", crossOrigin: "anonymous" },
       { rel: "dns-prefetch", href: "https://i.ytimg.com" },
       { rel: "dns-prefetch", href: "https://www.youtube-nocookie.com" },

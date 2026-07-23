@@ -4,6 +4,8 @@ import { buildMeta } from "@/lib/seo";
 import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { FaqList } from "@/components/site/Faq";
+import { faqs } from "@/lib/faqs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";

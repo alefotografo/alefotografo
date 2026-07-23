@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import { site, categories } from "@/data/catalog";
+import { bairros } from "@/data/bairros";
 import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 // Curadoria de capas (8 destaques) para a faixa "Siga no Instagram" do rodapé.
@@ -117,6 +118,27 @@ export function Footer() {
           </ul>
         </div>
       </div>
+
+      <div className="border-t border-border/60">
+        <div className="mx-auto max-w-7xl px-5 py-8 md:px-8">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            Fotógrafo corporativo em São Paulo — atendemos
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {bairros.map((b) => (
+              <Link
+                key={b.slug}
+                to="/fotografo-corporativo-em/$bairro"
+                params={{ bairro: b.slug }}
+                className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-ember hover:text-ember"
+              >
+                {b.nome}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:px-8">

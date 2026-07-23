@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { categories, videos, posts } from "@/data/catalog";
+import { bairros } from "@/data/bairros";
 import { postDateISO } from "@/lib/postDate";
 
 // Base URL do site publicado. Atualize se mudar o domínio final.
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/faq", changefreq: "monthly", priority: "0.8" },
           { path: "/contato", changefreq: "monthly", priority: "0.8" },
           ...categories.map((c) => ({ path: `/fotografo-corporativo/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
+          ...bairros.map((b) => ({ path: `/fotografo-corporativo-em/${b.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
           ...categories.map((c) => ({ path: `/fotografo-corporativo/categoria/${c.slug}`, changefreq: "monthly" as const, priority: "0.5" })),
           ...categories.map((c) => ({ path: `/portfolio/${c.slug}`, changefreq: "monthly" as const, priority: "0.5" })),
           ...videos.map((v) => ({ path: `/videos/${v.slug}`, changefreq: "monthly" as const, priority: "0.7" })),

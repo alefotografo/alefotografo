@@ -25,6 +25,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo-corporativo.$slug'
+import { Route as FotografoCorporativoEmBairroRouteImport } from './routes/fotografo-corporativo-em.$bairro'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
@@ -112,6 +113,12 @@ const FotografoCorporativoSlugRoute =
     path: '/fotografo-corporativo/$slug',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FotografoCorporativoEmBairroRoute =
+  FotografoCorporativoEmBairroRouteImport.update({
+    id: '/fotografo-corporativo-em/$bairro',
+    path: '/fotografo-corporativo-em/$bairro',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogRssDotxmlRoute = BlogRssDotxmlRouteImport.update({
   id: '/blog/rss.xml',
   path: '/blog/rss.xml',
@@ -146,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
+  '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
@@ -168,6 +176,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
+  '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
@@ -191,6 +200,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
+  '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/blog/$slug'
     | '/blog/rss.xml'
+    | '/fotografo-corporativo-em/$bairro'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
@@ -237,6 +248,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/blog/$slug'
     | '/blog/rss.xml'
+    | '/fotografo-corporativo-em/$bairro'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
@@ -259,6 +271,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/blog/$slug'
     | '/blog/rss.xml'
+    | '/fotografo-corporativo-em/$bairro'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
     | '/videos/$slug'
@@ -282,6 +295,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
+  FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
   FotografoCorporativoSlugRoute: typeof FotografoCorporativoSlugRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   VideosSlugRoute: typeof VideosSlugRoute
@@ -407,6 +421,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FotografoCorporativoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fotografo-corporativo-em/$bairro': {
+      id: '/fotografo-corporativo-em/$bairro'
+      path: '/fotografo-corporativo-em/$bairro'
+      fullPath: '/fotografo-corporativo-em/$bairro'
+      preLoaderRoute: typeof FotografoCorporativoEmBairroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/rss.xml': {
       id: '/blog/rss.xml'
       path: '/blog/rss.xml'
@@ -450,6 +471,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
+  FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,
   FotografoCorporativoSlugRoute: FotografoCorporativoSlugRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,
   VideosSlugRoute: VideosSlugRoute,

@@ -97,7 +97,7 @@ function BairroPage() {
           O que produzimos na {b.nome}
         </h2>
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
-          {b.destaques.map((d) => (
+          {b.destaques.map((d: string) => (
             <li key={d} className="flex gap-3 rounded-sm border border-border bg-surface p-5">
               <Check className="mt-1 shrink-0 text-ember" size={18} />
               <span className="text-muted-foreground">{d}</span>
@@ -130,7 +130,7 @@ function BairroPage() {
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8">
           <p className="text-xs uppercase tracking-wider text-muted-foreground">Também atendemos</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {b.landmarks.map((l) => (
+            {b.landmarks.map((l: string) => (
               <span key={l} className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground">
                 {l}
               </span>

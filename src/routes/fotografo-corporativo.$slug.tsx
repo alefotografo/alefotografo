@@ -109,6 +109,21 @@ function CategoryPage() {
         />
       </section>
 
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
+          <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
+            Perguntas frequentes sobre {cat.title.toLowerCase()}
+          </h2>
+          <FaqList items={faqs.slice(0, 5)} />
+          <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
+            Ver todas as perguntas →
+          </Link>
+        </div>
+      </section>
+
+
+
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-4 px-5 py-12 md:grid-cols-2 md:px-8">

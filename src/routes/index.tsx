@@ -153,6 +153,8 @@ function Home() {
               <img
                 src="https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG"
                 alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
+                width={800}
+                height={1000}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover"

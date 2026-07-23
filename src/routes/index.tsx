@@ -73,6 +73,8 @@ function Home() {
           <img
             src={heroImg}
             alt={hero ? `Fotografia corporativa — ${hero.title}` : "Fotografia corporativa em São Paulo"}
+            width={1920}
+            height={1280}
             loading="eager"
             fetchPriority="high"
             decoding="async"

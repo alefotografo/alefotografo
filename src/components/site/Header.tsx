@@ -8,7 +8,7 @@ const nav = [
   { to: "/fotografo-corporativo", label: "Fotos" },
   { to: "/videos", label: "Vídeos" },
   { to: "/blog", label: "Blog" },
-  { to: "/sobre", label: "Sobre" },
+  { to: "/quem-e-o-ale", label: "Quem é o Alê" },
   { to: "/depoimentos", label: "Depoimentos" },
   { to: "/faq", label: "FAQ" },
   { to: "/contato", label: "Contato" },

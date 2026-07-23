@@ -4,6 +4,8 @@ import { buildMeta } from "@/lib/seo";
 import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { FaqList } from "@/components/site/Faq";
+import { faqs } from "@/lib/faqs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -33,8 +35,20 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             name: loaderData.title,
             description: loaderData.description,
             url: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}`,
-            author: { "@type": "Person", name: "Alexandre Machado" },
+            author: { "@type": "Person", name: "Alexandre Machado", url: "https://alefotografos.com.br/quem-e-o-ale" },
             image: loaderData.images.slice(0, 8),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.slice(0, 5).map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
           }),
         },
       ],
@@ -106,6 +120,21 @@ function CategoryPage() {
           title={`Mais sobre ${cat.title.toLowerCase()}`}
         />
       </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
+          <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
+            Perguntas frequentes sobre {cat.title.toLowerCase()}
+          </h2>
+          <FaqList items={faqs.slice(0, 5)} />
+          <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
+            Ver todas as perguntas →
+          </Link>
+        </div>
+      </section>
+
+
 
 
       <section className="border-t border-border bg-surface">

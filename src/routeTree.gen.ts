@@ -13,6 +13,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
+import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -47,6 +48,11 @@ const SitemapVideosDotxmlRoute = SitemapVideosDotxmlRouteImport.update({
 const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
   id: '/sitemap-index.xml',
   path: '/sitemap-index.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemEOAleRoute = QuemEOAleRouteImport.update({
+  id: '/quem-e-o-ale',
+  path: '/quem-e-o-ale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -154,6 +161,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -176,6 +184,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/quem-e-o-ale'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
@@ -220,6 +230,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/quem-e-o-ale'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
@@ -241,6 +252,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/quem-e-o-ale'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
@@ -263,6 +275,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
+  QuemEOAleRoute: typeof QuemEOAleRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -308,6 +321,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap-index.xml'
       fullPath: '/sitemap-index.xml'
       preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-e-o-ale': {
+      id: '/quem-e-o-ale'
+      path: '/quem-e-o-ale'
+      fullPath: '/quem-e-o-ale'
+      preLoaderRoute: typeof QuemEOAleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -423,6 +443,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
+  QuemEOAleRoute: QuemEOAleRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

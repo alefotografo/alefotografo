@@ -35,8 +35,20 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             name: loaderData.title,
             description: loaderData.description,
             url: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}`,
-            author: { "@type": "Person", name: "Alexandre Machado" },
+            author: { "@type": "Person", name: "Alexandre Machado", url: "https://alefotografos.com.br/quem-e-o-ale" },
             image: loaderData.images.slice(0, 8),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.slice(0, 5).map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
           }),
         },
       ],

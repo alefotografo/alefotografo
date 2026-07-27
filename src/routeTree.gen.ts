@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -35,6 +37,15 @@ import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -132,9 +143,9 @@ const VideosSlugRoute = VideosSlugRouteImport.update({
 } as any)
 const AuthenticatedAdminIndexacaoRoute =
   AuthenticatedAdminIndexacaoRouteImport.update({
-    id: '/_authenticated/admin/indexacao',
+    id: '/admin/indexacao',
     path: '/admin/indexacao',
-    getParentRoute: () => rootRouteImport,
+    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
   id: '/api/public/staticmap',
@@ -150,6 +161,7 @@ const FotografoCorporativoCategoriaSlugRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
@@ -174,6 +186,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
@@ -199,6 +212,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
@@ -225,6 +240,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
     | '/contato'
     | '/depoimentos'
     | '/faq'
@@ -249,6 +265,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/auth'
     | '/contato'
     | '/depoimentos'
     | '/faq'
@@ -273,6 +290,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
+    | '/auth'
     | '/contato'
     | '/depoimentos'
     | '/faq'
@@ -298,6 +317,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
@@ -316,7 +337,6 @@ export interface RootRouteChildren {
   FotografoCorporativoIndexRoute: typeof FotografoCorporativoIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   VideosIndexRoute: typeof VideosIndexRoute
-  AuthenticatedAdminIndexacaoRoute: typeof AuthenticatedAdminIndexacaoRoute
   ApiPublicStaticmapRoute: typeof ApiPublicStaticmapRoute
   FotografoCorporativoCategoriaSlugRoute: typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -328,6 +348,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -461,7 +495,7 @@ declare module '@tanstack/react-router' {
       path: '/admin/indexacao'
       fullPath: '/admin/indexacao'
       preLoaderRoute: typeof AuthenticatedAdminIndexacaoRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/api/public/staticmap': {
       id: '/api/public/staticmap'
@@ -480,8 +514,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminIndexacaoRoute: typeof AuthenticatedAdminIndexacaoRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminIndexacaoRoute: AuthenticatedAdminIndexacaoRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
@@ -500,7 +547,6 @@ const rootRouteChildren: RootRouteChildren = {
   FotografoCorporativoIndexRoute: FotografoCorporativoIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   VideosIndexRoute: VideosIndexRoute,
-  AuthenticatedAdminIndexacaoRoute: AuthenticatedAdminIndexacaoRoute,
   ApiPublicStaticmapRoute: ApiPublicStaticmapRoute,
   FotografoCorporativoCategoriaSlugRoute:
     FotografoCorporativoCategoriaSlugRoute,

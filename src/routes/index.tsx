@@ -90,10 +90,12 @@ function Home() {
               30 anos · São Paulo
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance md:text-7xl">
-              Fotografia e vídeo que <span className="gradient-text-ember">posicionam sua marca</span> com autoridade.
+              Fotógrafo corporativo em São Paulo que{" "}
+              <span className="gradient-text-ember">posiciona sua marca</span> com autoridade.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg text-pretty">
-              Retratos corporativos, fotografia para empresas, cobertura de eventos e vídeo institucional em São Paulo e Brasil.
+              <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">Fotos corporativas</Link>,{" "}
+              <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">foto profissional para LinkedIn</Link>, cobertura de eventos e vídeo institucional em São Paulo.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link

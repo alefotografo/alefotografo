@@ -97,9 +97,10 @@ export function Footer() {
             Serviços
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Fotografia corporativa</Link></li>
+            <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotos corporativas</Link></li>
+            <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto profissional para LinkedIn</Link></li>
             <li><Link to="/videos" className="hover:text-foreground">Vídeo institucional</Link></li>
-            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Retratos profissionais</Link></li>
+            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Portfólio corporativo</Link></li>
             <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Cobertura de eventos</Link></li>
           </ul>
         </div>

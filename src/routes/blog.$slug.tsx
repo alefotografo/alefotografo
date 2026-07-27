@@ -103,9 +103,13 @@ function PostPage() {
         <Link to="/blog" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft size={14} /> Voltar ao blog
         </Link>
-        {p.date && (
-          <time className="text-xs uppercase tracking-[0.2em] text-ember">{p.date}</time>
-        )}
+        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-ember">
+          {p.date && <time dateTime={toISODate(p.date)}>{p.date}</time>}
+          <span className="text-muted-foreground">
+            {Math.max(1, Math.round(p.body.join(" ").split(/\s+/).length / 200))} min de leitura
+          </span>
+        </div>
+
         <h1 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">{p.title}</h1>
         {p.description && (
           <p className="mt-6 text-lg text-muted-foreground text-pretty">

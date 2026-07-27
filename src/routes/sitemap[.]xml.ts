@@ -30,8 +30,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/contato", changefreq: "monthly", priority: "0.8" },
           ...categories.map((c) => ({ path: `/fotografo-corporativo/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
           ...bairros.map((b) => ({ path: `/fotografo-corporativo-em/${b.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
-          ...categories.map((c) => ({ path: `/fotografo-corporativo/categoria/${c.slug}`, changefreq: "monthly" as const, priority: "0.5" })),
-          ...categories.map((c) => ({ path: `/portfolio/${c.slug}`, changefreq: "monthly" as const, priority: "0.5" })),
+          // URLs alias (/portfolio/:slug e /fotografo-corporativo/categoria/:slug)
+          // apontam para /fotografo-corporativo/:slug via canonical/redirect.
+          // Não devem entrar no sitemap: geram "Página com redirecionamento" no GSC.
           ...videos.map((v) => ({ path: `/videos/${v.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
           ...posts.map((p) => ({ path: `/blog/${p.slug}`, lastmod: postDateISO(p.date), changefreq: "monthly" as const, priority: "0.7" })),
         ];

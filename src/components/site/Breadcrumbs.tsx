@@ -1,5 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Fragment } from "react";
+import { SITE_ORIGIN } from "@/lib/seo";
+
+const absolute = (to: string) =>
+  /^https?:\/\//i.test(to) ? to : `${SITE_ORIGIN}${to.startsWith("/") ? "" : "/"}${to}`;
 
 export interface Crumb {
   label: string;
@@ -14,7 +18,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: c.label,
-      ...(c.to ? { item: c.to } : {}),
+      ...(c.to ? { item: absolute(c.to) } : {}),
     })),
   };
 

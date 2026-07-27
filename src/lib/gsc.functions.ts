@@ -52,40 +52,51 @@ export const getIndexingReport = createServerFn({ method: "GET" })
       const entries = sites.siteEntry ?? [];
       if (!entries.length) return { ok: false, error: "Nenhuma propriedade verificada na conta conectada.", rows: [] };
 
-      const siteUrl =
-        entries.find((e) => e.siteUrl.includes(PREFERRED_HOST) && !e.siteUrl.includes("www."))?.siteUrl ??
-        entries.find((e) => e.siteUrl.includes(PREFERRED_HOST))?.siteUrl ??
-        entries[0].siteUrl;
+      const score = (u: string) => {
+        let s = 0;
+        if (u.includes(PREFERRED_HOST)) s += 10;
+        if (u.startsWith("https://")) s += 4; // prefixo de URL costuma ter permissão
+        if (!u.includes("//www.")) s += 2;
+        return s;
+      };
+      const candidates = [...entries.map((e) => e.siteUrl)].sort((a, b) => score(b) - score(a));
 
       const range = { start: daysAgo(data.days + 2), end: daysAgo(2) };
+      let lastError = "";
 
-      const res = await fetch(
-        `${GATEWAY}/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`,
-        {
-          method: "POST",
-          headers: h,
-          body: JSON.stringify({
-            startDate: range.start,
-            endDate: range.end,
-            dimensions: ["page"],
-            rowLimit: 5000,
-          }),
-        },
-      );
-      if (!res.ok) {
-        return { ok: false, error: `Search Console (${res.status}): ${await res.text()}`, rows: [], siteUrl };
+      for (const siteUrl of candidates) {
+        const res = await fetch(
+          `${GATEWAY}/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`,
+          {
+            method: "POST",
+            headers: h,
+            body: JSON.stringify({
+              startDate: range.start,
+              endDate: range.end,
+              dimensions: ["page"],
+              rowLimit: 5000,
+            }),
+          },
+        );
+        if (!res.ok) {
+          lastError = `Search Console (${res.status}) em ${siteUrl}: ${await res.text()}`;
+          continue; // sem permissão nessa propriedade — tenta a próxima
+        }
+        const json = (await res.json()) as {
+          rows?: { keys: string[]; clicks: number; impressions: number; ctr: number; position: number }[];
+        };
+        const rows: GscRow[] = (json.rows ?? []).map((r) => ({
+          page: r.keys[0],
+          clicks: r.clicks ?? 0,
+          impressions: r.impressions ?? 0,
+          ctr: r.ctr ?? 0,
+          position: r.position ?? 0,
+        }));
+        return { ok: true, siteUrl, range, rows };
       }
-      const json = (await res.json()) as {
-        rows?: { keys: string[]; clicks: number; impressions: number; ctr: number; position: number }[];
-      };
-      const rows: GscRow[] = (json.rows ?? []).map((r) => ({
-        page: r.keys[0],
-        clicks: r.clicks ?? 0,
-        impressions: r.impressions ?? 0,
-        ctr: r.ctr ?? 0,
-        position: r.position ?? 0,
-      }));
-      return { ok: true, siteUrl, range, rows };
+
+      return { ok: false, error: lastError || "Nenhuma propriedade acessível.", rows: [] };
+
     } catch (e) {
       return { ok: false, error: e instanceof Error ? e.message : "Erro desconhecido", rows: [] };
     }

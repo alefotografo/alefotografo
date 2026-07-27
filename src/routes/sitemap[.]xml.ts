@@ -20,6 +20,8 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/fotografo-corporativo", changefreq: "weekly", priority: "0.9" },
+          { path: "/fotos-corporativas", changefreq: "weekly", priority: "0.9" },
+          { path: "/foto-profissional-para-linkedin", changefreq: "weekly", priority: "0.9" },
           { path: "/portfolio", changefreq: "weekly", priority: "0.8" },
           { path: "/videos", changefreq: "weekly", priority: "0.9" },
           { path: "/blog", changefreq: "weekly", priority: "0.9" },

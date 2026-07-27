@@ -9,62 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
-import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
-import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as DepoimentosRouteImport } from './routes/depoimentos'
-import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as VideosIndexRouteImport } from './routes/videos.index'
-import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
-import { Route as FotografoCorporativoIndexRouteImport } from './routes/fotografo-corporativo.index'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
-import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
-import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo-corporativo.$slug'
-import { Route as FotografoCorporativoEmBairroRouteImport } from './routes/fotografo-corporativo-em.$bairro'
-import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as DepoimentosRouteImport } from './routes/depoimentos'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
+import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
+import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AdminIndexacaoRouteImport } from './routes/admin.indexacao'
-import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
+import { Route as FotografoCorporativoEmBairroRouteImport } from './routes/fotografo-corporativo-em.$bairro'
+import { Route as FotografoCorporativoIndexRouteImport } from './routes/fotografo-corporativo.index'
+import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo-corporativo.$slug'
+import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
+import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as VideosIndexRouteImport } from './routes/videos.index'
+import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
 import { Route as ApiPublicStaticmapRouteImport } from './routes/api/public/staticmap'
+import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapVideosDotxmlRoute = SitemapVideosDotxmlRouteImport.update({
-  id: '/sitemap-videos.xml',
-  path: '/sitemap-videos.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
-  id: '/sitemap-index.xml',
-  path: '/sitemap-index.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QuemEOAleRoute = QuemEOAleRouteImport.update({
-  id: '/quem-e-o-ale',
-  path: '/quem-e-o-ale',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DepoimentosRoute = DepoimentosRouteImport.update({
-  id: '/depoimentos',
-  path: '/depoimentos',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -72,57 +42,49 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DepoimentosRoute = DepoimentosRouteImport.update({
+  id: '/depoimentos',
+  path: '/depoimentos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VideosIndexRoute = VideosIndexRouteImport.update({
-  id: '/videos/',
-  path: '/videos/',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
-  id: '/portfolio/',
-  path: '/portfolio/',
+const QuemEOAleRoute = QuemEOAleRouteImport.update({
+  id: '/quem-e-o-ale',
+  path: '/quem-e-o-ale',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FotografoCorporativoIndexRoute =
-  FotografoCorporativoIndexRouteImport.update({
-    id: '/fotografo-corporativo/',
-    path: '/fotografo-corporativo/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
+  id: '/sitemap-index.xml',
+  path: '/sitemap-index.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapVideosDotxmlRoute = SitemapVideosDotxmlRouteImport.update({
+  id: '/sitemap-videos.xml',
+  path: '/sitemap-videos.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexacaoRoute = AdminIndexacaoRouteImport.update({
+  id: '/admin/indexacao',
+  path: '/admin/indexacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VideosSlugRoute = VideosSlugRouteImport.update({
-  id: '/videos/$slug',
-  path: '/videos/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
-  id: '/portfolio/$slug',
-  path: '/portfolio/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FotografoCorporativoSlugRoute =
-  FotografoCorporativoSlugRouteImport.update({
-    id: '/fotografo-corporativo/$slug',
-    path: '/fotografo-corporativo/$slug',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const FotografoCorporativoEmBairroRoute =
-  FotografoCorporativoEmBairroRouteImport.update({
-    id: '/fotografo-corporativo-em/$bairro',
-    path: '/fotografo-corporativo-em/$bairro',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const BlogRssDotxmlRoute = BlogRssDotxmlRouteImport.update({
-  id: '/blog/rss.xml',
-  path: '/blog/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -130,9 +92,52 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminIndexacaoRoute = AdminIndexacaoRouteImport.update({
-  id: '/admin/indexacao',
-  path: '/admin/indexacao',
+const BlogRssDotxmlRoute = BlogRssDotxmlRouteImport.update({
+  id: '/blog/rss.xml',
+  path: '/blog/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotografoCorporativoEmBairroRoute =
+  FotografoCorporativoEmBairroRouteImport.update({
+    id: '/fotografo-corporativo-em/$bairro',
+    path: '/fotografo-corporativo-em/$bairro',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FotografoCorporativoIndexRoute =
+  FotografoCorporativoIndexRouteImport.update({
+    id: '/fotografo-corporativo/',
+    path: '/fotografo-corporativo/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FotografoCorporativoSlugRoute =
+  FotografoCorporativoSlugRouteImport.update({
+    id: '/fotografo-corporativo/$slug',
+    path: '/fotografo-corporativo/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: '/portfolio/',
+  path: '/portfolio/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
+  id: '/portfolio/$slug',
+  path: '/portfolio/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideosIndexRoute = VideosIndexRouteImport.update({
+  id: '/videos/',
+  path: '/videos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideosSlugRoute = VideosSlugRouteImport.update({
+  id: '/videos/$slug',
+  path: '/videos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
+  id: '/api/public/staticmap',
+  path: '/api/public/staticmap',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FotografoCorporativoCategoriaSlugRoute =
@@ -141,11 +146,6 @@ const FotografoCorporativoCategoriaSlugRoute =
     path: '/fotografo-corporativo/categoria/$slug',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
-  id: '/api/public/staticmap',
-  path: '/api/public/staticmap',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -322,53 +322,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-videos.xml': {
-      id: '/sitemap-videos.xml'
-      path: '/sitemap-videos.xml'
-      fullPath: '/sitemap-videos.xml'
-      preLoaderRoute: typeof SitemapVideosDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-index.xml': {
-      id: '/sitemap-index.xml'
-      path: '/sitemap-index.xml'
-      fullPath: '/sitemap-index.xml'
-      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quem-e-o-ale': {
-      id: '/quem-e-o-ale'
-      path: '/quem-e-o-ale'
-      fullPath: '/quem-e-o-ale'
-      preLoaderRoute: typeof QuemEOAleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/depoimentos': {
-      id: '/depoimentos'
-      path: '/depoimentos'
-      fullPath: '/depoimentos'
-      preLoaderRoute: typeof DepoimentosRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -378,81 +336,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/depoimentos': {
+      id: '/depoimentos'
+      path: '/depoimentos'
+      fullPath: '/depoimentos'
+      preLoaderRoute: typeof DepoimentosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/videos/': {
-      id: '/videos/'
-      path: '/videos'
-      fullPath: '/videos/'
-      preLoaderRoute: typeof VideosIndexRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio/': {
-      id: '/portfolio/'
-      path: '/portfolio'
-      fullPath: '/portfolio/'
-      preLoaderRoute: typeof PortfolioIndexRouteImport
+    '/quem-e-o-ale': {
+      id: '/quem-e-o-ale'
+      path: '/quem-e-o-ale'
+      fullPath: '/quem-e-o-ale'
+      preLoaderRoute: typeof QuemEOAleRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/fotografo-corporativo/': {
-      id: '/fotografo-corporativo/'
-      path: '/fotografo-corporativo'
-      fullPath: '/fotografo-corporativo/'
-      preLoaderRoute: typeof FotografoCorporativoIndexRouteImport
+    '/sitemap-index.xml': {
+      id: '/sitemap-index.xml'
+      path: '/sitemap-index.xml'
+      fullPath: '/sitemap-index.xml'
+      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
+    '/sitemap-videos.xml': {
+      id: '/sitemap-videos.xml'
+      path: '/sitemap-videos.xml'
+      fullPath: '/sitemap-videos.xml'
+      preLoaderRoute: typeof SitemapVideosDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/videos/$slug': {
-      id: '/videos/$slug'
-      path: '/videos/$slug'
-      fullPath: '/videos/$slug'
-      preLoaderRoute: typeof VideosSlugRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio/$slug': {
-      id: '/portfolio/$slug'
-      path: '/portfolio/$slug'
-      fullPath: '/portfolio/$slug'
-      preLoaderRoute: typeof PortfolioSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fotografo-corporativo/$slug': {
-      id: '/fotografo-corporativo/$slug'
-      path: '/fotografo-corporativo/$slug'
-      fullPath: '/fotografo-corporativo/$slug'
-      preLoaderRoute: typeof FotografoCorporativoSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fotografo-corporativo-em/$bairro': {
-      id: '/fotografo-corporativo-em/$bairro'
-      path: '/fotografo-corporativo-em/$bairro'
-      fullPath: '/fotografo-corporativo-em/$bairro'
-      preLoaderRoute: typeof FotografoCorporativoEmBairroRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/rss.xml': {
-      id: '/blog/rss.xml'
-      path: '/blog/rss.xml'
-      fullPath: '/blog/rss.xml'
-      preLoaderRoute: typeof BlogRssDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/indexacao': {
@@ -462,11 +392,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/fotografo-corporativo/categoria/$slug': {
-      id: '/fotografo-corporativo/categoria/$slug'
-      path: '/fotografo-corporativo/categoria/$slug'
-      fullPath: '/fotografo-corporativo/categoria/$slug'
-      preLoaderRoute: typeof FotografoCorporativoCategoriaSlugRouteImport
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/rss.xml': {
+      id: '/blog/rss.xml'
+      path: '/blog/rss.xml'
+      fullPath: '/blog/rss.xml'
+      preLoaderRoute: typeof BlogRssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-corporativo-em/$bairro': {
+      id: '/fotografo-corporativo-em/$bairro'
+      path: '/fotografo-corporativo-em/$bairro'
+      fullPath: '/fotografo-corporativo-em/$bairro'
+      preLoaderRoute: typeof FotografoCorporativoEmBairroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-corporativo/': {
+      id: '/fotografo-corporativo/'
+      path: '/fotografo-corporativo'
+      fullPath: '/fotografo-corporativo/'
+      preLoaderRoute: typeof FotografoCorporativoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-corporativo/$slug': {
+      id: '/fotografo-corporativo/$slug'
+      path: '/fotografo-corporativo/$slug'
+      fullPath: '/fotografo-corporativo/$slug'
+      preLoaderRoute: typeof FotografoCorporativoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/': {
+      id: '/portfolio/'
+      path: '/portfolio'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/$slug': {
+      id: '/portfolio/$slug'
+      path: '/portfolio/$slug'
+      fullPath: '/portfolio/$slug'
+      preLoaderRoute: typeof PortfolioSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/videos/': {
+      id: '/videos/'
+      path: '/videos'
+      fullPath: '/videos/'
+      preLoaderRoute: typeof VideosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/videos/$slug': {
+      id: '/videos/$slug'
+      path: '/videos/$slug'
+      fullPath: '/videos/$slug'
+      preLoaderRoute: typeof VideosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/staticmap': {
@@ -474,6 +467,13 @@ declare module '@tanstack/react-router' {
       path: '/api/public/staticmap'
       fullPath: '/api/public/staticmap'
       preLoaderRoute: typeof ApiPublicStaticmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-corporativo/categoria/$slug': {
+      id: '/fotografo-corporativo/categoria/$slug'
+      path: '/fotografo-corporativo/categoria/$slug'
+      fullPath: '/fotografo-corporativo/categoria/$slug'
+      preLoaderRoute: typeof FotografoCorporativoCategoriaSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

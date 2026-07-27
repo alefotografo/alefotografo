@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -18,7 +20,6 @@ import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.
 import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as AdminIndexacaoRouteImport } from './routes/admin.indexacao'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
@@ -29,12 +30,22 @@ import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as VideosIndexRouteImport } from './routes/videos.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
+import { Route as AuthenticatedAdminIndexacaoRouteImport } from './routes/_authenticated/admin.indexacao'
 import { Route as ApiPublicStaticmapRouteImport } from './routes/api/public/staticmap'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -75,11 +86,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminIndexacaoRoute = AdminIndexacaoRouteImport.update({
-  id: '/admin/indexacao',
-  path: '/admin/indexacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -135,6 +141,12 @@ const VideosSlugRoute = VideosSlugRouteImport.update({
   path: '/videos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminIndexacaoRoute =
+  AuthenticatedAdminIndexacaoRouteImport.update({
+    id: '/admin/indexacao',
+    path: '/admin/indexacao',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
   id: '/api/public/staticmap',
   path: '/api/public/staticmap',
@@ -149,6 +161,7 @@ const FotografoCorporativoCategoriaSlugRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
@@ -157,7 +170,6 @@ export interface FileRoutesByFullPath {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -168,11 +180,13 @@ export interface FileRoutesByFullPath {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
@@ -181,7 +195,6 @@ export interface FileRoutesByTo {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -192,12 +205,15 @@ export interface FileRoutesByTo {
   '/fotografo-corporativo': typeof FotografoCorporativoIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
+  '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
@@ -206,7 +222,6 @@ export interface FileRoutesById {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -217,6 +232,7 @@ export interface FileRoutesById {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/_authenticated/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -224,6 +240,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
     | '/contato'
     | '/depoimentos'
     | '/faq'
@@ -232,7 +249,6 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -243,11 +259,13 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/admin/indexacao'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/auth'
     | '/contato'
     | '/depoimentos'
     | '/faq'
@@ -256,7 +274,6 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -267,11 +284,14 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo'
     | '/portfolio'
     | '/videos'
+    | '/admin/indexacao'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
+    | '/auth'
     | '/contato'
     | '/depoimentos'
     | '/faq'
@@ -280,7 +300,6 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -291,12 +310,15 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/_authenticated/admin/indexacao'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
@@ -305,7 +327,6 @@ export interface RootRouteChildren {
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
-  AdminIndexacaoRoute: typeof AdminIndexacaoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
@@ -327,6 +348,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -383,13 +418,6 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/indexacao': {
-      id: '/admin/indexacao'
-      path: '/admin/indexacao'
-      fullPath: '/admin/indexacao'
-      preLoaderRoute: typeof AdminIndexacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -462,6 +490,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VideosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/indexacao': {
+      id: '/_authenticated/admin/indexacao'
+      path: '/admin/indexacao'
+      fullPath: '/admin/indexacao'
+      preLoaderRoute: typeof AuthenticatedAdminIndexacaoRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/api/public/staticmap': {
       id: '/api/public/staticmap'
       path: '/api/public/staticmap'
@@ -479,8 +514,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminIndexacaoRoute: typeof AuthenticatedAdminIndexacaoRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminIndexacaoRoute: AuthenticatedAdminIndexacaoRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
@@ -489,7 +537,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
-  AdminIndexacaoRoute: AdminIndexacaoRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,

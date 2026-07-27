@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const PREFERRED_HOST = "alefotografos.com.br";
@@ -37,6 +38,7 @@ function daysAgo(n: number) {
 }
 
 export const getIndexingReport = createServerFn({ method: "GET" })
+  .middleware([requireSupabaseAuth])
   .inputValidator((data: { days?: number } | undefined) => ({
     days: Math.min(Math.max(data?.days ?? 28, 7), 180),
   }))

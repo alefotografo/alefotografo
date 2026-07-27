@@ -18,7 +18,6 @@ import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.
 import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as AdminIndexacaoRouteImport } from './routes/admin.indexacao'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
@@ -29,6 +28,7 @@ import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as VideosIndexRouteImport } from './routes/videos.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
+import { Route as AuthenticatedAdminIndexacaoRouteImport } from './routes/_authenticated/admin.indexacao'
 import { Route as ApiPublicStaticmapRouteImport } from './routes/api/public/staticmap'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 
@@ -75,11 +75,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminIndexacaoRoute = AdminIndexacaoRouteImport.update({
-  id: '/admin/indexacao',
-  path: '/admin/indexacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -135,6 +130,12 @@ const VideosSlugRoute = VideosSlugRouteImport.update({
   path: '/videos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminIndexacaoRoute =
+  AuthenticatedAdminIndexacaoRouteImport.update({
+    id: '/_authenticated/admin/indexacao',
+    path: '/admin/indexacao',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
   id: '/api/public/staticmap',
   path: '/api/public/staticmap',
@@ -157,7 +158,6 @@ export interface FileRoutesByFullPath {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -168,6 +168,7 @@ export interface FileRoutesByFullPath {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -181,7 +182,6 @@ export interface FileRoutesByTo {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -192,6 +192,7 @@ export interface FileRoutesByTo {
   '/fotografo-corporativo': typeof FotografoCorporativoIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
+  '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -206,7 +207,6 @@ export interface FileRoutesById {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -217,6 +217,7 @@ export interface FileRoutesById {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/_authenticated/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -232,7 +233,6 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -243,6 +243,7 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/admin/indexacao'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -256,7 +257,6 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -267,6 +267,7 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo'
     | '/portfolio'
     | '/videos'
+    | '/admin/indexacao'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   id:
@@ -280,7 +281,6 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -291,6 +291,7 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/_authenticated/admin/indexacao'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesById: FileRoutesById
@@ -305,7 +306,6 @@ export interface RootRouteChildren {
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
-  AdminIndexacaoRoute: typeof AdminIndexacaoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
@@ -316,6 +316,7 @@ export interface RootRouteChildren {
   FotografoCorporativoIndexRoute: typeof FotografoCorporativoIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   VideosIndexRoute: typeof VideosIndexRoute
+  AuthenticatedAdminIndexacaoRoute: typeof AuthenticatedAdminIndexacaoRoute
   ApiPublicStaticmapRoute: typeof ApiPublicStaticmapRoute
   FotografoCorporativoCategoriaSlugRoute: typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -383,13 +384,6 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/indexacao': {
-      id: '/admin/indexacao'
-      path: '/admin/indexacao'
-      fullPath: '/admin/indexacao'
-      preLoaderRoute: typeof AdminIndexacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -462,6 +456,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VideosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/indexacao': {
+      id: '/_authenticated/admin/indexacao'
+      path: '/admin/indexacao'
+      fullPath: '/admin/indexacao'
+      preLoaderRoute: typeof AuthenticatedAdminIndexacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/staticmap': {
       id: '/api/public/staticmap'
       path: '/api/public/staticmap'
@@ -489,7 +490,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
-  AdminIndexacaoRoute: AdminIndexacaoRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,
@@ -500,6 +500,7 @@ const rootRouteChildren: RootRouteChildren = {
   FotografoCorporativoIndexRoute: FotografoCorporativoIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   VideosIndexRoute: VideosIndexRoute,
+  AuthenticatedAdminIndexacaoRoute: AuthenticatedAdminIndexacaoRoute,
   ApiPublicStaticmapRoute: ApiPublicStaticmapRoute,
   FotografoCorporativoCategoriaSlugRoute:
     FotografoCorporativoCategoriaSlugRoute,

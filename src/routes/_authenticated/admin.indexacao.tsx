@@ -19,7 +19,7 @@ import { getBatches } from "@/lib/batches";
 import { SITE_ORIGIN } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/admin/indexacao")({
+export const Route = createFileRoute("/_authenticated/admin/indexacao")({
   head: () => ({
     meta: [
       { title: "Relatório de indexação por lote | Alê Fotógrafo" },

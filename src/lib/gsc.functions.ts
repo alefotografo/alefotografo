@@ -38,6 +38,7 @@ function daysAgo(n: number) {
 }
 
 export const getIndexingReport = createServerFn({ method: "GET" })
+  .middleware([requireSupabaseAuth])
   .inputValidator((data: { days?: number } | undefined) => ({
     days: Math.min(Math.max(data?.days ?? 28, 7), 180),
   }))

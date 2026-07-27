@@ -175,7 +175,7 @@ function IndexingReportPage() {
                   <XAxis dataKey="name" tick={{ fontSize: 11 }} />
                   <YAxis domain={[0, 100]} tick={{ fontSize: 11 }} />
                   <Tooltip formatter={(v: number) => `${v}%`} />
-                  <Bar dataKey="Cobertura" fill="var(--primary)" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="Cobertura" fill="oklch(0.68 0.18 38)" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -191,8 +191,8 @@ function IndexingReportPage() {
                   <YAxis tick={{ fontSize: 11 }} />
                   <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="Impressões" stroke="var(--primary)" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="Cliques" stroke="var(--muted-foreground)" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="Impressões" stroke="oklch(0.68 0.18 38)" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="Cliques" stroke="oklch(0.78 0 0)" strokeWidth={2} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </div>

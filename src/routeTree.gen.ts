@@ -28,6 +28,7 @@ import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo
 import { Route as FotografoCorporativoEmBairroRouteImport } from './routes/fotografo-corporativo-em.$bairro'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AdminIndexacaoRouteImport } from './routes/admin.indexacao'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 import { Route as ApiPublicStaticmapRouteImport } from './routes/api/public/staticmap'
 
@@ -129,6 +130,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexacaoRoute = AdminIndexacaoRouteImport.update({
+  id: '/admin/indexacao',
+  path: '/admin/indexacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FotografoCorporativoCategoriaSlugRoute =
   FotografoCorporativoCategoriaSlugRouteImport.update({
     id: '/fotografo-corporativo/categoria/$slug',
@@ -151,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -174,6 +181,7 @@ export interface FileRoutesByTo {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -198,6 +206,7 @@ export interface FileRoutesById {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/admin/indexacao': typeof AdminIndexacaoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -223,6 +232,7 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -246,6 +256,7 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -269,6 +280,7 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/admin/indexacao'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -293,6 +305,7 @@ export interface RootRouteChildren {
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  AdminIndexacaoRoute: typeof AdminIndexacaoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
@@ -442,6 +455,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/indexacao': {
+      id: '/admin/indexacao'
+      path: '/admin/indexacao'
+      fullPath: '/admin/indexacao'
+      preLoaderRoute: typeof AdminIndexacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fotografo-corporativo/categoria/$slug': {
       id: '/fotografo-corporativo/categoria/$slug'
       path: '/fotografo-corporativo/categoria/$slug'
@@ -469,6 +489,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  AdminIndexacaoRoute: AdminIndexacaoRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,

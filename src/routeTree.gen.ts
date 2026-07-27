@@ -15,6 +15,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FotoProfissionalParaLinkedinRouteImport } from './routes/foto-profissional-para-linkedin'
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
 import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
@@ -64,6 +65,12 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotoProfissionalParaLinkedinRoute =
+  FotoProfissionalParaLinkedinRouteImport.update({
+    id: '/foto-profissional-para-linkedin',
+    path: '/foto-profissional-para-linkedin',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FotosCorporativasRoute = FotosCorporativasRouteImport.update({
   id: '/fotos-corporativas',
   path: '/fotos-corporativas',
@@ -171,6 +178,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -197,6 +205,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -225,6 +234,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -253,6 +263,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/foto-profissional-para-linkedin'
     | '/fotos-corporativas'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
@@ -279,6 +290,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/foto-profissional-para-linkedin'
     | '/fotos-corporativas'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
@@ -306,6 +318,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/foto-profissional-para-linkedin'
     | '/fotos-corporativas'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
@@ -334,6 +347,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
+  FotoProfissionalParaLinkedinRoute: typeof FotoProfissionalParaLinkedinRoute
   FotosCorporativasRoute: typeof FotosCorporativasRoute
   QuemEOAleRoute: typeof QuemEOAleRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
@@ -396,6 +410,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/foto-profissional-para-linkedin': {
+      id: '/foto-profissional-para-linkedin'
+      path: '/foto-profissional-para-linkedin'
+      fullPath: '/foto-profissional-para-linkedin'
+      preLoaderRoute: typeof FotoProfissionalParaLinkedinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fotos-corporativas': {
@@ -552,6 +573,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
+  FotoProfissionalParaLinkedinRoute: FotoProfissionalParaLinkedinRoute,
   FotosCorporativasRoute: FotosCorporativasRoute,
   QuemEOAleRoute: QuemEOAleRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,

@@ -2,6 +2,8 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { resolveLegacyPath } from "./lib/legacy-redirects";
+
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -53,10 +55,28 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
+function redirectLegacy(request: Request): Response | undefined {
+  const url = new URL(request.url);
+  const target = resolveLegacyPath(url.pathname);
+  if (!target || target === url.pathname) return undefined;
+  url.pathname = target;
+  return new Response(null, {
+    status: 301,
+    headers: {
+      location: url.toString(),
+      "cache-control": "public, max-age=86400",
+    },
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const httpsRedirect = redirectHttps(request);
     if (httpsRedirect) return httpsRedirect;
+
+    const legacyRedirect = redirectLegacy(request);
+    if (legacyRedirect) return legacyRedirect;
+
 
     try {
       const handler = await getServerEntry();

@@ -53,7 +53,7 @@ export const Route = createFileRoute("/depoimentos")({
     meta: buildMeta({
       title: "Depoimentos de Clientes de Fotos Corporativas",
       description:
-        "O que dizem clientes que contrataram Alexandre Machado para fotografia e vídeo corporativo em São Paulo.",
+        "Depoimentos reais de empresas e executivos que contrataram Alê Fotógrafo para fotos corporativas, retratos e vídeo institucional em São Paulo.",
       path: "/depoimentos",
     }),
     links: [{ rel: "canonical", href: "https://alefotografos.com.br/depoimentos" }],

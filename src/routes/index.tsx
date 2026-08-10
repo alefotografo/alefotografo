@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
     meta: buildMeta({
       title: "Fotógrafo Corporativo em São Paulo",
       description:
-        "Retratos executivos, eventos e vídeo corporativo em São Paulo com Alê Fotógrafo. Atendimento ágil, entrega rápida e padrão editorial para empresas.",
+        "Fotos corporativas, retratos executivos e vídeo institucional em São Paulo. 30 anos de experiência, entrega em até 5 dias e orçamento no mesmo dia.",
       path: "/",
     }),
     links: [

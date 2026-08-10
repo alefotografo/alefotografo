@@ -5,8 +5,8 @@ import { buildMeta } from "@/lib/seo";
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotos — Fotógrafo Corporativo em São Paulo",
-      description: `Galeria de fotografia corporativa com ${categories.length} categorias: retratos profissionais, advocacia, médicos, eventos, indústria, arquitetura, gastronomia e mais.`,
+      title: "Portfólio de Fotografia Corporativa em São Paulo",
+      description: `Portfólio com ${categories.length} categorias de fotografia corporativa: retratos profissionais, advocacia, saúde, eventos, indústria, arquitetura e gastronomia.`,
       path: "/portfolio",
     }),
     links: [{ rel: "canonical", href: "https://alefotografos.com.br/portfolio" }],

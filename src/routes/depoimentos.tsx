@@ -51,7 +51,7 @@ const testimonials: Testimonial[] = [
 export const Route = createFileRoute("/depoimentos")({
   head: () => ({
     meta: buildMeta({
-      title: "Depoimentos de clientes — Alê Fotógrafo",
+      title: "Depoimentos de Clientes de Fotos Corporativas",
       description:
         "O que dizem clientes que contrataram Alexandre Machado para fotografia e vídeo corporativo em São Paulo.",
       path: "/depoimentos",

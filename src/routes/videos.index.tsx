@@ -15,8 +15,8 @@ const featuredFaqs = faqs.filter((f) =>
 export const Route = createFileRoute("/videos/")({
   head: () => ({
     meta: buildMeta({
-      title: "Vídeo Institucional, Eventos e Feiras Corporativas em SP",
-      description: `Produção de vídeo institucional, eventos corporativos e feiras de negócios. Roteiro, captação e edição com mais de 30 anos de bagagem.`,
+      title: "Vídeo Institucional para Empresas em São Paulo",
+      description: `Vídeo institucional, cobertura de eventos e feiras de negócios em São Paulo: roteiro, captação e edição. Veja ${videos.length} produções e peça seu orçamento.`,
       path: "/videos",
     }),
     links: [

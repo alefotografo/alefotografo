@@ -9,9 +9,9 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: buildMeta({
-      title: "FAQ — Fotografia e Vídeo Corporativo em SP",
+      title: "Dúvidas: Preço e Prazo de Fotos Corporativas",
       description:
-        "Dúvidas sobre fotografia corporativa, retratos executivos, vídeo institucional, prazos, preços, direitos de uso e drone em São Paulo.",
+        "Quanto custa, quanto tempo leva e como funciona uma sessão de fotos corporativas em São Paulo: preços, prazos, direitos de uso, equipe e drone.",
       path: "/faq",
     }),
     links: [{ rel: "canonical", href: "https://alefotografos.com.br/faq" }],

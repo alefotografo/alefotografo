@@ -18,13 +18,18 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
+    const seo = categorySeo[params.slug];
+    const fallbackDescription = loaderData.description
+      ? cleanDescription(loaderData.description)
+      : `${loaderData.title} em São Paulo — ${site.description}`;
     return {
       meta: buildMeta({
-        title: loaderData.title,
-        description: loaderData.description || `${loaderData.title} — ${site.description}`,
+        title: seo?.title ?? `${loaderData.title} em São Paulo`,
+        description: seo?.description ?? fallbackDescription,
         path: `/fotografo-corporativo/${params.slug}`,
         type: "article",
       }),
+
       links: [{ rel: "canonical", href: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}` }],
       scripts: [
         {

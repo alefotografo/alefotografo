@@ -1,0 +1,109 @@
+import { Link } from "@tanstack/react-router";
+import { waLink } from "@/lib/whatsapp";
+import { ArrowUpRight } from "lucide-react";
+
+type Service = {
+  title: string;
+  text: string;
+  cta: string;
+  wa: string;
+  see: string;
+  to?: "/foto-profissional" | "/fotos-corporativas" | "/foto-profissional-para-linkedin" | "/videos";
+  catSlug?: string;
+};
+
+const SERVICES: Service[] = [
+  {
+    title: "Retrato profissional",
+    text: "Fotos profissionais para LinkedIn, site, apresentações, imprensa e posicionamento executivo.",
+    cta: "Quero meu retrato profissional",
+    wa: "Olá Alexandre, quero fazer um retrato profissional. Pode me passar valores e disponibilidade?",
+    see: "Ver foto profissional",
+    to: "/foto-profissional",
+  },
+  {
+    title: "Fotografia corporativa para empresas",
+    text: "Fotos de equipe, diretoria, ambientes, processos e comunicação institucional.",
+    cta: "Solicitar orçamento para empresa",
+    wa: "Olá Alexandre, preciso de fotografia corporativa para minha empresa. Pode me enviar um orçamento?",
+    see: "Ver fotografia corporativa",
+    to: "/fotos-corporativas",
+  },
+  {
+    title: "Eventos corporativos",
+    text: "Cobertura fotográfica e audiovisual para congressos, palestras, convenções, lançamentos e encontros empresariais.",
+    cta: "Orçar cobertura de evento",
+    wa: "Olá Alexandre, gostaria de orçar a cobertura de um evento corporativo.",
+    see: "Ver cobertura de eventos",
+    catSlug: "fotografo-de-eventos-corporativos",
+  },
+  {
+    title: "Vídeo institucional",
+    text: "Vídeos para apresentar sua empresa, serviço, estrutura, equipe e diferenciais comerciais.",
+    cta: "Planejar meu vídeo institucional",
+    wa: "Olá Alexandre, quero planejar um vídeo institucional para minha empresa.",
+    see: "Ver vídeos institucionais",
+    to: "/videos",
+  },
+  {
+    title: "Foto para LinkedIn",
+    text: "Imagem profissional para aumentar confiança, autoridade e presença digital.",
+    cta: "Agendar foto para LinkedIn",
+    wa: "Olá Alexandre, quero agendar uma foto profissional para o meu LinkedIn.",
+    see: "Ver foto para LinkedIn",
+    to: "/foto-profissional-para-linkedin",
+  },
+];
+
+export function ServiceChooser() {
+  return (
+    <section className="border-b border-border bg-surface" aria-labelledby="escolha-servico">
+      <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
+        <h2 id="escolha-servico" className="font-display text-3xl font-semibold text-balance md:text-4xl">
+          Escolha o serviço ideal para sua empresa
+        </h2>
+        <p className="mt-4 max-w-2xl text-muted-foreground">
+          Cada objetivo pede um tipo de imagem. Selecione o serviço mais próximo da sua necessidade
+          e receba o orçamento direto pelo WhatsApp.
+        </p>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((s) => (
+            <article
+              key={s.title}
+              className="flex flex-col rounded-sm border border-border bg-background p-6 transition-colors hover:border-ember"
+            >
+              <h3 className="font-display text-lg font-semibold">{s.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+              <a
+                href={waLink(s.wa)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+              >
+                {s.cta}
+              </a>
+              {s.to ? (
+                <Link
+                  to={s.to}
+                  className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                >
+                  {s.see} <ArrowUpRight size={14} />
+                </Link>
+              ) : (
+                <Link
+                  to="/fotografo-corporativo/$slug"
+                  params={{ slug: s.catSlug as string }}
+                  className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                >
+                  {s.see} <ArrowUpRight size={14} />
+                </Link>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

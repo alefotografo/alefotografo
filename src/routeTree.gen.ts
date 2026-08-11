@@ -15,6 +15,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FotoProfissionalRouteImport } from './routes/foto-profissional'
 import { Route as FotoProfissionalParaLinkedinRouteImport } from './routes/foto-profissional-para-linkedin'
 import { Route as FotografiaParaClinicasRouteImport } from './routes/fotografia-para-clinicas'
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
@@ -64,6 +65,11 @@ const DepoimentosRoute = DepoimentosRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotoProfissionalRoute = FotoProfissionalRouteImport.update({
+  id: '/foto-profissional',
+  path: '/foto-profissional',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FotoProfissionalParaLinkedinRoute =
@@ -184,6 +190,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/foto-profissional': typeof FotoProfissionalRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
@@ -212,6 +219,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/foto-profissional': typeof FotoProfissionalRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
@@ -242,6 +250,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
+  '/foto-profissional': typeof FotoProfissionalRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
@@ -272,6 +281,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/foto-profissional'
     | '/foto-profissional-para-linkedin'
     | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
@@ -300,6 +310,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/foto-profissional'
     | '/foto-profissional-para-linkedin'
     | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
@@ -329,6 +340,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/depoimentos'
     | '/faq'
+    | '/foto-profissional'
     | '/foto-profissional-para-linkedin'
     | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
@@ -359,6 +371,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
+  FotoProfissionalRoute: typeof FotoProfissionalRoute
   FotoProfissionalParaLinkedinRoute: typeof FotoProfissionalParaLinkedinRoute
   FotografiaParaClinicasRoute: typeof FotografiaParaClinicasRoute
   FotosCorporativasRoute: typeof FotosCorporativasRoute
@@ -423,6 +436,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/foto-profissional': {
+      id: '/foto-profissional'
+      path: '/foto-profissional'
+      fullPath: '/foto-profissional'
+      preLoaderRoute: typeof FotoProfissionalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/foto-profissional-para-linkedin': {
@@ -593,6 +613,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
+  FotoProfissionalRoute: FotoProfissionalRoute,
   FotoProfissionalParaLinkedinRoute: FotoProfissionalParaLinkedinRoute,
   FotografiaParaClinicasRoute: FotografiaParaClinicasRoute,
   FotosCorporativasRoute: FotosCorporativasRoute,

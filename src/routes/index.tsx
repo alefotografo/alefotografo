@@ -1,11 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, posts, site, videos } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
-import { Camera, Video, Users, ArrowUpRight } from "lucide-react";
+import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
-import { faqs, faqJsonLd } from "@/lib/faqs";
+import { faqJsonLd } from "@/lib/faqs";
+import { faqsComerciais } from "@/lib/faqsComerciais";
+import { ServiceChooser } from "@/components/site/ServiceChooser";
+import { SegmentGrid } from "@/components/site/SegmentGrid";
+import { waLink } from "@/lib/whatsapp";
 
-const homeFaqs = faqs.slice(0, 6);
+const homeFaqs = faqsComerciais.slice(0, 6);
+
+import { googleReviews, googleReviewsSummary } from "@/data/reviews";
 
 const FALLBACK_HERO =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
@@ -14,9 +20,9 @@ const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo",
+      title: "Fotógrafo Corporativo em São Paulo | Foto Profissional",
       description:
-        "Fotos corporativas, retratos executivos e vídeo institucional em São Paulo. 30 anos de experiência, entrega em até 5 dias e orçamento no mesmo dia.",
+        "Fotografia corporativa, retratos profissionais, foto para LinkedIn, eventos empresariais e vídeo institucional em São Paulo. Orçamento com Alê Fotógrafo.",
       path: "/",
     }),
     links: [
@@ -89,29 +95,45 @@ function Home() {
             <p className="mb-5 text-xs font-medium uppercase tracking-[0.25em] text-ember">
               30 anos · São Paulo
             </p>
-            <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance md:text-7xl">
-              Fotógrafo corporativo em São Paulo que{" "}
-              <span className="gradient-text-ember">posiciona sua marca</span> com autoridade.
+            <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance md:text-6xl">
+              Fotografia corporativa em São Paulo para empresas, executivos e profissionais que
+              precisam <span className="gradient-text-ember">transmitir autoridade</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg text-pretty">
-              <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">Fotos corporativas</Link>,{" "}
-              <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">foto profissional para LinkedIn</Link>, cobertura de eventos e vídeo institucional em São Paulo.
+            <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg text-pretty">
+              <Link to="/foto-profissional" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">Retratos profissionais</Link>,{" "}
+              <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos para LinkedIn</Link>, cobertura de{" "}
+              <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">eventos corporativos</Link> e{" "}
+              <Link to="/videos" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">vídeos institucionais</Link> com direção, experiência e entrega profissional.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/contato"
+              <a
+                href={waLink(
+                  "Olá Alexandre, quero um orçamento de fotografia corporativa. Pode me ajudar?",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:bg-ember-glow"
               >
-                Solicitar orçamento
+                Solicitar orçamento no WhatsApp
                 <ArrowUpRight size={16} />
-              </Link>
+              </a>
               <Link
                 to="/fotografo-corporativo"
                 className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
               >
-                Ver fotos
+                Ver portfólio corporativo
+              </Link>
+              <Link
+                to="/foto-profissional"
+                className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
+              >
+                Agendar foto profissional
               </Link>
             </div>
+            <p className="mt-5 max-w-xl text-sm text-muted-foreground">
+              30+ anos de experiência · Atendimento em São Paulo · Empresas, médicos, advogados e
+              executivos
+            </p>
             <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-border pt-8 sm:gap-6">
               <div>
                 <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Experiência</dt>
@@ -130,22 +152,11 @@ function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto grid max-w-7xl gap-px overflow-hidden md:grid-cols-3">
-          {[
-            { icon: Camera, title: "Fotografia corporativa", desc: "Retratos profissionais, equipes, ambientes e produtos para fortalecer sua marca." },
-            { icon: Users, title: "Cobertura de eventos", desc: "Registros estratégicos para palestras, kick-offs, lançamentos e convenções." },
-            { icon: Video, title: "Vídeo institucional", desc: "Vídeos corporativos, depoimentos e conteúdo audiovisual para empresas." },
-          ].map((s) => (
-            <div key={s.title} className="bg-background p-8 md:p-10">
-              <s.icon className="text-ember" size={28} strokeWidth={1.5} />
-              <h2 className="mt-5 font-display text-xl font-semibold">{s.title}</h2>
-              <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Prioridade comercial — escolha do serviço */}
+      <ServiceChooser />
+
+      {/* Segmentos prioritários */}
+      <SegmentGrid />
 
       {/* Quem está por trás — retrato do Alê */}
       <section className="border-b border-border">
@@ -321,19 +332,66 @@ function Home() {
               Ver todos os depoimentos <ArrowUpRight size={14} />
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {[
-              { name: "Leandro Capolupo", role: "Gerente de Planejamento Financeiro", text: "Profissional super ágil, competente e focado na qualidade. O resultado foi ótimo." },
-              { name: "Maria Clara Cardoso", role: "Psicóloga e Palestrante", text: "Alexandre fez minhas fotos profissionais e o resultado foi incrível. Pontualidade, compromisso e amor ao trabalho marcam o profissional." },
-            ].map((t) => (
-              <figure key={t.name} className="rounded-sm border border-border bg-background p-7">
-                <blockquote className="text-base leading-relaxed text-foreground/90">"{t.text}"</blockquote>
+          <p className="mb-8 text-sm text-muted-foreground">
+            Nota {googleReviewsSummary.ratingValue.toLocaleString("pt-BR")} de 5 em{" "}
+            {googleReviewsSummary.reviewCount} avaliações no Google.{" "}
+            <a
+              href={googleReviewsSummary.profileUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-ember underline underline-offset-4"
+            >
+              Ver avaliações no Google
+            </a>
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {googleReviews.slice(0, 3).map((r) => (
+              <figure key={r.author} className="rounded-sm border border-border bg-background p-7">
+                <div className="flex items-center gap-1 text-ember" aria-label={`${r.rating} de 5 estrelas`}>
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <span key={i} aria-hidden="true">★</span>
+                  ))}
+                </div>
+                <blockquote className="mt-4 text-sm leading-relaxed text-foreground/90">
+                  “{r.text}”
+                </blockquote>
                 <figcaption className="mt-5 border-t border-border pt-4">
-                  <p className="font-display font-semibold">{t.name}</p>
-                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                  <p className="font-display font-semibold">{r.author}</p>
+                  <p className="text-sm text-muted-foreground">Avaliação no Google · {r.when}</p>
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="mt-14 border-t border-border pt-10">
+            <h3 className="font-display text-xl font-semibold md:text-2xl">
+              Empresas, profissionais e segmentos atendidos
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+              Produções realizadas para empresas de tecnologia, indústria, saúde, educação,
+              serviços financeiros, jurídico, varejo e para profissionais liberais em São Paulo.
+            </p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {[
+                "Executivos e diretoria",
+                "Advogados e escritórios",
+                "Médicos e clínicas",
+                "Indústria",
+                "Tecnologia",
+                "Educação",
+                "Arquitetura e interiores",
+                "Eventos corporativos",
+                "Palestrantes",
+                "Profissionais liberais",
+              ].map((s) => (
+                <li
+                  key={s}
+                  className="rounded-full border border-border bg-background px-4 py-2 text-xs text-muted-foreground"
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -360,15 +418,28 @@ function Home() {
               Pronto para fortalecer a imagem da sua empresa?
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Atendimento em toda Grande São Paulo. Entrega rápida e foco em resultado.
+              Atendimento em toda Grande São Paulo. Envie o briefing pelo WhatsApp e receba o
+              orçamento em até 24 horas úteis.
             </p>
           </div>
-          <Link
-            to="/contato"
-            className="inline-flex items-center gap-2 rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow"
-          >
-            Solicitar orçamento <ArrowUpRight size={16} />
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={waLink(
+                "Olá Alexandre, quero um orçamento de fotografia para a minha empresa.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow"
+            >
+              Solicitar orçamento no WhatsApp <ArrowUpRight size={16} />
+            </a>
+            <Link
+              to="/contato"
+              className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-7 py-4 font-medium hover:bg-surface"
+            >
+              Outras formas de contato
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -21,6 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/fotografo-corporativo", changefreq: "weekly", priority: "0.9" },
           { path: "/fotos-corporativas", changefreq: "weekly", priority: "0.9" },
+          { path: "/foto-profissional", changefreq: "weekly", priority: "0.9" },
           { path: "/foto-profissional-para-linkedin", changefreq: "weekly", priority: "0.9" },
           { path: "/fotografia-para-clinicas", changefreq: "weekly", priority: "0.9" },
           { path: "/portfolio", changefreq: "weekly", priority: "0.8" },

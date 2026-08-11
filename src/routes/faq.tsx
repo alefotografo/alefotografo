@@ -1,10 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMeta } from "@/lib/seo";
 import { faqs, faqJsonLd } from "@/lib/faqs";
+import { faqsComerciais } from "@/lib/faqsComerciais";
 import { FaqList } from "@/components/site/Faq";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { site } from "@/data/catalog";
+import { waLink } from "@/lib/whatsapp";
 import { ArrowUpRight } from "lucide-react";
+
+const allFaqs = [
+  ...faqsComerciais,
+  ...faqs.filter((f) => !faqsComerciais.some((c) => c.q === f.q)),
+];
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -18,7 +25,7 @@ export const Route = createFileRoute("/faq")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(faqs)),
+        children: JSON.stringify(faqJsonLd(allFaqs)),
       },
     ],
   }),
@@ -44,7 +51,25 @@ function FaqPage() {
       </section>
 
       <section className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
-        <FaqList items={faqs} />
+        <FaqList items={allFaqs} />
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a
+            href={waLink(
+              "Olá Alexandre, tenho uma dúvida e gostaria de um orçamento de fotografia.",
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+          >
+            Pedir orçamento pelo WhatsApp
+          </a>
+          <Link
+            to="/foto-profissional"
+            className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:bg-surface"
+          >
+            Ver foto profissional
+          </Link>
+        </div>
       </section>
 
       <section className="border-t border-border bg-surface">

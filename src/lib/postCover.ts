@@ -15,7 +15,7 @@ const HINTS: Array<[RegExp, string]> = [
 
 function coverFor(slug: string) {
   const c = categories.find((x) => x.slug === slug);
-  return c?.cover;
+  return c?.cover ?? undefined;
 }
 
 function stableIndex(seed: string, len: number) {
@@ -36,5 +36,5 @@ export function postCover(p: Pick<Post, "slug" | "title"> & { cover?: string }):
   }
   const withCovers = categories.filter((c) => c.cover);
   if (!withCovers.length) return undefined;
-  return withCovers[stableIndex(p.slug, withCovers.length)].cover;
+  return withCovers[stableIndex(p.slug, withCovers.length)].cover ?? undefined;
 }

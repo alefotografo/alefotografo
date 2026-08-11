@@ -3,7 +3,10 @@ import { categories, site } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
+import { Testimonials } from "@/components/site/Testimonials";
+import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import type { Faq } from "@/lib/faqs";
+
 
 const URL_PATH = "/fotografia-para-clinicas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -60,11 +63,14 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
               description: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
+              aggregateRating: aggregateRatingSchema,
+              review: reviewSchema,
               provider: {
                 "@type": "LocalBusiness",
                 name: site.name,
                 url: SITE_ORIGIN,
                 telephone: `+${site.whatsapp}`,
+                aggregateRating: aggregateRatingSchema,
                 address: {
                   "@type": "PostalAddress",
                   addressLocality: "São Paulo",
@@ -73,6 +79,7 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
                 },
               },
             },
+
             {
               "@type": "FAQPage",
               mainEntity: pageFaqs.map((f) => ({
@@ -130,6 +137,47 @@ const checklist = [
   "Colher autorização de uso de imagem da equipe e de eventuais pacientes.",
   "Listar os usos previstos (site, Google, redes, impresso) para definir formatos de entrega.",
 ];
+
+const segmentos = [
+  {
+    h: "Clínicas médicas e centros diagnósticos",
+    escopo: "Recepção, salas de consulta, equipamentos de diagnóstico e retratos da equipe médica.",
+    p: "Produção em blocos de horário para não interromper o atendimento, com retratos padronizados de todos os médicos no mesmo fundo e enquadramento.",
+    slug: "fotos-para-clinicas-medicas",
+  },
+  {
+    h: "Odontologia",
+    escopo: "Consultórios, cadeira odontológica, esterilização e retratos com jaleco.",
+    p: "Ênfase em limpeza visual, tecnologia e acolhimento — os três pontos que o paciente avalia antes de marcar a primeira consulta.",
+    slug: "ensaio-fotografico-para-dentistas",
+  },
+  {
+    h: "Estética e dermatologia",
+    escopo: "Ambientes, aparelhos, detalhes de procedimento e conteúdo para redes sociais.",
+    p: "Além das fotos institucionais, geramos um acervo vertical pensado para Instagram, anúncios e páginas de procedimento do site.",
+    slug: "retratos-de-medicas",
+  },
+  {
+    h: "Psicologia, nutrição e terapias",
+    escopo: "Consultório, materiais de trabalho e retratos em tom mais humano.",
+    p: "Direção de pose voltada a proximidade e escuta, com fotos que funcionam em site, LinkedIn e plataformas de agendamento.",
+    slug: "fotos-profissionais-para-medicos",
+  },
+  {
+    h: "Hospitais e operadoras",
+    escopo: "Múltiplos setores, equipes por área e cobertura de rotina assistencial.",
+    p: "Projetos orçados por unidade, com cronograma por setor, autorizações de imagem e entrega organizada por pasta temática.",
+    slug: "retratos-de-medicos",
+  },
+  {
+    h: "Consultórios individuais",
+    escopo: "Meia diária com retratos, ambiente e detalhes.",
+    p: "Formato enxuto para o profissional que precisa de um conjunto completo de imagens para site, convênios e imprensa em uma única sessão.",
+    slug: "retratos-de-medicos",
+  },
+];
+
+
 
 function FotografiaParaClinicasPage() {
   const cats = clinicCategorySlugs
@@ -200,6 +248,39 @@ function FotografiaParaClinicasPage() {
           </ul>
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+        <h2 className="font-display text-2xl font-semibold md:text-4xl">
+          Exemplos por segmento da saúde
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Cada especialidade tem uma prioridade visual diferente. Veja o escopo típico de produção
+          por segmento e a galeria correspondente.
+        </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {segmentos.map((s) => (
+            <article key={s.h} className="flex flex-col rounded-sm border border-border bg-surface p-6">
+              <h3 className="font-display text-lg font-semibold">{s.h}</h3>
+              <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
+              <Link
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: s.slug }}
+                className="mt-5 text-sm font-medium text-ember hover:underline"
+              >
+                Ver exemplos →
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <Testimonials
+        title="Depoimentos de quem já fotografou com o Alê"
+        subtitle="Avaliações reais publicadas no perfil do Google."
+      />
+
+
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">Galerias relacionadas</h2>

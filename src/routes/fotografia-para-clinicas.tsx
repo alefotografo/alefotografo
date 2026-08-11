@@ -189,8 +189,23 @@ function FotografiaParaClinicasPage() {
 
   return (
     <>
-      <section className="border-b border-border">
+      <section className="relative overflow-hidden border-b border-border">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={HERO_IMG}
+            alt="Fotografia profissional em clínica médica em São Paulo"
+            width={1600}
+            height={1067}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+            className="h-full w-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
+        </div>
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
             Saúde e bem-estar
           </p>

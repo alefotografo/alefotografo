@@ -182,6 +182,22 @@ function FotosCorporativasPage() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to="/fotografia-para-clinicas"
+                className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
+              >
+                Fotografia para clínicas
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/foto-profissional-para-linkedin"
+                className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
+              >
+                Foto profissional para LinkedIn
+              </Link>
+            </li>
           </ul>
         </div>
       </section>

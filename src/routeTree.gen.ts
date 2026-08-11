@@ -16,6 +16,7 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FotoProfissionalParaLinkedinRouteImport } from './routes/foto-profissional-para-linkedin'
+import { Route as FotografiaParaClinicasRouteImport } from './routes/fotografia-para-clinicas'
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
 import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
@@ -71,6 +72,11 @@ const FotoProfissionalParaLinkedinRoute =
     path: '/foto-profissional-para-linkedin',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FotografiaParaClinicasRoute = FotografiaParaClinicasRouteImport.update({
+  id: '/fotografia-para-clinicas',
+  path: '/fotografia-para-clinicas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FotosCorporativasRoute = FotosCorporativasRouteImport.update({
   id: '/fotos-corporativas',
   path: '/fotos-corporativas',
@@ -179,6 +185,7 @@ export interface FileRoutesByFullPath {
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
+  '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -206,6 +213,7 @@ export interface FileRoutesByTo {
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
+  '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -235,6 +243,7 @@ export interface FileRoutesById {
   '/depoimentos': typeof DepoimentosRoute
   '/faq': typeof FaqRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
+  '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -264,6 +273,7 @@ export interface FileRouteTypes {
     | '/depoimentos'
     | '/faq'
     | '/foto-profissional-para-linkedin'
+    | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/depoimentos'
     | '/faq'
     | '/foto-profissional-para-linkedin'
+    | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
@@ -319,6 +330,7 @@ export interface FileRouteTypes {
     | '/depoimentos'
     | '/faq'
     | '/foto-profissional-para-linkedin'
+    | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
@@ -348,6 +360,7 @@ export interface RootRouteChildren {
   DepoimentosRoute: typeof DepoimentosRoute
   FaqRoute: typeof FaqRoute
   FotoProfissionalParaLinkedinRoute: typeof FotoProfissionalParaLinkedinRoute
+  FotografiaParaClinicasRoute: typeof FotografiaParaClinicasRoute
   FotosCorporativasRoute: typeof FotosCorporativasRoute
   QuemEOAleRoute: typeof QuemEOAleRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
@@ -417,6 +430,13 @@ declare module '@tanstack/react-router' {
       path: '/foto-profissional-para-linkedin'
       fullPath: '/foto-profissional-para-linkedin'
       preLoaderRoute: typeof FotoProfissionalParaLinkedinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografia-para-clinicas': {
+      id: '/fotografia-para-clinicas'
+      path: '/fotografia-para-clinicas'
+      fullPath: '/fotografia-para-clinicas'
+      preLoaderRoute: typeof FotografiaParaClinicasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fotos-corporativas': {
@@ -574,6 +594,7 @@ const rootRouteChildren: RootRouteChildren = {
   DepoimentosRoute: DepoimentosRoute,
   FaqRoute: FaqRoute,
   FotoProfissionalParaLinkedinRoute: FotoProfissionalParaLinkedinRoute,
+  FotografiaParaClinicasRoute: FotografiaParaClinicasRoute,
   FotosCorporativasRoute: FotosCorporativasRoute,
   QuemEOAleRoute: QuemEOAleRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,

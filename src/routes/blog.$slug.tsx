@@ -3,6 +3,7 @@ import { postBySlug, posts, site } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { PillarLinks } from "@/components/site/PillarLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
@@ -145,6 +146,8 @@ function PostPage() {
           </p>
         </div>
 
+
+        <PillarLinks seed={`${p.title} ${p.description} ${p.body.slice(0, 3).join(" ")}`} />
 
         <RelatedLinks cats={relCats} posts={relPostList} title="Assuntos relacionados" />
 

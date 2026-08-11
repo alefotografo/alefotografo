@@ -131,6 +131,12 @@ function LinkedinPage() {
             >
               Fotos para o time todo
             </Link>
+            <Link
+              to="/fotografia-para-clinicas"
+              className="inline-flex rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember"
+            >
+              Sou da área da saúde
+            </Link>
           </div>
         </div>
       </section>

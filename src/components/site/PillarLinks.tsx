@@ -29,7 +29,32 @@ const PILLARS: Pillar[] = [
     blurb: "Ambientes, equipe, equipamentos e retratos de médicos com padrão de credibilidade.",
     keys: ["clínica", "clinic", "médic", "saúde", "consultório", "dentista", "paciente", "hospital"],
   },
+  {
+    path: "/fotografia-executiva",
+    label: "Fotografia executiva",
+    blurb: "Retratos de diretoria, sócios e lideranças com padrão único para toda a empresa.",
+    keys: ["executiv", "diretor", "sócio", "liderança", "c-level", "gestor", "autoridade", "palestrante"],
+  },
+  {
+    path: "/fotos-profissionais-medicos",
+    label: "Fotos profissionais para médicos",
+    blurb: "Retrato médico, equipe e ambientes para site, Google e plataformas de agendamento.",
+    keys: ["médic", "doutor", "clínica", "consultório", "dentista", "paciente", "saúde", "doctoralia"],
+  },
+  {
+    path: "/fotografia-para-advogados",
+    label: "Fotografia para advogados",
+    blurb: "Retratos de sócios e equipe e imagens do escritório para site, LinkedIn e propostas.",
+    keys: ["advogad", "advocacia", "jurídic", "escritório", "direito", "sócio", "compliance"],
+  },
+  {
+    path: "/eventos-corporativos",
+    label: "Eventos corporativos",
+    blurb: "Congressos, convenções, palestras e premiações em foto e vídeo, com prévia no mesmo dia.",
+    keys: ["evento", "congresso", "convenção", "palestra", "premiação", "kick-off", "feira", "confraterniza"],
+  },
 ];
+
 
 function norm(s: string) {
   return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");

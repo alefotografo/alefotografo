@@ -14,11 +14,15 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
+import { Route as EventosCorporativosRouteImport } from './routes/eventos-corporativos'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FotoProfissionalRouteImport } from './routes/foto-profissional'
 import { Route as FotoProfissionalParaLinkedinRouteImport } from './routes/foto-profissional-para-linkedin'
+import { Route as FotografiaExecutivaRouteImport } from './routes/fotografia-executiva'
+import { Route as FotografiaParaAdvogadosRouteImport } from './routes/fotografia-para-advogados'
 import { Route as FotografiaParaClinicasRouteImport } from './routes/fotografia-para-clinicas'
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
+import { Route as FotosProfissionaisMedicosRouteImport } from './routes/fotos-profissionais-medicos'
 import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
@@ -62,6 +66,11 @@ const DepoimentosRoute = DepoimentosRouteImport.update({
   path: '/depoimentos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventosCorporativosRoute = EventosCorporativosRouteImport.update({
+  id: '/eventos-corporativos',
+  path: '/eventos-corporativos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -78,6 +87,16 @@ const FotoProfissionalParaLinkedinRoute =
     path: '/foto-profissional-para-linkedin',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FotografiaExecutivaRoute = FotografiaExecutivaRouteImport.update({
+  id: '/fotografia-executiva',
+  path: '/fotografia-executiva',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotografiaParaAdvogadosRoute = FotografiaParaAdvogadosRouteImport.update({
+  id: '/fotografia-para-advogados',
+  path: '/fotografia-para-advogados',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FotografiaParaClinicasRoute = FotografiaParaClinicasRouteImport.update({
   id: '/fotografia-para-clinicas',
   path: '/fotografia-para-clinicas',
@@ -88,6 +107,12 @@ const FotosCorporativasRoute = FotosCorporativasRouteImport.update({
   path: '/fotos-corporativas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotosProfissionaisMedicosRoute =
+  FotosProfissionaisMedicosRouteImport.update({
+    id: '/fotos-profissionais-medicos',
+    path: '/fotos-profissionais-medicos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const QuemEOAleRoute = QuemEOAleRouteImport.update({
   id: '/quem-e-o-ale',
   path: '/quem-e-o-ale',
@@ -189,11 +214,15 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
+  '/eventos-corporativos': typeof EventosCorporativosRoute
   '/faq': typeof FaqRoute
   '/foto-profissional': typeof FotoProfissionalRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
+  '/fotografia-executiva': typeof FotografiaExecutivaRoute
+  '/fotografia-para-advogados': typeof FotografiaParaAdvogadosRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
+  '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
@@ -218,11 +247,15 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
+  '/eventos-corporativos': typeof EventosCorporativosRoute
   '/faq': typeof FaqRoute
   '/foto-profissional': typeof FotoProfissionalRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
+  '/fotografia-executiva': typeof FotografiaExecutivaRoute
+  '/fotografia-para-advogados': typeof FotografiaParaAdvogadosRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
+  '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
@@ -249,11 +282,15 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/contato': typeof ContatoRoute
   '/depoimentos': typeof DepoimentosRoute
+  '/eventos-corporativos': typeof EventosCorporativosRoute
   '/faq': typeof FaqRoute
   '/foto-profissional': typeof FotoProfissionalRoute
   '/foto-profissional-para-linkedin': typeof FotoProfissionalParaLinkedinRoute
+  '/fotografia-executiva': typeof FotografiaExecutivaRoute
+  '/fotografia-para-advogados': typeof FotografiaParaAdvogadosRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
+  '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
@@ -280,11 +317,15 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contato'
     | '/depoimentos'
+    | '/eventos-corporativos'
     | '/faq'
     | '/foto-profissional'
     | '/foto-profissional-para-linkedin'
+    | '/fotografia-executiva'
+    | '/fotografia-para-advogados'
     | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
+    | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
@@ -309,11 +350,15 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contato'
     | '/depoimentos'
+    | '/eventos-corporativos'
     | '/faq'
     | '/foto-profissional'
     | '/foto-profissional-para-linkedin'
+    | '/fotografia-executiva'
+    | '/fotografia-para-advogados'
     | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
+    | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
@@ -339,11 +384,15 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contato'
     | '/depoimentos'
+    | '/eventos-corporativos'
     | '/faq'
     | '/foto-profissional'
     | '/foto-profissional-para-linkedin'
+    | '/fotografia-executiva'
+    | '/fotografia-para-advogados'
     | '/fotografia-para-clinicas'
     | '/fotos-corporativas'
+    | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
@@ -370,11 +419,15 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ContatoRoute: typeof ContatoRoute
   DepoimentosRoute: typeof DepoimentosRoute
+  EventosCorporativosRoute: typeof EventosCorporativosRoute
   FaqRoute: typeof FaqRoute
   FotoProfissionalRoute: typeof FotoProfissionalRoute
   FotoProfissionalParaLinkedinRoute: typeof FotoProfissionalParaLinkedinRoute
+  FotografiaExecutivaRoute: typeof FotografiaExecutivaRoute
+  FotografiaParaAdvogadosRoute: typeof FotografiaParaAdvogadosRoute
   FotografiaParaClinicasRoute: typeof FotografiaParaClinicasRoute
   FotosCorporativasRoute: typeof FotosCorporativasRoute
+  FotosProfissionaisMedicosRoute: typeof FotosProfissionaisMedicosRoute
   QuemEOAleRoute: typeof QuemEOAleRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
@@ -431,6 +484,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DepoimentosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/eventos-corporativos': {
+      id: '/eventos-corporativos'
+      path: '/eventos-corporativos'
+      fullPath: '/eventos-corporativos'
+      preLoaderRoute: typeof EventosCorporativosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -452,6 +512,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FotoProfissionalParaLinkedinRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fotografia-executiva': {
+      id: '/fotografia-executiva'
+      path: '/fotografia-executiva'
+      fullPath: '/fotografia-executiva'
+      preLoaderRoute: typeof FotografiaExecutivaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografia-para-advogados': {
+      id: '/fotografia-para-advogados'
+      path: '/fotografia-para-advogados'
+      fullPath: '/fotografia-para-advogados'
+      preLoaderRoute: typeof FotografiaParaAdvogadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fotografia-para-clinicas': {
       id: '/fotografia-para-clinicas'
       path: '/fotografia-para-clinicas'
@@ -464,6 +538,13 @@ declare module '@tanstack/react-router' {
       path: '/fotos-corporativas'
       fullPath: '/fotos-corporativas'
       preLoaderRoute: typeof FotosCorporativasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotos-profissionais-medicos': {
+      id: '/fotos-profissionais-medicos'
+      path: '/fotos-profissionais-medicos'
+      fullPath: '/fotos-profissionais-medicos'
+      preLoaderRoute: typeof FotosProfissionaisMedicosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quem-e-o-ale': {
@@ -612,11 +693,15 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ContatoRoute: ContatoRoute,
   DepoimentosRoute: DepoimentosRoute,
+  EventosCorporativosRoute: EventosCorporativosRoute,
   FaqRoute: FaqRoute,
   FotoProfissionalRoute: FotoProfissionalRoute,
   FotoProfissionalParaLinkedinRoute: FotoProfissionalParaLinkedinRoute,
+  FotografiaExecutivaRoute: FotografiaExecutivaRoute,
+  FotografiaParaAdvogadosRoute: FotografiaParaAdvogadosRoute,
   FotografiaParaClinicasRoute: FotografiaParaClinicasRoute,
   FotosCorporativasRoute: FotosCorporativasRoute,
+  FotosProfissionaisMedicosRoute: FotosProfissionaisMedicosRoute,
   QuemEOAleRoute: QuemEOAleRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,

@@ -24,6 +24,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/foto-profissional", changefreq: "weekly", priority: "0.9" },
           { path: "/foto-profissional-para-linkedin", changefreq: "weekly", priority: "0.9" },
           { path: "/fotografia-para-clinicas", changefreq: "weekly", priority: "0.9" },
+          { path: "/fotografia-executiva", changefreq: "weekly", priority: "0.9" },
+          { path: "/fotos-profissionais-medicos", changefreq: "weekly", priority: "0.9" },
+          { path: "/fotografia-para-advogados", changefreq: "weekly", priority: "0.9" },
+          { path: "/eventos-corporativos", changefreq: "weekly", priority: "0.9" },
+
           { path: "/portfolio", changefreq: "weekly", priority: "0.8" },
           { path: "/videos", changefreq: "weekly", priority: "0.9" },
           { path: "/blog", changefreq: "weekly", priority: "0.9" },

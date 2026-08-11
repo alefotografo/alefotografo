@@ -40,6 +40,19 @@ const CATEGORY_SLUGS = new Set([
   "fotos-de-paes",
 ]);
 
+// Rotas comerciais próprias deste site: nunca podem cair nas regras dinâmicas
+// de categoria (ex.: /eventos-corporativos também é slug de galeria).
+const OWN_ROUTES = new Set([
+  "/eventos-corporativos",
+  "/fotografia-executiva",
+  "/fotos-profissionais-medicos",
+  "/fotografia-para-advogados",
+  "/fotos-corporativas",
+  "/foto-profissional",
+  "/foto-profissional-para-linkedin",
+  "/fotografia-para-clinicas",
+]);
+
 // Mapeamentos exatos.
 const EXACT: Record<string, string> = {
   "/videos-para-empresas": "/videos",
@@ -49,7 +62,16 @@ const EXACT: Record<string, string> = {
   "/orcamento": "/contato",
   "/fale-conosco": "/contato",
   "/sobre-o-ale": "/quem-e-o-ale",
+  // Aliases comerciais → páginas canônicas
+  "/fotografia-corporativa-sao-paulo": "/fotos-corporativas",
+  "/foto-profissional-sao-paulo": "/foto-profissional",
+  "/foto-para-linkedin": "/foto-profissional-para-linkedin",
+  "/fotos-para-medicos": "/fotos-profissionais-medicos",
+  "/fotografia-para-medicos": "/fotos-profissionais-medicos",
+  "/fotos-para-advogados": "/fotografia-para-advogados",
+  "/retrato-executivo": "/fotografia-executiva",
 };
+
 
 function normalize(pathname: string) {
   if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
@@ -61,6 +83,8 @@ function normalize(pathname: string) {
  */
 export function resolveLegacyPath(pathname: string): string | undefined {
   const path = normalize(pathname);
+
+  if (OWN_ROUTES.has(path)) return undefined;
 
   const exact = EXACT[path];
   if (exact) return exact;

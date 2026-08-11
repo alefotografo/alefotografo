@@ -11,6 +11,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/fotografia-para-clinicas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
+const CDN = "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com";
+const HERO_IMG = `${CDN}/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG`;
+
 const TITLE = "Fotografia para Clínicas em São Paulo";
 const DESCRIPTION =
   "Fotografia para clínicas em São Paulo: ambientes, equipe, procedimentos e retratos de médicos com padrão de credibilidade. Entrega em 1 a 3 dias úteis.";
@@ -49,7 +52,10 @@ const clinicCategorySlugs = [
 export const Route = createFileRoute("/fotografia-para-clinicas")({
   head: () => ({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
-    links: [{ rel: "canonical", href: CANONICAL }],
+    links: [
+      { rel: "canonical", href: CANONICAL },
+      { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -186,8 +192,23 @@ function FotografiaParaClinicasPage() {
 
   return (
     <>
-      <section className="border-b border-border">
+      <section className="relative overflow-hidden border-b border-border">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={HERO_IMG}
+            alt="Fotografia profissional em clínica médica em São Paulo"
+            width={1600}
+            height={1067}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+            className="h-full w-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
+        </div>
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
             Saúde e bem-estar
           </p>
@@ -258,21 +279,41 @@ function FotografiaParaClinicasPage() {
           por segmento e a galeria correspondente.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {segmentos.map((s) => (
-            <article key={s.h} className="flex flex-col rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">{s.h}</h3>
-              <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
-              <Link
-                to="/fotografo-corporativo/$slug"
-                params={{ slug: s.slug }}
-                className="mt-5 text-sm font-medium text-ember hover:underline"
-              >
-                Ver exemplos →
-              </Link>
-            </article>
-          ))}
+          {segmentos.map((s) => {
+            const cover = categories.find((c) => c.slug === s.slug)?.cover;
+            return (
+              <article key={s.h} className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface">
+                {cover ? (
+                  <div className="aspect-[3/2] w-full overflow-hidden bg-background">
+                    <img
+                      src={cover}
+                      alt={`Fotografia profissional — ${s.h}`}
+                      width={900}
+                      height={600}
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ) : null}
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-lg font-semibold">{s.h}</h3>
+                  <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: s.slug }}
+                    className="mt-5 text-sm font-medium text-ember hover:underline"
+                  >
+                    Ver exemplos →
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
+
       </section>
 
       <Testimonials

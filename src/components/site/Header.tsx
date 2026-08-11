@@ -5,11 +5,12 @@ import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Início" },
+  { to: "/foto-profissional", label: "Foto profissional" },
+  { to: "/fotos-corporativas", label: "Corporativo" },
   { to: "/fotografo-corporativo", label: "Fotos" },
   { to: "/videos", label: "Vídeos" },
   { to: "/blog", label: "Blog" },
   { to: "/quem-e-o-ale", label: "Quem é o Alê" },
-  { to: "/depoimentos", label: "Depoimentos" },
   { to: "/faq", label: "FAQ" },
   { to: "/contato", label: "Contato" },
 ] as const;

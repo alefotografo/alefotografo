@@ -1,10 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMeta } from "@/lib/seo";
 import { faqs, faqJsonLd } from "@/lib/faqs";
+import { faqsComerciais } from "@/lib/faqsComerciais";
 import { FaqList } from "@/components/site/Faq";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { site } from "@/data/catalog";
+import { waLink } from "@/lib/whatsapp";
 import { ArrowUpRight } from "lucide-react";
+
+const allFaqs = [
+  ...faqsComerciais,
+  ...faqs.filter((f) => !faqsComerciais.some((c) => c.q === f.q)),
+];
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -18,7 +25,7 @@ export const Route = createFileRoute("/faq")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(faqs)),
+        children: JSON.stringify(faqJsonLd(allFaqs)),
       },
     ],
   }),

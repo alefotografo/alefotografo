@@ -12,6 +12,12 @@ const PILLARS: Pillar[] = [
     keys: ["corporativ", "empresa", "equipe", "escritório", "evento", "indústria", "institucional", "banco de imagens"],
   },
   {
+    path: "/foto-profissional",
+    label: "Foto profissional em São Paulo",
+    blurb: "Retrato profissional com direção de pose para LinkedIn, currículo, site e imprensa.",
+    keys: ["foto profissional", "ensaio", "retrato", "pose", "estúdio", "lugares para tirar foto", "são paulo", "carreira", "marca pessoal"],
+  },
+  {
     path: "/foto-profissional-para-linkedin",
     label: "Foto profissional para LinkedIn",
     blurb: "Headshot com direção de pose e luz, pronto para perfil, currículo e apresentações.",

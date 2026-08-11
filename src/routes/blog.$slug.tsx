@@ -4,6 +4,7 @@ import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { PillarLinks } from "@/components/site/PillarLinks";
+import { QuoteBlock } from "@/components/site/QuoteBlock";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { postCover } from "@/lib/postCover";
@@ -149,10 +150,12 @@ function PostPage() {
           </p>
         </div>
 
+        <QuoteBlock />
 
         <PillarLinks seed={`${p.title} ${p.description} ${p.body.slice(0, 3).join(" ")}`} />
 
         <RelatedLinks cats={relCats} posts={relPostList} title="Assuntos relacionados" />
+
 
         <div className="mt-10 flex flex-wrap gap-3 border-t border-border pt-8">
           <Link to="/contato" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">

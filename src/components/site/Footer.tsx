@@ -97,12 +97,15 @@ export function Footer() {
             Serviços
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotos corporativas</Link></li>
-            <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto profissional para LinkedIn</Link></li>
-            <li><Link to="/fotografia-para-clinicas" className="hover:text-foreground">Fotografia para clínicas</Link></li>
+            <li><Link to="/foto-profissional" className="hover:text-foreground">Foto profissional</Link></li>
+            <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto para LinkedIn</Link></li>
+            <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotografia corporativa</Link></li>
+            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
+            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "fotografo-de-eventos-corporativos" }} className="hover:text-foreground">Eventos corporativos</Link></li>
             <li><Link to="/videos" className="hover:text-foreground">Vídeo institucional</Link></li>
+            <li><Link to="/fotografia-para-clinicas" className="hover:text-foreground">Fotografia para clínicas</Link></li>
+            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "fotografia-para-escritorios-de-advocacia" }} className="hover:text-foreground">Fotos para advocacia</Link></li>
             <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Portfólio corporativo</Link></li>
-            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Cobertura de eventos</Link></li>
           </ul>
         </div>
 
@@ -114,10 +117,19 @@ export function Footer() {
             <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
             <li><Link to="/quem-e-o-ale" className="hover:text-foreground">Quem é o Alê</Link></li>
             <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
+            <li><Link to="/depoimentos" className="hover:text-foreground">Depoimentos</Link></li>
             <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
             <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">LinkedIn</a></li>
             <li><a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram</a></li>
           </ul>
+          <a
+            href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+          >
+            Solicitar orçamento no WhatsApp
+          </a>
         </div>
       </div>
 

@@ -11,6 +11,8 @@ import { waLink } from "@/lib/whatsapp";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
+import { googleReviews, googleReviewsSummary } from "@/data/reviews";
+
 const FALLBACK_HERO =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
 const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
@@ -330,19 +332,66 @@ function Home() {
               Ver todos os depoimentos <ArrowUpRight size={14} />
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {[
-              { name: "Leandro Capolupo", role: "Gerente de Planejamento Financeiro", text: "Profissional super ágil, competente e focado na qualidade. O resultado foi ótimo." },
-              { name: "Maria Clara Cardoso", role: "Psicóloga e Palestrante", text: "Alexandre fez minhas fotos profissionais e o resultado foi incrível. Pontualidade, compromisso e amor ao trabalho marcam o profissional." },
-            ].map((t) => (
-              <figure key={t.name} className="rounded-sm border border-border bg-background p-7">
-                <blockquote className="text-base leading-relaxed text-foreground/90">"{t.text}"</blockquote>
+          <p className="mb-8 text-sm text-muted-foreground">
+            Nota {googleReviewsSummary.ratingValue.toLocaleString("pt-BR")} de 5 em{" "}
+            {googleReviewsSummary.reviewCount} avaliações no Google.{" "}
+            <a
+              href={googleReviewsSummary.profileUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-ember underline underline-offset-4"
+            >
+              Ver avaliações no Google
+            </a>
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {googleReviews.slice(0, 3).map((r) => (
+              <figure key={r.author} className="rounded-sm border border-border bg-background p-7">
+                <div className="flex items-center gap-1 text-ember" aria-label={`${r.rating} de 5 estrelas`}>
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <span key={i} aria-hidden="true">★</span>
+                  ))}
+                </div>
+                <blockquote className="mt-4 text-sm leading-relaxed text-foreground/90">
+                  “{r.text}”
+                </blockquote>
                 <figcaption className="mt-5 border-t border-border pt-4">
-                  <p className="font-display font-semibold">{t.name}</p>
-                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                  <p className="font-display font-semibold">{r.author}</p>
+                  <p className="text-sm text-muted-foreground">Avaliação no Google · {r.when}</p>
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="mt-14 border-t border-border pt-10">
+            <h3 className="font-display text-xl font-semibold md:text-2xl">
+              Empresas, profissionais e segmentos atendidos
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+              Produções realizadas para empresas de tecnologia, indústria, saúde, educação,
+              serviços financeiros, jurídico, varejo e para profissionais liberais em São Paulo.
+            </p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {[
+                "Executivos e diretoria",
+                "Advogados e escritórios",
+                "Médicos e clínicas",
+                "Indústria",
+                "Tecnologia",
+                "Educação",
+                "Arquitetura e interiores",
+                "Eventos corporativos",
+                "Palestrantes",
+                "Profissionais liberais",
+              ].map((s) => (
+                <li
+                  key={s}
+                  className="rounded-full border border-border bg-background px-4 py-2 text-xs text-muted-foreground"
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

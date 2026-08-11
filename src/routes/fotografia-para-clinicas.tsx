@@ -250,6 +250,39 @@ function FotografiaParaClinicasPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+        <h2 className="font-display text-2xl font-semibold md:text-4xl">
+          Exemplos por segmento da saúde
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Cada especialidade tem uma prioridade visual diferente. Veja o escopo típico de produção
+          por segmento e a galeria correspondente.
+        </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {segmentos.map((s) => (
+            <article key={s.h} className="flex flex-col rounded-sm border border-border bg-surface p-6">
+              <h3 className="font-display text-lg font-semibold">{s.h}</h3>
+              <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
+              <Link
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: s.slug }}
+                className="mt-5 text-sm font-medium text-ember hover:underline"
+              >
+                Ver exemplos →
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <Testimonials
+        title="Depoimentos de quem já fotografou com o Alê"
+        subtitle="Avaliações reais publicadas no perfil do Google."
+      />
+
+
+
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">Galerias relacionadas</h2>
         <ul className="mt-8 flex flex-wrap gap-2">
           {cats.map((c) => (

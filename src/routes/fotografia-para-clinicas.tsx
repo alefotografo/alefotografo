@@ -3,7 +3,10 @@ import { categories, site } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
+import { Testimonials } from "@/components/site/Testimonials";
+import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import type { Faq } from "@/lib/faqs";
+
 
 const URL_PATH = "/fotografia-para-clinicas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -60,11 +63,14 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
               description: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
+              aggregateRating: aggregateRatingSchema,
+              review: reviewSchema,
               provider: {
                 "@type": "LocalBusiness",
                 name: site.name,
                 url: SITE_ORIGIN,
                 telephone: `+${site.whatsapp}`,
+                aggregateRating: aggregateRatingSchema,
                 address: {
                   "@type": "PostalAddress",
                   addressLocality: "São Paulo",
@@ -73,6 +79,7 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
                 },
               },
             },
+
             {
               "@type": "FAQPage",
               mainEntity: pageFaqs.map((f) => ({

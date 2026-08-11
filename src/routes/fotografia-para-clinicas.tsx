@@ -138,6 +138,47 @@ const checklist = [
   "Listar os usos previstos (site, Google, redes, impresso) para definir formatos de entrega.",
 ];
 
+const segmentos = [
+  {
+    h: "Clínicas médicas e centros diagnósticos",
+    escopo: "Recepção, salas de consulta, equipamentos de diagnóstico e retratos da equipe médica.",
+    p: "Produção em blocos de horário para não interromper o atendimento, com retratos padronizados de todos os médicos no mesmo fundo e enquadramento.",
+    slug: "fotos-para-clinicas-medicas",
+  },
+  {
+    h: "Odontologia",
+    escopo: "Consultórios, cadeira odontológica, esterilização e retratos com jaleco.",
+    p: "Ênfase em limpeza visual, tecnologia e acolhimento — os três pontos que o paciente avalia antes de marcar a primeira consulta.",
+    slug: "ensaio-fotografico-para-dentistas",
+  },
+  {
+    h: "Estética e dermatologia",
+    escopo: "Ambientes, aparelhos, detalhes de procedimento e conteúdo para redes sociais.",
+    p: "Além das fotos institucionais, geramos um acervo vertical pensado para Instagram, anúncios e páginas de procedimento do site.",
+    slug: "retratos-de-medicas",
+  },
+  {
+    h: "Psicologia, nutrição e terapias",
+    escopo: "Consultório, materiais de trabalho e retratos em tom mais humano.",
+    p: "Direção de pose voltada a proximidade e escuta, com fotos que funcionam em site, LinkedIn e plataformas de agendamento.",
+    slug: "fotos-profissionais-para-medicos",
+  },
+  {
+    h: "Hospitais e operadoras",
+    escopo: "Múltiplos setores, equipes por área e cobertura de rotina assistencial.",
+    p: "Projetos orçados por unidade, com cronograma por setor, autorizações de imagem e entrega organizada por pasta temática.",
+    slug: "retratos-de-medicos",
+  },
+  {
+    h: "Consultórios individuais",
+    escopo: "Meia diária com retratos, ambiente e detalhes.",
+    p: "Formato enxuto para o profissional que precisa de um conjunto completo de imagens para site, convênios e imprensa em uma única sessão.",
+    slug: "retratos-de-medicos",
+  },
+];
+
+
+
 function FotografiaParaClinicasPage() {
   const cats = clinicCategorySlugs
     .map((slug) => categories.find((c) => c.slug === slug))

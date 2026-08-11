@@ -261,21 +261,41 @@ function FotografiaParaClinicasPage() {
           por segmento e a galeria correspondente.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {segmentos.map((s) => (
-            <article key={s.h} className="flex flex-col rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">{s.h}</h3>
-              <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
-              <Link
-                to="/fotografo-corporativo/$slug"
-                params={{ slug: s.slug }}
-                className="mt-5 text-sm font-medium text-ember hover:underline"
-              >
-                Ver exemplos →
-              </Link>
-            </article>
-          ))}
+          {segmentos.map((s) => {
+            const cover = categories.find((c) => c.slug === s.slug)?.cover;
+            return (
+              <article key={s.h} className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface">
+                {cover ? (
+                  <div className="aspect-[3/2] w-full overflow-hidden bg-background">
+                    <img
+                      src={cover}
+                      alt={`Fotografia profissional — ${s.h}`}
+                      width={900}
+                      height={600}
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ) : null}
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-lg font-semibold">{s.h}</h3>
+                  <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: s.slug }}
+                    className="mt-5 text-sm font-medium text-ember hover:underline"
+                  >
+                    Ver exemplos →
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
+
       </section>
 
       <Testimonials

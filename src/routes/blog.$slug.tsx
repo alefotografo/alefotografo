@@ -6,6 +6,7 @@ import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { PillarLinks } from "@/components/site/PillarLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
+import { postCover } from "@/lib/postCover";
 import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft } from "lucide-react";
 
@@ -35,14 +36,16 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!loaderData) return { meta: [] };
     return {
       meta: buildMeta({
-        title: loaderData.title,
+        title: loaderData.title.length > 60 ? `${loaderData.title.slice(0, 57).trimEnd()}…` : loaderData.title,
         description: (() => {
           const base = (loaderData.description || loaderData.title || "").trim();
+          if (base.length > 158) return `${base.slice(0, 155).trimEnd()}…`;
           if (base.length >= 50) return base;
           const suffix = ` — dicas de Alexandre Machado, fotógrafo corporativo em São Paulo.`;
           return `${base}${suffix}`.slice(0, 160);
         })(),
         path: `/blog/${params.slug}`,
+        image: postCover(loaderData),
         type: "article",
       }),
       links: [{ rel: "canonical", href: `https://alefotografos.com.br/blog/${params.slug}` }],
@@ -55,7 +58,7 @@ export const Route = createFileRoute("/blog/$slug")({
             "@id": `${SITE_ORIGIN}/blog/${params.slug}`,
             headline: loaderData.title,
             description: loaderData.description,
-            image: loaderData.cover ? [loaderData.cover] : undefined,
+            image: postCover(loaderData) ? [postCover(loaderData)] : undefined,
             url: `${SITE_ORIGIN}/blog/${params.slug}`,
             inLanguage: "pt-BR",
             mainEntityOfPage: {
@@ -118,9 +121,9 @@ function PostPage() {
           </p>
         )}
 
-        {p.cover && (
+        {postCover(p) && (
           <figure className="my-10 overflow-hidden rounded-sm ring-1 ring-border">
-            <img src={p.cover} alt={p.title} className="w-full" loading="eager" decoding="async" />
+            <img src={postCover(p)} alt={p.title} className="w-full" loading="eager" decoding="async" />
           </figure>
         )}
 

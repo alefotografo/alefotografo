@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { posts } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
+import { postCover } from "@/lib/postCover";
 import { postDateISO } from "@/lib/postDate";
 
 const PAGE_SIZE = 24;
@@ -112,10 +113,10 @@ function BlogIndex() {
                 params={{ slug: p.slug }}
                 className="group flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
               >
-                {p.cover && (
+                {postCover(p) && (
                   <div className="aspect-[16/10] overflow-hidden bg-background">
                     <img
-                      src={p.cover}
+                      src={postCover(p)}
                       alt={p.title}
                       width={640}
                       height={400}

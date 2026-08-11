@@ -71,8 +71,26 @@ function phrasesFor(c: Category): string[] {
   return Array.from(out).filter((p) => p && p.length > 3);
 }
 
+// Páginas-pilar: recebem crosslinks dos posts do blog para concentrar autoridade
+// nos termos de maior volume de busca.
+const PILLAR_PAGES: Array<{ path: string; phrases: string[] }> = [
+  {
+    path: "/fotos-corporativas",
+    phrases: ["fotos corporativas", "foto corporativa", "fotografia corporativa em são paulo"],
+  },
+  {
+    path: "/foto-profissional-para-linkedin",
+    phrases: ["foto para linkedin", "foto profissional para linkedin", "foto de perfil do linkedin", "headshot para linkedin"],
+  },
+  {
+    path: "/fotografia-para-clinicas",
+    phrases: ["fotografia para clínicas", "fotografia para clínica", "fotos para clínica", "foto em clínica", "fotos de clínica"],
+  },
+];
+
 interface PhraseEntry {
   slug: string;
+  path?: string; // rota fixa (páginas-pilar) em vez de categoria
   phrase: string; // original
   normalized: string;
 }
@@ -84,6 +102,11 @@ function getIndex(): PhraseEntry[] {
   for (const c of categories) {
     for (const p of phrasesFor(c)) {
       list.push({ slug: c.slug, phrase: p, normalized: norm(p) });
+    }
+  }
+  for (const pillar of PILLAR_PAGES) {
+    for (const phrase of pillar.phrases) {
+      list.push({ slug: pillar.path, path: pillar.path, phrase, normalized: norm(phrase) });
     }
   }
   // Longest first to ensure greedy matching prefers specific phrases.
@@ -111,7 +134,7 @@ export function autoLink(text: string, opts: AutoLinkOptions = {}): ReactNode[] 
   const index = getIndex();
   const normText = norm(text);
 
-  type Match = { start: number; end: number; slug: string; phrase: string };
+  type Match = { start: number; end: number; slug: string; path?: string; phrase: string };
   const matches: Match[] = [];
   const taken: Array<[number, number]> = [];
   let linksLeft = maxLinks;
@@ -134,7 +157,7 @@ export function autoLink(text: string, opts: AutoLinkOptions = {}): ReactNode[] 
       const isBoundary = /[^a-z0-9]/.test(before) && /[^a-z0-9]/.test(after);
       const overlap = taken.some(([s, e]) => found < e && end > s);
       if (isBoundary && !overlap) {
-        matches.push({ start: found, end, slug: entry.slug, phrase: entry.phrase });
+        matches.push({ start: found, end, slug: entry.slug, path: entry.path, phrase: entry.phrase });
         taken.push([found, end]);
         localUsedSlugs.add(entry.slug);
         localUsedPhrases.add(entry.normalized);
@@ -153,15 +176,23 @@ export function autoLink(text: string, opts: AutoLinkOptions = {}): ReactNode[] 
   matches.forEach((m, i) => {
     if (m.start > cursor) nodes.push(text.slice(cursor, m.start));
     const anchor = text.slice(m.start, m.end);
+    const className =
+      "text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember";
     nodes.push(
-      <Link
-        key={`al-${i}-${m.slug}`}
-        to="/fotografo-corporativo/$slug"
-        params={{ slug: m.slug }}
-        className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
-      >
-        {anchor}
-      </Link>,
+      m.path ? (
+        <Link key={`al-${i}-${m.slug}`} to={m.path} className={className}>
+          {anchor}
+        </Link>
+      ) : (
+        <Link
+          key={`al-${i}-${m.slug}`}
+          to="/fotografo-corporativo/$slug"
+          params={{ slug: m.slug }}
+          className={className}
+        >
+          {anchor}
+        </Link>
+      ),
     );
     cursor = m.end;
   });

@@ -25,7 +25,7 @@ function stableIndex(seed: string, len: number) {
 }
 
 /** Always returns an image for a blog post, falling back to a relevant gallery cover. */
-export function postCover(p: Pick<Post, "slug" | "title"> & { cover?: string }): string | undefined {
+export function postCover(p: Pick<Post, "slug" | "title"> & { cover?: string | null }): string | undefined {
   if (p.cover) return p.cover;
   const haystack = `${p.slug} ${p.title ?? ""}`;
   for (const [re, slug] of HINTS) {

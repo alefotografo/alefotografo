@@ -64,7 +64,6 @@ const EXACT: Record<string, string> = {
   "/sobre-o-ale": "/quem-e-o-ale",
   // Aliases comerciais → páginas canônicas
   "/fotografia-corporativa-sao-paulo": "/fotos-corporativas",
-  "/fotografia-corporativa-em-sao-paulo": "/fotos-corporativas",
   "/foto-profissional-sao-paulo": "/foto-profissional",
   "/foto-para-linkedin": "/foto-profissional-para-linkedin",
   "/fotos-para-medicos": "/fotos-profissionais-medicos",
@@ -84,6 +83,8 @@ function normalize(pathname: string) {
  */
 export function resolveLegacyPath(pathname: string): string | undefined {
   const path = normalize(pathname);
+
+  if (OWN_ROUTES.has(path)) return undefined;
 
   const exact = EXACT[path];
   if (exact) return exact;

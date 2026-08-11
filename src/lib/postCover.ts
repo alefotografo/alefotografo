@@ -2,16 +2,24 @@ import { categories, type Post } from "@/data/catalog";
 
 /** Keyword → category slug hints used to pick a relevant fallback cover. */
 const HINTS: Array<[RegExp, string]> = [
-  [/industri|f[áa]brica|manufatur/i, "fotografia-industrial"],
+  [/advocac|advogad|jur[íi]dic/i, "fotografia-para-escritorios-de-advocacia"],
+  [/industri|f[áa]brica|manufatur|obra|construtor|canteiro|engenhar/i, "fotografia-industrial"],
   [/a[ée]rea|drone|helic[óo]pter/i, "fotos-aereas"],
-  [/culin[áa]ri|gastron|restaurante|comida/i, "fotografo-de-culinaria"],
-  [/cl[íi]nica|sa[úu]de|hospital|m[ée]dic|odonto/i, "fotografia-para-clinicas"],
-  [/evento|congress|palestr|confer/i, "fotografia-de-eventos"],
-  [/arquitet|escrit[óo]rio|im[óo]vel|imobili|hotel|hotelaria/i, "fotografia-de-arquitetura"],
-  [/retrato|linkedin|perfil|headshot|executiv|ceo|diretor/i, "retrato-corporativo"],
-  [/produto|e-?commerce|packshot/i, "fotografia-de-produtos"],
-  [/obra|construtor|canteiro|engenhar/i, "fotografia-industrial"],
+  [/culin[áa]ri|gastron|restaurante|comida|hamb[úu]rguer|p[ãa]o|drink/i, "fotografo-de-culinaria"],
+  [/dentist|odonto/i, "ensaio-fotografico-para-dentistas"],
+  [/cl[íi]nica|sa[úu]de|hospital|m[ée]dic/i, "fotos-para-clinicas-medicas"],
+  [/feira|stand/i, "fotografo-feiras-stands"],
+  [/evento|congress|palestr|confer|confraterniza/i, "fotografo-de-eventos-corporativos"],
+  [/im[óo]vel|imobili|hotel|hotelaria|empreendiment/i, "empreendimentos-imobiliarios"],
+  [/arquitet|escrit[óo]rio|interior|ambiente/i, "fotografo-de-arquitetura-e-interiores"],
+  [/log[íi]stic|centro de distribui|armaz[ée]m|transport/i, "fotografia-de-logistica"],
+  [/escola|educa|universidad/i, "banco-de-imagens-para-escolas"],
+  [/equipe|time|grupo|colaborador/i, "fotografo-de-grupos-times-e-equipes"],
+  [/redes sociais|instagram/i, "ensaio-fotografico-para-redes-sociais"],
+  [/retrato|linkedin|perfil|headshot|executiv|ceo|diretor|pose/i, "retrato-corporativo"],
+  [/institucion|banco de imagens|empresa/i, "banco-de-imagens-para-empresas"],
 ];
+
 
 function coverFor(slug: string) {
   const c = categories.find((x) => x.slug === slug);

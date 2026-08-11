@@ -52,7 +52,10 @@ const clinicCategorySlugs = [
 export const Route = createFileRoute("/fotografia-para-clinicas")({
   head: () => ({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
-    links: [{ rel: "canonical", href: CANONICAL }],
+    links: [
+      { rel: "canonical", href: CANONICAL },
+      { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",

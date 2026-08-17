@@ -41,6 +41,10 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 
 function redirectHttps(request: Request): Response | undefined {
   const url = new URL(request.url);
+  // Não redirecionar em ambiente local (dev/preview) — evita loop de SSL.
+  if (url.hostname === "localhost" || url.hostname === "127.0.0.1" || url.hostname === "[::1]") {
+    return undefined;
+  }
   const proto = request.headers.get("x-forwarded-proto") ?? url.protocol.slice(0, -1);
   if (proto === "http") {
     url.protocol = "https:";

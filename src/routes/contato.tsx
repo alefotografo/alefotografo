@@ -179,16 +179,17 @@ function Contato() {
 
           <div className="overflow-hidden rounded-sm border border-border bg-surface">
             <iframe
-              title="Mapa mostrando a localização em Vila Olímpia, São Paulo"
-              src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY}&q=R.+Gomes+de+Carvalho,+1629+-+Vila+Olimpia,+Sao+Paulo+-+SP&zoom=16`}
-              width={600}
+              title="Mapa da localização do estúdio na Vila Olímpia, São Paulo"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6955%2C-23.5992%2C-46.6816%2C-23.5912&layer=mapnik&marker=-23.5952265%2C-46.6885604"
+              width={640}
               height={320}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="block h-[320px] w-full border-0"
-              allowFullScreen
+              className="block h-[220px] w-full border-0 sm:h-[280px]"
             />
+
             <div className="space-y-3 p-6">
+
               <p className="text-sm text-muted-foreground">
                 R. Gomes de Carvalho, 1629<br />
                 Vila Olímpia, São Paulo — SP<br />

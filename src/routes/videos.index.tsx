@@ -297,3 +297,66 @@ function VideosIndex() {
     </>
   );
 }
+
+function VideoGrid({ items, className = "" }: { items: typeof videos; className?: string }) {
+  return (
+    <ul className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-4 ${className}`}>
+      {items.map((v, i) => {
+        const thumb = videoThumb(v, "sm");
+        const eager = i < 4;
+        return (
+          <li
+            key={v.slug}
+            style={{ contentVisibility: i < 8 ? "visible" : "auto", containIntrinsicSize: "320px 280px" }}
+          >
+            <Link
+              to="/videos/$slug"
+              params={{ slug: v.slug }}
+              preload="intent"
+              className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
+              aria-label={`Assistir: ${v.title}`}
+            >
+              <div className="relative aspect-video overflow-hidden bg-black">
+                {thumb ? (
+                  <img
+                    src={thumb}
+                    alt={`Capa do vídeo: ${v.title}`}
+                    width={320}
+                    height={180}
+                    loading={eager ? "eager" : "lazy"}
+                    fetchPriority={i < 2 ? "high" : "auto"}
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      const next = ytFallback(img.src);
+                      if (next && next !== img.src) img.src = next;
+                    }}
+                    className="h-full w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background">
+                    <Video size={40} className="text-ember/70" aria-hidden="true" />
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="rounded-full bg-ember/90 p-4 text-accent-foreground shadow-lg transition-transform group-hover:scale-110">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div className="p-5">
+                <h3 className="line-clamp-2 font-display text-base font-semibold leading-snug group-hover:text-ember">
+                  {v.title}
+                </h3>
+              </div>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}

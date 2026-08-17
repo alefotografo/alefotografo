@@ -119,124 +119,89 @@ function VideosIndex() {
         </div>
       </section>
 
-      <section className="border-b border-border" aria-labelledby="servicos-video">
+      <section id="portfolio" className="border-b border-border scroll-mt-20" aria-labelledby="servicos-portfolio">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
-          <h2 id="servicos-video" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
-            Três frentes, um único padrão de qualidade.
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços &amp; Portfólio</p>
+          <h2 id="servicos-portfolio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            Quatro frentes, um único padrão de qualidade.
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            <article className="rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">Vídeo Institucional</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Conte a história, os valores e o diferencial da sua empresa em um filme que transmite credibilidade.
+          <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
+            Escolha a frente e veja trabalhos reais entregues para empresas. Expanda cada seção para conferir mais cases do mesmo serviço.
+          </p>
+
+          {q ? (
+            <>
+              <p className="mt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground" aria-live="polite">
+                {filtered.length} {filtered.length === 1 ? "vídeo" : "vídeos"} para "{q}"
               </p>
-            </article>
-            <article className="rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">Eventos Corporativos</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Cobertura completa de convenções, lançamentos e confraternizações, com entrega ágil e qualidade de cinema.
+              {filtered.length === 0 ? (
+                <div className="mt-6 rounded-sm border border-dashed border-border p-12 text-center text-muted-foreground">
+                  <p>Nenhum vídeo encontrado para esta busca.</p>
+                  <button type="button" onClick={() => setQ("")} className="mt-4 text-sm text-ember hover:underline">
+                    Limpar filtro
+                  </button>
+                </div>
+              ) : (
+                <VideoGrid items={filtered} className="mt-6" />
+              )}
+            </>
+          ) : (
+            <>
+              <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Frentes de produção">
+                {grouped.map((g) => (
+                  <button
+                    key={g.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={active === g.id}
+                    onClick={() => {
+                      setActive(g.id);
+                      setExpanded(false);
+                    }}
+                    className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                      active === g.id
+                        ? "border-ember bg-ember text-accent-foreground"
+                        : "border-border text-muted-foreground hover:border-border-strong hover:text-foreground"
+                    }`}
+                  >
+                    {g.label}
+                    <span className="ml-2 text-xs opacity-70">{g.items.length}</span>
+                  </button>
+                ))}
+              </div>
+
+              {activeGroup && (
+                <div className="mt-8">
+                  <p className="max-w-2xl text-muted-foreground text-pretty">{activeGroup.blurb}</p>
+                  <VideoGrid
+                    items={expanded ? activeGroup.items : activeGroup.items.slice(0, 4)}
+                    className="mt-6"
+                  />
+                  {activeGroup.items.length > 4 && (
+                    <button
+                      type="button"
+                      onClick={() => setExpanded((v) => !v)}
+                      className="mt-8 inline-flex rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+                    >
+                      {expanded
+                        ? "Mostrar menos"
+                        : `Ver mais ${activeGroup.items.length - 4} cases de ${activeGroup.label}`}
+                    </button>
+                  )}
+                </div>
+              )}
+
+              <p className="mt-10 text-sm text-muted-foreground">
+                Não sabe qual formato precisa?{" "}
+                <Link to="/contato" className="text-ember hover:underline">
+                  Fale comigo
+                </Link>
               </p>
-            </article>
-            <article className="rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">Feiras de Negócios</h3>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Registro e aftermovie da sua participação em feiras, para gerar conteúdo e provar resultado.
-              </p>
-            </article>
-          </div>
+            </>
+          )}
         </div>
       </section>
 
-
-
-      <section id="portfolio" className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16 scroll-mt-20" aria-label="Lista de vídeos">
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
-        <h2 className="mb-6 font-display text-3xl font-semibold md:text-4xl">Trabalhos selecionados</h2>
-        <p className="mb-6 text-xs uppercase tracking-[0.2em] text-muted-foreground" aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? "vídeo" : "vídeos"}
-          {q && ` para "${q}"`}
-        </p>
-
-        {filtered.length === 0 ? (
-          <div className="rounded-sm border border-dashed border-border p-12 text-center text-muted-foreground">
-            <p>Nenhum vídeo encontrado para esta busca.</p>
-            <button
-              type="button"
-              onClick={() => setQ("")}
-              className="mt-4 text-sm text-ember hover:underline"
-            >
-              Limpar filtro
-            </button>
-          </div>
-        ) : (
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((v, i) => {
-              const thumb = videoThumb(v, "sm");
-              const eager = i < 6;
-              return (
-                <li
-                  key={v.slug}
-                  style={{ contentVisibility: i < 9 ? "visible" : "auto", containIntrinsicSize: "320px 280px" }}
-                >
-                  <Link
-                    to="/videos/$slug"
-                    params={{ slug: v.slug }}
-                    preload="intent"
-                    className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
-                    aria-label={`Assistir: ${v.title}`}
-                  >
-                    <div className="relative aspect-video overflow-hidden bg-black">
-                      {thumb ? (
-                        <img
-                          src={thumb}
-                          alt={`Capa do vídeo: ${v.title}`}
-                          width={320}
-                          height={180}
-                          loading={eager ? "eager" : "lazy"}
-                          fetchPriority={i < 3 ? "high" : "auto"}
-                          decoding="async"
-                          referrerPolicy="no-referrer"
-                          onError={(e) => {
-                            const img = e.currentTarget;
-                            const next = ytFallback(img.src);
-                            if (next && next !== img.src) img.src = next;
-                          }}
-                          className="h-full w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-                        />
-                      ) : (
-                        <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background">
-                          <Video size={40} className="text-ember/70" aria-hidden="true" />
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="rounded-full bg-ember/90 p-4 text-accent-foreground shadow-lg transition-transform group-hover:scale-110">
-                          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </span>
-                      </div>
-                      <span className="absolute left-3 top-3 rounded-sm bg-black/60 px-2 py-1 text-[10px] uppercase tracking-wider text-white backdrop-blur">
-                        {v.youtube ? "YouTube" : v.vimeo ? "Vimeo" : "Vídeo"}
-                      </span>
-                    </div>
-                    <div className="p-5">
-                      <h2 className="line-clamp-2 font-display text-base font-semibold leading-snug group-hover:text-ember">
-                        {v.title}
-                      </h2>
-                      {v.description && (
-                        <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">{v.description}</p>
-                      )}
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-        )}
-      </section>
 
       <section className="border-t border-border bg-surface" aria-labelledby="faq-videos">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">

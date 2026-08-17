@@ -52,8 +52,46 @@ export const Route = createFileRoute("/videos/")({
   component: VideosIndex,
 });
 
+type Group = { id: string; label: string; blurb: string; items: typeof videos };
+
+const GROUP_DEFS = [
+  {
+    id: "institucional",
+    label: "Vídeo Institucional",
+    blurb:
+      "Conte a história, os valores e o diferencial da sua empresa em um filme que transmite credibilidade.",
+    test: (t: string) =>
+      /institucional|manifesto|unidade|estrutura|opera[çc][ãa]o|log[íi]stic|ind[úu]stri|solu[çc][õo]es|sustentabilidade|centro de distribui|moda infantil/i.test(t),
+  },
+  {
+    id: "eventos",
+    label: "Eventos Corporativos",
+    blurb:
+      "Cobertura completa de convenções, congressos, lançamentos e confraternizações, com entrega ágil e qualidade de cinema.",
+    test: (t: string) =>
+      /f[óo]rum|congress|conven[çc][ãa]o|festa|confraterniza|encontro|jantar|pr[êe]mio|celebra|summit|kick ?off|meeting|curso|aul[ãa]o|evento|sipat|almo[çc]o|coquetel|anos|boas festas|women in tech|fincon|mba/i.test(t),
+  },
+  {
+    id: "feiras",
+    label: "Feiras de Negócios",
+    blurb:
+      "Registro e aftermovie da sua participação em feiras, para gerar conteúdo e provar resultado.",
+    test: (t: string) =>
+      /feira|beauty fair|abrafati|febrava|fce pharma|hospitalar|conex[ãa]o farma|show|stand/i.test(t),
+  },
+  {
+    id: "depoimentos",
+    label: "Depoimentos e Retratos",
+    blurb:
+      "Prova social com clientes falando de resultado real e retratos corporativos gravados em estúdio ou na empresa.",
+    test: (t: string) => /depoimento|retrato|ensaio|teaser/i.test(t),
+  },
+] as const;
+
 function VideosIndex() {
   const [q, setQ] = useState("");
+  const [active, setActive] = useState<string>("institucional");
+  const [expanded, setExpanded] = useState(false);
 
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
@@ -62,6 +100,28 @@ function VideosIndex() {
       [v.title, v.subtitle, v.description].some((t) => (t ?? "").toLowerCase().includes(term)),
     );
   }, [q]);
+
+  const grouped = useMemo<Group[]>(() => {
+    const buckets = new Map<string, typeof videos>(GROUP_DEFS.map((g) => [g.id, []]));
+    for (const v of videos) {
+      const text = `${v.title} ${v.subtitle ?? ""}`;
+      const match =
+        GROUP_DEFS.find((g) => g.id === "feiras" && g.test(text)) ??
+        GROUP_DEFS.find((g) => g.id === "depoimentos" && g.test(text)) ??
+        GROUP_DEFS.find((g) => g.id === "eventos" && g.test(text)) ??
+        GROUP_DEFS[0];
+      buckets.get(match.id)!.push(v);
+    }
+    return GROUP_DEFS.map((g) => ({
+      id: g.id,
+      label: g.label,
+      blurb: g.blurb,
+      items: buckets.get(g.id)!,
+    })).filter((g) => g.items.length > 0);
+  }, []);
+
+  const activeGroup = grouped.find((g) => g.id === active) ?? grouped[0];
+
 
   return (
     <>

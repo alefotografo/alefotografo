@@ -27,10 +27,10 @@ export function Header() {
         Pular para o conteúdo
       </a>
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-7xl items-center gap-4 px-5 py-4 md:px-8">
         <Link
           to="/"
-          className="flex items-center"
+          className="flex shrink-0 items-center"
           onClick={() => setOpen(false)}
           aria-label="Alê Fotógrafo — Início"
         >
@@ -43,12 +43,15 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
+        <nav
+          className="ml-auto hidden min-w-0 items-center gap-4 lg:flex xl:gap-6"
+          aria-label="Principal"
+        >
           {nav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="relative text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground"
+              className="relative whitespace-nowrap text-[13px] text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground xl:text-sm"
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
@@ -58,12 +61,12 @@ export function Header() {
 
         <Link
           to="/contato"
-          className="hidden rounded-sm bg-ember px-4 py-2 text-sm font-medium text-accent-foreground transition-all hover:bg-ember-glow md:inline-flex"
+          className="ml-4 hidden shrink-0 whitespace-nowrap rounded-sm bg-ember px-3.5 py-2 text-[13px] font-medium text-accent-foreground transition-all hover:bg-ember-glow lg:inline-flex xl:px-4 xl:text-sm"
         >
-          Solicitar orçamento
+          Orçamento
         </Link>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="ml-auto flex items-center gap-2 lg:hidden">
           <Link
             to="/contato"
             className="rounded-sm bg-ember px-3 py-2 text-xs font-medium text-accent-foreground hover:bg-ember-glow"

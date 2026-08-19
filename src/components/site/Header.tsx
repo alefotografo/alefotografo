@@ -44,7 +44,7 @@ export function Header() {
         </Link>
 
         <nav
-          className="ml-auto hidden min-w-0 items-center gap-4 lg:flex xl:gap-6"
+          className="ml-auto hidden min-w-0 items-center gap-3 min-[1000px]:flex xl:gap-6"
           aria-label="Principal"
         >
           {nav.map((item) => (
@@ -59,14 +59,7 @@ export function Header() {
           ))}
         </nav>
 
-        <Link
-          to="/contato"
-          className="ml-4 hidden shrink-0 whitespace-nowrap rounded-sm bg-ember px-3.5 py-2 text-[13px] font-medium text-accent-foreground transition-all hover:bg-ember-glow lg:inline-flex xl:px-4 xl:text-sm"
-        >
-          Orçamento
-        </Link>
-
-        <div className="ml-auto flex items-center gap-2 lg:hidden">
+        <div className="ml-auto flex items-center gap-2 max-[999px]:flex min-[1000px]:hidden">
           <Link
             to="/contato"
             className="rounded-sm bg-ember px-3 py-2 text-xs font-medium text-accent-foreground hover:bg-ember-glow"
@@ -87,7 +80,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border bg-background max-[999px]:block min-[1000px]:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-5 py-3" aria-label="Mobile">
             {nav.map((item) => (
               <Link

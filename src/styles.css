@@ -86,6 +86,24 @@
 
   html {
     color-scheme: dark;
+    /* compensa o header fixo ao navegar por âncoras */
+    scroll-padding-top: 6rem;
+  }
+
+  :target,
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  /* espaço para o botão flutuante do WhatsApp não cobrir conteúdo/rodapé */
+  footer {
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      padding-bottom: 6rem;
+    }
   }
 
   body {

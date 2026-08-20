@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-alefotografo.png.asset.json";
 
@@ -17,6 +17,15 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   return (
     <>
@@ -80,8 +89,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background max-[999px]:block min-[1000px]:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-5 py-3" aria-label="Mobile">
+        <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto overscroll-contain border-t border-border bg-background max-[999px]:block min-[1000px]:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-5 pb-6 pt-3" aria-label="Mobile">
             {nav.map((item) => (
               <Link
                 key={item.to}

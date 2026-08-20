@@ -89,8 +89,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background max-[999px]:block min-[1000px]:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-5 py-3" aria-label="Mobile">
+        <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto overscroll-contain border-t border-border bg-background max-[999px]:block min-[1000px]:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-5 pb-6 pt-3" aria-label="Mobile">
             {nav.map((item) => (
               <Link
                 key={item.to}

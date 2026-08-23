@@ -62,11 +62,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
               telephone: "+55 11 91355-0533",
               url: "https://alefotografos.com.br",
             },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5.0",
-              reviewCount: "87",
-            },
+            aggregateRating: aggregateRatingSchema,
           }),
         },
         {

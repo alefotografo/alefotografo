@@ -15,6 +15,7 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
 import { site } from "../data/catalog";
+import { aggregateRatingSchema } from "../data/reviews";
 
 
 function NotFoundComponent() {

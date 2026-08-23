@@ -9,9 +9,9 @@ export interface CategorySeo {
 
 export const categorySeo: Record<string, CategorySeo> = {
   "retrato-corporativo": {
-    title: "Retrato Corporativo em São Paulo | Fotógrafo Executivo",
+    title: "Retrato Corporativo em SP | Orçamento no Mesmo Dia",
     description:
-      "Fotografia de retrato corporativo em São Paulo: direção de pose, luz e edição para LinkedIn, site e apresentações. 30 anos de experiência e entrega em até 5 dias.",
+      "Retrato corporativo em São Paulo e Grande SP: direção de pose, luz e edição para LinkedIn e site. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento no mesmo dia.",
   },
   "fotografo-de-retratos-corporativos": {
     title: "Retratos Profissionais em São Paulo | Ensaio Executivo",

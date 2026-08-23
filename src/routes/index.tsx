@@ -20,9 +20,9 @@ const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo | Foto Profissional",
+      title: "Alê Fotógrafo — Fotografia Corporativa em SP (30 Anos)",
       description:
-        "Fotografia corporativa, retratos profissionais, foto para LinkedIn, eventos empresariais e vídeo institucional em São Paulo. Orçamento com Alê Fotógrafo.",
+        "Fotos corporativas, retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência, orçamento no mesmo dia e atendimento em toda a Grande SP.",
       path: "/",
     }),
     links: [

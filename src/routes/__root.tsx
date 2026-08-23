@@ -143,6 +143,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           areaServed: ["São Paulo", "Grande São Paulo", "Brasil"],
           founder: { "@type": "Person", name: "Alexandre Machado" },
           sameAs: [site.instagram, site.linkedin],
+          aggregateRating: aggregateRatingSchema,
           priceRange: "$$",
         }),
       },

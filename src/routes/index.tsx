@@ -56,6 +56,7 @@ export const Route = createFileRoute("/")({
             addressRegion: "SP",
             addressCountry: "BR",
           },
+          aggregateRating: aggregateRatingSchema,
         }),
       },
     ],

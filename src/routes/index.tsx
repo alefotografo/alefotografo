@@ -11,7 +11,7 @@ import { waLink } from "@/lib/whatsapp";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-import { googleReviews, googleReviewsSummary } from "@/data/reviews";
+import { googleReviews, googleReviewsSummary, aggregateRatingSchema } from "@/data/reviews";
 
 const FALLBACK_HERO =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";

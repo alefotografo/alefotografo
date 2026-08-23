@@ -15,6 +15,7 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
 import { site } from "../data/catalog";
+import { aggregateRatingSchema } from "../data/reviews";
 
 
 function NotFoundComponent() {
@@ -143,6 +144,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           areaServed: ["São Paulo", "Grande São Paulo", "Brasil"],
           founder: { "@type": "Person", name: "Alexandre Machado" },
           sameAs: [site.instagram, site.linkedin],
+          aggregateRating: aggregateRatingSchema,
           priceRange: "$$",
         }),
       },

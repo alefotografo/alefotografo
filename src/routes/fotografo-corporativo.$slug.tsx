@@ -3,6 +3,7 @@ import { categoryBySlug, categories, site } from "@/data/catalog";
 import { categorySeo, cleanDescription } from "@/data/categorySeo";
 
 import { buildMeta } from "@/lib/seo";
+import { aggregateRatingSchema } from "@/data/reviews";
 import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -62,11 +63,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
               telephone: "+55 11 91355-0533",
               url: "https://alefotografos.com.br",
             },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5.0",
-              reviewCount: "87",
-            },
+            aggregateRating: aggregateRatingSchema,
           }),
         },
         {

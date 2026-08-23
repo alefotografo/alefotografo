@@ -11,7 +11,7 @@ import { waLink } from "@/lib/whatsapp";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-import { googleReviews, googleReviewsSummary } from "@/data/reviews";
+import { googleReviews, googleReviewsSummary, aggregateRatingSchema } from "@/data/reviews";
 
 const FALLBACK_HERO =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
@@ -20,9 +20,9 @@ const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo | Foto Profissional",
+      title: "Alê Fotógrafo — Fotografia Corporativa em SP (30 Anos)",
       description:
-        "Fotografia corporativa, retratos profissionais, foto para LinkedIn, eventos empresariais e vídeo institucional em São Paulo. Orçamento com Alê Fotógrafo.",
+        "Fotos corporativas, retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência, orçamento no mesmo dia e atendimento em toda a Grande SP.",
       path: "/",
     }),
     links: [
@@ -56,6 +56,7 @@ export const Route = createFileRoute("/")({
             addressRegion: "SP",
             addressCountry: "BR",
           },
+          aggregateRating: aggregateRatingSchema,
         }),
       },
     ],

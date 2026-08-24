@@ -241,7 +241,8 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
                   >
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
-                        src={c.cover as string}
+                        src={imgUrl(c.cover as string, 768)}
+                        srcSet={imgSrcSet(c.cover as string, [480, 768, 1024])}
                         alt={c.title}
                         width={800}
                         height={600}

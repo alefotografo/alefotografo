@@ -288,7 +288,8 @@ function FotografiaParaClinicasPage() {
                 {cover ? (
                   <div className="aspect-[3/2] w-full overflow-hidden bg-background">
                     <img
-                      src={cover}
+                      src={imgUrl(cover, 768)}
+                      srcSet={imgSrcSet(cover, [480, 768, 1024])}
                       alt={`Fotografia profissional — ${s.h}`}
                       width={900}
                       height={600}

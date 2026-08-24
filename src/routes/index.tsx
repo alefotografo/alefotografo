@@ -168,7 +168,7 @@ function Home() {
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <img
-                src="https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG"
+                src={imgUrl("https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG", 800)}
                 alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
                 width={800}
                 height={1000}
@@ -229,7 +229,9 @@ function Home() {
             >
               <div className={`relative ${i % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}>
                 <img
-                  src={c.cover!}
+                  src={imgUrl(c.cover!, 768)}
+                  srcSet={imgSrcSet(c.cover!, [480, 768, 1024])}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                   alt={c.title}
                   loading="lazy"
                   decoding="async"

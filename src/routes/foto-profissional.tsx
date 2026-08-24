@@ -307,7 +307,8 @@ function FotoProfissionalPage() {
               >
                 <div className="aspect-[3/2] w-full overflow-hidden">
                   <img
-                    src={c.cover as string}
+                    src={imgUrl(c.cover as string, 768)}
+                        srcSet={imgSrcSet(c.cover as string, [480, 768, 1024])}
                     alt={`Foto profissional — ${c.title}`}
                     width={900}
                     height={600}

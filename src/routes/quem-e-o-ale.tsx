@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { categories, posts, site } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -206,7 +207,9 @@ function QuemEOAlePage() {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={c.cover!}
+                  src={imgUrl(c.cover!, 768)}
+                  srcSet={imgSrcSet(c.cover!, [480, 768, 1024])}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                   alt={c.title}
                   loading="lazy"
                   decoding="async"

@@ -31,7 +31,7 @@ export function SmartImage({
   className = "",
   baseWidth = 768,
   widths = GRID_WIDTHS,
-  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+  sizes = "(max-width: 640px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 400px",
   width,
   height,
   priority = false,

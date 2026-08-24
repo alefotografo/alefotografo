@@ -117,7 +117,7 @@ function BlogIndex() {
                 {postCover(p) && (
                   <div className="aspect-[16/10] overflow-hidden bg-background">
                     <SmartImage
-                      src={postCover(p)}
+                      src={postCover(p)!}
                       alt={p.title}
                       width={640}
                       height={400}

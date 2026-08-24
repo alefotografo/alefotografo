@@ -126,7 +126,7 @@ function PostPage() {
 
         {postCover(p) && (
           <figure className="my-10 overflow-hidden rounded-sm ring-1 ring-border">
-            <SmartImage src={postCover(p)} alt={p.title} className="w-full" baseWidth={1024} priority sizes="(max-width: 768px) 100vw, 768px" />
+            <SmartImage src={postCover(p)!} alt={p.title} className="w-full" baseWidth={1024} priority sizes="(max-width: 768px) 100vw, 768px" />
           </figure>
         )}
 

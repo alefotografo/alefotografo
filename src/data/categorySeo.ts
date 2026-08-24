@@ -19,10 +19,26 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Ensaio de retratos profissionais em São Paulo, em estúdio ou na sua empresa. Fotos com naturalidade e padrão executivo para currículo, LinkedIn e mídia.",
   },
   "fotos-para-clinicas-medicas": {
-    title: "Fotografia para Clínicas Médicas em São Paulo",
+    title: "Fotos para Clínicas Médicas em SP | Orçamento Hoje",
     description:
-      "Fotos para clínicas médicas em São Paulo: ambientes, equipe e procedimentos com padrão de credibilidade. Imagens prontas para site, Google e redes sociais.",
+      "Fotógrafo de clínicas em São Paulo: fotos de ambientes, recepção, equipe e procedimentos com padrão de credibilidade. Nota 4,9 (144 avaliações) e orçamento no mesmo dia.",
   },
+  "fotografia-de-logistica": {
+    title: "Fotografia de Logística em SP | Armazém e Frota",
+    description:
+      "Fotografia de logística em São Paulo: centro de distribuição, armazém, expedição, frota e equipes em operação. Imagens prontas para site, propostas e licitações.",
+  },
+  "fotografia-industrial-em-sp": {
+    title: "Fotografia Industrial em São Paulo | Fábrica e Produção",
+    description:
+      "Fotografia industrial em São Paulo: linha de produção, maquinário, equipes e ambientes de fábrica com segurança e padrão técnico. Orçamento no mesmo dia no WhatsApp.",
+  },
+  "fotografo-feiras-stands": {
+    title: "Fotógrafo de Feiras e Stands em São Paulo",
+    description:
+      "Fotógrafo de feiras e stands em São Paulo: cobertura de expositores, produtos, palestras e visitantes no São Paulo Expo, Expo Center Norte e Anhembi. Prévia no mesmo dia.",
+  },
+
   "fotos-profissionais-para-medicos": {
     title: "Fotos Profissionais para Médicos em São Paulo",
     description:

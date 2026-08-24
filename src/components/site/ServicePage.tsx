@@ -4,6 +4,7 @@ import { waLink } from "@/lib/whatsapp";
 import { FaqList } from "@/components/site/Faq";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { LinkHub } from "@/components/site/LinkHub";
 import { SITE_ORIGIN } from "@/lib/seo";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import type { Faq } from "@/lib/faqs";
@@ -322,6 +323,11 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
             </li>
           ))}
         </ul>
+        <LinkHub
+          seed={`${cfg.h1} ${cfg.subtitle} ${cfg.intro.join(" ")} ${cfg.serviceType}`}
+          exclude={[cfg.path]}
+          title="10 páginas relacionadas"
+        />
       </section>
     </>
   );

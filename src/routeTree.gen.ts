@@ -21,6 +21,8 @@ import { Route as FotoProfissionalParaLinkedinRouteImport } from './routes/foto-
 import { Route as FotografiaExecutivaRouteImport } from './routes/fotografia-executiva'
 import { Route as FotografiaParaAdvogadosRouteImport } from './routes/fotografia-para-advogados'
 import { Route as FotografiaParaClinicasRouteImport } from './routes/fotografia-para-clinicas'
+import { Route as FotografoDeFeiraDeNegociosRouteImport } from './routes/fotografo-de-feira-de-negocios'
+import { Route as FotografoEmpresarialRouteImport } from './routes/fotografo-empresarial'
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
 import { Route as FotosProfissionaisMedicosRouteImport } from './routes/fotos-profissionais-medicos'
 import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
@@ -100,6 +102,17 @@ const FotografiaParaAdvogadosRoute = FotografiaParaAdvogadosRouteImport.update({
 const FotografiaParaClinicasRoute = FotografiaParaClinicasRouteImport.update({
   id: '/fotografia-para-clinicas',
   path: '/fotografia-para-clinicas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotografoDeFeiraDeNegociosRoute =
+  FotografoDeFeiraDeNegociosRouteImport.update({
+    id: '/fotografo-de-feira-de-negocios',
+    path: '/fotografo-de-feira-de-negocios',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FotografoEmpresarialRoute = FotografoEmpresarialRouteImport.update({
+  id: '/fotografo-empresarial',
+  path: '/fotografo-empresarial',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FotosCorporativasRoute = FotosCorporativasRouteImport.update({
@@ -221,6 +234,8 @@ export interface FileRoutesByFullPath {
   '/fotografia-executiva': typeof FotografiaExecutivaRoute
   '/fotografia-para-advogados': typeof FotografiaParaAdvogadosRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
+  '/fotografo-de-feira-de-negocios': typeof FotografoDeFeiraDeNegociosRoute
+  '/fotografo-empresarial': typeof FotografoEmpresarialRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
@@ -254,6 +269,8 @@ export interface FileRoutesByTo {
   '/fotografia-executiva': typeof FotografiaExecutivaRoute
   '/fotografia-para-advogados': typeof FotografiaParaAdvogadosRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
+  '/fotografo-de-feira-de-negocios': typeof FotografoDeFeiraDeNegociosRoute
+  '/fotografo-empresarial': typeof FotografoEmpresarialRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
@@ -289,6 +306,8 @@ export interface FileRoutesById {
   '/fotografia-executiva': typeof FotografiaExecutivaRoute
   '/fotografia-para-advogados': typeof FotografiaParaAdvogadosRoute
   '/fotografia-para-clinicas': typeof FotografiaParaClinicasRoute
+  '/fotografo-de-feira-de-negocios': typeof FotografoDeFeiraDeNegociosRoute
+  '/fotografo-empresarial': typeof FotografoEmpresarialRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
@@ -324,6 +343,8 @@ export interface FileRouteTypes {
     | '/fotografia-executiva'
     | '/fotografia-para-advogados'
     | '/fotografia-para-clinicas'
+    | '/fotografo-de-feira-de-negocios'
+    | '/fotografo-empresarial'
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
@@ -357,6 +378,8 @@ export interface FileRouteTypes {
     | '/fotografia-executiva'
     | '/fotografia-para-advogados'
     | '/fotografia-para-clinicas'
+    | '/fotografo-de-feira-de-negocios'
+    | '/fotografo-empresarial'
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
@@ -391,6 +414,8 @@ export interface FileRouteTypes {
     | '/fotografia-executiva'
     | '/fotografia-para-advogados'
     | '/fotografia-para-clinicas'
+    | '/fotografo-de-feira-de-negocios'
+    | '/fotografo-empresarial'
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
@@ -426,6 +451,8 @@ export interface RootRouteChildren {
   FotografiaExecutivaRoute: typeof FotografiaExecutivaRoute
   FotografiaParaAdvogadosRoute: typeof FotografiaParaAdvogadosRoute
   FotografiaParaClinicasRoute: typeof FotografiaParaClinicasRoute
+  FotografoDeFeiraDeNegociosRoute: typeof FotografoDeFeiraDeNegociosRoute
+  FotografoEmpresarialRoute: typeof FotografoEmpresarialRoute
   FotosCorporativasRoute: typeof FotosCorporativasRoute
   FotosProfissionaisMedicosRoute: typeof FotosProfissionaisMedicosRoute
   QuemEOAleRoute: typeof QuemEOAleRoute
@@ -531,6 +558,20 @@ declare module '@tanstack/react-router' {
       path: '/fotografia-para-clinicas'
       fullPath: '/fotografia-para-clinicas'
       preLoaderRoute: typeof FotografiaParaClinicasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-de-feira-de-negocios': {
+      id: '/fotografo-de-feira-de-negocios'
+      path: '/fotografo-de-feira-de-negocios'
+      fullPath: '/fotografo-de-feira-de-negocios'
+      preLoaderRoute: typeof FotografoDeFeiraDeNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotografo-empresarial': {
+      id: '/fotografo-empresarial'
+      path: '/fotografo-empresarial'
+      fullPath: '/fotografo-empresarial'
+      preLoaderRoute: typeof FotografoEmpresarialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fotos-corporativas': {
@@ -700,6 +741,8 @@ const rootRouteChildren: RootRouteChildren = {
   FotografiaExecutivaRoute: FotografiaExecutivaRoute,
   FotografiaParaAdvogadosRoute: FotografiaParaAdvogadosRoute,
   FotografiaParaClinicasRoute: FotografiaParaClinicasRoute,
+  FotografoDeFeiraDeNegociosRoute: FotografoDeFeiraDeNegociosRoute,
+  FotografoEmpresarialRoute: FotografoEmpresarialRoute,
   FotosCorporativasRoute: FotosCorporativasRoute,
   FotosProfissionaisMedicosRoute: FotosProfissionaisMedicosRoute,
   QuemEOAleRoute: QuemEOAleRoute,

@@ -5,6 +5,7 @@ import { site, categories } from "@/data/catalog";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
+import { LinkHub } from "@/components/site/LinkHub";
 import { ArrowUpRight, MapPin, Check } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
@@ -162,6 +163,15 @@ function BairroPage() {
           <FaqList items={faqs.slice(0, 5)} />
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+        <LinkHub
+          seed={`${b.nome} ${b.regiao} ${b.intro} ${b.destaques.join(" ")}`}
+          exclude={[`/fotografo-corporativo-em/${b.slug}`]}
+          title="10 páginas relacionadas"
+        />
+      </section>
     </>
+
   );
 }

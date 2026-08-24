@@ -5,6 +5,7 @@ import { ArrowLeft, Video as VideoIcon } from "lucide-react";
 import { videoThumb, ytFallback } from "@/lib/videoThumb";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
+import { LinkHub } from "@/components/site/LinkHub";
 
 export const Route = createFileRoute("/videos/$slug")({
   loader: ({ params }) => {
@@ -131,6 +132,11 @@ function VideoPage() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+        <LinkHub seed={`${v.title} vídeo institucional depoimento evento`} exclude={["/videos"]} title="10 páginas relacionadas" />
+      </section>
     </>
+
   );
 }

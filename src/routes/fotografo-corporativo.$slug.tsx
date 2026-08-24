@@ -6,6 +6,7 @@ import { buildMeta } from "@/lib/seo";
 import { aggregateRatingSchema } from "@/data/reviews";
 import { Masonry } from "@/components/site/Masonry";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { LinkHub } from "@/components/site/LinkHub";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
@@ -146,7 +147,14 @@ function CategoryPage() {
           posts={relatedPosts(`${cat.title} ${cat.subtitle} ${cat.description}`, undefined, 4)}
           title={`Mais sobre ${cat.title.toLowerCase()}`}
         />
+        <LinkHub
+          seed={`${cat.title} ${cat.subtitle} ${cat.description}`}
+          exclude={[`/fotografo-corporativo/${cat.slug}`]}
+          excludeSlug={cat.slug}
+          title="10 páginas relacionadas"
+        />
       </section>
+
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">

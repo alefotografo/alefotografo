@@ -5,6 +5,7 @@ import { site, categories } from "@/data/catalog";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
+import { LinkHub } from "@/components/site/LinkHub";
 import { ArrowUpRight, MapPin, Check } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({

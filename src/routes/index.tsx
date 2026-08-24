@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       path: "/",
     }),
     links: [
-      { rel: "canonical", href: "https://alefotografos.com.br/" },
+      { rel: "canonical", href: "https://alefotografo.com.br/" },
       { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchPriority: "high" },
     ],
     scripts: [
@@ -40,10 +40,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://alefotografos.com.br/#organization",
+          "@id": "https://alefotografo.com.br/#organization",
           name: site.fullName,
           alternateName: site.name,
-          url: "https://alefotografos.com.br",
+          url: "https://alefotografo.com.br",
           logo: HERO_IMG,
           image: HERO_IMG,
           description: site.description,

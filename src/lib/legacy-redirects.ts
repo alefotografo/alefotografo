@@ -2,6 +2,16 @@
 // equivalentes deste site (alefotografos.com.br). Também funcionam quando o
 // domínio antigo é apontado para esta aplicação.
 
+import { videos } from "@/data/catalog";
+
+const VIDEO_SLUGS = new Set(videos.map((v) => v.slug));
+
+// Slugs de galeria que mudaram de nome no site novo.
+const CATEGORY_ALIASES: Record<string, string> = {
+  "banco-de-imagem-corporativo": "banco-de-imagens-corporativo",
+  "fotografo-festa-da-firma": "fotografo-festa-de-confraternizacao",
+};
+
 // Slugs de categoria válidos no site novo (usados pelas regras dinâmicas).
 const CATEGORY_SLUGS = new Set([
   "fotos-aereas",

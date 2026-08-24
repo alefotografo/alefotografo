@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { site, categories } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
 import { waLink } from "@/lib/whatsapp";
@@ -122,16 +122,32 @@ export function Footer() {
 
         <div>
           <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
-            Conecte-se
+            Contato
           </h2>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
-            <li><Link to="/quem-e-o-ale" className="hover:text-foreground">Quem é o Alê</Link></li>
-            <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
-            <li><Link to="/depoimentos" className="hover:text-foreground">Depoimentos</Link></li>
-            <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
-            <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">LinkedIn</a></li>
-            <li><a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram</a></li>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li className="flex items-start gap-3">
+              <Mail className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
+              <a href={`mailto:${site.email}`} className="hover:text-foreground">{site.email}</a>
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
+              <span>
+                {site.address.street}<br />
+                {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                CEP {site.address.postalCode}, Brasil
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <MessageCircle className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
+              <a
+                href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground"
+              >
+                {site.phoneDisplay}
+              </a>
+            </li>
           </ul>
           <a
             href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
@@ -141,6 +157,13 @@ export function Footer() {
           >
             Solicitar orçamento no WhatsApp
           </a>
+          <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
+            <li><Link to="/quem-e-o-ale" className="hover:text-foreground">Quem é o Alê</Link></li>
+            <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
+            <li><Link to="/depoimentos" className="hover:text-foreground">Depoimentos</Link></li>
+            <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
+          </ul>
         </div>
       </div>
 
@@ -166,9 +189,33 @@ export function Footer() {
 
 
       <div className="border-t border-border/60">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-8 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-8">
+          <div className="flex flex-col items-center gap-3 md:items-start">
+            <div className="flex items-center gap-3">
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de Alê Fotógrafo"
+                className="text-muted-foreground transition-colors hover:text-ember"
+              >
+                <Instagram size={20} aria-hidden="true" />
+              </a>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn de Alê Fotógrafo"
+                className="text-muted-foreground transition-colors hover:text-ember"
+              >
+                <Linkedin size={20} aria-hidden="true" />
+              </a>
+            </div>
+            <p className="text-center md:text-left">
+              Alexandre Machado Fotografia — CNPJ {site.cnpj} — Desde {site.foundingYear} atendendo clientes especiais
+            </p>
+          </div>
           <p>© {new Date().getFullYear()} Alê Fotógrafo — Alexandre Machado. Todos os direitos reservados.</p>
-          <p>Fotógrafo corporativo em São Paulo · 30 anos de experiência</p>
         </div>
       </div>
     </footer>

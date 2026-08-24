@@ -11,20 +11,20 @@ const localBusinessSchema = {
   "description": "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
   "url": "https://alefotografos.com.br",
   "telephone": "+55-11-91355-0533",
-  "email": "contato@alefotografo.com.br",
+  "email": "comercial@alefotografo.com.br",
   "image": "https://alefotografos.com.br/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "R. Gomes de Carvalho, 1629",
+    "streetAddress": "Alameda Santos, 1165",
     "addressLocality": "São Paulo",
     "addressRegion": "SP",
-    "postalCode": "04547-006",
+    "postalCode": "01419-002",
     "addressCountry": "BR"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "-23.5952265",
-    "longitude": "-46.6885604"
+    "latitude": "-23.5640870",
+    "longitude": "-46.6553543"
   },
   "openingHoursSpecification": [
     {
@@ -36,7 +36,7 @@ const localBusinessSchema = {
   ],
   "sameAs": [
     "https://www.instagram.com/alefotografo",
-    "https://www.linkedin.com/in/alexandremachadofotografo"
+    "https://www.linkedin.com/in/alefotografo"
   ],
   "priceRange": "R$",
   "areaServed": {
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: buildMeta({
       title: "Contato e Orçamento de Fotos Corporativas em SP",
-      description: "Peça orçamento de fotos corporativas, retratos profissionais e vídeo institucional em São Paulo. Estúdio na Vila Olímpia e atendimento na sua empresa.",
+      description: "Peça orçamento de fotos corporativas, retratos profissionais e vídeo institucional em São Paulo. Estúdio no Jardim Paulista e atendimento na sua empresa.",
       path: "/contato",
     }),
     links: [{ rel: "canonical", href: "https://alefotografos.com.br/contato" }],
@@ -164,7 +164,11 @@ function Contato() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 text-ember" size={18} />
-                <span className="text-muted-foreground">São Paulo — SP<br />Atendemos toda Grande SP e Brasil</span>
+                <span className="text-muted-foreground">
+                  {site.address.street}<br />
+                  {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                  Atendemos toda Grande SP e Brasil
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <Linkedin className="mt-0.5 text-ember" size={18} />
@@ -179,8 +183,8 @@ function Contato() {
 
           <div className="overflow-hidden rounded-sm border border-border bg-surface">
             <iframe
-              title="Mapa da localização do estúdio na Vila Olímpia, São Paulo"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6955%2C-23.5992%2C-46.6816%2C-23.5912&layer=mapnik&marker=-23.5952265%2C-46.6885604"
+              title="Mapa da localização do estúdio no Jardim Paulista, São Paulo"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6605%2C-23.5660%2C-46.6502%2C-23.5621&layer=mapnik&marker=-23.5640870%2C-46.6553543"
               width={640}
               height={320}
               loading="lazy"
@@ -191,12 +195,12 @@ function Contato() {
             <div className="space-y-3 p-6">
 
               <p className="text-sm text-muted-foreground">
-                R. Gomes de Carvalho, 1629<br />
-                Vila Olímpia, São Paulo — SP<br />
-                CEP 04547-006
+                {site.address.street}<br />
+                {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                CEP {site.address.postalCode}
               </p>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=R.+Gomes+de+Carvalho,+1629+-+Vila+Ol%C3%ADmpia,+S%C3%A3o+Paulo+-+SP,+04547-006"
+                href="https://www.google.com/maps/search/?api=1&query=Alameda+Santos,+1165+-+Jardim+Paulista,+S%C3%A3o+Paulo+-+SP,+01419-002"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow"

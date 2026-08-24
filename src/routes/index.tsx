@@ -53,8 +53,10 @@ export const Route = createFileRoute("/")({
           founder: { "@type": "Person", name: "Alexandre Machado" },
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Alameda Santos, 1165",
             addressLocality: "São Paulo",
             addressRegion: "SP",
+            postalCode: "01419-002",
             addressCountry: "BR",
           },
           aggregateRating: aggregateRatingSchema,

@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ClientOnly } from "@tanstack/react-router";
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { buildMeta } from "@/lib/seo";
 import { site } from "@/data/catalog";
 import { LazySection } from "@/components/site/LazySection";
+import GoogleMapCard from "@/components/site/GoogleMapCard";
 import { Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react";
-
-const GoogleMapCard = lazy(() => import("@/components/site/GoogleMapCard"));
 
 
 const localBusinessSchema = {

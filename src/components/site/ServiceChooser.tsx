@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/whatsapp";
+import { imgUrl } from "@/lib/img";
 import { ArrowUpRight } from "lucide-react";
 
 type Service = {
@@ -10,6 +11,7 @@ type Service = {
   see: string;
   to?: "/foto-profissional" | "/fotos-corporativas" | "/foto-profissional-para-linkedin" | "/videos";
   catSlug?: string;
+  img: string;
 };
 
 const SERVICES: Service[] = [

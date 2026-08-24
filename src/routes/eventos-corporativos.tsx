@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotógrafo de Eventos Corporativos em São Paulo";
+const TITLE = "Cobertura de Eventos Corporativos em São Paulo";
 const DESCRIPTION =
   "Cobertura de eventos corporativos em São Paulo: congressos, convenções, palestras, premiações e kick-offs em foto e vídeo, com prévia no mesmo dia. Orçamento no WhatsApp.";
 

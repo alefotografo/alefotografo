@@ -50,10 +50,19 @@ function decode(s: string): string {
     .replace(/&ocirc;/g, "ô").replace(/&Ocirc;/g, "Ô")
     .replace(/&agrave;/g, "à").replace(/&Agrave;/g, "À")
     .replace(/&ordf;/g, "ª").replace(/&ordm;/g, "º")
+    .replace(/&deg;/g, "º")
+    .replace(/&bull;/g, "•")
+    .replace(/&ntilde;/g, "ñ").replace(/&Ntilde;/g, "Ñ")
+    .replace(/&uuml;/g, "ü").replace(/&Uuml;/g, "Ü")
+    .replace(/&hellip;/g, "…")
+    .replace(/&ndash;/g, "–").replace(/&mdash;/g, "—")
+    .replace(/&laquo;/g, "«").replace(/&raquo;/g, "»")
+    .replace(/&ldquo;|&rdquo;/g, '"').replace(/&lsquo;|&rsquo;/g, "'")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
+    .replace(/&#(\d+);/g, (_m, d) => String.fromCodePoint(Number(d)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_m, h) => String.fromCodePoint(parseInt(h, 16)))
     .replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 }
 
@@ -67,7 +76,7 @@ function cleanItem<T extends { description?: string; seo_title?: string; subtitl
   };
 }
 
-// Ordem oficial das categorias conforme alefotografos.com.br/fotografo-corporativo
+// Ordem oficial das categorias conforme alefotografo.com.br/fotografo-corporativo
 const CATEGORY_ORDER: string[] = [
   "fotografia-para-escritorios-de-advocacia",
   "ensaio-feminino",
@@ -111,7 +120,7 @@ export const categories: Category[] = data.cats.map(cleanItem).sort((a, b) => {
   const ib = CATEGORY_ORDER.indexOf(b.slug);
   return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
 });
-// Ordem oficial dos vídeos conforme alefotografos.com.br/videos-para-empresas
+// Ordem oficial dos vídeos conforme alefotografo.com.br/videos-para-empresas
 const VIDEO_ORDER: string[] = [
   "beauty-fair-2026-3o-dia-tendencias-lancamentos-e-os-melhores-momentos-da-feira",
   "flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional",
@@ -195,7 +204,7 @@ export const videos: Video[] = data.vids
     return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
   });
 
-// Ordem oficial dos posts conforme alefotografos.com.br/blog
+// Ordem oficial dos posts conforme alefotografo.com.br/blog
 const POST_ORDER: string[] = [
   "fotografia-imobiliaria-corporativa-aceleracao-vendas",
   "foto-perfil-linkedin-gestor-contratos",
@@ -235,10 +244,10 @@ export const site = {
   state: "SP",
   whatsapp: "5511913550533",
   phoneDisplay: "11913550533",
-  email: "comercial@alefotografos.com.br",
+  email: "comercial@alefotografo.com.br",
   instagram: "https://www.instagram.com/alefotografo",
   linkedin: "https://www.linkedin.com/in/alefotografo",
-  originalUrl: "https://alefotografos.com.br",
+  originalUrl: "https://alefotografo.com.br",
   cnpj: "03230626/0001-82",
   foundingYear: 1995,
   address: {

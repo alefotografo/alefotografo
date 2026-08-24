@@ -14,7 +14,7 @@ const localBusinessSchema = {
   "description": "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
   "url": "https://alefotografo.com.br",
   "telephone": "+55-11-91355-0533",
-  "email": "comercial@alefotografos.com.br",
+  "email": "comercial@alefotografo.com.br",
   "image": "https://alefotografo.com.br/og-image.jpg",
   "address": {
     "@type": "PostalAddress",

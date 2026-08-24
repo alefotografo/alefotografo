@@ -122,16 +122,32 @@ export function Footer() {
 
         <div>
           <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
-            Conecte-se
+            Contato
           </h2>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
-            <li><Link to="/quem-e-o-ale" className="hover:text-foreground">Quem é o Alê</Link></li>
-            <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
-            <li><Link to="/depoimentos" className="hover:text-foreground">Depoimentos</Link></li>
-            <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
-            <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">LinkedIn</a></li>
-            <li><a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram</a></li>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li className="flex items-start gap-3">
+              <Mail className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
+              <a href={`mailto:${site.email}`} className="hover:text-foreground">{site.email}</a>
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
+              <span>
+                {site.address.street}<br />
+                {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                CEP {site.address.postalCode}, Brasil
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <MessageCircle className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
+              <a
+                href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground"
+              >
+                {site.phoneDisplay}
+              </a>
+            </li>
           </ul>
           <a
             href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}

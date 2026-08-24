@@ -181,35 +181,28 @@ function Contato() {
             </ul>
           </div>
 
-          <div className="overflow-hidden rounded-sm border border-border bg-surface">
-            <iframe
-              title="Mapa da localização do estúdio no Jardim Paulista, São Paulo"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6605%2C-23.5660%2C-46.6502%2C-23.5621&layer=mapnik&marker=-23.5640870%2C-46.6553543"
-              width={640}
-              height={320}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="block h-[220px] w-full border-0 sm:h-[280px]"
-            />
-
-            <div className="space-y-3 p-6">
-
-              <p className="text-sm text-muted-foreground">
-                {site.address.street}<br />
-                {site.address.district}, {site.address.locality} — {site.address.region}<br />
-                CEP {site.address.postalCode}
-              </p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Alameda+Santos,+1165+-+Jardim+Paulista,+S%C3%A3o+Paulo+-+SP,+01419-002"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow"
+          <ClientOnly
+            fallback={
+              <div
+                aria-hidden="true"
+                className="h-[380px] w-full rounded-sm border border-border bg-surface"
+              />
+            }
+          >
+            <LazySection minHeight={380} rootMargin="300px">
+              <Suspense
+                fallback={
+                  <div
+                    aria-hidden="true"
+                    className="h-[380px] w-full animate-pulse rounded-sm border border-border bg-surface"
+                  />
+                }
               >
-                <MapPin size={16} />
-                Abrir no Google Maps
-              </a>
-            </div>
-          </div>
+                <GoogleMapCard />
+              </Suspense>
+            </LazySection>
+          </ClientOnly>
+
 
           <div className="rounded-sm border border-border bg-gradient-to-br from-surface to-background p-6">
             <h2 className="font-display text-lg font-semibold">Horário de atendimento</h2>

@@ -1,0 +1,85 @@
+MIGRAÇÃO PARA HOSTINGER — alefotografos.com.br
+==============================================
+
+O QUE É ESTE PACOTE
+-------------------
+Site completo em HTML estático: 321 páginas já pré-renderizadas (home, blog
+com 180 posts, 35 galerias, 80 vídeos, páginas de serviço e bairros),
+sitemaps, RSS, robots.txt, imagens, CSS/JS e o arquivo .htaccess com todas as
+regras de HTTPS, www e redirecionamentos 301.
+
+Funciona em qualquer plano da Hostinger (inclusive hospedagem compartilhada,
+sem Node.js).
+
+
+PASSO 1 — SUBIR OS ARQUIVOS
+---------------------------
+1. Painel Hostinger > Arquivos > Gerenciador de arquivos.
+2. Entre na pasta  public_html  do domínio alefotografos.com.br.
+3. Apague o conteúdo antigo (se houver) e envie TODO o conteúdo desta pasta
+   (não a pasta em si) — arraste o ZIP e use "Extrair" para ir mais rápido.
+4. Confirme que ficaram na raiz:  index.html, .htaccess, assets/, blog/,
+   sitemap.xml, robots.txt
+   IMPORTANTE: o .htaccess é um arquivo oculto. No Gerenciador de arquivos
+   ative "Mostrar arquivos ocultos" para conferir se ele subiu.
+
+Alternativa por FTP (FileZilla): host/usuário/senha em Hospedagem > FTP.
+Diretório remoto: /public_html
+
+
+PASSO 2 — APONTAR O DOMÍNIO
+---------------------------
+O domínio hoje aponta para a Lovable (A 185.158.133.1). Para servir da
+Hostinger:
+
+a) No painel Hostinger, em Domínios, adicione alefotografos.com.br ao plano.
+b) A Hostinger informa os nameservers (ex.: ns1.dns-parking.com e
+   ns2.dns-parking.com) OU o IP do servidor.
+c) No registrador do domínio (Registro.br ou onde ele está registrado):
+   - Opção recomendada: troque os nameservers pelos da Hostinger.
+   - Opção manual: altere os registros
+       A     @      -> IP do servidor Hostinger
+       A     www    -> IP do servidor Hostinger
+d) Mantenha o registro TXT  _lovable  apenas se quiser continuar podendo
+   voltar para a Lovable. Ele não interfere.
+e) Propagação: de 30 minutos a 24 horas.
+
+
+PASSO 3 — SSL (HTTPS)
+---------------------
+Após a propagação: Hospedagem > Avançado > SSL > Instalar SSL gratuito
+(Let's Encrypt) e ative "Forçar HTTPS".
+O .htaccess já força HTTPS e remove o www, mantendo as URLs canônicas
+https://alefotografos.com.br/... exatamente como estão no Google.
+
+
+PASSO 4 — SEO PÓS-MIGRAÇÃO
+--------------------------
+1. Google Search Console: reenvie  https://alefotografos.com.br/sitemap.xml
+2. A tag de verificação do Search Console e o Google Analytics (G-5TV6CEKT2G)
+   já estão dentro do HTML — não precisa refazer nada.
+3. Acompanhe "Cobertura/Indexação" nos primeiros 15 dias.
+4. Todos os redirecionamentos 301 do site antigo continuam ativos via
+   .htaccess (ex.: /videos-para-empresas -> /videos, /retrato-executivo ->
+   /fotografia-executiva, categorias antigas do WordPress -> /blog).
+
+
+O QUE MUDA NA HOSTINGER
+-----------------------
+- Botões de WhatsApp, blog, galerias, vídeos, mapa e formulários de contato
+  por WhatsApp: funcionam 100%.
+- Painel administrativo /auth e /admin/indexacao dependem do servidor do
+  Lovable Cloud; em hospedagem compartilhada eles não funcionam. Continue
+  usando o painel pela URL da Lovable quando precisar.
+- Para publicar novos posts/vídeos: edite no Lovable, rode a exportação de
+  novo e reenvie a pasta. Comandos:
+      bun run build
+      node scripts/serve-build.mjs      (em outro terminal)
+      node scripts/export-static.mjs    (gera a pasta hostinger/)
+
+
+SUPORTE
+-------
+Se alguma página abrir "404" após subir, quase sempre é o .htaccess que não
+subiu (arquivo oculto) ou o mod_rewrite desativado — na Hostinger ele já vem
+ativo por padrão.

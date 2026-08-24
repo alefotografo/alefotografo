@@ -1,0 +1,75 @@
+# Hostinger — Alê Fotógrafo
+Options -MultiViews
+RewriteEngine On
+
+# Força HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Força domínio sem www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Remove barra final duplicada (mantém URLs canônicas sem "/")
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Redirecionamentos 301 do site antigo
+RewriteRule ^videos-para-empresas/?$ /videos [R=301,L]
+RewriteRule ^videos-corporativos/?$ /videos [R=301,L]
+RewriteRule ^portfolio-do-fotografo/?$ /fotografo-corporativo [R=301,L]
+RewriteRule ^loja/?$ /contato [R=301,L]
+RewriteRule ^orcamento/?$ /contato [R=301,L]
+RewriteRule ^fale-conosco/?$ /contato [R=301,L]
+RewriteRule ^sobre-o-ale/?$ /quem-e-o-ale [R=301,L]
+RewriteRule ^fotografia-corporativa-sao-paulo/?$ /fotos-corporativas [R=301,L]
+RewriteRule ^foto-profissional-sao-paulo/?$ /foto-profissional [R=301,L]
+RewriteRule ^foto-para-linkedin/?$ /foto-profissional-para-linkedin [R=301,L]
+RewriteRule ^fotos-para-medicos/?$ /fotos-profissionais-medicos [R=301,L]
+RewriteRule ^fotografia-para-medicos/?$ /fotos-profissionais-medicos [R=301,L]
+RewriteRule ^fotos-para-advogados/?$ /fotografia-para-advogados [R=301,L]
+RewriteRule ^retrato-executivo/?$ /fotografia-executiva [R=301,L]
+
+# Categorias antigas do WordPress
+RewriteRule ^blog/(categoria|category|tag)/.*$ /blog [R=301,L]
+RewriteRule ^blog/page/[0-9]+/?$ /blog [R=301,L]
+RewriteRule ^portfolio-do-fotografo/(.+)$ /fotografo-corporativo/$1 [R=301,L]
+
+
+# Serve o HTML pré-gerado de cada rota
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.*)$ /$1/index.html [L]
+
+# Fallback SPA
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+ErrorDocument 404 /404.html
+
+# Cache de assets com hash
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.(js|css|woff2|jpg|jpeg|png|webp|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>

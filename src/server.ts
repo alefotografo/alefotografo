@@ -90,6 +90,9 @@ function redirectLegacy(request: Request): Response | undefined {
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const hostRedirect = redirectCanonicalHost(request);
+    if (hostRedirect) return hostRedirect;
+
     const httpsRedirect = redirectHttps(request);
     if (httpsRedirect) return httpsRedirect;
 

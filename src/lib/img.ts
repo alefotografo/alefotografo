@@ -6,6 +6,9 @@ const REMOTE_HOSTS = [".rackcdn.com"];
 
 export const IMG_WIDTHS = [480, 768, 1024, 1440, 1920];
 
+/** Larguras usadas em grids/galerias (cada foto ocupa no máximo ~1/3 da tela). */
+export const GRID_WIDTHS = [360, 480, 768, 1024];
+
 function isRemote(src: string) {
   if (!/^https?:\/\//i.test(src)) return false;
   try {

@@ -2,7 +2,20 @@
 
 Este projeto (remix, fundo preto) ainda não está publicado e o domínio ainda não está conectado a ele. Os registros abaixo são os da Lovable; o único valor que só aparece depois de conectar o domínio é o TXT de verificação.
 
-## Registros a criar na zona DNS do registro.br
+## Servidor DNS 1 e 2 (campos do registro.br)
+
+A Lovable não fornece nameservers próprios — a ligação é feita por registros A, não por delegação de DNS. Então nos campos "Servidor DNS 1 / Servidor DNS 2" use o DNS gratuito do próprio registro.br:
+
+| Campo | Valor |
+|---|---|
+| Servidor DNS 1 | `a.auto.dns.br` |
+| Servidor DNS 2 | `b.auto.dns.br` |
+
+Com esses dois servidores, o registro.br libera a aba "Editar zona / Alterar zona DNS", onde você cria os registros abaixo.
+
+Alternativa: se preferir manter o DNS onde o domínio está hoje (Cloudflare, Hostinger, etc.), mantenha os nameservers atuais e crie os mesmos registros lá.
+
+## Registros a criar na zona DNS
 
 | Tipo | Nome | Valor |
 |---|---|---|
@@ -11,7 +24,6 @@ Este projeto (remix, fundo preto) ainda não está publicado e o domínio ainda 
 | TXT | `_lovable` | `lovable_verify=...` (valor exibido ao conectar o domínio) |
 
 Observações:
-- No registro.br, use "Alterar zona DNS" (DNS do próprio registro.br). Não é necessário trocar nameservers para os da Lovable.
 - Remova os registros A/CNAME antigos da raiz e do `www` que hoje apontam para a hospedagem WordPress, senão o domínio continua servindo o site antigo.
 - Mantenha intactos os registros de e-mail (MX, SPF, DKIM, DMARC) para não derrubar `comercial@alefotografo.com.br`.
 - Se algum dia o domínio passar por Cloudflare, o setup muda para modo proxy (CNAME) em vez dos A records.

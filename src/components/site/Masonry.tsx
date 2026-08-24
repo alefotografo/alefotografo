@@ -40,10 +40,10 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
             <SmartImage
               src={src}
               alt={`${alt} — foto ${i + 1}`}
-              priority={i < 3}
+              priority={i === 0}
               baseWidth={768}
               placeholderRatio="4 / 3"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 400px"
               onBroken={() =>
                 setBroken((prev) => {
                   if (prev.has(src)) return prev;

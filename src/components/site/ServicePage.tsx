@@ -3,7 +3,6 @@ import { categories, site } from "@/data/catalog";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { waLink } from "@/lib/whatsapp";
 import { FaqList } from "@/components/site/Faq";
-import { Testimonials } from "@/components/site/Testimonials";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { LinkHub } from "@/components/site/LinkHub";
 import { SITE_ORIGIN } from "@/lib/seo";
@@ -274,9 +273,6 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
           Atendimento para empresas, executivos, médicos, advogados, clínicas, escritórios, equipes
           comerciais e eventos corporativos em São Paulo.
         </p>
-        <div className="mt-10">
-          <Testimonials />
-        </div>
       </section>
 
       <section className="border-y border-border bg-surface">

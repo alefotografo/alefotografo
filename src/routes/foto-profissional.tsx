@@ -3,7 +3,6 @@ import { categories, site } from "@/data/catalog";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
-import { Testimonials } from "@/components/site/Testimonials";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import { waLink } from "@/lib/whatsapp";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -329,10 +328,6 @@ function FotoProfissionalPage() {
         </div>
       </section>
 
-      <Testimonials
-        title="Prova social: quem já fotografou com o Alê"
-        subtitle="Avaliações reais publicadas no perfil do Google."
-      />
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">

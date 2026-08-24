@@ -43,7 +43,6 @@ const cfg: ServicePageConfig = {
     "Relatórios anuais e comunicação com investidores",
     "Anúncios e campanhas de mídia paga",
   ],
-  comoFunciana: undefined as never,
   comoFunciona: [
     { h: "1. Briefing", p: "Você informa o endereço, o que precisa ser fotografado e onde as imagens serão usadas." },
     { h: "2. Roteiro de captação", p: "Montamos a lista de ambientes, pessoas e processos, com tempo estimado por etapa." },

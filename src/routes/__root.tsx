@@ -154,14 +154,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           priceRange: "$$",
         }),
       },
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=G-5TV6CEKT2G",
-        async: true,
-      },
-      {
-        type: "text/javascript",
-        children: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5TV6CEKT2G');",
-      },
     ],
   }),
   shellComponent: RootShell,
@@ -192,12 +184,20 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
-      <main id="conteudo" className="pb-20 md:pb-0">
+      <main id="conteudo" className="pb-24 md:pb-0">
         <Outlet />
       </main>
-      {!hideTestimonials && <TestimonialsCarousel />}
-      <Footer />
+      {!hideTestimonials && (
+        <LazySection minHeight={320} rootMargin="300px">
+          <TestimonialsCarousel />
+        </LazySection>
+      )}
+      <LazySection minHeight={420} rootMargin="300px">
+        <Footer />
+      </LazySection>
       <WhatsappCta />
+      <DeferredAnalytics />
     </QueryClientProvider>
   );
 }
+

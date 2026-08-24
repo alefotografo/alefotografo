@@ -1,52 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMeta } from "@/lib/seo";
 import { Quote } from "lucide-react";
+import {
+  allTestimonials,
+  sourceLabel,
+  testimonialInitials,
+  type Testimonial,
+} from "@/data/testimonials";
+import { aggregateRatingSchema, googleReviewsSummary } from "@/data/reviews";
 
-type Testimonial = {
-  name: string;
-  role: string;
-  text: string;
-  link: string;
+const reviewsSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Alê Fotógrafo",
+  url: "https://alefotografos.com.br/depoimentos",
+  aggregateRating: aggregateRatingSchema,
+  review: allTestimonials.map((t) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: t.name },
+    ...(t.date ? { datePublished: t.date } : {}),
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: t.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: t.text,
+  })),
 };
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Leandro Capolupo",
-    role: "Gerente de Planejamento Financeiro",
-    text: "Fiz um trabalho com o Alexandre recentemente e foi muito bacana! Profissional super ágil, competente e focado na qualidade. Além de super divertido durante todo o processo, o resultado foi ótimo!",
-    link: "https://www.linkedin.com/in/leandroportocapolupo/",
-  },
-  {
-    name: "Maria Clara Cardoso",
-    role: "Psicóloga, Coach e Palestrante",
-    text: "Excelente profissional. Alexandre fez minhas fotos profissionais em meu consultório e o resultado do trabalho foi incrível. Recebi as fotos tratadas no final da sessão. Além da pontualidade, compromisso e amor ao trabalho que marcam o profissional, ressalto a facilidade de diálogo e atenção com o cliente.",
-    link: "https://www.linkedin.com/in/maria-clara-cardoso-7869b225/",
-  },
-  {
-    name: "Anelise Duarte",
-    role: "Marketing and Sales Experienced Executive",
-    text: "Recentemente atualizei minhas fotos profissionais com o Alexandre. Achei o trabalho bastante profissional. Alexandre é pontual, possui um equipamento de qualidade e entrega o que promete. Recomendo o trabalho dele!",
-    link: "https://www.linkedin.com/in/aneliseduarte/",
-  },
-  {
-    name: "Julio Cesar Ponte Ferreira",
-    role: "Associado no IBGC — Instituto Brasileiro de Governança Corporativa",
-    text: "Profissional ético, paciente, dedicado, detalhista, preciso, com sensibilidade apurada e muito empenhado em entregar o melhor. Respeita o seu tempo.",
-    link: "https://www.linkedin.com/in/julio-cesar-ponte-ferreira-b6a96a194/",
-  },
-  {
-    name: "Carolina Sasdelli Marani",
-    role: "Marketing Sector Manager LATAM — Sealed Air Corporation",
-    text: "Alexandre tem sensibilidade artística e é perspicaz em planejar bem o movimento, a luz e o momento para gerar o melhor resultado. Profissional rápido, pontual, sério e focado em obter a melhor foto. O senso estético apurado permite a ele usar da expertise para direcionar o cliente a fotografar com naturalidade. O resultado que Alexandre me entregou foram fotos profissionais que transmitem segurança e leveza.",
-    link: "https://www.linkedin.com/in/carolina-sasdelli-marani-a8a32611b/",
-  },
-  {
-    name: "Vanessa Cantieri",
-    role: "Coordenadora Administrativa — Rocha & Queiroz Advogados Associados",
-    text: "O fotógrafo Alexandre nos entregou um excelente trabalho! É muito carismático, transmite leveza e naturalidade às fotos. A segurança que ele passa resulta em fotos confiantes e ricas de detalhes. Surpreendente, pontual, cumpre o que promete. Desejo sucesso!",
-    link: "https://www.linkedin.com/in/vanessa-cantieri-353b1753/",
-  },
-];
 
 export const Route = createFileRoute("/depoimentos")({
   head: () => ({
@@ -57,18 +38,15 @@ export const Route = createFileRoute("/depoimentos")({
       path: "/depoimentos",
     }),
     links: [{ rel: "canonical", href: "https://alefotografos.com.br/depoimentos" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(reviewsSchema),
+      },
+    ],
   }),
   component: Depoimentos,
 });
-
-function initials(name: string) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((n) => n[0]?.toUpperCase() ?? "")
-    .join("");
-}
 
 function Avatar({ name }: { name: string }) {
   return (
@@ -76,8 +54,57 @@ function Avatar({ name }: { name: string }) {
       className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ember/15 font-display text-sm font-semibold text-ember"
       aria-hidden="true"
     >
-      {initials(name)}
+      {testimonialInitials(name)}
     </div>
+  );
+}
+
+function Card({ t }: { t: Testimonial }) {
+  return (
+    <figure className="relative flex flex-col rounded-sm border border-border bg-surface p-6 sm:p-8">
+      <Quote
+        className="absolute right-4 top-4 text-ember/15 sm:right-6 sm:top-6"
+        size={40}
+        strokeWidth={1}
+        aria-hidden="true"
+      />
+      <div className="flex items-center gap-2">
+        <span className="flex items-center gap-0.5 text-ember" aria-label={`${t.rating} de 5 estrelas`}>
+          {Array.from({ length: t.rating }).map((_, i) => (
+            <span key={i} aria-hidden="true">
+              ★
+            </span>
+          ))}
+        </span>
+        <span className="rounded-full border border-border px-2 py-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
+          {t.source === "google" ? "Google" : "LinkedIn"}
+        </span>
+      </div>
+      <blockquote className="relative mt-4 text-base leading-relaxed text-foreground/90 md:text-lg">
+        “{t.text}”
+      </blockquote>
+      <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-5">
+        <Avatar name={t.name} />
+        <div className="min-w-0 flex-1">
+          <p className="font-display font-semibold leading-tight">{t.name}</p>
+          <p className="text-sm leading-tight text-muted-foreground">
+            {t.role ?? sourceLabel[t.source]}
+            {t.when ? ` · ${t.when}` : ""}
+          </p>
+          {t.link ? (
+            <a
+              href={t.link}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="mt-1 inline-block text-xs text-ember hover:underline"
+              aria-label={`Ver depoimento de ${t.name}`}
+            >
+              {t.source === "google" ? "Ver no Google →" : "Ver no LinkedIn →"}
+            </a>
+          ) : null}
+        </div>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -92,38 +119,24 @@ function Depoimentos() {
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
             Profissionais e empresas que confiaram em Alexandre Machado para construir sua imagem.
+            Nota {googleReviewsSummary.ratingValue.toLocaleString("pt-BR")} de 5 em{" "}
+            {googleReviewsSummary.reviewCount} avaliações no Google.
           </p>
+          <a
+            href={googleReviewsSummary.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="mt-4 inline-block text-sm text-ember underline underline-offset-4"
+          >
+            Ver o perfil no Google
+          </a>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
         <div className="grid gap-6 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <figure
-              key={i}
-              className="relative flex flex-col rounded-sm border border-border bg-surface p-6 sm:p-8"
-            >
-              <Quote className="absolute right-4 top-4 text-ember/15 sm:right-6 sm:top-6" size={40} strokeWidth={1} aria-hidden="true" />
-              <blockquote className="relative text-base leading-relaxed text-foreground/90 md:text-lg">
-                "{t.text}"
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-5">
-                <Avatar name={t.name} />
-                <div className="min-w-0 flex-1">
-                  <p className="font-display font-semibold leading-tight">{t.name}</p>
-                  <p className="text-sm text-muted-foreground leading-tight">{t.role}</p>
-                  <a
-                    href={t.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1 inline-block text-xs text-ember hover:underline"
-                    aria-label={`Ver perfil de ${t.name} no LinkedIn`}
-                  >
-                    Ver no LinkedIn →
-                  </a>
-                </div>
-              </figcaption>
-            </figure>
+          {allTestimonials.map((t) => (
+            <Card key={`${t.source}-${t.name}`} t={t} />
           ))}
         </div>
       </section>

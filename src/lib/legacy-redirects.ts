@@ -6,6 +6,19 @@ import { videos } from "@/data/catalog";
 
 const VIDEO_SLUGS = new Set(videos.map((v) => v.slug));
 
+// Vídeos que saíram do ar no YouTube e foram removidos do catálogo.
+// As URLs antigas continuam respondendo com 301 para /videos.
+const REMOVED_VIDEO_SLUGS = new Set([
+  "beauty-fair-2026-4o-e-ultimo-dia-encerramento-da-maior-feira-de-beleza-da-americ",
+  "beauty-fair-2026-2o-dia-da-maior-feira-de-beleza-da-america-latina-cobertura-pro",
+  "beauty-fair-2026-cobertura-profissional-do-1o-dia-da-maior-feira-de-beleza-da-am",
+  "ativa-logistica-na-abradilan-2026-cobertura-profissional-em-video-da-maior-feira",
+  "abed-60-anos-cobertura-profissional-da-celebracao-com-fotografia-e-video-corpora",
+  "nini-bambini-moda-infantil-com-encanto-e-estilo",
+  "women-in-tech-brasil",
+  "fincon-o-primeiro-encontro-da-comunicacao-financeira",
+]);
+
 // Slugs de galeria que mudaram de nome no site novo.
 const CATEGORY_ALIASES: Record<string, string> = {
   "banco-de-imagem-corporativo": "banco-de-imagens-para-empresas",

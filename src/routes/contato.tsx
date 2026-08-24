@@ -11,20 +11,20 @@ const localBusinessSchema = {
   "description": "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
   "url": "https://alefotografos.com.br",
   "telephone": "+55-11-91355-0533",
-  "email": "contato@alefotografo.com.br",
+  "email": "comercial@alefotografo.com.br",
   "image": "https://alefotografos.com.br/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "R. Gomes de Carvalho, 1629",
+    "streetAddress": "Alameda Santos, 1165",
     "addressLocality": "São Paulo",
     "addressRegion": "SP",
-    "postalCode": "04547-006",
+    "postalCode": "01419-002",
     "addressCountry": "BR"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "-23.5952265",
-    "longitude": "-46.6885604"
+    "latitude": "-23.5640870",
+    "longitude": "-46.6553543"
   },
   "openingHoursSpecification": [
     {
@@ -36,7 +36,7 @@ const localBusinessSchema = {
   ],
   "sameAs": [
     "https://www.instagram.com/alefotografo",
-    "https://www.linkedin.com/in/alexandremachadofotografo"
+    "https://www.linkedin.com/in/alefotografo"
   ],
   "priceRange": "R$",
   "areaServed": {

@@ -1,8 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+import { lazy, Suspense, useState } from "react";
 import { buildMeta } from "@/lib/seo";
 import { site } from "@/data/catalog";
+import { LazySection } from "@/components/site/LazySection";
 import { Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react";
+
+const GoogleMapCard = lazy(() => import("@/components/site/GoogleMapCard"));
+
 
 const localBusinessSchema = {
   "@context": "https://schema.org",

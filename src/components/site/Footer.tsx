@@ -60,7 +60,9 @@ export function Footer() {
                     className="group relative block aspect-square overflow-hidden rounded-sm bg-black ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
                   >
                     <img
-                      src={tile.src}
+                      src={imgUrl(tile.src, 300)}
+                      srcSet={imgSrcSet(tile.src, [200, 300, 480])}
+                      sizes="(max-width: 640px) 25vw, 12vw"
                       alt={tile.title}
                       width={300}
                       height={300}
@@ -70,6 +72,7 @@ export function Footer() {
                       className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
                       style={{ contentVisibility: i < 4 ? "visible" : "auto" }}
                     />
+
                     <span className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-opacity duration-300 group-hover:bg-black/40 group-hover:opacity-100">
                       <Instagram size={20} className="text-white" aria-hidden="true" />
                     </span>

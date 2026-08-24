@@ -54,7 +54,7 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
     links: [
       { rel: "canonical", href: CANONICAL },
-      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchpriority: "high" },
+      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchPriority: "high" },
     ],
     scripts: [
       {

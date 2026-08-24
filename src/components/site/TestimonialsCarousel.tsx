@@ -81,11 +81,17 @@ export function TestimonialsCarousel({
       setSelected(api.selectedScrollSnap());
     };
     sync();
+    const t = window.setTimeout(sync, 300);
+    api.on("init", sync);
     api.on("select", sync);
     api.on("reInit", sync);
+    api.on("settle", sync);
     return () => {
+      window.clearTimeout(t);
+      api.off("init", sync);
       api.off("select", sync);
       api.off("reInit", sync);
+      api.off("settle", sync);
     };
   }, [api]);
 
@@ -143,11 +149,11 @@ export function TestimonialsCarousel({
           setApi={setApi}
           opts={{ align: "start", loop: true }}
         >
-          <CarouselContent className="-ml-6">
+          <CarouselContent className="-ml-6 items-stretch">
             {allTestimonials.map((t) => (
               <CarouselItem
                 key={`${t.source}-${t.name}`}
-                className="pl-6 sm:basis-1/2 lg:basis-1/3"
+                className="h-full pl-6 sm:basis-1/2 lg:basis-1/3"
               >
                 <TestimonialCard t={t} />
               </CarouselItem>

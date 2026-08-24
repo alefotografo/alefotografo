@@ -86,7 +86,7 @@ export function Footer() {
         </section>
       )}
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-4 md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-4">
 
         <div className="md:col-span-2">
           <img src={logo.url} alt="Alê Fotógrafo" width={200} height={60} className="h-14 w-auto" />
@@ -127,7 +127,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
-              <a href={`mailto:${site.email}`} className="hover:text-foreground">{site.email}</a>
+              <a href={`mailto:${site.email}`} className="break-all hover:text-foreground">{site.email}</a>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
@@ -153,7 +153,7 @@ export function Footer() {
             href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+            className="mt-6 inline-flex max-w-full items-center justify-center rounded-sm bg-ember px-4 py-3 text-center text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
             Solicitar orçamento no WhatsApp
           </a>

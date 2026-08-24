@@ -1,31 +1,95 @@
-import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "@/assets/logo-alefotografo.png.asset.json";
 
-const nav = [
-  { to: "/", label: "Início" },
-  { to: "/foto-profissional", label: "Foto profissional" },
-  { to: "/fotos-corporativas", label: "Corporativo" },
-  { to: "/fotografo-corporativo", label: "Fotos" },
-  { to: "/videos", label: "Vídeos" },
-  { to: "/blog", label: "Blog" },
-  { to: "/quem-e-o-ale", label: "Quem é o Alê" },
-  { to: "/faq", label: "FAQ" },
-  { to: "/contato", label: "Contato" },
-] as const;
+type Item = { to: string; label: string; hint?: string };
+type Entry = { label: string; to?: string; items?: Item[] };
+
+const NAV: Entry[] = [
+  {
+    label: "Serviços",
+    items: [
+      { to: "/fotos-corporativas", label: "Fotos corporativas", hint: "Times, ambientes e institucional" },
+      { to: "/fotografia-executiva", label: "Fotografia executiva", hint: "Retratos de liderança" },
+      { to: "/foto-profissional-para-linkedin", label: "Foto para LinkedIn", hint: "Perfil profissional" },
+      { to: "/fotos-profissionais-medicos", label: "Médicos", hint: "Retratos para saúde" },
+      { to: "/fotografia-para-clinicas", label: "Clínicas", hint: "Ambientes e equipe" },
+      { to: "/fotografia-para-advogados", label: "Advogados", hint: "Escritórios e sócios" },
+      { to: "/eventos-corporativos", label: "Eventos corporativos", hint: "Congressos e feiras" },
+      { to: "/foto-profissional", label: "Ver todos os serviços" },
+    ],
+  },
+  {
+    label: "Portfólio",
+    items: [
+      { to: "/fotografo-corporativo", label: "Galerias por segmento", hint: "Fotos por especialidade" },
+      { to: "/portfolio", label: "Portfólio", hint: "Trabalhos selecionados" },
+      { to: "/depoimentos", label: "Depoimentos", hint: "O que dizem os clientes" },
+    ],
+  },
+  { label: "Vídeos", to: "/videos" },
+  { label: "Blog", to: "/blog" },
+  {
+    label: "Sobre",
+    items: [
+      { to: "/quem-e-o-ale", label: "Quem é o Alê" },
+      { to: "/sobre", label: "Sobre o estúdio" },
+      { to: "/faq", label: "Perguntas frequentes" },
+    ],
+  },
+  { label: "Contato", to: "/contato" },
+];
+
+/** Marca o grupo ativo quando a rota atual pertence a ele. */
+function isEntryActive(entry: Entry, pathname: string) {
+  const p = pathname.replace(/\/+$/, "") || "/";
+  const match = (to: string) => p === to || p.startsWith(`${to}/`);
+  if (entry.to) return entry.to === "/" ? p === "/" : match(entry.to);
+  return (entry.items ?? []).some((i) => match(i.to));
+}
 
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [mobileGroup, setMobileGroup] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
 
+  // fecha tudo ao trocar de rota
   useEffect(() => {
-    if (!open) return;
+    setMobileOpen(false);
+    setOpenGroup(null);
+    setMobileGroup(null);
+  }, [pathname]);
+
+  // travar rolagem do body com o menu mobile aberto
+  useEffect(() => {
+    if (!mobileOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [open]);
+  }, [mobileOpen]);
+
+  // Esc fecha; clique fora fecha o submenu de desktop
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setOpenGroup(null);
+      setMobileOpen(false);
+    };
+    const onClick = (e: MouseEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) setOpenGroup(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("click", onClick);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("click", onClick);
+    };
+  }, []);
 
   return (
     <>
@@ -35,82 +99,170 @@ export function Header() {
       >
         Pular para o conteúdo
       </a>
-      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-5 py-4 md:px-8">
-        <Link
-          to="/"
-          className="flex shrink-0 items-center"
-          onClick={() => setOpen(false)}
-          aria-label="Alê Fotógrafo — Início"
-        >
-          <img
-            src={logo.url}
-            alt="Alê Fotógrafo"
-            width={160}
-            height={48}
-            className="h-10 w-auto md:h-12"
-          />
-        </Link>
 
-        <nav
-          className="ml-auto hidden min-w-0 items-center gap-3 min-[1000px]:flex xl:gap-6"
-          aria-label="Principal"
-        >
-          {nav.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="relative whitespace-nowrap text-[13px] text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground xl:text-sm"
-              activeOptions={{ exact: item.to === "/" }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="ml-auto flex items-center gap-2 max-[999px]:flex min-[1000px]:hidden">
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5 md:gap-6 md:py-4 xl:px-8">
           <Link
-            to="/contato"
-            className="rounded-sm bg-ember px-3 py-2 text-xs font-medium text-accent-foreground hover:bg-ember-glow"
-            onClick={() => setOpen(false)}
+            to="/"
+            className="flex min-w-0 shrink-0 items-center"
+            aria-label="Alê Fotógrafo — Início"
           >
-            Orçamento
+            <img
+              src={logo.url}
+              alt="Alê Fotógrafo"
+              width={160}
+              height={48}
+              className="h-8 w-auto sm:h-10 lg:h-12"
+            />
           </Link>
-          <button
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border text-foreground"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        </div>
-      </div>
 
-      {open && (
-        <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto overscroll-contain border-t border-border bg-background max-[999px]:block min-[1000px]:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-5 pb-6 pt-3" aria-label="Mobile">
-            {nav.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="border-b border-border/40 py-3 text-foreground"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* Menu horizontal a partir de tablet (768px) */}
+          <nav
+            ref={navRef}
+            className="hidden min-w-0 items-center justify-end gap-1 md:flex lg:gap-2"
+            aria-label="Principal"
+          >
+            {NAV.map((entry) => {
+              const active = isEntryActive(entry, pathname);
+              if (!entry.items) {
+                return (
+                  <Link
+                    key={entry.label}
+                    to={entry.to!}
+                    className={`whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground lg:px-3 lg:text-sm ${
+                      active ? "text-foreground" : "text-muted-foreground"
+                    }`}
+                  >
+                    {entry.label}
+                  </Link>
+                );
+              }
+              const open = openGroup === entry.label;
+              return (
+                <div
+                  key={entry.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenGroup(entry.label)}
+                  onMouseLeave={() => setOpenGroup((g) => (g === entry.label ? null : g))}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    aria-haspopup="true"
+                    onClick={() => setOpenGroup(open ? null : entry.label)}
+                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground lg:px-3 lg:text-sm ${
+                      active || open ? "text-foreground" : "text-muted-foreground"
+                    }`}
+                  >
+                    {entry.label}
+                    <ChevronDown size={14} className={open ? "rotate-180 transition-transform" : "transition-transform"} />
+                  </button>
+                  {open && (
+                    <div className="absolute right-0 top-full z-50 w-[min(20rem,calc(100vw-2rem))] pt-2">
+                      <ul className="overflow-hidden rounded-sm border border-border bg-background shadow-xl shadow-black/40">
+                        {entry.items.map((item) => (
+                          <li key={item.to}>
+                            <Link
+                              to={item.to}
+                              onClick={() => setOpenGroup(null)}
+                              className="block border-b border-border/40 px-4 py-3 last:border-0 hover:bg-surface"
+                            >
+                              <span className="block text-sm text-foreground">{item.label}</span>
+                              {item.hint && (
+                                <span className="mt-0.5 block text-xs text-muted-foreground">{item.hint}</span>
+                              )}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
             <Link
               to="/contato"
-              className="mt-3 rounded-sm bg-ember px-4 py-3 text-center text-sm font-medium text-accent-foreground"
-              onClick={() => setOpen(false)}
+              className="ml-1 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-[13px] font-medium text-accent-foreground hover:bg-ember-glow lg:px-4 lg:text-sm"
             >
-              Solicitar orçamento
+              Orçamento
             </Link>
           </nav>
+
+          {/* Ações mobile (< 768px) */}
+          <div className="flex items-center gap-2 md:hidden">
+            <Link
+              to="/contato"
+              className="min-h-11 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-xs font-medium leading-7 text-accent-foreground hover:bg-ember-glow"
+            >
+              Orçamento
+            </Link>
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground"
+              aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((v) => !v)}
+            >
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
-      )}
+
+        {/* Acordeão mobile */}
+        {mobileOpen && (
+          <div className="max-h-[calc(100svh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-background md:hidden">
+            <nav className="mx-auto flex max-w-7xl flex-col px-4 pb-8 pt-2 sm:px-5" aria-label="Menu">
+              {NAV.map((entry) => {
+                if (!entry.items) {
+                  return (
+                    <Link
+                      key={entry.label}
+                      to={entry.to!}
+                      className="border-b border-border/40 py-4 text-foreground"
+                    >
+                      {entry.label}
+                    </Link>
+                  );
+                }
+                const open = mobileGroup === entry.label;
+                return (
+                  <div key={entry.label} className="border-b border-border/40">
+                    <button
+                      type="button"
+                      aria-expanded={open}
+                      onClick={() => setMobileGroup(open ? null : entry.label)}
+                      className="flex w-full items-center justify-between py-4 text-left text-foreground"
+                    >
+                      {entry.label}
+                      <ChevronDown size={16} className={open ? "rotate-180" : ""} />
+                    </button>
+                    {open && (
+                      <ul className="pb-2">
+                        {entry.items.map((item) => (
+                          <li key={item.to}>
+                            <Link
+                              to={item.to}
+                              className="block py-3 pl-4 text-sm text-muted-foreground hover:text-foreground"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+              <Link
+                to="/contato"
+                className="mt-4 min-h-12 rounded-sm bg-ember px-4 py-3 text-center text-sm font-medium leading-6 text-accent-foreground"
+              >
+                Solicitar orçamento
+              </Link>
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );

@@ -113,13 +113,8 @@ export const categories: Category[] = data.cats.map(cleanItem).sort((a, b) => {
 });
 // Ordem oficial dos vídeos conforme alefotografo.com.br/videos-para-empresas
 const VIDEO_ORDER: string[] = [
-  "beauty-fair-2026-4o-e-ultimo-dia-encerramento-da-maior-feira-de-beleza-da-americ",
   "beauty-fair-2026-3o-dia-tendencias-lancamentos-e-os-melhores-momentos-da-feira",
-  "beauty-fair-2026-2o-dia-da-maior-feira-de-beleza-da-america-latina-cobertura-pro",
-  "beauty-fair-2026-cobertura-profissional-do-1o-dia-da-maior-feira-de-beleza-da-am",
   "flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional",
-  "ativa-logistica-na-abradilan-2026-cobertura-profissional-em-video-da-maior-feira",
-  "abed-60-anos-cobertura-profissional-da-celebracao-com-fotografia-e-video-corpora",
   "procooler-na-febrava-cobertura-profissional-de-feiras-e-eventos-corporativos",
   "sq-quimica-na-fce-pharma-cobertura-profissional-de-feira-de-negocios-com-fotogra",
   "sq-quimica-na-fce-pharma-cobertura-profissional-em-video-para-feiras-e-eventos-c",
@@ -127,10 +122,7 @@ const VIDEO_ORDER: string[] = [
   "ativa-logistica-30-anos",
   "tecnisa-almoco-com-fornecedores",
   "curso-de-prestacao-de-contas-eleitorais-2026-turma-sao-paulo",
-  "nini-bambini-moda-infantil-com-encanto-e-estilo",
   "unipac-50-anos",
-  "women-in-tech-brasil",
-  "fincon-o-primeiro-encontro-da-comunicacao-financeira",
   "genesis-inteligencia-artificial-na-feira-hospitalar",
   "11-forum-abradilan-2026",
   "video-corporativo-do-11o-forum-abradilan-2026-cobertura-de-evento-empresarial",

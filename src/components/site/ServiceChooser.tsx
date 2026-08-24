@@ -79,34 +79,45 @@ export function ServiceChooser() {
           {SERVICES.map((s) => (
             <article
               key={s.title}
-              className="flex flex-col rounded-sm border border-border bg-background p-6 transition-colors hover:border-ember"
+              className="flex flex-col overflow-hidden rounded-sm border border-border bg-background transition-colors hover:border-ember"
             >
-              <h3 className="font-display text-lg font-semibold">{s.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-              <a
-                href={waLink(s.wa)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
-              >
-                {s.cta}
-              </a>
-              {s.to ? (
-                <Link
-                  to={s.to}
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+              <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+                <img
+                  src={imgUrl(s.img, 480)}
+                  alt={s.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-lg font-semibold">{s.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                <a
+                  href={waLink(s.wa)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
                 >
-                  {s.see} <ArrowUpRight size={14} />
-                </Link>
-              ) : (
-                <Link
-                  to="/fotografo-corporativo/$slug"
-                  params={{ slug: s.catSlug as string }}
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
-                >
-                  {s.see} <ArrowUpRight size={14} />
-                </Link>
-              )}
+                  {s.cta}
+                </a>
+                {s.to ? (
+                  <Link
+                    to={s.to}
+                    className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                  >
+                    {s.see} <ArrowUpRight size={14} />
+                  </Link>
+                ) : (
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: s.catSlug as string }}
+                    className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                  >
+                    {s.see} <ArrowUpRight size={14} />
+                  </Link>
+                )}
+              </div>
             </article>
           ))}
         </div>

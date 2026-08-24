@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMeta } from "@/lib/seo";
+import { site } from "@/data/catalog";
 import { Quote } from "lucide-react";
 import {
   allTestimonials,

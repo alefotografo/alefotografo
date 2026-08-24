@@ -189,9 +189,33 @@ export function Footer() {
 
 
       <div className="border-t border-border/60">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-8 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-8">
+          <div className="flex flex-col items-center gap-3 md:items-start">
+            <div className="flex items-center gap-3">
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de Alê Fotógrafo"
+                className="text-muted-foreground transition-colors hover:text-ember"
+              >
+                <Instagram size={20} aria-hidden="true" />
+              </a>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn de Alê Fotógrafo"
+                className="text-muted-foreground transition-colors hover:text-ember"
+              >
+                <Linkedin size={20} aria-hidden="true" />
+              </a>
+            </div>
+            <p className="text-center md:text-left">
+              Alexandre Machado Fotografia — CNPJ {site.cnpj} — Desde {site.foundingYear} atendendo clientes especiais
+            </p>
+          </div>
           <p>© {new Date().getFullYear()} Alê Fotógrafo — Alexandre Machado. Todos os direitos reservados.</p>
-          <p>Fotógrafo corporativo em São Paulo · 30 anos de experiência</p>
         </div>
       </div>
     </footer>

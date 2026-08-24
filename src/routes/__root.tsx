@@ -141,8 +141,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           telephone: "+55-11-91355-0533",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Alameda Santos, 1165",
             addressLocality: "São Paulo",
             addressRegion: "SP",
+            postalCode: "01419-002",
             addressCountry: "BR",
           },
           areaServed: ["São Paulo", "Grande São Paulo", "Brasil"],

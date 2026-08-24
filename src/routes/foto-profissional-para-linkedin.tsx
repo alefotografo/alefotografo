@@ -58,8 +58,10 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
                 telephone: `+${site.whatsapp}`,
                 address: {
                   "@type": "PostalAddress",
+                  streetAddress: "Alameda Santos, 1165",
                   addressLocality: "São Paulo",
                   addressRegion: "SP",
+                  postalCode: "01419-002",
                   addressCountry: "BR",
                 },
               },

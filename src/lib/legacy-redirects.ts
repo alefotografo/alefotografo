@@ -8,7 +8,7 @@ const VIDEO_SLUGS = new Set(videos.map((v) => v.slug));
 
 // Slugs de galeria que mudaram de nome no site novo.
 const CATEGORY_ALIASES: Record<string, string> = {
-  "banco-de-imagem-corporativo": "banco-de-imagens-corporativo",
+  "banco-de-imagem-corporativo": "banco-de-imagens-para-empresas",
   "fotografo-festa-da-firma": "fotografo-festa-de-confraternizacao",
 };
 

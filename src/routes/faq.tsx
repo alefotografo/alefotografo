@@ -3,15 +3,15 @@ import { buildMeta } from "@/lib/seo";
 import { faqs, faqJsonLd } from "@/lib/faqs";
 import { faqsComerciais } from "@/lib/faqsComerciais";
 import { FaqList } from "@/components/site/Faq";
+import { LazySection } from "@/components/site/LazySection";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { site } from "@/data/catalog";
 import { waLink } from "@/lib/whatsapp";
 import { ArrowUpRight } from "lucide-react";
 
-const allFaqs = [
-  ...faqsComerciais,
-  ...faqs.filter((f) => !faqsComerciais.some((c) => c.q === f.q)),
-];
+const primeiras = faqsComerciais;
+const restantes = faqs.filter((f) => !faqsComerciais.some((c) => c.q === f.q));
+const allFaqs = [...primeiras, ...restantes];
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -30,7 +30,30 @@ export const Route = createFileRoute("/faq")({
     ],
   }),
   component: FaqPage,
+  errorComponent: FaqFallback,
+  notFoundComponent: FaqFallback,
 });
+
+function FaqFallback() {
+  return (
+    <section className="mx-auto max-w-4xl px-5 py-24 md:px-8">
+      <h1 className="font-display text-3xl font-semibold">Perguntas frequentes</h1>
+      <p className="mt-4 text-muted-foreground">
+        Não conseguimos carregar esta seção agora. Fale direto com Alexandre Machado pelo WhatsApp
+        que respondemos suas dúvidas na hora.
+      </p>
+      <a
+        href={waLink("Olá Alexandre, tenho uma dúvida sobre fotografia corporativa.")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+      >
+        Falar no WhatsApp
+      </a>
+    </section>
+  );
+}
+
 
 function FaqPage() {
   return (
@@ -51,8 +74,17 @@ function FaqPage() {
       </section>
 
       <section className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
-        <FaqList items={allFaqs} />
+        <FaqList items={primeiras} />
+
+        <LazySection minHeight={480} className="mt-4">
+          <h2 className="mb-4 mt-8 font-display text-xl font-semibold md:text-2xl">
+            Outras dúvidas frequentes
+          </h2>
+          <FaqList items={restantes} defaultOpen={-1} />
+        </LazySection>
+
         <div className="mt-10 flex flex-wrap gap-3">
+
           <a
             href={waLink(
               "Olá Alexandre, tenho uma dúvida e gostaria de um orçamento de fotografia.",

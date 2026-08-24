@@ -34,7 +34,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
         type: "article",
       }),
 
-      links: [{ rel: "canonical", href: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",
@@ -43,8 +43,8 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             "@type": "ImageGallery",
             name: loaderData.title,
             description: loaderData.description,
-            url: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}`,
-            author: { "@type": "Person", name: "Alexandre Machado", url: "https://alefotografo.com.br/quem-e-o-ale" },
+            url: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}`,
+            author: { "@type": "Person", name: "Alexandre Machado", url: "https://alefotografos.com.br/quem-e-o-ale" },
             image: loaderData.images.slice(0, 8),
           }),
         },
@@ -56,13 +56,13 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             serviceType: loaderData.title,
             name: loaderData.title,
             description: loaderData.description,
-            url: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}`,
+            url: `https://alefotografos.com.br/fotografo-corporativo/${params.slug}`,
             areaServed: { "@type": "City", name: "São Paulo" },
             provider: {
               "@type": "LocalBusiness",
               name: site.name,
               telephone: "+55 11 91355-0533",
-              url: "https://alefotografo.com.br",
+              url: "https://alefotografos.com.br",
             },
             aggregateRating: aggregateRatingSchema,
           }),

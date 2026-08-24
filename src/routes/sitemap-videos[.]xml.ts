@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { videos, site } from "@/data/catalog";
 import { videoThumb } from "@/lib/videoThumb";
 
-const BASE_URL = "https://alefotografo.com.br";
+const BASE_URL = "https://alefotografos.com.br";
 
 function esc(s: string): string {
   return s

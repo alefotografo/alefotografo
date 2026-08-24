@@ -17,7 +17,8 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const url = `https://alefotografos.com.br/fotografo-corporativo-em/${params.bairro}`;
-    const title = `Fotógrafo Corporativo na ${loaderData.nome} — SP`;
+    const prep = loaderData.prep ?? "na";
+    const title = `Fotógrafo Corporativo ${prep} ${loaderData.nome} — SP`;
     const description = `Fotógrafo corporativo na ${loaderData.nome} (${loaderData.regiao}): retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência em SP.`;
     return {
       meta: buildMeta({ title, description, path: `/fotografo-corporativo-em/${params.bairro}`, type: "article" }),
@@ -73,7 +74,7 @@ function BairroPage() {
             <MapPin size={14} /> {b.regiao}
           </p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Fotógrafo Corporativo na {b.nome}
+            Fotógrafo Corporativo {b.prep ?? "na"} {b.nome}
           </h1>
           <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">{b.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -147,7 +148,7 @@ function BairroPage() {
                   params={{ bairro: x.slug }}
                   className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground hover:border-ember hover:text-ember"
                 >
-                  Fotógrafo na {x.nome}
+                  Fotógrafo {x.prep ?? "na"} {x.nome}
                 </Link>
               ))}
           </div>

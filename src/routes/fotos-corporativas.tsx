@@ -207,7 +207,7 @@ function FotosCorporativasPage() {
           Atendimento nos principais polos empresariais
         </h2>
         <ul className="mt-8 flex flex-wrap gap-2">
-          {bairros.slice(0, 16).map((b) => (
+          {bairros.slice(0, 24).map((b) => (
             <li key={b.slug}>
               <Link
                 to="/fotografo-corporativo-em/$bairro"

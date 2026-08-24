@@ -2,6 +2,16 @@
 // equivalentes deste site (alefotografos.com.br). Também funcionam quando o
 // domínio antigo é apontado para esta aplicação.
 
+import { videos } from "@/data/catalog";
+
+const VIDEO_SLUGS = new Set(videos.map((v) => v.slug));
+
+// Slugs de galeria que mudaram de nome no site novo.
+const CATEGORY_ALIASES: Record<string, string> = {
+  "banco-de-imagem-corporativo": "banco-de-imagens-para-empresas",
+  "fotografo-festa-da-firma": "fotografo-festa-de-confraternizacao",
+};
+
 // Slugs de categoria válidos no site novo (usados pelas regras dinâmicas).
 const CATEGORY_SLUGS = new Set([
   "fotos-aereas",
@@ -96,6 +106,27 @@ export function resolveLegacyPath(pathname: string): string | undefined {
     return CATEGORY_SLUGS.has(slug)
       ? `/fotografo-corporativo/${slug}`
       : "/fotografo-corporativo";
+  }
+
+  // /videos-para-empresas/{slug} → /videos/{slug} (ou índice de vídeos)
+  const legacyVideo = path.match(/^\/(?:videos-para-empresas|videos-corporativos)\/([^/]+)$/);
+  if (legacyVideo) {
+    const slug = legacyVideo[1];
+    return VIDEO_SLUGS.has(slug) ? `/videos/${slug}` : "/videos";
+  }
+
+  // Loja antiga (pacotes) → página de contato/orçamento
+  if (/^\/loja\//.test(path)) return "/contato";
+
+  // Galerias renomeadas
+  const gallery = path.match(/^\/fotografo-corporativo\/([^/]+)$/);
+  if (gallery && CATEGORY_ALIASES[gallery[1]]) {
+    return `/fotografo-corporativo/${CATEGORY_ALIASES[gallery[1]]}`;
+  }
+  // Aliases de galeria fora do prefixo
+  const bareAlias = path.match(/^\/([^/]+)$/);
+  if (bareAlias && CATEGORY_ALIASES[bareAlias[1]]) {
+    return `/fotografo-corporativo/${CATEGORY_ALIASES[bareAlias[1]]}`;
   }
 
   // Categorias de blog do WordPress antigo → índice do blog

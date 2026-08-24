@@ -95,15 +95,19 @@ export default function GoogleMapCard() {
           title: "Alê Fotógrafo — Alexandre Machado",
         });
         if (!window.__aleMapsAuthFailed) setStatus("ready");
-        // Se a chave for restrita ao domínio, o Google mostra um mapa cinza sem
-        // tiles: detectamos isso e caímos no cartão de endereço.
-        window.setTimeout(() => {
+        // Se a chave for restrita ao domínio, o Google injeta seu próprio painel
+        // de erro (.gm-err-container) sem tiles: trocamos pelo cartão de endereço.
+        const checkHealth = () => {
           if (cancelled || !mapRef.current) return;
-          const tiles = Array.from(mapRef.current.querySelectorAll("img")).filter(
-            (img) => /\/maps\/vt|khm|googleusercontent/.test((img as HTMLImageElement).src),
-          ).length;
-          if (tiles === 0 || window.__aleMapsAuthFailed) setStatus("error");
-        }, 4000);
+          const failed =
+            window.__aleMapsAuthFailed ||
+            !!mapRef.current.querySelector(".gm-err-container") ||
+            !mapRef.current.querySelector(".gm-style");
+          if (failed) setStatus("error");
+        };
+        window.setTimeout(checkHealth, 2500);
+        window.setTimeout(checkHealth, 6000);
+
       })
       .catch(() => {
         if (!cancelled) setStatus("error");

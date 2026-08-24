@@ -152,6 +152,9 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   // Categorias de blog do WordPress antigo → índice do blog
   if (/^\/blog\/(categoria|category|tag)\//.test(path)) return "/blog";
 
+  // Páginas de tags do WordPress antigo (/blog/tags?tag=...) → índice do blog
+  if (/^\/blog\/tags?$/.test(path)) return "/blog";
+
   // Paginação antiga do blog (/blog/page/2) → índice
   if (/^\/blog\/page\/\d+$/.test(path)) return "/blog";
 

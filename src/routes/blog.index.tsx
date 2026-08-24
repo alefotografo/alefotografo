@@ -17,8 +17,8 @@ export const Route = createFileRoute("/blog/")({
       path: "/blog",
     }),
     links: [
-      { rel: "canonical", href: "https://alefotografos.com.br/blog" },
-      { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://alefotografos.com.br/blog/rss.xml" },
+      { rel: "canonical", href: "https://alefotografo.com.br/blog" },
+      { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://alefotografo.com.br/blog/rss.xml" },
     ],
     scripts: [
       {

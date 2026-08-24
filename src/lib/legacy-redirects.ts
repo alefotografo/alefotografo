@@ -123,8 +123,6 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   if (gallery && CATEGORY_ALIASES[gallery[1]]) {
     return `/fotografo-corporativo/${CATEGORY_ALIASES[gallery[1]]}`;
   }
-  if (gallery && CATEGORY_ALIASES[gallery[1]] === undefined && false) return undefined;
-
   // Aliases de galeria fora do prefixo
   const bareAlias = path.match(/^\/([^/]+)$/);
   if (bareAlias && CATEGORY_ALIASES[bareAlias[1]]) {

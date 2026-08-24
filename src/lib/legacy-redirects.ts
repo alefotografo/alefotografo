@@ -115,6 +115,11 @@ export function resolveLegacyPath(pathname: string): string | undefined {
     return VIDEO_SLUGS.has(slug) ? `/videos/${slug}` : "/videos";
   }
 
+  // Vídeos removidos do YouTube (indisponíveis) → índice de vídeos
+  const removedVideo = path.match(/^\/videos\/([^/]+)$/);
+  if (removedVideo && REMOVED_VIDEO_SLUGS.has(removedVideo[1])) return "/videos";
+
+
   // Loja antiga (pacotes) → página de contato/orçamento
   if (/^\/loja\//.test(path)) return "/contato";
 

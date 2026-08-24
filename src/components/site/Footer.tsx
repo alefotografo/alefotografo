@@ -3,6 +3,8 @@ import { Instagram } from "lucide-react";
 import { site, categories } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
 import { waLink } from "@/lib/whatsapp";
+import { imgUrl, imgSrcSet } from "@/lib/img";
+
 import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 // Curadoria de capas (8 destaques) para a faixa "Siga no Instagram" do rodapé.

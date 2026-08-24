@@ -1,22 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { videos, site } from "@/data/catalog";
+import { videos, videoBySlug, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { Search, Video, X } from "lucide-react";
 import { videoThumb, ytFallback } from "@/lib/videoThumb";
 import { FaqList } from "@/components/site/Faq";
 import { faqs, faqJsonLd } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { VideoPlayer } from "@/components/site/VideoPlayer";
+import { LazySection } from "@/components/site/LazySection";
+import { waLink } from "@/lib/whatsapp";
 
-const featuredFaqs = faqs.filter((f) =>
-  /v[ií]deo|institucional|evento|drone|cobertura/i.test(f.q),
-).slice(0, 6);
+const featuredFaqs = faqs
+  .filter((f) => /v[ií]deo|institucional|evento|drone|cobertura|pre[çc]o|custa|prazo/i.test(f.q))
+  .slice(0, 8);
+
+const SHOWREEL_SLUG = "ativa-log";
 
 export const Route = createFileRoute("/videos/")({
   head: () => ({
     meta: buildMeta({
       title: "Vídeo Institucional para Empresas em São Paulo",
-      description: `Vídeo institucional, cobertura de eventos e feiras de negócios em São Paulo: roteiro, captação e edição. Veja ${videos.length} produções e peça seu orçamento.`,
+      description: `Vídeo institucional, treinamento, depoimentos, eventos e feiras em São Paulo: roteiro, captação e edição. Veja ${videos.length} produções e peça seu orçamento.`,
       path: "/videos",
     }),
     links: [
@@ -30,6 +35,25 @@ export const Route = createFileRoute("/videos/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Produção de vídeo corporativo em São Paulo",
+          serviceType: "Produção de vídeo corporativo",
+          description:
+            "Produção de vídeo institucional, treinamento, integração, depoimentos, eventos corporativos e reels para empresas em São Paulo.",
+          areaServed: { "@type": "City", name: site.city },
+          provider: {
+            "@type": "Organization",
+            name: site.name,
+            telephone: `+${site.whatsapp}`,
+            email: site.email,
+            url: "https://alefotografos.com.br",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Vídeo institucional e produção audiovisual em São Paulo",
           description: `Catálogo com ${videos.length} produções audiovisuais corporativas em São Paulo.`,
@@ -38,7 +62,7 @@ export const Route = createFileRoute("/videos/")({
           itemListElement: videos.slice(0, 30).map((v, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            url: `/videos/${v.slug}`,
+            url: `https://alefotografos.com.br/videos/${v.slug}`,
             name: v.title,
           })),
         }),
@@ -51,6 +75,209 @@ export const Route = createFileRoute("/videos/")({
   }),
   component: VideosIndex,
 });
+
+/* ------------------------------------------------------------------ */
+/* Conteúdo                                                            */
+/* ------------------------------------------------------------------ */
+
+type Tipo = { title: string; text: string; wa: string; to?: string };
+
+const TIPOS: Tipo[] = [
+  {
+    title: "Vídeo institucional",
+    text: "Apresenta a empresa, a estrutura, a equipe e os diferenciais para clientes, parceiros e licitações.",
+    wa: "vídeo institucional",
+  },
+  {
+    title: "Vídeo de treinamento",
+    text: "Padroniza procedimentos e reduz retrabalho em equipes distribuídas em várias unidades.",
+    wa: "vídeo de treinamento",
+  },
+  {
+    title: "Vídeo de integração",
+    text: "Recebe novos colaboradores com cultura, normas e estrutura explicadas sempre da mesma forma.",
+    wa: "vídeo de integração",
+  },
+  {
+    title: "Depoimentos em vídeo",
+    text: "Prova social com clientes, parceiros e colaboradores falando de resultado real.",
+    wa: "depoimentos em vídeo",
+  },
+  {
+    title: "Vídeos para eventos corporativos",
+    text: "Registro, aftermovie e cortes de convenções, congressos, palestras e premiações.",
+    wa: "vídeo de evento corporativo",
+    to: "/eventos-corporativos",
+  },
+  {
+    title: "Vídeos para clínicas e hospitais",
+    text: "Mostra estrutura, equipe e atendimento com linguagem sóbria e adequada à área da saúde.",
+    wa: "vídeo para clínica",
+    to: "/fotografia-para-clinicas",
+  },
+  {
+    title: "Vídeos para escritórios e profissionais",
+    text: "Constrói autoridade de advogados, consultores e profissionais liberais antes do primeiro contato.",
+    wa: "vídeo para escritório de advocacia",
+    to: "/fotografia-para-advogados",
+  },
+  {
+    title: "Vídeos para indústria e logística",
+    text: "Registra planta, operação, frota e centros de distribuição sem parar a produção.",
+    wa: "vídeo para indústria e logística",
+    to: "/fotos-corporativas",
+  },
+  {
+    title: "Reels corporativos",
+    text: "Cortes verticais com legendas para LinkedIn, Instagram, YouTube Shorts e TikTok.",
+    wa: "reels corporativos",
+  },
+  {
+    title: "Vídeos para campanhas e redes sociais",
+    text: "Peças curtas para tráfego pago, lançamento de produto e marca empregadora.",
+    wa: "vídeo para campanha e redes sociais",
+  },
+];
+
+type Servico = {
+  title: string;
+  quem: string;
+  quando: string;
+  entrega: string;
+  cta: string;
+  wa: string;
+};
+
+const SERVICOS: Servico[] = [
+  {
+    title: "Vídeo institucional",
+    quem: "Indústrias, logística, escritórios e companhias que precisam apresentar estrutura e credibilidade.",
+    quando: "Em propostas comerciais, no site, em licitações, em feiras e na apresentação para novos clientes.",
+    entrega: "Roteiro, direção de cena, captação nas suas unidades, edição, color grading, trilha e versões para site, YouTube e apresentações.",
+    cta: "Planejar meu vídeo institucional",
+    wa: "vídeo institucional",
+  },
+  {
+    title: "Vídeo de treinamento",
+    quem: "RH, qualidade, segurança do trabalho e áreas técnicas que treinam equipes em várias unidades.",
+    quando: "Quando o mesmo treinamento se repete presencialmente, há alta rotatividade ou o procedimento precisa ser padronizado.",
+    entrega: "Roteiro didático a partir do procedimento da empresa, gravação em operação, narração, legendas e módulos por tema.",
+    cta: "Falar sobre meu vídeo de treinamento",
+    wa: "vídeo de treinamento",
+  },
+  {
+    title: "Vídeo de integração",
+    quem: "RH e comunicação interna que recebem novos colaboradores todo mês e querem padronizar o onboarding.",
+    quando: "No primeiro dia do colaborador, na apresentação da cultura, das normas internas e da estrutura.",
+    entrega: "Vídeo de boas-vindas, tour pelas áreas, mensagem da liderança, versões curtas por assunto e formato pronto para o portal de RH.",
+    cta: "Planejar meu vídeo de integração",
+    wa: "vídeo de integração",
+  },
+  {
+    title: "Depoimentos em vídeo",
+    quem: "Times comerciais que precisam de prova real para encurtar a decisão de compra em vendas B2B.",
+    quando: "Em propostas, no funil de vendas, em landing pages e quando o cliente pede referências antes de fechar.",
+    entrega: "Condução da entrevista, direção para quem não é acostumado à câmera, áudio limpo e cortes de 30s, 60s e versão completa.",
+    cta: "Quero gravar depoimentos de clientes",
+    wa: "depoimentos em vídeo com clientes",
+  },
+  {
+    title: "Cobertura de eventos corporativos",
+    quem: "Empresas e associações que realizam convenções, fóruns, premiações, SIPAT e confraternizações.",
+    quando: "Quando o evento precisa render conteúdo depois: relatório para a diretoria, divulgação da próxima edição e comunicação interna.",
+    entrega: "Cobertura durante o evento, entrevistas com participantes, aftermovie, cortes para redes sociais e entrega acelerada.",
+    cta: "Orçar cobertura do meu evento",
+    wa: "cobertura de vídeo do meu evento corporativo",
+  },
+  {
+    title: "Reels corporativos",
+    quem: "Marketing e comunicação que precisam alimentar LinkedIn e Instagram com constância e padrão profissional.",
+    quando: "Em ações recorrentes de marca empregadora, bastidores, lançamentos e presença em eventos.",
+    entrega: "Captação vertical, edição dinâmica, legendas queimadas e pacotes com vários cortes gravados na mesma diária.",
+    cta: "Falar sobre reels corporativos",
+    wa: "reels corporativos",
+  },
+];
+
+type Segmento = { title: string; desafio: string; indicado: string; beneficio: string; cta: string };
+
+const SEGMENTOS: Segmento[] = [
+  {
+    title: "Empresas e indústrias",
+    desafio: "A operação é complexa e difícil de explicar em texto ou apresentação de slides.",
+    indicado: "Vídeo institucional e vídeo de processo, gravados na planta ou no escritório.",
+    beneficio: "Encurta a explicação técnica em reuniões, licitações e propostas comerciais.",
+    cta: "Quero vídeos para minha empresa",
+  },
+  {
+    title: "Clínicas e hospitais",
+    desafio: "O paciente decide por confiança e chega ao site sem conhecer a estrutura nem a equipe.",
+    indicado: "Vídeo institucional da estrutura e vídeos curtos explicando procedimentos.",
+    beneficio: "Reduz a insegurança antes do agendamento e valoriza o atendimento.",
+    cta: "Quero um vídeo para minha clínica",
+  },
+  {
+    title: "Escritórios de advocacia",
+    desafio: "O serviço é intangível e a escolha depende da autoridade percebida do profissional.",
+    indicado: "Vídeo institucional sóbrio e série de vídeos de conteúdo com os sócios.",
+    beneficio: "Constrói autoridade e sustenta a indicação com material próprio.",
+    cta: "Falar sobre vídeo para meu escritório",
+  },
+  {
+    title: "Empresas de logística",
+    desafio: "Frota, armazém e capacidade operacional só convencem quando são vistos.",
+    indicado: "Vídeo institucional em CDs e filiais, mais vídeo de processo operacional.",
+    beneficio: "Prova capacidade de atendimento em negociações de contrato.",
+    cta: "Orçar vídeo para logística",
+  },
+  {
+    title: "RH e treinamento",
+    desafio: "O mesmo treinamento é repetido presencialmente e a rotatividade consome a agenda.",
+    indicado: "Vídeo de treinamento e vídeo de integração modulados por tema.",
+    beneficio: "Padroniza a informação e libera horas do time interno.",
+    cta: "Orçar vídeo de treinamento",
+  },
+  {
+    title: "Marketing e comunicação",
+    desafio: "Falta material de vídeo com constância e padrão para alimentar os canais.",
+    indicado: "Vídeo comercial, reels corporativos e cortes para campanhas.",
+    beneficio: "Mantém a presença digital ativa sem cair na estética genérica de banco de imagens.",
+    cta: "Quero vídeos para campanhas",
+  },
+  {
+    title: "Eventos corporativos",
+    desafio: "O evento acontece, gera investimento alto e sobra pouco material aproveitável.",
+    indicado: "Cobertura em vídeo, aftermovie, gravação de palestras e depoimentos no local.",
+    beneficio: "Transforma o evento em conteúdo para relatório interno e divulgação da próxima edição.",
+    cta: "Orçar cobertura de evento",
+  },
+  {
+    title: "Profissionais liberais",
+    desafio: "A venda depende de reputação pessoal, mas não há nada em vídeo que mostre o trabalho.",
+    indicado: "Vídeo de apresentação profissional e cortes verticais para redes.",
+    beneficio: "Aproxima o cliente antes do primeiro contato e diferencia da concorrência.",
+    cta: "Falar sobre meu projeto",
+  },
+];
+
+const PROCESSO = [
+  { n: "01", title: "Briefing e roteiro", text: "Entendemos o objetivo comercial e desenhamos a narrativa." },
+  { n: "02", title: "Pré-produção", text: "Planejamento, locações, equipe e cronograma definidos." },
+  { n: "03", title: "Captação", text: "Filmagem com equipamentos de cinema e direção de cena." },
+  { n: "04", title: "Edição e finalização", text: "Montagem, color grading, trilha e mixagem." },
+  { n: "05", title: "Entrega", text: "Versões para institucional, Reels, YouTube e apresentações." },
+];
+
+const DIFERENCIAIS = [
+  { title: "Mais de 30 anos em imagem corporativa", text: "Repertório em indústria, logística, saúde, jurídico e eventos." },
+  { title: "Direção de cena", text: "Executivos e colaboradores raramente são atores. Conduzimos a gravação para a fala sair natural." },
+  { title: "Captação profissional", text: "Câmeras de cinema, iluminação e áudio dedicados, com equipe treinada para gravar na empresa em operação." },
+  { title: "Edição voltada à comunicação", text: "Montagem clara, no tempo certo do canal e alinhada à identidade visual da companhia." },
+  { title: "Atendimento em São Paulo e região", text: "Grande SP, ABC, Alphaville, Faria Lima, Paulista e Berrini — e projetos em todo o Brasil." },
+  { title: "Processo previsível", text: "Cronograma, escopo e aprovações definidos antes da primeira diária." },
+];
+
+/* ------------------------------------------------------------------ */
 
 type Group = { id: string; label: string; blurb: string; items: typeof videos };
 
@@ -80,11 +307,18 @@ const GROUP_DEFS = [
       /feira|beauty fair|abrafati|febrava|fce pharma|hospitalar|conex[ãa]o farma|show|stand/i.test(t),
   },
   {
+    id: "reels",
+    label: "Reels e Vídeos Verticais",
+    blurb:
+      "Cortes verticais com legendas para LinkedIn, Instagram, YouTube Shorts e TikTok, gravados na mesma diária.",
+    test: (t: string) => /reels?|vertical|short|teaser|corte/i.test(t),
+  },
+  {
     id: "depoimentos",
     label: "Depoimentos e Retratos",
     blurb:
       "Prova social com clientes falando de resultado real e retratos corporativos gravados em estúdio ou na empresa.",
-    test: (t: string) => /depoimento|retrato|ensaio|teaser/i.test(t),
+    test: (t: string) => /depoimento|retrato|ensaio/i.test(t),
   },
 ] as const;
 
@@ -92,6 +326,8 @@ function VideosIndex() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<string>("institucional");
   const [expanded, setExpanded] = useState(false);
+
+  const showreel = videoBySlug(SHOWREEL_SLUG) ?? videos[0];
 
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
@@ -106,6 +342,7 @@ function VideosIndex() {
     for (const v of videos) {
       const text = `${v.title} ${v.subtitle ?? ""}`;
       const match =
+        GROUP_DEFS.find((g) => g.id === "reels" && g.test(text)) ??
         GROUP_DEFS.find((g) => g.id === "feiras" && g.test(text)) ??
         GROUP_DEFS.find((g) => g.id === "depoimentos" && g.test(text)) ??
         GROUP_DEFS.find((g) => g.id === "eventos" && g.test(text)) ??
@@ -122,28 +359,36 @@ function VideosIndex() {
 
   const activeGroup = grouped.find((g) => g.id === active) ?? grouped[0];
 
-
   return (
     <>
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Vídeos" }]} />
 
+      {/* Herói */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">+30 anos produzindo imagem corporativa</p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Vídeos que fazem a sua empresa ser levada a sério.
+            Vídeos corporativos em {site.city} para empresas que precisam vender, treinar e comunicar melhor.
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produção de vídeo institucional, eventos corporativos e feiras de negócios. Roteiro, captação e edição com mais de 30 anos de bagagem — em {site.city} e em todo o Brasil.
+            Produção de vídeo institucional, treinamento, integração, depoimentos, eventos corporativos e conteúdo para comunicação empresarial. Roteiro, captação e edição com mais de 30 anos de bagagem — em {site.city} e em todo o Brasil.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#portfolio" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
+            <a
+              href={waLink("Olá Alexandre, quero um orçamento de vídeo corporativo para minha empresa.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+            >
+              Solicitar orçamento no WhatsApp
+            </a>
+            <a href="#tipos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Ver tipos de vídeo
+            </a>
+            <a href="#portfolio" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Ver portfólio
             </a>
-            <Link to="/contato" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
-              Solicitar orçamento
-            </Link>
           </div>
 
           <div className="mt-10 flex max-w-xl items-center gap-2 rounded-sm border border-border bg-surface px-3 py-2 focus-within:border-ember">
@@ -171,6 +416,22 @@ function VideosIndex() {
         </div>
       </section>
 
+      {/* Showreel */}
+      {showreel && (
+        <section className="border-b border-border" aria-labelledby="showreel">
+          <div className="mx-auto max-w-5xl px-5 py-14 md:px-8 md:py-16">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Showreel</p>
+            <h2 id="showreel" className="mb-6 font-display text-2xl font-semibold md:text-3xl">
+              {showreel.title}
+            </h2>
+            <div className="aspect-video overflow-hidden rounded-sm bg-black ring-1 ring-border">
+              <VideoPlayer video={showreel} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Prova social */}
       <section className="border-b border-border bg-surface" aria-label="Empresas atendidas">
         <div className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-12">
           <p className="text-sm text-muted-foreground text-pretty md:text-base">
@@ -179,11 +440,94 @@ function VideosIndex() {
         </div>
       </section>
 
+      {/* Tipos de vídeo */}
+      <section id="tipos" className="border-b border-border scroll-mt-20" aria-labelledby="tipos-titulo">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Tipos de vídeo para empresas</p>
+          <h2 id="tipos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            Que tipo de vídeo sua empresa precisa?
+          </h2>
+          <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
+            Um vídeo corporativo bem produzido apresenta a estrutura, explica serviços, treina equipes e gera confiança em canais digitais, reuniões e apresentações comerciais.
+          </p>
+
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {TIPOS.map((t) => (
+              <li key={t.title} className="flex flex-col rounded-sm border border-border bg-surface p-6">
+                <h3 className="font-display text-lg font-semibold">{t.title}</h3>
+                <p className="mt-3 flex-1 text-sm text-muted-foreground text-pretty">{t.text}</p>
+                <div className="mt-5 flex flex-wrap items-center gap-4">
+                  <a
+                    href={waLink(`Olá Alexandre, quero um orçamento de ${t.wa} para minha empresa.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-ember hover:underline"
+                  >
+                    Solicitar orçamento
+                  </a>
+                  {t.to && (
+                    <Link to={t.to} className="text-sm text-muted-foreground hover:text-foreground">
+                      Saber mais →
+                    </Link>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Serviços em profundidade */}
+      <LazySection minHeight={600}>
+        <section className="border-b border-border bg-surface" aria-labelledby="servicos-titulo">
+          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
+            <h2 id="servicos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+              Vídeos que ajudam sua empresa a vender, treinar e comunicar melhor.
+            </h2>
+            <p className="mt-4 max-w-3xl text-muted-foreground text-pretty">
+              Produção de vídeo corporativo em {site.city} para indústrias, logística, clínicas e hospitais, escritórios de advocacia e áreas de marketing, RH e comunicação interna. Cada projeto começa pelo objetivo comercial — não pelo equipamento.
+            </p>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {SERVICOS.map((s) => (
+                <article key={s.title} className="rounded-sm border border-border bg-background p-6">
+                  <h3 className="font-display text-xl font-semibold">{s.title}</h3>
+                  <dl className="mt-5 space-y-4 text-sm">
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.18em] text-ember">Para quem é</dt>
+                      <dd className="mt-1 text-muted-foreground text-pretty">{s.quem}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.18em] text-ember">Quando usar</dt>
+                      <dd className="mt-1 text-muted-foreground text-pretty">{s.quando}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.18em] text-ember">O que entregamos</dt>
+                      <dd className="mt-1 text-muted-foreground text-pretty">{s.entrega}</dd>
+                    </div>
+                  </dl>
+                  <a
+                    href={waLink(`Olá Alexandre, quero falar sobre um projeto de ${s.wa}.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex rounded-sm bg-ember px-4 py-2 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+                  >
+                    {s.cta}
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* Portfólio */}
       <section id="portfolio" className="border-b border-border scroll-mt-20" aria-labelledby="servicos-portfolio">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços &amp; Portfólio</p>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
           <h2 id="servicos-portfolio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
-            Quatro frentes, um único padrão de qualidade.
+            Frentes de produção, um único padrão de qualidade.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
             Escolha a frente e veja trabalhos reais entregues para empresas. Expanda cada seção para conferir mais cases do mesmo serviço.
@@ -262,8 +606,130 @@ function VideosIndex() {
         </div>
       </section>
 
+      {/* Segmentos */}
+      <LazySection minHeight={600}>
+        <section className="border-b border-border bg-surface" aria-labelledby="segmentos-titulo">
+          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Segmentos atendidos</p>
+            <h2 id="segmentos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+              Produção de vídeo para diferentes segmentos
+            </h2>
 
-      <section className="border-t border-border bg-surface" aria-labelledby="faq-videos">
+            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {SEGMENTOS.map((s) => (
+                <li key={s.title} className="flex flex-col rounded-sm border border-border bg-background p-6">
+                  <h3 className="font-display text-base font-semibold">{s.title}</h3>
+                  <dl className="mt-4 flex-1 space-y-3 text-sm">
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">Desafio</dt>
+                      <dd className="mt-1 text-muted-foreground text-pretty">{s.desafio}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">Vídeo indicado</dt>
+                      <dd className="mt-1 text-muted-foreground text-pretty">{s.indicado}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">Benefício comercial</dt>
+                      <dd className="mt-1 text-muted-foreground text-pretty">{s.beneficio}</dd>
+                    </div>
+                  </dl>
+                  <a
+                    href={waLink(`Olá Alexandre, ${s.cta.toLowerCase()}. Pode me enviar um orçamento?`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 text-sm font-medium text-ember hover:underline"
+                  >
+                    {s.cta} →
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* Processo */}
+      <LazySection minHeight={400}>
+        <section id="processo" className="border-b border-border scroll-mt-20" aria-labelledby="processo-titulo">
+          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Processo</p>
+            <h2 id="processo-titulo" className="font-display text-3xl font-semibold md:text-4xl text-balance">
+              Do briefing à entrega, sem improviso.
+            </h2>
+            <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
+              Cinco etapas claras, com cronograma definido e aprovação em cada ponto de virada.
+            </p>
+            <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+              {PROCESSO.map((p) => (
+                <li key={p.n} className="rounded-sm border border-border bg-surface p-6">
+                  <span className="text-xs uppercase tracking-[0.2em] text-ember">Etapa {p.n}</span>
+                  <h3 className="mt-3 font-display text-base font-semibold">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground text-pretty">{p.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* Diferenciais */}
+      <LazySection minHeight={400}>
+        <section className="border-b border-border bg-surface" aria-labelledby="diferenciais-titulo">
+          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Diferenciais</p>
+            <h2 id="diferenciais-titulo" className="font-display text-3xl font-semibold md:text-4xl text-balance">
+              Por que empresas contratam este serviço
+            </h2>
+            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {DIFERENCIAIS.map((d) => (
+                <li key={d.title} className="rounded-sm border border-border bg-background p-6">
+                  <h3 className="font-display text-base font-semibold">{d.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground text-pretty">{d.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* Sobre */}
+      <LazySection minHeight={360}>
+        <section className="border-b border-border" aria-labelledby="sobre-titulo">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
+            <div>
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Sobre</p>
+              <h2 id="sobre-titulo" className="font-display text-3xl font-semibold md:text-4xl text-balance">
+                Imagem corporativa com intenção estratégica, não apenas estética.
+              </h2>
+              <p className="mt-5 text-muted-foreground text-pretty">
+                Sou Alexandre Machado, o Alê Fotógrafo. Há mais de 30 anos atendo empresas em {site.city} com fotografia corporativa, retratos profissionais, cobertura de eventos e vídeo institucional.
+              </p>
+              <p className="mt-4 text-muted-foreground text-pretty">
+                Entendo o posicionamento, o público e o objetivo da comunicação antes de iniciar qualquer produção. Atendimento direto, sem intermediários, com estúdio próprio e estrutura móvel para gravar na sua empresa.
+              </p>
+              <Link to="/quem-e-o-ale" className="mt-6 inline-flex text-sm text-ember hover:underline">
+                Conhecer o Alê →
+              </Link>
+            </div>
+            <ul className="grid grid-cols-2 gap-4 self-start">
+              {[
+                { k: "+30", v: "anos de experiência" },
+                { k: "Brasil", v: "projetos em todo o país" },
+                { k: "3 em 1", v: "roteiro, captação e edição" },
+                { k: "Multi", v: "entrega em todos os formatos" },
+              ].map((m) => (
+                <li key={m.k} className="rounded-sm border border-border bg-surface p-6">
+                  <p className="font-display text-2xl font-semibold text-ember">{m.k}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{m.v}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* FAQ */}
+      <section className="border-b border-border bg-surface" aria-labelledby="faq-videos">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
           <h2 id="faq-videos" className="mb-8 font-display text-3xl font-semibold md:text-4xl">
@@ -276,22 +742,44 @@ function VideosIndex() {
         </div>
       </section>
 
-      <section className="border-t border-border" aria-label="Próximo passo">
-        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-center md:px-8">
+      {/* Contato */}
+      <section id="contato" className="border-t border-border scroll-mt-20" aria-labelledby="contato-titulo">
+        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-8 px-5 py-16 md:flex-row md:items-center md:px-8">
           <div className="max-w-xl">
-            <h2 className="font-display text-2xl font-semibold md:text-3xl">
-              Pronto para produzir o vídeo da sua empresa?
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Contato</p>
+            <h2 id="contato-titulo" className="font-display text-2xl font-semibold md:text-3xl">
+              Vamos produzir o vídeo da sua empresa?
             </h2>
-            <p className="mt-3 text-muted-foreground">
-              Envie seu briefing para um orçamento sob medida — atendimento em todo o Brasil.
+            <p className="mt-3 text-muted-foreground text-pretty">
+              Conte sobre o seu projeto. Respondo em até 1 dia útil com uma primeira conversa estratégica, sem compromisso.
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              WhatsApp{" "}
+              <a href={waLink("Olá Alexandre, quero conversar sobre um vídeo corporativo.")} target="_blank" rel="noopener noreferrer" className="text-ember hover:underline">
+                (11) 91355-0533
+              </a>{" "}
+              · E-mail{" "}
+              <a href={`mailto:${site.email}`} className="text-ember hover:underline">
+                {site.email}
+              </a>
             </p>
           </div>
-          <Link
-            to="/contato"
-            className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3 font-medium text-accent-foreground hover:bg-ember-glow"
-          >
-            Solicitar orçamento
-          </Link>
+          <div className="flex flex-col gap-3">
+            <a
+              href={waLink("Olá Alexandre, quero um orçamento de vídeo corporativo para minha empresa.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-6 py-3 font-medium text-accent-foreground hover:bg-ember-glow"
+            >
+              Solicitar orçamento no WhatsApp
+            </a>
+            <Link
+              to="/contato"
+              className="inline-flex items-center justify-center rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:bg-surface"
+            >
+              Enviar briefing pelo formulário
+            </Link>
+          </div>
         </div>
       </section>
     </>

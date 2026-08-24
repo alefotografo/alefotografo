@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { site, categories } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
 import { waLink } from "@/lib/whatsapp";

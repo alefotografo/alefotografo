@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -14,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
+import { TestimonialsCarousel } from "../components/site/TestimonialsCarousel";
 import { site } from "../data/catalog";
 import { aggregateRatingSchema } from "../data/reviews";
 
@@ -182,6 +184,8 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const hideTestimonials = pathname.replace(/\/+$/, "") === "/depoimentos";
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -189,6 +193,7 @@ function RootComponent() {
       <main id="conteudo" className="pb-20 md:pb-0">
         <Outlet />
       </main>
+      {!hideTestimonials && <TestimonialsCarousel />}
       <Footer />
       <WhatsappCta />
     </QueryClientProvider>

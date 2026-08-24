@@ -4,7 +4,6 @@ import { imgSrcSet, imgUrl } from "@/lib/img";
 import { bairros } from "@/data/bairros";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
-import { Testimonials } from "@/components/site/Testimonials";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import type { Faq } from "@/lib/faqs";
 
@@ -319,10 +318,6 @@ function FotografiaParaClinicasPage() {
 
       </section>
 
-      <Testimonials
-        title="Depoimentos de quem já fotografou com o Alê"
-        subtitle="Avaliações reais publicadas no perfil do Google."
-      />
 
 
 

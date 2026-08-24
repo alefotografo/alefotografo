@@ -162,6 +162,15 @@ function BairroPage() {
           <FaqList items={faqs.slice(0, 5)} />
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+        <LinkHub
+          seed={`${b.nome} ${b.regiao} ${b.intro} ${b.destaques.join(" ")}`}
+          exclude={[`/fotografo-corporativo-em/${b.slug}`]}
+          title="10 páginas relacionadas"
+        />
+      </section>
     </>
+
   );
 }

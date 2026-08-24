@@ -25,7 +25,7 @@ function PortfolioFotos() {
             Fotografia Corporativa em São Paulo
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            {categories.length} categorias de trabalho — explore as galerias na mesma ordem do site oficial alefotografos.com.br.
+            {categories.length} categorias de trabalho — explore as galerias por segmento.
           </p>
         </div>
       </section>

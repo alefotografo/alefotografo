@@ -16,7 +16,7 @@ const reviewsSchema = {
   name: "Alê Fotógrafo",
   url: "https://alefotografo.com.br/depoimentos",
   telephone: "+55-11-91355-0533",
-  email: "comercial@alefotografos.com.br",
+  email: "comercial@alefotografo.com.br",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Alameda Santos, 1165",

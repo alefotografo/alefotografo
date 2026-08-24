@@ -11,6 +11,18 @@ function toAbsolute(url: string) {
   return `${SITE_ORIGIN}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
+/** Corta no limite de caracteres respeitando a última palavra inteira. */
+export function clampText(text: string, max: number) {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${(lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s.,;:–—-]+$/, "")}…`;
+}
+
+export const TITLE_MAX = 60;
+export const DESCRIPTION_MAX = 160;
+
 export function buildMeta({
   title,
   description,
@@ -24,15 +36,18 @@ export function buildMeta({
   image?: string;
   type?: "website" | "article";
 }) {
-  const withBrand = `${title} | ${site.name}`;
-  const fullTitle = title.includes(site.name) || withBrand.length > 60 ? title : withBrand;
+  const baseTitle = clampText(title, TITLE_MAX);
+  const withBrand = `${baseTitle} | ${site.name}`;
+  const fullTitle =
+    baseTitle.includes(site.name) || withBrand.length > TITLE_MAX ? baseTitle : withBrand;
+  const clampedDescription = clampText(description, DESCRIPTION_MAX);
   const absoluteUrl = toAbsolute(path);
   const absoluteImage = toAbsolute(image ?? DEFAULT_OG_IMAGE);
   const meta: Array<{ title?: string; name?: string; property?: string; content?: string }> = [
     { title: fullTitle },
-    { name: "description", content: description },
+    { name: "description", content: clampedDescription },
     { property: "og:title", content: fullTitle },
-    { property: "og:description", content: description },
+    { property: "og:description", content: clampedDescription },
     { property: "og:type", content: type },
     { property: "og:url", content: absoluteUrl },
     { property: "og:site_name", content: site.name },
@@ -45,7 +60,7 @@ export function buildMeta({
     { property: "og:image:alt", content: fullTitle },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
-    { name: "twitter:description", content: description },
+    { name: "twitter:description", content: clampedDescription },
     { name: "twitter:image", content: absoluteImage },
     { name: "twitter:image:alt", content: fullTitle },
   ];

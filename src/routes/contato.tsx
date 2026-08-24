@@ -183,8 +183,8 @@ function Contato() {
 
           <div className="overflow-hidden rounded-sm border border-border bg-surface">
             <iframe
-              title="Mapa da localização do estúdio na Vila Olímpia, São Paulo"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6955%2C-23.5992%2C-46.6816%2C-23.5912&layer=mapnik&marker=-23.5952265%2C-46.6885604"
+              title="Mapa da localização do estúdio no Jardim Paulista, São Paulo"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6605%2C-23.5660%2C-46.6502%2C-23.5621&layer=mapnik&marker=-23.5640870%2C-46.6553543"
               width={640}
               height={320}
               loading="lazy"
@@ -195,12 +195,12 @@ function Contato() {
             <div className="space-y-3 p-6">
 
               <p className="text-sm text-muted-foreground">
-                R. Gomes de Carvalho, 1629<br />
-                Vila Olímpia, São Paulo — SP<br />
-                CEP 04547-006
+                {site.address.street}<br />
+                {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                CEP {site.address.postalCode}
               </p>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=R.+Gomes+de+Carvalho,+1629+-+Vila+Ol%C3%ADmpia,+S%C3%A3o+Paulo+-+SP,+04547-006"
+                href="https://www.google.com/maps/search/?api=1&query=Alameda+Santos,+1165+-+Jardim+Paulista,+S%C3%A3o+Paulo+-+SP,+01419-002"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow"

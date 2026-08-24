@@ -22,6 +22,7 @@ const SERVICES: Service[] = [
     wa: "Olá Alexandre, quero fazer um retrato profissional. Pode me passar valores e disponibilidade?",
     see: "Ver foto profissional",
     to: "/foto-profissional",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
   },
   {
     title: "Fotografia corporativa para empresas",
@@ -30,6 +31,7 @@ const SERVICES: Service[] = [
     wa: "Olá Alexandre, preciso de fotografia corporativa para minha empresa. Pode me enviar um orçamento?",
     see: "Ver fotografia corporativa",
     to: "/fotos-corporativas",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg",
   },
   {
     title: "Eventos corporativos",
@@ -38,6 +40,7 @@ const SERVICES: Service[] = [
     wa: "Olá Alexandre, gostaria de orçar a cobertura de um evento corporativo.",
     see: "Ver cobertura de eventos",
     catSlug: "fotografo-de-eventos-corporativos",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG",
   },
   {
     title: "Vídeo institucional",
@@ -46,6 +49,7 @@ const SERVICES: Service[] = [
     wa: "Olá Alexandre, quero planejar um vídeo institucional para minha empresa.",
     see: "Ver vídeos institucionais",
     to: "/videos",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
   },
   {
     title: "Foto para LinkedIn",
@@ -54,6 +58,7 @@ const SERVICES: Service[] = [
     wa: "Olá Alexandre, quero agendar uma foto profissional para o meu LinkedIn.",
     see: "Ver foto para LinkedIn",
     to: "/foto-profissional-para-linkedin",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/98854/fotografo-profissional-em-sao-paulo_rodrigo-trindade-batista-31.jpg",
   },
 ];
 

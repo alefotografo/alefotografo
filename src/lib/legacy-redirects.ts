@@ -1,6 +1,7 @@
-// Redirecionamentos 301 do site antigo (alefotografo.com.br) para as URLs
-// equivalentes deste site (alefotografo.com.br). Também funcionam quando o
-// domínio antigo é apontado para esta aplicação.
+// Redirecionamentos 301 de URLs antigas (estrutura de path do site legado)
+// para as URLs equivalentes deste site (alefotografo.com.br). Independem do
+// domínio: valem tanto para alefotografo.com.br (primário) quanto para
+// alefotografos.com.br (não primário, redirecionado na borda pela Lovable).
 
 import { videos } from "@/data/catalog";
 

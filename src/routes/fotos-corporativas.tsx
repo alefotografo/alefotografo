@@ -280,7 +280,8 @@ function FotosCorporativasPage() {
       </section>
 
 
-      <section className="border-t border-border bg-surface">
+      <section className="border-t border-border">
+
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <h2 className="font-display text-2xl font-semibold md:text-4xl">
             Galerias por segmento

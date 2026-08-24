@@ -137,6 +137,34 @@ export function ServiceChooser() {
             </article>
           ))}
         </div>
+
+        {/* Também atendemos — especialidades secundárias */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Também atendemos
+            </p>
+            <ul className="flex flex-wrap gap-2">
+              {EXTRA_SPECIALTIES.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: s.slug }}
+                    className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-ember hover:text-ember"
+                  >
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link
+            to="/fotografo-corporativo"
+            className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-muted-foreground hover:text-ember"
+          >
+            Ver todas as especialidades <ArrowUpRight size={14} />
+          </Link>
+        </div>
       </div>
     </section>
   );

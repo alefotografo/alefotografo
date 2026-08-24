@@ -99,7 +99,9 @@ export default function GoogleMapCard() {
         // tiles: detectamos isso e caímos no cartão de endereço.
         window.setTimeout(() => {
           if (cancelled || !mapRef.current) return;
-          const tiles = mapRef.current.querySelectorAll("img").length;
+          const tiles = Array.from(mapRef.current.querySelectorAll("img")).filter(
+            (img) => /\/maps\/vt|khm|googleusercontent/.test((img as HTMLImageElement).src),
+          ).length;
           if (tiles === 0 || window.__aleMapsAuthFailed) setStatus("error");
         }, 4000);
       })

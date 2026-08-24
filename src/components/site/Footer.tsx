@@ -157,6 +157,13 @@ export function Footer() {
           >
             Solicitar orçamento no WhatsApp
           </a>
+          <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
+            <li><Link to="/quem-e-o-ale" className="hover:text-foreground">Quem é o Alê</Link></li>
+            <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
+            <li><Link to="/depoimentos" className="hover:text-foreground">Depoimentos</Link></li>
+            <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
+          </ul>
         </div>
       </div>
 

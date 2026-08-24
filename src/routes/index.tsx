@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, posts, site, videos } from "@/data/catalog";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://alefotografos.com.br/" },
-      { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchpriority: "high" },
     ],
     scripts: [
       {
@@ -78,7 +79,9 @@ function Home() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
-            src={heroImg}
+            src={imgUrl(heroImg, 1600)}
+            srcSet={imgSrcSet(heroImg)}
+            sizes="100vw"
             alt={hero ? `Fotografia corporativa — ${hero.title}` : "Fotografia corporativa em São Paulo"}
             width={1920}
             height={1280}
@@ -165,7 +168,7 @@ function Home() {
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <img
-                src="https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG"
+                src={imgUrl("https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG", 800)}
                 alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
                 width={800}
                 height={1000}
@@ -226,7 +229,9 @@ function Home() {
             >
               <div className={`relative ${i % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}>
                 <img
-                  src={c.cover!}
+                  src={imgUrl(c.cover!, 768)}
+                  srcSet={imgSrcSet(c.cover!, [480, 768, 1024])}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                   alt={c.title}
                   loading="lazy"
                   decoding="async"

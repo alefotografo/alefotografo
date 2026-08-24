@@ -9,6 +9,7 @@ import { QuoteBlock } from "@/components/site/QuoteBlock";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { postCover } from "@/lib/postCover";
+import { SmartImage } from "@/components/site/SmartImage";
 import { autoLink } from "@/lib/autoLink";
 import { ArrowLeft } from "lucide-react";
 
@@ -125,7 +126,7 @@ function PostPage() {
 
         {postCover(p) && (
           <figure className="my-10 overflow-hidden rounded-sm ring-1 ring-border">
-            <img src={postCover(p)} alt={p.title} className="w-full" loading="eager" decoding="async" />
+            <SmartImage src={postCover(p)!} alt={p.title} className="w-full" baseWidth={1024} priority sizes="(max-width: 768px) 100vw, 768px" />
           </figure>
         )}
 
@@ -139,7 +140,7 @@ function PostPage() {
                 </p>
                 {img && (
                   <figure className="my-8 overflow-hidden rounded-sm ring-1 ring-border">
-                    <img src={img.src} alt={img.alt} loading="lazy" decoding="async" className="w-full" />
+                    <SmartImage src={img.src} alt={img.alt} className="w-full" baseWidth={1024} sizes="(max-width: 768px) 100vw, 768px" />
                     <figcaption className="bg-surface px-4 py-2 text-xs text-muted-foreground">{img.alt}</figcaption>
                   </figure>
                 )}

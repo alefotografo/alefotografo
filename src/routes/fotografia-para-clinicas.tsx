@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, site } from "@/data/catalog";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { bairros } from "@/data/bairros";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
@@ -54,7 +55,7 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
     links: [
       { rel: "canonical", href: CANONICAL },
-      { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchpriority: "high" },
     ],
     scripts: [
       {
@@ -195,7 +196,8 @@ function FotografiaParaClinicasPage() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
-            src={HERO_IMG}
+            src={imgUrl(HERO_IMG, 1600)}
+            srcSet={imgSrcSet(HERO_IMG)}
             alt="Fotografia profissional em clínica médica em São Paulo"
             width={1600}
             height={1067}
@@ -286,7 +288,8 @@ function FotografiaParaClinicasPage() {
                 {cover ? (
                   <div className="aspect-[3/2] w-full overflow-hidden bg-background">
                     <img
-                      src={cover}
+                      src={imgUrl(cover, 768)}
+                      srcSet={imgSrcSet(cover, [480, 768, 1024])}
                       alt={`Fotografia profissional — ${s.h}`}
                       width={900}
                       height={600}

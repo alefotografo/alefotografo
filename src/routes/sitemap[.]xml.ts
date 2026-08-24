@@ -5,7 +5,7 @@ import { bairros } from "@/data/bairros";
 import { postDateISO } from "@/lib/postDate";
 
 // Base URL do site publicado. Atualize se mudar o domínio final.
-const BASE_URL = "https://alefotografos.com.br";
+const BASE_URL = "https://alefotografo.com.br";
 
 interface SitemapEntry {
   path: string;

@@ -1,5 +1,5 @@
 // Redirecionamentos 301 do site antigo (alefotografo.com.br) para as URLs
-// equivalentes deste site (alefotografos.com.br). Também funcionam quando o
+// equivalentes deste site (alefotografo.com.br). Também funcionam quando o
 // domínio antigo é apontado para esta aplicação.
 
 import { videos } from "@/data/catalog";

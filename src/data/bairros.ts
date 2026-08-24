@@ -479,7 +479,6 @@ export const bairros: Bairro[] = [
     prep: "em",
     intro:
       "Alphaville, em Barueri, é um dos maiores polos corporativos do país, com sedes de multinacionais e escritórios de alto padrão. Produzimos retratos executivos, fotografia institucional, cobertura de eventos e vídeo institucional com padrão internacional.",
-    estaques_placeholder: true,
     destaques: [
       "Headshots executivos de C-level e times globais com padrão internacional",
       "Fotografia arquitetônica de sedes e escritórios corporativos",

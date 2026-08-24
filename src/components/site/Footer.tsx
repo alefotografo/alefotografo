@@ -125,10 +125,11 @@ export function Footer() {
             Contato
           </h2>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-3">
+            <li className="flex min-w-0 items-start gap-3">
               <Mail className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
-              <a href={`mailto:${site.email}`} className="break-all hover:text-foreground">{site.email}</a>
+              <a href={`mailto:${site.email}`} className="min-w-0 break-all hover:text-foreground">{site.email}</a>
             </li>
+
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
               <span>

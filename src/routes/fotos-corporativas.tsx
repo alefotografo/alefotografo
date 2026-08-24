@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, site } from "@/data/catalog";
+import { categories, categoryBySlug, site } from "@/data/catalog";
+import { imgUrl } from "@/lib/img";
 import { bairros } from "@/data/bairros";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
@@ -90,32 +91,78 @@ export const Route = createFileRoute("/fotos-corporativas")({
   component: FotosCorporativasPage,
 });
 
-const blocos = [
+const FALLBACK_IMG =
+  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg";
+
+const catCover = (slug: string) => categoryBySlug(slug)?.cover || FALLBACK_IMG;
+
+type Bloco = {
+  h: string;
+  p: string;
+  img: string;
+  catSlug?: string;
+  to?: "/videos";
+  linkLabel: string;
+};
+
+const blocos: Bloco[] = [
   {
     h: "Retratos profissionais e headshots",
     p: "Retratos padronizados de executivos e times inteiros, com direção de pose, luz de estúdio e fundo consistente — prontos para LinkedIn, site institucional e apresentações.",
+    img: catCover("retrato-corporativo"),
+    catSlug: "retrato-corporativo",
+    linkLabel: "Ver retratos corporativos",
   },
   {
     h: "Fotos de equipe e cultura",
     p: "Registros do dia a dia, reuniões, bastidores e ambiente de trabalho: o material que sustenta páginas de carreira, employer branding e recrutamento.",
+    img: catCover("fotografia-corporativa-em-sao-paulo"),
+    catSlug: "fotografia-corporativa-em-sao-paulo",
+    linkLabel: "Ver fotografia corporativa",
   },
   {
     h: "Escritórios, fábricas e operação",
     p: "Fotografia de ambientes corporativos, indústria e processos produtivos, mostrando escala, tecnologia e cuidado operacional da empresa.",
+    img: catCover("fotografia-industrial"),
+    catSlug: "fotografia-industrial",
+    linkLabel: "Ver fotografia industrial",
   },
   {
     h: "Eventos corporativos",
     p: "Convenções, kick-offs, congressos e premiações com entrega em tempo real e reconhecimento facial para os participantes.",
+    img: catCover("fotografo-de-eventos-corporativos"),
+    catSlug: "fotografo-de-eventos-corporativos",
+    linkLabel: "Ver cobertura de eventos",
   },
   {
     h: "Produtos e institucional",
     p: "Fotos de produto, packshots e imagens institucionais para catálogos, e-commerce, relatórios e campanhas.",
+    img: catCover("banco-de-imagens-para-empresas"),
+    catSlug: "banco-de-imagens-para-empresas",
+    linkLabel: "Ver banco de imagens",
   },
   {
     h: "Vídeo corporativo integrado",
-    p: "A mesma diária pode gerar fotos e vídeo institucional, depoimentos e cortes verticais para redes sociais.",
+    p: "A mesma diária pode gerar fotos e vídeo institucional, depoimentos de clientes e cortes verticais para redes sociais — com a mesma direção e identidade visual.",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
+    to: "/videos",
+    linkLabel: "Ver vídeos corporativos",
   },
 ];
+
+const maisEspecialidades: { slug: string; label: string }[] = [
+  { slug: "fotografia-industrial", label: "Fotografia industrial" },
+  { slug: "fotos-aereas", label: "Fotos aéreas" },
+  { slug: "fotografo-de-arquitetura-e-interiores", label: "Arquitetura e interiores" },
+  { slug: "fotografo-feiras-stands", label: "Feiras de negócios e stands" },
+  { slug: "empreendimentos-imobiliarios", label: "Empreendimentos imobiliários" },
+  { slug: "fotografo-de-culinaria", label: "Fotografia de culinária" },
+  { slug: "fotografo-de-drinks-coqueteis", label: "Fotografia de drinks" },
+  { slug: "totem-fotografico-totem-mania", label: "Totem fotográfico" },
+  { slug: "fotografo-festa-de-confraternizacao", label: "Festa de confraternização" },
+  { slug: "banco-de-imagens-para-empresas", label: "Banco de imagens para empresas" },
+];
+
 
 function FotosCorporativasPage() {
   return (
@@ -156,15 +203,85 @@ function FotosCorporativasPage() {
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {blocos.map((b) => (
-            <article key={b.h} className="rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+            <article
+              key={b.h}
+              className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-background">
+                <img
+                  src={imgUrl(b.img, 480)}
+                  alt={b.h}
+                  width={480}
+                  height={300}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-lg font-semibold">{b.h}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+                {b.to ? (
+                  <Link to={b.to} className="mt-5 text-sm font-medium text-ember hover:underline">
+                    {b.linkLabel} →
+                  </Link>
+                ) : b.catSlug ? (
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: b.catSlug }}
+                    className="mt-5 text-sm font-medium text-ember hover:underline"
+                  >
+                    {b.linkLabel} →
+                  </Link>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
       </section>
 
       <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <h2 className="font-display text-2xl font-semibold md:text-4xl">
+            Mais especialidades de fotografia para empresas
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Além dos retratos e da cobertura institucional, atendemos demandas específicas de
+            indústria, arquitetura, feiras, produtos e confraternizações.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {maisEspecialidades.map((e) => (
+              <Link
+                key={e.slug}
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: e.slug }}
+                className="group flex flex-col overflow-hidden rounded-sm border border-border bg-background transition-colors hover:border-ember"
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-surface">
+                  <img
+                    src={imgUrl(catCover(e.slug), 480)}
+                    alt={e.label}
+                    width={480}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-base font-semibold group-hover:text-ember">
+                    {e.label}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      <section className="border-t border-border">
+
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <h2 className="font-display text-2xl font-semibold md:text-4xl">
             Galerias por segmento

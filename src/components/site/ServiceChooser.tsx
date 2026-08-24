@@ -14,6 +14,22 @@ type Service = {
   img: string;
 };
 
+// Especialidades secundárias — sinalizam amplitude sem competir com os 5 CTAs principais.
+// Cada slug aponta para a galeria própria em /fotografo-corporativo/$slug.
+const EXTRA_SPECIALTIES: { slug: string; label: string }[] = [
+  { slug: "fotografia-industrial", label: "Fotografia industrial" },
+  { slug: "fotos-aereas", label: "Fotos aéreas" },
+  { slug: "fotografo-de-culinaria", label: "Fotografia de culinária" },
+  { slug: "fotografo-de-arquitetura-e-interiores", label: "Arquitetura e interiores" },
+  { slug: "fotografo-feiras-stands", label: "Feiras de negócios" },
+  { slug: "empreendimentos-imobiliarios", label: "Empreendimentos imobiliários" },
+  { slug: "fotografo-de-drinks-coqueteis", label: "Fotografia de drinks" },
+  { slug: "totem-fotografico-totem-mania", label: "Totem fotográfico" },
+  { slug: "fotografo-festa-de-confraternizacao", label: "Festa da firma" },
+  { slug: "banco-de-imagens-para-empresas", label: "Banco de imagens" },
+];
+
+
 const SERVICES: Service[] = [
   {
     title: "Retrato profissional",
@@ -120,6 +136,34 @@ export function ServiceChooser() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Também atendemos — especialidades secundárias */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Também atendemos
+            </p>
+            <ul className="flex flex-wrap gap-2">
+              {EXTRA_SPECIALTIES.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: s.slug }}
+                    className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-ember hover:text-ember"
+                  >
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link
+            to="/fotografo-corporativo"
+            className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-muted-foreground hover:text-ember"
+          >
+            Ver todas as especialidades <ArrowUpRight size={14} />
+          </Link>
         </div>
       </div>
     </section>

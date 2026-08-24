@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, site } from "@/data/catalog";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -183,7 +184,8 @@ function FotoProfissionalPage() {
         {heroImg && (
           <div className="absolute inset-0 -z-10">
             <img
-              src={heroImg}
+              src={imgUrl(heroImg, 1600)}
+              srcSet={imgSrcSet(heroImg)}
               alt="Foto profissional em São Paulo — retrato corporativo"
               width={1600}
               height={1067}

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, posts, site, videos } from "@/data/catalog";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://alefotografos.com.br/" },
-      { rel: "preload", as: "image", href: HERO_IMG, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchpriority: "high" },
     ],
     scripts: [
       {
@@ -78,7 +79,9 @@ function Home() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
-            src={heroImg}
+            src={imgUrl(heroImg, 1600)}
+            srcSet={imgSrcSet(heroImg)}
+            sizes="100vw"
             alt={hero ? `Fotografia corporativa — ${hero.title}` : "Fotografia corporativa em São Paulo"}
             width={1920}
             height={1280}

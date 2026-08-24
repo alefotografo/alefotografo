@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import { posts } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { postCover } from "@/lib/postCover";
+import { SmartImage } from "@/components/site/SmartImage";
 import { postDateISO } from "@/lib/postDate";
 
 const PAGE_SIZE = 24;
@@ -115,15 +116,15 @@ function BlogIndex() {
               >
                 {postCover(p) && (
                   <div className="aspect-[16/10] overflow-hidden bg-background">
-                    <img
+                    <SmartImage
                       src={postCover(p)}
                       alt={p.title}
                       width={640}
                       height={400}
-                      loading={i < 3 ? "eager" : "lazy"}
-                      fetchPriority={i === 0 ? "high" : "auto"}
-                      decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      baseWidth={768}
+                      priority={i < 3}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                      className="h-full w-full object-cover group-hover:scale-105"
                     />
                   </div>
                 )}

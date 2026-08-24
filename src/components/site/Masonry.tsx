@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { SmartImage } from "@/components/site/SmartImage";
+
 
 export function Masonry({ images, alt }: { images: string[]; alt: string }) {
   const unique = Array.from(new Set(images));
@@ -13,14 +15,13 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
           key={src}
           className="group break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-border-strong"
         >
-          <img
+          <SmartImage
             src={src}
             alt={`${alt} — foto ${i + 1}`}
-            loading={i < 6 ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={i === 0 ? "high" : "auto"}
-            referrerPolicy="no-referrer"
-            onError={() =>
+            priority={i < 3}
+            baseWidth={1024}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            onBroken={() =>
               setBroken((prev) => {
                 if (prev.has(src)) return prev;
                 const next = new Set(prev);
@@ -28,7 +29,7 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
                 return next;
               })
             }
-            className="h-auto w-full transform-gpu transition-transform duration-700 group-hover:scale-[1.03]"
+            className="h-auto w-full transform-gpu group-hover:scale-[1.03]"
           />
         </figure>
       ))}

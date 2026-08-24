@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
+import { SmartImage } from "@/components/site/SmartImage";
 
 export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
@@ -40,12 +41,13 @@ function PortfolioIndex() {
             >
               <div className={`relative ${i % 6 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}>
                 {c.cover ? (
-                  <img
+                  <SmartImage
                     src={c.cover}
                     alt={c.title}
-                    loading={i < 3 ? "eager" : "lazy"}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    baseWidth={768}
+                    priority={i < 3}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+                    className="h-full w-full object-cover group-hover:scale-105"
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background text-muted-foreground">

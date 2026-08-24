@@ -59,6 +59,21 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
+// Host canônico sem www: evita conteúdo duplicado entre www e raiz.
+function redirectCanonicalHost(request: Request): Response | undefined {
+  const url = new URL(request.url);
+  if (!url.hostname.startsWith("www.")) return undefined;
+  url.hostname = url.hostname.slice(4);
+  url.protocol = "https:";
+  return new Response(null, {
+    status: 301,
+    headers: {
+      location: url.toString(),
+      "cache-control": "public, max-age=86400",
+    },
+  });
+}
+
 function redirectLegacy(request: Request): Response | undefined {
   const url = new URL(request.url);
   const target = resolveLegacyPath(url.pathname);
@@ -75,6 +90,9 @@ function redirectLegacy(request: Request): Response | undefined {
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const hostRedirect = redirectCanonicalHost(request);
+    if (hostRedirect) return hostRedirect;
+
     const httpsRedirect = redirectHttps(request);
     if (httpsRedirect) return httpsRedirect;
 

@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://alefotografos.com.br/" },
-      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchpriority: "high" },
+      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchPriority: "high" },
     ],
     scripts: [
       {

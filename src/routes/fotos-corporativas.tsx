@@ -90,32 +90,78 @@ export const Route = createFileRoute("/fotos-corporativas")({
   component: FotosCorporativasPage,
 });
 
-const blocos = [
+const FALLBACK_IMG =
+  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg";
+
+const catCover = (slug: string) => categoryBySlug(slug)?.cover || FALLBACK_IMG;
+
+type Bloco = {
+  h: string;
+  p: string;
+  img: string;
+  catSlug?: string;
+  to?: "/videos";
+  linkLabel: string;
+};
+
+const blocos: Bloco[] = [
   {
     h: "Retratos profissionais e headshots",
     p: "Retratos padronizados de executivos e times inteiros, com direção de pose, luz de estúdio e fundo consistente — prontos para LinkedIn, site institucional e apresentações.",
+    img: catCover("retrato-corporativo"),
+    catSlug: "retrato-corporativo",
+    linkLabel: "Ver retratos corporativos",
   },
   {
     h: "Fotos de equipe e cultura",
     p: "Registros do dia a dia, reuniões, bastidores e ambiente de trabalho: o material que sustenta páginas de carreira, employer branding e recrutamento.",
+    img: catCover("fotografia-corporativa-em-sao-paulo"),
+    catSlug: "fotografia-corporativa-em-sao-paulo",
+    linkLabel: "Ver fotografia corporativa",
   },
   {
     h: "Escritórios, fábricas e operação",
     p: "Fotografia de ambientes corporativos, indústria e processos produtivos, mostrando escala, tecnologia e cuidado operacional da empresa.",
+    img: catCover("fotografia-industrial"),
+    catSlug: "fotografia-industrial",
+    linkLabel: "Ver fotografia industrial",
   },
   {
     h: "Eventos corporativos",
     p: "Convenções, kick-offs, congressos e premiações com entrega em tempo real e reconhecimento facial para os participantes.",
+    img: catCover("fotografo-de-eventos-corporativos"),
+    catSlug: "fotografo-de-eventos-corporativos",
+    linkLabel: "Ver cobertura de eventos",
   },
   {
     h: "Produtos e institucional",
     p: "Fotos de produto, packshots e imagens institucionais para catálogos, e-commerce, relatórios e campanhas.",
+    img: catCover("banco-de-imagens-para-empresas"),
+    catSlug: "banco-de-imagens-para-empresas",
+    linkLabel: "Ver banco de imagens",
   },
   {
     h: "Vídeo corporativo integrado",
-    p: "A mesma diária pode gerar fotos e vídeo institucional, depoimentos e cortes verticais para redes sociais.",
+    p: "A mesma diária pode gerar fotos e vídeo institucional, depoimentos de clientes e cortes verticais para redes sociais — com a mesma direção e identidade visual.",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
+    to: "/videos",
+    linkLabel: "Ver vídeos corporativos",
   },
 ];
+
+const maisEspecialidades: { slug: string; label: string }[] = [
+  { slug: "fotografia-industrial", label: "Fotografia industrial" },
+  { slug: "fotos-aereas", label: "Fotos aéreas" },
+  { slug: "fotografo-de-arquitetura-e-interiores", label: "Arquitetura e interiores" },
+  { slug: "fotografo-feiras-stands", label: "Feiras de negócios e stands" },
+  { slug: "empreendimentos-imobiliarios", label: "Empreendimentos imobiliários" },
+  { slug: "fotografo-de-culinaria", label: "Fotografia de culinária" },
+  { slug: "fotografo-de-drinks-coqueteis", label: "Fotografia de drinks" },
+  { slug: "totem-fotografico-totem-mania", label: "Totem fotográfico" },
+  { slug: "fotografo-festa-de-confraternizacao", label: "Festa de confraternização" },
+  { slug: "banco-de-imagens-para-empresas", label: "Banco de imagens para empresas" },
+];
+
 
 function FotosCorporativasPage() {
   return (

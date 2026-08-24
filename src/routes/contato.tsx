@@ -184,27 +184,9 @@ function Contato() {
             </ul>
           </div>
 
-          <ClientOnly
-            fallback={
-              <div
-                aria-hidden="true"
-                className="h-[380px] w-full rounded-sm border border-border bg-surface"
-              />
-            }
-          >
-            <LazySection minHeight={380} rootMargin="300px">
-              <Suspense
-                fallback={
-                  <div
-                    aria-hidden="true"
-                    className="h-[380px] w-full animate-pulse rounded-sm border border-border bg-surface"
-                  />
-                }
-              >
-                <GoogleMapCard />
-              </Suspense>
-            </LazySection>
-          </ClientOnly>
+          <LazySection minHeight={300} rootMargin="300px">
+            <GoogleMapCard />
+          </LazySection>
 
 
           <div className="rounded-sm border border-border bg-gradient-to-br from-surface to-background p-6">

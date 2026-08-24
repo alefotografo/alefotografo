@@ -203,13 +203,82 @@ function FotosCorporativasPage() {
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {blocos.map((b) => (
-            <article key={b.h} className="rounded-sm border border-border bg-surface p-6">
-              <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+            <article
+              key={b.h}
+              className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-background">
+                <img
+                  src={imgUrl(b.img, 480)}
+                  alt={b.h}
+                  width={480}
+                  height={300}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-lg font-semibold">{b.h}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+                {b.to ? (
+                  <Link to={b.to} className="mt-5 text-sm font-medium text-ember hover:underline">
+                    {b.linkLabel} →
+                  </Link>
+                ) : b.catSlug ? (
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: b.catSlug }}
+                    className="mt-5 text-sm font-medium text-ember hover:underline"
+                  >
+                    {b.linkLabel} →
+                  </Link>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
       </section>
+
+      <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <h2 className="font-display text-2xl font-semibold md:text-4xl">
+            Mais especialidades de fotografia para empresas
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Além dos retratos e da cobertura institucional, atendemos demandas específicas de
+            indústria, arquitetura, feiras, produtos e confraternizações.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {maisEspecialidades.map((e) => (
+              <Link
+                key={e.slug}
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: e.slug }}
+                className="group flex flex-col overflow-hidden rounded-sm border border-border bg-background transition-colors hover:border-ember"
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-surface">
+                  <img
+                    src={imgUrl(catCover(e.slug), 480)}
+                    alt={e.label}
+                    width={480}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-base font-semibold group-hover:text-ember">
+                    {e.label}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">

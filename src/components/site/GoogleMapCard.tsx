@@ -66,6 +66,17 @@ export default function GoogleMapCard() {
 
   useEffect(() => {
     let cancelled = false;
+    // Google chama gm_authFailure quando a chave é inválida/restrita ao domínio.
+    window.gm_authFailure = () => {
+      window.__aleMapsAuthFailed = true;
+      if (!cancelled) setStatus("error");
+    };
+    if (window.__aleMapsAuthFailed) {
+      setStatus("error");
+      return () => {
+        cancelled = true;
+      };
+    }
     loadMapsScript()
       .then(() => {
         if (cancelled || !mapRef.current || !window.google?.maps?.Map) return;
@@ -83,11 +94,12 @@ export default function GoogleMapCard() {
           map,
           title: "Alê Fotógrafo — Alexandre Machado",
         });
-        setStatus("ready");
+        if (!window.__aleMapsAuthFailed) setStatus("ready");
       })
       .catch(() => {
         if (!cancelled) setStatus("error");
       });
+
     return () => {
       cancelled = true;
     };

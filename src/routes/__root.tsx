@@ -194,9 +194,8 @@ function RootComponent() {
           <TestimonialsCarousel />
         </LazySection>
       )}
-      <LazySection minHeight={420} rootMargin="300px">
-        <Footer />
-      </LazySection>
+      {/* Rodapé fica no HTML (links internos importam para indexação) */}
+      <Footer />
       <WhatsappCta />
       <DeferredAnalytics />
     </QueryClientProvider>

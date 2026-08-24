@@ -86,7 +86,7 @@ export function Footer() {
         </section>
       )}
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-5">
 
         <div className="md:col-span-2">
           <img src={logo.url} alt="Alê Fotógrafo" width={200} height={60} className="h-14 w-auto" />
@@ -100,25 +100,34 @@ export function Footer() {
 
         <div>
           <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
-            Serviços
+            Fotografia
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/foto-profissional" className="hover:text-foreground">Foto profissional</Link></li>
             <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto para LinkedIn</Link></li>
             <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotografia corporativa</Link></li>
             <li><Link to="/fotografia-executiva" className="hover:text-foreground">Fotografia executiva</Link></li>
+            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
+            <li><Link to="/eventos-corporativos" className="hover:text-foreground">Eventos corporativos</Link></li>
+            <li><Link to="/fotografia-para-clinicas" className="hover:text-foreground">Fotografia para clínicas</Link></li>
             <li><Link to="/fotos-profissionais-medicos" className="hover:text-foreground">Fotos para médicos</Link></li>
             <li><Link to="/fotografia-para-advogados" className="hover:text-foreground">Fotos para advogados</Link></li>
-            <li><Link to="/eventos-corporativos" className="hover:text-foreground">Eventos corporativos</Link></li>
-
-            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
-            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "fotografo-de-eventos-corporativos" }} className="hover:text-foreground">Eventos corporativos</Link></li>
-            <li><Link to="/videos" className="hover:text-foreground">Vídeo institucional</Link></li>
-            <li><Link to="/fotografia-para-clinicas" className="hover:text-foreground">Fotografia para clínicas</Link></li>
-            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "fotografia-para-escritorios-de-advocacia" }} className="hover:text-foreground">Fotos para advocacia</Link></li>
             <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Portfólio corporativo</Link></li>
           </ul>
         </div>
+
+        <div>
+          <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+            Vídeo
+          </h2>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/videos" className="hover:text-foreground">Vídeo corporativo</Link></li>
+            <li><Link to="/videos" className="hover:text-foreground">Vídeo institucional</Link></li>
+            <li><Link to="/videos" hash="portfolio" className="hover:text-foreground">Portfólio de vídeos</Link></li>
+            <li><Link to="/videos" hash="portfolio" className="hover:text-foreground">Reels e social</Link></li>
+          </ul>
+        </div>
+
 
         <div>
           <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">

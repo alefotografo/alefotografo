@@ -164,7 +164,11 @@ function Contato() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 text-ember" size={18} />
-                <span className="text-muted-foreground">São Paulo — SP<br />Atendemos toda Grande SP e Brasil</span>
+                <span className="text-muted-foreground">
+                  {site.address.street}<br />
+                  {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                  Atendemos toda Grande SP e Brasil
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <Linkedin className="mt-0.5 text-ember" size={18} />

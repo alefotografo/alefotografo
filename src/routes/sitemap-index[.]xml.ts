@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://alefotografo.com.br";
+const BASE_URL = "https://alefotografos.com.br";
 
 // Índice de sitemaps: aponta para o sitemap geral e para o de vídeos.
 export const Route = createFileRoute("/sitemap-index.xml")({

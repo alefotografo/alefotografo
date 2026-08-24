@@ -10,7 +10,7 @@ export const Route = createFileRoute("/portfolio/")({
       description: `Portfólio com ${categories.length} categorias de fotografia corporativa: retratos profissionais, advocacia, saúde, eventos, indústria, arquitetura e gastronomia.`,
       path: "/portfolio",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/portfolio" }],
+    links: [{ rel: "canonical", href: "https://alefotografos.com.br/portfolio" }],
   }),
   component: PortfolioFotos,
 });
@@ -25,7 +25,7 @@ function PortfolioFotos() {
             Fotografia Corporativa em São Paulo
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            {categories.length} categorias de trabalho — explore as galerias na mesma ordem do site oficial alefotografo.com.br.
+            {categories.length} categorias de trabalho — explore as galerias na mesma ordem do site oficial alefotografos.com.br.
           </p>
         </div>
       </section>

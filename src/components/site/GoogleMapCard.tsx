@@ -16,8 +16,11 @@ declare global {
     google?: any;
     __aleMapsReady?: () => void;
     __aleMapsPromise?: Promise<void>;
+    __aleMapsAuthFailed?: boolean;
+    gm_authFailure?: () => void;
   }
 }
+
 
 function loadMapsScript(): Promise<void> {
   if (typeof window === "undefined") return Promise.reject(new Error("no window"));

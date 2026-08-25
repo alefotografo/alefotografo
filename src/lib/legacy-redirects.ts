@@ -93,6 +93,12 @@ const EXACT: Record<string, string> = {
   "/sobre-o-ale": "/quem-e-o-ale",
   // Aliases comerciais → páginas canônicas
   "/fotografia-corporativa-sao-paulo": "/fotos-corporativas",
+  "/fotografia-corporativa": "/fotos-corporativas",
+  "/fotos-corporativa": "/fotos-corporativas",
+  "/fotos-corporativas-sao-paulo": "/fotos-corporativas",
+  "/fotografia-empresarial": "/fotos-corporativas",
+  "/fotos-empresariais": "/fotos-corporativas",
+  "/fotografo-corporativo-sao-paulo": "/fotografo-corporativo",
   "/foto-profissional-sao-paulo": "/foto-profissional",
   "/foto-para-linkedin": "/foto-profissional-para-linkedin",
   "/fotos-para-medicos": "/fotos-profissionais-medicos",

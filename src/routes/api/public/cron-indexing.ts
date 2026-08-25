@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { timingSafeEqual } from "crypto";
 
 function unauthorized() {
   return new Response("Unauthorized", { status: 401 });
+}
+
+/** Comparação em tempo constante, para não vazar o segredo pelo tempo de resposta. */
+function secretMatches(expected: string, provided: string) {
+  const a = Buffer.from(expected);
+  const b = Buffer.from(provided);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
 }
 
 /**
@@ -27,7 +36,7 @@ export const Route = createFileRoute("/api/public/cron-indexing")({
           (v): v is string => typeof v === "string" && v.length > 0,
         );
         if (!accepted.length) return new Response("Not configured", { status: 503 });
-        if (!accepted.some((s) => s.length === provided.length && s === provided)) return unauthorized();
+        if (!accepted.some((s) => secretMatches(s, provided))) return unauthorized();
 
         const { runIndexingSnapshot } = await import("@/lib/indexing-monitor.server");
         const result = await runIndexingSnapshot(true);

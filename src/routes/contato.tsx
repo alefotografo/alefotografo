@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { buildMeta } from "@/lib/seo";
 import { site } from "@/data/catalog";
+import { useTrackConversion } from "@/hooks/useTrackConversion";
 import { LazySection } from "@/components/site/LazySection";
 import GoogleMapCard from "@/components/site/GoogleMapCard";
 import { Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react";
@@ -68,6 +69,7 @@ export const Route = createFileRoute("/contato")({
 
 function Contato() {
   const [sent, setSent] = useState(false);
+  const track = useTrackConversion();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -79,6 +81,7 @@ function Contato() {
     const msg = data.get("mensagem");
     const body = `Olá Alexandre, sou ${nome} (${email})${empresa ? ` da ${empresa}` : ""}.\n\n${msg}`;
     const url = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(body)}`;
+    track("formulario");
     window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
   }
@@ -157,13 +160,21 @@ function Contato() {
             <ul className="mt-5 space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MessageCircle className="mt-0.5 text-ember" size={18} />
-                <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-ember">
+                <a
+                  href={`https://wa.me/${site.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("whatsapp")}
+                  className="hover:text-ember"
+                >
                   WhatsApp direto
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 text-ember" size={18} />
-                <a href={`mailto:${site.email}`} className="hover:text-ember">{site.email}</a>
+                <a href={`mailto:${site.email}`} onClick={() => track("email")} className="hover:text-ember">
+                  {site.email}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 text-ember" size={18} />

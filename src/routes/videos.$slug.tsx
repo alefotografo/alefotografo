@@ -23,7 +23,7 @@ export const Route = createFileRoute("/videos/$slug")({
         path: `/videos/${params.slug}`,
         type: "article",
       }),
-      links: [{ rel: "canonical", href: `https://www.alefotografo.com.br/videos/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://alefotografo.com.br/videos/${params.slug}` }],
       scripts: image
         ? [
             {
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/videos/$slug")({
                   name: "Alê Fotógrafo",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.alefotografo.com.br/assets/logo-alefotografo.png",
+                    url: "https://alefotografo.com.br/assets/logo-alefotografo.png",
                   },
                 },
                 inLanguage: "pt-BR",

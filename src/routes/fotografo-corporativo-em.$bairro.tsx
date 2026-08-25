@@ -16,7 +16,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
-    const url = `https://www.alefotografo.com.br/fotografo-corporativo-em/${params.bairro}`;
+    const url = `https://alefotografo.com.br/fotografo-corporativo-em/${params.bairro}`;
     const prep = loaderData.prep ?? "na";
     const title = `Fotógrafo Corporativo ${prep} ${loaderData.nome} — SP`;
     const description = `Fotógrafo corporativo na ${loaderData.nome} (${loaderData.regiao}): retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência em SP.`;
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
               "@type": "LocalBusiness",
               name: site.name,
               telephone: "+55 11 91355-0533",
-              url: "https://www.alefotografo.com.br",
+              url: "https://alefotografo.com.br",
               areaServed: { "@type": "City", name: "São Paulo" },
             },
             areaServed: { "@type": "Place", name: `${loaderData.nome}, São Paulo` },

@@ -60,9 +60,16 @@ function redirectHttps(request: Request): Response | undefined {
 }
 
 // Host canônico sem www: evita conteúdo duplicado entre www e raiz.
+// TEMPORÁRIO: enquanto o domínio raiz estiver desconectado (drifted / HTTP 421),
+// o www precisa servir o site em vez de redirecionar para um endereço fora do ar.
+// Voltar para `true` assim que o apex ficar Active.
+const REDIRECT_WWW_TO_APEX = false;
+
 function redirectCanonicalHost(request: Request): Response | undefined {
+  if (!REDIRECT_WWW_TO_APEX) return undefined;
   const url = new URL(request.url);
   if (!url.hostname.startsWith("www.")) return undefined;
+
   url.hostname = url.hostname.slice(4);
   url.protocol = "https:";
   return new Response(null, {

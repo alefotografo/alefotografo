@@ -21,7 +21,7 @@ export const Route = createFileRoute("/faq")({
         "Quanto custa, quanto tempo leva e como funciona uma sessão de fotos corporativas em São Paulo: preços, prazos, direitos de uso, equipe e drone.",
       path: "/faq",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/faq" }],
+    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/faq" }],
     scripts: [
       {
         type: "application/ld+json",

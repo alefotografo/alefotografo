@@ -37,16 +37,20 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
+    const override = postSeo[params.slug];
     return {
       meta: buildMeta({
-        title: loaderData.title.length > 60 ? `${loaderData.title.slice(0, 57).trimEnd()}…` : loaderData.title,
-        description: (() => {
+        title: override
+          ? override.title
+          : loaderData.title.length > 60 ? `${loaderData.title.slice(0, 57).trimEnd()}…` : loaderData.title,
+        description: override ? override.description : (() => {
           const base = (loaderData.description || loaderData.title || "").trim();
           if (base.length > 158) return `${base.slice(0, 155).trimEnd()}…`;
           if (base.length >= 50) return base;
           const suffix = ` — dicas de Alexandre Machado, fotógrafo corporativo em São Paulo.`;
           return `${base}${suffix}`.slice(0, 160);
         })(),
+
         path: `/blog/${params.slug}`,
         image: postCover(loaderData),
         type: "article",

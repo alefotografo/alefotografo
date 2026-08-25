@@ -1,5 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
+import { postSeo } from "@/data/postSeo";
+
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
 import { RelatedLinks } from "@/components/site/RelatedLinks";

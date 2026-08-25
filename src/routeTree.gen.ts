@@ -41,6 +41,7 @@ import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as VideosIndexRouteImport } from './routes/videos.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
 import { Route as AuthenticatedAdminIndexacaoRouteImport } from './routes/_authenticated/admin.indexacao'
+import { Route as ApiPublicCronIndexingRouteImport } from './routes/api/public/cron-indexing'
 import { Route as ApiPublicStaticmapRouteImport } from './routes/api/public/staticmap'
 import { Route as FotografoCorporativoCategoriaSlugRouteImport } from './routes/fotografo-corporativo.categoria.$slug'
 
@@ -210,6 +211,11 @@ const AuthenticatedAdminIndexacaoRoute =
     path: '/admin/indexacao',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const ApiPublicCronIndexingRoute = ApiPublicCronIndexingRouteImport.update({
+  id: '/api/public/cron-indexing',
+  path: '/api/public/cron-indexing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicStaticmapRoute = ApiPublicStaticmapRouteImport.update({
   id: '/api/public/staticmap',
   path: '/api/public/staticmap',
@@ -254,6 +260,7 @@ export interface FileRoutesByFullPath {
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
   '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
+  '/api/public/cron-indexing': typeof ApiPublicCronIndexingRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -289,6 +296,7 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
   '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
+  '/api/public/cron-indexing': typeof ApiPublicCronIndexingRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -326,6 +334,7 @@ export interface FileRoutesById {
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
   '/_authenticated/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
+  '/api/public/cron-indexing': typeof ApiPublicCronIndexingRoute
   '/api/public/staticmap': typeof ApiPublicStaticmapRoute
   '/fotografo-corporativo/categoria/$slug': typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -363,6 +372,7 @@ export interface FileRouteTypes {
     | '/portfolio/'
     | '/videos/'
     | '/admin/indexacao'
+    | '/api/public/cron-indexing'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -398,6 +408,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/videos'
     | '/admin/indexacao'
+    | '/api/public/cron-indexing'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   id:
@@ -434,6 +445,7 @@ export interface FileRouteTypes {
     | '/portfolio/'
     | '/videos/'
     | '/_authenticated/admin/indexacao'
+    | '/api/public/cron-indexing'
     | '/api/public/staticmap'
     | '/fotografo-corporativo/categoria/$slug'
   fileRoutesById: FileRoutesById
@@ -470,6 +482,7 @@ export interface RootRouteChildren {
   FotografoCorporativoIndexRoute: typeof FotografoCorporativoIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   VideosIndexRoute: typeof VideosIndexRoute
+  ApiPublicCronIndexingRoute: typeof ApiPublicCronIndexingRoute
   ApiPublicStaticmapRoute: typeof ApiPublicStaticmapRoute
   FotografoCorporativoCategoriaSlugRoute: typeof FotografoCorporativoCategoriaSlugRoute
 }
@@ -700,6 +713,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminIndexacaoRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/api/public/cron-indexing': {
+      id: '/api/public/cron-indexing'
+      path: '/api/public/cron-indexing'
+      fullPath: '/api/public/cron-indexing'
+      preLoaderRoute: typeof ApiPublicCronIndexingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/staticmap': {
       id: '/api/public/staticmap'
       path: '/api/public/staticmap'
@@ -760,6 +780,7 @@ const rootRouteChildren: RootRouteChildren = {
   FotografoCorporativoIndexRoute: FotografoCorporativoIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   VideosIndexRoute: VideosIndexRoute,
+  ApiPublicCronIndexingRoute: ApiPublicCronIndexingRoute,
   ApiPublicStaticmapRoute: ApiPublicStaticmapRoute,
   FotografoCorporativoCategoriaSlugRoute:
     FotografoCorporativoCategoriaSlugRoute,

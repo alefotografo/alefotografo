@@ -26,6 +26,6 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://www.alefotografo.com.br/sitemap.xml
-Sitemap: https://www.alefotografo.com.br/sitemap-videos.xml
-Sitemap: https://www.alefotografo.com.br/sitemap-index.xml
+Sitemap: https://alefotografo.com.br/sitemap.xml
+Sitemap: https://alefotografo.com.br/sitemap-videos.xml
+Sitemap: https://alefotografo.com.br/sitemap-index.xml

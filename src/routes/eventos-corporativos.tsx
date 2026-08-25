@@ -57,7 +57,7 @@ const cfg: ServicePageConfig = {
     "fotografo-feiras-stands",
     "fotografo-festa-de-confraternizacao",
     "fotografo-de-grupos-times-e-equipes",
-    "fotografo-de-drinks-coqueteis",
+    "totem-fotografico-totem-mania",
   ],
   faqs: [
     { q: "Fazem cobertura de eventos corporativos?", a: "Sim: congressos, convenções, palestras, premiações, kick-offs, lançamentos e confraternizações, em foto e vídeo." },

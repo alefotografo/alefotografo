@@ -59,10 +59,12 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
-// Host canônico do site é COM www (www.alefotografo.com.br), igual ao canonical
-// das páginas e ao Primary configurado na hospedagem — que já redireciona o apex
-// para o www na borda. Portanto nunca redirecionar www → apex.
+// Host canônico temporário: SEM www (alefotografo.com.br), porque o www está
+// desconectado na hospedagem (falta o TXT _lovable.www) e responde 421.
+// O redirect www → apex fica DESLIGADO: a borda não entrega tráfego no www hoje,
+// e religar isso só faz sentido quando o www voltar a ser reconhecido.
 const REDIRECT_WWW_TO_APEX = false;
+
 
 function redirectCanonicalHost(request: Request): Response | undefined {
   if (!REDIRECT_WWW_TO_APEX) return undefined;

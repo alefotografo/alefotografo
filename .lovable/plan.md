@@ -1,32 +1,59 @@
-# Como saber se seus MX do Gmail são "antigos" — e o que usar
+# Plano para corrigir o e-mail do domínio no Registro.br
 
-## Situação confirmada agora
+## Objetivo
+Fazer os e-mails `@alefotografo.com.br` funcionarem com Gmail/Google Workspace, mantendo o site publicado sem alterações nos registros do site.
 
-Consulta ao DNS público de `alefotografo.com.br`:
+## O que fazer no Registro.br
 
-| Registro | Estado |
-|---|---|
-| MX | nenhum |
-| SPF (TXT na raiz) | nenhum |
-| DKIM (`google._domainkey`) | não existe |
-| DMARC (`_dmarc`) | não existe |
+1. **Manter os registros do site como estão**
+   - Não alterar os registros `A` de `@` e `www`.
 
-Ou seja: hoje não existe MX nenhum na zona — nem antigo nem novo. Não há como o MX "estar antigo": ele simplesmente não está publicado, e por isso nenhum e-mail chega em `@alefotografo.com.br`.
+2. **Conferir o MX do Gmail**
+   - O registro MX deve apontar para o servidor informado pelo Google.
+   - Se o Google orientou usar o MX novo, manter somente ele.
+   - Não misturar o MX novo com a lista antiga de servidores `ASPMX`.
 
-## Como identificar antigo vs. novo (referência)
+3. **Adicionar SPF como TXT**
+   - No Registro.br, SPF não aparece como tipo separado.
+   - Clicar em **Nova entrada** e escolher o tipo **TXT**.
+   - Nome/host: `@` ou deixar em branco, conforme o campo do Registro.br.
+   - Valor típico para Google Workspace:
+     ```text
+     v=spf1 include:_spf.google.com ~all
+     ```
 
-- **Formato antigo (ainda válido):** 5 registros MX `ASPMX.L.GOOGLE.COM`, `ALT1..ALT2.ASPMX.L.GOOGLE.COM` (prioridade 5), `ALT3..ALT4` (prioridade 10). O Google continua aceitando, mas não recomenda para novas configurações.
-- **Formato atual recomendado:** um único MX `smtp.google.com` com prioridade 1.
-- Regra prática: se você vê 5 linhas `ASPMX`, é o formato antigo; se vê 1 linha `smtp.google.com`, é o atual. Os dois não devem coexistir.
+4. **Adicionar DKIM como TXT**
+   - DKIM também não aparece como tipo separado.
+   - Primeiro gerar a chave no Google Admin.
+   - Caminho: Google Admin → Apps → Google Workspace → Gmail → Autenticar e-mail.
+   - Gerar chave DKIM de 2048 bits.
+   - Depois criar uma entrada **TXT** no Registro.br.
+   - Nome normalmente será:
+     ```text
+     google._domainkey
+     ```
+   - Valor será o texto longo gerado pelo Google.
 
-## O que fazer
+5. **Adicionar DMARC como TXT**
+   - DMARC também é uma entrada **TXT**.
+   - Nome:
+     ```text
+     _dmarc
+     ```
+   - Valor inicial recomendado:
+     ```text
+     v=DMARC1; p=none; rua=mailto:comercial@alefotografo.com.br
+     ```
 
-1. No Registro.br, na zona DNS de `alefotografo.com.br`, criar **um** MX: nome vazio/`@`, prioridade `1`, valor `smtp.google.com`.
-2. Criar o TXT de SPF na raiz: `v=spf1 include:_spf.google.com ~all`.
-3. Criar o TXT de DMARC em `_dmarc`: `v=DMARC1; p=none; rua=mailto:comercial@alefotografo.com.br`.
-4. Gerar o DKIM no painel do Google (Apps → Google Workspace → Gmail → Autenticar e-mail, chave 2048 bits) e criar o TXT em `google._domainkey` com o valor exibido lá.
-5. Não alterar os registros A (`@` e `www` → `185.158.133.1`) — são o site e estão corretos.
+6. **Validar depois da propagação**
+   - Após salvar, aguardar alguns minutos.
+   - Conferir MX, SPF, DKIM e DMARC publicados.
+   - Testar recebimento e envio pelo Gmail.
 
-## Verificação depois de salvar
+## Resultado esperado
+- O domínio continua carregando o site normalmente.
+- Os e-mails `@alefotografo.com.br` passam a receber via Gmail.
+- SPF, DKIM e DMARC melhoram a autenticação e reduzem chance de cair em spam.
 
-Eu consulto novamente MX, SPF, DKIM e DMARC no DNS público e confirmo se o formato publicado é o atual (`smtp.google.com`) e se o recebimento/envio está autenticado. Nada de código do site muda neste trabalho.
+## Observação importante
+No Registro.br, os tipos que você deve procurar são principalmente **MX** e **TXT**. SPF, DKIM e DMARC entram todos como **TXT**.

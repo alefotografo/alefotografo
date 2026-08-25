@@ -42,8 +42,11 @@ export const getIndexingReport = createServerFn({ method: "GET" })
   .inputValidator((data: { days?: number } | undefined) => ({
     days: Math.min(Math.max(data?.days ?? 28, 7), 180),
   }))
-  .handler(async ({ data }): Promise<GscReport> => {
+  .handler(async ({ data, context }): Promise<GscReport> => {
     try {
+      const { assertAdmin } = await import("@/lib/authz.server");
+      await assertAdmin(context.supabase);
+
       const h = headers();
 
       const sitesRes = await fetch(`${GATEWAY}/webmasters/v3/sites`, { headers: h });

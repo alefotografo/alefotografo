@@ -87,7 +87,13 @@ function MonitoramentoPage() {
       </header>
 
       {isLoading && <p className="text-muted-foreground">Carregando dados do Search Console…</p>}
-      {error && <p className="text-destructive">Falha ao carregar o monitoramento.</p>}
+      {error && (
+        <p className="text-destructive">
+          {String((error as Error)?.message ?? "").includes("Acesso restrito")
+            ? "Acesso restrito: esta área é apenas para administradores."
+            : "Falha ao carregar o monitoramento."}
+        </p>
+      )}
       {run && !run.ok && (
         <div className="mb-8 rounded-lg border border-destructive/40 bg-destructive/5 p-4 text-sm">
           <strong>Não foi possível ler o Search Console.</strong>

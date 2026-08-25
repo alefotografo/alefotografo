@@ -43,7 +43,7 @@ export const Route = createFileRoute('/api/public/staticmap')({
 
         // If credentials are missing, fall back to a Google Maps link redirect
         // (still a valid image? no — so return a tiny transparent PNG to avoid 502).
-        if (!lovableKey || !gmKey) {
+        const blankPng = () => {
           const png = Uint8Array.from(
             atob(
               'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
@@ -59,6 +59,8 @@ export const Route = createFileRoute('/api/public/staticmap')({
           })
         }
 
+        if (!lovableKey || !gmKey) return blankPng()
+
         const target =
           `${GATEWAY_URL}/maps/api/staticmap?center=${encodeURIComponent(center)}` +
           `&zoom=${encodeURIComponent(zoom)}&size=${encodeURIComponent(size)}` +
@@ -72,7 +74,7 @@ export const Route = createFileRoute('/api/public/staticmap')({
             },
           })
           if (!upstream.ok) {
-            return new Response('static map unavailable', { status: 204 })
+            return blankPng()
           }
           return new Response(upstream.body, {
             status: 200,
@@ -82,7 +84,7 @@ export const Route = createFileRoute('/api/public/staticmap')({
             },
           })
         } catch {
-          return new Response('static map error', { status: 204 })
+          return blankPng()
         }
       },
     },

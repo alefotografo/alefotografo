@@ -3,6 +3,7 @@ import { Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { site, categories } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
 import { waLink } from "@/lib/whatsapp";
+import { useTrackConversion } from "@/hooks/useTrackConversion";
 import { imgUrl, imgSrcSet } from "@/lib/img";
 
 import logo from "@/assets/logo-alefotografo.png.asset.json";
@@ -25,6 +26,8 @@ const instagramTiles = INSTAGRAM_SLUGS
   .map((c) => ({ src: c.cover as string, title: c.title }));
 
 export function Footer() {
+  const track = useTrackConversion();
+
   return (
     <footer className="mt-32 border-t border-border bg-surface">
       {instagramTiles.length > 0 && (
@@ -159,6 +162,7 @@ export function Footer() {
                 href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("whatsapp")}
                 className="hover:text-foreground"
               >
                 {site.phoneDisplay}
@@ -169,6 +173,7 @@ export function Footer() {
             href={waLink("Olá Alexandre, gostaria de um orçamento de fotografia profissional.")}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("whatsapp")}
             className="mt-6 inline-flex max-w-full items-center justify-center rounded-sm bg-ember px-4 py-3 text-center text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
             Solicitar orçamento no WhatsApp

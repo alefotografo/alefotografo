@@ -1,25 +1,33 @@
-# Tornar alefotografo.com.br (sem www) o domínio primário
+# Auditoria e ajustes de SEO técnico
 
-Hoje os dois domínios estão ativos, mas `www.alefotografo.com.br` está marcado como **Primary**, então o apex redireciona para o www e todo o SEO do site (canonical, sitemaps, robots, RSS, dados estruturados) aponta para o www.
+Conferi rota por rota o estado atual: sitemaps, robots, canonicals, headings e indexação. A base já está sólida — o que segue é o que realmente precisa de correção, mais o que confirmei que está correto.
 
-Para inverter isso são necessários dois lados: a troca no painel (feita por você) e o alinhamento do código (feito por mim).
+## O que já está correto (verificado)
 
-## Passo 1 — Troca no painel (você)
-Em **Project Settings → Domains**, no menu (⋯) de `alefotografo.com.br`, marque-o como **Primary**. Não existe ferramenta que eu possa usar para isso; a plataforma só aceita a mudança pelo painel. Depois disso, a borda passa a redirecionar `www` → apex.
+- Todas as 26 páginas públicas respondem HTTP 200, com SSR (o Google vê o conteúdo pronto).
+- Canonical presente em todas as páginas indexáveis, apontando para o próprio endereço em `www.alefotografo.com.br`.
+- Cada página tem exatamente um H1 (as páginas de serviço herdam o H1 do componente compartilhado; as duplicatas que aparecem no código são telas de erro/fallback, que nunca renderizam junto com a página real).
+- Sitemap cobre home, 11 páginas de serviço, portfólio, vídeos, blog, sobre, depoimentos, FAQ, contato, 8 categorias, os 33 bairros, os vídeos e os posts. As URLs legadas (`/portfolio/:slug` e `/fotografo-corporativo/categoria/:slug`) fazem 301 e ficam fora do sitemap — correto, evita "Página com redirecionamento" no Search Console.
+- `/auth` e as telas de administração já têm `noindex, nofollow`.
+- Dados estruturados: Organization, LocalBusiness, FAQPage, BlogPosting, Review e BreadcrumbList presentes.
 
-## Passo 2 — Alinhamento do código (eu)
-- `src/lib/seo.ts`: `SITE_ORIGIN` volta para `https://alefotografo.com.br`.
-- `public/robots.txt`: as três diretivas `Sitemap:` passam para o apex.
-- Rotas de sitemap (`sitemap.xml`, `sitemap-index.xml`, `sitemap-videos.xml`) e RSS do blog: URLs no apex.
-- Todas as rotas com canonical, `og:url` e JSON-LD escritos manualmente (home, sobre, portfólio, contato, FAQ, depoimentos, vídeos, blog, categorias, bairros) voltam ao apex.
-- `src/data/catalog.ts`: `site.originalUrl` no apex.
-- `src/server.ts`: o fallback atual apex → www é invertido para **www → apex com 301**.
-- `src/lib/gsc.server.ts` e `src/lib/gsc-report.server.ts`: `PREFERRED_HOST` volta para `alefotografo.com.br`, priorizando a propriedade do apex no Search Console.
+## Correções a fazer
 
-## Passo 3 — Publicar e validar
-- Publicar o app.
-- Validar com requisições reais: `www` deve devolver 301 em um salto para o apex, o apex deve devolver 200, e o canonical do HTML de produção deve ser o apex.
-- Reenviar `sitemap-index.xml` e `sitemap-videos.xml` na propriedade do apex no Search Console e confirmar leitura sem erros.
+**1. `lastmod` dos posts não está sendo publicado (bug real)**
+O gerador de sitemap calcula a data de cada post (`postDateISO`) mas o campo é descartado na hora de montar o XML — a interface do gerador não tem `lastmod` e o bloco `<url>` não o emite. Resultado: o Google não recebe sinal de atualização para os 180 posts do blog. Vou adicionar `lastmod` à interface e ao XML, apenas para os posts (que têm data real e específica de cada página). As páginas fixas continuam sem `lastmod`, porque não existe data confiável por página e uma data genérica de build é sinal falso.
 
-## Observação importante de SEO
-O Google já vinha consolidando o site no www (era o host canônico e o que estava indexado). Trocar para o apex é uma mudança de host canônico: por algumas semanas é normal ver oscilação de impressões e URLs "duplicadas, canônica alternativa" no Search Console até a reindexação concluir. Os 301 do www garantem que a autoridade seja transferida.
+**2. `robots.txt` anuncia três sitemaps sobrepostos**
+Hoje lista `sitemap.xml`, `sitemap-videos.xml` e `sitemap-index.xml`. O índice já aponta para os outros dois, então as três linhas fazem o Google rastrear o mesmo conteúdo duas vezes. Vou deixar apenas a linha do `sitemap-index.xml`.
+
+**3. `robots.txt` não bloqueia as áreas privadas**
+Vou adicionar `Disallow: /auth` e `Disallow: /admin` no bloco `User-agent: *`, mantendo `Allow: /` para o resto e preservando todos os blocos de bots de IA já existentes. O `noindex` cobre a indexação; isso evita gasto de rastreamento.
+
+## Depois dos ajustes
+
+- Rodar checagem de status e headers nas rotas alteradas no preview.
+- Publicar.
+- Reenviar `sitemap-index.xml` na propriedade do Search Console e confirmar leitura sem erros.
+
+## Observação
+
+Nada aqui muda domínio, canonical, conteúdo visível ou a configuração de `www` como primário — continua exatamente como está.

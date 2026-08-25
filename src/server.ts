@@ -59,10 +59,9 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
-// Host canônico sem www: evita conteúdo duplicado entre www e raiz.
-// TEMPORÁRIO: enquanto o domínio raiz estiver desconectado (drifted / HTTP 421),
-// o www precisa servir o site em vez de redirecionar para um endereço fora do ar.
-// Voltar para `true` assim que o apex ficar Active.
+// Host canônico do site é COM www (www.alefotografo.com.br), igual ao canonical
+// das páginas e ao Primary configurado na hospedagem — que já redireciona o apex
+// para o www na borda. Portanto nunca redirecionar www → apex.
 const REDIRECT_WWW_TO_APEX = false;
 
 function redirectCanonicalHost(request: Request): Response | undefined {

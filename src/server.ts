@@ -85,11 +85,13 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
-// Host canônico: SEM www (alefotografo.com.br), que é o Primary da hospedagem.
-// O `www` está conectado e ativo, e a borda já o redireciona para o apex (302).
-// Este redirect é a segunda camada: se tráfego no www chegar até a aplicação,
-// sai como 301 permanente para o apex, consolidando a autoridade em um só host.
-const REDIRECT_WWW_TO_APEX = true;
+// Host canônico: SEM www (alefotografo.com.br).
+// TEMPORÁRIO (25/08/2026): o apex está "drifted" na hospedagem porque o TXT
+// `_lovable.alefotografo.com.br` desapareceu da zona do Registro.br e ele
+// responde 421. O `www` está active. Enquanto isso, o redirect www → apex fica
+// DESLIGADO para não jogar visitantes numa URL quebrada. Religar (true) assim
+// que o apex voltar a Active.
+const REDIRECT_WWW_TO_APEX = false;
 
 
 

@@ -29,7 +29,7 @@ export const Route = createFileRoute("/_authenticated/admin/desempenho")({
       },
     ],
   }),
-  component: PerformancePage;
+  component: PerformancePage,
 });
 
 const PERIODS = [7, 28, 90] as const;

@@ -5,6 +5,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { getIndexingMonitor } from "@/lib/indexing.functions";
 import { SITE_ORIGIN } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
+import { AdminNav } from "@/components/site/AdminNav";
 
 export const Route = createFileRoute("/_authenticated/admin/monitoramento")({
   head: () => ({
@@ -62,7 +63,9 @@ function MonitoramentoPage() {
   }, [data]);
 
   return (
-    <main className="container mx-auto max-w-6xl px-4 py-10">
+    <ma      <AdminNav />
+
+in className="container mx-auto max-w-6xl px-4 py-10">
       <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Monitoramento semanal de indexação</h1>

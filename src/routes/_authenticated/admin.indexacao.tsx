@@ -18,6 +18,7 @@ import { getIndexingReport } from "@/lib/gsc.functions";
 import { getBatches } from "@/lib/batches";
 import { SITE_ORIGIN } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
+import { AdminNav } from "@/components/site/AdminNav";
 
 export const Route = createFileRoute("/_authenticated/admin/indexacao")({
   head: () => ({
@@ -120,7 +121,9 @@ function IndexingReportPage() {
   }, [batchStats]);
 
   return (
-    <main className="container mx-auto max-w-6xl px-4 py-10">
+    <ma      <AdminNav />
+
+in className="container mx-auto max-w-6xl px-4 py-10">
       <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Relatório semanal de indexação</h1>

@@ -28,7 +28,16 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
-      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchPriority: "high" },
+      // O preload precisa casar exatamente com src/srcSet/sizes do <img> do hero,
+      // senão o browser baixa outro candidato e o LCP atrasa (~1,5s de load delay).
+      {
+        rel: "preload",
+        as: "image",
+        href: imgUrl(HERO_IMG, 1600),
+        imageSrcSet: imgSrcSet(HERO_IMG),
+        imageSizes: "100vw",
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {

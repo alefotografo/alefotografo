@@ -13,11 +13,21 @@ export const Route = createFileRoute("/api/public/cron-indexing")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const secret = process.env.INDEXING_CRON_SECRET;
-        if (!secret) return new Response("Not configured", { status: 503 });
-
         const provided = request.headers.get("x-cron-secret") ?? "";
-        if (provided.length !== secret.length || provided !== secret) return unauthorized();
+        if (!provided) return unauthorized();
+
+        const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+        const { data: tokenRow } = await supabaseAdmin
+          .from("cron_tokens")
+          .select("token")
+          .eq("name", "indexing")
+          .maybeSingle();
+
+        const accepted = [process.env.INDEXING_CRON_SECRET, tokenRow?.token].filter(
+          (v): v is string => typeof v === "string" && v.length > 0,
+        );
+        if (!accepted.length) return new Response("Not configured", { status: 503 });
+        if (!accepted.some((s) => s.length === provided.length && s === provided)) return unauthorized();
 
         const { runIndexingSnapshot } = await import("@/lib/indexing-monitor.server");
         const result = await runIndexingSnapshot(true);
@@ -27,6 +37,7 @@ export const Route = createFileRoute("/api/public/cron-indexing")({
           headers: { "Content-Type": "application/json" },
         });
       },
+
     },
   },
 });

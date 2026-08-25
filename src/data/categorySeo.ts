@@ -60,14 +60,19 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Fotografia empresarial em São Paulo: equipes, ambientes, produtos e eventos. Um fotógrafo profissional para abastecer site, campanhas e redes da empresa.",
   },
   "fotografia-corporativa-em-sao-paulo": {
-    title: "Fotografia Corporativa em São Paulo | Empresas e Equipes",
+    title: "Fotografia Corporativa em SP | Orçamento no Mesmo Dia",
     description:
-      "Fotografia corporativa em São Paulo para empresas de todos os portes: retratos de equipe, ambientes e operação. Padrão editorial e entrega rápida.",
+      "Fotografia corporativa em São Paulo: retratos de equipe, ambientes e operação na sua empresa. 30 anos de experiência, nota 4,9 (144 avaliações) e prévia das fotos no mesmo dia.",
+  },
+  "ensaio-fotografico-para-dentistas": {
+    title: "Ensaio Fotográfico para Dentistas em SP | Consultório",
+    description:
+      "Ensaio fotográfico para dentistas em São Paulo, no seu consultório: retratos, equipe, ambientes e procedimentos. Fotos que passam confiança ao paciente, com orçamento no mesmo dia.",
   },
   "banco-de-imagens-para-empresas": {
-    title: "Banco de Imagens para Empresas em São Paulo",
+    title: "Banco de Imagens para Empresas | São Paulo",
     description:
-      "Criação de banco de imagens próprio para empresas em São Paulo: pessoas, ambientes e processos reais, com direito de uso e organização por temas.",
+      "Monte o banco de imagens da sua empresa em São Paulo: pessoas, ambientes e processos reais, com direito de uso e acervo organizado por tema. Orçamento no mesmo dia.",
   },
   "fotografo-de-retratos-profissionais": {
     title: "Banco de Imagens Corporativo | Fotografia em São Paulo",
@@ -75,10 +80,11 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Produção de banco de imagens corporativo em São Paulo com pessoas e ambientes da sua operação. Acervo consistente para site, campanhas e apresentações.",
   },
   "fotografia-institucional-em-saopaulo": {
-    title: "Fotografia Institucional em São Paulo | Empresas",
+    title: "Fotografia Institucional em SP | Empresas e Liderança",
     description:
-      "Fotografia institucional em São Paulo: retratos de liderança, ambientes e processos para relatórios, sites e materiais de comunicação corporativa.",
+      "Fotografia institucional em São Paulo: retratos de liderança, ambientes e processos para relatórios, sites e comunicação corporativa. Prévia no mesmo dia pelo WhatsApp.",
   },
+
   "eventos-corporativos": {
     title: "Fotógrafo de Eventos Empresariais em São Paulo",
     description:

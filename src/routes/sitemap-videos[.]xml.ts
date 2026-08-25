@@ -28,9 +28,6 @@ export const Route = createFileRoute("/sitemap-videos.xml")({
             const playerLoc = v.youtube
               ? `https://www.youtube-nocookie.com/embed/${v.youtube}`
               : `https://player.vimeo.com/video/${v.vimeo}`;
-            const contentLoc = v.youtube
-              ? `https://www.youtube.com/watch?v=${v.youtube}`
-              : null;
             const title = esc(v.title);
             const description = esc(
               (v.description || v.subtitle || v.title).slice(0, 2048),
@@ -43,12 +40,16 @@ export const Route = createFileRoute("/sitemap-videos.xml")({
               `      <video:thumbnail_loc>${esc(thumb)}</video:thumbnail_loc>`,
               `      <video:title>${title}</video:title>`,
               `      <video:description>${description}</video:description>`,
-              contentLoc ? `      <video:content_loc>${esc(contentLoc)}</video:content_loc>` : null,
+              // Vídeos hospedados no YouTube/Vimeo: apenas <player_loc>.
+              // <content_loc> exige arquivo de mídia direto (mp4) e a página
+              // "watch?v=" fazia o Google recusar as 72 URLs do mapa.
+              // <publisher> não existe no schema de vídeo — usar <uploader>.
               `      <video:player_loc>${esc(playerLoc)}</video:player_loc>`,
               `      <video:family_friendly>yes</video:family_friendly>`,
               `      <video:live>no</video:live>`,
               `      <video:requires_subscription>no</video:requires_subscription>`,
-              `      <video:publisher>${esc(site.name)}</video:publisher>`,
+              `      <video:uploader info="${esc(BASE_URL)}/videos">${esc(site.name)}</video:uploader>`,
+
               `    </video:video>`,
               `  </url>`,
             ]

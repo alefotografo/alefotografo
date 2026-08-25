@@ -56,11 +56,12 @@ export const getIndexingReport = createServerFn({ method: "GET" })
 
       const score = (u: string) => {
         let s = 0;
-        if (u.includes(PREFERRED_HOST)) s += 10;
+        if (u.includes(`www.${PREFERRED_HOST}`)) s += 12; // canônico atual: com www
+        if (u.includes(PREFERRED_HOST)) s += 6;
         if (u.startsWith("https://")) s += 4; // prefixo de URL costuma ter permissão
-        if (!u.includes("//www.")) s += 2;
         return s;
       };
+
       const candidates = [...entries.map((e) => e.siteUrl)].sort((a, b) => score(b) - score(a));
 
       const range = { start: daysAgo(data.days + 2), end: daysAgo(2) };

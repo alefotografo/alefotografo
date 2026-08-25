@@ -26,6 +26,7 @@ import { Route as FotografoEmpresarialRouteImport } from './routes/fotografo-emp
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
 import { Route as FotosProfissionaisMedicosRouteImport } from './routes/fotos-profissionais-medicos'
 import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
+import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -132,6 +133,11 @@ const FotosProfissionaisMedicosRoute =
 const QuemEOAleRoute = QuemEOAleRouteImport.update({
   id: '/quem-e-o-ale',
   path: '/quem-e-o-ale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosRoute = ServicosRouteImport.update({
+  id: '/servicos',
+  path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
@@ -259,6 +265,7 @@ export interface FileRoutesByFullPath {
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
+  '/servicos': typeof ServicosRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -297,6 +304,7 @@ export interface FileRoutesByTo {
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
+  '/servicos': typeof ServicosRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -337,6 +345,7 @@ export interface FileRoutesById {
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
+  '/servicos': typeof ServicosRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -377,6 +386,7 @@ export interface FileRouteTypes {
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
+    | '/servicos'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
@@ -415,6 +425,7 @@ export interface FileRouteTypes {
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
+    | '/servicos'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
@@ -454,6 +465,7 @@ export interface FileRouteTypes {
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
     | '/quem-e-o-ale'
+    | '/servicos'
     | '/sitemap-index.xml'
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
@@ -494,6 +506,7 @@ export interface RootRouteChildren {
   FotosCorporativasRoute: typeof FotosCorporativasRoute
   FotosProfissionaisMedicosRoute: typeof FotosProfissionaisMedicosRoute
   QuemEOAleRoute: typeof QuemEOAleRoute
+  ServicosRoute: typeof ServicosRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -632,6 +645,13 @@ declare module '@tanstack/react-router' {
       path: '/quem-e-o-ale'
       fullPath: '/quem-e-o-ale'
       preLoaderRoute: typeof QuemEOAleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos': {
+      id: '/servicos'
+      path: '/servicos'
+      fullPath: '/servicos'
+      preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap-index.xml': {
@@ -810,6 +830,7 @@ const rootRouteChildren: RootRouteChildren = {
   FotosCorporativasRoute: FotosCorporativasRoute,
   FotosProfissionaisMedicosRoute: FotosProfissionaisMedicosRoute,
   QuemEOAleRoute: QuemEOAleRoute,
+  ServicosRoute: ServicosRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

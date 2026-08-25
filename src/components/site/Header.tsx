@@ -17,7 +17,8 @@ const NAV: Entry[] = [
       { to: "/fotografia-para-clinicas", label: "Clínicas", hint: "Ambientes e equipe" },
       { to: "/fotografia-para-advogados", label: "Advogados", hint: "Escritórios e sócios" },
       { to: "/eventos-corporativos", label: "Eventos corporativos", hint: "Congressos e feiras" },
-      { to: "/foto-profissional", label: "Ver todos os serviços" },
+      { to: "/foto-profissional", label: "Foto profissional", hint: "Retrato individual" },
+      { to: "/servicos", label: "Ver todos os serviços", hint: "Panorama completo com fotos" },
     ],
   },
   {

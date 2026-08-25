@@ -1,63 +1,70 @@
 # Auditoria SEO pós-migração para www.alefotografo.com.br
 
-Data: 25/08/2026 (00:40 UTC)
+Última verificação: 25/08/2026, 00:51 UTC — **depois do Publish**.
 
-## 1. Redirects e headers (produção, verificado ao vivo)
+## 1. Estado em produção (verificado ao vivo)
+
+- `https://www.alefotografo.com.br/` → 200, canonical `https://www.alefotografo.com.br/`.
+- `/videos` → **200**, canonical `https://www.alefotografo.com.br/videos`.
+- `/fotos-corporativas` → **200**, canonical `https://www.alefotografo.com.br/fotos-corporativas`.
+- `robots.txt` aponta os três sitemaps no www.
+- `sitemap.xml`: **340 URLs**, todas em www. `sitemap-videos.xml`: **72 URLs**. `sitemap-index.xml` referencia os dois no www.
+
+O HTML publicado agora declara o www como canônica em todas as páginas — a divergência anterior entre código e produção está resolvida.
+
+## 2. Redirects e headers
 
 | URL pedida | Status | Destino |
 |---|---|---|
 | `http://alefotografo.com.br/` | 302 | `https://www.alefotografo.com.br/` |
 | `https://alefotografo.com.br/` | 302 | `https://www.alefotografo.com.br/` |
-| `https://alefotografo.com.br/sobre` | 302 | `https://www.alefotografo.com.br/sobre` |
-| `http://www.alefotografo.com.br/blog` | 301 | `https://www.alefotografo.com.br/blog` |
+| `https://alefotografo.com.br/videos` | 302 | `https://www.alefotografo.com.br/videos` |
+| `http://www.alefotografo.com.br/` | 301 | `https://www.alefotografo.com.br/` |
 | `https://www.alefotografo.com.br/blog/` | 301 | `https://www.alefotografo.com.br/blog` |
-| `https://www.alefotografo.com.br/videos-para-empresas` | 301 | `https://www.alefotografo.com.br/videos` |
-| `https://www.alefotografo.com.br/fotos-corporativas` | 200 | — |
 
-- Cadeia da home a partir do apex: **1 redirect**, final `https://www.alefotografo.com.br/` com 200. **Sem loops.**
-- Path sempre preservado.
-- SSL do www válido (CN=`www.alefotografo.com.br`, até 22/nov/2026).
-- Headers presentes em todas as respostas, inclusive redirects: `Strict-Transport-Security: max-age=31536000; includeSubDomains`, `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`.
-- Observação: o apex → www sai como **302** porque é feito na borda da hospedagem (Primary = www) e não há como forçar 301 por código. Impacto de SEO baixo, pois o canonical de todas as páginas aponta para o www.
+- Cadeia completa da home a partir do apex: **1 salto**, terminando em 200. **Sem loops.**
+- Caminho sempre preservado no redirect.
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`, `Referrer-Policy: strict-origin-when-cross-origin` e `X-Content-Type-Options: nosniff` presentes tanto na resposta 200 quanto na de redirect.
+- Certificado do www: `CN=www.alefotografo.com.br`, válido de 24/ago/2026 a 22/nov/2026.
+- Por design: o apex sai como **302**, não 301, porque o redirecionamento ocorre na borda da hospedagem (www marcado como Primary). Não é controlável por código; impacto baixo, já que todo canonical aponta para o www.
 
-## 2. Canonical, robots e sitemaps
+## 3. Search Console — sitemaps
 
-Estado no código (validado no build atual):
+Propriedade: `sc-domain:alefotografo.com.br` (cobre apex e www).
 
-- `SITE_ORIGIN` = `https://www.alefotografo.com.br`; canonical auto-referente e único por rota, igual ao `og:url`.
-- `robots.txt` aponta os três sitemaps no www.
-- `sitemap.xml`: **340 URLs**, todas em `https://www.alefotografo.com.br/...` (zero locs sem www).
-- `sitemap-videos.xml`: **72 URLs**.
-- `sitemap-index.xml`: aponta para os dois acima, no www.
+| Sitemap | Baixado | Enviadas | Erros | Avisos |
+|---|---|---|---|---|
+| `sitemap-index.xml` | 25/08 00:49 | 209 web + 72 vídeo (cache dos filhos) | 0 | 0 |
+| `sitemap.xml` | 25/08 00:51 | **340** | 0 | 0 |
+| `sitemap-videos.xml` | reenviado 00:50 | 72 | 0 | 0 |
 
-**Pendência bloqueante:** em produção o HTML servido ainda traz canonical e sitemaps no domínio **sem www** — a mudança está no código mas ainda não foi publicada. Depois do Publish, o Google passa a ver canonical www em todas as páginas.
+Detalhe importante: ao reenviar só o índice, o Google reaproveitou uma leitura antiga do filho (137 URLs, de 24/08 21:51). Reenviei os sitemaps filhos explicitamente e o `sitemap.xml` passou a registrar as **340 URLs reais, com 0 erros e 0 avisos**. Os números de "indexadas" começam em 0 e sobem conforme o rastreamento — é o comportamento normal para sitemap recém-lido.
 
-## 3. Search Console
+## 4. Rotas pendentes
 
-Propriedade usada: `sc-domain:alefotografo.com.br` (domain property, cobre apex e www, permissão de proprietário).
-
-- Removido o envio antigo `https://alefotografo.com.br/sitemap-index.xml`.
-- Enviado `https://www.alefotografo.com.br/sitemap-index.xml` — baixado pelo Google em 25/08 00:42 UTC, **0 erros / 0 avisos**.
-- Como a leitura ocorreu antes do Publish, esse download ainda continha as URLs sem www; será necessário **um reenvio após publicar** para o Google ler os locs definitivos.
-
-## 4. Indexação das URLs principais (URL Inspection)
-
-| URL | Cobertura | Canonical do Google | Canonical declarado |
+| URL | Produção | Estado no índice do Google | Último rastreamento |
 |---|---|---|---|
-| `/` (www) | Submitted and indexed | www | www |
-| `/blog` | Submitted and indexed | `.../blog` | home (resíduo do site antigo) |
-| `/videos` | Not found (404) — último crawl 15/abr/2026 | — | — |
-| `/fotos-corporativas` | URL is unknown to Google | — | — |
+| `/videos` | 200 | Not found (404) — dado antigo | 15/abr/2026 |
+| `/fotos-corporativas` | 200 | URL is unknown to Google | — |
 
-Leitura: o www já é a canônica escolhida pelo Google na home, o que favorece a migração. As páginas novas (`/fotos-corporativas`) e as recriadas (`/videos`, hoje 200 e no sitemap) ainda carregam dados de crawls antigos do site anterior; a atualização depende de novo rastreamento.
+Não há 404 real: as duas páginas respondem 200, têm canonical auto-referente em www e estão no sitemap. O 404 de `/videos` é resíduo de um rastreamento de abril no site anterior; sai sozinho no próximo crawl. A API não permite forçar re-rastreamento — só o botão "Solicitar indexação" no Search Console faz isso manualmente.
 
-## 5. Correções a fazer, por prioridade
+O `/videos` já recebe links internos da home (o próprio Search Console lista `https://www.alefotografo.com.br/` como URL de referência), o que acelera o recrawl.
 
-1. **Publicar** — sem isso o canonical e os sitemaps em produção continuam no domínio sem www, contradizendo o Primary e o sitemap enviado.
-2. **Reenviar o sitemap-index após publicar** (eu faço) para o Google baixar os locs em www.
-3. **Reler o URL Inspection em 7–14 dias** das URLs principais para acompanhar a saída dos 404 antigos (`/videos`) e a entrada das novas.
-4. Nada mais a corrigir em redirects, headers, HSTS, robots ou estrutura de canonical — todos consistentes.
+## 5. Redirects de URLs antigas adicionados
 
-## Nota sobre re-crawl
+Variações do site legado que respondiam 404 e agora fazem **301**:
 
-Não existe API para forçar re-rastreamento. Com apex → www em salto único, canonical auto-referente e sitemap enviado, o Google converge sozinho — dias para as páginas principais, podendo levar semanas nas URLs de cauda longa.
+- → `/videos`: `/video-corporativo`, `/video-institucional`, `/videos-institucionais`, `/filmagem-corporativa`, `/producao-de-video`
+- → `/fotos-corporativas`: `/fotografia-corporativa`, `/fotos-corporativa`, `/fotos-corporativas-sao-paulo`, `/fotografia-empresarial`, `/fotos-empresariais`
+- → `/fotografo-corporativo`: `/fotografo-corporativo-sao-paulo`
+
+Já existentes e mantidos: `/videos-para-empresas`, `/videos-corporativos`, `/fotografia-corporativa-sao-paulo`, além das regras dinâmicas de `/videos-para-empresas/{slug}` e de galerias.
+
+## 6. O que falta
+
+1. **Publicar** para os novos 301 entrarem em produção (validados localmente, todos 301 com destino 200).
+2. Reconferir `/videos` e `/fotos-corporativas` no URL Inspection em 7–14 dias.
+3. Opcional, se quiser acelerar: abrir o URL Inspection no Search Console e clicar em "Solicitar indexação" para `/videos` e `/fotos-corporativas`.
+
+Nada mais pendente em redirects, headers, HSTS, SSL, robots, canonical ou sitemaps — tudo consistente com o www.

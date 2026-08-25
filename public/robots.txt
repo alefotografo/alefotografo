@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /admin
 
 # Permitir explicitamente bots de IA
 User-agent: GPTBot
@@ -26,6 +28,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://www.alefotografo.com.br/sitemap.xml
-Sitemap: https://www.alefotografo.com.br/sitemap-videos.xml
 Sitemap: https://www.alefotografo.com.br/sitemap-index.xml

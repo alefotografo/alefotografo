@@ -9,6 +9,7 @@ const BASE_URL = "https://www.alefotografo.com.br";
 
 interface SitemapEntry {
   path: string;
+  lastmod?: string;
   changefreq?: "daily" | "weekly" | "monthly" | "yearly";
   priority?: string;
 }
@@ -52,6 +53,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           [
             `  <url>`,
             `    <loc>${BASE_URL}${e.path}</loc>`,
+            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,

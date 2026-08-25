@@ -81,6 +81,11 @@ const OWN_ROUTES = new Set([
 const EXACT: Record<string, string> = {
   "/videos-para-empresas": "/videos",
   "/videos-corporativos": "/videos",
+  "/video-corporativo": "/videos",
+  "/video-institucional": "/videos",
+  "/videos-institucionais": "/videos",
+  "/filmagem-corporativa": "/videos",
+  "/producao-de-video": "/videos",
   "/portfolio-do-fotografo": "/fotografo-corporativo",
   "/loja": "/contato",
   "/orcamento": "/contato",

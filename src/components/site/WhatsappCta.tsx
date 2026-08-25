@@ -18,6 +18,7 @@ function WhatsappIcon({ size = 20 }: { size?: number }) {
  */
 export function WhatsappCta() {
   const href = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(MSG)}`;
+  const track = useTrackConversion();
 
   return (
     <>

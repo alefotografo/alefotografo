@@ -44,9 +44,18 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             name: loaderData.title,
             description: loaderData.description,
             url: `https://www.alefotografo.com.br/fotografo-corporativo/${params.slug}`,
+            inLanguage: "pt-BR",
             author: { "@type": "Person", name: "Alexandre Machado", url: "https://www.alefotografo.com.br/quem-e-o-ale" },
             image: loaderData.images.slice(0, 8),
+            associatedMedia: loaderData.images.slice(0, 8).map((src: string, i: number) => ({
+              "@type": "Photograph",
+              name: `${loaderData.title} — foto ${i + 1}`,
+              creator: { "@type": "Person", name: "Alexandre Machado" },
+              copyrightHolder: { "@id": "https://www.alefotografo.com.br/#business" },
+              image: { "@type": "ImageObject", contentUrl: src, url: src, representativeOfPage: i === 0 },
+            })),
           }),
+
         },
         {
           type: "application/ld+json",

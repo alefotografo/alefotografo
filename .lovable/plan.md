@@ -1,59 +1,22 @@
-# Plano para corrigir o e-mail do domínio no Registro.br
+# Voltar ao site: nova rodada de SEO
 
-## Objetivo
-Fazer os e-mails `@alefotografo.com.br` funcionarem com Gmail/Google Workspace, mantendo o site publicado sem alterações nos registros do site.
+O DNS de e-mail está concluído (MX, SPF, DKIM e DMARC verificados no DNS público). Nada mais a fazer nessa frente.
 
-## O que fazer no Registro.br
+## Situação atual do SEO
 
-1. **Manter os registros do site como estão**
-   - Não alterar os registros `A` de `@` e `www`.
+Todos os scanners estão desatualizados (última execução antes das mudanças publicadas hoje). O único item registrado — CTR baixo em páginas com muitas impressões — já foi tratado com os overrides de título/descrição.
 
-2. **Conferir o MX do Gmail**
-   - O registro MX deve apontar para o servidor informado pelo Google.
-   - Se o Google orientou usar o MX novo, manter somente ele.
-   - Não misturar o MX novo com a lista antiga de servidores `ASPMX`.
+Portanto o próximo passo não é adivinhar problemas, é rodar uma varredura nova sobre o que está publicado agora (sitemap com `lastmod`, robots enxuto, canônicas em www).
 
-3. **Adicionar SPF como TXT**
-   - No Registro.br, SPF não aparece como tipo separado.
-   - Clicar em **Nova entrada** e escolher o tipo **TXT**.
-   - Nome/host: `@` ou deixar em branco, conforme o campo do Registro.br.
-   - Valor típico para Google Workspace:
-     ```text
-     v=spf1 include:_spf.google.com ~all
-     ```
+## O que farei
 
-4. **Adicionar DKIM como TXT**
-   - DKIM também não aparece como tipo separado.
-   - Primeiro gerar a chave no Google Admin.
-   - Caminho: Google Admin → Apps → Google Workspace → Gmail → Autenticar e-mail.
-   - Gerar chave DKIM de 2048 bits.
-   - Depois criar uma entrada **TXT** no Registro.br.
-   - Nome normalmente será:
-     ```text
-     google._domainkey
-     ```
-   - Valor será o texto longo gerado pelo Google.
+1. Disparar uma varredura de SEO nova no projeto (leva cerca de 1 minuto).
+2. Ler os resultados e corrigir o que aparecer como falha, dentro do escopo técnico: títulos, descrições, canônicas, headings, robots, sitemap e dados estruturados.
+3. Se aparecerem oportunidades de conteúdo (páginas novas de serviço/bairro, melhorias de snippet), apresento a lista antes de escrever qualquer texto — nada de conteúdo inventado.
+4. Reconferir a produção depois dos ajustes e, se houver mudança relevante, republicar e reenviar o sitemap no Search Console.
 
-5. **Adicionar DMARC como TXT**
-   - DMARC também é uma entrada **TXT**.
-   - Nome:
-     ```text
-     _dmarc
-     ```
-   - Valor inicial recomendado:
-     ```text
-     v=DMARC1; p=none; rua=mailto:comercial@alefotografo.com.br
-     ```
+## Limites
 
-6. **Validar depois da propagação**
-   - Após salvar, aguardar alguns minutos.
-   - Conferir MX, SPF, DKIM e DMARC publicados.
-   - Testar recebimento e envio pelo Gmail.
-
-## Resultado esperado
-- O domínio continua carregando o site normalmente.
-- Os e-mails `@alefotografo.com.br` passam a receber via Gmail.
-- SPF, DKIM e DMARC melhoram a autenticação e reduzem chance de cair em spam.
-
-## Observação importante
-No Registro.br, os tipos que você deve procurar são principalmente **MX** e **TXT**. SPF, DKIM e DMARC entram todos como **TXT**.
+- Não altero domínio primário (`www.alefotografo.com.br` continua canônico).
+- Não altero registros DNS.
+- Não mexo em design ou conteúdo visível sem sua aprovação.

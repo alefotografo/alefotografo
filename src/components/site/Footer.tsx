@@ -106,6 +106,7 @@ export function Footer() {
             Fotografia
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/servicos" className="hover:text-foreground">Todos os serviços</Link></li>
             <li><Link to="/foto-profissional" className="hover:text-foreground">Foto profissional</Link></li>
             <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto para LinkedIn</Link></li>
             <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotografia corporativa</Link></li>

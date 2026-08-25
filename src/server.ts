@@ -20,9 +20,29 @@ async function getServerEntry(): Promise<ServerEntry> {
   return serverEntryPromise;
 }
 
+// O navegador cancelar a requisição no meio do SSR (reload, navegação, HMR)
+// chega aqui como "aborted"/ECONNRESET. Não é erro da aplicação: não deve ser
+// logado como falha nem virar página de erro.
+function isClientAbort(request: Request, error?: unknown): boolean {
+  if (request.signal?.aborted) return true;
+  for (let err: unknown = error, depth = 0; err && depth < 5; depth++) {
+    const e = err as { name?: string; code?: string; message?: string; cause?: unknown };
+    if (e.name === "AbortError") return true;
+    if (e.code === "ECONNRESET" || e.code === "ECONNABORTED") return true;
+    if (typeof e.message === "string" && /\baborted\b/i.test(e.message)) return true;
+    err = e.cause;
+  }
+  return false;
+}
+
+const CLIENT_CLOSED_REQUEST = 499;
+
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
-async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
+async function normalizeCatastrophicSsrResponse(
+  request: Request,
+  response: Response,
+): Promise<Response> {
   if (response.status < 500) return response;
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) return response;
@@ -32,12 +52,18 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
     return response;
   }
 
-  console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
+  const captured = consumeLastCapturedError();
+  if (isClientAbort(request, captured)) {
+    return new Response(null, { status: CLIENT_CLOSED_REQUEST });
+  }
+
+  console.error(captured ?? new Error(`h3 swallowed SSR error: ${body}`));
   return new Response(renderErrorPage(), {
     status: 500,
     headers: { "content-type": "text/html; charset=utf-8" },
   });
 }
+
 
 function redirectHttps(request: Request): Response | undefined {
   const url = new URL(request.url);

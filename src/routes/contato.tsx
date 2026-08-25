@@ -12,10 +12,10 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "name": "Alê Fotógrafo — Alexandre Machado",
   "description": "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
-  "url": "https://www.alefotografo.com.br",
+  "url": "https://alefotografo.com.br",
   "telephone": "+55-11-91355-0533",
   "email": "comercial@alefotografo.com.br",
-  "image": "https://www.alefotografo.com.br/og-image.jpg",
+  "image": "https://alefotografo.com.br/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Alameda Santos, 1165",
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/contato")({
       description: "Peça orçamento de fotos corporativas, retratos profissionais e vídeo institucional em São Paulo. Estúdio no Jardim Paulista e atendimento na sua empresa.",
       path: "/contato",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/contato" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/contato" }],
     scripts: [
       {
         type: "application/ld+json",

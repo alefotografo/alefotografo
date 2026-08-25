@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       path: "/",
     }),
     links: [
-      { rel: "canonical", href: "https://www.alefotografo.com.br/" },
+      { rel: "canonical", href: "https://alefotografo.com.br/" },
       // O preload precisa casar exatamente com src/srcSet/sizes do <img> do hero,
       // senão o browser baixa outro candidato e o LCP atrasa (~1,5s de load delay).
       {
@@ -49,10 +49,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://www.alefotografo.com.br/#organization",
+          "@id": "https://alefotografo.com.br/#organization",
           name: site.fullName,
           alternateName: site.name,
-          url: "https://www.alefotografo.com.br",
+          url: "https://alefotografo.com.br",
           logo: HERO_IMG,
           image: HERO_IMG,
           description: site.description,

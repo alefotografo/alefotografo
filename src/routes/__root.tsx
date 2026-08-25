@@ -11,6 +11,10 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+// Fontes críticas pré-carregadas: sem isso o swap tardio gerava CLS (~0,09) na home.
+import fontBody400 from "@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2?url";
+import fontBody500 from "@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2?url";
+import fontDisplay600 from "@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
@@ -120,6 +124,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: fontBody500, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },
       // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
       // apontava toda página para a home e conflitava com o canonical.
       { rel: "preconnect", href: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com", crossOrigin: "anonymous" },

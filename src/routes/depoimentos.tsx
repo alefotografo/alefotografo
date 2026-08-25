@@ -14,7 +14,7 @@ const reviewsSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Alê Fotógrafo",
-  url: "https://alefotografo.com.br/depoimentos",
+  url: "https://www.alefotografo.com.br/depoimentos",
   telephone: "+55-11-91355-0533",
   email: "comercial@alefotografo.com.br",
   address: {
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/depoimentos")({
         "Depoimentos reais de empresas e executivos que contrataram Alê Fotógrafo para fotos corporativas, retratos e vídeo institucional em São Paulo.",
       path: "/depoimentos",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/depoimentos" }],
+    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/depoimentos" }],
     scripts: [
       {
         type: "application/ld+json",

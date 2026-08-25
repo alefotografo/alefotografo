@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { posts, site } from "@/data/catalog";
 import { postDateRFC822 } from "@/lib/postDate";
 
-const BASE_URL = "https://alefotografo.com.br";
+const BASE_URL = "https://www.alefotografo.com.br";
 
 function esc(s: string): string {
   return s

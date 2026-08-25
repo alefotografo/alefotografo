@@ -29,6 +29,33 @@ export type Database = {
         }
         Relationships: []
       }
+      conversion_events: {
+        Row: {
+          created_at: string
+          event_type: string
+          id: string
+          path: string
+          referrer: string | null
+          session_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          event_type: string
+          id?: string
+          path: string
+          referrer?: string | null
+          session_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          event_type?: string
+          id?: string
+          path?: string
+          referrer?: string | null
+          session_id?: string | null
+        }
+        Relationships: []
+      }
       cron_tokens: {
         Row: {
           created_at: string

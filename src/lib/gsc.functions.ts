@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
-const PREFERRED_HOST = "alefotografo.com.br";
+const PREFERRED_HOST = "www.alefotografo.com.br";
 
 export type GscRow = {
   page: string;
@@ -59,8 +59,8 @@ export const getIndexingReport = createServerFn({ method: "GET" })
 
       const score = (u: string) => {
         let s = 0;
-        if (u.includes(`www.${PREFERRED_HOST}`)) s += 12; // canônico atual: com www
-        if (u.includes(PREFERRED_HOST)) s += 6;
+        if (u.includes(PREFERRED_HOST)) s += 12; // canônico atual: com www
+        if (u.includes("alefotografo.com.br")) s += 6;
         if (u.startsWith("https://")) s += 4; // prefixo de URL costuma ter permissão
         return s;
       };

@@ -57,7 +57,7 @@ export const Route = createFileRoute("/blog/$slug")({
         image: postCover(loaderData),
         type: "article",
       }),
-      links: [{ rel: "canonical", href: `https://alefotografo.com.br/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://www.alefotografo.com.br/blog/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

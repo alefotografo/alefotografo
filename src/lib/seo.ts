@@ -1,7 +1,7 @@
 import { site } from "@/data/catalog";
 import ogAsset from "@/assets/og-alefotografo-camera.jpg.asset.json";
 
-export const SITE_ORIGIN = "https://alefotografo.com.br";
+export const SITE_ORIGIN = "https://www.alefotografo.com.br";
 export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${ogAsset.url}`;
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;
 export const DEFAULT_OG_IMAGE_HEIGHT = 630;

@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      indexing_snapshots: {
+        Row: {
+          canonical_google: string | null
+          canonical_user: string | null
+          checked_at: string
+          coverage_state: string | null
+          error: string | null
+          id: string
+          indexing_state: string | null
+          last_crawl: string | null
+          robots_state: string | null
+          site_url: string | null
+          url: string
+          verdict: string | null
+        }
+        Insert: {
+          canonical_google?: string | null
+          canonical_user?: string | null
+          checked_at?: string
+          coverage_state?: string | null
+          error?: string | null
+          id?: string
+          indexing_state?: string | null
+          last_crawl?: string | null
+          robots_state?: string | null
+          site_url?: string | null
+          url: string
+          verdict?: string | null
+        }
+        Update: {
+          canonical_google?: string | null
+          canonical_user?: string | null
+          checked_at?: string
+          coverage_state?: string | null
+          error?: string | null
+          id?: string
+          indexing_state?: string | null
+          last_crawl?: string | null
+          robots_state?: string | null
+          site_url?: string | null
+          url?: string
+          verdict?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

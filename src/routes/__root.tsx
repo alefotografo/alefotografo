@@ -120,8 +120,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "alternate", hrefLang: "pt-BR", href: "https://alefotografo.com.br" },
-      { rel: "alternate", hrefLang: "x-default", href: "https://alefotografo.com.br" },
+      // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
+      // apontava toda página para a home e conflitava com o canonical.
       { rel: "preconnect", href: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://images.weserv.nl", crossOrigin: "anonymous" },
       { rel: "dns-prefetch", href: "https://images.weserv.nl" },

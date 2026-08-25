@@ -85,22 +85,16 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
-// Host canônico: SEM www (alefotografo.com.br).
-// TEMPORÁRIO (25/08/2026): o apex está "drifted" na hospedagem porque o TXT
-// `_lovable.alefotografo.com.br` desapareceu da zona do Registro.br e ele
-// responde 421. O `www` está active. Enquanto isso, o redirect www → apex fica
-// DESLIGADO para não jogar visitantes numa URL quebrada. Religar (true) assim
-// que o apex voltar a Active.
-const REDIRECT_WWW_TO_APEX = false;
-
-
+// Host canônico final: COM www (www.alefotografo.com.br).
+// Mantém fallback em código para apex → www caso a borda não aplique o primário.
+const REDIRECT_APEX_TO_WWW = true;
 
 function redirectCanonicalHost(request: Request): Response | undefined {
-  if (!REDIRECT_WWW_TO_APEX) return undefined;
+  if (!REDIRECT_APEX_TO_WWW) return undefined;
   const url = new URL(request.url);
-  if (!url.hostname.startsWith("www.")) return undefined;
+  if (url.hostname !== "alefotografo.com.br") return undefined;
 
-  url.hostname = url.hostname.slice(4);
+  url.hostname = "www.alefotografo.com.br";
   url.protocol = "https:";
   return new Response(null, {
     status: 301,

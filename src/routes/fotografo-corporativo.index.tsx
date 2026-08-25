@@ -10,7 +10,7 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
       description: `Veja ${categories.length} galerias reais: retrato executivo, equipes, escritórios, clínicas, advocacia, indústria e eventos. Orçamento no mesmo dia em São Paulo.`,
       path: "/fotografo-corporativo",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/fotografo-corporativo" }],
+    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/fotografo-corporativo" }],
   }),
   component: PortfolioIndex,
 });

@@ -143,7 +143,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": ["PhotographyBusiness", "LocalBusiness"],
-              "@id": "https://alefotografo.com.br/#business",
+              "@id": "https://www.alefotografo.com.br/#business",
               name: site.fullName,
               alternateName: site.name,
               legalName: "Alexandre Machado Fotografia",
@@ -152,7 +152,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               slogan: site.tagline,
               image:
                 "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-              url: "https://alefotografo.com.br",
+              url: "https://www.alefotografo.com.br",
               telephone: "+55-11-91355-0533",
               email: site.email,
               foundingDate: String(site.foundingYear),
@@ -190,10 +190,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               knowsLanguage: ["pt-BR", "en"],
               founder: {
                 "@type": "Person",
-                "@id": "https://alefotografo.com.br/quem-e-o-ale#person",
+                "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
                 name: "Alexandre Machado",
                 jobTitle: "Fotógrafo corporativo",
-                url: "https://alefotografo.com.br/quem-e-o-ale",
+                url: "https://www.alefotografo.com.br/quem-e-o-ale",
               },
               sameAs: [site.instagram, site.linkedin],
               aggregateRating: aggregateRatingSchema,
@@ -206,16 +206,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "Vídeo corporativo e institucional",
               ].map((name) => ({
                 "@type": "Offer",
-                itemOffered: { "@type": "Service", name, provider: { "@id": "https://alefotografo.com.br/#business" } },
+                itemOffered: { "@type": "Service", name, provider: { "@id": "https://www.alefotografo.com.br/#business" } },
               })),
             },
             {
               "@type": "WebSite",
-              "@id": "https://alefotografo.com.br/#website",
-              url: "https://alefotografo.com.br",
+              "@id": "https://www.alefotografo.com.br/#website",
+              url: "https://www.alefotografo.com.br",
               name: site.name,
               inLanguage: "pt-BR",
-              publisher: { "@id": "https://alefotografo.com.br/#business" },
+              publisher: { "@id": "https://www.alefotografo.com.br/#business" },
             },
           ],
         }),

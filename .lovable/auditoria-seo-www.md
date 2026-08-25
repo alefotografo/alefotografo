@@ -1,70 +1,55 @@
-# Auditoria SEO pós-migração para www.alefotografo.com.br
+# Auditoria SEO — domínio alefotografo.com.br (sem www)
 
-Última verificação: 25/08/2026, 00:51 UTC — **depois do Publish**.
+Última verificação: **25/08/2026, 12:53 UTC**.
 
-## 1. Estado em produção (verificado ao vivo)
+## 1. Domínios (painel Lovable)
 
-- `https://www.alefotografo.com.br/` → 200, canonical `https://www.alefotografo.com.br/`.
-- `/videos` → **200**, canonical `https://www.alefotografo.com.br/videos`.
-- `/fotos-corporativas` → **200**, canonical `https://www.alefotografo.com.br/fotos-corporativas`.
-- `robots.txt` aponta os três sitemaps no www.
-- `sitemap.xml`: **340 URLs**, todas em www. `sitemap-videos.xml`: **72 URLs**. `sitemap-index.xml` referencia os dois no www.
-
-O HTML publicado agora declara o www como canônica em todas as páginas — a divergência anterior entre código e produção está resolvida.
-
-## 2. Redirects e headers
-
-| URL pedida | Status | Destino |
+| Domínio | Status | Observação |
 |---|---|---|
-| `http://alefotografo.com.br/` | 302 | `https://www.alefotografo.com.br/` |
-| `https://alefotografo.com.br/` | 302 | `https://www.alefotografo.com.br/` |
-| `https://alefotografo.com.br/videos` | 302 | `https://www.alefotografo.com.br/videos` |
-| `http://www.alefotografo.com.br/` | 301 | `https://www.alefotografo.com.br/` |
-| `https://www.alefotografo.com.br/blog/` | 301 | `https://www.alefotografo.com.br/blog` |
+| `alefotografo.com.br` | **active / connected** — **Primary** | canônico oficial |
+| `www.alefotografo.com.br` | **active / connected** | reconectado em 25/08 ~12:47 após a criação do TXT `_lovable.www` |
 
-- Cadeia completa da home a partir do apex: **1 salto**, terminando em 200. **Sem loops.**
-- Caminho sempre preservado no redirect.
-- `Strict-Transport-Security: max-age=31536000; includeSubDomains`, `Referrer-Policy: strict-origin-when-cross-origin` e `X-Content-Type-Options: nosniff` presentes tanto na resposta 200 quanto na de redirect.
-- Certificado do www: `CN=www.alefotografo.com.br`, válido de 24/ago/2026 a 22/nov/2026.
-- Por design: o apex sai como **302**, não 301, porque o redirecionamento ocorre na borda da hospedagem (www marcado como Primary). Não é controlável por código; impacto baixo, já que todo canonical aponta para o www.
+Projeto publicado: sim. Ambos com SSL válido (Let's Encrypt, automático).
+
+Histórico do incidente: o `www` ficou ~12h em **drifted** (respondendo 421 "Project not found") porque o registro `TXT _lovable.www` havia desaparecido da zona DNS do Registro.br. Recriado o TXT e disparado o "Check status" no painel, voltou a **active**.
+
+## 2. Estado em produção (verificado ao vivo)
+
+- `https://alefotografo.com.br/` → **200**, canonical `https://alefotografo.com.br/`.
+- `https://www.alefotografo.com.br/` → **302** → `https://alefotografo.com.br/` (redirect da borda, do não-primário para o primário).
+- `robots.txt`, schemas JSON-LD, `og:url` e canônicas: todos no endereço **sem www**.
+- `sitemap.xml`: **340 URLs**, todas em `https://alefotografo.com.br`. `sitemap-videos.xml`: **72 URLs**. `sitemap-index.xml` referencia os dois.
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains` e `Referrer-Policy: strict-origin-when-cross-origin` presentes.
+- Sem loops: 1 salto do `www` até o 200 no apex.
+- Nota de design: o salto do `www` é **302**, não 301, porque acontece na borda da hospedagem (o primário é o apex). Não é controlável por código; impacto baixo, já que todas as canônicas apontam para o apex. `REDIRECT_WWW_TO_APEX` em `src/server.ts` permanece `false` para não duplicar o redirect.
 
 ## 3. Search Console — sitemaps
 
 Propriedade: `sc-domain:alefotografo.com.br` (cobre apex e www).
 
+Os três sitemaps antigos submetidos no host `www` (enviados durante a janela em que o `www` estava fora, acumulando 1 e 72 erros) foram **removidos**. Ficaram apenas os do apex:
+
 | Sitemap | Baixado | Enviadas | Erros | Avisos |
 |---|---|---|---|---|
-| `sitemap-index.xml` | 25/08 00:49 | 209 web + 72 vídeo (cache dos filhos) | 0 | 0 |
-| `sitemap.xml` | 25/08 00:51 | **340** | 0 | 0 |
-| `sitemap-videos.xml` | reenviado 00:50 | 72 | 0 | 0 |
+| `https://alefotografo.com.br/sitemap-index.xml` | 25/08 12:42 | 340 web | **0** | 0 |
+| `https://alefotografo.com.br/sitemap.xml` | 25/08 12:51 | **340** | **0** | 0 |
+| `https://alefotografo.com.br/sitemap-videos.xml` | 25/08 12:51 (ainda **pending**) | 72 | 1 (contagem herdada, aguardando o primeiro download completo) | 0 |
 
-Detalhe importante: ao reenviar só o índice, o Google reaproveitou uma leitura antiga do filho (137 URLs, de 24/08 21:51). Reenviei os sitemaps filhos explicitamente e o `sitemap.xml` passou a registrar as **340 URLs reais, com 0 erros e 0 avisos**. Os números de "indexadas" começam em 0 e sobem conforme o rastreamento — é o comportamento normal para sitemap recém-lido.
+O XML do sitemap de vídeos foi revalidado na origem: 72 entradas, todas com `loc` no apex, `thumbnail_loc`, `player_loc` (`youtube-nocookie`) e `uploader` válidos.
 
-## 4. Rotas pendentes
+## 4. Indexação (URL Inspection — leitura do índice do Google)
 
-| URL | Produção | Estado no índice do Google | Último rastreamento |
-|---|---|---|---|
-| `/videos` | 200 | Not found (404) — dado antigo | 15/abr/2026 |
-| `/fotos-corporativas` | 200 | URL is unknown to Google | — |
+| URL | Veredito | Estado |
+|---|---|---|
+| `https://alefotografo.com.br/` | NEUTRAL | "Duplicate without user-selected canonical" — canônica escolhida pelo Google ainda é `https://www.alefotografo.com.br/`; último rastreio 24/08 |
+| `https://alefotografo.com.br/fotos-corporativas` | NEUTRAL | "URL is unknown to Google" |
+| `https://alefotografo.com.br/videos` | NEUTRAL | "URL is unknown to Google" |
 
-Não há 404 real: as duas páginas respondem 200, têm canonical auto-referente em www e estão no sitemap. O 404 de `/videos` é resíduo de um rastreamento de abril no site anterior; sai sozinho no próximo crawl. A API não permite forçar re-rastreamento — só o botão "Solicitar indexação" no Search Console faz isso manualmente.
+Leitura correta: o Google ainda tem em índice a versão `www` da home (rastreada antes da migração) e ainda não rastreou as URLs novas do apex. Com o `www` agora respondendo 302 → apex e com o sitemap do apex processado sem erros, a reconsolidação é automática — tipicamente 1 a 4 semanas. Nenhuma ação de código pendente.
 
-O `/videos` já recebe links internos da home (o próprio Search Console lista `https://www.alefotografo.com.br/` como URL de referência), o que acelera o recrawl.
+## 5. Pendências / próximos passos
 
-## 5. Redirects de URLs antigas adicionados
-
-Variações do site legado que respondiam 404 e agora fazem **301**:
-
-- → `/videos`: `/video-corporativo`, `/video-institucional`, `/videos-institucionais`, `/filmagem-corporativa`, `/producao-de-video`
-- → `/fotos-corporativas`: `/fotografia-corporativa`, `/fotos-corporativa`, `/fotos-corporativas-sao-paulo`, `/fotografia-empresarial`, `/fotos-empresariais`
-- → `/fotografo-corporativo`: `/fotografo-corporativo-sao-paulo`
-
-Já existentes e mantidos: `/videos-para-empresas`, `/videos-corporativos`, `/fotografia-corporativa-sao-paulo`, além das regras dinâmicas de `/videos-para-empresas/{slug}` e de galerias.
-
-## 6. O que falta
-
-1. **Publicar** para os novos 301 entrarem em produção (validados localmente, todos 301 com destino 200).
-2. Reconferir `/videos` e `/fotos-corporativas` no URL Inspection em 7–14 dias.
-3. Opcional, se quiser acelerar: abrir o URL Inspection no Search Console e clicar em "Solicitar indexação" para `/videos` e `/fotos-corporativas`.
-
-Nada mais pendente em redirects, headers, HSTS, SSL, robots, canonical ou sitemaps — tudo consistente com o www.
+1. Aguardar o `sitemap-videos.xml` sair de *pending* e confirmar 0 erros.
+2. Reinspecionar `/`, `/videos` e `/fotos-corporativas` em ~7 dias: o esperado é `googleCanonical` migrar para o apex e o coverageState virar "Submitted and indexed".
+3. Não remover o `www` do painel: ele é o que garante o redirect dos links antigos.
+4. O monitoramento semanal de indexação (`indexing_snapshots` + painel `/admin/monitoramento`) segue ativo nas 10 URLs críticas.

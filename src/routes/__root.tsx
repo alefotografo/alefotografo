@@ -124,6 +124,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: fontBody500, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },
       // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
       // apontava toda página para a home e conflitava com o canonical.
       { rel: "preconnect", href: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com", crossOrigin: "anonymous" },

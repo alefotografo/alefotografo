@@ -40,6 +40,7 @@ import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as VideosIndexRouteImport } from './routes/videos.index'
 import { Route as VideosSlugRouteImport } from './routes/videos.$slug'
+import { Route as AuthenticatedAdminDesempenhoRouteImport } from './routes/_authenticated/admin.desempenho'
 import { Route as AuthenticatedAdminIndexacaoRouteImport } from './routes/_authenticated/admin.indexacao'
 import { Route as AuthenticatedAdminMonitoramentoRouteImport } from './routes/_authenticated/admin.monitoramento'
 import { Route as ApiPublicCronIndexingRouteImport } from './routes/api/public/cron-indexing'
@@ -206,6 +207,12 @@ const VideosSlugRoute = VideosSlugRouteImport.update({
   path: '/videos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminDesempenhoRoute =
+  AuthenticatedAdminDesempenhoRouteImport.update({
+    id: '/admin/desempenho',
+    path: '/admin/desempenho',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminIndexacaoRoute =
   AuthenticatedAdminIndexacaoRouteImport.update({
     id: '/admin/indexacao',
@@ -266,6 +273,7 @@ export interface FileRoutesByFullPath {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/admin/desempenho': typeof AuthenticatedAdminDesempenhoRoute
   '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/admin/monitoramento': typeof AuthenticatedAdminMonitoramentoRoute
   '/api/public/cron-indexing': typeof ApiPublicCronIndexingRoute
@@ -303,6 +311,7 @@ export interface FileRoutesByTo {
   '/fotografo-corporativo': typeof FotografoCorporativoIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
+  '/admin/desempenho': typeof AuthenticatedAdminDesempenhoRoute
   '/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/admin/monitoramento': typeof AuthenticatedAdminMonitoramentoRoute
   '/api/public/cron-indexing': typeof ApiPublicCronIndexingRoute
@@ -342,6 +351,7 @@ export interface FileRoutesById {
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
+  '/_authenticated/admin/desempenho': typeof AuthenticatedAdminDesempenhoRoute
   '/_authenticated/admin/indexacao': typeof AuthenticatedAdminIndexacaoRoute
   '/_authenticated/admin/monitoramento': typeof AuthenticatedAdminMonitoramentoRoute
   '/api/public/cron-indexing': typeof ApiPublicCronIndexingRoute
@@ -381,6 +391,7 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/admin/desempenho'
     | '/admin/indexacao'
     | '/admin/monitoramento'
     | '/api/public/cron-indexing'
@@ -418,6 +429,7 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo'
     | '/portfolio'
     | '/videos'
+    | '/admin/desempenho'
     | '/admin/indexacao'
     | '/admin/monitoramento'
     | '/api/public/cron-indexing'
@@ -456,6 +468,7 @@ export interface FileRouteTypes {
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
+    | '/_authenticated/admin/desempenho'
     | '/_authenticated/admin/indexacao'
     | '/_authenticated/admin/monitoramento'
     | '/api/public/cron-indexing'
@@ -719,6 +732,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VideosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/desempenho': {
+      id: '/_authenticated/admin/desempenho'
+      path: '/admin/desempenho'
+      fullPath: '/admin/desempenho'
+      preLoaderRoute: typeof AuthenticatedAdminDesempenhoRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/indexacao': {
       id: '/_authenticated/admin/indexacao'
       path: '/admin/indexacao'
@@ -758,11 +778,13 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminDesempenhoRoute: typeof AuthenticatedAdminDesempenhoRoute
   AuthenticatedAdminIndexacaoRoute: typeof AuthenticatedAdminIndexacaoRoute
   AuthenticatedAdminMonitoramentoRoute: typeof AuthenticatedAdminMonitoramentoRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminDesempenhoRoute: AuthenticatedAdminDesempenhoRoute,
   AuthenticatedAdminIndexacaoRoute: AuthenticatedAdminIndexacaoRoute,
   AuthenticatedAdminMonitoramentoRoute: AuthenticatedAdminMonitoramentoRoute,
 }

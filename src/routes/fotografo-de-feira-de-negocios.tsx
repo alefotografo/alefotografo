@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Fotógrafo de Feiras em SP | Stand e Prévia no Mesmo Dia";
 const DESCRIPTION =
-  "Fotógrafo de feiras de negócios em São Paulo: stand, expositores, palestras e networking no São Paulo Expo, Expo Center Norte e Anhembi. Prévia das fotos no mesmo dia.";
+  "Fotógrafo de feiras de negócios em São Paulo: stand, expositores, palestras e networking no São Paulo Expo, Expo Center Norte e Anhembi. Prévia no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-de-feira-de-negocios",

@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Fotografia Executiva em SP | Retratos de Diretoria";
 const DESCRIPTION =
-  "Retratos executivos em São Paulo para diretoria, sócios e palestrantes, no seu escritório ou em estúdio. 30 anos de experiência e orçamento no mesmo dia no WhatsApp.";
+  "Retratos executivos em São Paulo para diretoria, sócios e palestrantes, no seu escritório ou em estúdio. 30 anos de experiência e orçamento no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografia-executiva",

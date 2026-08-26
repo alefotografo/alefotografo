@@ -10,7 +10,7 @@ export const Route = createFileRoute("/servicos")({
     meta: buildMeta({
       title: "Serviços de Foto e Vídeo Corporativo em São Paulo",
       description:
-        "Todos os serviços em São Paulo: retrato profissional, foto corporativa, executiva, LinkedIn, médicos, clínicas, advogados, eventos e vídeo. Orçamento no mesmo dia.",
+        "Todos os serviços em São Paulo: retrato profissional, foto corporativa, executiva, LinkedIn, médicos, clínicas, advogados, eventos e vídeo institucional.",
       path: "/servicos",
     }),
     links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/servicos" }],

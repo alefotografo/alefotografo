@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Fotógrafo Empresarial em SP | Orçamento no Mesmo Dia";
 const DESCRIPTION =
-  "Fotógrafo empresarial em São Paulo: equipe, escritório, indústria, logística e operação para site, LinkedIn e apresentações. Nota 4,9 (144 avaliações) e entrega em 48h.";
+  "Fotógrafo empresarial em São Paulo: equipe, escritório, indústria, logística e operação para site, LinkedIn e apresentações. Nota 4,9 e entrega em 48h.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-empresarial",

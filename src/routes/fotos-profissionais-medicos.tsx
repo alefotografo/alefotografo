@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Fotos para Médicos em SP | Consultório ou Estúdio";
 const DESCRIPTION =
-  "Fotos profissionais para médicos em São Paulo: retrato com jaleco, equipe e ambientes, no consultório ou em estúdio. Nota 4,9 e orçamento no mesmo dia no WhatsApp.";
+  "Fotos profissionais para médicos em São Paulo: retrato com jaleco, equipe e ambientes, no consultório ou em estúdio. Nota 4,9 e orçamento no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/fotos-profissionais-medicos",

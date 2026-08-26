@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Eventos Corporativos em SP | Prévia no Mesmo Dia";
 const DESCRIPTION =
-  "Fotografia de eventos corporativos em São Paulo: congressos, convenções, palestras e premiações em foto e vídeo. Prévia no mesmo dia e nota 4,9 (144 avaliações).";
+  "Fotografia de eventos corporativos em São Paulo: congressos, convenções, palestras e premiações em foto e vídeo. Prévia no mesmo dia e nota 4,9.";
 
 const cfg: ServicePageConfig = {
   path: "/eventos-corporativos",

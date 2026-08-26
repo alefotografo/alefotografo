@@ -13,7 +13,7 @@ const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const TITLE = "Foto Profissional em SP | Nota 4,9 e Entrega em 48h";
 const DESCRIPTION =
-  "Foto profissional em São Paulo para LinkedIn, currículo, site e imprensa. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento no mesmo dia no WhatsApp.";
+  "Foto profissional em São Paulo para LinkedIn, currículo, site e imprensa. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento no mesmo dia.";
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",

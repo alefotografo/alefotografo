@@ -11,7 +11,7 @@ const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const TITLE = "Fotos Corporativas em SP | Orçamento no Mesmo Dia";
 const DESCRIPTION =
-  "Fotos corporativas em São Paulo: equipe, escritório, retratos e eventos na sua empresa. 30 anos de experiência, nota 4,9 (144 avaliações) e entrega em 1 a 3 dias.";
+  "Fotos corporativas em São Paulo: equipe, escritório, retratos e eventos na sua empresa. 30 anos de experiência, nota 4,9 e entrega em 1 a 3 dias úteis.";
 
 const pageFaqs: Faq[] = [
   {

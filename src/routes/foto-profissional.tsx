@@ -11,9 +11,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/foto-profissional";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Foto Profissional em São Paulo";
+const TITLE = "Foto Profissional em SP | Nota 4,9 e Entrega em 48h";
 const DESCRIPTION =
-  "Foto profissional em São Paulo para LinkedIn, currículo, site e imprensa. Direção de pose, luz controlada e entrega em 1 a 3 dias. Orçamento pelo WhatsApp.";
+  "Foto profissional em São Paulo para LinkedIn, currículo, site e imprensa. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento no mesmo dia.";
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",

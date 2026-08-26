@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotografia Executiva em São Paulo";
+const TITLE = "Fotografia Executiva em SP | Retratos de Diretoria";
 const DESCRIPTION =
-  "Fotografia executiva em São Paulo: retratos de diretoria, sócios, equipe comercial e palestrantes para LinkedIn, imprensa e material institucional. Orçamento no WhatsApp.";
+  "Retratos executivos em São Paulo para diretoria, sócios e palestrantes, no seu escritório ou em estúdio. 30 anos de experiência e orçamento no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografia-executiva",

@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Cobertura de Eventos Corporativos em São Paulo";
+const TITLE = "Eventos Corporativos em SP | Prévia no Mesmo Dia";
 const DESCRIPTION =
-  "Cobertura de eventos corporativos em São Paulo: congressos, convenções, palestras, premiações e kick-offs em foto e vídeo, com prévia no mesmo dia. Orçamento no WhatsApp.";
+  "Fotografia de eventos corporativos em São Paulo: congressos, convenções, palestras e premiações em foto e vídeo. Prévia no mesmo dia e nota 4,9.";
 
 const cfg: ServicePageConfig = {
   path: "/eventos-corporativos",

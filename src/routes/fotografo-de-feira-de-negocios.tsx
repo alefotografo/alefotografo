@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotógrafo de Feira de Negócios em São Paulo";
+const TITLE = "Fotógrafo de Feiras em SP | Stand e Prévia no Mesmo Dia";
 const DESCRIPTION =
-  "Fotógrafo de feira de negócios em São Paulo: cobertura de stand, expositores, palestras e networking no Expo Center Norte, São Paulo Expo e Anhembi. Prévia no mesmo dia.";
+  "Fotógrafo de feiras de negócios em São Paulo: stand, expositores, palestras e networking no São Paulo Expo, Expo Center Norte e Anhembi. Prévia no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-de-feira-de-negocios",

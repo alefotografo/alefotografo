@@ -150,7 +150,7 @@ const segmentos = [
   {
     h: "Clínicas médicas e centros diagnósticos",
     escopo: "Recepção, salas de consulta, equipamentos de diagnóstico e retratos da equipe médica.",
-    p: "Produção em blocos de horário para não interromper o atendimento, com retratos padronizados de todos os médicos no mesmo fundo e enquadramento.",
+    p: "Produção em blocos de horário para não interromper o atendimento, com retratos padronizados de todos os médicos no mesmo fundo e enquadramento. Para consultórios individuais, há o formato de meia diária, com retratos, ambiente e detalhes em uma única sessão.",
     slug: "fotos-para-clinicas-medicas",
   },
   {
@@ -175,12 +175,6 @@ const segmentos = [
     h: "Hospitais e operadoras",
     escopo: "Múltiplos setores, equipes por área e cobertura de rotina assistencial.",
     p: "Projetos orçados por unidade, com cronograma por setor, autorizações de imagem e entrega organizada por pasta temática.",
-    slug: "retratos-de-medicos",
-  },
-  {
-    h: "Consultórios individuais",
-    escopo: "Meia diária com retratos, ambiente e detalhes.",
-    p: "Formato enxuto para o profissional que precisa de um conjunto completo de imagens para site, convênios e imprensa em uma única sessão.",
     slug: "retratos-de-medicos",
   },
 ];

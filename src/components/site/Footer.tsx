@@ -11,13 +11,13 @@ import logo from "@/assets/logo-alefotografo.png.asset.json";
 // Curadoria de capas (8 destaques) para a faixa "Siga no Instagram" do rodapé.
 const INSTAGRAM_SLUGS = [
   "retrato-corporativo",
+  "fotografo-de-retratos-corporativos",
   "fotografo-de-eventos-corporativos",
-  "fotografia-industrial",
-  "fotografo-de-arquitetura-e-interiores",
-  "fotografo-de-culinaria",
-  "fotos-aereas",
+  "fotografia-corporativa-em-sao-paulo",
   "fotografia-institucional-em-saopaulo",
-  "banco-de-imagens-para-escolas",
+  "fotografia-industrial",
+  "fotos-para-clinicas-medicas",
+  "fotografo-de-grupos-times-e-equipes",
 ];
 
 const instagramTiles = INSTAGRAM_SLUGS

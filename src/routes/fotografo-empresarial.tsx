@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotógrafo Empresarial em São Paulo | Orçamento Hoje";
+const TITLE = "Fotógrafo Empresarial em SP | Orçamento no Mesmo Dia";
 const DESCRIPTION =
-  "Fotógrafo empresarial em São Paulo: retratos de equipe, escritório, indústria, logística e operação para site, LinkedIn e apresentações. Nota 4,9 e orçamento no WhatsApp.";
+  "Fotógrafo empresarial em São Paulo: equipe, escritório, indústria, logística e operação para site, LinkedIn e apresentações. Nota 4,9 (144 avaliações) e entrega em 48h.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-empresarial",

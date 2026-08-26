@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotos Profissionais para Médicos e Clínicas em SP";
+const TITLE = "Fotos para Médicos em SP | Consultório ou Estúdio";
 const DESCRIPTION =
-  "Fotos profissionais para médicos e clínicas em São Paulo: retrato médico, equipe, ambientes, site, redes sociais e Google Business Profile. Orçamento pelo WhatsApp.";
+  "Fotos profissionais para médicos em São Paulo: retrato com jaleco, equipe e ambientes, no consultório ou em estúdio. Nota 4,9 e orçamento no mesmo dia no WhatsApp.";
 
 const cfg: ServicePageConfig = {
   path: "/fotos-profissionais-medicos",

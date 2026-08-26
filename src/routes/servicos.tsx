@@ -8,9 +8,9 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: buildMeta({
-      title: "Todos os Serviços de Foto e Vídeo Corporativo",
+      title: "Serviços de Foto e Vídeo Corporativo em São Paulo",
       description:
-        "Veja todos os serviços: retrato profissional, foto corporativa, executiva, LinkedIn, médicos, clínicas, advogados, eventos e vídeo institucional em São Paulo.",
+        "Todos os serviços em São Paulo: retrato profissional, foto corporativa, executiva, LinkedIn, médicos, clínicas, advogados, eventos e vídeo. Orçamento no mesmo dia.",
       path: "/servicos",
     }),
     links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/servicos" }],

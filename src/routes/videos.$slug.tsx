@@ -6,6 +6,7 @@ import { videoThumb, ytFallback } from "@/lib/videoThumb";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { LinkHub } from "@/components/site/LinkHub";
+import { serviceFor } from "@/lib/serviceMatch";
 
 export const Route = createFileRoute("/videos/$slug")({
   loader: ({ params }) => {

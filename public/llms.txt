@@ -1,19 +1,37 @@
-# Alê Fotógrafo — Alexandre Machado
+# Alê Fotógrafo — Alexandre Machado (fotografia autoral de retrato corporativo)
 
-> Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.
+> Site pessoal do fotógrafo Alexandre Machado. Aqui os ensaios são fotografados por ele, pessoalmente: retratos profissionais, headshots para LinkedIn, retratos executivos e fotos corporativas de pessoas e equipes em São Paulo.
 
-Site oficial do fotógrafo Alexandre Machado, especializado em fotografia corporativa, retratos executivos, cobertura de eventos empresariais e vídeo institucional em São Paulo e todo o Brasil. Atende empresas, escritórios de advocacia, clínicas médicas e odontológicas, indústrias, gastronomia, arquitetura e profissionais liberais.
+Alexandre Machado tem mais de 30 anos de carreira e atende diretamente cada projeto deste site — do briefing à direção de pose e à entrega. O foco é imagem de pessoas: liderança, executivos, médicos, advogados, profissionais liberais e equipes de empresas.
+
+## Escopo deste domínio (alefotografo.com.br)
+
+- Retrato profissional e headshot individual
+- Foto para LinkedIn e perfis profissionais
+- Retrato executivo e de liderança
+- Retratos de médicos, dentistas, advogados e profissionais de saúde
+- Fotos de equipe e ambiente de escritório
+- Vídeo curto e depoimentos gravados junto ao ensaio
+
+## Site irmão (escopo diferente, não é conteúdo duplicado)
+
+- alefotografos.com.br — operado pela equipe Alê Fotógrafo: cobertura de eventos corporativos, feiras, congressos, convenções e produções que exigem vários fotógrafos simultâneos ou múltiplos dias.
+- Regra prática: **um fotógrafo, imagem de pessoas → alefotografo.com.br. Equipe, cobertura de evento → alefotografos.com.br.**
 
 ## Páginas
 
-- [Início](/): Visão geral dos serviços de fotografia e vídeo corporativo.
-- [Fotos](/fotografo-corporativo): Galeria por segmento — retratos, empresas, eventos, indústria, gastronomia, arquitetura.
-- [Vídeos](/videos): Produções audiovisuais corporativas, depoimentos e cobertura de eventos.
-- [Blog](/blog): Artigos sobre fotografia profissional, retrato corporativo, LinkedIn e imagem executiva.
-- [Sobre](/sobre): Trajetória de Alexandre Machado, 30 anos como fotógrafo corporativo.
-- [Depoimentos](/depoimentos): O que clientes dizem sobre o trabalho.
-- [Perguntas Frequentes](/faq): Prazos, preços, direitos de uso, drone e atendimento.
-- [Contato](/contato): WhatsApp, e-mail e formulário para orçamento.
+- [Início](/): retrato corporativo autoral com Alexandre Machado.
+- [Foto profissional](/foto-profissional): ensaio individual de retrato.
+- [Foto para LinkedIn](/foto-profissional-para-linkedin): headshot para perfil profissional.
+- [Fotografia executiva](/fotografia-executiva): retratos de liderança e conselho.
+- [Médicos](/fotos-profissionais-medicos) e [Clínicas](/fotografia-para-clinicas): imagem profissional na área da saúde.
+- [Advogados](/fotografia-para-advogados): sócios e escritórios.
+- [Serviços](/servicos): panorama completo com imagens.
+- [Portfólio](/portfolio) e [Galerias por segmento](/fotografo-corporativo).
+- [Vídeos](/videos): produções audiovisuais e depoimentos.
+- [Blog](/blog): retrato, imagem pessoal, LinkedIn e preparação para ensaio.
+- [Quem é o Alê](/quem-e-o-ale) e [Sobre](/sobre): trajetória de Alexandre Machado.
+- [Depoimentos](/depoimentos) · [Perguntas frequentes](/faq) · [Contato](/contato)
 
 ## Opcional
 

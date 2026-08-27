@@ -9,10 +9,10 @@ const DESCRIPTION =
 const cfg: ServicePageConfig = {
   path: "/eventos-corporativos",
   breadcrumb: "Eventos corporativos",
-  eyebrow: "Eventos",
-  h1: "Fotógrafo de eventos corporativos em São Paulo",
+  eyebrow: "Pessoas em eventos",
   subtitle:
-    "Cobertura fotográfica e de vídeo para congressos, convenções, palestras, premiações, kick-offs, lançamentos e encontros de negócios, com material pronto para divulgação.",
+    "Retratos feitos no próprio evento, fotos da diretoria e do time completo, palestrantes e homenageados — com direção de pose no meio da programação.",
+  h1: "Retratos e fotos de equipe em eventos de empresa",
   intro: [
     "Em eventos de empresa, o que costuma faltar depois é imagem das pessoas: o retrato do palestrante, a foto da diretoria reunida, o homenageado recebendo o prêmio, o time completo em um único enquadramento. É esse recorte que eu fotografo, com direção de pose no meio do evento.",
     "A cobertura é planejada a partir do roteiro, com os momentos de pessoas definidos antes e prévia de imagens liberada ainda durante ou logo após a realização.",

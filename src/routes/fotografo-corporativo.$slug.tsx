@@ -12,6 +12,7 @@ import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
+import { serviceFor } from "@/lib/serviceMatch";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
@@ -109,6 +110,7 @@ function CategoryPage() {
   const prev = categories[(idx - 1 + categories.length) % categories.length];
   const next = categories[(idx + 1) % categories.length];
   const related = relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6);
+  const service = serviceFor(`${cat.title} ${cat.subtitle ?? ""} ${cat.description ?? ""}`);
 
   return (
     <>
@@ -151,6 +153,32 @@ function CategoryPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <Masonry images={cat.images} alt={cat.title} />
+
+        {/* Separação de intenção: a galeria é prova visual; a contratação fica na página de serviço. */}
+        <div className="mt-12 rounded-sm border border-ember/40 bg-surface p-6 md:p-8">
+          <h2 className="font-display text-xl font-semibold md:text-2xl">
+            Quer um trabalho assim para a sua empresa?
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm text-muted-foreground text-pretty md:text-base">
+            Esta página é o registro visual do que já fotografei. Condições, o que está incluído e
+            orçamento ficam na página de{" "}
+            <Link
+              to={service.to}
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              {service.label}
+            </Link>
+            . Para ver os cases organizados por segmento, veja o{" "}
+            <Link
+              to="/portfolio"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              portfólio completo
+            </Link>
+            .
+          </p>
+        </div>
+
         <RelatedLinks
           cats={related}
           posts={relatedPosts(`${cat.title} ${cat.subtitle} ${cat.description}`, undefined, 4)}

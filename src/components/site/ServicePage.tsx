@@ -39,6 +39,9 @@ const INTERNAL_LINKS: { to: string; label: string }[] = [
   { to: "/foto-profissional-para-linkedin", label: "Foto profissional para LinkedIn" },
   { to: "/fotos-profissionais-medicos", label: "Fotos profissionais para médicos" },
   { to: "/fotografia-para-advogados", label: "Fotografia para advogados" },
+  { to: "/fotografia-para-clinicas", label: "Fotografia para clínicas" },
+  { to: "/fotografo-empresarial", label: "Fotógrafo empresarial" },
+  { to: "/fotografo-de-feira-de-negocios", label: "Fotógrafo de feira de negócios" },
   { to: "/eventos-corporativos", label: "Eventos corporativos" },
   { to: "/videos", label: "Vídeo institucional" },
 ];
@@ -138,10 +141,10 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               {cfg.ctaLabel}
             </a>
             <Link
-              to="/fotografo-corporativo"
+              to="/portfolio"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
-              Ver portfólio corporativo
+              Ver cases no portfólio
             </Link>
             <Link
               to="/contato"
@@ -242,8 +245,19 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
         <section className="border-y border-border">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
             <h2 className="font-display text-2xl font-semibold md:text-3xl">
-              Exemplos e galerias relacionadas
+              Prova visual: cases desse tipo de trabalho
             </h2>
+            <p className="mt-3 max-w-3xl text-sm text-muted-foreground text-pretty">
+              As galerias abaixo servem como prova do resultado. A contratação, o que está incluído e o
+              orçamento ficam nesta página; para ver todos os cases por segmento, vá ao{" "}
+              <Link
+                to="/portfolio"
+                className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+              >
+                portfólio completo
+              </Link>
+              .
+            </p>
             <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {gallery.map((c) => (
                 <li key={c.slug}>

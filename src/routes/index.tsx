@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, posts, site, videos } from "@/data/catalog";
 import { imgSrcSet, imgUrl } from "@/lib/img";
-import { buildMeta } from "@/lib/seo";
+import { buildMeta, TEAM_SITE_ORIGIN } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
 import { faqJsonLd } from "@/lib/faqs";
@@ -58,8 +58,21 @@ export const Route = createFileRoute("/")({
           description: site.description,
           email: site.email,
           telephone: "+55" + site.whatsapp.slice(2),
-          sameAs: [site.instagram, site.linkedin],
-          founder: { "@type": "Person", name: "Alexandre Machado" },
+          sameAs: [site.instagram, site.linkedin, TEAM_SITE_ORIGIN],
+          knowsAbout: [
+            "Retrato corporativo",
+            "Headshot profissional",
+            "Foto para LinkedIn",
+            "Retrato executivo",
+            "Fotografia de equipe em escritório",
+          ],
+          founder: {
+            "@type": "Person",
+            "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
+            name: "Alexandre Machado",
+            jobTitle: "Fotógrafo de retrato corporativo",
+            url: "https://www.alefotografo.com.br/quem-e-o-ale",
+          },
           address: {
             "@type": "PostalAddress",
             streetAddress: "Alameda Santos, 1165",

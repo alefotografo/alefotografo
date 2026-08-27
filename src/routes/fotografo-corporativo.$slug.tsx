@@ -12,6 +12,7 @@ import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
+import { serviceFor } from "@/lib/serviceMatch";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({

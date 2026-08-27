@@ -151,6 +151,32 @@ function CategoryPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <Masonry images={cat.images} alt={cat.title} />
+
+        {/* Separação de intenção: a galeria é prova visual; a contratação fica na página de serviço. */}
+        <div className="mt-12 rounded-sm border border-ember/40 bg-surface p-6 md:p-8">
+          <h2 className="font-display text-xl font-semibold md:text-2xl">
+            Quer um trabalho assim para a sua empresa?
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm text-muted-foreground text-pretty md:text-base">
+            Esta página é o registro visual do que já fotografei. Condições, o que está incluído e
+            orçamento ficam na página de{" "}
+            <Link
+              to={service.to}
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              {service.label}
+            </Link>
+            . Para ver os cases organizados por segmento, veja o{" "}
+            <Link
+              to="/portfolio"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              portfólio completo
+            </Link>
+            .
+          </p>
+        </div>
+
         <RelatedLinks
           cats={related}
           posts={relatedPosts(`${cat.title} ${cat.subtitle} ${cat.description}`, undefined, 4)}

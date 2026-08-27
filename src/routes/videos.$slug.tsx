@@ -61,9 +61,43 @@ export const Route = createFileRoute("/videos/$slug")({
   component: VideoPage,
 });
 
+// Encaminha o vídeo para a página comercial que atende aquela demanda.
+const SERVICE_MATCHES = [
+  { re: /feira|stand|expo/i, to: "/fotografo-de-feira-de-negocios", label: "fotografia em feiras de negócios" },
+  { re: /evento|congresso|convenç|palestra|confratern/i, to: "/eventos-corporativos", label: "retratos em eventos corporativos" },
+  { re: /médic|medic|clínic|clinic|saúde|saude|hospital/i, to: "/fotos-profissionais-medicos", label: "fotos profissionais para médicos" },
+  { re: /advoc|jurídic|juridic|escritório de advocacia/i, to: "/fotografia-para-advogados", label: "fotografia para advogados" },
+  { re: /linkedin|perfil|headshot/i, to: "/foto-profissional-para-linkedin", label: "headshot para LinkedIn" },
+  { re: /retrato|executiv|liderança|lideranca|ceo|diretor/i, to: "/fotografia-executiva", label: "fotografia executiva" },
+  { re: /indústria|industria|logístic|logistic|fábrica|fabrica|operaç/i, to: "/fotografo-empresarial", label: "fotografia empresarial e industrial" },
+] as const;
+
+const FALLBACK_SERVICE = { to: "/fotos-corporativas", label: "fotografia corporativa" } as const;
+
+function serviceFor(text: string) {
+  return SERVICE_MATCHES.find((m) => m.re.test(text)) ?? FALLBACK_SERVICE;
+}
+
 function VideoPage() {
   const v = Route.useLoaderData();
-  const others = videos.filter((x) => x.slug !== v.slug).slice(0, 3);
+  const seed = `${v.title} ${v.subtitle ?? ""} ${v.description ?? ""}`;
+  const service = serviceFor(seed);
+  // Malha lateral: 6 vídeos, priorizando os que compartilham palavras do título.
+  const pool = videos.filter((x) => x.slug !== v.slug);
+  const words = v.title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .split(/\W+/)
+    .filter((w) => w.length > 4);
+  const others = [...pool]
+    .map((o) => {
+      const t = o.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      return { o, s: words.reduce((n, w) => (t.includes(w) ? n + 1 : n), 0) };
+    })
+    .sort((a, b) => b.s - a.s)
+    .slice(0, 6)
+    .map((x) => x.o);
 
   return (
     <>
@@ -87,6 +121,24 @@ function VideoPage() {
             <p className="whitespace-pre-line text-muted-foreground">{v.description}</p>
           </div>
         )}
+
+        <div className="mt-10 rounded-sm border border-border bg-surface p-6">
+          <p className="text-sm text-muted-foreground text-pretty">
+            Precisa desse tipo de material para a sua empresa? Veja como funciona meu trabalho de{" "}
+            <Link to={service.to} className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              {service.label}
+            </Link>{" "}
+            ou explore os{" "}
+            <Link to="/portfolio" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              cases do portfólio
+            </Link>
+            . Produção de vídeo completa em{" "}
+            <Link to="/videos" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              vídeo corporativo
+            </Link>
+            .
+          </p>
+        </div>
       </section>
 
       <section className="border-t border-border bg-surface">

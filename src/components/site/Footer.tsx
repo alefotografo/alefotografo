@@ -111,12 +111,15 @@ export function Footer() {
             <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto para LinkedIn</Link></li>
             <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotografia corporativa</Link></li>
             <li><Link to="/fotografia-executiva" className="hover:text-foreground">Fotografia executiva</Link></li>
+            <li><Link to="/fotografo-empresarial" className="hover:text-foreground">Fotógrafo empresarial</Link></li>
             <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
             <li><Link to="/eventos-corporativos" className="hover:text-foreground">Eventos corporativos</Link></li>
+            <li><Link to="/fotografo-de-feira-de-negocios" className="hover:text-foreground">Fotógrafo de feira de negócios</Link></li>
             <li><Link to="/fotografia-para-clinicas" className="hover:text-foreground">Fotografia para clínicas</Link></li>
             <li><Link to="/fotos-profissionais-medicos" className="hover:text-foreground">Fotos para médicos</Link></li>
             <li><Link to="/fotografia-para-advogados" className="hover:text-foreground">Fotos para advogados</Link></li>
-            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Portfólio corporativo</Link></li>
+            <li><Link to="/portfolio" className="hover:text-foreground">Portfólio de cases</Link></li>
+            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Galerias por segmento</Link></li>
           </ul>
         </div>
 

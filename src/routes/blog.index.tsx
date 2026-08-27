@@ -155,6 +155,39 @@ function BlogIndex() {
           </div>
         )}
       </section>
+
+      {/* Índice completo — link real para todo post no HTML servido, sem depender
+          do "carregar mais". Evita artigos órfãos. */}
+      <section className="border-t border-border bg-surface" aria-labelledby="indice-blog">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Índice</p>
+          <h2 id="indice-blog" className="font-display text-2xl font-semibold md:text-4xl">
+            Todos os {posts.length} artigos
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground text-pretty">
+            Catálogo completo em ordem alfabética. Para ver os trabalhos, vá ao{" "}
+            <Link to="/portfolio" className="text-ember hover:underline">
+              portfólio de cases
+            </Link>
+            .
+          </p>
+          <ul className="mt-8 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {[...posts]
+              .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"))
+              .map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: p.slug }}
+                    className="text-muted-foreground hover:text-ember"
+                  >
+                    {p.title}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </section>
     </>
   );
 }

@@ -606,6 +606,39 @@ function VideosIndex() {
         </div>
       </section>
 
+      {/* Índice completo — todos os vídeos com link real no HTML servido, sem
+          depender de aba ativa ou JS. Evita páginas de vídeo órfãs. */}
+      <section className="border-b border-border" aria-labelledby="indice-videos">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Índice</p>
+          <h2 id="indice-videos" className="font-display text-2xl font-semibold md:text-4xl">
+            Todas as {videos.length} produções
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground text-pretty">
+            Catálogo completo em ordem alfabética. Para retratos de pessoas e equipes, veja o{" "}
+            <Link to="/portfolio" className="text-ember hover:underline">
+              portfólio de fotografia
+            </Link>
+            .
+          </p>
+          <ul className="mt-8 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {[...videos]
+              .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"))
+              .map((v) => (
+                <li key={v.slug}>
+                  <Link
+                    to="/videos/$slug"
+                    params={{ slug: v.slug }}
+                    className="text-muted-foreground hover:text-ember"
+                  >
+                    {v.title}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Segmentos */}
       <LazySection minHeight={600}>
         <section className="border-b border-border bg-surface" aria-labelledby="segmentos-titulo">

@@ -16,9 +16,9 @@ const allFaqs = [...primeiras, ...restantes];
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: buildMeta({
-      title: "Dúvidas: Preço e Prazo de Fotos Corporativas",
+      title: "Dúvidas sobre Retrato Profissional em São Paulo",
       description:
-        "Quanto custa, quanto tempo leva e como funciona uma sessão de fotos corporativas em São Paulo: preços, prazos, direitos de uso, equipe e drone.",
+        "Preço, duração, direção de pose, roupa, prazo de entrega e direitos de uso do retrato profissional em São Paulo — respondido por Alexandre Machado.",
       path: "/faq",
     }),
     links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/faq" }],
@@ -64,11 +64,11 @@ function FaqPage() {
         <div className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">FAQ</p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Perguntas frequentes sobre fotografia e vídeo corporativo
+            Perguntas frequentes sobre retrato profissional
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            Respostas diretas para as principais dúvidas de empresas, departamentos de marketing,
-            RH e assessorias de imprensa antes de contratar um fotógrafo corporativo em {site.city}.
+            Respostas diretas sobre valor, duração, direção de pose, roupa, prazo e direitos de uso
+            de quem vai ser fotografado por mim em {site.city}.
           </p>
         </div>
       </section>

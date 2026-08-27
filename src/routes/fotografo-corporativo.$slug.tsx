@@ -109,6 +109,7 @@ function CategoryPage() {
   const prev = categories[(idx - 1 + categories.length) % categories.length];
   const next = categories[(idx + 1) % categories.length];
   const related = relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6);
+  const service = serviceFor(`${cat.title} ${cat.subtitle ?? ""} ${cat.description ?? ""}`);
 
   return (
     <>

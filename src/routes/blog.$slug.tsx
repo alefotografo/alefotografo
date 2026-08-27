@@ -110,6 +110,7 @@ function PostPage() {
   const relCats = relatedCategories(seed, undefined, 6);
   const relPostList = relatedPosts(seed, p.slug, 4);
   const more = (relPostList.length ? relPostList : posts.filter((x) => x.slug !== p.slug)).slice(0, 3);
+  const bridge = bridgeFor(p.slug);
   // Shared trackers so the same category isn't linked twice across paragraphs
   const usedSlugs = new Set<string>();
   const usedPhrases = new Set<string>();

@@ -49,7 +49,7 @@ Nada será alterado até a aprovação. Abaixo o estado atual verificado no cód
 | Title atual | "Fotografia Institucional em SP \| Empresas e Liderança" |
 | H1 atual | "Fotografia Institucional" |
 | Alteração proposta | **Adição** de bloco editorial centrado em "por que ter um banco de imagens próprio": deixar de depender de imagens genéricas e construir patrimônio visual coerente. Listas de usos (site, LinkedIn, apresentações, propostas, imprensa, redes, campanhas, recrutamento, comunicação interna, material comercial) e de possibilidades de captação (pessoas trabalhando, escritórios, fábricas, logística, equipamentos, tecnologia, reuniões, liderança, detalhes, produtos, processos, instalações). FAQ próprio de 5 perguntas (direito de uso, organização do acervo, periodicidade, prazo, escopo). |
-| Links propostos | Fotografia corporativa (ligação contextual explícita), banco de imagens para empresas, /videos, /fotos-corporativas |
+| Links propostos | Fotografia corporativa (ligação contextual explícita) e retrato corporativo. **/videos apenas se** houver um trecho editorial em que a produção audiovisual institucional seja de fato útil ao leitor (ex.: quando trato foto e vídeo na mesma diária); caso contrário, omitido — Ajuste 2. Link para /fotos-corporativas também omitido, pelo mesmo critério do Ajuste 1. |
 | CTA proposto | "Conversar sobre banco de imagens" (WhatsApp contextual) + /contato |
 | Risco SEO | **BAIXO** |
 

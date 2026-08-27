@@ -1,54 +1,63 @@
-# Diferenciação do site plural (alefotografos.com.br) — equipe, eventos e escala
+# Auditoria de proteção do capital orgânico + fortalecimento da entidade Alexandre Machado
 
-## Onde este trabalho será executado
+Regra que vou seguir: **nenhum slug existente será alterado, traduzido ou "melhorado"**. Nada é deletado. Qualquer mudança de URL só entraria com justificativa apresentada e aprovada por você antes.
 
-O site plural é outro projeto Lovable ("Alê Fotógrafo Revamped"). Eu consegui **ler** o código dele agora, mas não consigo editar nem publicar de dentro deste projeto. Para aplicar, você abre aquele projeto no editor e diz "aplicar o plano do plural" — eu já terei este roteiro e o contexto.
+## O que já confirmei no projeto agora
 
-## O que eu verifiquei no projeto plural agora
+- Rotas ativas incluem todas as que você listou: `/fotografo-corporativo` (+ `/$slug` e `/categoria/$slug`), `/foto-profissional-para-linkedin`, `/fotografo-empresarial`, `/eventos-corporativos`, `/servicos`, `/videos`, `/quem-e-o-ale`, `/sobre`, `/foto-profissional`, `/fotografia-executiva`, `/fotografia-para-advogados`, `/fotografia-para-clinicas`, `/fotos-corporativas`, `/fotos-profissionais-medicos`, `/fotografo-de-feira-de-negocios`, `/portfolio`, `/blog`, `/depoimentos`, `/faq`, `/contato`, `/fotografo-corporativo-em/$bairro`.
+- `src/lib/legacy-redirects.ts` já cobre mapeamentos exatos, aliases de galeria, vídeos removidos, categorias legadas e rotas próprias protegidas das regras dinâmicas.
+- `SITE_ORIGIN` = `https://www.alefotografo.com.br`; canonical auto-referente por rota; `TEAM_SITE_ORIGIN` usado só como `sameAs`/link editorial — **nenhuma canonical cross-domain**.
+- `robots.txt` com bloco de bots de IA e um único `Sitemap:` (o índice).
 
-- `SITE_ORIGIN` já está correto: `https://alefotografos.com.br`.
-- O conteúdo **ainda é o antigo, genérico** — ou seja, ainda é o material do qual este site (singular) se diferenciou:
-  - `public/llms.txt` continua descrevendo "site oficial do fotógrafo Alexandre Machado", sem citar equipe nem o site irmão.
-  - `/eventos-corporativos` usa o título "Fotógrafo de Eventos Corporativos em São Paulo" (que aqui já foi reescrito, logo não há mais colisão nessa página).
-  - `/foto-profissional` usa "Foto Profissional em São Paulo" com a mesma promessa de direção de pose — este é o tipo de página que precisa sair do foco lá.
-  - `src/data/catalog.ts` tem tagline genérica "Fotografia e vídeo corporativo para empresas em São Paulo".
-  - Não existe rota `/servicos` lá (existe só aqui).
+## Fase 1 — Inventário e auditoria (sem alterar código)
 
-## O que fazer no projeto plural
+1. Enumerar todas as URLs canônicas do site (rotas estáticas + galerias + bairros + posts + vídeos) a partir dos sitemaps e do route tree.
+2. Rodar cada regra de `legacy-redirects.ts` contra o domínio no ar verificando: status 301 (nunca 302/307), **um único salto**, destino 200, host final `www.alefotografo.com.br`.
+3. Testar as URLs históricas do site antigo de 20 anos que ainda tenham backlinks: extrair a lista das URLs conhecidas (sitemap WordPress de 2021, páginas do `hostinger/`, padrões `/portfolio-do-fotografo/*`, categorias WP, paginação de blog, `?p=`) e checar cada uma.
+4. Marcar como **lacuna** toda URL antiga que hoje cai em 404 ou em redirect genérico para a home sem equivalência semântica.
+5. Verificar em cada página indexável: canonical absoluto auto-referente, ausência de `noindex`, um único H1, title/description dentro dos limites.
 
-### 1. Reposicionar o núcleo para "equipe"
-- Home, `/sobre` e `/quem-e-o-ale` reescritos na **terceira pessoa plural**: "nossa equipe cobre", "vários fotógrafos simultâneos", "operação de vários dias e ambientes".
-- `catalog.ts`: tagline e descrição globais focadas em cobertura de eventos com equipe.
+**Entregável:** relatório em `.lovable/auditoria-urls.md` com tabelas: URLs mantidas · redirecionadas (origem → destino → nº de saltos) · 404 · conflitos · canonicals divergentes.
 
-### 2. Promover eventos a pilar e rebaixar retrato individual
-- Pilares principais: `/eventos-corporativos`, `/fotografo-de-feira-de-negocios`, além de páginas novas ou reforçadas para congressos, convenções e premiações.
-- `/foto-profissional`, `/foto-profissional-para-linkedin`, `/fotografia-executiva`: páginas mantidas e indexáveis (preservam os 301 e a autoridade), mas com títulos/descriptions reposicionados para "ensaios de retrato em volume, no escritório do cliente, com equipe" e nota editorial apontando o ensaio autoral individual para `www.alefotografo.com.br`.
-- Menu, rodapé e blocos de links internos reordenados com evento/feira/congresso no topo.
+## Fase 2 — Correções de preservação (só o que a auditoria apontar)
 
-### 3. Espelho editorial do site irmão
-- Adicionar `SINGLE_SITE_ORIGIN = https://www.alefotografo.com.br` no `seo.ts` de lá e uma nota tipo `teamSiteNote` invertida nas páginas de retrato.
-- Reescrever `public/llms.txt` do plural declarando o escopo dele e a regra prática (equipe/evento → plural; um fotógrafo/retrato → singular).
+- URL antiga sem destino: novo mapeamento 301 direto para a página semanticamente equivalente em `legacy-redirects.ts` (nunca para a home quando existir equivalente).
+- Corrente de redirects: encurtar para salto único.
+- Redirect apontando para 404: corrigir destino.
+- URL do sitemap que não responde 200: corrigir a rota ou remover do gerador.
+- Nenhum redirect existente é removido sem antes eu documentar sua finalidade no relatório.
 
-### 4. Dados estruturados
-- Trocar o schema de `Person` para `Organization`/`LocalBusiness` com `employee`, `founder: Alexandre Machado` e `knowsAbout` de eventos.
-- `sameAs` cruzado com `www.alefotografo.com.br` (nunca canonical cruzada).
+## Fase 3 — Fortalecimento da entidade (prioridade 2)
 
-### 5. FAQ e blog sem sobreposição
-- FAQ do plural com perguntas de evento: número de fotógrafos, cobertura simultânea, prévia durante o evento, credenciamento, viagem, relatório para patrocinador.
-- Blog do plural com pauta de evento/feira/congresso; nenhum post repetido entre os domínios.
+- Consolidar o grafo de entidade: `Person` (Alexandre Machado) + `Organization`/`LocalBusiness`, ligados por `founder`/`employee`, com `sameAs` (Instagram, LinkedIn, site irmão), `knowsAbout` dos territórios prioritários e `jobTitle`/`description` com os 30+ anos de trajetória.
+- `ProfilePage` em `/quem-e-o-ale` e `/sobre`, `author` apontando para a mesma `@id` de Person em todos os `BlogPosting`.
+- `Service`/`Offer` nas páginas comerciais e `BreadcrumbList` nas rotas profundas (conferir o que já existe antes de adicionar, sem duplicar).
+- Links internos reforçando "quem é o autor": bloco de autoria com foto e credencial nas páginas comerciais e nos posts, apontando para `/quem-e-o-ale`.
 
-### 6. Verificação final
-- Varredura comparando título, H1, description e primeiro parágrafo das duas propriedades, listando qualquer trecho ainda idêntico.
-- Confirmar canônicas auto-referentes em cada domínio.
-- Reenviar sitemap do plural no Search Console e acompanhar as duas propriedades separadamente.
+## Fase 4 — Relevância semântica e IA
+
+- Revisar `public/llms.txt` com o escopo autoral e a regra de separação dos dois domínios (já parcialmente feito) e garantir que os territórios prioritários apareçam por extenso.
+- Reforçar cobertura semântica nas páginas de retrato executivo/C-level, médicos e advogados (blocos de método, o que entra, objeções), sem canibalizar entre si — cada página com uma intenção só.
+
+## Fase 5 — Performance e conversão
+
+- Medir as páginas comerciais principais no preview e no ar (LCP, CLS, INP, peso de imagem) e corrigir o que estiver fora: dimensões explícitas, `fetchpriority` no herói, `srcset` faltando, scripts atrasando o LCP.
+- Conferir CTA de WhatsApp/orçamento presente acima da dobra em toda página comercial e o rastreamento de conversão registrando.
+
+## Fase 6 — Verificação final
+
+- Reconferir os redirects alterados ao vivo, revalidar canonicals, publicar e reenviar `sitemap-index.xml` no Search Console.
+- Indexação é prazo do Google: eu leio e reporto o estado, sem prometer datas.
 
 ## Detalhes técnicos
-- Nenhuma página é deletada em nenhum dos lados; o rebaixamento é só de prioridade interna e de intenção de rankeamento.
-- Nenhum redirect cross-domain, em nenhuma direção.
-- A origem canônica de cada projeto permanece a do seu próprio domínio.
 
-## Ordem sugerida
-1. Home + sobre + catalog (posicionamento plural).
-2. Metas das páginas de evento (pilares) e das de retrato (rebaixadas com nota cruzada).
-3. llms.txt + schema Organization + FAQ.
-4. Varredura de duplicidade e relatório comparativo.
+- Fonte da verdade: `src/lib/legacy-redirects.ts`, `src/lib/seo.ts`, `src/routes/sitemap*.xml.ts`, `src/routeTree.gen.ts` (somente leitura).
+- Auditoria por HTTP com `redirect: manual`, seguindo a cadeia salto a salto.
+- Nada muda em domínio, host primário (`www`), tema visual ou conteúdo das páginas sem eu apontar o motivo no relatório.
+
+## Ordem de execução
+
+1. Fase 1 (relatório) → eu te mostro os números antes de mexer em qualquer redirect.
+2. Fases 2 e 3.
+3. Fases 4 e 5.
+4. Publicar + Fase 6.

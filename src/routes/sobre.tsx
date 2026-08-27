@@ -117,10 +117,10 @@ function SobrePage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-4">
             {[
-              { icon: Target, title: "Estratégia", desc: "Cada foto tem intenção. Entendemos posicionamento e público antes do clique." },
-              { icon: Camera, title: "Técnica", desc: "30 anos de bagagem em iluminação, composição e pós-produção profissional." },
-              { icon: Zap, title: "Agilidade", desc: "Entrega rápida, organização de bastidores e respeito pelo seu tempo." },
-              { icon: Award, title: "Resultado", desc: "Imagens que convertem, transmitem autoridade e valorizam sua marca." },
+              { icon: Target, title: "Direção de pose", desc: "Eu conduzo postura, ângulo, olhar e expressão do início ao fim do ensaio." },
+              { icon: Camera, title: "Luz de retrato", desc: "30 anos de bagagem em iluminação de rosto, composição e retoque natural de pele." },
+              { icon: Zap, title: "Agenda enxuta", desc: "10 a 15 minutos por pessoa no seu escritório, sem travar a operação do time." },
+              { icon: Award, title: "Atendimento direto", desc: "Você fala comigo do orçamento à entrega — sem intermediários e sem substituição." },
             ].map((p) => (
               <div key={p.title} className="rounded-sm border border-border bg-background p-6">
                 <p.icon className="text-ember" size={26} strokeWidth={1.5} />

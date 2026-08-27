@@ -158,6 +158,15 @@ function PostPage() {
               </div>
             );
           })}
+          {bridge && (
+            <div className="mt-8 space-y-4 border-l-2 border-ember/50 pl-5">
+              {bridge.paragraphs.map((parts, i) => (
+                <p key={i} className="text-base leading-relaxed text-muted-foreground">
+                  <Segments parts={parts} />
+                </p>
+              ))}
+            </div>
+          )}
           <p className="mt-8 rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
             Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
           </p>

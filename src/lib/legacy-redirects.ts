@@ -105,7 +105,16 @@ const EXACT: Record<string, string> = {
   "/fotografia-para-medicos": "/fotos-profissionais-medicos",
   "/fotos-para-advogados": "/fotografia-para-advogados",
   "/retrato-executivo": "/fotografia-executiva",
+  // Estrutura do WordPress antigo (auditoria 27/08/2026: respondiam 404)
+  "/index.php": "/",
+  "/feed": "/blog/rss.xml",
+  "/blog/feed": "/blog/rss.xml",
+  "/comments/feed": "/blog",
+  "/sitemap_index.xml": "/sitemap-index.xml",
+  "/wp-sitemap.xml": "/sitemap-index.xml",
+  "/contact": "/contato",
 };
+
 
 
 function normalize(pathname: string) {

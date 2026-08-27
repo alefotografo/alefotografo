@@ -10,6 +10,8 @@ import { LinkHub } from "@/components/site/LinkHub";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
+import { editorialFor } from "@/data/categoryEditorial";
+import { EditorialBlock } from "@/components/site/EditorialBlock";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
 import { serviceFor } from "@/lib/serviceMatch";

@@ -237,9 +237,9 @@ export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 export const site = {
   name: "Alê Fotógrafo",
   fullName: "Alexandre Machado — Alê Fotógrafo",
-  tagline: "Fotografia e vídeo corporativo em São Paulo",
+  tagline: "Retrato corporativo autoral em São Paulo",
   description:
-    "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
+    "Alexandre Machado fotografa pessoalmente retratos profissionais em São Paulo: headshot para LinkedIn, executivos, sócios e equipes, com direção de pose.",
   city: "São Paulo",
   state: "SP",
   whatsapp: "5511913550533",

@@ -187,6 +187,26 @@ export function resolveLegacyPath(pathname: string): string | undefined {
     return `/fotografo-corporativo/${bare[1]}`;
   }
 
+  // Arquivos do WordPress antigo: /category/{slug}, /tag/{slug}, /author/{slug}
+  const wpCat = path.match(/^\/category\/([^/]+)$/);
+  if (wpCat) {
+    return CATEGORY_SLUGS.has(wpCat[1])
+      ? `/fotografo-corporativo/${wpCat[1]}`
+      : "/blog";
+  }
+  if (/^\/(?:tag|tags|author|arquivo|archives)\/[^/]+$/.test(path)) return "/blog";
+
+  // Permalinks com data do WordPress: /2021/05/slug ou /2021/05/12/slug
+  const dated = path.match(/^\/\d{4}\/\d{2}(?:\/\d{2})?\/([^/]+)$/);
+  if (dated) {
+    return POST_SLUGS.has(dated[1]) ? `/blog/${dated[1]}` : "/blog";
+  }
+
+  // Feeds RSS por página do WordPress (/qualquer-coisa/feed)
+  const feed = path.match(/^\/(.+)\/feed$/);
+  if (feed) return "/blog/rss.xml";
+
+
   // Normalização de barra final
   if (path !== pathname) return path;
 

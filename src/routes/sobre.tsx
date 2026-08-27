@@ -54,10 +54,12 @@ function SobrePage() {
           <div className="md:col-span-7">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Sobre</p>
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-              Alexandre Machado — o fotógrafo por trás do Alê Fotógrafo
+              Sou Alexandre Machado e fotografo pessoalmente cada retrato
             </h1>
             <p className="mt-6 text-muted-foreground md:text-lg">
-              Fotógrafo profissional em São Paulo com mais de 30 anos de experiência, atendendo centenas de empresas com fotografia corporativa, retratos profissionais, cobertura de eventos e produção de vídeo institucional.
+              Mais de 30 anos fotografando pessoas em São Paulo: retrato profissional, headshot para
+              LinkedIn, executivos, sócios e equipes. Quem atende, dirige o ensaio e entrega as
+              imagens é sempre eu — não há repasse para terceiros.
             </p>
           </div>
           <div className="md:col-span-5">
@@ -78,13 +80,32 @@ function SobrePage() {
       <section className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
         <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
           <p>
-            Como fotógrafo profissional em São Paulo, seu trabalho é voltado para empresas e profissionais que precisam fortalecer sua imagem, transmitir autoridade e se posicionar com mais consistência no mercado.
+            Meu trabalho é imagem de pessoas. Executivos que precisam de um retrato à altura do
+            cargo, profissionais liberais que vivem de credibilidade, médicos e advogados que são
+            escolhidos pela primeira impressão, times inteiros que precisam de padrão visual no site
+            e no LinkedIn.
           </p>
           <p className="text-muted-foreground">
-            Ao longo de três décadas, já produziu imagens para empresas de diferentes segmentos, sempre com foco em resultado: gerar confiança, valor e percepção profissional.
+            A maior parte das pessoas que fotografo diz, no começo, que não se sai bem em foto. Isso
+            é direção, não genética: eu conduzo postura, ângulo de rosto, olhar e respiração durante
+            todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem está atrás
+            da câmera em todos os projetos deste site.
           </p>
           <p className="text-muted-foreground">
-            Sua atuação como fotógrafo corporativo em São Paulo é baseada em um método claro: entender o posicionamento do cliente, o público que será impactado e o objetivo da comunicação antes de iniciar qualquer produção. Isso garante que cada fotografia ou vídeo tenha intenção estratégica e não apenas estética.
+            Antes de fotografar, alinho o objetivo: onde a imagem vai ser usada, que público vai
+            olhar e que percepção precisa provocar. Retrato para conselho, para perfil comercial ou
+            para recrutamento pedem enquadramento, luz e expressão diferentes.
+          </p>
+          <p className="text-muted-foreground">
+            Coberturas de grande porte — feiras, congressos e convenções com vários fotógrafos
+            simultâneos — são atendidas pela equipe, em{" "}
+            <a
+              href="https://alefotografos.com.br"
+              className="underline decoration-ember/50 underline-offset-4 hover:text-foreground"
+            >
+              alefotografos.com.br
+            </a>
+            . Aqui o foco é o trabalho autoral de retrato.
           </p>
         </div>
       </section>

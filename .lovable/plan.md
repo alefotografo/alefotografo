@@ -94,7 +94,15 @@ Nada será alterado até a aprovação. Abaixo o estado atual verificado no cód
 | --- | --- |
 | Alteração proposta | Ligar os CTAs de WhatsApp das três páginas ao rastreio já existente (`useTrackConversion` + `gtag`), usando o tipo `whatsapp` que já existe. Nenhuma ferramenta nova, nenhuma substituição. |
 | Risco SEO | **BAIXO** (sem efeito em SEO) |
-| Observação | Eventos separados (`budget_request`, `portfolio_click`, `contact_click`) exigiriam ampliar o enum de conversões e a tabela do banco — classifico como **MÉDIO** e deixo fora desta fase salvo pedido explícito. |
+| Fora desta fase (Ajuste 3) | `budget_request`, `portfolio_click`, `contact_click` não serão implementados: sem ampliar enum, sem alterar tabela do banco, sem ferramenta nova. Fica para uma fase futura de CRO/analytics. |
+
+## Diretriz de copy (Ajuste 4)
+
+Blocos escritos para pessoas, não para buscadores: primeira pessoa natural quando falo de experiência, método e direção; especificidade e situações reais em vez de texto genérico de SEO; nenhuma repetição mecânica de palavra-chave. Referência de tom (não copiada literalmente): a maioria das pessoas começa o ensaio dizendo que não sabe posar — meu trabalho é dirigir expressão, postura e posição até a imagem representar como ela quer ser percebida.
+
+## Artigos — reforço
+
+Nos dois artigos nada de title, H1, URL, data ou corpo existente é tocado. Apenas o bloco de ponte editorial, em formato de texto, sem botão e sem WhatsApp.
 
 ## Preservações garantidas na execução
 

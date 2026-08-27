@@ -23,8 +23,8 @@ export const faqsComerciais: Faq[] = [
     a: "Sim. Padronizamos fundo, luz, enquadramento e tratamento para que todos os retratos da equipe tenham a mesma linguagem visual — do time comercial à diretoria. Trabalhamos por blocos de horário para não interromper a operação e organizamos a entrega por pasta e por nome.",
   },
   {
-    q: "Fazem cobertura de eventos corporativos?",
-    a: "Sim: congressos, convenções, palestras, premiações, kick-offs, lançamentos e encontros de negócios. A cobertura pode incluir foto e vídeo, com seleção rápida de imagens para divulgação nas redes ainda durante ou logo após o evento.",
+    q: "Fotografam pessoas durante eventos de empresa?",
+    a: "Sim: retratos feitos no próprio evento, fotos da diretoria reunida, palestrantes, homenageados e o time completo em um enquadramento. Cobertura integral de congressos e feiras, com equipe de fotógrafos simultâneos, é atendida pela equipe Alê Fotógrafo no site alefotografos.com.br.",
   },
   {
     q: "Também produzem vídeo institucional?",

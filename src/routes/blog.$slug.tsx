@@ -76,11 +76,13 @@ export const Route = createFileRoute("/blog/$slug")({
             },
             author: {
               "@type": "Person",
+              "@id": `${SITE_ORIGIN}/quem-e-o-ale#person`,
               name: "Alexandre Machado",
-              url: `${SITE_ORIGIN}/sobre`,
+              url: `${SITE_ORIGIN}/quem-e-o-ale`,
             },
             publisher: {
               "@type": "Organization",
+              "@id": `${SITE_ORIGIN}/#business`,
               name: site.name,
               logo: {
                 "@type": "ImageObject",
@@ -89,6 +91,7 @@ export const Route = createFileRoute("/blog/$slug")({
                 height: 450,
               },
             },
+
             datePublished: toISODate(loaderData.date),
             dateModified: toISODate(loaderData.date),
           }),

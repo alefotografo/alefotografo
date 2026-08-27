@@ -18,30 +18,37 @@ export const Route = createFileRoute("/sobre")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Person",
-          "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
-          name: "Alexandre Machado",
-          alternateName: "Alê Fotógrafo",
-          jobTitle: "Fotógrafo de retrato corporativo",
-          description:
-            "Fotógrafo com mais de 30 anos de carreira em São Paulo, especializado em retrato profissional, headshot para LinkedIn e retratos de executivos e equipes.",
-          image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-          knowsAbout: [
-            "Retrato corporativo",
-            "Headshot profissional",
-            "Foto para LinkedIn",
-            "Direção de pose",
-            "Iluminação de retrato",
-          ],
-          worksFor: {
-            "@type": "Organization",
-            "@id": "https://www.alefotografo.com.br/#organization",
-            name: "Alê Fotógrafo",
+          "@type": "AboutPage",
+          "@id": "https://www.alefotografo.com.br/sobre",
+          url: "https://www.alefotografo.com.br/sobre",
+          inLanguage: "pt-BR",
+          isPartOf: { "@id": "https://www.alefotografo.com.br/#website" },
+          about: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
+          mainEntity: {
+            "@type": "Person",
+            "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
+            name: "Alexandre Machado",
+            alternateName: "Alê Fotógrafo",
+            jobTitle: "Fotógrafo de retrato corporativo",
+            description:
+              "Fotógrafo com mais de 30 anos de carreira em São Paulo, especializado em retrato profissional, headshot para LinkedIn e retratos de executivos e equipes.",
+            image:
+              "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
+            url: "https://www.alefotografo.com.br/quem-e-o-ale",
+            knowsAbout: [
+              "Retrato corporativo",
+              "Headshot profissional",
+              "Foto para LinkedIn",
+              "Direção de pose",
+              "Iluminação de retrato",
+            ],
+            worksFor: { "@id": "https://www.alefotografo.com.br/#business" },
+            sameAs: [site.linkedin, site.instagram],
           },
-          sameAs: [site.linkedin, site.instagram],
         }),
       },
     ],
+
   }),
   component: SobrePage,
 });

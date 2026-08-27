@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, posts, site, videos } from "@/data/catalog";
 import { imgSrcSet, imgUrl } from "@/lib/img";
-import { buildMeta, TEAM_SITE_ORIGIN } from "@/lib/seo";
+import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
 import { faqJsonLd } from "@/lib/faqs";
@@ -12,7 +12,7 @@ import { waLink } from "@/lib/whatsapp";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-import { googleReviews, googleReviewsSummary, aggregateRatingSchema } from "@/data/reviews";
+import { googleReviews, googleReviewsSummary } from "@/data/reviews";
 
 const FALLBACK_HERO =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
@@ -44,46 +44,11 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify(faqJsonLd(homeFaqs)),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "@id": "https://www.alefotografo.com.br/#organization",
-          name: site.fullName,
-          alternateName: site.name,
-          url: "https://www.alefotografo.com.br",
-          logo: HERO_IMG,
-          image: HERO_IMG,
-          description: site.description,
-          email: site.email,
-          telephone: "+55" + site.whatsapp.slice(2),
-          sameAs: [site.instagram, site.linkedin, TEAM_SITE_ORIGIN],
-          knowsAbout: [
-            "Retrato corporativo",
-            "Headshot profissional",
-            "Foto para LinkedIn",
-            "Retrato executivo",
-            "Fotografia de equipe em escritório",
-          ],
-          founder: {
-            "@type": "Person",
-            "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
-            name: "Alexandre Machado",
-            jobTitle: "Fotógrafo de retrato corporativo",
-            url: "https://www.alefotografo.com.br/quem-e-o-ale",
-          },
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Alameda Santos, 1165",
-            addressLocality: "São Paulo",
-            addressRegion: "SP",
-            postalCode: "01419-002",
-            addressCountry: "BR",
-          },
-          aggregateRating: aggregateRatingSchema,
-        }),
-      },
+      // A empresa e a pessoa (Alexandre Machado) são declaradas uma única vez
+      // no @graph do __root (#business e #person). Repetir aqui como
+      // "#organization" criava duas entidades para o mesmo negócio, com
+      // aggregateRating duplicado.
+
     ],
   }),
   component: Home,

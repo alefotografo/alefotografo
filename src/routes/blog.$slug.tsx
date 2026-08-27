@@ -13,6 +13,8 @@ import { relatedCategories, relatedPosts } from "@/lib/related";
 import { postCover } from "@/lib/postCover";
 import { SmartImage } from "@/components/site/SmartImage";
 import { autoLink } from "@/lib/autoLink";
+import { bridgeFor } from "@/data/postBridges";
+import { Segments } from "@/components/site/EditorialBlock";
 import { ArrowLeft } from "lucide-react";
 
 const MONTHS_PT: Record<string, string> = {
@@ -108,6 +110,7 @@ function PostPage() {
   const relCats = relatedCategories(seed, undefined, 6);
   const relPostList = relatedPosts(seed, p.slug, 4);
   const more = (relPostList.length ? relPostList : posts.filter((x) => x.slug !== p.slug)).slice(0, 3);
+  const bridge = bridgeFor(p.slug);
   // Shared trackers so the same category isn't linked twice across paragraphs
   const usedSlugs = new Set<string>();
   const usedPhrases = new Set<string>();
@@ -156,6 +159,15 @@ function PostPage() {
               </div>
             );
           })}
+          {bridge && (
+            <div className="mt-8 space-y-4 border-l-2 border-ember/50 pl-5">
+              {bridge.paragraphs.map((parts, i) => (
+                <p key={i} className="text-base leading-relaxed text-muted-foreground">
+                  <Segments parts={parts} />
+                </p>
+              ))}
+            </div>
+          )}
           <p className="mt-8 rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
             Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
           </p>

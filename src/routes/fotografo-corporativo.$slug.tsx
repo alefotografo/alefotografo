@@ -10,6 +10,8 @@ import { LinkHub } from "@/components/site/LinkHub";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
+import { editorialFor } from "@/data/categoryEditorial";
+import { EditorialBlock } from "@/components/site/EditorialBlock";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
 import { serviceFor } from "@/lib/serviceMatch";
@@ -82,7 +84,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: faqs.slice(0, 5).map((f) => ({
+            mainEntity: (editorialFor(params.slug)?.faqs ?? faqs.slice(0, 5)).map((f) => ({
               "@type": "Question",
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -111,6 +113,7 @@ function CategoryPage() {
   const next = categories[(idx + 1) % categories.length];
   const related = relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6);
   const service = serviceFor(`${cat.title} ${cat.subtitle ?? ""} ${cat.description ?? ""}`);
+  const editorial = editorialFor(cat.slug);
 
   return (
     <>
@@ -150,6 +153,9 @@ function CategoryPage() {
           )}
         </div>
       </section>
+
+      {editorial && <EditorialBlock data={editorial} />}
+
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <Masonry images={cat.images} alt={cat.title} />
@@ -199,7 +205,7 @@ function CategoryPage() {
           <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
             Perguntas frequentes sobre {cat.title.toLowerCase()}
           </h2>
-          <FaqList items={faqs.slice(0, 5)} />
+          <FaqList items={editorial?.faqs ?? faqs.slice(0, 5)} />
           <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
             Ver todas as perguntas →
           </Link>

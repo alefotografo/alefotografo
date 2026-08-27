@@ -13,6 +13,8 @@ import { relatedCategories, relatedPosts } from "@/lib/related";
 import { postCover } from "@/lib/postCover";
 import { SmartImage } from "@/components/site/SmartImage";
 import { autoLink } from "@/lib/autoLink";
+import { bridgeFor } from "@/data/postBridges";
+import { Segments } from "@/components/site/EditorialBlock";
 import { ArrowLeft } from "lucide-react";
 
 const MONTHS_PT: Record<string, string> = {

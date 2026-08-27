@@ -9,9 +9,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/fotos-corporativas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Fotos Corporativas em SP | Orçamento no Mesmo Dia";
+const TITLE = "Retratos de Equipe no Escritório em São Paulo";
 const DESCRIPTION =
-  "Fotos corporativas em São Paulo: equipe, escritório, retratos e eventos na sua empresa. 30 anos de experiência, nota 4,9 e entrega em 1 a 3 dias úteis.";
+  "Fotografo o time inteiro no seu escritório com o mesmo fundo, luz e enquadramento: 15 a 25 pessoas em meio período, padrão visual igual para site e LinkedIn.";
 
 const pageFaqs: Faq[] = [
   {

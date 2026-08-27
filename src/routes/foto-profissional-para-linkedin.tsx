@@ -7,9 +7,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/foto-profissional-para-linkedin";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Foto para LinkedIn em SP | Sessão Rápida e Entrega 48h";
+const TITLE = "Headshot para LinkedIn em SP com Direção de Pose";
 const DESCRIPTION =
-  "Foto para LinkedIn em São Paulo: sessão rápida, direção de pose, tratamento e recorte ideal do perfil. Nota 4,9 (144 avaliações) e entrega em até 3 dias úteis.";
+  "Eu dirijo postura, olhar e expressão para o seu headshot de LinkedIn em São Paulo. Sessão de 30 minutos, retoque natural e recorte pronto para o perfil.";
 
 const pageFaqs: Faq[] = [
   {

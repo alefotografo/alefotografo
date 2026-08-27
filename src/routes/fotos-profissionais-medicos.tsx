@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotos para Médicos em SP | Consultório ou Estúdio";
+const TITLE = "Retrato de Médico em SP | Consultório ou Estúdio";
 const DESCRIPTION =
-  "Fotos profissionais para médicos em São Paulo: retrato com jaleco, equipe e ambientes, no consultório ou em estúdio. Nota 4,9 e orçamento no mesmo dia.";
+  "Retrato profissional de médicos e dentistas em São Paulo, com jaleco ou traje social: confiança sem distância, fotografado pessoalmente por Alexandre Machado.";
 
 const cfg: ServicePageConfig = {
   path: "/fotos-profissionais-medicos",

@@ -11,9 +11,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/foto-profissional";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Foto Profissional em SP | Nota 4,9 e Entrega em 48h";
+const TITLE = "Retrato Profissional em SP com Alexandre Machado";
 const DESCRIPTION =
-  "Foto profissional em São Paulo para LinkedIn, currículo, site e imprensa. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento no mesmo dia.";
+  "Retrato profissional em São Paulo fotografado pessoalmente por mim, com direção de pose para quem acha que não sai bem em foto. Entrega em 1 a 3 dias úteis.";
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",

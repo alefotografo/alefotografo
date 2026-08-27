@@ -54,11 +54,11 @@ const cfg: ServicePageConfig = {
     { h: "6. Entrega digital", p: "Galeria online com download em alta resolução e versões otimizadas para web e redes." },
   ],
   gallerySlugs: [
+    "fotografo-de-grupos-times-e-equipes",
     "fotografo-de-eventos-corporativos",
     "eventos-corporativos",
-    "fotografo-feiras-stands",
+    "fotografia-corporativa-em-sao-paulo",
     "fotografo-festa-de-confraternizacao",
-    "fotografo-de-grupos-times-e-equipes",
     "totem-fotografico-totem-mania",
   ],
   faqs: [

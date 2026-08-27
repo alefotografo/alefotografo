@@ -11,9 +11,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/foto-profissional";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Retrato Profissional em SP com Alexandre Machado";
+const TITLE = "Foto Profissional em SP | Alexandre Machado — Direção de Pose";
 const DESCRIPTION =
-  "Retrato profissional em São Paulo fotografado pessoalmente por mim, com direção de pose para quem acha que não sai bem em foto. Entrega em 1 a 3 dias úteis.";
+  "Ensaio de foto profissional em São Paulo com direção de pose do início ao fim. Ideal para LinkedIn, currículo e marca pessoal. Fotografado pessoalmente por Alexandre Machado. Solicite orçamento.";
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",

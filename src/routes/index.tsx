@@ -21,9 +21,9 @@ const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
-      title: "Retrato Corporativo em SP com Alexandre Machado",
+      title: "Retrato Corporativo em SP — Fotografado por Alexandre Machado",
       description:
-        "Retrato profissional, headshot para LinkedIn e fotos de executivos e equipes em São Paulo — fotografados pessoalmente por Alexandre Machado, 30 anos de carreira.",
+        "Retrato profissional, headshot para LinkedIn e fotos de executivos em São Paulo. Fotografado pessoalmente por Alexandre Machado, com direção de pose. Peça orçamento pelo WhatsApp.",
       path: "/",
     }),
     links: [

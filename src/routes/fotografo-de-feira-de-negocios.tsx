@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Retratos da Equipe Comercial em Feiras — São Paulo";
+const TITLE = "Fotos de Equipe em Feiras de Negócios — SP | Alexandre Machado";
 const DESCRIPTION =
-  "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia.";
+  "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia. Peça orçamento.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-de-feira-de-negocios",

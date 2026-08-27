@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Retratos e Fotos de Equipe em Eventos de Empresa — SP";
+const TITLE = "Fotos de Pessoas em Eventos de Empresa — SP | Alexandre Machado";
 const DESCRIPTION =
-  "Registro de pessoas em eventos de empresa em São Paulo: retratos no local, fotos de equipe, palestrantes e homenageados, com prévia no mesmo dia.";
+  "Registro de pessoas em eventos de empresa em São Paulo: retratos no local, fotos de equipe, palestrantes e homenageados, com direção de pose e prévia no mesmo dia. Orçamento pelo WhatsApp.";
 
 const cfg: ServicePageConfig = {
   path: "/eventos-corporativos",

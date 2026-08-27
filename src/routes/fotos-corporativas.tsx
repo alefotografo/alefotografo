@@ -9,9 +9,9 @@ import type { Faq } from "@/lib/faqs";
 const URL_PATH = "/fotos-corporativas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Retratos de Equipe no Escritório em São Paulo";
+const TITLE = "Fotos Corporativas em SP | Retratos de Equipe — Alexandre Machado";
 const DESCRIPTION =
-  "Fotografo o time inteiro no seu escritório com o mesmo fundo, luz e enquadramento: 15 a 25 pessoas em meio período, padrão visual igual para site e LinkedIn.";
+  "Eu fotografo o time inteiro no seu escritório com o mesmo fundo, luz e enquadramento: 15 a 25 pessoas em meio período, padrão visual igual para site e LinkedIn. Peça orçamento.";
 
 const pageFaqs: Faq[] = [
   {

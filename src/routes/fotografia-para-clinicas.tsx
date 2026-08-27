@@ -14,9 +14,9 @@ const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 const CDN = "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com";
 const HERO_IMG = `${CDN}/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG`;
 
-const TITLE = "Fotos de Equipe e Ambientes de Clínica em SP";
+const TITLE = "Fotos para Clínicas em SP | Equipe e Ambientes — Alexandre Machado";
 const DESCRIPTION =
-  "Retratos da equipe da clínica e imagens de recepção, salas e atendimento em São Paulo — tudo em uma agenda, fotografado por Alexandre Machado.";
+  "Retratos da equipe da clínica e imagens de recepção, salas e atendimento em São Paulo — tudo em uma agenda, fotografado pessoalmente por Alexandre Machado. Solicite orçamento.";
 
 const pageFaqs: Faq[] = [
   {

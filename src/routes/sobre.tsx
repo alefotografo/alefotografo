@@ -6,8 +6,8 @@ import { Award, Camera, Target, Zap } from "lucide-react";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: buildMeta({
-      title: "Sobre Alexandre Machado — 30 anos de fotografia corporativa",
-      description: "Conheça Alexandre Machado, o Alê Fotógrafo. 30 anos especializando em fotografia corporativa em São Paulo, atendendo centenas de empresas e profissionais.",
+      title: "Alexandre Machado — fotógrafo de retrato corporativo",
+      description: "Sou Alexandre Machado e fotografo pessoalmente cada retrato profissional em São Paulo: direção de pose, 30 anos de carreira e atendimento direto comigo.",
       path: "/sobre",
       image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
@@ -19,12 +19,25 @@ export const Route = createFileRoute("/sobre")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
           name: "Alexandre Machado",
           alternateName: "Alê Fotógrafo",
-          jobTitle: "Fotógrafo Corporativo",
-          description: site.description,
+          jobTitle: "Fotógrafo de retrato corporativo",
+          description:
+            "Fotógrafo com mais de 30 anos de carreira em São Paulo, especializado em retrato profissional, headshot para LinkedIn e retratos de executivos e equipes.",
           image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-          worksFor: { "@type": "Organization", name: "Alê Fotógrafo" },
+          knowsAbout: [
+            "Retrato corporativo",
+            "Headshot profissional",
+            "Foto para LinkedIn",
+            "Direção de pose",
+            "Iluminação de retrato",
+          ],
+          worksFor: {
+            "@type": "Organization",
+            "@id": "https://www.alefotografo.com.br/#organization",
+            name: "Alê Fotógrafo",
+          },
           sameAs: [site.linkedin, site.instagram],
         }),
       },

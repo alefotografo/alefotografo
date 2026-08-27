@@ -4,68 +4,65 @@ export interface Faq {
 }
 
 // FAQ central — usada no /faq, na home e em páginas de vídeo.
-// Estruturada para responder às principais dores de quem contrata
-// fotografia e vídeo corporativo em São Paulo.
+// Escrita na primeira pessoa e centrada em retrato/imagem de pessoas, que é o
+// escopo deste domínio. Perguntas de cobertura de evento com equipe vivem no
+// site irmão (alefotografos.com.br) — a redação aqui não se repete lá.
 export const faqs: Faq[] = [
   {
-    q: "Quanto custa contratar um fotógrafo corporativo em São Paulo?",
-    a: "O investimento em fotografia corporativa em São Paulo varia conforme escopo, número de retratados, locação e direitos de uso das imagens. Ensaios de retratos profissionais em estúdio começam em valores acessíveis para até 3 colaboradores; ensaios em ambiente corporativo (escritórios, fábricas, eventos) são orçados por hora ou por projeto. Envie o briefing pelo WhatsApp para receber um orçamento personalizado em até 24 horas.",
+    q: "Qual a diferença entre alefotografo.com.br e alefotografos.com.br?",
+    a: "Aqui, no alefotografo.com.br, sou eu, Alexandre Machado, quem fotografa: retratos profissionais, headshots para LinkedIn, executivos, sócios e equipes. O alefotografos.com.br é operado pela equipe Alê Fotógrafo e cuida de coberturas de grande porte — feiras, congressos, convenções e produções com vários fotógrafos ao mesmo tempo. Se o seu projeto é imagem de pessoas com direção de pose, é comigo.",
   },
   {
-    q: "Quanto tempo leva para receber as fotos finalizadas?",
-    a: "Para eventos corporativos, a entrega é imediata. Utilizamos um sistema próprio com reconhecimento facial que identifica automaticamente cada participante nas fotos, permitindo que os convidados acessem e acompanhem suas imagens em tempo real, ainda durante o evento. Para as demais especialidades — como retratos corporativos, fotografia industrial, arquitetura e institucional — o prazo de entrega das imagens tratadas e finalizadas é de 1 a 3 dias úteis, já com ajuste de cor, retoques profissionais e padronização para uso em LinkedIn, site, materiais de marketing e mídia.",
+    q: "Quem fotografa o meu ensaio: você ou um assistente?",
+    a: "Eu. Em todos os projetos contratados por este site sou eu quem atende, dirige o ensaio, fotografa e finaliza as imagens. Não há repasse para terceiros nem substituição de última hora — se eu não tiver a data disponível, eu digo, em vez de mandar outra pessoa.",
   },
   {
-    q: "Os retratos corporativos podem ser feitos no escritório da empresa?",
-    a: "Sim. Atendemos no escritório do cliente em toda a Grande São Paulo, levamos iluminação profissional, fundos portáteis e roteiro de poses. Isso reduz o tempo de afastamento dos executivos e mantém a identidade visual da marca no fundo da imagem, quando esse é o objetivo.",
+    q: "Quanto custa um retrato profissional em São Paulo?",
+    a: "Depende do número de pessoas, do local (meu estúdio ou o seu escritório) e da quantidade de imagens finalizadas. Ensaios individuais de retrato têm valor fechado; para times, o cálculo é por bloco de horas, com custo por pessoa caindo conforme o volume. Me envie quantas pessoas e a data desejada pelo WhatsApp e eu devolvo o orçamento no mesmo dia.",
   },
   {
-    q: "A empresa tem direitos totais sobre as imagens e vídeos produzidos?",
-    a: "Sim. O contrato cede os direitos de uso comercial e institucional das imagens contratadas para o cliente, sem limite de prazo ou plataforma — site, redes sociais, anúncios pagos, apresentações, relatórios, recrutamento e mídia. O fotógrafo mantém apenas o direito moral de autoria, conforme a Lei de Direitos Autorais.",
+    q: "Nunca fico bem em foto. Isso tem solução?",
+    a: "Tem, e quase sempre é direção, não aparência. Postura de ombros, distância do queixo em relação ao peito, ângulo de rosto, para onde o olhar vai e o momento de respirar antes do clique mudam completamente o resultado. Eu conduzo isso do começo ao fim do ensaio — ninguém precisa saber posar sozinho.",
   },
   {
-    q: "Qual a diferença entre vídeo institucional, vídeo manifesto e cobertura de evento?",
-    a: "Vídeo institucional apresenta a empresa, seus processos e diferenciais, com roteiro, entrevistas e captação planejada (3 a 7 minutos). Vídeo manifesto é mais curto e emocional, focado em propósito de marca (60 a 90 segundos). Cobertura de evento registra a experiência em tempo real — convenções, kick-offs, congressos, premiações — entregando teasers para redes sociais e vídeo completo.",
+    q: "Quanto tempo dura um ensaio de retrato e quando recebo as fotos?",
+    a: "Um retrato individual leva de 20 a 40 minutos; em ensaios de equipe, de 10 a 15 minutos por pessoa. As imagens tratadas ficam prontas em 1 a 3 dias úteis, com ajuste de cor, retoque natural de pele e cortes já prontos para LinkedIn, site e apresentações.",
   },
   {
-    q: "Vocês atendem fora de São Paulo?",
-    a: "Sim. Sediados em São Paulo capital, atendemos toda a Grande São Paulo sem custo de deslocamento. Para outras cidades e estados, organizamos a viagem com hospedagem e logística inclusas no orçamento. Já produzimos fotografia e vídeo para empresas em Punta Cana, Mendoza, Barcelona e dezenas de cidades brasileiras.",
+    q: "Você fotografa no escritório da empresa?",
+    a: "Sim, e é o formato mais usado. Levo iluminação, fundo portátil e roteiro de poses, monto em uma sala qualquer e fotografo o time em sequência. Em meio período dá para atender de 15 a 25 pessoas sem travar a agenda de ninguém.",
   },
   {
-    q: "Como funciona a fotografia industrial em ambientes com NR e EPI?",
-    a: "Seguimos todas as normas regulamentadoras (NR-6, NR-12, NR-35) com EPI completo: capacete, óculos, protetor auricular, calçado de segurança e colete. Para trabalhos em altura ou áreas classificadas, alinhamos previamente com o SESMT do cliente, fazemos integração de segurança e usamos equipamento ATEX quando necessário.",
+    q: "Como garantir que os retratos de todo o time fiquem padronizados?",
+    a: "Uso o mesmo esquema de luz, fundo, distância focal e enquadramento para todas as pessoas, e finalizo o lote com o mesmo perfil de cor. O resultado é uma página de equipe visualmente coerente, inclusive quando alguém novo é fotografado meses depois — o setup é reproduzível.",
   },
   {
-    q: "Vocês usam drone para fotografia e vídeo aéreo?",
-    a: "Sim. Operamos drone homologado pela ANAC e DECEA, com autorização SARPAS para áreas controladas em São Paulo. Capturamos fotos aéreas de fachadas, fábricas, obras, empreendimentos imobiliários e vídeos cinematográficos com sobrevoo, tracking e planos de localização — tudo dentro da legislação brasileira de aviação civil.",
+    q: "Qual roupa usar no retrato para LinkedIn?",
+    a: "Cores sólidas, sem estampa e sem brilho: azul-marinho, cinza, preto ou branco off. Evite logos visíveis e peças amassadas. Camisa social com ou sem blazer resolve para a maioria dos homens; blusas de decote em V valorizam o pescoço no enquadramento fechado. Eu envio um guia curto de preparação antes do ensaio.",
   },
   {
-    q: "É possível fazer retratos profissionais discretos no horário de trabalho?",
-    a: "Sim. O ensaio padrão de retrato corporativo para um colaborador dura de 10 a 15 minutos, com setup montado em uma sala disponível. Em meio dia conseguimos fotografar de 15 a 25 pessoas, em escala que respeita a agenda dos executivos e a operação do escritório.",
+    q: "A empresa fica com os direitos de uso das imagens?",
+    a: "Sim. Você recebe o uso comercial e institucional das imagens contratadas, sem limite de prazo ou plataforma — site, LinkedIn, anúncios, apresentações, recrutamento e imprensa. Eu mantenho apenas o direito moral de autoria, previsto na Lei de Direitos Autorais.",
   },
   {
-    q: "Qual a melhor roupa para um retrato corporativo no LinkedIn?",
-    a: "Cores sólidas e sem estampas (azul-marinho, cinza, preto, branco off), tecidos sem brilho e sem ruga. Evite logos visíveis e acessórios que reflitam luz. Para mulheres, blusas com decote em V valorizam o pescoço; para homens, camisa social com ou sem blazer é o padrão mais versátil. Enviamos um guia de styling para a equipe antes do ensaio.",
+    q: "Faz retrato de médicos, dentistas e advogados?",
+    a: "Sim, é uma parte grande do meu trabalho. Nesses casos o retrato precisa comunicar confiança sem parecer distante, e o ambiente entra em cena com cuidado: consultório, clínica ou escritório aparecem como contexto, nunca competindo com o rosto.",
   },
   {
-    q: "Vocês fazem fotos de equipe (group shots) para o site institucional?",
-    a: "Sim, com duas abordagens: fotos formais de grupo, com composição clássica e iluminação controlada, ideais para relatórios anuais; e fotos lifestyle de equipe trabalhando (reuniões, interações, ambiente real), que humanizam a marca em páginas Sobre, Cultura e Carreiras.",
+    q: "Você também gera imagens de ambiente e bastidores no mesmo dia?",
+    a: "Sim. Depois dos retratos costumo aproveitar o mesmo deslocamento para registrar reuniões, ambiente de trabalho e detalhes do escritório. Isso monta um banco de imagens próprio da empresa, no lugar de fotos de banco genéricas.",
   },
   {
-    q: "Como garantir que as fotos sejam compatíveis com a identidade visual da minha marca?",
-    a: "Antes do ensaio fazemos um briefing com referências visuais (moodboard), manual de marca, paleta de cores e exemplos de uso final. Durante a captação ajustamos enquadramento, iluminação e direção para que as imagens conversem com a comunicação existente — sem ruído estético entre fotos antigas e novas.",
+    q: "É possível gravar vídeo junto com o ensaio?",
+    a: "Sim. No mesmo dia consigo captar depoimentos curtos e apresentações em vídeo com a mesma luz do retrato. É a forma mais econômica de sair com foto e vídeo de cada pessoa em uma única agenda.",
   },
   {
-    q: "É possível combinar fotografia e vídeo no mesmo dia para reduzir custo?",
-    a: "Sim, e é a opção mais econômica e estratégica. Em um único deslocamento captamos retratos corporativos, fotos de ambiente, depoimentos em vídeo e cobertura de bastidores. O resultado é uma biblioteca completa de conteúdo (foto + vídeo) com economia de até 35% em relação a contratações separadas.",
+    q: "Atende fora de São Paulo?",
+    a: "Sim. Minha base é São Paulo capital e atendo toda a Grande São Paulo sem custo extra de deslocamento. Para outras cidades e estados, a viagem entra no orçamento com logística e hospedagem definidas antes.",
   },
   {
-    q: "Quem é Alexandre Machado e por que escolher seu trabalho?",
-    a: "Alexandre Machado é fotógrafo corporativo em São Paulo com mais de 30 anos de carreira, especializado em retratos executivos, fotografia industrial, eventos corporativos e vídeo institucional. Atende empresas como Tecnisa, Abradilan, Galena, Ativa Logística, Sitivesp, escritórios de advocacia e indústrias farmacêuticas. Trabalha com direção de imagem, pontualidade e foco em entregar imagens que geram percepção de valor para a marca.",
-  },
-  {
-    q: "Como solicitar um orçamento?",
-    a: "Envie uma mensagem pelo WhatsApp ou pelo formulário da página de contato com: tipo de serviço (fotografia, vídeo ou ambos), data desejada, local, número de pessoas/ambientes e o uso final das imagens. Retornamos com proposta detalhada em até 24 horas úteis, incluindo escopo, equipamentos, equipe e prazo de entrega.",
+    q: "Como pedir um orçamento?",
+    a: "Me chame no WhatsApp ou use o formulário de contato com quatro informações: quantas pessoas serão fotografadas, onde, a data desejada e onde as imagens serão usadas. Com isso eu devolvo escopo, prazo e valor fechado no mesmo dia útil.",
   },
 ];
 

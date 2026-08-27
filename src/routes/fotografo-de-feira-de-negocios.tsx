@@ -9,10 +9,10 @@ const DESCRIPTION =
 const cfg: ServicePageConfig = {
   path: "/fotografo-de-feira-de-negocios",
   breadcrumb: "Fotógrafo de feira de negócios",
-  eyebrow: "Feiras e stands",
-  h1: "Fotógrafo de feira de negócios em São Paulo",
+  eyebrow: "Time comercial em feiras",
+  h1: "Retratos da equipe comercial em feiras de negócios",
   subtitle:
-    "Cobertura fotográfica de feiras, exposições e congressos: stand, produtos, equipe, visitantes, palestras e reuniões comerciais, com prévia para publicar durante o evento.",
+    "Retratos individuais no stand, foto do time completo e registro de atendimentos reais — material de imagem profissional aproveitando o dia em que todos estão juntos.",
   intro: [
     "Feira é o raro momento em que o time comercial inteiro está no mesmo lugar, arrumado e em ação. Aproveito isso para produzir retratos individuais no stand, fotos do time completo e imagens de atendimento real — material que serve o ano inteiro em LinkedIn, propostas e apresentações.",
     "Atendo os principais pavilhões de São Paulo — São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo e Pro Magno — com prévia de imagens no mesmo dia.",

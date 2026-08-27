@@ -201,7 +201,7 @@ function CategoryPage() {
           <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
             Perguntas frequentes sobre {cat.title.toLowerCase()}
           </h2>
-          <FaqList items={faqs.slice(0, 5)} />
+          <FaqList items={editorial?.faqs ?? faqs.slice(0, 5)} />
           <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
             Ver todas as perguntas →
           </Link>

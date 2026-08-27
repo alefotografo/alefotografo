@@ -61,22 +61,6 @@ export const Route = createFileRoute("/videos/$slug")({
   component: VideoPage,
 });
 
-// Encaminha o vídeo para a página comercial que atende aquela demanda.
-const SERVICE_MATCHES = [
-  { re: /feira|stand|expo/i, to: "/fotografo-de-feira-de-negocios", label: "fotografia em feiras de negócios" },
-  { re: /evento|congresso|convenç|palestra|confratern/i, to: "/eventos-corporativos", label: "retratos em eventos corporativos" },
-  { re: /médic|medic|clínic|clinic|saúde|saude|hospital/i, to: "/fotos-profissionais-medicos", label: "fotos profissionais para médicos" },
-  { re: /advoc|jurídic|juridic|escritório de advocacia/i, to: "/fotografia-para-advogados", label: "fotografia para advogados" },
-  { re: /linkedin|perfil|headshot/i, to: "/foto-profissional-para-linkedin", label: "headshot para LinkedIn" },
-  { re: /retrato|executiv|liderança|lideranca|ceo|diretor/i, to: "/fotografia-executiva", label: "fotografia executiva" },
-  { re: /indústria|industria|logístic|logistic|fábrica|fabrica|operaç/i, to: "/fotografo-empresarial", label: "fotografia empresarial e industrial" },
-] as const;
-
-const FALLBACK_SERVICE = { to: "/fotos-corporativas", label: "fotografia corporativa" } as const;
-
-function serviceFor(text: string) {
-  return SERVICE_MATCHES.find((m) => m.re.test(text)) ?? FALLBACK_SERVICE;
-}
 
 function VideoPage() {
   const v = Route.useLoaderData();

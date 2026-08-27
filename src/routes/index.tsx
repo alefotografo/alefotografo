@@ -21,9 +21,9 @@ const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
-      title: "Alê Fotógrafo — Fotografia Corporativa em SP (30 Anos)",
+      title: "Retrato Corporativo em SP com Alexandre Machado",
       description:
-        "Fotos corporativas, retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência, orçamento no mesmo dia e atendimento em toda a Grande SP.",
+        "Retrato profissional, headshot para LinkedIn e fotos de executivos e equipes em São Paulo — fotografados pessoalmente por Alexandre Machado, 30 anos de carreira.",
       path: "/",
     }),
     links: [
@@ -108,17 +108,20 @@ function Home() {
         <div className="mx-auto max-w-7xl px-5 py-28 md:px-8 md:py-44">
           <div className="max-w-3xl">
             <p className="mb-5 text-xs font-medium uppercase tracking-[0.25em] text-ember">
-              30 anos · São Paulo
+              Alexandre Machado · 30 anos · São Paulo
             </p>
             <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance md:text-6xl">
-              Fotografia corporativa em São Paulo para empresas, executivos e profissionais que
-              precisam <span className="gradient-text-ember">transmitir autoridade</span>.
+              Retrato corporativo em São Paulo feito por mim, com{" "}
+              <span className="gradient-text-ember">direção de pose</span> do primeiro ao último
+              clique.
             </h1>
             <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg text-pretty">
-              <Link to="/foto-profissional" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">Retratos profissionais</Link>,{" "}
-              <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos para LinkedIn</Link>, cobertura de{" "}
-              <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">eventos corporativos</Link> e{" "}
-              <Link to="/videos" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">vídeos institucionais</Link> com direção, experiência e entrega profissional.
+              Sou Alexandre Machado. Fotografo pessoalmente cada ensaio:{" "}
+              <Link to="/foto-profissional" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">retrato profissional</Link>,{" "}
+              <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">headshot para LinkedIn</Link>,{" "}
+              <Link to="/fotografia-executiva" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">retratos de liderança</Link> e{" "}
+              <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos de equipe no escritório</Link>{" "}
+              — sem terceirizar, sem assistente assumindo a câmera.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a

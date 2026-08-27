@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, posts, site, videos } from "@/data/catalog";
 import { imgSrcSet, imgUrl } from "@/lib/img";
-import { buildMeta, TEAM_SITE_ORIGIN } from "@/lib/seo";
+import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
 import { faqJsonLd } from "@/lib/faqs";
@@ -12,7 +12,7 @@ import { waLink } from "@/lib/whatsapp";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-import { googleReviews, googleReviewsSummary, aggregateRatingSchema } from "@/data/reviews";
+import { googleReviews, googleReviewsSummary } from "@/data/reviews";
 
 const FALLBACK_HERO =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";

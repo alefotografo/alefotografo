@@ -2,21 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotógrafo de Feiras em SP | Stand e Prévia no Mesmo Dia";
+const TITLE = "Retratos da Equipe Comercial em Feiras — São Paulo";
 const DESCRIPTION =
-  "Fotógrafo de feiras de negócios em São Paulo: stand, expositores, palestras e networking no São Paulo Expo, Expo Center Norte e Anhembi. Prévia no mesmo dia.";
+  "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-de-feira-de-negocios",
   breadcrumb: "Fotógrafo de feira de negócios",
-  eyebrow: "Feiras e stands",
-  h1: "Fotógrafo de feira de negócios em São Paulo",
+  eyebrow: "Time comercial em feiras",
+  h1: "Retratos da equipe comercial em feiras de negócios",
   subtitle:
-    "Cobertura fotográfica de feiras, exposições e congressos: stand, produtos, equipe, visitantes, palestras e reuniões comerciais, com prévia para publicar durante o evento.",
+    "Retratos individuais no stand, foto do time completo e registro de atendimentos reais — material de imagem profissional aproveitando o dia em que todos estão juntos.",
   intro: [
-    "Feira é um investimento de poucos dias que precisa render conteúdo por meses. A cobertura registra o stand pronto antes da abertura, o movimento de visitantes, as demonstrações de produto, os atendimentos comerciais e a equipe em ação.",
-    "Atendemos os principais pavilhões de São Paulo — São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo e Pro Magno — com prévia de imagens no mesmo dia para redes sociais e assessoria.",
+    "Feira é o raro momento em que o time comercial inteiro está no mesmo lugar, arrumado e em ação. Aproveito isso para produzir retratos individuais no stand, fotos do time completo e imagens de atendimento real — material que serve o ano inteiro em LinkedIn, propostas e apresentações.",
+    "Atendo os principais pavilhões de São Paulo — São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo e Pro Magno — com prévia de imagens no mesmo dia.",
   ],
+  teamSiteNote:
+    "Cobertura completa da feira, com vários dias, múltiplos ambientes e mais de um fotógrafo simultâneo, é atendida pela equipe Alê Fotógrafo em",
   serviceType: "Fotografia de feiras de negócios, stands e congressos",
   description: DESCRIPTION,
   blocks: [

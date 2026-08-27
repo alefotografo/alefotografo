@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:site", content: "@alefotografo" },
       { title: site.name },
-      { name: "description", content: "Alexandre Machado, o Alê Fotógrafo: 30 anos de fotografia e vídeo corporativo em São Paulo — retratos executivos, eventos, produto e institucional." },
+      { name: "description", content: "Alexandre Machado fotografa pessoalmente retratos profissionais, headshots para LinkedIn e fotos de executivos e equipes em São Paulo. 30 anos de carreira." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -188,14 +188,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 { "@type": "City", name: "Barueri" },
               ],
               knowsLanguage: ["pt-BR", "en"],
+              knowsAbout: [
+                "Retrato corporativo",
+                "Headshot profissional",
+                "Foto para LinkedIn",
+                "Retrato executivo",
+                "Fotografia de equipe em escritório",
+                "Direção de pose",
+              ],
               founder: {
                 "@type": "Person",
                 "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
                 name: "Alexandre Machado",
-                jobTitle: "Fotógrafo corporativo",
+                jobTitle: "Fotógrafo de retrato corporativo",
                 url: "https://www.alefotografo.com.br/quem-e-o-ale",
               },
-              sameAs: [site.instagram, site.linkedin],
+              sameAs: [site.instagram, site.linkedin, "https://alefotografos.com.br"],
               aggregateRating: aggregateRatingSchema,
               priceRange: "$$",
               makesOffer: [

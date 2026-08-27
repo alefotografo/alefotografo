@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotografia Executiva em SP | Retratos de Diretoria";
+const TITLE = "Retrato Executivo em SP | Diretoria, Sócios, Conselho";
 const DESCRIPTION =
-  "Retratos executivos em São Paulo para diretoria, sócios e palestrantes, no seu escritório ou em estúdio. 30 anos de experiência e orçamento no mesmo dia.";
+  "Retrato de liderança fotografado por Alexandre Machado no seu escritório ou em estúdio: 15 minutos por executivo e padrão visual igual para toda a diretoria.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografia-executiva",

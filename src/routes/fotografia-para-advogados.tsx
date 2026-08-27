@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotos para Advogados em SP | Sócios e Escritório";
+const TITLE = "Retrato de Advogado em SP | Sócios e Banca Completa";
 const DESCRIPTION =
-  "Fotos para advogados em São Paulo: retratos de sócios, equipe e ambientes do escritório para site, LinkedIn e imprensa. 30 anos de experiência e nota 4,9.";
+  "Retratos de sócios e da banca inteira em São Paulo, feitos no próprio escritório: postura sóbria, luz de retrato e padrão único para site, LinkedIn e imprensa.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografia-para-advogados",

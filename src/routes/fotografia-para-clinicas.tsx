@@ -14,9 +14,9 @@ const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 const CDN = "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com";
 const HERO_IMG = `${CDN}/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG`;
 
-const TITLE = "Fotografia para Clínicas em SP | Entrega em 48h";
+const TITLE = "Fotos de Equipe e Ambientes de Clínica em SP";
 const DESCRIPTION =
-  "Fotografia para clínicas em São Paulo: ambientes, recepção, equipe, procedimentos e retratos médicos. Nota 4,9 (144 avaliações) e entrega em 1 a 3 dias úteis.";
+  "Retratos da equipe da clínica e imagens de recepção, salas e atendimento em São Paulo — tudo em uma agenda, fotografado por Alexandre Machado.";
 
 const pageFaqs: Faq[] = [
   {

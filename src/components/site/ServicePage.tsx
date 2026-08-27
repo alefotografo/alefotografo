@@ -16,6 +16,8 @@ export interface ServicePageConfig {
   h1: string;
   subtitle: string;
   intro: string[];
+  /** Nota editorial apontando para o site da equipe (coberturas de grande porte). */
+  teamSiteNote?: string;
   serviceType: string;
   description: string;
   /** Blocos de entregáveis do serviço. */
@@ -160,6 +162,18 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
           {cfg.intro.map((p) => (
             <p key={p}>{p}</p>
           ))}
+          {cfg.teamSiteNote ? (
+            <p className="rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
+              {cfg.teamSiteNote}{" "}
+              <a
+                href="https://alefotografos.com.br"
+                className="underline decoration-ember/50 underline-offset-4 hover:text-foreground"
+              >
+                alefotografos.com.br
+              </a>
+              .
+            </p>
+          ) : null}
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

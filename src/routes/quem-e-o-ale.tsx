@@ -11,9 +11,9 @@ const PORTRAIT =
 export const Route = createFileRoute("/quem-e-o-ale")({
   head: () => ({
     meta: buildMeta({
-      title: "Quem é o Alê — Alexandre Machado, fotógrafo corporativo em SP",
+      title: "Quem é o Alê — o fotógrafo que dirige o seu retrato",
       description:
-        "Conheça Alexandre Machado, o Alê Fotógrafo. 30 anos de fotografia corporativa em São Paulo — retratos executivos, eventos, indústria e vídeo institucional.",
+        "Alexandre Machado, o Alê Fotógrafo: 30 anos fotografando pessoas em São Paulo. Direção de pose, atendimento direto e retratos que não parecem foto de crachá.",
       path: "/quem-e-o-ale",
       image: PORTRAIT,
       type: "article",

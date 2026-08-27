@@ -2,21 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Eventos Corporativos em SP | Prévia no Mesmo Dia";
+const TITLE = "Retratos e Fotos de Equipe em Eventos de Empresa — SP";
 const DESCRIPTION =
-  "Fotografia de eventos corporativos em São Paulo: congressos, convenções, palestras e premiações em foto e vídeo. Prévia no mesmo dia e nota 4,9.";
+  "Registro de pessoas em eventos de empresa em São Paulo: retratos no local, fotos de equipe, palestrantes e homenageados, com prévia no mesmo dia.";
 
 const cfg: ServicePageConfig = {
   path: "/eventos-corporativos",
   breadcrumb: "Eventos corporativos",
-  eyebrow: "Eventos",
-  h1: "Fotógrafo de eventos corporativos em São Paulo",
+  eyebrow: "Pessoas em eventos",
   subtitle:
-    "Cobertura fotográfica e de vídeo para congressos, convenções, palestras, premiações, kick-offs, lançamentos e encontros de negócios, com material pronto para divulgação.",
+    "Retratos feitos no próprio evento, fotos da diretoria e do time completo, palestrantes e homenageados — com direção de pose no meio da programação.",
+  h1: "Retratos e fotos de equipe em eventos de empresa",
   intro: [
-    "Um evento bem produzido precisa render conteúdo depois: registro do palco, do público, do networking e dos patrocinadores garante material para redes sociais, relatório de resultados e divulgação da próxima edição.",
-    "A cobertura é planejada a partir do roteiro do evento, com pontos-chave definidos antes e prévia de imagens liberada ainda durante ou logo após a realização.",
+    "Em eventos de empresa, o que costuma faltar depois é imagem das pessoas: o retrato do palestrante, a foto da diretoria reunida, o homenageado recebendo o prêmio, o time completo em um único enquadramento. É esse recorte que eu fotografo, com direção de pose no meio do evento.",
+    "A cobertura é planejada a partir do roteiro, com os momentos de pessoas definidos antes e prévia de imagens liberada ainda durante ou logo após a realização.",
   ],
+  teamSiteNote:
+    "Precisa de cobertura completa de congresso, convenção ou vários ambientes ao mesmo tempo, com equipe de fotógrafos? Esse formato é atendido pela equipe Alê Fotógrafo em",
   serviceType: "Fotografia e vídeo de eventos corporativos",
   description: DESCRIPTION,
   blocks: [
@@ -52,11 +54,11 @@ const cfg: ServicePageConfig = {
     { h: "6. Entrega digital", p: "Galeria online com download em alta resolução e versões otimizadas para web e redes." },
   ],
   gallerySlugs: [
+    "fotografo-de-grupos-times-e-equipes",
     "fotografo-de-eventos-corporativos",
     "eventos-corporativos",
-    "fotografo-feiras-stands",
+    "fotografia-corporativa-em-sao-paulo",
     "fotografo-festa-de-confraternizacao",
-    "fotografo-de-grupos-times-e-equipes",
     "totem-fotografico-totem-mania",
   ],
   faqs: [

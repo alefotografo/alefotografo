@@ -6,8 +6,8 @@ import { Award, Camera, Target, Zap } from "lucide-react";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: buildMeta({
-      title: "Sobre Alexandre Machado — 30 anos de fotografia corporativa",
-      description: "Conheça Alexandre Machado, o Alê Fotógrafo. 30 anos especializando em fotografia corporativa em São Paulo, atendendo centenas de empresas e profissionais.",
+      title: "Alexandre Machado — fotógrafo de retrato corporativo",
+      description: "Sou Alexandre Machado e fotografo pessoalmente cada retrato profissional em São Paulo: direção de pose, 30 anos de carreira e atendimento direto comigo.",
       path: "/sobre",
       image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
@@ -19,12 +19,25 @@ export const Route = createFileRoute("/sobre")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
           name: "Alexandre Machado",
           alternateName: "Alê Fotógrafo",
-          jobTitle: "Fotógrafo Corporativo",
-          description: site.description,
+          jobTitle: "Fotógrafo de retrato corporativo",
+          description:
+            "Fotógrafo com mais de 30 anos de carreira em São Paulo, especializado em retrato profissional, headshot para LinkedIn e retratos de executivos e equipes.",
           image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-          worksFor: { "@type": "Organization", name: "Alê Fotógrafo" },
+          knowsAbout: [
+            "Retrato corporativo",
+            "Headshot profissional",
+            "Foto para LinkedIn",
+            "Direção de pose",
+            "Iluminação de retrato",
+          ],
+          worksFor: {
+            "@type": "Organization",
+            "@id": "https://www.alefotografo.com.br/#organization",
+            name: "Alê Fotógrafo",
+          },
           sameAs: [site.linkedin, site.instagram],
         }),
       },
@@ -41,10 +54,12 @@ function SobrePage() {
           <div className="md:col-span-7">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Sobre</p>
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-              Alexandre Machado — o fotógrafo por trás do Alê Fotógrafo
+              Sou Alexandre Machado e fotografo pessoalmente cada retrato
             </h1>
             <p className="mt-6 text-muted-foreground md:text-lg">
-              Fotógrafo profissional em São Paulo com mais de 30 anos de experiência, atendendo centenas de empresas com fotografia corporativa, retratos profissionais, cobertura de eventos e produção de vídeo institucional.
+              Mais de 30 anos fotografando pessoas em São Paulo: retrato profissional, headshot para
+              LinkedIn, executivos, sócios e equipes. Quem atende, dirige o ensaio e entrega as
+              imagens é sempre eu — não há repasse para terceiros.
             </p>
           </div>
           <div className="md:col-span-5">
@@ -65,13 +80,32 @@ function SobrePage() {
       <section className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
         <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
           <p>
-            Como fotógrafo profissional em São Paulo, seu trabalho é voltado para empresas e profissionais que precisam fortalecer sua imagem, transmitir autoridade e se posicionar com mais consistência no mercado.
+            Meu trabalho é imagem de pessoas. Executivos que precisam de um retrato à altura do
+            cargo, profissionais liberais que vivem de credibilidade, médicos e advogados que são
+            escolhidos pela primeira impressão, times inteiros que precisam de padrão visual no site
+            e no LinkedIn.
           </p>
           <p className="text-muted-foreground">
-            Ao longo de três décadas, já produziu imagens para empresas de diferentes segmentos, sempre com foco em resultado: gerar confiança, valor e percepção profissional.
+            A maior parte das pessoas que fotografo diz, no começo, que não se sai bem em foto. Isso
+            é direção, não genética: eu conduzo postura, ângulo de rosto, olhar e respiração durante
+            todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem está atrás
+            da câmera em todos os projetos deste site.
           </p>
           <p className="text-muted-foreground">
-            Sua atuação como fotógrafo corporativo em São Paulo é baseada em um método claro: entender o posicionamento do cliente, o público que será impactado e o objetivo da comunicação antes de iniciar qualquer produção. Isso garante que cada fotografia ou vídeo tenha intenção estratégica e não apenas estética.
+            Antes de fotografar, alinho o objetivo: onde a imagem vai ser usada, que público vai
+            olhar e que percepção precisa provocar. Retrato para conselho, para perfil comercial ou
+            para recrutamento pedem enquadramento, luz e expressão diferentes.
+          </p>
+          <p className="text-muted-foreground">
+            Coberturas de grande porte — feiras, congressos e convenções com vários fotógrafos
+            simultâneos — são atendidas pela equipe, em{" "}
+            <a
+              href="https://alefotografos.com.br"
+              className="underline decoration-ember/50 underline-offset-4 hover:text-foreground"
+            >
+              alefotografos.com.br
+            </a>
+            . Aqui o foco é o trabalho autoral de retrato.
           </p>
         </div>
       </section>
@@ -83,10 +117,10 @@ function SobrePage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-4">
             {[
-              { icon: Target, title: "Estratégia", desc: "Cada foto tem intenção. Entendemos posicionamento e público antes do clique." },
-              { icon: Camera, title: "Técnica", desc: "30 anos de bagagem em iluminação, composição e pós-produção profissional." },
-              { icon: Zap, title: "Agilidade", desc: "Entrega rápida, organização de bastidores e respeito pelo seu tempo." },
-              { icon: Award, title: "Resultado", desc: "Imagens que convertem, transmitem autoridade e valorizam sua marca." },
+              { icon: Target, title: "Direção de pose", desc: "Eu conduzo postura, ângulo, olhar e expressão do início ao fim do ensaio." },
+              { icon: Camera, title: "Luz de retrato", desc: "30 anos de bagagem em iluminação de rosto, composição e retoque natural de pele." },
+              { icon: Zap, title: "Agenda enxuta", desc: "10 a 15 minutos por pessoa no seu escritório, sem travar a operação do time." },
+              { icon: Award, title: "Atendimento direto", desc: "Você fala comigo do orçamento à entrega — sem intermediários e sem substituição." },
             ].map((p) => (
               <div key={p.title} className="rounded-sm border border-border bg-background p-6">
                 <p.icon className="text-ember" size={26} strokeWidth={1.5} />

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, posts, site, videos } from "@/data/catalog";
+import { categories, featuredPosts, site, videos } from "@/data/catalog";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";

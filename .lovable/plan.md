@@ -1,81 +1,60 @@
-# Fase 6 — Auditoria visual, UX, SEO, IA e conversão (sem execução)
+# Fase 6A — Blog, datas e gate de publicação
 
-Auditoria feita sobre o código real. Nada foi alterado.
+Somente 6A. 6B–6I ficam registrados e não serão executados.
 
-## 1. Diagnóstico executivo
+## 1. Recuperação de datas originais — resultado da busca (feito antes de propor)
 
-O site está tecnicamente saudável (341 URLs 200, canonicals corretos, entidades consolidadas nas Fases 1–5). Os problemas reais são de **datas do blog**, **peso visual** e **UX mobile do blog**, não de SEO técnico.
+Fontes verificadas:
 
-Achado crítico: as 180 datas do blog foram reescritas em bloco. Todas caem entre junho e setembro de 2026 (2026-06: 42, 2026-07: 60, 2026-08: 40, 2026-09: 38). **38 artigos têm data futura** (01, 08, 15 e 22 de setembro de 2026) e estão publicamente visíveis. Nenhuma data histórica original sobrevive no `catalog.json` — o campo `date` é o único registro e já foi sobrescrito.
+- `src/data/catalog.json` — único campo de data é `date`, em texto pt-BR. Já está sobrescrito: as 180 datas caem entre 2026-06 e 2026-09 (junho 42, julho 60, agosto 40, setembro 38). Nenhum vestígio de data histórica.
+- Snapshot estático `hostinger/blog/` (182 pastas) — contém **as mesmas datas reescritas** (ex.: `10-lugares-em-sao-paulo...` traz `"datePublished":"2026-09-01"`). Foi exportado depois da reescrita, logo não serve como evidência histórica.
+- Não existe export/backup do WordPress no projeto (nenhum `.xml`, `.sql` ou dump).
+- Consulta ao Internet Archive (CDX) para `alefotografo.com.br/blog/*` não retornou capturas utilizáveis nos slugs testados.
 
-## 2. Blog e datas — diagnóstico técnico
+**Datas originais efetivamente recuperadas: 0.** Nenhuma fonte confiável disponível no projeto.
 
-- Fonte única: `src/data/catalog.json` → campo `date` em texto pt-BR ("06 de junho de 2026"). Não existe `publishedAt`, `scheduledAt`, `dateModified` nem `status`.
-- Não existe automação de publicação. Não há cron, nem filtro por data em lugar algum. "1 post/dia" foi materializado apenas espaçando strings de data — por isso o futuro aparece.
-- Consequências verificadas no código:
-  - `src/data/catalog.ts:225` ordena por `POST_ORDER` (lista manual de 14 slugs), **não por data**. Logo a home (`posts.slice(0,3)`) e o índice do blog exibem artigos fora de ordem cronológica — inclusive `10-lugares-em-sao-paulo...` com data 2026-09-01 entre os 3 primeiros. É a origem mais provável da incoerência de data que você notou entre home e índice (confirmar caso a caso é o passo 1 da Fase 6A).
-  - `src/routes/sitemap[.]xml.ts:50` usa `lastmod: postDateISO(p.date)` → **lastmod no futuro**.
-  - `src/routes/blog.rss[.]xml.ts:39` → `pubDate` no futuro.
-  - `src/routes/blog.$slug.tsx:97-98` → `datePublished` e `dateModified` recebem o **mesmo** valor futuro.
-  - Índice, home, RSS, sitemap e URL direta: todos acessíveis, sem gate.
-- Tabela URL/TÍTULO/DATA VISÍVEL/DATEPUBLISHED/DATEMODIFIED/STATUS/PROBLEMA/CORREÇÃO será gerada como CSV+MD na Fase 6A (script de auditoria sobre os 180 registros), porque só faz sentido com a decisão de política de datas tomada.
+Consequência, dentro das suas regras: não invento datas, não redistribuo artigos e não simulo "um post por dia". Os 180 artigos entram no relatório como **grupo B — data original não recuperável**, aguardando decisão sua. Se você tiver o export do WordPress (`WordPress eXtended RSS`/`wp_posts`), ele resolve o grupo B de uma vez e eu restauro `datePublished` a partir dele em uma execução separada.
 
-Proposta de política (a decidir com você antes de qualquer edição):
-1. Recuperar as datas originais via Wayback Machine / export antigo do WordPress para os artigos migrados e gravá-las como `datePublished`.
-2. Onde a data original não for recuperável, usar a data de migração conhecida e não inventar histórico.
-3. Adicionar `dateModified` separado apenas onde houve edição real (ex.: posts que receberam pontes na Fase 5).
-4. Gate de publicação: `date > hoje` ⇒ fora da home, do índice, do RSS e do sitemap; URL direta responde 404/noindex até a data. Fuso fixo America/Sao_Paulo.
-5. Ordenar `posts` por data desc, mantendo `POST_ORDER` só como destaque manual do topo.
+## 2. O que será corrigido agora (dano ativo)
 
-## 3. Home atual (blocos) e home proposta
+Independe da recuperação histórica: **38 artigos com data futura (01, 08, 15 e 22 de setembro de 2026) estão publicamente expostos** na home, no índice do blog, no RSS e no sitemap, e com `datePublished` futuro no JSON-LD.
 
-| # | Bloco atual (`src/routes/index.tsx`) | Ação | Por quê |
-|---|---|---|---|
-| 1 | Hero full-bleed (imagem em `opacity-60` + 2 gradientes, 3 CTAs, 3 métricas) | REFORMULAR VISUALMENTE | A foto some atrás de dois gradientes; 3 CTAs dividem o clique. Manter H1/texto; aumentar presença da foto, 2 CTAs (WhatsApp + portfólio) e recorte próprio no mobile |
-| 2 | `ServiceChooser` | MANTER + ADICIONAR IMAGEM | Falta card de **Vídeo para empresas** apontando para `/videos` (sem criar URL nova) |
-| 3 | `SegmentGrid` (6 segmentos, 100% texto: `dor`/`imagem`/`beneficio` são strings) | ADICIONAR IMAGEM | Hoje "imagem" é texto. Uma foto real por segmento, alt descritivo, `loading="lazy"`, srcset |
-| 4 | "Quem está por trás" (retrato do Alê) | SUBIR (após serviços) | Prova de autoria mais cedo reforça a entidade Person |
-| 5 | Trabalhos selecionados (6 capas iguais) | REFORMULAR VISUALMENTE | Grade uniforme; propor ritmo 1 grande + 2 médias, curadoria de 5–6 imagens |
-| 6 | Vídeos (3 thumbs YouTube `hqdefault`) | MANTER + REFORÇAR | Thumb sem `width/height` (risco de CLS) e sem legenda do tipo de produção (institucional, treinamento, depoimento) |
-| 7 | "Do blog" (3 cards **sem imagem**) | ADICIONAR IMAGEM + REDUZIR DENSIDADE | 90 dos 180 posts não têm `cover` — precisa fallback curado, nunca banco de imagens |
-| 8 | Depoimentos + segmentos atendidos | MANTER | Reviews reais do Google, com nota e link |
-| 9 | FAQ (6 perguntas) | MANTER | Útil e enxuto |
-| 10 | CTA final | MANTER | |
+### Gate de publicação (America/Sao_Paulo)
 
-Sequência proposta: Hero → Serviços (com vídeo) → Trabalhos selecionados → Quem está por trás → Segmentos com foto → Vídeo → Depoimentos → Blog → FAQ → CTA. Nenhum texto semântico é removido.
+- Helper novo em `src/lib/postDate.ts`: `todayInSaoPaulo()` e `isPublished(post)`, comparando `postDateISO(date)` com a data corrente no fuso `America/Sao_Paulo` (via `Intl.DateTimeFormat` com `timeZone`, sem depender do fuso do servidor).
+- `src/data/catalog.ts` passa a exportar:
+  - `posts` — apenas publicados, ordenados por **data desc** (cronologia real);
+  - `scheduledPosts` — futuros, isolados;
+  - `allPosts` — conjunto completo, para uso interno/relatório.
+- `POST_ORDER` **não é removido**. Deixa de definir a ordem da listagem e passa a alimentar `featuredPosts` (destaque editorial), sempre filtrado pelo gate. Destaque nunca altera data.
+- Consumidores ajustados para o `posts` já filtrado: `blog.index.tsx` (índice, busca e índice alfabético), `index.tsx` (bloco "Do blog"), `blog.rss[.]xml.ts`, `sitemap[.]xml.ts`, `src/lib/related.ts` e `src/lib/autoLink.tsx` (links editoriais automáticos).
 
-## 4. UX, imagens, vídeo, navegação
+### URL direta de artigo futuro
 
-- **CRÍTICO**: datas futuras públicas; blog index carrega 180 links no mesmo HTML (índice alfabético completo em `blog.index.tsx`) — pesado no mobile.
-- **ALTO**: `SegmentGrid` sem foto; cards de blog sem capa; thumbs de vídeo sem `width/height`; hero pouco fotográfico; menu "Sobre" com 3 itens de intenção sobreposta.
-- **MÉDIO**: densidade de texto na home; `/portfolio` e `/depoimentos` escondidos dentro do dropdown Portfólio; alt de capa de post = título do artigo (genérico).
-- **BAIXO**: espaçamentos verticais muito largos no mobile (`py-28`), sem sitemap de imagens.
-- **Navegação/Sobre**: `/quem-e-o-ale` (ProfilePage, Person) e `/sobre` (AboutPage, negócio) têm papéis distintos e ficam. A redundância é de *rótulo*, não de página: proposta é renomear os itens do menu e promover **Depoimentos** ao nível superior. Nenhuma URL removida, nenhum redirect.
-- **Blog UX**: manter os 180 links rastreáveis, mas server-rendered e paginados (`/blog?page=`) + hubs temáticos, em vez do índice alfabético único. Crawler mantém o caminho pelo sitemap e pela paginação.
-- **Conversão**: só `useTrackConversion("whatsapp")` existe. Nenhuma métrica nova nesta fase; plano de eventos fica para 6I com aprovação separada.
+`src/routes/blog.$slug.tsx` — o `loader` já lança `notFound()` para slug inexistente. Passa a usar `allPosts` para localizar e, quando o artigo não estiver publicado, lança `notFound()` também. Resultado: **404 real, sem HTML do conteúdo programado no corpo da resposta**. Nada de `noindex` com o texto exposto. Quando a data chegar, a mesma URL volta a 200 sem redirect e sem mudança de slug.
 
-## 5. Avaliação interna IA/GEO (0–100) — métrica própria, não oficial
+### datePublished / dateModified / lastmod
 
-A. Entidade 17/20 · B. Experiência/autoridade 16/20 · C. Conteúdo original 13/20 (datas incoerentes derrubam confiança) · D. Evidência visual 9/15 (segmentos sem foto, 90 posts sem capa) · E. Estrutura técnica 13/15 · F. Citabilidade 6/10 (datas e fatos datados frágeis). **Total: 74/100.** Maior ganho disponível: corrigir datas (C+F) e adicionar prova visual (D).
+- `datePublished` = a data do artigo (a real, quando o grupo B for resolvido).
+- `dateModified` **não** será emitido em massa. Sai do JSON-LD por padrão; só aparece onde houver evidência de edição substancial. Evidência disponível hoje: os 2 artigos que receberam pontes editoriais na Fase 5 (`fotografo-5-poses-para-retrato-corporativo` e `7-erros-que-voce-deve-evitar-na-foto-de-perfil-no-linkedin`), via mapa explícito em `src/data/postBridges.ts` ou arquivo irmão — nada automático.
+- `sitemap[.]xml.ts`: `lastmod` deixa de ser derivado da data de publicação do post (não é um timestamp de alteração significativa) e é **omitido** para os posts. Nenhum `lastmod` futuro permanece.
 
-## 6. Top 10 por prioridade
+## 3. Relatório obrigatório
 
-1. 38 artigos com data futura visíveis. 2. `lastmod`/`pubDate` futuros em sitemap e RSS. 3. `dateModified` = `datePublished`. 4. Ordenação não cronológica dos posts. 5. Segmentos sem foto real. 6. Cards de blog sem capa. 7. Hero com foto abafada. 8. Índice de 180 links no mobile. 9. CLS nas thumbs de vídeo. 10. Rótulos redundantes de "Sobre" + Depoimentos escondido.
+Script de auditoria (`/tmp`, fora do projeto) gerando `relatorio-datas-blog.csv` + `.md` com as 15 colunas pedidas — URL, SLUG, TÍTULO, DATA ATUAL, DATA ORIGINAL RECUPERADA, FONTE, DATEPUBLISHED FINAL, DATEMODIFIED FINAL, STATUS, FUTURO?, HOME?, BLOG?, RSS?, SITEMAP?, AÇÃO — mais os blocos A (recuperadas), B (não recuperáveis), C (realmente futuros), D (expostos antes da data) e E (cuidado extra: os posts da Fase 5 e os que recebem links internos automáticos).
 
-## 7. Plano de execução (aprovação por fase)
+## 4. Proteções e validação
 
-| Fase | Escopo | Arquivos | Risco SEO |
-|---|---|---|---|
-| 6A | Política de datas + gate de publicação + ordenação + relatório dos 180 | `src/data/catalog.json`, `catalog.ts`, `lib/postDate.ts`, `sitemap[.]xml.ts`, `blog.rss[.]xml.ts`, `blog.$slug.tsx`, `blog.index.tsx`, `index.tsx` | Médio (38 URLs saem temporariamente do índice — intencional) |
-| 6B | Home visual: hero, ordem dos blocos, trabalhos selecionados | `src/routes/index.tsx` | Baixo (sem mudar H1/title/canonical) |
-| 6C | Fotos reais nos 6 segmentos | `SegmentGrid.tsx`, `ServiceChooser.tsx` | Baixo |
-| 6D | Vídeo: poster/dimensões/rótulos de tipo | `index.tsx`, `videos.index.tsx`, `VideoPlayer.tsx` | Baixo |
-| 6E | Blog UX/mobile: paginação SSR + hubs | `blog.index.tsx` (+ rota de paginação) | Médio (validar rastreabilidade antes) |
-| 6F | Navegação: rótulos de Sobre + Depoimentos no topo | `Header.tsx`, `Footer.tsx` | Baixo |
-| 6G | SEO residual: alt, width/height, captions | componentes de imagem | Baixo |
-| 6H | Entidades/evidências: ImageObject onde aplicável, `llms.txt` | `__root.tsx`, `public/llms.txt` | Baixo |
-| 6I | Conversão/mensuração (plano antes de código) | a definir | Nenhum |
+Nada de URL, slug, canonical, title, H1, meta description, corpo de artigo, link editorial da Fase 5, redirect ou página comercial é alterado. Só ordenação, visibilidade e campos de data.
 
-Teste em cada fase: `tsgo --noEmit`, `curl` das URLs afetadas (200 + HTML servido), conferência de canonical/title/H1 inalterados, JSON-LD válido. Reversão: cada fase é um conjunto isolado de arquivos.
+Validação, com contagem ANTES × DEPOIS: `tsgo --noEmit`; `curl` de amostra de publicados (200) e de futuros (404); `grep` no XML servido confirmando 0 slugs futuros no sitemap e no RSS; ausência de data futura no JSON-LD dos publicados; canonical/title/H1 idênticos ao estado atual; conferência da ordem cronológica desc e do destaque editorial funcionando com data antiga; checagem do gate no fuso America/Sao_Paulo.
 
-**Próximo passo:** aprovar 6A isoladamente (é a única fase com dano ativo) ou aprovar a sequência inteira. Antes de tocar em datas, preciso da sua decisão sobre recuperar as datas originais via Wayback/export do WordPress.
+Reversão: as mudanças ficam concentradas em `catalog.ts`, `postDate.ts`, `blog.$slug.tsx`, `blog.index.tsx`, `index.tsx`, `blog.rss[.]xml.ts`, `sitemap[.]xml.ts`, `related.ts`, `autoLink.tsx`.
+
+## 5. Registrado para depois (não executar)
+
+Direção visual aprovada conceitualmente para 6B/6C/6D: Hero → Trabalhos selecionados → Serviços → Segmentos com fotografias → Quem é o Alê → Vídeos → Depoimentos → Blog → FAQ → CTA. Trabalhos selecionados com curadoria de 9–12 fotografias excepcionais, composição editorial responsiva, priorizando profissionais 40+, executivos, C-levels, empresários, sócios, lideranças, advogados, médicos e profissionais liberais consolidados, com representação relevante de médicas, psicólogas e profissionais de saúde mais jovens — comunicando autoridade, credibilidade, senioridade, naturalidade, confiança e posicionamento. Segmentos com fotos reais (advocacia, médicos/clínicas, executivos/empresários, empresas/equipes, eventos, palestrantes) e Vídeo para Empresas com frames/posters reais (institucional, treinamento, depoimento, conteúdo corporativo).
+
+## 6. Arquivos que seriam modificados
+
+`src/lib/postDate.ts` · `src/data/catalog.ts` · `src/routes/blog.$slug.tsx` · `src/routes/blog.index.tsx` · `src/routes/index.tsx` · `src/routes/blog.rss[.]xml.ts` · `src/routes/sitemap[.]xml.ts` · `src/lib/related.ts` · `src/lib/autoLink.tsx` · mapa de `dateModified` (arquivo novo em `src/data/`)

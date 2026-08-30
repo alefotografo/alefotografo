@@ -35,8 +35,8 @@ Independe da recuperação histórica: **38 artigos com data futura (01, 08, 15 
 
 ### datePublished / dateModified / lastmod
 
-- `datePublished` = a data do artigo (a real, quando o grupo B for resolvido).
-- `dateModified` **não** será emitido em massa. Sai do JSON-LD por padrão; só aparece onde houver evidência de edição substancial. Evidência disponível hoje: os 2 artigos que receberam pontes editoriais na Fase 5 (`fotografo-5-poses-para-retrato-corporativo` e `7-erros-que-voce-deve-evitar-na-foto-de-perfil-no-linkedin`), via mapa explícito em `src/data/postBridges.ts` ou arquivo irmão — nada automático.
+- `datePublished` = a data disponível no registro, até que datas históricas confiáveis sejam recuperadas.
+- `dateModified` **não será emitido para nenhum artigo** nesta execução — nem para os dois artigos trabalhados na Fase 5. Pequenas alterações editoriais não viram sinal de atualização.
 - `sitemap[.]xml.ts`: `lastmod` deixa de ser derivado da data de publicação do post (não é um timestamp de alteração significativa) e é **omitido** para os posts. Nenhum `lastmod` futuro permanece.
 
 ## 3. Relatório obrigatório

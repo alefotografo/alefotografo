@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { categories, videos, posts } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
-import { postDateISO } from "@/lib/postDate";
 
 // Base URL do site publicado. Atualize se mudar o domínio final.
 const BASE_URL = "https://www.alefotografo.com.br";
@@ -47,7 +46,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           // apontam para /fotografo-corporativo/:slug via canonical/redirect.
           // Não devem entrar no sitemap: geram "Página com redirecionamento" no GSC.
           ...videos.map((v) => ({ path: `/videos/${v.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
-          ...posts.map((p) => ({ path: `/blog/${p.slug}`, lastmod: postDateISO(p.date), changefreq: "monthly" as const, priority: "0.7" })),
+          // Sem <lastmod>: a data de publicação não é timestamp de alteração
+          // significativa. Só entram registros já publicados (gate em catalog).
+          ...posts.map((p) => ({ path: `/blog/${p.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
         ];
 
         const urls = entries.map((e) =>

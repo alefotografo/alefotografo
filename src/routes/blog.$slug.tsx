@@ -94,8 +94,9 @@ export const Route = createFileRoute("/blog/$slug")({
               },
             },
 
+            // dateModified não é emitido: não há evidência de alteração
+            // editorial substancial e não se cria "freshness" artificial.
             datePublished: toISODate(loaderData.date),
-            dateModified: toISODate(loaderData.date),
           }),
         },
       ],

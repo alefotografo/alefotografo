@@ -1,4 +1,5 @@
 import raw from "./catalog.json";
+import { isPublishedDate, postDateISO } from "@/lib/postDate";
 
 export interface Category {
   slug: string;
@@ -222,17 +223,36 @@ const POST_ORDER: string[] = [
   "linguagem-corporal-na-fotografia-de-retratos",
 ];
 
-export const posts: Post[] = data.posts
+// Conjunto completo — uso interno (gate, relatório, resolução de slug).
+// Não deve alimentar listagens públicas: pode conter registros datados no futuro.
+export const allPosts: Post[] = data.posts
   .map((p) => ({ ...cleanItem(p), body: p.body.map(decode) }))
-  .sort((a, b) => {
-    const ia = POST_ORDER.indexOf(a.slug);
-    const ib = POST_ORDER.indexOf(b.slug);
-    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
-  });
+  .sort((a, b) => (postDateISO(a.date) ?? "").localeCompare(postDateISO(b.date) ?? "") * -1);
+
+/** Publicação: somente registros com data <= hoje (America/Sao_Paulo), cronológico desc. */
+export const posts: Post[] = allPosts.filter((p) => isPublishedDate(p.date));
+
+/** Registros atualmente datados no futuro — fora de toda superfície pública. */
+export const scheduledPosts: Post[] = allPosts.filter((p) => !isPublishedDate(p.date));
+
+/**
+ * Destaque editorial: curadoria manual (POST_ORDER), independente da data.
+ * Sempre filtrado pelo gate; nunca altera a data de um artigo.
+ */
+export const featuredPosts: Post[] = [
+  ...POST_ORDER.map((slug) => posts.find((p) => p.slug === slug)).filter(
+    (p): p is Post => Boolean(p),
+  ),
+  ...posts.filter((p) => !POST_ORDER.includes(p.slug)),
+];
 
 export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);
 export const videoBySlug = (slug: string) => videos.find((v) => v.slug === slug);
+// Resolve apenas artigos publicados: registro datado no futuro devolve
+// undefined e a rota /blog/$slug responde 404 (sem expor o conteúdo).
 export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
+/** Resolução sem gate — uso interno/relatório, nunca em rota pública. */
+export const anyPostBySlug = (slug: string) => allPosts.find((p) => p.slug === slug);
 
 export const site = {
   name: "Alê Fotógrafo",

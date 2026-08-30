@@ -56,7 +56,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const featured = categories.filter((c) => c.cover).slice(0, 6);
-  const recentPosts = posts.slice(0, 3);
+  // Destaque editorial (POST_ORDER), já filtrado pelo gate de publicação.
+  const recentPosts = featuredPosts.slice(0, 3);
   const recentVideos = videos.slice(0, 3);
   const hero = featured[0];
   const heroImg = hero?.cover ?? HERO_IMG;

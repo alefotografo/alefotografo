@@ -35,13 +35,21 @@ Independe da recuperação histórica: **38 artigos com data futura (01, 08, 15 
 
 ### datePublished / dateModified / lastmod
 
-- `datePublished` = a data do artigo (a real, quando o grupo B for resolvido).
-- `dateModified` **não** será emitido em massa. Sai do JSON-LD por padrão; só aparece onde houver evidência de edição substancial. Evidência disponível hoje: os 2 artigos que receberam pontes editoriais na Fase 5 (`fotografo-5-poses-para-retrato-corporativo` e `7-erros-que-voce-deve-evitar-na-foto-de-perfil-no-linkedin`), via mapa explícito em `src/data/postBridges.ts` ou arquivo irmão — nada automático.
+- `datePublished` = a data disponível no registro, até que datas históricas confiáveis sejam recuperadas.
+- `dateModified` **não será emitido para nenhum artigo** nesta execução — nem para os dois artigos trabalhados na Fase 5. Pequenas alterações editoriais não viram sinal de atualização.
 - `sitemap[.]xml.ts`: `lastmod` deixa de ser derivado da data de publicação do post (não é um timestamp de alteração significativa) e é **omitido** para os posts. Nenhum `lastmod` futuro permanece.
 
 ## 3. Relatório obrigatório
 
-Script de auditoria (`/tmp`, fora do projeto) gerando `relatorio-datas-blog.csv` + `.md` com as 15 colunas pedidas — URL, SLUG, TÍTULO, DATA ATUAL, DATA ORIGINAL RECUPERADA, FONTE, DATEPUBLISHED FINAL, DATEMODIFIED FINAL, STATUS, FUTURO?, HOME?, BLOG?, RSS?, SITEMAP?, AÇÃO — mais os blocos A (recuperadas), B (não recuperáveis), C (realmente futuros), D (expostos antes da data) e E (cuidado extra: os posts da Fase 5 e os que recebem links internos automáticos).
+Script de auditoria (`/tmp`, fora do projeto) gerando `relatorio-datas-blog.csv` + `.md` com as 15 colunas pedidas — URL, SLUG, TÍTULO, DATA ATUAL, DATA ORIGINAL RECUPERADA, FONTE, DATEPUBLISHED FINAL, DATEMODIFIED FINAL, STATUS, FUTURO?, HOME?, BLOG?, RSS?, SITEMAP?, AÇÃO — mais os blocos A (recuperadas), B (não recuperáveis), C (**registros atualmente datados no futuro** — sem evidência de agendamento original), D (expostos antes da data) e E (cuidado extra: os posts da Fase 5 e os que recebem links internos automáticos).
+
+Terminologia: os 38 registros não são classificados como "agendados". Enquanto tiverem data futura, o gate se aplica integralmente (home, blog, hubs, RSS, sitemap, related/autoLink, URL direta não publicada). Nenhum conteúdo é apagado e nenhum slug muda.
+
+### Consumidores do catálogo (busca global já feita)
+
+Usam `posts`: `blog.index.tsx`, `blog.$slug.tsx`, `index.tsx`, `blog.rss[.]xml.ts`, `sitemap[.]xml.ts`, `quem-e-o-ale.tsx`, `lib/related.ts`, `components/site/LinkHub.tsx`, `lib/batches.ts` (→ `/admin/indexacao`) e `lib/legacy-redirects.ts`. `autoLink.tsx` e `PillarLinks.tsx` usam só `categories`.
+
+Único ponto sensível: `legacy-redirects.ts` monta `POST_SLUGS` a partir de `posts`. Com `posts` = publicados, uma URL legada de WordPress cujo slug esteja datado no futuro passa a redirecionar (301) para `/blog` em vez de para um post não publicado — coerente com o gate e evita 301 para 404. Nenhuma URL, slug ou canonical muda. Será reportado no relatório final; qualquer outro consumidor com efeito em URL/SEO/página comercial interrompe a execução para reporte.
 
 ## 4. Proteções e validação
 
@@ -57,4 +65,4 @@ Direção visual aprovada conceitualmente para 6B/6C/6D: Hero → Trabalhos sele
 
 ## 6. Arquivos que seriam modificados
 
-`src/lib/postDate.ts` · `src/data/catalog.ts` · `src/routes/blog.$slug.tsx` · `src/routes/blog.index.tsx` · `src/routes/index.tsx` · `src/routes/blog.rss[.]xml.ts` · `src/routes/sitemap[.]xml.ts` · `src/lib/related.ts` · `src/lib/autoLink.tsx` · mapa de `dateModified` (arquivo novo em `src/data/`)
+`src/lib/postDate.ts` (gate + fuso) · `src/data/catalog.ts` (`posts` publicados, `scheduledPosts`, `allPosts`, `featuredPosts`) · `src/routes/blog.$slug.tsx` (404 para não publicado, sem `dateModified`) · `src/routes/index.tsx` (destaque editorial filtrado) · `src/routes/sitemap[.]xml.ts` (sem `lastmod` de post) · `src/lib/legacy-redirects.ts` (se necessário). `blog.index.tsx`, `blog.rss[.]xml.ts`, `related.ts`, `LinkHub.tsx` e `batches.ts` herdam o gate pelo próprio `posts`, sem edição.

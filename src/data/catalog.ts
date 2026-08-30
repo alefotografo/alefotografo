@@ -248,7 +248,11 @@ export const featuredPosts: Post[] = [
 
 export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);
 export const videoBySlug = (slug: string) => videos.find((v) => v.slug === slug);
+// Resolve apenas artigos publicados: registro datado no futuro devolve
+// undefined e a rota /blog/$slug responde 404 (sem expor o conteúdo).
 export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
+/** Resolução sem gate — uso interno/relatório, nunca em rota pública. */
+export const anyPostBySlug = (slug: string) => allPosts.find((p) => p.slug === slug);
 
 export const site = {
   name: "Alê Fotógrafo",

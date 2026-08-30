@@ -65,4 +65,4 @@ Direção visual aprovada conceitualmente para 6B/6C/6D: Hero → Trabalhos sele
 
 ## 6. Arquivos que seriam modificados
 
-`src/lib/postDate.ts` · `src/data/catalog.ts` · `src/routes/blog.$slug.tsx` · `src/routes/blog.index.tsx` · `src/routes/index.tsx` · `src/routes/blog.rss[.]xml.ts` · `src/routes/sitemap[.]xml.ts` · `src/lib/related.ts` · `src/lib/autoLink.tsx` · mapa de `dateModified` (arquivo novo em `src/data/`)
+`src/lib/postDate.ts` (gate + fuso) · `src/data/catalog.ts` (`posts` publicados, `scheduledPosts`, `allPosts`, `featuredPosts`) · `src/routes/blog.$slug.tsx` (404 para não publicado, sem `dateModified`) · `src/routes/index.tsx` (destaque editorial filtrado) · `src/routes/sitemap[.]xml.ts` (sem `lastmod` de post) · `src/lib/legacy-redirects.ts` (se necessário). `blog.index.tsx`, `blog.rss[.]xml.ts`, `related.ts`, `LinkHub.tsx` e `batches.ts` herdam o gate pelo próprio `posts`, sem edição.

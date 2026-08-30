@@ -41,7 +41,15 @@ Independe da recuperação histórica: **38 artigos com data futura (01, 08, 15 
 
 ## 3. Relatório obrigatório
 
-Script de auditoria (`/tmp`, fora do projeto) gerando `relatorio-datas-blog.csv` + `.md` com as 15 colunas pedidas — URL, SLUG, TÍTULO, DATA ATUAL, DATA ORIGINAL RECUPERADA, FONTE, DATEPUBLISHED FINAL, DATEMODIFIED FINAL, STATUS, FUTURO?, HOME?, BLOG?, RSS?, SITEMAP?, AÇÃO — mais os blocos A (recuperadas), B (não recuperáveis), C (realmente futuros), D (expostos antes da data) e E (cuidado extra: os posts da Fase 5 e os que recebem links internos automáticos).
+Script de auditoria (`/tmp`, fora do projeto) gerando `relatorio-datas-blog.csv` + `.md` com as 15 colunas pedidas — URL, SLUG, TÍTULO, DATA ATUAL, DATA ORIGINAL RECUPERADA, FONTE, DATEPUBLISHED FINAL, DATEMODIFIED FINAL, STATUS, FUTURO?, HOME?, BLOG?, RSS?, SITEMAP?, AÇÃO — mais os blocos A (recuperadas), B (não recuperáveis), C (**registros atualmente datados no futuro** — sem evidência de agendamento original), D (expostos antes da data) e E (cuidado extra: os posts da Fase 5 e os que recebem links internos automáticos).
+
+Terminologia: os 38 registros não são classificados como "agendados". Enquanto tiverem data futura, o gate se aplica integralmente (home, blog, hubs, RSS, sitemap, related/autoLink, URL direta não publicada). Nenhum conteúdo é apagado e nenhum slug muda.
+
+### Consumidores do catálogo (busca global já feita)
+
+Usam `posts`: `blog.index.tsx`, `blog.$slug.tsx`, `index.tsx`, `blog.rss[.]xml.ts`, `sitemap[.]xml.ts`, `quem-e-o-ale.tsx`, `lib/related.ts`, `components/site/LinkHub.tsx`, `lib/batches.ts` (→ `/admin/indexacao`) e `lib/legacy-redirects.ts`. `autoLink.tsx` e `PillarLinks.tsx` usam só `categories`.
+
+Único ponto sensível: `legacy-redirects.ts` monta `POST_SLUGS` a partir de `posts`. Com `posts` = publicados, uma URL legada de WordPress cujo slug esteja datado no futuro passa a redirecionar (301) para `/blog` em vez de para um post não publicado — coerente com o gate e evita 301 para 404. Nenhuma URL, slug ou canonical muda. Será reportado no relatório final; qualquer outro consumidor com efeito em URL/SEO/página comercial interrompe a execução para reporte.
 
 ## 4. Proteções e validação
 

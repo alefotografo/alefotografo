@@ -18,7 +18,17 @@ export const Route = createFileRoute("/quem-e-o-ale")({
       image: PORTRAIT,
       type: "article",
     }),
-    links: [{ rel: "canonical", href: `${SITE_ORIGIN}/quem-e-o-ale` }],
+    links: [
+      { rel: "canonical", href: `${SITE_ORIGIN}/quem-e-o-ale` },
+      {
+        rel: "preload",
+        as: "image",
+        href: imgUrl(PORTRAIT, 720),
+        imageSrcSet: imgSrcSet(PORTRAIT, [480, 720, 1024]),
+        imageSizes: "(max-width: 768px) 100vw, 40vw",
+        fetchPriority: "high",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",

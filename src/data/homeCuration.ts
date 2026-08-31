@@ -136,6 +136,53 @@ export const selectedWorks: HomePhoto[] = [
   },
 ];
 
+/** Fotografia real de cada card de segmento da Home (Fase 6C), na mesma ordem de SEGMENTS. */
+export interface SegmentPhoto {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+}
+
+export const segmentPhotos: Record<string, SegmentPhoto> = {
+  "Advogados e escritórios de advocacia": {
+    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-11.jpg`,
+    width: 1067,
+    height: 1600,
+    alt: "Fotografia profissional de advogado em escritório de advocacia em São Paulo",
+  },
+  "Médicos e clínicas": {
+    src: `${CDN}/132060/fotos-profissionais-para-medicos-e-ambientes_draeugenia-5.jpg`,
+    width: 1067,
+    height: 1600,
+    alt: "Foto profissional de médica em ambiente de consultório",
+  },
+  "Executivos e empresários": {
+    src: `${CDN}/90047/fotografia-de-retrato-profissional-em-sao-paulo_gustavo-pereira-13.jpg`,
+    width: 1067,
+    height: 1600,
+    alt: "Retrato profissional de executivo fotografado em São Paulo",
+  },
+  "Empresas e equipes": {
+    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg`,
+    width: 1920,
+    height: 1275,
+    alt: "Foto de equipe corporativa reunida em ambiente de trabalho",
+  },
+  "Eventos corporativos": {
+    src: `${CDN}/90046/fotografo-de-eventos-corporativos_jantar-e-encontro-febrafar-2024-532.JPG`,
+    width: 1920,
+    height: 1079,
+    alt: "Público e interação em evento corporativo fotografado em São Paulo",
+  },
+  "Palestrantes e profissionais liberais": {
+    src: `${CDN}/90046/fotografo-de-eventos-corporativos_8-forum-abradilan-2023-707.jpg`,
+    width: 1920,
+    height: 1280,
+    alt: "Palestrante em apresentação no palco de fórum corporativo",
+  },
+};
+
 /** Título da galeria vindo do catálogo (evita duplicar dados). */
 export function galleryTitle(slug: string): string {
   return categories.find((c) => c.slug === slug)?.title ?? "";

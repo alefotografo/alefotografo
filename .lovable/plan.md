@@ -1,85 +1,45 @@
-# Entrega 1 — Fase 6B (Hero + Trabalhos Selecionados + Reordenação)
+# Acelerar o carregamento das fotos da Home
 
-Escopo restrito: somente Hero, bloco "Trabalhos Selecionados", reordenação dos blocos existentes e criação de `src/data/homeCuration.ts`.
-NÃO serão tocados nesta entrega: `ServiceChooser`, `SegmentGrid`, apresentação de vídeo, cards visuais do blog.
-Ajuste 1 acatado: nada de `<details>` nos segmentos agora — densidade será tratada depois, por tipografia/espaçamento/layout/foto.
+## O que foi medido agora
 
-## 1. Ordem final dos blocos da Home
+- A Home entrega **36 imagens** e **137 variantes** de URL (srcset) para o proxy externo `images.weserv.nl`.
+- Todas as fotos do acervo passam por esse proxy de terceiros: conexão extra, e a cada variante nova ele precisa baixar o original da Rackspace (0,6s a 1,0s por arquivo) antes de converter.
+- Originais medidos: 137 KB, 317 KB e 408 KB. O hero gera 86 KB em WebP na largura 768 e a variante 1024 é idêntica (o asset tem só 720px de largura) — ou seja, há variantes desperdiçadas.
+- As seções abaixo da dobra (Segmentos, Quem é o Alê, Vídeos, Blog) montam suas imagens junto com a página; a Home não usa o `LazySection` que já existe no projeto.
 
-```text
-1  Hero (texto + fotografia real)
-2  Trabalhos Selecionados (~10 fotos reais, 2 pilares)
-3  Serviços (ServiceChooser — inalterado)
-4  Segmentos (SegmentGrid — inalterado)
-5  Quem é o Alê
-6  Vídeos (inalterado)
-7  Depoimentos
-8  Blog (inalterado)
-9  FAQ
-10 CTA final
-```
+Resultado prático: na primeira visita o navegador dispara dezenas de conversões "frias" num proxy compartilhado, e as fotos aparecem em cascata lenta.
 
-Nenhum bloco é removido; nenhum texto é apagado. Apenas a ordem muda e o Hero/Trabalhos são reescritos visualmente.
+## Plano de otimização
 
-## 2. Hero — asset proposto e 2 alternativas
+### 1. Proxy de imagem no próprio domínio, com cache permanente
+Criar uma rota de imagem própria (`/api/public/img`) que:
+- aceita **somente** URLs do CDN Rackspace do acervo (allowlist de host, HTTPS obrigatório) e larguras de uma lista fechada — sem isso, a rota viraria um proxy aberto;
+- busca a versão convertida e guarda no cache da borda, devolvendo `Cache-Control` de 1 ano e `immutable`;
+- passa a servir as fotos no mesmo domínio, aproveitando a mesma conexão HTTP/2 da página, sem handshake extra nem limite de terceiros.
 
-Todos do acervo real (Rackspace, servidos via `src/lib/img.ts`).
+`src/lib/img.ts` passa a gerar essas URLs, então todas as páginas (não só a Home) ganham o mesmo benefício, sem mudar nenhum caminho de página.
 
-| # | Papel | Arquivo | Galeria | Por que funciona |
-|---|---|---|---|---|
-| A | **Definitivo proposto** | `retrato-corporativo_helio-martins-borges-filho-4.jpg` | Retrato Corporativo | Executivo consolidado, 40+, olhar direto, fundo limpo — sustenta recorte vertical no mobile e lateral no desktop |
-| B | Alternativa | `retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0047.jpg` | Banco de imagens para empresas | Retrato profissional com respiro lateral, aceita crop 4:5 e 3:2 |
-| C | Alternativa | `fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-11.jpg` | Escritórios de advocacia | Autoridade jurídica, ambiente corporativo real, bom para recorte largo |
+### 2. Menos variantes, mais acerto de cache
+- Reduzir as larguras de grid/galeria para 3 degraus reais (por exemplo 400/640/900) e as de hero para o que o asset realmente tem.
+- Não gerar variantes maiores que a largura original do arquivo.
+- Baixar a qualidade de 74 para ~66 em WebP (diferença visual imperceptível em foto, ~25% menos bytes).
 
-Se, na renderização, o recorte de A não sustentar mobile, uso B sem novo pedido de aprovação — a troca é uma linha em `homeCuration.ts`.
+### 3. Prioridade e adiamento na Home
+- Manter o hero como única imagem prioritária, com o preload casando exatamente `src`/`srcset`/`sizes`.
+- Marcar as fotos abaixo da dobra com prioridade baixa, para não competirem com o hero.
+- Envolver as seções Segmentos, Quem é o Alê, Vídeos e Blog no `LazySection` já existente (com altura reservada, sem salto de layout).
+- Corrigir o `sizes` das fotos do grid para a largura real que elas ocupam, evitando o download de um candidato maior que o necessário.
 
-Regras do Hero:
-- fotografia como elemento real (sem `opacity-60`, sem textura); desktop = grid texto + foto; mobile = foto em destaque com altura controlada
-- H1, copy, métricas, `title`, `canonical`, `meta` **preservados literalmente**
-- 2 CTAs principais: orçamento no WhatsApp + "Ver trabalhos"; terceiro link (agendamento) mantido como link textual secundário
-- imagem do Hero: `loading="eager"`, `fetchpriority="high"`, `width`/`height` explícitos, `preload` no `head().links` da rota `/`
+### 4. Correção de hidratação
+Durante a inspeção apareceu um aviso de hidratação nos cards de blog da Home. Será corrigido junto, porque ele força o React a re-renderizar a seção e atrasa o carregamento das imagens.
 
-## 3. Trabalhos Selecionados — curadoria provisória (10)
+## O que não muda
 
-Jornada por foto: FOTOGRAFIA → PROVA (galeria) → SERVIÇO → CONVERSÃO. Fotos apontam para a galeria/case quando ela agrega prova; os CTAs dos pilares levam às páginas comerciais.
+URLs, slugs, redirects, sitemap, robots, canonical, títulos, H1, meta descriptions, structured data, textos, links internos, ordem dos blocos e a curadoria das fotos escolhidas.
 
-| # | Pilar | Galeria de origem | Orientação | Destino do clique | Justificativa |
-|---|---|---|---|---|---|
-| 1 | Retrato | Retrato Corporativo | Vertical | `/portfolio/retrato-corporativo` | C-level, direção de pose evidente |
-| 2 | Retrato | Escritórios de advocacia | Vertical | `/portfolio/fotografia-para-escritorios-de-advocacia` | Advogados — público real |
-| 3 | Retrato | Retratos de Médicas | Vertical | `/portfolio/retratos-de-medicas` | Representação feminina / saúde |
-| 4 | Retrato | Fotos Profissionais para Médicos | Vertical | `/portfolio/fotos-profissionais-para-medicos` | Médicos em ambiente real |
-| 5 | Retrato | Banco de imagens para empresas | Horizontal | `/portfolio/fotografo-de-retratos-profissionais` | Retrato profissional em contexto |
-| 6 | Retrato/Equipe | Grupos, Times e Equipes | Horizontal | `/portfolio/fotografo-de-grupos-times-e-equipes` | Liderança e equipe |
-| 7 | Evento | Fotógrafo de Eventos Corporativos | Horizontal | `/portfolio/fotografo-de-eventos-corporativos` | Palco / palestrante |
-| 8 | Evento | Fotógrafo de Eventos Empresariais | Horizontal | `/portfolio/eventos-corporativos` | Público e plateia |
-| 9 | Evento | Feiras e Stands | Horizontal | `/portfolio/fotografo-feiras-stands` | Marca, ambiente, networking |
-| 10 | Evento | Festa da Firma | Horizontal | `/portfolio/fotografo-festa-de-confraternizacao` | Interação e clima corporativo |
+## Validação
 
-Proporção final ~6 retratos / 4 eventos, com prioridade a qualidade da imagem e representação dos dois pilares (regra não rígida). Dois CTAs de pilar abaixo do grid: **Retratos Corporativos** → página comercial de retrato; **Cobertura de Eventos Corporativos** → página comercial de eventos. URLs exatas confirmadas contra as rotas existentes antes de escrever.
-
-Grid editorial responsivo (mistura vertical/horizontal), `SmartImage` com `srcset`/`sizes`, dimensões explícitas, `loading="lazy"` em todas (Hero é a única `eager`).
-
-## 4. Mobile (validação obrigatória)
-
-- Hero: foto com altura contida (~52–58vh), H1 legível sem quebra feia, 1º CTA acima da dobra
-- Trabalhos Selecionados aparece logo após o Hero, começando com 4–6 imagens visíveis/carregáveis; restante lazy
-- espaçamento vertical próprio de mobile (não é o desktop empilhado)
-- CLS zero: proporções reservadas em todas as imagens
-- alvos de toque ≥ 44px
-- validação com Playwright em 390px e 1280px, com screenshots
-
-## 5. Proteção SEO
-
-Preservados integralmente: URLs, slugs, redirects, canonicals, `title`, H1, meta descriptions, textos semânticos, páginas da Fase 5, sitemap, robots, structured data e links internos existentes. A reordenação não remove conteúdo. Nenhum link interno atual da Home é excluído.
-
-## Detalhes técnicos
-
-Arquivos previstos:
-- `src/data/homeCuration.ts` (novo) — fonte única da curadoria: hero (definitivo + alternativas), trabalhos selecionados (url, galeria, pilar, orientação, destino, alt), e chaves reservadas para segmentos/vídeos/artigos (usadas em 6C/6D). Sem duplicar dados que pertencem ao catálogo — referência por slug + arquivo.
-- `src/routes/index.tsx` — Hero reescrito, novo bloco Trabalhos Selecionados, reordenação, `preload` do LCP no `head()`.
-- Nenhum outro arquivo é modificado.
-
-Validações: `tsgo` (typecheck), HTTP 200 em `/`, checagem de que `title`/`canonical`/H1/meta da Home continuam byte-idênticos, screenshots desktop+mobile, e relatório com os 15 itens solicitados.
-
-Ao final: PARO. Não avanço para 6C/6D.
+- Typecheck.
+- Home HTTP 200 e imagens 200 pela nova rota.
+- Comparação antes/depois: número de requisições de imagem e bytes totais na Home.
+- Desktop 1280px e mobile 390px: nenhuma foto cortada, sem overflow, sem CLS, console sem erros.

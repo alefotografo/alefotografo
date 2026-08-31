@@ -176,13 +176,8 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
             ".",
           ],
           [
-            "Se você quer ver o raciocínio antes de marcar, escrevi dois textos que resumem bem o que costumo ajustar na prática: ",
+            "Se você quer ver o raciocínio antes de marcar, escrevi um texto que resume bem o que costumo ajustar na prática: ",
             { to: "/blog/fotografo-5-poses-para-retrato-corporativo", label: "5 poses para retrato corporativo" },
-            " e ",
-            {
-              to: "/blog/7-erros-que-voce-deve-evitar-na-foto-de-perfil-no-linkedin",
-              label: "7 erros na foto de perfil do LinkedIn",
-            },
             ".",
           ],
         ],

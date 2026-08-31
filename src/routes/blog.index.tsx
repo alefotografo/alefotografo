@@ -121,8 +121,10 @@ function BlogIndex() {
                       alt={p.title}
                       width={640}
                       height={400}
-                      baseWidth={768}
-                      priority={i < 3}
+                      baseWidth={400}
+                      widths={[400, 640]}
+                      priority={i === 0}
+                      placeholderRatio="16 / 10"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="h-full w-full object-cover group-hover:scale-105"
                     />

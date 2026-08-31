@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
 
 type Props = {
@@ -40,17 +40,32 @@ export function SmartImage({
 }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [fallback, setFallback] = useState(false);
+  const ref = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     setLoaded(false);
     setFallback(false);
   }, [src]);
 
+  // A imagem pode terminar o download antes da hidratação: nesse caso o onLoad
+  // nunca dispara e ela ficaria presa em opacity-0. Consultamos o estado real
+  // do elemento após montar/atualizar.
+  useEffect(() => {
+    const el = ref.current;
+    if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
+  });
+
+  const attach = useCallback((el: HTMLImageElement | null) => {
+    ref.current = el;
+    if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
+  }, []);
+
   const finalSrc = fallback ? src : imgUrl(src, baseWidth);
   const srcSet = fallback ? undefined : imgSrcSet(src, widths);
 
   return (
     <img
+      ref={attach}
       src={finalSrc}
       srcSet={srcSet}
       sizes={srcSet ? sizes : undefined}

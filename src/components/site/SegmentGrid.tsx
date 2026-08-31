@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/whatsapp";
+import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
+import { segmentPhotos } from "@/data/homeCuration";
 import { ArrowUpRight } from "lucide-react";
 
 type Segment = {
@@ -83,50 +85,68 @@ export function SegmentGrid() {
           segmento atendido em São Paulo.
         </p>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {SEGMENTS.map((s) => (
-            <article
-              key={s.title}
-              className="flex flex-col rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
-            >
-              <h3 className="font-display text-lg font-semibold">{s.title}</h3>
-              <dl className="mt-4 space-y-3 text-sm leading-relaxed">
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.15em] text-ember">Desafio</dt>
-                  <dd className="mt-1 text-muted-foreground">{s.dor}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.15em] text-ember">Imagens necessárias</dt>
-                  <dd className="mt-1 text-muted-foreground">{s.imagem}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.15em] text-ember">Resultado</dt>
-                  <dd className="mt-1 text-muted-foreground">{s.beneficio}</dd>
-                </div>
-              </dl>
-              <a
-                href={waLink(s.wa)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {SEGMENTS.map((s) => {
+            const photo = segmentPhotos[s.title];
+            return (
+              <article
+                key={s.title}
+                className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
               >
-                Solicitar orçamento
-              </a>
-              {s.to ? (
-                <Link to={s.to} className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember">
-                  {s.seeLabel} <ArrowUpRight size={14} />
-                </Link>
-              ) : (
-                <Link
-                  to="/fotografo-corporativo/$slug"
-                  params={{ slug: s.catSlug as string }}
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
-                >
-                  {s.seeLabel} <ArrowUpRight size={14} />
-                </Link>
-              )}
-            </article>
-          ))}
+                {photo && (
+                  <img
+                    src={imgUrl(photo.src, 640)}
+                    srcSet={imgSrcSet(photo.src, GRID_WIDTHS)}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    alt={photo.alt}
+                    width={photo.width}
+                    height={photo.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full"
+                  />
+                )}
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-lg font-semibold">{s.title}</h3>
+                  <dl className="mt-4 space-y-3 text-sm leading-relaxed">
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.15em] text-ember">Desafio</dt>
+                      <dd className="mt-1 text-muted-foreground">{s.dor}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.15em] text-ember">Imagens necessárias</dt>
+                      <dd className="mt-1 text-muted-foreground">{s.imagem}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs uppercase tracking-[0.15em] text-ember">Resultado</dt>
+                      <dd className="mt-1 text-muted-foreground">{s.beneficio}</dd>
+                    </div>
+                  </dl>
+                  <a
+                    href={waLink(s.wa)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+                  >
+                    Solicitar orçamento
+                  </a>
+                  {s.to ? (
+                    <Link to={s.to} className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember">
+                      {s.seeLabel} <ArrowUpRight size={14} />
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/fotografo-corporativo/$slug"
+                      params={{ slug: s.catSlug as string }}
+                      className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                    >
+                      {s.seeLabel} <ArrowUpRight size={14} />
+                    </Link>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

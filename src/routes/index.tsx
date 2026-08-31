@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, featuredPosts, site, videos } from "@/data/catalog";
-import { imgSrcSet, imgUrl } from "@/lib/img";
+import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
+import {
+  galleryTitle,
+  heroPhoto,
+  selectedWorks,
+  worksCtas,
+} from "@/data/homeCuration";
+
 import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";

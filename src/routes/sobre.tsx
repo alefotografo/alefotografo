@@ -1,7 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { Award, Camera, Target, Zap } from "lucide-react";
+
+const PORTRAIT =
+  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
+
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({

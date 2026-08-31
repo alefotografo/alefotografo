@@ -18,7 +18,17 @@ export const Route = createFileRoute("/quem-e-o-ale")({
       image: PORTRAIT,
       type: "article",
     }),
-    links: [{ rel: "canonical", href: `${SITE_ORIGIN}/quem-e-o-ale` }],
+    links: [
+      { rel: "canonical", href: `${SITE_ORIGIN}/quem-e-o-ale` },
+      {
+        rel: "preload",
+        as: "image",
+        href: imgUrl(PORTRAIT, 720),
+        imageSrcSet: imgSrcSet(PORTRAIT, [480, 720, 1024]),
+        imageSizes: "(max-width: 768px) 100vw, 40vw",
+        fetchPriority: "high",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -101,7 +111,9 @@ function QuemEOAlePage() {
           <div className="md:col-span-5">
             <div className="aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <img
-                src={PORTRAIT}
+                src={imgUrl(PORTRAIT, 720)}
+                srcSet={imgSrcSet(PORTRAIT, [480, 720, 1024])}
+                sizes="(max-width: 768px) 100vw, 40vw"
                 alt="Alexandre Machado, o Alê Fotógrafo — retrato do fotógrafo corporativo em São Paulo"
                 width={800}
                 height={1000}

@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, featuredPosts, site, videos } from "@/data/catalog";
-import { imgSrcSet, imgUrl } from "@/lib/img";
+import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
+import {
+  galleryTitle,
+  heroPhoto,
+  selectedWorks,
+  worksCtas,
+} from "@/data/homeCuration";
+
 import { buildMeta } from "@/lib/seo";
 import { Video, ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/site/Faq";
@@ -65,87 +72,177 @@ function Home() {
 
   return (
     <>
-      {/* Hero — full-bleed featured image */}
+      {/* Hero — texto + fotografia real */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={imgUrl(heroImg, 1600)}
-            srcSet={imgSrcSet(heroImg)}
-            sizes="100vw"
-            alt={hero ? `Fotografia corporativa — ${hero.title}` : "Fotografia corporativa em São Paulo"}
-            width={1920}
-            height={1280}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="h-full w-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent" />
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-12 md:items-center md:gap-14 md:px-8 md:py-24">
+          <div className="md:col-span-7">
+                  <p className="mb-5 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+                    Alexandre Machado · 30 anos · São Paulo
+                  </p>
+                  <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance md:text-6xl">
+                    Retrato corporativo em São Paulo feito por mim, com{" "}
+                    <span className="gradient-text-ember">direção de pose</span> do primeiro ao último
+                    clique.
+                  </h1>
+                  <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg text-pretty">
+                    Sou Alexandre Machado. Fotografo pessoalmente cada ensaio:{" "}
+                    <Link to="/foto-profissional" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">retrato profissional</Link>,{" "}
+                    <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">headshot para LinkedIn</Link>,{" "}
+                    <Link to="/fotografia-executiva" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">retratos de liderança</Link> e{" "}
+                    <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos de equipe no escritório</Link>{" "}
+                    — sem terceirizar, sem assistente assumindo a câmera.
+                  </p>
+                  <div className="mt-10 flex flex-wrap gap-3">
+                    <a
+                      href={waLink(
+                        "Olá Alexandre, quero um orçamento de fotografia corporativa. Pode me ajudar?",
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:bg-ember-glow"
+                    >
+                      Solicitar orçamento no WhatsApp
+                      <ArrowUpRight size={16} />
+                    </a>
+                    <Link
+                      to="/fotografo-corporativo"
+                      className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
+                    >
+                      Ver portfólio corporativo
+                    </Link>
+                    <Link
+                      to="/foto-profissional"
+                      className="inline-flex items-center gap-2 self-center text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+                    >
+                      Agendar foto profissional
+                    </Link>
+
+                  </div>
+                  <p className="mt-5 max-w-xl text-sm text-muted-foreground">
+                    30+ anos de experiência · Atendimento em São Paulo · Empresas, médicos, advogados e
+                    executivos
+                  </p>
+                  <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-border pt-8 sm:gap-6">
+                    <div>
+                      <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Experiência</dt>
+                      <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">30+ anos</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Empresas</dt>
+                      <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">500+</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Segmentos</dt>
+                      <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">{categories.length}</dd>
+                    </div>
+                  </dl>
+          </div>
+          <div className="md:col-span-5">
+            <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+              <img
+                src={imgUrl(HERO_IMG, 1024)}
+                srcSet={imgSrcSet(HERO_IMG)}
+                sizes="(max-width: 768px) 100vw, 40vw"
+                alt={heroPhoto.alt}
+                width={heroPhoto.width}
+                height={heroPhoto.height}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="h-[52vh] w-full object-cover object-center md:h-auto md:aspect-[4/5]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trabalhos selecionados — curadoria real do acervo */}
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotos</p>
+            <h2 className="font-display text-3xl font-semibold md:text-5xl text-balance">
+              Trabalhos selecionados
+            </h2>
+          </div>
+          <Link
+            to="/fotografo-corporativo"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+          >
+            Ver todos os segmentos <ArrowUpRight size={14} />
+          </Link>
         </div>
 
-        <div className="mx-auto max-w-7xl px-5 py-28 md:px-8 md:py-44">
-          <div className="max-w-3xl">
-            <p className="mb-5 text-xs font-medium uppercase tracking-[0.25em] text-ember">
-              Alexandre Machado · 30 anos · São Paulo
-            </p>
-            <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-balance md:text-6xl">
-              Retrato corporativo em São Paulo feito por mim, com{" "}
-              <span className="gradient-text-ember">direção de pose</span> do primeiro ao último
-              clique.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg text-pretty">
-              Sou Alexandre Machado. Fotografo pessoalmente cada ensaio:{" "}
-              <Link to="/foto-profissional" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">retrato profissional</Link>,{" "}
-              <Link to="/foto-profissional-para-linkedin" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">headshot para LinkedIn</Link>,{" "}
-              <Link to="/fotografia-executiva" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">retratos de liderança</Link> e{" "}
-              <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos de equipe no escritório</Link>{" "}
-              — sem terceirizar, sem assistente assumindo a câmera.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a
-                href={waLink(
-                  "Olá Alexandre, quero um orçamento de fotografia corporativa. Pode me ajudar?",
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3.5 text-sm font-medium text-accent-foreground transition-all hover:bg-ember-glow"
-              >
-                Solicitar orçamento no WhatsApp
-                <ArrowUpRight size={16} />
-              </a>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-4">
+          {selectedWorks.map((w, i) => {
+            const featuredCell = i === 0 || i === 6;
+            const span =
+              i === 0
+                ? "col-span-2 md:col-span-4"
+                : i === 6
+                  ? "col-span-2 md:col-span-4"
+                  : "col-span-1 md:col-span-2";
+            const ratio =
+              w.orientation === "vertical"
+                ? featuredCell
+                  ? "aspect-[4/5]"
+                  : "aspect-[3/4]"
+                : featuredCell
+                  ? "aspect-[16/10]"
+                  : "aspect-[4/3]";
+            return (
               <Link
-                to="/fotografo-corporativo"
-                className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
+                key={w.src}
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: w.gallery }}
+                className={`group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember ${span}`}
               >
-                Ver portfólio corporativo
+                <div className={`relative ${ratio} overflow-hidden`}>
+                  <img
+                    src={imgUrl(w.src, 768)}
+                    srcSet={imgSrcSet(w.src, GRID_WIDTHS)}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    alt={w.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-3 md:p-5">
+                  <h3 className="font-display text-sm font-semibold text-foreground md:text-lg">
+                    {galleryTitle(w.gallery)}
+                  </h3>
+                  <span className="mt-1 hidden items-center gap-1 text-xs text-ember opacity-0 transition-opacity group-hover:opacity-100 md:inline-flex">
+                    Ver galeria <ArrowUpRight size={12} />
+                  </span>
+                </div>
               </Link>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-3">
+          {worksCtas.map((c) =>
+            "categorySlug" in c ? (
               <Link
-                to="/foto-profissional"
-                className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
+                key={c.label}
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: c.categorySlug }}
+                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
               >
-                Agendar foto profissional
+                {c.label} <ArrowUpRight size={14} />
               </Link>
-            </div>
-            <p className="mt-5 max-w-xl text-sm text-muted-foreground">
-              30+ anos de experiência · Atendimento em São Paulo · Empresas, médicos, advogados e
-              executivos
-            </p>
-            <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-border pt-8 sm:gap-6">
-              <div>
-                <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Experiência</dt>
-                <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">30+ anos</dd>
-              </div>
-              <div>
-                <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Empresas</dt>
-                <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">500+</dd>
-              </div>
-              <div>
-                <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Segmentos</dt>
-                <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">{categories.length}</dd>
-              </div>
-            </dl>
-          </div>
+            ) : (
+              <Link
+                key={c.label}
+                to="/eventos-corporativos"
+                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
+              >
+                {c.label} <ArrowUpRight size={14} />
+              </Link>
+            ),
+          )}
         </div>
       </section>
 
@@ -195,54 +292,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Photos preview */}
-      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotos</p>
-            <h2 className="font-display text-3xl font-semibold md:text-5xl text-balance">
-              Trabalhos selecionados
-            </h2>
-          </div>
-          <Link
-            to="/fotografo-corporativo"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-          >
-            Ver todos os segmentos <ArrowUpRight size={14} />
-          </Link>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-3">
-          {featured.map((c, i) => (
-            <Link
-              key={c.slug}
-              to="/fotografo-corporativo/$slug"
-              params={{ slug: c.slug }}
-              className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
-            >
-              <div className={`relative ${i % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}>
-                <img
-                  src={imgUrl(c.cover!, 768)}
-                  srcSet={imgSrcSet(c.cover!, [480, 768, 1024])}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
-                  alt={c.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <h3 className="font-display text-lg font-semibold text-foreground">{c.title}</h3>
-                <span className="mt-1 inline-flex items-center gap-1 text-xs text-ember opacity-0 transition-opacity group-hover:opacity-100">
-                  Ver galeria <ArrowUpRight size={12} />
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* Videos teaser */}
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
@@ -289,33 +338,6 @@ function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Blog teaser */}
-      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Insights</p>
-            <h2 className="font-display text-3xl font-semibold md:text-4xl">Do blog</h2>
-          </div>
-          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
-            Todos os posts <ArrowUpRight size={14} />
-          </Link>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {recentPosts.map((p) => (
-            <Link
-              key={p.slug}
-              to="/blog/$slug"
-              params={{ slug: p.slug }}
-              className="group block rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
-            >
-              {p.date && <time className="text-xs uppercase tracking-wider text-muted-foreground">{p.date}</time>}
-              <h3 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">{p.title}</h3>
-              <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{p.description}</p>
-            </Link>
-          ))}
         </div>
       </section>
 
@@ -392,6 +414,33 @@ function Home() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Blog teaser */}
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Insights</p>
+            <h2 className="font-display text-3xl font-semibold md:text-4xl">Do blog</h2>
+          </div>
+          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+            Todos os posts <ArrowUpRight size={14} />
+          </Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {recentPosts.map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
+              className="group block rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
+            >
+              {p.date && <time className="text-xs uppercase tracking-wider text-muted-foreground">{p.date}</time>}
+              <h3 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">{p.title}</h3>
+              <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{p.description}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

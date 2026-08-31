@@ -180,14 +180,15 @@ function Home() {
               className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
               <img
-                src={imgUrl(w.src, 768)}
-                srcSet={imgSrcSet(w.src, GRID_WIDTHS)}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                src={imgUrl(w.src, 640)}
+                srcSet={imgSrcSet(w.src, GRID_WIDTHS, w.width)}
+                sizes="(max-width: 768px) 96vw, 45vw"
                 alt={w.alt}
                 width={w.width}
                 height={w.height}
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
                 className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />

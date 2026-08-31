@@ -12,7 +12,7 @@ const CDN =
 
 const paths: Record<string, string> = {
   "o-que-vestir-sessao-de-fotos-corporativa":
-    "GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
+    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-34.JPG",
   "retrato-posado-ou-fotografia-documental":
     "GaleriaImagem/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0004.JPG",
   "manual-de-uso-de-imagem-corporativa":
@@ -106,7 +106,7 @@ const paths: Record<string, string> = {
   "apresentacao-comercial-imagem-material-vendas":
     "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-7.jpg",
   "retrato-executivo-lideranca-feminina":
-    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-34.JPG",
+    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-70.JPG",
   "vagas-poucos-candidatos-qualificados-imagem":
     "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-279.jpg",
   "fotografia-conselho-administracao-board":
@@ -174,7 +174,7 @@ const paths: Record<string, string> = {
   "como-comparar-orcamentos-fotografia-corporativa":
     "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-454.jpg",
   "retrato-ambientado-executivo-contexto":
-    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-70.JPG",
+    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-104.JPG",
 };
 
 export const curatedCovers: Record<string, string> = Object.fromEntries(

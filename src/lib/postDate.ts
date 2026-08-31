@@ -23,13 +23,30 @@ export function postDateRFC822(input?: string): string {
 // Gate de publicação: a data corrente é sempre avaliada no fuso do negócio
 // (America/Sao_Paulo), independente do fuso do servidor que renderiza.
 export function todayInSaoPaulo(): string {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "America/Sao_Paulo",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
+  // Monta YYYY-MM-DD a partir das partes, nunca do formato do locale:
+  // runtimes de edge podem não suportar "en-CA" e devolver MM/DD/YYYY,
+  // o que quebraria a comparação lexicográfica do gate.
+  try {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Sao_Paulo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(new Date());
+    const get = (t: string) => parts.find((p) => p.type === t)?.value;
+    const y = get("year");
+    const m = get("month");
+    const d = get("day");
+    if (y && m && d && /^\d{4}$/.test(y) && /^\d{2}$/.test(m) && /^\d{2}$/.test(d)) {
+      return `${y}-${m}-${d}`;
+    }
+  } catch {
+    // cai no fallback determinístico abaixo
+  }
+  // Fallback sem Intl: UTC-3 fixo (São Paulo não usa horário de verão).
+  return new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
+
 
 /**
  * Um registro só é público quando sua data é menor ou igual a hoje em SP.

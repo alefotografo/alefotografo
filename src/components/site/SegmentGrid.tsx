@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/whatsapp";
+import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
+import { segmentPhotos } from "@/data/homeCuration";
 import { ArrowUpRight } from "lucide-react";
 
 type Segment = {

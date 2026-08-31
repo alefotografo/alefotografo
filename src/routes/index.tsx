@@ -182,7 +182,7 @@ function Home() {
               i === 0
                 ? "aspect-[4/5]"
                 : i === 1
-                  ? "aspect-[16/10]"
+                  ? "aspect-[4/3]"
                   : i === 6
                     ? "aspect-[16/9]"
                     : w.orientation === "vertical"
@@ -202,7 +202,7 @@ function Home() {
                   alt={w.alt}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-3 md:p-5">

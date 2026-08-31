@@ -138,8 +138,8 @@ function Home() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong md:flex md:justify-center">
               <img
-                src={imgUrl(HERO_IMG, 1024)}
-                srcSet={imgSrcSet(HERO_IMG)}
+                src={imgUrl(HERO_IMG, 720)}
+                srcSet={imgSrcSet(HERO_IMG, undefined, heroPhoto.width)}
                 sizes="(max-width: 768px) 100vw, 40vw"
                 alt={heroPhoto.alt}
                 width={heroPhoto.width}

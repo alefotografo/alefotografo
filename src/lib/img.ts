@@ -1,13 +1,19 @@
-// Otimização de imagens remotas (CDN legado) via proxy de imagens sem chave.
-// Reduz de ~500KB para ~100KB por foto, servindo WebP redimensionado.
+// Otimização de imagens remotas (CDN legado) servida pelo nosso próprio domínio
+// (/api/public/img). Mesma origem = mesma conexão HTTP/2 da página, sem TLS extra
+// para um terceiro, com cache permanente na borda.
+// Reduz de ~300–500 KB para ~20–60 KB por foto, em WebP redimensionado.
 
-const PROXY = "https://images.weserv.nl/";
+const ENDPOINT = "/api/public/img";
 const REMOTE_HOSTS = [".rackcdn.com"];
 
-export const IMG_WIDTHS = [480, 768, 1024, 1440, 1920];
+/** Larguras para imagens grandes (hero, capa de página). */
+export const IMG_WIDTHS = [480, 720, 1024, 1440];
 
-/** Larguras usadas em grids/galerias (cada foto ocupa no máximo ~1/3 da tela). */
-export const GRID_WIDTHS = [360, 480, 768, 1024];
+/** Larguras usadas em grids/galerias (cada foto ocupa no máximo ~1/2–1/3 da tela). */
+export const GRID_WIDTHS = [400, 640, 900];
+
+/** Qualidade padrão do WebP — imperceptível em fotografia, ~25% menos bytes que 74. */
+const DEFAULT_QUALITY = 66;
 
 function isRemote(src: string) {
   if (!/^https?:\/\//i.test(src)) return false;
@@ -20,19 +26,30 @@ function isRemote(src: string) {
 }
 
 /** URL otimizada de uma imagem para uma largura alvo. */
-export function imgUrl(src: string, width?: number, quality = 74): string {
+export function imgUrl(src: string, width?: number, quality = DEFAULT_QUALITY): string {
   if (!src || !isRemote(src)) return src;
-  const params = new URLSearchParams({ url: src, q: String(quality), output: "webp" });
-  if (width) {
-    params.set("w", String(width));
-    params.set("dpr", "1");
-    params.set("we", "1");
-  }
-  return `${PROXY}?${params.toString()}`;
+  const params = new URLSearchParams({ src, q: String(quality) });
+  if (width) params.set("w", String(width));
+  return `${ENDPOINT}?${params.toString()}`;
 }
 
-/** srcset responsivo; vazio quando a imagem não é remota (assets locais já são otimizados no build). */
-export function imgSrcSet(src: string, widths: number[] = IMG_WIDTHS): string | undefined {
+/**
+ * srcset responsivo; vazio quando a imagem não é remota
+ * (assets locais já são otimizados no build).
+ *
+ * `naturalWidth` evita variantes maiores que o arquivo original — elas voltariam
+ * do proxy com bytes idênticos à maior largura útil, poluindo o cache.
+ */
+export function imgSrcSet(
+  src: string,
+  widths: number[] = IMG_WIDTHS,
+  naturalWidth?: number,
+): string | undefined {
   if (!src || !isRemote(src)) return undefined;
-  return widths.map((w) => `${imgUrl(src, w)} ${w}w`).join(", ");
+  let list = widths;
+  if (naturalWidth) {
+    const useful = widths.filter((w) => w <= naturalWidth);
+    list = useful.length ? useful : [Math.min(...widths)];
+  }
+  return list.map((w) => `${imgUrl(src, w)} ${w}w`).join(", ");
 }

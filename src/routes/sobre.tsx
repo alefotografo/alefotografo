@@ -17,7 +17,17 @@ export const Route = createFileRoute("/sobre")({
       image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/sobre" }],
+    links: [
+      { rel: "canonical", href: "https://www.alefotografo.com.br/sobre" },
+      {
+        rel: "preload",
+        as: "image",
+        href: imgUrl(PORTRAIT, 720),
+        imageSrcSet: imgSrcSet(PORTRAIT, [480, 720, 1024]),
+        imageSizes: "(max-width: 768px) 100vw, 40vw",
+        fetchPriority: "high",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",

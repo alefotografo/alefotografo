@@ -13,28 +13,27 @@ export interface HomePhoto {
   /** Pilar comercial ao qual a foto pertence. */
   pillar: "retrato" | "evento";
   orientation: "vertical" | "horizontal";
-  to: string;
   alt: string;
 }
 
 /** Hero definitivo da Home. */
 export const heroPhoto = {
-  src: `${CDN}/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg`,
-  gallery: "retrato-corporativo",
+  src: `${CDN}/90047/fotografo-de-retratos-corporativos_emilio-carazzai-3.jpg`,
+  gallery: "fotografo-de-retratos-corporativos",
   alt: "Retrato corporativo de executivo fotografado por Alexandre Machado em São Paulo",
-  width: 1200,
-  height: 1500,
+  width: 720,
+  height: 1080,
 };
 
 /** Alternativas já validadas para o recorte desktop/mobile do hero. */
 export const heroAlternatives = [
   {
-    src: `${CDN}/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0047.jpg`,
-    gallery: "fotografo-de-retratos-profissionais",
-    alt: "Retrato profissional corporativo em estúdio",
+    src: `${CDN}/90047/fotografo-de-retratos-corporativos_retratos-corporativos-1.jpg`,
+    gallery: "fotografo-de-retratos-corporativos",
+    alt: "Retrato corporativo profissional em São Paulo",
   },
   {
-    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-11.jpg`,
+    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-12.jpg`,
     gallery: "fotografia-para-escritorios-de-advocacia",
     alt: "Retrato profissional de advogado em escritório de advocacia",
   },
@@ -50,7 +49,7 @@ export const selectedWorks: HomePhoto[] = [
     alt: "Retrato corporativo em São Paulo com direção de pose",
   },
   {
-    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-4.jpg`,
+    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-2.jpg`,
     gallery: "fotografia-para-escritorios-de-advocacia",
     pillar: "retrato",
     orientation: "horizontal",
@@ -71,14 +70,14 @@ export const selectedWorks: HomePhoto[] = [
     alt: "Foto profissional de médico para divulgação e redes sociais",
   },
   {
-    src: `${CDN}/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0046.jpg`,
-    gallery: "fotografo-de-retratos-profissionais",
+    src: `${CDN}/90047/fotografia-de-retrato-profissional-em-sao-paulo_paulo-henrique-gomes-camara-8.jpg`,
+    gallery: "fotografo-de-retratos-corporativos",
     pillar: "retrato",
     orientation: "vertical",
     alt: "Retrato profissional corporativo com iluminação de estúdio",
   },
   {
-    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg`,
+    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
     gallery: "fotografo-de-grupos-times-e-equipes",
     pillar: "retrato",
     orientation: "horizontal",

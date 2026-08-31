@@ -21,9 +21,7 @@ const homeFaqs = faqsComerciais.slice(0, 6);
 
 import { googleReviews, googleReviewsSummary } from "@/data/reviews";
 
-const FALLBACK_HERO =
-  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
-const HERO_IMG = categories.find((c) => c.cover)?.cover ?? FALLBACK_HERO;
+const HERO_IMG = heroPhoto.src;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,9 +38,9 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: imgUrl(HERO_IMG, 1600),
+        href: imgUrl(HERO_IMG, 1024),
         imageSrcSet: imgSrcSet(HERO_IMG),
-        imageSizes: "100vw",
+        imageSizes: "(max-width: 768px) 100vw, 40vw",
         fetchPriority: "high",
       },
     ],
@@ -62,12 +60,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const featured = categories.filter((c) => c.cover).slice(0, 6);
   // Destaque editorial (POST_ORDER), já filtrado pelo gate de publicação.
   const recentPosts = featuredPosts.slice(0, 3);
   const recentVideos = videos.slice(0, 3);
-  const hero = featured[0];
-  const heroImg = hero?.cover ?? HERO_IMG;
 
 
   return (
@@ -149,7 +144,7 @@ function Home() {
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className="h-[52vh] w-full object-cover object-center md:h-auto md:aspect-[4/5]"
+                className="aspect-[3/4] h-auto w-full object-cover object-center md:aspect-[2/3]"
               />
             </div>
           </div>
@@ -175,40 +170,41 @@ function Home() {
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-4">
           {selectedWorks.map((w, i) => {
-            const featuredCell = i === 0 || i === 6;
             const span =
               i === 0
-                ? "col-span-2 md:col-span-4"
-                : i === 6
-                  ? "col-span-2 md:col-span-4"
-                  : "col-span-1 md:col-span-2";
+                ? "col-span-2 row-span-2 md:col-span-3"
+                : i === 1
+                  ? "col-span-2 md:col-span-3"
+                  : i === 6
+                    ? "col-span-2 md:col-span-4"
+                    : "col-span-1 md:col-span-2";
             const ratio =
-              w.orientation === "vertical"
-                ? featuredCell
-                  ? "aspect-[4/5]"
-                  : "aspect-[3/4]"
-                : featuredCell
+              i === 0
+                ? "aspect-[4/5]"
+                : i === 1
                   ? "aspect-[16/10]"
-                  : "aspect-[4/3]";
+                  : i === 6
+                    ? "aspect-[16/9]"
+                    : w.orientation === "vertical"
+                      ? "aspect-[3/4]"
+                      : "aspect-[4/3]";
             return (
               <Link
                 key={w.src}
                 to="/fotografo-corporativo/$slug"
                 params={{ slug: w.gallery }}
-                className={`group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember ${span}`}
+                className={`group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember ${span} ${ratio}`}
               >
-                <div className={`relative ${ratio} overflow-hidden`}>
-                  <img
-                    src={imgUrl(w.src, 768)}
-                    srcSet={imgSrcSet(w.src, GRID_WIDTHS)}
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    alt={w.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-                </div>
+                <img
+                  src={imgUrl(w.src, 768)}
+                  srcSet={imgSrcSet(w.src, GRID_WIDTHS)}
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  alt={w.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-3 md:p-5">
                   <h3 className="font-display text-sm font-semibold text-foreground md:text-lg">
                     {galleryTitle(w.gallery)}

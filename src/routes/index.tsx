@@ -24,6 +24,9 @@ import { googleReviews, googleReviewsSummary } from "@/data/reviews";
 const HERO_IMG = heroPhoto.src;
 
 export const Route = createFileRoute("/")({
+  loader: () => ({
+    recentPosts: featuredPosts.slice(0, 3),
+  }),
   head: () => ({
     meta: buildMeta({
       title: "Retrato Corporativo em SP — Fotografado por Alexandre Machado",
@@ -60,8 +63,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  // Destaque editorial (POST_ORDER), já filtrado pelo gate de publicação.
-  const recentPosts = featuredPosts.slice(0, 3);
+  // O snapshot do loader mantém SSR e hidratação idênticos quando um post
+  // agendado cruza a data de publicação entre builds.
+  const { recentPosts } = Route.useLoaderData();
   const recentVideos = videos.slice(0, 3);
 
 

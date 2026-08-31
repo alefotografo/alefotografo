@@ -1,0 +1,182 @@
+// Capas curadas manualmente para posts que não têm imagem própria no
+// catálogo. Cada URL aponta para uma foto real do acervo, escolhida pelo
+// tema do artigo — nunca por hash ou preenchimento automático.
+//
+// Regra editorial mantida: capa correta ou nenhuma capa. Posts de tema
+// abstrato (cor, calibração de tela, impressão, SEO de imagem) ficam
+// deliberadamente sem capa, pois não existe foto do acervo que os
+// represente com honestidade.
+
+const CDN =
+  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/";
+
+const paths: Record<string, string> = {
+  "o-que-vestir-sessao-de-fotos-corporativa":
+    "GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
+  "retrato-posado-ou-fotografia-documental":
+    "GaleriaImagem/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0004.JPG",
+  "manual-de-uso-de-imagem-corporativa":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ala-servicos-39.jpg",
+  "quanto-tempo-leva-projeto-fotografia-corporativa":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg",
+  "fotografia-integracao-pos-fusao-aquisicao":
+    "GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg",
+  "digitalizacao-restauracao-acervo-historico-empresa":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-224.jpg",
+  "fotografia-entrega-no-cliente-antes-e-depois":
+    "GaleriaImagem/66655/industrial_dsc7266.jpg",
+  "fotografia-processo-tecnico-metodo":
+    "GaleriaImagem/66655/industrial_vrantec.jpg",
+  "como-medir-retorno-fotografia-corporativa":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-21.jpg",
+  "onde-publicar-suas-fotos-pontos-de-contato":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-349.jpg",
+  "fotografia-ambientes-com-clientes-privacidade-lgpd":
+    "GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
+  "fotografia-grande-formato-banners-backdrops":
+    "GaleriaImagem/66936/feiras_feiras-stand-fotografo-oficial-de-feiras-stands-exposicoes-alefotografo0048.jpg",
+  "fotografia-comunicacao-interna-murais-paredes":
+    "GaleriaImagem/66835/arquitetura-interiores_instituto-rauen-137.jpg",
+  "imagem-topo-do-site-hero-conversao":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-43.jpg",
+  "fotografia-divulgacao-eventos-inscricoes":
+    "GaleriaImagem/66941/eventos-corporativos_fotografo-de-eventos-corporativos-eventos-pessoas-em-evento-fotos-de-eventos-corporaticos-alefotografo0174.JPG",
+  "retratos-para-conteudo-autoral-artigos":
+    "GaleriaImagem/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0047.jpg",
+  "fotografia-criativos-anuncio-performance":
+    "GaleriaImagem/132797/pacote-influencer_influencer-feminina-copiar.jpg",
+  "shot-list-lista-de-fotos-sessao-corporativa":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-83.jpg",
+  "espaco-negativo-fotos-com-area-para-texto":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-30.jpg",
+  "fotografia-campanhas-seguranca-epi-prevencao":
+    "GaleriaImagem/66655/industrial_maqplashigh.jpg",
+  "fotografia-certificacoes-conformidade-qualidade":
+    "GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-11.JPG",
+  "registro-fotografico-periodico-de-obra":
+    "GaleriaImagem/130742/fotografias-de-empreendimentos-imobiliarios_captura-de-tela-2023-06-07-135716.png",
+  "portfolio-visual-projetos-entregues-concorrencias":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-29.jpg",
+  "fotografia-produtos-digitais-software-mockup":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-332.jpg",
+  "fotografia-conceitual-corporativa-abstrato":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-306.jpg",
+  "fotografia-materiais-integracao-onboarding":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-317.jpg",
+  "fotografia-um-dia-na-vida-recrutamento":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-294.jpg",
+  "fotografia-golden-hour-noturna-corporativa":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-28.jpg",
+  "foto-e-video-juntos-producao-integrada":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-118.jpg",
+  "fotografia-visita-tecnica-clientes-planta":
+    "GaleriaImagem/66655/industrial_fotografo-industrial.jpg",
+  "30-anos-fotografia-corporativa-licoes":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-135.jpg",
+  "fotografia-inauguracao-marcos-empresa":
+    "GaleriaImagem/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-278.jpg",
+  "variedade-visual-redes-sociais-corporativas":
+    "GaleriaImagem/132797/pacote-influencer_influencer-masculino-copiar.jpg",
+  "fotografia-convencao-de-vendas":
+    "GaleriaImagem/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-274.jpg",
+  "luz-escritorio-fotos-internas-corporativas":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-27.jpg",
+  "fotografia-treinamentos-workshops-corporativos":
+    "GaleriaImagem/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-248.jpg",
+  "fotografo-pontual-ou-parceiro-continuo":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-150.jpg",
+  "fotografia-premiacoes-cerimonias-corporativas":
+    "GaleriaImagem/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-236.jpg",
+  "tour-virtual-360-fotografia-imersiva":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-26.jpg",
+  "fotografia-acoes-sociais-esg-impacto":
+    "GaleriaImagem/66838/editorial_fotos-editoriais-escola-alunos-em-aprendizagem-rotinas-de-escola-estudo-aprendizado-24.jpg",
+  "fotos-google-perfil-empresa-conversao":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-25.jpg",
+  "fotografia-estande-feiras-eventos-setor":
+    "GaleriaImagem/66936/fotografo-de-feiras-de-negocios_conexao-farma-2024-260.JPG",
+  "fotografia-embalagem-packaging-marca":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-289.jpg",
+  "enquadramento-multiplos-formatos-redes-sociais":
+    "GaleriaImagem/132797/pacote-influencer_influencer-feminina-vertical.jpg",
+  "fotografia-palestrantes-speakers-corporativos":
+    "GaleriaImagem/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-213.jpg",
+  "fotografia-press-kit-assessoria-imprensa":
+    "GaleriaImagem/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0046.jpg",
+  "apresentacao-comercial-imagem-material-vendas":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-7.jpg",
+  "retrato-executivo-lideranca-feminina":
+    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-34.JPG",
+  "vagas-poucos-candidatos-qualificados-imagem":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-279.jpg",
+  "fotografia-conselho-administracao-board":
+    "GaleriaImagem/90047/fotografo-de-retratos-corporativos_retratos-corporativos-27.jpg",
+  "gargalo-marketing-falta-de-imagem-propria":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-275.jpg",
+  "fotografia-coworking-espacos-compartilhados":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-24.jpg",
+  "imagem-do-ceo-ativo-da-empresa":
+    "GaleriaImagem/90047/fotografia-de-retrato-profissional-em-sao-paulo_paulo-henrique-gomes-camara-8.jpg",
+  "fotografia-franquias-padronizacao-imagem":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-23.jpg",
+  "fotografia-casos-de-sucesso-depoimentos":
+    "GaleriaImagem/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0045.jpg",
+  "fotografia-cooperativas-associacoes":
+    "GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg",
+  "fotografo-corporativo-especializacao-importa":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-75.jpg",
+  "fotografia-concessionarias-setor-automotivo":
+    "GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-2.JPG",
+  "custo-real-contratar-fotografia-menor-preco":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-118.jpg",
+  "fotografia-laboratorios-industria-farmaceutica":
+    "GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG",
+  "com-que-frequencia-atualizar-fotos-da-empresa":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-267.jpg",
+  "fotografia-varejo-redes-de-lojas":
+    "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-22.jpg",
+  "fotografia-despesa-ou-investimento-orcamento":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-123.jpg",
+  "fotografia-instituicoes-ensino-educacao-corporativa":
+    "GaleriaImagem/66838/editorial_fotos-editoriais-escola-adolescentes-alunos-em-aprendizagem-rotinas-de-escola-estudo-aprendizado.jpg",
+  "representatividade-imagens-corporativas":
+    "GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-29.jpg",
+  "fotografia-energia-infraestrutura-usinas":
+    "GaleriaImagem/66655/industrial_foto3.jpg",
+  "storytelling-visual-fotografia-corporativa":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-260.jpg",
+  "fotografia-agronegocio-corporativo":
+    "GaleriaImagem/66655/industrial_foto2.jpg",
+  "fotografia-logistica-centros-distribuicao":
+    "GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-1.jpg",
+  "calendario-producao-fotografica-anual":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-166.jpg",
+  "fotografia-construtoras-canteiro-de-obras":
+    "GaleriaImagem/130742/empreendimentos-imobiliarios_ach-142.jpg",
+  "organizacao-acervo-fotografico-corporativo":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-241.jpg",
+  "fotografia-bancos-fintechs-instituicoes-financeiras":
+    "GaleriaImagem/90047/fotografia-de-retrato-profissional-em-sao-paulo_gustavo-pereira-13.jpg",
+  "selecao-aprovacao-fotos-corporativas":
+    "GaleriaImagem/66933/retratos-profissionais_retrato-corporativo-profissionais-fotografo-alefotografo0044.jpg",
+  "fotografia-startups-empresas-tecnologia":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-228.jpg",
+  "como-equipe-relaxar-frente-camera":
+    "GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-24.jpg",
+  "fotografia-consultorias-auditorias":
+    "GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0001.jpg",
+  "como-preparar-empresa-sessao-fotos-corporativa":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-275.jpg",
+  "fotografia-escritorios-advocacia":
+    "GaleriaImagem/130271/fotografia-para-escritorios-de-advocacia_fotografia-de-advogados-4.jpg",
+  "fotografo-interno-ou-profissional-contratado":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-380.jpg",
+  "como-comparar-orcamentos-fotografia-corporativa":
+    "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-454.jpg",
+  "retrato-ambientado-executivo-contexto":
+    "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-70.JPG",
+};
+
+export const curatedCovers: Record<string, string> = Object.fromEntries(
+  Object.entries(paths).map(([slug, path]) => [slug, `${CDN}${path}`]),
+);

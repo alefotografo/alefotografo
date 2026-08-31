@@ -13,7 +13,9 @@ import { createFileRoute } from "@tanstack/react-router";
  */
 
 const ALLOWED_HOSTS = [".rackcdn.com"];
-const ALLOWED_WIDTHS = new Set([320, 400, 480, 640, 720, 768, 900, 1024, 1440]);
+const ALLOWED_WIDTHS = new Set([
+  200, 300, 320, 400, 480, 640, 720, 768, 800, 900, 1024, 1200, 1440, 1600, 1920,
+]);
 const ALLOWED_QUALITY = new Set([50, 58, 66, 74, 82]);
 const UPSTREAM = "https://images.weserv.nl/";
 

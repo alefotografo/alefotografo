@@ -38,8 +38,8 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: imgUrl(HERO_IMG, 1024),
-        imageSrcSet: imgSrcSet(HERO_IMG),
+        href: imgUrl(HERO_IMG, 720),
+        imageSrcSet: imgSrcSet(HERO_IMG, undefined, heroPhoto.width),
         imageSizes: "(max-width: 768px) 100vw, 40vw",
         fetchPriority: "high",
       },

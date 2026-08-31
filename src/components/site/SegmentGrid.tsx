@@ -95,14 +95,15 @@ export function SegmentGrid() {
               >
                 {photo && (
                   <img
-                    src={imgUrl(photo.src, 640)}
-                    srcSet={imgSrcSet(photo.src, GRID_WIDTHS)}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    src={imgUrl(photo.src, 400)}
+                    srcSet={imgSrcSet(photo.src, GRID_WIDTHS, photo.width)}
+                    sizes="(max-width: 768px) 96vw, (max-width: 1024px) 48vw, 31vw"
                     alt={photo.alt}
                     width={photo.width}
                     height={photo.height}
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                     className="h-auto w-full"
                   />
                 )}

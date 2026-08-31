@@ -105,10 +105,11 @@ function Home() {
                     </Link>
                     <Link
                       to="/foto-profissional"
-                      className="inline-flex items-center gap-2 rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium backdrop-blur-sm hover:bg-surface"
+                      className="inline-flex items-center gap-2 self-center text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
                     >
                       Agendar foto profissional
                     </Link>
+
                   </div>
                   <p className="mt-5 max-w-xl text-sm text-muted-foreground">
                     30+ anos de experiência · Atendimento em São Paulo · Empresas, médicos, advogados e

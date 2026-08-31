@@ -14,6 +14,9 @@ export interface HomePhoto {
   pillar: "retrato" | "evento";
   orientation: "vertical" | "horizontal";
   alt: string;
+  /** Dimensões reais do asset — usadas para reservar proporção sem crop. */
+  width: number;
+  height: number;
 }
 
 /** Hero definitivo da Home. */
@@ -47,6 +50,8 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "retrato",
     orientation: "vertical",
     alt: "Retrato corporativo em São Paulo com direção de pose",
+    width: 1067,
+    height: 1600,
   },
   {
     src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-2.jpg`,
@@ -54,20 +59,8 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "retrato",
     orientation: "horizontal",
     alt: "Fotografia profissional de advogados em escritório de advocacia",
-  },
-  {
-    src: `${CDN}/153050/retratos-de-medicas_mila-rodrigues-da-silva-4.JPG`,
-    gallery: "retratos-de-medicas",
-    pillar: "retrato",
-    orientation: "vertical",
-    alt: "Retrato profissional de médica em consultório",
-  },
-  {
-    src: `${CDN}/132060/fotos-profissionais-para-medicos_driuri-tomaz-de-vasconcelos-7.JPG`,
-    gallery: "fotos-profissionais-para-medicos",
-    pillar: "retrato",
-    orientation: "horizontal",
-    alt: "Foto profissional de médico para divulgação e redes sociais",
+    width: 1920,
+    height: 1410,
   },
   {
     src: `${CDN}/90047/fotografia-de-retrato-profissional-em-sao-paulo_paulo-henrique-gomes-camara-8.jpg`,
@@ -75,6 +68,17 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "retrato",
     orientation: "vertical",
     alt: "Retrato profissional corporativo com iluminação de estúdio",
+    width: 1067,
+    height: 1600,
+  },
+  {
+    src: `${CDN}/132060/fotos-profissionais-para-medicos_driuri-tomaz-de-vasconcelos-7.JPG`,
+    gallery: "fotos-profissionais-para-medicos",
+    pillar: "retrato",
+    orientation: "horizontal",
+    alt: "Foto profissional de médico para divulgação e redes sociais",
+    width: 1920,
+    height: 1277,
   },
   {
     src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
@@ -82,6 +86,17 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "retrato",
     orientation: "horizontal",
     alt: "Foto de equipe corporativa em grupo no escritório",
+    width: 1920,
+    height: 1539,
+  },
+  {
+    src: `${CDN}/153050/retratos-de-medicas_mila-rodrigues-da-silva-4.JPG`,
+    gallery: "retratos-de-medicas",
+    pillar: "retrato",
+    orientation: "horizontal",
+    alt: "Retrato profissional de médica em consultório",
+    width: 1920,
+    height: 1280,
   },
   {
     src: `${CDN}/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG`,
@@ -89,6 +104,8 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "evento",
     orientation: "horizontal",
     alt: "Cobertura fotográfica de evento corporativo em São Paulo",
+    width: 1920,
+    height: 1278,
   },
   {
     src: `${CDN}/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-278.jpg`,
@@ -96,6 +113,8 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "evento",
     orientation: "horizontal",
     alt: "Jantar de evento empresarial fotografado em São Paulo",
+    width: 1920,
+    height: 1054,
   },
   {
     src: `${CDN}/66936/fotografo-de-feiras-de-negocios-em-sao-paulo_procooler-39.jpg`,
@@ -103,13 +122,17 @@ export const selectedWorks: HomePhoto[] = [
     pillar: "evento",
     orientation: "horizontal",
     alt: "Cobertura fotográfica de feira de negócios e stand",
+    width: 1920,
+    height: 1282,
   },
   {
     src: `${CDN}/89025/festa-da-firma-confraternizacoes_swift-701.jpg`,
     gallery: "fotografo-festa-de-confraternizacao",
     pillar: "evento",
-    orientation: "vertical",
+    orientation: "horizontal",
     alt: "Festa de confraternização de empresa fotografada em São Paulo",
+    width: 1920,
+    height: 1280,
   },
 ];
 

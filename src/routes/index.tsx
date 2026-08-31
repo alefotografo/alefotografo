@@ -87,6 +87,9 @@ function Home() {
                     <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos de equipe no escritório</Link>{" "}
                     — sem terceirizar, sem assistente assumindo a câmera.
                   </p>
+                  <p className="mt-4 text-sm text-muted-foreground/80">
+                    Especialista em retratos corporativos e cobertura de eventos corporativos em São Paulo.
+                  </p>
                   <div className="mt-10 flex flex-wrap gap-3">
                     <a
                       href={waLink(
@@ -133,7 +136,7 @@ function Home() {
                   </dl>
           </div>
           <div className="md:col-span-5">
-            <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+            <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong md:flex md:justify-center">
               <img
                 src={imgUrl(HERO_IMG, 1024)}
                 srcSet={imgSrcSet(HERO_IMG)}
@@ -144,7 +147,7 @@ function Home() {
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className="h-auto w-full"
+                className="h-auto w-full md:max-h-[78vh] md:w-auto"
               />
             </div>
           </div>
@@ -168,18 +171,18 @@ function Home() {
           </Link>
         </div>
 
-        <div className="columns-2 gap-3 md:columns-3 md:gap-4">
+        <div className="columns-1 gap-4 md:columns-2">
           {selectedWorks.map((w) => (
             <Link
               key={w.src}
               to="/fotografo-corporativo/$slug"
               params={{ slug: w.gallery }}
-              className="group relative mb-3 block break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember md:mb-4"
+              className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
               <img
                 src={imgUrl(w.src, 768)}
                 srcSet={imgSrcSet(w.src, GRID_WIDTHS)}
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt={w.alt}
                 width={w.width}
                 height={w.height}

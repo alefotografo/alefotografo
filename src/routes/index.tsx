@@ -38,8 +38,8 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: imgUrl(HERO_IMG, 1024),
-        imageSrcSet: imgSrcSet(HERO_IMG),
+        href: imgUrl(HERO_IMG, 720),
+        imageSrcSet: imgSrcSet(HERO_IMG, undefined, heroPhoto.width),
         imageSizes: "(max-width: 768px) 100vw, 40vw",
         fetchPriority: "high",
       },
@@ -138,8 +138,8 @@ function Home() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong md:flex md:justify-center">
               <img
-                src={imgUrl(HERO_IMG, 1024)}
-                srcSet={imgSrcSet(HERO_IMG)}
+                src={imgUrl(HERO_IMG, 720)}
+                srcSet={imgSrcSet(HERO_IMG, undefined, heroPhoto.width)}
                 sizes="(max-width: 768px) 100vw, 40vw"
                 alt={heroPhoto.alt}
                 width={heroPhoto.width}
@@ -180,14 +180,15 @@ function Home() {
               className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
               <img
-                src={imgUrl(w.src, 768)}
-                srcSet={imgSrcSet(w.src, GRID_WIDTHS)}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                src={imgUrl(w.src, 640)}
+                srcSet={imgSrcSet(w.src, GRID_WIDTHS, w.width)}
+                sizes="(max-width: 768px) 96vw, 45vw"
                 alt={w.alt}
                 width={w.width}
                 height={w.height}
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
                 className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
@@ -239,12 +240,13 @@ function Home() {
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <img
-                src={imgUrl("https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG", 800)}
+                src={imgUrl("https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG", 640)}
                 alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
                 width={800}
                 height={1000}
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
                 className="h-full w-full object-cover"
               />
               <div className="absolute -bottom-3 -right-3 hidden h-24 w-24 border border-ember md:block" />

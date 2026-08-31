@@ -107,7 +107,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
         {heroImg && (
           <div className="absolute inset-0 -z-10">
             <img
-              src={imgUrl(heroImg, 1600)}
+              src={imgUrl(heroImg, 1440)}
               srcSet={imgSrcSet(heroImg)}
               alt={`${cfg.h1} — São Paulo`}
               width={1600}

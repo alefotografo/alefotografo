@@ -185,7 +185,7 @@ function FotoProfissionalPage() {
         {heroImg && (
           <div className="absolute inset-0 -z-10">
             <img
-              src={imgUrl(heroImg, 1600)}
+              src={imgUrl(heroImg, 1440)}
               srcSet={imgSrcSet(heroImg)}
               alt="Foto profissional em São Paulo — retrato corporativo"
               width={1600}

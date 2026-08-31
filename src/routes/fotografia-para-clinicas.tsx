@@ -54,7 +54,7 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
     links: [
       { rel: "canonical", href: CANONICAL },
-      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1600), fetchPriority: "high" },
+      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1440), fetchPriority: "high" },
     ],
     scripts: [
       {
@@ -191,7 +191,7 @@ function FotografiaParaClinicasPage() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
-            src={imgUrl(HERO_IMG, 1600)}
+            src={imgUrl(HERO_IMG, 1440)}
             srcSet={imgSrcSet(HERO_IMG)}
             alt="Fotografia profissional em clínica médica em São Paulo"
             width={1600}

@@ -240,12 +240,13 @@ function Home() {
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <img
-                src={imgUrl("https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG", 800)}
+                src={imgUrl("https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG", 640)}
                 alt="Alexandre Machado, fotógrafo corporativo em São Paulo"
                 width={800}
                 height={1000}
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
                 className="h-full w-full object-cover"
               />
               <div className="absolute -bottom-3 -right-3 hidden h-24 w-24 border border-ember md:block" />

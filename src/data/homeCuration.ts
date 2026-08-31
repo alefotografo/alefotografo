@@ -13,7 +13,6 @@ export interface HomePhoto {
   /** Pilar comercial ao qual a foto pertence. */
   pillar: "retrato" | "evento";
   orientation: "vertical" | "horizontal";
-  /** Destino do clique — galeria existente em /fotografo-corporativo/$slug. */
   to: string;
   alt: string;
 }
@@ -48,7 +47,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "retrato-corporativo",
     pillar: "retrato",
     orientation: "vertical",
-    to: "/fotografo-corporativo/retrato-corporativo",
     alt: "Retrato corporativo em São Paulo com direção de pose",
   },
   {
@@ -56,7 +54,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotografia-para-escritorios-de-advocacia",
     pillar: "retrato",
     orientation: "horizontal",
-    to: "/fotografo-corporativo/fotografia-para-escritorios-de-advocacia",
     alt: "Fotografia profissional de advogados em escritório de advocacia",
   },
   {
@@ -64,7 +61,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "retratos-de-medicas",
     pillar: "retrato",
     orientation: "vertical",
-    to: "/fotografo-corporativo/retratos-de-medicas",
     alt: "Retrato profissional de médica em consultório",
   },
   {
@@ -72,7 +68,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotos-profissionais-para-medicos",
     pillar: "retrato",
     orientation: "horizontal",
-    to: "/fotografo-corporativo/fotos-profissionais-para-medicos",
     alt: "Foto profissional de médico para divulgação e redes sociais",
   },
   {
@@ -80,7 +75,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotografo-de-retratos-profissionais",
     pillar: "retrato",
     orientation: "vertical",
-    to: "/fotografo-corporativo/fotografo-de-retratos-profissionais",
     alt: "Retrato profissional corporativo com iluminação de estúdio",
   },
   {
@@ -88,7 +82,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotografo-de-grupos-times-e-equipes",
     pillar: "retrato",
     orientation: "horizontal",
-    to: "/fotografo-corporativo/fotografo-de-grupos-times-e-equipes",
     alt: "Foto de equipe corporativa em grupo no escritório",
   },
   {
@@ -96,7 +89,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotografo-de-eventos-corporativos",
     pillar: "evento",
     orientation: "horizontal",
-    to: "/fotografo-corporativo/fotografo-de-eventos-corporativos",
     alt: "Cobertura fotográfica de evento corporativo em São Paulo",
   },
   {
@@ -104,7 +96,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "eventos-corporativos",
     pillar: "evento",
     orientation: "horizontal",
-    to: "/fotografo-corporativo/eventos-corporativos",
     alt: "Jantar de evento empresarial fotografado em São Paulo",
   },
   {
@@ -112,7 +103,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotografo-feiras-stands",
     pillar: "evento",
     orientation: "horizontal",
-    to: "/fotografo-corporativo/fotografo-feiras-stands",
     alt: "Cobertura fotográfica de feira de negócios e stand",
   },
   {
@@ -120,7 +110,6 @@ export const selectedWorks: HomePhoto[] = [
     gallery: "fotografo-festa-de-confraternizacao",
     pillar: "evento",
     orientation: "vertical",
-    to: "/fotografo-corporativo/fotografo-festa-de-confraternizacao",
     alt: "Festa de confraternização de empresa fotografada em São Paulo",
   },
 ];
@@ -132,6 +121,6 @@ export function galleryTitle(slug: string): string {
 
 /** CTAs comerciais abaixo do grid — URLs existentes, não criar novas. */
 export const worksCtas = [
-  { label: "Retratos Corporativos", to: "/fotografo-corporativo/retrato-corporativo" },
-  { label: "Cobertura de Eventos Corporativos", to: "/eventos-corporativos" },
+  { label: "Retratos Corporativos", categorySlug: "retrato-corporativo" },
+  { label: "Cobertura de Eventos Corporativos", path: "/eventos-corporativos" },
 ] as const;

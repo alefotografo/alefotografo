@@ -193,7 +193,8 @@ function Home() {
             return (
               <Link
                 key={w.src}
-                to={w.to}
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: w.gallery }}
                 className={`group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember ${span}`}
               >
                 <div className={`relative ${ratio} overflow-hidden`}>
@@ -222,15 +223,26 @@ function Home() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-3">
-          {worksCtas.map((c) => (
-            <Link
-              key={c.to}
-              to={c.to}
-              className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
-            >
-              {c.label} <ArrowUpRight size={14} />
-            </Link>
-          ))}
+          {worksCtas.map((c) =>
+            "categorySlug" in c ? (
+              <Link
+                key={c.label}
+                to="/fotografo-corporativo/$slug"
+                params={{ slug: c.categorySlug }}
+                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
+              >
+                {c.label} <ArrowUpRight size={14} />
+              </Link>
+            ) : (
+              <Link
+                key={c.label}
+                to="/eventos-corporativos"
+                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
+              >
+                {c.label} <ArrowUpRight size={14} />
+              </Link>
+            ),
+          )}
         </div>
       </section>
 

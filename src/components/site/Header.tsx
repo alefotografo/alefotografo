@@ -96,15 +96,17 @@ export function Header() {
       setMobileOpen(false);
       setSearchOpen(false);
     };
-    const onClick = (e: MouseEvent) => {
+    // mousedown (e não click): o React re-renderiza de forma síncrona no
+    // click e o alvo original sai do DOM, o que faria o contains() falhar.
+    const onPointerDown = (e: MouseEvent) => {
       if (!navRef.current?.contains(e.target as Node)) setOpenGroup(null);
       if (!searchRef.current?.contains(e.target as Node)) setSearchOpen(false);
     };
     document.addEventListener("keydown", onKey);
-    document.addEventListener("click", onClick);
+    document.addEventListener("mousedown", onPointerDown);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.removeEventListener("click", onClick);
+      document.removeEventListener("mousedown", onPointerDown);
     };
   }, []);
 

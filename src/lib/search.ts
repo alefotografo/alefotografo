@@ -8,15 +8,14 @@ export function normalizeSearch(s: string) {
     .toLowerCase();
 }
 
-export type SearchHit = {
-  to: string;
-  title: string;
-  description: string;
-  group: "Serviços e páginas" | "Artigos do blog" | "Vídeos";
-};
+export type SearchGroup = "Serviços e páginas" | "Artigos do blog" | "Vídeos";
+
+export type SearchHit =
+  | { kind: "page"; to: PagePath; title: string; description: string; group: SearchGroup }
+  | { kind: "post" | "video"; slug: string; title: string; description: string; group: SearchGroup };
 
 /** Páginas fixas do site — títulos e termos alinhados às páginas comerciais. */
-const PAGES: Array<{ to: string; title: string; description: string; terms?: string }> = [
+const PAGES = [
   { to: "/foto-profissional", title: "Retrato profissional", description: "Ensaio individual com direção de pose em estúdio ou na empresa.", terms: "foto profissional retrato headshot ensaio" },
   { to: "/foto-profissional-para-linkedin", title: "Foto para LinkedIn", description: "Headshot de perfil para LinkedIn e redes profissionais.", terms: "linkedin perfil headshot rede social curriculo" },
   { to: "/fotografia-executiva", title: "Fotografia executiva", description: "Retratos de liderança, CEOs e C-levels.", terms: "executivo ceo diretor lideranca c-level presidente" },
@@ -37,7 +36,9 @@ const PAGES: Array<{ to: string; title: string; description: string; terms?: str
   { to: "/faq", title: "Perguntas frequentes", description: "Dúvidas sobre ensaios, prazos e entrega.", terms: "faq duvidas perguntas prazo entrega preco" },
   { to: "/blog", title: "Blog", description: "Artigos sobre fotografia e imagem profissional.", terms: "blog artigos dicas" },
   { to: "/contato", title: "Contato e orçamento", description: "Fale com o estúdio e solicite um orçamento.", terms: "contato orcamento whatsapp telefone email endereco" },
-];
+] as const;
+
+type PagePath = (typeof PAGES)[number]["to"];
 
 export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
   const q = normalizeSearch(query.trim());
@@ -47,26 +48,34 @@ export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
     normalizeSearch(`${p.title} ${p.description} ${p.terms ?? ""}`).includes(q),
   )
     .slice(0, limitPerGroup)
-    .map((p) => ({ to: p.to, title: p.title, description: p.description, group: "Serviços e páginas" }));
+    .map((p) => ({
+      kind: "page" as const,
+      to: p.to,
+      title: p.title,
+      description: p.description,
+      group: "Serviços e páginas" as const,
+    }));
 
   const postHits: SearchHit[] = posts
     .filter((p) => normalizeSearch(`${p.title} ${p.description}`).includes(q))
     .slice(0, limitPerGroup * 3)
     .map((p) => ({
-      to: `/blog/${p.slug}`,
+      kind: "post" as const,
+      slug: p.slug,
       title: p.title,
       description: p.description,
-      group: "Artigos do blog",
+      group: "Artigos do blog" as const,
     }));
 
   const videoHits: SearchHit[] = videos
     .filter((v) => normalizeSearch(`${v.title} ${v.subtitle} ${v.description}`).includes(q))
     .slice(0, limitPerGroup)
     .map((v) => ({
-      to: `/videos/${v.slug}`,
+      kind: "video" as const,
+      slug: v.slug,
       title: v.title,
       description: v.subtitle || v.description,
-      group: "Vídeos",
+      group: "Vídeos" as const,
     }));
 
   return [...pageHits, ...postHits, ...videoHits];

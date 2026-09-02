@@ -111,18 +111,38 @@ function BuscaPage() {
             <section key={group}>
               <h2 className="font-display text-lg font-semibold">{group}</h2>
               <ul className="mt-4 divide-y divide-border/60 border-y border-border/60">
-                {hits.map((hit) => (
-                  <li key={hit.to}>
-                    <Link to={hit.to} className="block py-4 hover:bg-surface">
+                {hits.map((hit) => {
+                  const body = (
+                    <>
                       <span className="block text-sm font-medium text-foreground">{hit.title}</span>
                       {hit.description && (
                         <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">
                           {hit.description}
                         </span>
                       )}
-                    </Link>
-                  </li>
-                ))}
+                    </>
+                  );
+                  const cls = "block py-4 hover:bg-surface";
+                  if (hit.kind === "page") {
+                    return (
+                      <li key={`page-${hit.to}`}>
+                        <Link to={hit.to} className={cls}>{body}</Link>
+                      </li>
+                    );
+                  }
+                  if (hit.kind === "post") {
+                    return (
+                      <li key={`post-${hit.slug}`}>
+                        <Link to="/blog/$slug" params={{ slug: hit.slug }} className={cls}>{body}</Link>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={`video-${hit.slug}`}>
+                      <Link to="/videos/$slug" params={{ slug: hit.slug }} className={cls}>{body}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           );

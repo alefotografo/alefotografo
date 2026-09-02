@@ -1,6 +1,6 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 type Item = { to: string; label: string; hint?: string };
@@ -55,13 +55,27 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileGroup, setMobileGroup] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [term, setTerm] = useState("");
   const navRef = useRef<HTMLElement | null>(null);
+  const searchRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const navigate = useNavigate();
+
+  const submitSearch = (value: string) => {
+    const q = value.trim();
+    if (!q) return;
+    setSearchOpen(false);
+    setMobileOpen(false);
+    navigate({ to: "/busca", search: { q } });
+  };
 
   // fecha tudo ao trocar de rota
   useEffect(() => {
     setMobileOpen(false);
     setOpenGroup(null);
     setMobileGroup(null);
+    setSearchOpen(false);
   }, [pathname]);
 
   // travar rolagem do body com o menu mobile aberto
@@ -80,17 +94,26 @@ export function Header() {
       if (e.key !== "Escape") return;
       setOpenGroup(null);
       setMobileOpen(false);
+      setSearchOpen(false);
     };
-    const onClick = (e: MouseEvent) => {
+    // mousedown (e não click): o React re-renderiza de forma síncrona no
+    // click e o alvo original sai do DOM, o que faria o contains() falhar.
+    const onPointerDown = (e: MouseEvent) => {
       if (!navRef.current?.contains(e.target as Node)) setOpenGroup(null);
+      if (!searchRef.current?.contains(e.target as Node)) setSearchOpen(false);
     };
     document.addEventListener("keydown", onKey);
-    document.addEventListener("click", onClick);
+    document.addEventListener("mousedown", onPointerDown);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.removeEventListener("click", onClick);
+      document.removeEventListener("mousedown", onPointerDown);
     };
   }, []);
+
+  // foco automático quando o campo de busca abre no desktop
+  useEffect(() => {
+    if (searchOpen) inputRef.current?.focus();
+  }, [searchOpen]);
 
   return (
     <>
@@ -182,6 +205,43 @@ export function Header() {
               );
             })}
 
+            <div className="relative" ref={searchRef}>
+              {searchOpen ? (
+                <form
+                  role="search"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    submitSearch(term);
+                  }}
+                  className="flex items-center gap-2 rounded-sm border border-border bg-surface px-2 focus-within:border-ember"
+                >
+                  <Search size={14} className="shrink-0 text-muted-foreground" aria-hidden="true" />
+                  <label htmlFor="header-search" className="sr-only">
+                    Buscar no site
+                  </label>
+                  <input
+                    id="header-search"
+                    ref={inputRef}
+                    type="search"
+                    value={term}
+                    onChange={(e) => setTerm(e.target.value)}
+                    placeholder="Buscar no site"
+                    className="w-40 bg-transparent py-2 text-[13px] text-foreground outline-none placeholder:text-muted-foreground lg:w-52"
+                  />
+                </form>
+              ) : (
+                <button
+                  type="button"
+                  aria-label="Abrir busca"
+                  aria-expanded={false}
+                  onClick={() => setSearchOpen(true)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Search size={16} />
+                </button>
+              )}
+            </div>
+
             <Link
               to="/contato"
               className="ml-1 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-[13px] font-medium text-accent-foreground hover:bg-ember-glow lg:px-4 lg:text-sm"
@@ -214,6 +274,27 @@ export function Header() {
         {mobileOpen && (
           <div className="max-h-[calc(100svh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-background md:hidden">
             <nav className="mx-auto flex max-w-7xl flex-col px-4 pb-8 pt-2 sm:px-5" aria-label="Menu">
+              <form
+                role="search"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  submitSearch(term);
+                }}
+                className="mb-2 mt-2 flex items-center gap-2 rounded-sm border border-border bg-surface px-3 focus-within:border-ember"
+              >
+                <Search size={16} className="shrink-0 text-muted-foreground" aria-hidden="true" />
+                <label htmlFor="header-search-mobile" className="sr-only">
+                  Buscar no site
+                </label>
+                <input
+                  id="header-search-mobile"
+                  type="search"
+                  value={term}
+                  onChange={(e) => setTerm(e.target.value)}
+                  placeholder="Buscar no site"
+                  className="min-h-11 w-full bg-transparent py-2 text-sm text-foreground outline-none placeholder:text-muted-foreground"
+                />
+              </form>
               {NAV.map((entry) => {
                 if (!entry.items) {
                   return (

@@ -140,6 +140,11 @@ function PostPage() {
         {postCover(p) && (
           <figure className="my-10 overflow-hidden rounded-sm ring-1 ring-border">
             <SmartImage src={postCover(p)!} alt={p.title} className="w-full" baseWidth={768} widths={[400, 640, 768]} priority sizes="(max-width: 768px) 100vw, 768px" />
+            {p.cover_credit && (
+              <figcaption className="bg-surface px-4 py-2 text-xs italic text-muted-foreground">
+                Foto: {p.cover_credit}
+              </figcaption>
+            )}
           </figure>
         )}
 
@@ -148,13 +153,16 @@ function PostPage() {
             const img = p.images?.find((im: { after: number }) => im.after === i);
             return (
               <div key={i}>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  {autoLink(para, { usedSlugs, usedPhrases, maxLinks: 3 })}
-                </p>
+                <MarkdownBlock text={para} ctx={{ usedSlugs, usedPhrases }} />
                 {img && (
                   <figure className="my-8 overflow-hidden rounded-sm ring-1 ring-border">
                     <SmartImage src={img.src} alt={img.alt} className="w-full" baseWidth={768} widths={[400, 640, 768]} sizes="(max-width: 768px) 100vw, 768px" />
-                    <figcaption className="bg-surface px-4 py-2 text-xs text-muted-foreground">{img.alt}</figcaption>
+                    <figcaption className="bg-surface px-4 py-2 text-xs text-muted-foreground">
+                      {img.alt}
+                      {img.credit && (
+                        <span className="mt-1 block italic">Foto: {img.credit}</span>
+                      )}
+                    </figcaption>
                   </figure>
                 )}
               </div>

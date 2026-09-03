@@ -13,6 +13,7 @@ import { relatedCategories, relatedPosts } from "@/lib/related";
 import { postCover } from "@/lib/postCover";
 import { SmartImage } from "@/components/site/SmartImage";
 import { autoLink } from "@/lib/autoLink";
+import { MarkdownBlock } from "@/lib/markdownBlocks";
 import { bridgeFor } from "@/data/postBridges";
 import { Segments } from "@/components/site/EditorialBlock";
 import { ArrowLeft } from "lucide-react";

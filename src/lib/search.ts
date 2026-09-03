@@ -75,7 +75,7 @@ export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
     }));
 
   const postHits: SearchHit[] = posts
-    .filter((p) => normalizeSearch(`${p.title} ${p.description}`).includes(q))
+    .filter((p) => matchesTokens(`${p.title} ${p.description}`, tokens))
     .slice(0, limitPerGroup * 3)
     .map((p) => ({
       kind: "post" as const,

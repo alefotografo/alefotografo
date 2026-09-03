@@ -58,6 +58,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
 function BairroPage() {
   const b = Route.useLoaderData();
   const cats = categories.slice(0, 8);
+  const contexto: string[] = bairroContexto[b.slug] ?? [];
 
   return (
     <>

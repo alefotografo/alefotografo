@@ -40,12 +40,56 @@ const PAGES = [
 
 type PagePath = (typeof PAGES)[number]["to"];
 
+/** Palavras muito comuns que não devem restringir a busca. */
+const STOP_WORDS = new Set(["de", "da", "do", "das", "dos", "para", "em", "e", "a", "o", "as", "os", "com", "no", "na"]);
+
+/** Divide a consulta em termos normalizados, ignorando palavras vazias. */
+function tokenize(query: string): string[] {
+  const all = normalizeSearch(query.trim())
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length >= 2);
+  const meaningful = all.filter((t) => !STOP_WORDS.has(t));
+  return meaningful.length ? meaningful : all;
+}
+
+/** Verdadeiro quando todos os termos aparecem no texto (em qualquer ordem, com raiz comum). */
+function matchesTokens(haystack: string, tokens: string[]): boolean {
+  const text = normalizeSearch(haystack);
+  const words = text.split(/[^a-z0-9]+/).filter(Boolean);
+  return tokens.every(
+    (t) =>
+      text.includes(t) ||
+      // "fotos" encontra "fotografia" e vice-versa (raiz de 4+ caracteres)
+      words.some((w) => {
+        let i = 0;
+        const max = Math.min(w.length, t.length);
+        while (i < max && w[i] === t[i]) i++;
+        return i >= 4;
+      }),
+  );
+}
+
 export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
-  const q = normalizeSearch(query.trim());
-  if (q.length < 2) return [];
+  const allTokens = tokenize(query);
+  if (!allTokens.length) return [];
+
+  // Se a combinação completa não retornar nada, reduz para o termo mais relevante.
+  let tokens = allTokens;
+  if (allTokens.length > 1) {
+    const hasAny = (ts: string[]) =>
+      PAGES.some((p) => matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, ts)) ||
+      posts.some((p) => matchesTokens(`${p.title} ${p.description}`, ts)) ||
+      videos.some((v) => matchesTokens(`${v.title} ${v.subtitle} ${v.description}`, ts));
+    if (!hasAny(allTokens)) {
+      const fallback = [...allTokens].sort((a, b) => b.length - a.length).find((t) => hasAny([t]));
+      if (!fallback) return [];
+      tokens = [fallback];
+    }
+  }
+
 
   const pageHits: SearchHit[] = PAGES.filter((p) =>
-    normalizeSearch(`${p.title} ${p.description} ${p.terms ?? ""}`).includes(q),
+    matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, tokens),
   )
     .slice(0, limitPerGroup)
     .map((p) => ({
@@ -57,7 +101,7 @@ export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
     }));
 
   const postHits: SearchHit[] = posts
-    .filter((p) => normalizeSearch(`${p.title} ${p.description}`).includes(q))
+    .filter((p) => matchesTokens(`${p.title} ${p.description}`, tokens))
     .slice(0, limitPerGroup * 3)
     .map((p) => ({
       kind: "post" as const,
@@ -68,7 +112,7 @@ export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
     }));
 
   const videoHits: SearchHit[] = videos
-    .filter((v) => normalizeSearch(`${v.title} ${v.subtitle} ${v.description}`).includes(q))
+    .filter((v) => matchesTokens(`${v.title} ${v.subtitle} ${v.description}`, tokens))
     .slice(0, limitPerGroup)
     .map((v) => ({
       kind: "video" as const,

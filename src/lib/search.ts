@@ -70,8 +70,23 @@ function matchesTokens(haystack: string, tokens: string[]): boolean {
 }
 
 export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
-  const tokens = tokenize(query);
-  if (!tokens.length) return [];
+  const allTokens = tokenize(query);
+  if (!allTokens.length) return [];
+
+  // Se a combinação completa não retornar nada, reduz para o termo mais relevante.
+  let tokens = allTokens;
+  if (allTokens.length > 1) {
+    const hasAny = (ts: string[]) =>
+      PAGES.some((p) => matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, ts)) ||
+      posts.some((p) => matchesTokens(`${p.title} ${p.description}`, ts)) ||
+      videos.some((v) => matchesTokens(`${v.title} ${v.subtitle} ${v.description}`, ts));
+    if (!hasAny(allTokens)) {
+      const fallback = [...allTokens].sort((a, b) => b.length - a.length).find((t) => hasAny([t]));
+      if (!fallback) return [];
+      tokens = [fallback];
+    }
+  }
+
 
   const pageHits: SearchHit[] = PAGES.filter((p) =>
     matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, tokens),

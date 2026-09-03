@@ -29,3 +29,6 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://www.alefotografo.com.br/sitemap-index.xml
+
+# Resumo do site para agentes de IA
+LLMs: https://www.alefotografo.com.br/llms.txt

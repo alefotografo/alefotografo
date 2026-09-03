@@ -52,10 +52,19 @@ function tokenize(query: string): string[] {
   return meaningful.length ? meaningful : all;
 }
 
-/** Verdadeiro quando todos os termos aparecem no texto (em qualquer ordem). */
+/** Verdadeiro quando todos os termos aparecem no texto (em qualquer ordem, com raiz comum). */
 function matchesTokens(haystack: string, tokens: string[]): boolean {
   const text = normalizeSearch(haystack);
-  return tokens.every((t) => text.includes(t));
+  const words = text.split(/[^a-z0-9]+/).filter(Boolean);
+  return tokens.every(
+    (t) =>
+      text.includes(t) ||
+      // "fotos" encontra "fotografia" e vice-versa (raiz de 4+ caracteres)
+      words.some((w) => {
+        const min = Math.min(w.length, t.length);
+        return min >= 4 && (w.startsWith(t.slice(0, min)) || t.startsWith(w.slice(0, min)));
+      }),
+  );
 }
 
 export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {

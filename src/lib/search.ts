@@ -61,8 +61,10 @@ function matchesTokens(haystack: string, tokens: string[]): boolean {
       text.includes(t) ||
       // "fotos" encontra "fotografia" e vice-versa (raiz de 4+ caracteres)
       words.some((w) => {
-        const min = Math.min(w.length, t.length);
-        return min >= 4 && (w.startsWith(t.slice(0, min)) || t.startsWith(w.slice(0, min)));
+        let i = 0;
+        const max = Math.min(w.length, t.length);
+        while (i < max && w[i] === t[i]) i++;
+        return i >= 4;
       }),
   );
 }

@@ -29,7 +29,9 @@ export interface Post {
   seo_title: string;
   cover: string | null;
   body: string[];
-  images?: { src: string; alt: string; after: number }[];
+  images?: { src: string; alt: string; after: number; credit?: string }[];
+  /** Crédito da capa, quando a imagem exige atribuição (ex.: Unsplash). */
+  cover_credit?: string | null;
 }
 
 const data = raw as { cats: Category[]; vids: Video[]; posts: Post[] };

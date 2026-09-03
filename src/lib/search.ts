@@ -86,7 +86,7 @@ export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
     }));
 
   const videoHits: SearchHit[] = videos
-    .filter((v) => normalizeSearch(`${v.title} ${v.subtitle} ${v.description}`).includes(q))
+    .filter((v) => matchesTokens(`${v.title} ${v.subtitle} ${v.description}`, tokens))
     .slice(0, limitPerGroup)
     .map((v) => ({
       kind: "video" as const,

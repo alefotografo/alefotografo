@@ -40,12 +40,30 @@ const PAGES = [
 
 type PagePath = (typeof PAGES)[number]["to"];
 
+/** Palavras muito comuns que não devem restringir a busca. */
+const STOP_WORDS = new Set(["de", "da", "do", "das", "dos", "para", "em", "e", "a", "o", "as", "os", "com", "no", "na"]);
+
+/** Divide a consulta em termos normalizados, ignorando palavras vazias. */
+function tokenize(query: string): string[] {
+  const all = normalizeSearch(query.trim())
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length >= 2);
+  const meaningful = all.filter((t) => !STOP_WORDS.has(t));
+  return meaningful.length ? meaningful : all;
+}
+
+/** Verdadeiro quando todos os termos aparecem no texto (em qualquer ordem). */
+function matchesTokens(haystack: string, tokens: string[]): boolean {
+  const text = normalizeSearch(haystack);
+  return tokens.every((t) => text.includes(t));
+}
+
 export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
-  const q = normalizeSearch(query.trim());
-  if (q.length < 2) return [];
+  const tokens = tokenize(query);
+  if (!tokens.length) return [];
 
   const pageHits: SearchHit[] = PAGES.filter((p) =>
-    normalizeSearch(`${p.title} ${p.description} ${p.terms ?? ""}`).includes(q),
+    matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, tokens),
   )
     .slice(0, limitPerGroup)
     .map((p) => ({

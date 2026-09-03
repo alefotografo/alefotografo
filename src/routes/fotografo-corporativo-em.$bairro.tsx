@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { bairroBySlug, bairros } from "@/data/bairros";
+import { bairroContexto } from "@/data/bairroContexto";
 import { buildMeta } from "@/lib/seo";
 import { site, categories } from "@/data/catalog";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -57,6 +58,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
 function BairroPage() {
   const b = Route.useLoaderData();
   const cats = categories.slice(0, 8);
+  const contexto: string[] = bairroContexto[b.slug] ?? [];
 
   return (
     <>
@@ -93,6 +95,23 @@ function BairroPage() {
           </div>
         </div>
       </section>
+
+      {contexto.length > 0 && (
+        <section className="border-b border-border">
+          <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+            <h2 className="font-display text-2xl font-semibold md:text-3xl">
+              Como é fotografar {b.prep ?? "na"} {b.nome}
+            </h2>
+            <div className="mt-6 space-y-5">
+              {contexto.map((p) => (
+                <p key={p.slice(0, 40)} className="text-muted-foreground md:text-lg">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-3xl">

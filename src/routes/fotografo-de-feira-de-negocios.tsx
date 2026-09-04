@@ -13,6 +13,14 @@ const cfg: ServicePageConfig = {
   h1: "Retratos da equipe comercial em feiras de negócios",
   subtitle:
     "Retratos individuais no stand, foto do time completo e registro de atendimentos reais — material de imagem profissional aproveitando o dia em que todos estão juntos.",
+  /** Bloco de resposta direta: 40–60 palavras, autocontido. */
+  answerBlock:
+    "Fotografia de feira de negócios é a cobertura de stand, congresso e exposição: retratos da equipe comercial no estande, atendimento a visitantes, palestras e ambientação da marca. É indicada para expositores e organizadores em São Paulo. Fotografo durante todo o evento e entrego a seleção no mesmo dia.",
+  formats: [
+    { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia" },
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+  ],
   intro: [
     "Feira é o raro momento em que o time comercial inteiro está no mesmo lugar, arrumado e em ação. Aproveito isso para produzir retratos individuais no stand, fotos do time completo e imagens de atendimento real — material que serve o ano inteiro em LinkedIn, propostas e apresentações.",
     "Atendo os principais pavilhões de São Paulo — São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo e Pro Magno — com prévia de imagens no mesmo dia.",

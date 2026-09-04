@@ -13,6 +13,14 @@ const cfg: ServicePageConfig = {
   h1: "Fotografia executiva em São Paulo para diretoria, sócios e lideranças",
   subtitle:
     "Retratos executivos ajudam líderes, sócios, diretores, médicos, advogados e empresários a fortalecerem sua presença profissional em canais digitais e materiais institucionais.",
+  /** Bloco de resposta direta: 40–60 palavras, autocontido. */
+  answerBlock:
+    "Fotografia executiva é o retrato profissional de lideranças feito com padrão visual único para toda a diretoria: mesma luz, mesmo fundo, mesmo enquadramento. É indicada para C-level, sócios, conselheiros, gestores e porta-vozes da empresa. Fotografo no seu escritório, em estúdio ou em locação em São Paulo, e entrego as imagens tratadas em 1 dia útil.",
+  formats: [
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+  ],
   intro: [
     "A fotografia executiva trata o retrato como parte da comunicação da empresa: mesma luz, mesmo fundo e mesmo enquadramento para toda a liderança, com direção de pose e expressão adequada ao cargo.",
     "A produção pode acontecer no escritório da empresa, em estúdio ou em locação externa em toda a Grande São Paulo, com blocos de horário para não interromper a agenda dos executivos.",

@@ -8,6 +8,8 @@ import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { StatsBand } from "@/components/site/StatsBand";
 import { serviceStats, statsLead } from "@/data/stats";
+import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
+import { BlockText } from "@/components/site/BlockText";
 
 const URL_PATH = "/fotos-corporativas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -39,6 +41,16 @@ const pageFaqs: Faq[] = [
   },
 ];
 
+const ANSWER_BLOCK =
+  "Fotografia corporativa é o conjunto de imagens que representa uma empresa: retratos da equipe e da diretoria, escritório, operação e eventos internos. É indicada para empresas que precisam de material próprio para site, LinkedIn, propostas e imprensa. Fotografo em São Paulo e entrego as imagens tratadas em 1 dia útil.";
+
+const FORMATS: SessionFormat[] = [
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+  { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+  { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia" },
+];
+
 export const Route = createFileRoute("/fotos-corporativas")({
   head: () => ({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
@@ -53,7 +65,8 @@ export const Route = createFileRoute("/fotos-corporativas")({
               "@type": "Service",
               name: "Fotos corporativas em São Paulo",
               serviceType: "Fotografia corporativa",
-              description: DESCRIPTION,
+              description: ANSWER_BLOCK,
+              disambiguatingDescription: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
               provider: {
@@ -78,6 +91,16 @@ export const Route = createFileRoute("/fotos-corporativas")({
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
               })),
+            },
+            {
+              "@type": "WebPage",
+              "@id": CANONICAL,
+              url: CANONICAL,
+              inLanguage: "pt-BR",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+              },
             },
             {
               "@type": "BreadcrumbList",
@@ -204,8 +227,16 @@ function FotosCorporativasPage() {
       <StatsBand items={serviceStats()} />
 
       <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
-        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
+        <p
+          data-answer-block
+          className="max-w-3xl border-l-2 border-ember pl-5 text-lg font-medium text-foreground md:text-xl"
+        >
+          {ANSWER_BLOCK}
+        </p>
+        <p className="mt-4 max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
       </section>
+
+      <FormatsTable items={FORMATS} />
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">
@@ -230,7 +261,7 @@ function FotosCorporativasPage() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+                <BlockText text={b.p} className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground" />
                 {b.to ? (
                   <Link to={b.to} className="mt-5 text-sm font-medium text-ember hover:underline">
                     {b.linkLabel} →

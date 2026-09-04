@@ -13,6 +13,14 @@ const cfg: ServicePageConfig = {
   h1: "Fotografia profissional para advogados e escritórios de advocacia",
   subtitle:
     "Retratos profissionais e fotografias institucionais ajudam escritórios de advocacia a transmitirem seriedade, confiança e posicionamento premium.",
+  /** Bloco de resposta direta: 40–60 palavras, autocontido. */
+  answerBlock:
+    "Fotografia para advogados é o retrato institucional de sócios, associados e escritório, com linguagem sóbria adequada ao setor jurídico. É indicada para bancas de qualquer tamanho, advogados autônomos e departamentos jurídicos em São Paulo. Fotografo no escritório ou em estúdio e entrego as imagens tratadas em 1 dia útil.",
+  formats: [
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+  ],
   intro: [
     "No jurídico, a percepção de solidez começa antes da primeira reunião. Retratos padronizados de sócios e equipe, somados a imagens reais do escritório, sustentam o posicionamento do escritório em site, LinkedIn e propostas.",
     "A produção acontece no próprio escritório, em toda a Grande São Paulo, com roteiro definido para aproveitar arquitetura, salas de reunião e ambientes de trabalho como cenário.",

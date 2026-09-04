@@ -9,6 +9,8 @@ import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { StatsBand } from "@/components/site/StatsBand";
 import { serviceStats, statsLead } from "@/data/stats";
+import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
+import { BlockText } from "@/components/site/BlockText";
 
 
 const URL_PATH = "/fotografia-para-clinicas";
@@ -52,6 +54,15 @@ const clinicCategorySlugs = [
   "ensaio-fotografico-para-dentistas",
 ];
 
+const ANSWER_BLOCK =
+  "Fotografia para clínicas é o conjunto de imagens da estrutura e da equipe de saúde: retrato dos profissionais, recepção, consultórios e atendimento. É indicada para clínicas médicas, odontológicas e estéticas em São Paulo. Fotografo no seu endereço, com respeito à rotina de pacientes, e entrego as imagens tratadas em 1 dia útil.";
+
+const FORMATS: SessionFormat[] = [
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+  { formato: "Consultório e recepção", onde: "Na clínica, com a operação em funcionamento", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+];
+
 export const Route = createFileRoute("/fotografia-para-clinicas")({
   head: () => ({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
@@ -69,7 +80,8 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
               "@type": "Service",
               name: "Fotografia para clínicas em São Paulo",
               serviceType: "Fotografia para clínicas e consultórios",
-              description: DESCRIPTION,
+              description: ANSWER_BLOCK,
+              disambiguatingDescription: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
               aggregateRating: aggregateRatingSchema,
@@ -98,6 +110,16 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
               })),
+            },
+            {
+              "@type": "WebPage",
+              "@id": CANONICAL,
+              url: CANONICAL,
+              inLanguage: "pt-BR",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+              },
             },
             {
               "@type": "BreadcrumbList",
@@ -242,8 +264,16 @@ function FotografiaParaClinicasPage() {
       <StatsBand items={serviceStats()} />
 
       <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
-        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
+        <p
+          data-answer-block
+          className="max-w-3xl border-l-2 border-ember pl-5 text-lg font-medium text-foreground md:text-xl"
+        >
+          {ANSWER_BLOCK}
+        </p>
+        <p className="mt-4 max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
       </section>
+
+      <FormatsTable items={FORMATS} />
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">
@@ -253,7 +283,7 @@ function FotografiaParaClinicasPage() {
           {blocos.map((b) => (
             <article key={b.h} className="rounded-sm border border-border bg-surface p-6">
               <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
             </article>
           ))}
         </div>

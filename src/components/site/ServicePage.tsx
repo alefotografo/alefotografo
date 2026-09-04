@@ -9,7 +9,9 @@ import { SITE_ORIGIN } from "@/lib/seo";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import { StatsBand } from "@/components/site/StatsBand";
 import { deliveryKindForPath, serviceStats, statsLead } from "@/data/stats";
+import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import type { Faq } from "@/lib/faqs";
+import { BlockText } from "@/components/site/BlockText";
 
 export interface ServicePageConfig {
   path: string;
@@ -17,7 +19,14 @@ export interface ServicePageConfig {
   eyebrow: string;
   h1: string;
   subtitle: string;
+  /**
+   * Bloco de resposta direta de 40–60 palavras: responde "o que é este serviço
+   * e para quem" na primeira frase, sem depender do resto da página.
+   */
+  answerBlock: string;
   intro: string[];
+  /** Tabela comparativa de formatos de sessão. */
+  formats: SessionFormat[];
   /** Nota editorial apontando para o site da equipe (coberturas de grande porte). */
   teamSiteNote?: string;
   serviceType: string;
@@ -57,7 +66,8 @@ export function servicePageSchema(cfg: ServicePageConfig) {
         "@type": "Service",
         name: cfg.h1,
         serviceType: cfg.serviceType,
-        description: cfg.description,
+        description: cfg.answerBlock,
+        disambiguatingDescription: cfg.description,
         url: canonical,
         areaServed: { "@type": "City", name: "São Paulo" },
         aggregateRating: aggregateRatingSchema,
@@ -83,6 +93,16 @@ export function servicePageSchema(cfg: ServicePageConfig) {
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
+      },
+      {
+        "@type": "WebPage",
+        "@id": canonical,
+        url: canonical,
+        inLanguage: "pt-BR",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+        },
       },
       {
         "@type": "BreadcrumbList",
@@ -167,6 +187,12 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="max-w-3xl space-y-4 text-muted-foreground md:text-lg">
+          <p
+            data-answer-block
+            className="border-l-2 border-ember pl-5 text-lg font-medium text-foreground md:text-xl"
+          >
+            {cfg.answerBlock}
+          </p>
           <p className="text-foreground">{statsLead(deliveryKind)}</p>
           {cfg.intro.map((p) => (
             <p key={p}>{p}</p>
@@ -192,7 +218,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               className="rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
             >
               <h2 className="font-display text-lg font-semibold">{b.h}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
             </article>
           ))}
         </div>
@@ -234,6 +260,8 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
           </div>
         </div>
       </section>
+
+      <FormatsTable items={cfg.formats} />
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-3xl">Como funciona</h2>

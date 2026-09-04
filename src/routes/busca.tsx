@@ -18,7 +18,9 @@ export const Route = createFileRoute("/busca")({
       }),
       { name: "robots", content: "noindex, follow" },
     ],
+    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/busca" }],
   }),
+
   component: BuscaPage,
 });
 

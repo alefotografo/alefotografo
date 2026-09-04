@@ -85,7 +85,8 @@ export function bairroServiceGraph(args: {
         serviceType: "Fotografia corporativa",
         priceRange: "$$",
         currenciesAccepted: "BRL",
-        telephone: "+55 11 91355-0533",
+        // Mesmo formato publicado no nó #business em __root.tsx.
+        telephone: "+55-11-91355-0533",
         email: site.email,
         image: `${SITE_ORIGIN}/og-default.jpg`,
         address: studioAddress,

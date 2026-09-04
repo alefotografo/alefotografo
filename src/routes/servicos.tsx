@@ -4,6 +4,7 @@ import { buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
 import { waLink } from "@/lib/whatsapp";
 import { ArrowUpRight } from "lucide-react";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
@@ -169,6 +170,7 @@ function CardShell({
 function ServicosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Serviços</p>

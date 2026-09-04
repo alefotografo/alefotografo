@@ -6,6 +6,7 @@ import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import type { Faq } from "@/lib/faqs";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 
 const URL_PATH = "/fotografia-para-clinicas";
@@ -188,6 +189,7 @@ function FotografiaParaClinicasPage() {
 
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos" }, { label: "Fotografia para clínicas" }]} />
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img

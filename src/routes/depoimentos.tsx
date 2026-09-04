@@ -9,6 +9,7 @@ import {
   type Testimonial,
 } from "@/data/testimonials";
 import { aggregateRatingSchema, googleReviewsSummary } from "@/data/reviews";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 const reviewsSchema = {
   "@context": "https://schema.org",
@@ -123,6 +124,7 @@ function Card({ t }: { t: Testimonial }) {
 function Depoimentos() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Depoimentos" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Depoimentos</p>

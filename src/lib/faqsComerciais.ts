@@ -36,7 +36,7 @@ export const faqsComerciais: Faq[] = [
   },
   {
     q: "Em quanto tempo as fotos ficam prontas?",
-    a: "Retratos e projetos corporativos são entregues em 1 a 3 dias úteis após a seleção. Em eventos, uma prévia pode ser liberada no mesmo dia para publicação imediata. Se houver prazo de campanha, avise no orçamento que ajustamos o cronograma.",
+    a: "Retratos e projetos corporativos são entregues em 1 dia útil após a seleção. Em eventos, uma prévia pode ser liberada no mesmo dia para publicação imediata. Se houver prazo de campanha, avise no orçamento que ajustamos o cronograma.",
   },
   {
     q: "Como pedir orçamento pelo WhatsApp?",

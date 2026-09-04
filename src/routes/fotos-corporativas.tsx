@@ -31,7 +31,7 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Em quanto tempo recebo as fotos tratadas?",
-    a: "De 1 a 3 dias úteis para retratos, ambientes e produtos, já com ajuste de cor, retoque profissional e padronização. Em eventos corporativos há entrega em tempo real, com reconhecimento facial para que cada participante encontre suas fotos ainda durante o evento.",
+    a: "Em 1 dia útil para retratos, ambientes e produtos, já com ajuste de cor, retoque profissional e padronização. Em eventos corporativos há entrega em tempo real, com reconhecimento facial para que cada participante encontre suas fotos ainda durante o evento.",
   },
   {
     q: "A empresa fica com os direitos das imagens?",
@@ -182,7 +182,7 @@ function FotosCorporativasPage() {
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
             Retratos profissionais, equipes, escritório, eventos e produtos — produzidos por{" "}
             {site.fullName}, com 30 anos fotografando empresas na Grande São Paulo. Tratamento
-            profissional e entrega em 1 a 3 dias úteis.
+            profissional e entrega em 1 dia útil.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

@@ -85,7 +85,7 @@ const FAQ = `## Perguntas frequentes (respostas publicadas no site)
 - **Fotografam no escritório da empresa?** Sim, com iluminação profissional e fundos portáteis, em toda a Grande São Paulo.
 - **Fazem foto para LinkedIn?** Sim. Inclui direção de pose e expressão e entrega em versões quadrada, vertical e horizontal.
 - **Fazem retratos de equipes inteiras?** Sim, com fundo, luz, enquadramento e tratamento padronizados, organizados por blocos de horário e entrega por nome.
-- **Em quanto tempo as fotos ficam prontas?** Retratos e projetos corporativos em 1 a 3 dias úteis após a seleção; em eventos, prévia no mesmo dia.
+- **Em quanto tempo as fotos ficam prontas?** Retratos e projetos corporativos em 1 dia útil após a seleção; em eventos, prévia no mesmo dia.
 - **Como recebo as fotos?** Galeria online com download em alta resolução, versões otimizadas para web e cessão de uso comercial sem prazo.
 - **Também produzem vídeo institucional?** Sim, muitas vezes na mesma diária da fotografia.
 - **Atende ABC Paulista e Alphaville?** Sim — Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Alphaville (Barueri) têm páginas próprias listadas acima.

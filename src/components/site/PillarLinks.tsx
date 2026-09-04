@@ -8,7 +8,7 @@ const PILLARS: Pillar[] = [
   {
     path: "/fotos-corporativas",
     label: "Fotos corporativas em São Paulo",
-    blurb: "Retratos, equipes, escritório, eventos e produtos com entrega em 1 a 3 dias úteis.",
+    blurb: "Retratos, equipes, escritório, eventos e produtos com entrega em 1 dia útil.",
     keys: ["corporativ", "empresa", "equipe", "escritório", "evento", "indústria", "institucional", "banco de imagens"],
   },
   {

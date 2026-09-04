@@ -4,6 +4,7 @@ import { categories, posts, site } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Award, Camera, Target, Zap, ArrowUpRight } from "lucide-react";
+import { personFacts, personSchema } from "@/data/person";
 
 const PORTRAIT =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";

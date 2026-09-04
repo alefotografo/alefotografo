@@ -30,9 +30,9 @@ export const Route = createFileRoute("/")({
   }),
   head: () => ({
     meta: buildMeta({
-      title: "Retrato Corporativo em SP — Fotografado por Alexandre Machado",
+      title: "Fotógrafo Corporativo em São Paulo | Alê Fotógrafo",
       description:
-        "Retrato profissional, headshot para LinkedIn e fotos de executivos em São Paulo. Fotografado pessoalmente por Alexandre Machado, com direção de pose. Peça orçamento pelo WhatsApp.",
+        "Fotografia corporativa profissional em SP. Retratos, headshots e eventos. Nota 4,9 com 144 avaliações.",
       path: "/",
     }),
     links: [

@@ -25,6 +25,11 @@ import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
 import { site } from "../data/catalog";
 import { aggregateRatingSchema, googleBusinessProfileUrl, reviewSchema } from "../data/reviews";
 import { personSchema } from "../data/person";
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_HEIGHT,
+  DEFAULT_OG_IMAGE_WIDTH,
+} from "../lib/seo";
 
 
 function NotFoundComponent() {
@@ -119,6 +124,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: site.name },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
+      // Padrões globais de compartilhamento: cada rota sobrescreve title,
+      // description, og:title/description e og:url pelo buildMeta().
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:width", content: String(DEFAULT_OG_IMAGE_WIDTH) },
+      { property: "og:image:height", content: String(DEFAULT_OG_IMAGE_HEIGHT) },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
       { name: "twitter:site", content: "@alefotografo" },
       { title: site.name },
       { name: "description", content: "Alexandre Machado fotografa pessoalmente retratos profissionais, headshots para LinkedIn e fotos de executivos e equipes em São Paulo. 30 anos de carreira." },

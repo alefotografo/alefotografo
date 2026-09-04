@@ -220,55 +220,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 itemOffered: { "@type": "Service", name, provider: { "@id": "https://www.alefotografo.com.br/#business" } },
               })),
             },
-            {
-              // Entidade principal do domínio: Alexandre Machado. Nó único,
-              // referenciado por @id em todas as páginas (autor dos posts,
-              // fundador do negócio, mainEntity das páginas de trajetória).
-              "@type": "Person",
-              "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
-              name: "Alexandre Machado",
-              alternateName: ["Alê Fotógrafo", "Alê"],
-              jobTitle: "Fotógrafo de retrato corporativo",
-              description:
-                "Fotógrafo em São Paulo com mais de 30 anos de carreira. Fotografa pessoalmente retratos corporativos, headshots para LinkedIn, retratos de executivos, médicos e advogados, e dirige produções audiovisuais institucionais.",
-              image:
-                "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-              url: "https://www.alefotografo.com.br/quem-e-o-ale",
-              mainEntityOfPage: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale" },
-              worksFor: { "@id": "https://www.alefotografo.com.br/#business" },
-              founderOf: { "@id": "https://www.alefotografo.com.br/#business" },
-              knowsLanguage: ["pt-BR", "en"],
-              knowsAbout: [
-                "Retrato corporativo",
-                "Retrato executivo",
-                "Foto profissional",
-                "Foto para LinkedIn",
-                "Headshot profissional",
-                "Retratos de médicos",
-                "Retratos de advogados",
-                "Retrato de CEOs e C-levels",
-                "Direção de pose",
-                "Iluminação de retrato",
-                "Fotografia corporativa em São Paulo",
-                "Direção de vídeo institucional",
-              ],
-              hasOccupation: {
-                "@type": "Occupation",
-                name: "Fotógrafo corporativo",
-                occupationLocation: { "@type": "City", name: "São Paulo" },
-                skills:
-                  "Retrato corporativo, retrato executivo, headshot para LinkedIn, direção de pose, iluminação de estúdio e locação, direção de vídeo institucional",
-              },
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: site.address.street,
-                addressLocality: site.address.locality,
-                addressRegion: site.address.region,
-                postalCode: site.address.postalCode,
-                addressCountry: site.address.country,
-              },
-              sameAs: [site.instagram, site.linkedin],
-            },
+            // Entidade principal do domínio: Alexandre Machado. Nó único
+            // definido em src/data/person.ts e referenciado por @id em todas
+            // as páginas (autor dos posts, fundador do negócio, mainEntity de
+            // /quem-e-o-ale).
+            personSchema,
             {
               "@type": "WebSite",
               "@id": "https://www.alefotografo.com.br/#website",

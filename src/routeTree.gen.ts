@@ -36,6 +36,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
+import { Route as FotografoCorporativoEmIndexRouteImport } from './routes/fotografo-corporativo-em.index'
 import { Route as FotografoCorporativoEmBairroRouteImport } from './routes/fotografo-corporativo-em.$bairro'
 import { Route as FotografoCorporativoIndexRouteImport } from './routes/fotografo-corporativo.index'
 import { Route as FotografoCorporativoSlugRouteImport } from './routes/fotografo-corporativo.$slug'
@@ -188,6 +189,12 @@ const BlogRssDotxmlRoute = BlogRssDotxmlRouteImport.update({
   path: '/blog/rss.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotografoCorporativoEmIndexRoute =
+  FotografoCorporativoEmIndexRouteImport.update({
+    id: '/fotografo-corporativo-em/',
+    path: '/fotografo-corporativo-em/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FotografoCorporativoEmBairroRoute =
   FotografoCorporativoEmBairroRouteImport.update({
     id: '/fotografo-corporativo-em/$bairro',
@@ -297,6 +304,7 @@ export interface FileRoutesByFullPath {
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/fotografo-corporativo-em/': typeof FotografoCorporativoEmIndexRoute
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
@@ -339,6 +347,7 @@ export interface FileRoutesByTo {
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/fotografo-corporativo-em': typeof FotografoCorporativoEmIndexRoute
   '/fotografo-corporativo': typeof FotografoCorporativoIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/videos': typeof VideosIndexRoute
@@ -383,6 +392,7 @@ export interface FileRoutesById {
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/videos/$slug': typeof VideosSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/fotografo-corporativo-em/': typeof FotografoCorporativoEmIndexRoute
   '/fotografo-corporativo/': typeof FotografoCorporativoIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/videos/': typeof VideosIndexRoute
@@ -427,6 +437,7 @@ export interface FileRouteTypes {
     | '/portfolio/$slug'
     | '/videos/$slug'
     | '/blog/'
+    | '/fotografo-corporativo-em/'
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
@@ -469,6 +480,7 @@ export interface FileRouteTypes {
     | '/portfolio/$slug'
     | '/videos/$slug'
     | '/blog'
+    | '/fotografo-corporativo-em'
     | '/fotografo-corporativo'
     | '/portfolio'
     | '/videos'
@@ -512,6 +524,7 @@ export interface FileRouteTypes {
     | '/portfolio/$slug'
     | '/videos/$slug'
     | '/blog/'
+    | '/fotografo-corporativo-em/'
     | '/fotografo-corporativo/'
     | '/portfolio/'
     | '/videos/'
@@ -556,6 +569,7 @@ export interface RootRouteChildren {
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   VideosSlugRoute: typeof VideosSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  FotografoCorporativoEmIndexRoute: typeof FotografoCorporativoEmIndexRoute
   FotografoCorporativoIndexRoute: typeof FotografoCorporativoIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   VideosIndexRoute: typeof VideosIndexRoute
@@ -756,6 +770,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRssDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fotografo-corporativo-em/': {
+      id: '/fotografo-corporativo-em/'
+      path: '/fotografo-corporativo-em'
+      fullPath: '/fotografo-corporativo-em/'
+      preLoaderRoute: typeof FotografoCorporativoEmIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fotografo-corporativo-em/$bairro': {
       id: '/fotografo-corporativo-em/$bairro'
       path: '/fotografo-corporativo-em/$bairro'
@@ -904,6 +925,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioSlugRoute: PortfolioSlugRoute,
   VideosSlugRoute: VideosSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  FotografoCorporativoEmIndexRoute: FotografoCorporativoEmIndexRoute,
   FotografoCorporativoIndexRoute: FotografoCorporativoIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   VideosIndexRoute: VideosIndexRoute,

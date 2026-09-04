@@ -24,6 +24,7 @@ import { LazySection } from "../components/site/LazySection";
 import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
 import { site } from "../data/catalog";
 import { aggregateRatingSchema, reviewSchema } from "../data/reviews";
+import { personSchema } from "../data/person";
 
 
 function NotFoundComponent() {

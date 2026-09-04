@@ -9,6 +9,6 @@ const MAP = dims as unknown as Record<string, number[]>;
 
 export function naturalDims(src: string): { width: number; height: number } | undefined {
   const d = MAP[src];
-  if (!d) return undefined;
-  return { width: d[0], height: d[1] };
+  if (!d || d.length < 2) return undefined;
+  return { width: d[0]!, height: d[1]! };
 }

@@ -20,7 +20,7 @@ import { homeStats, statsLead } from "@/data/stats";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-import { googleReviews, googleReviewsSummary } from "@/data/reviews";
+import { googleBusinessProfileUrl, googleReviewUrl, googleReviews, googleReviewsSummary } from "@/data/reviews";
 
 const HERO_IMG = heroPhoto.src;
 

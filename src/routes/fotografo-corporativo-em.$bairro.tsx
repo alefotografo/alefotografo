@@ -2,8 +2,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { bairroBySlug, bairros } from "@/data/bairros";
 import { bairroContexto } from "@/data/bairroContexto";
 import { buildMeta } from "@/lib/seo";
-import { site, categories } from "@/data/catalog";
-import { aggregateRatingSchema } from "@/data/reviews";
+import { categories } from "@/data/catalog";
+import { bairroServiceGraph } from "@/data/bairroSchema";
 
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";

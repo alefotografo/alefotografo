@@ -175,7 +175,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 latitude: site.geo.lat,
                 longitude: site.geo.lon,
               },
-              hasMap: `https://www.google.com/maps/search/?api=1&query=${site.geo.lat},${site.geo.lon}`,
+              // Aponta para o Perfil da Empresa no Google, não para uma busca por coordenadas.
+              hasMap: googleBusinessProfileUrl,
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",

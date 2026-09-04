@@ -3,6 +3,8 @@ import { bairroBySlug, bairros } from "@/data/bairros";
 import { bairroContexto } from "@/data/bairroContexto";
 import { buildMeta } from "@/lib/seo";
 import { site, categories } from "@/data/catalog";
+import { aggregateRatingSchema } from "@/data/reviews";
+
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
@@ -35,6 +37,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
             serviceType: "Fotografia corporativa",
             provider: {
               "@type": "LocalBusiness",
+              "@id": "https://www.alefotografo.com.br/#business",
               name: site.name,
               telephone: "+55 11 91355-0533",
               url: "https://www.alefotografo.com.br",
@@ -44,11 +47,10 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
             name: title,
             description,
             url,
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5.0",
-              reviewCount: "87",
-            },
+            // Nota única do site, vinda da fonte real (Perfil da Empresa no
+            // Google). Antes havia um 5.0/87 fixo, que contradizia o restante.
+            aggregateRating: aggregateRatingSchema,
+
           }),
         },
       ],

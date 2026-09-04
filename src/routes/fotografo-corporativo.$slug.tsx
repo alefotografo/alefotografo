@@ -17,6 +17,22 @@ import { autoLink } from "@/lib/autoLink";
 import { serviceFor } from "@/lib/serviceMatch";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
+const retratoCorporativoFaqs = [
+  {
+    q: "Qual a diferença entre headshot e retrato corporativo?",
+    a: "Headshot é uma foto de busto focada no rosto, usada em LinkedIn e cartões de visita. Retrato corporativo é mais elaborado: inclui contexto do ambiente de trabalho, transmite mais personalidade e é ideal para sites institucionais e press kits.",
+  },
+  {
+    q: "O retrato corporativo pode ser feito no escritório da empresa?",
+    a: "Sim. Realizamos sessões no estúdio ou diretamente na empresa do cliente em São Paulo. A locação no ambiente corporativo autentica a imagem e facilita a logística para equipes grandes.",
+  },
+  {
+    q: "Quantas fotos são entregues em um retrato corporativo?",
+    a: "Os pacotes de retrato corporativo incluem de 5 a 20 fotos editadas por colaborador, dependendo do pacote escolhido. Todas entregues em alta resolução em até 5 dias úteis.",
+  },
+];
+
+
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
   loader: ({ params }) => {
     const cat = categoryBySlug(params.slug);

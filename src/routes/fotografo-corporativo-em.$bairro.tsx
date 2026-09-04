@@ -31,27 +31,12 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
       scripts: [
         {
           type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            serviceType: "Fotografia corporativa",
-            provider: {
-              "@type": "LocalBusiness",
-              "@id": "https://www.alefotografo.com.br/#business",
-              name: site.name,
-              telephone: "+55 11 91355-0533",
-              url: "https://www.alefotografo.com.br",
-              areaServed: { "@type": "City", name: "São Paulo" },
-            },
-            areaServed: { "@type": "Place", name: `${loaderData.nome}, São Paulo` },
-            name: title,
-            description,
-            url,
-            // Nota única do site, vinda da fonte real (Perfil da Empresa no
-            // Google). Antes havia um 5.0/87 fixo, que contradizia o restante.
-            aggregateRating: aggregateRatingSchema,
-
-          }),
+          // ProfessionalService com serviceArea (GeoCircle a partir do
+          // estúdio), geo do estúdio e areaServed com o bairro, os vizinhos da
+          // região e todas as cidades cobertas. Fonte: src/data/bairroSchema.ts.
+          children: JSON.stringify(
+            bairroServiceGraph({ b: loaderData, url, title, description }),
+          ),
         },
       ],
     };

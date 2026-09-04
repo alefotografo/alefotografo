@@ -66,7 +66,7 @@ const cfg: ServicePageConfig = {
     { q: "Quanto custa a cobertura de um evento?", a: "O valor depende da duração, do número de ambientes, da necessidade de vídeo e de segundo fotógrafo. Envie data, local e horário pelo WhatsApp e receba o orçamento fechado." },
     { q: "Atendem fora de São Paulo?", a: "Sim. A base é São Paulo, com atendimento em toda a Grande São Paulo e viagens para eventos em outras cidades quando previsto no orçamento." },
     { q: "Consigo fotos no mesmo dia?", a: "Sim. Uma prévia tratada pode ser liberada durante ou logo após o evento para publicação imediata." },
-    { q: "Em quanto tempo recebo o material completo?", a: "Normalmente em 1 a 3 dias úteis, por galeria online com download em alta resolução." },
+    { q: "Em quanto tempo recebo o material completo?", a: "Normalmente em 1 dia útil, por galeria online com download em alta resolução." },
     { q: "Como pedir orçamento pelo WhatsApp?", a: "Envie a data, o local, o horário de início e fim e se o evento precisa de foto, vídeo ou os dois." },
   ],
   wa: "Olá Alexandre, quero orçamento para cobertura de um evento corporativo em São Paulo.",

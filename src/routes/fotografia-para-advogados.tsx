@@ -49,7 +49,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Direção na sessão", p: "Fotografamos por blocos de horário, com direção de pose e postura, sem interromper a operação." },
     { h: "4. Seleção", p: "Galeria online organizada por nome e por área para escolha das imagens." },
     { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque discreto, adequado ao tom sóbrio do setor." },
-    { h: "6. Entrega digital", p: "Alta resolução e versões web em 1 a 3 dias úteis, com uso comercial liberado sem prazo." },
+    { h: "6. Entrega digital", p: "Alta resolução e versões web em 1 dia útil, com uso comercial liberado sem prazo." },
   ],
   gallerySlugs: [
     "fotografia-para-escritorios-de-advocacia",

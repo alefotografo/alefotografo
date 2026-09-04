@@ -49,7 +49,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Direção na sessão", p: "Direção de pose, postura e expressão para retratos, além de organização de cena nos ambientes." },
     { h: "4. Seleção", p: "Galeria online com as melhores imagens para escolha por profissional e por ambiente." },
     { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque natural, mantendo credibilidade clínica." },
-    { h: "6. Entrega digital", p: "Alta resolução e versões web em 1 a 3 dias úteis, com uso comercial liberado sem prazo." },
+    { h: "6. Entrega digital", p: "Alta resolução e versões web em 1 dia útil, com uso comercial liberado sem prazo." },
   ],
   gallerySlugs: [
     "retratos-de-medicos",
@@ -64,7 +64,7 @@ const cfg: ServicePageConfig = {
     { q: "Quanto custa fotografar uma clínica?", a: "O valor depende do número de profissionais retratados, dos ambientes e do tempo de captação. Descreva a clínica pelo WhatsApp e receba a proposta em até 24 horas úteis." },
     { q: "Vocês fotografam no consultório?", a: "Sim. Levamos iluminação e fundo portátil ao consultório ou clínica em toda a Grande São Paulo, sem necessidade de estúdio." },
     { q: "Pacientes aparecem nas fotos?", a: "Somente com autorização. Na maioria dos projetos usamos a própria equipe para simular o atendimento, preservando a privacidade dos pacientes." },
-    { q: "Em quanto tempo recebo as fotos?", a: "De 1 a 3 dias úteis após a seleção, por galeria online com download em alta resolução." },
+    { q: "Em quanto tempo recebo as fotos?", a: "Em 1 dia útil após a seleção, por galeria online com download em alta resolução." },
     { q: "Como pedir orçamento pelo WhatsApp?", a: "Envie a especialidade, o bairro da clínica, quantos profissionais serão fotografados e a data pretendida." },
   ],
   wa: "Olá Alexandre, quero orçamento de fotos profissionais para médico/clínica em São Paulo.",

@@ -49,7 +49,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Visita e produção", p: "Captação com iluminação profissional, respeitando a rotina e as normas de segurança da empresa." },
     { h: "4. Seleção", p: "Galeria online organizada por tema para a sua escolha, com acesso compartilhável." },
     { h: "5. Tratamento", p: "Ajuste de cor, luz e retoque profissional, mantendo a naturalidade das pessoas e dos ambientes." },
-    { h: "6. Entrega", p: "Download em alta resolução e versões web em 1 a 3 dias úteis, com uso comercial liberado." },
+    { h: "6. Entrega", p: "Download em alta resolução e versões web em 1 dia útil, com uso comercial liberado." },
   ],
   gallerySlugs: [
     "fotografia-corporativa-em-sao-paulo",
@@ -64,7 +64,7 @@ const cfg: ServicePageConfig = {
     { q: "Vocês fotografam dentro da indústria ou do centro de distribuição?", a: "Sim. Levamos iluminação portátil, seguimos as normas internas de segurança e usamos os EPIs exigidos pela empresa." },
     { q: "É possível fotografar equipe e ambientes no mesmo dia?", a: "Sim, e é o formato mais comum: os retratos da equipe são feitos em blocos de horário enquanto os ambientes e processos são captados nos intervalos." },
     { q: "As imagens podem ser usadas em anúncios?", a: "Sim. A entrega inclui uso comercial liberado para site, redes sociais, mídia paga e materiais impressos da empresa." },
-    { q: "Em quanto tempo recebo as fotos?", a: "De 1 a 3 dias úteis após a sua seleção. Para campanhas com prazo curto é possível entrega expressa." },
+    { q: "Em quanto tempo recebo as fotos?", a: "Em 1 dia útil após a sua seleção. Para campanhas com prazo curto é possível entrega expressa." },
     { q: "Atende fora da cidade de São Paulo?", a: "Sim, atendemos toda a Grande São Paulo e viagens para outras cidades e estados sob orçamento." },
   ],
   wa: "Olá Alexandre, preciso de um fotógrafo empresarial para minha empresa. Pode me passar valores?",

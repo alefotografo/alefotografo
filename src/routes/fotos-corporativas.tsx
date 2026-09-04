@@ -6,6 +6,8 @@ import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { StatsBand } from "@/components/site/StatsBand";
+import { serviceStats, statsLead } from "@/data/stats";
 
 const URL_PATH = "/fotos-corporativas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -29,7 +31,7 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Em quanto tempo recebo as fotos tratadas?",
-    a: "De 1 a 3 dias úteis para retratos, ambientes e produtos, já com ajuste de cor, retoque profissional e padronização. Em eventos corporativos há entrega em tempo real, com reconhecimento facial para que cada participante encontre suas fotos ainda durante o evento.",
+    a: "Em 1 dia útil para retratos, ambientes e produtos, já com ajuste de cor, retoque profissional e padronização. Em eventos corporativos há entrega em tempo real, com reconhecimento facial para que cada participante encontre suas fotos ainda durante o evento.",
   },
   {
     q: "A empresa fica com os direitos das imagens?",
@@ -180,7 +182,7 @@ function FotosCorporativasPage() {
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
             Retratos profissionais, equipes, escritório, eventos e produtos — produzidos por{" "}
             {site.fullName}, com 30 anos fotografando empresas na Grande São Paulo. Tratamento
-            profissional e entrega em 1 a 3 dias úteis.
+            profissional e entrega em 1 dia útil.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -197,6 +199,12 @@ function FotosCorporativasPage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <StatsBand items={serviceStats()} />
+
+      <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
+        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">

@@ -6,6 +6,8 @@ import { FaqList } from "@/components/site/Faq";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import { waLink } from "@/lib/whatsapp";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { StatsBand } from "@/components/site/StatsBand";
+import { serviceStats, statsLead } from "@/data/stats";
 import type { Faq } from "@/lib/faqs";
 
 const URL_PATH = "/foto-profissional";
@@ -78,7 +80,7 @@ const comoFunciona = [
     p: "Você escolhe as imagens preferidas em galeria online. O tratamento inclui ajuste de cor, luz e retoque profissional, sem descaracterizar o rosto.",
   },
   {
-    h: "5. Entrega em 1 a 3 dias úteis",
+    h: "5. Entrega em 1 dia útil",
     p: "Arquivos em alta resolução e versões otimizadas para web, em recortes quadrado, vertical e horizontal, com uso comercial liberado sem prazo.",
   },
 ];
@@ -106,7 +108,7 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Em quanto tempo recebo as fotos?",
-    a: "De 1 a 3 dias úteis após a sua seleção, por galeria online com download em alta resolução e versões prontas para web e redes sociais.",
+    a: "Em 1 dia útil após a sua seleção, por galeria online com download em alta resolução e versões prontas para web e redes sociais.",
   },
 ];
 
@@ -239,6 +241,12 @@ function FotoProfissionalPage() {
             empresas
           </p>
         </div>
+      </section>
+
+      <StatsBand items={serviceStats()} />
+
+      <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
+        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">

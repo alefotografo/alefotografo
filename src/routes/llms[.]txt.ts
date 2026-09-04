@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { bairros } from "@/data/bairros";
 import { posts, site } from "@/data/catalog";
+import { aggregateRatingSchema } from "@/data/reviews";
 
 const BASE = "https://www.alefotografo.com.br";
 
@@ -36,6 +37,15 @@ const HEADER = `# Alê Fotógrafo — Alexandre Machado | Fotógrafo corporativo
 > Site pessoal do fotógrafo Alexandre Machado (Alê Fotógrafo). Fotografia corporativa autoral em São Paulo: retrato profissional, headshot para LinkedIn, retrato executivo de C-level, fotos de equipe e de escritório, fotografia para médicos, dentistas, clínicas e advogados, e vídeo institucional. Todos os ensaios deste site são fotografados por ele, pessoalmente — do briefing à direção de pose e à entrega.
 
 Alexandre Machado atua desde ${site.foundingYear} e tem mais de 30 anos de carreira em ${site.city}. Atende no estúdio em ${site.address.street}, ${site.address.district} — ${site.address.locality}/${site.address.region} —, no escritório do cliente e em locação externa, em toda a Grande São Paulo, ABC Paulista e Alphaville.
+
+## Dados do atendimento (números reais, informados pelo fotógrafo)
+
+- Executivos fotografados: mais de 300, em São Paulo.
+- Empresas atendidas: mais de 200, de escritórios a clínicas e indústrias.
+- Prazo de entrega de retratos: fotos tratadas em 1 dia útil.
+- Prazo de entrega de eventos: seleção das melhores imagens no mesmo dia da cobertura.
+- Experiência: 30 anos de carreira.
+- Reputação: nota ${aggregateRatingSchema.ratingValue} em ${aggregateRatingSchema.reviewCount} avaliações de clientes.
 
 ## Serviços e como as pessoas buscam
 
@@ -75,7 +85,7 @@ const FAQ = `## Perguntas frequentes (respostas publicadas no site)
 - **Fotografam no escritório da empresa?** Sim, com iluminação profissional e fundos portáteis, em toda a Grande São Paulo.
 - **Fazem foto para LinkedIn?** Sim. Inclui direção de pose e expressão e entrega em versões quadrada, vertical e horizontal.
 - **Fazem retratos de equipes inteiras?** Sim, com fundo, luz, enquadramento e tratamento padronizados, organizados por blocos de horário e entrega por nome.
-- **Em quanto tempo as fotos ficam prontas?** Retratos e projetos corporativos em 1 a 3 dias úteis após a seleção; em eventos, prévia no mesmo dia.
+- **Em quanto tempo as fotos ficam prontas?** Retratos e projetos corporativos em 1 dia útil após a seleção; em eventos, prévia no mesmo dia.
 - **Como recebo as fotos?** Galeria online com download em alta resolução, versões otimizadas para web e cessão de uso comercial sem prazo.
 - **Também produzem vídeo institucional?** Sim, muitas vezes na mesma diária da fotografia.
 - **Atende ABC Paulista e Alphaville?** Sim — Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Alphaville (Barueri) têm páginas próprias listadas acima.

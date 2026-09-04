@@ -16,6 +16,7 @@ import { faqsComerciais } from "@/lib/faqsComerciais";
 import { ServiceChooser } from "@/components/site/ServiceChooser";
 import { SegmentGrid } from "@/components/site/SegmentGrid";
 import { waLink } from "@/lib/whatsapp";
+import { homeStats, statsLead } from "@/data/stats";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
@@ -91,7 +92,8 @@ function Home() {
                     <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos de equipe no escritório</Link>{" "}
                     — sem terceirizar, sem assistente assumindo a câmera.
                   </p>
-                  <p className="mt-4 text-sm text-muted-foreground/80">
+                  <p className="mt-4 text-sm text-muted-foreground">{statsLead()}</p>
+                  <p className="mt-3 text-sm text-muted-foreground/80">
                     Especialista em retratos corporativos e cobertura de eventos corporativos em São Paulo.
                   </p>
                   <div className="mt-10 flex flex-wrap gap-3">
@@ -124,19 +126,17 @@ function Home() {
                     30+ anos de experiência · Atendimento em São Paulo · Empresas, médicos, advogados e
                     executivos
                   </p>
-                  <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-border pt-8 sm:gap-6">
-                    <div>
-                      <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Experiência</dt>
-                      <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">30+ anos</dd>
-                    </div>
-                    <div>
-                      <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Empresas</dt>
-                      <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">500+</dd>
-                    </div>
-                    <div>
-                      <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">Segmentos</dt>
-                      <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">{categories.length}</dd>
-                    </div>
+                  <dl className="mt-14 grid max-w-xl grid-cols-2 gap-5 border-t border-border pt-8 sm:grid-cols-4 sm:gap-6">
+                    {homeStats.map((s) => (
+                      <div key={s.label}>
+                        <dt className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">
+                          {s.label}
+                        </dt>
+                        <dd className="mt-1 font-display text-xl font-semibold sm:text-2xl">
+                          {s.value}
+                        </dd>
+                      </div>
+                    ))}
                   </dl>
           </div>
           <div className="md:col-span-5">

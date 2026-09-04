@@ -49,7 +49,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Direção na sessão", p: "Direção contínua de pose, postura e expressão — não é necessário saber posar." },
     { h: "4. Seleção", p: "As imagens ficam em galeria online para escolha por pessoa ou por área." },
     { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque sem descaracterizar o rosto, com padrão igual para toda a liderança." },
-    { h: "6. Entrega digital", p: "Download em alta resolução e versões para web em 1 a 3 dias úteis, com uso comercial liberado." },
+    { h: "6. Entrega digital", p: "Download em alta resolução e versões para web em 1 dia útil, com uso comercial liberado." },
   ],
   gallerySlugs: [
     "retrato-corporativo",
@@ -64,7 +64,7 @@ const cfg: ServicePageConfig = {
     { q: "Vocês atendem no escritório da empresa?", a: "Sim. Levamos iluminação profissional e fundo portátil até o seu endereço em toda a Grande São Paulo, reduzindo o tempo de afastamento dos executivos." },
     { q: "Quanto tempo dura a sessão?", a: "Cerca de uma hora para retratos individuais e de 10 a 15 minutos por pessoa em sessões de equipe, organizadas por blocos de horário." },
     { q: "As fotos recebem tratamento?", a: "Sim. Todas as imagens entregues passam por ajuste de cor, luz e retoque profissional, mantendo a naturalidade do rosto." },
-    { q: "Em quanto tempo recebo as fotos?", a: "De 1 a 3 dias úteis após a sua seleção, por galeria online com download em alta resolução." },
+    { q: "Em quanto tempo recebo as fotos?", a: "Em 1 dia útil após a sua seleção, por galeria online com download em alta resolução." },
     { q: "Como pedir orçamento pelo WhatsApp?", a: "Envie quantas pessoas serão fotografadas, o bairro ou cidade e a data pretendida. Com isso o orçamento sai fechado, sem reunião prévia." },
   ],
   wa: "Olá Alexandre, quero agendar um retrato executivo. Pode me passar valores e disponibilidade?",

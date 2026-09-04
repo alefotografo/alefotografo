@@ -51,7 +51,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Cobertura", p: "Captação discreta com equipamento adequado à iluminação mista dos pavilhões." },
     { h: "4. Prévia no mesmo dia", p: "Uma seleção tratada é enviada ainda durante o evento para publicação imediata." },
     { h: "5. Tratamento completo", p: "Ajuste de cor, luz e retoque em todas as imagens selecionadas." },
-    { h: "6. Entrega final", p: "Galeria online com download em alta resolução em 1 a 3 dias úteis e uso comercial liberado." },
+    { h: "6. Entrega final", p: "Galeria online com download em alta resolução em 1 dia útil e uso comercial liberado." },
   ],
   gallerySlugs: [
     "fotografo-feiras-stands",

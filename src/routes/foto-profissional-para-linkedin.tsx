@@ -4,6 +4,8 @@ import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { StatsBand } from "@/components/site/StatsBand";
+import { serviceStats, statsLead } from "@/data/stats";
 
 const URL_PATH = "/foto-profissional-para-linkedin";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -143,6 +145,12 @@ function LinkedinPage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <StatsBand items={serviceStats()} />
+
+      <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
+        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">

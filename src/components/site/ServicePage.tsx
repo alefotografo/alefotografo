@@ -7,6 +7,8 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { LinkHub } from "@/components/site/LinkHub";
 import { SITE_ORIGIN } from "@/lib/seo";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
+import { StatsBand } from "@/components/site/StatsBand";
+import { deliveryKindForPath, serviceStats, statsLead } from "@/data/stats";
 import type { Faq } from "@/lib/faqs";
 
 export interface ServicePageConfig {
@@ -98,6 +100,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
     .map((slug) => categories.find((c) => c.slug === slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c?.cover));
   const heroImg = gallery[0]?.cover;
+  const deliveryKind = deliveryKindForPath(cfg.path);
 
   return (
     <>
@@ -160,8 +163,11 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
         </div>
       </section>
 
+      <StatsBand items={serviceStats(deliveryKind)} />
+
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="max-w-3xl space-y-4 text-muted-foreground md:text-lg">
+          <p className="text-foreground">{statsLead(deliveryKind)}</p>
           {cfg.intro.map((p) => (
             <p key={p}>{p}</p>
           ))}

@@ -1,5 +1,7 @@
 import raw from "./catalog.json";
-import { isPublishedDate, postDateISO } from "@/lib/postDate";
+import { clockReady, isPublishedDate, postDateISO } from "@/lib/postDate";
+import { lazyList } from "@/lib/lazyList";
+
 
 export interface Category {
   slug: string;
@@ -231,22 +233,36 @@ export const allPosts: Post[] = data.posts
   .map((p) => ({ ...cleanItem(p), body: p.body.map(decode) }))
   .sort((a, b) => (postDateISO(a.date) ?? "").localeCompare(postDateISO(b.date) ?? "") * -1);
 
-/** Publicação: somente registros com data <= hoje (America/Sao_Paulo), cronológico desc. */
-export const posts: Post[] = allPosts.filter((p) => isPublishedDate(p.date));
+/**
+ * Publicação: somente registros com data <= hoje (America/Sao_Paulo),
+ * cronológico desc. Avaliado sob demanda: no runtime de edge o relógio não é
+ * confiável durante a inicialização do módulo e o gate zeraria a lista.
+ */
+export const posts: Post[] = lazyList(
+  () => allPosts.filter((p) => isPublishedDate(p.date)),
+  clockReady,
+);
 
 /** Registros atualmente datados no futuro — fora de toda superfície pública. */
-export const scheduledPosts: Post[] = allPosts.filter((p) => !isPublishedDate(p.date));
+export const scheduledPosts: Post[] = lazyList(
+  () => allPosts.filter((p) => !isPublishedDate(p.date)),
+  clockReady,
+);
 
 /**
  * Destaque editorial: curadoria manual (POST_ORDER), independente da data.
  * Sempre filtrado pelo gate; nunca altera a data de um artigo.
  */
-export const featuredPosts: Post[] = [
-  ...POST_ORDER.map((slug) => posts.find((p) => p.slug === slug)).filter(
-    (p): p is Post => Boolean(p),
-  ),
-  ...posts.filter((p) => !POST_ORDER.includes(p.slug)),
-];
+export const featuredPosts: Post[] = lazyList(
+  () => [
+    ...POST_ORDER.map((slug) => posts.find((p) => p.slug === slug)).filter(
+      (p): p is Post => Boolean(p),
+    ),
+    ...posts.filter((p) => !POST_ORDER.includes(p.slug)),
+  ],
+  clockReady,
+);
+
 
 export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);
 export const videoBySlug = (slug: string) => videos.find((v) => v.slug === slug);

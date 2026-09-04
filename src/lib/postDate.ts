@@ -47,14 +47,28 @@ export function todayInSaoPaulo(): string {
   return new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
 
+// Menor ano plausível para "hoje". No runtime de edge (workerd) o relógio pode
+// não estar disponível durante a inicialização do módulo e devolver a época
+// Unix (1970) — nesse caso o gate não tem base para esconder nada.
+const MIN_VALID_YEAR = 2020;
+
+/** O relógio já devolve uma data plausível? Falso durante o boot do worker. */
+export function clockReady(): boolean {
+  return Number(todayInSaoPaulo().slice(0, 4)) >= MIN_VALID_YEAR;
+}
 
 /**
  * Um registro só é público quando sua data é menor ou igual a hoje em SP.
  * Registro sem data legível é tratado como publicado: não há evidência de
  * agendamento e conteúdo histórico não deve desaparecer por acidente.
+ * Relógio não confiável também publica (falha aberta): esconder o acervo
+ * inteiro é um dano maior do que exibir um agendamento cedo.
  */
 export function isPublishedDate(input?: string): boolean {
   const iso = postDateISO(input);
   if (!iso) return true;
-  return iso <= todayInSaoPaulo();
+  const today = todayInSaoPaulo();
+  if (Number(today.slice(0, 4)) < MIN_VALID_YEAR) return true;
+  return iso <= today;
 }
+

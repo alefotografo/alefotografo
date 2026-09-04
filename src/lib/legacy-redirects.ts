@@ -3,9 +3,9 @@
 // alefotografo.com.br (primário) e para qualquer outro host apontado ao
 // projeto (redirecionado na borda pela Lovable).
 
-import { videos, posts } from "@/data/catalog";
+import { videos, allPosts } from "@/data/catalog";
 
-const POST_SLUGS = new Set(posts.map((p) => p.slug));
+const POST_SLUGS = new Set(allPosts.map((p) => p.slug));
 
 
 const VIDEO_SLUGS = new Set(videos.map((v) => v.slug));

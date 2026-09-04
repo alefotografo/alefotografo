@@ -1,3 +1,5 @@
+import { SITE_ORIGIN } from "@/lib/seo";
+
 export interface Faq {
   q: string;
   a: string;

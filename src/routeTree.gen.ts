@@ -26,6 +26,7 @@ import { Route as FotografoDeFeiraDeNegociosRouteImport } from './routes/fotogra
 import { Route as FotografoEmpresarialRouteImport } from './routes/fotografo-empresarial'
 import { Route as FotosCorporativasRouteImport } from './routes/fotos-corporativas'
 import { Route as FotosProfissionaisMedicosRouteImport } from './routes/fotos-profissionais-medicos'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as QuemEOAleRouteImport } from './routes/quem-e-o-ale'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
@@ -137,6 +138,11 @@ const FotosProfissionaisMedicosRoute =
     path: '/fotos-profissionais-medicos',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuemEOAleRoute = QuemEOAleRouteImport.update({
   id: '/quem-e-o-ale',
   path: '/quem-e-o-ale',
@@ -277,6 +283,7 @@ export interface FileRoutesByFullPath {
   '/fotografo-empresarial': typeof FotografoEmpresarialRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/servicos': typeof ServicosRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -318,6 +325,7 @@ export interface FileRoutesByTo {
   '/fotografo-empresarial': typeof FotografoEmpresarialRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/servicos': typeof ServicosRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -361,6 +369,7 @@ export interface FileRoutesById {
   '/fotografo-empresarial': typeof FotografoEmpresarialRoute
   '/fotos-corporativas': typeof FotosCorporativasRoute
   '/fotos-profissionais-medicos': typeof FotosProfissionaisMedicosRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/quem-e-o-ale': typeof QuemEOAleRoute
   '/servicos': typeof ServicosRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
@@ -404,6 +413,7 @@ export interface FileRouteTypes {
     | '/fotografo-empresarial'
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
+    | '/llms.txt'
     | '/quem-e-o-ale'
     | '/servicos'
     | '/sitemap-index.xml'
@@ -445,6 +455,7 @@ export interface FileRouteTypes {
     | '/fotografo-empresarial'
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
+    | '/llms.txt'
     | '/quem-e-o-ale'
     | '/servicos'
     | '/sitemap-index.xml'
@@ -487,6 +498,7 @@ export interface FileRouteTypes {
     | '/fotografo-empresarial'
     | '/fotos-corporativas'
     | '/fotos-profissionais-medicos'
+    | '/llms.txt'
     | '/quem-e-o-ale'
     | '/servicos'
     | '/sitemap-index.xml'
@@ -530,6 +542,7 @@ export interface RootRouteChildren {
   FotografoEmpresarialRoute: typeof FotografoEmpresarialRoute
   FotosCorporativasRoute: typeof FotosCorporativasRoute
   FotosProfissionaisMedicosRoute: typeof FotosProfissionaisMedicosRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   QuemEOAleRoute: typeof QuemEOAleRoute
   ServicosRoute: typeof ServicosRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
@@ -671,6 +684,13 @@ declare module '@tanstack/react-router' {
       path: '/fotos-profissionais-medicos'
       fullPath: '/fotos-profissionais-medicos'
       preLoaderRoute: typeof FotosProfissionaisMedicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quem-e-o-ale': {
@@ -870,6 +890,7 @@ const rootRouteChildren: RootRouteChildren = {
   FotografoEmpresarialRoute: FotografoEmpresarialRoute,
   FotosCorporativasRoute: FotosCorporativasRoute,
   FotosProfissionaisMedicosRoute: FotosProfissionaisMedicosRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   QuemEOAleRoute: QuemEOAleRoute,
   ServicosRoute: ServicosRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,

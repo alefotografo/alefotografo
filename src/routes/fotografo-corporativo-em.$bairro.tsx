@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { bairroBySlug, bairros } from "@/data/bairros";
 import { bairroContexto } from "@/data/bairroContexto";
-import { buildMeta } from "@/lib/seo";
+import { buildBreadcrumbList, buildMeta } from "@/lib/seo";
 import { categories } from "@/data/catalog";
 import { bairroServiceGraph } from "@/data/bairroSchema";
 
@@ -36,6 +36,21 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
           // região e todas as cidades cobertas. Fonte: src/data/bairroSchema.ts.
           children: JSON.stringify(
             bairroServiceGraph({ b: loaderData, url, title, description }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            buildBreadcrumbList([
+              {
+                name: "Fotógrafo Corporativo São Paulo",
+                item: "https://www.alefotografo.com.br/fotografo-corporativo",
+              },
+              {
+                name: `Fotógrafo Corporativo ${prep} ${loaderData.nome}`,
+                item: url,
+              },
+            ]),
           ),
         },
       ],

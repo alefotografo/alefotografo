@@ -8,6 +8,7 @@ import { waLink } from "@/lib/whatsapp";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { StatsBand } from "@/components/site/StatsBand";
 import { serviceStats, statsLead } from "@/data/stats";
+import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import type { Faq } from "@/lib/faqs";
 
 const URL_PATH = "/foto-profissional";
@@ -110,6 +111,15 @@ const pageFaqs: Faq[] = [
     q: "Em quanto tempo recebo as fotos?",
     a: "Em 1 dia útil após a sua seleção, por galeria online com download em alta resolução e versões prontas para web e redes sociais.",
   },
+];
+
+const ANSWER_BLOCK =
+  "Foto profissional é o retrato feito com luz, direção de pose e tratamento adequados ao uso profissional: LinkedIn, currículo, site, propostas e imprensa. É indicada para quem precisa de uma imagem confiável de si mesmo, em qualquer área. Fotografo em São Paulo, pessoalmente, e entrego as imagens tratadas em 1 dia útil.";
+
+const FORMATS: SessionFormat[] = [
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
 ];
 
 export const Route = createFileRoute("/foto-profissional")({
@@ -246,8 +256,16 @@ function FotoProfissionalPage() {
       <StatsBand items={serviceStats()} />
 
       <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
-        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
+        <p
+          data-answer-block
+          className="max-w-3xl border-l-2 border-ember pl-5 text-lg font-medium text-foreground md:text-xl"
+        >
+          {ANSWER_BLOCK}
+        </p>
+        <p className="mt-4 max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
       </section>
+
+      <FormatsTable items={FORMATS} />
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">Para quem é</h2>

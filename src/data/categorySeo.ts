@@ -110,7 +110,85 @@ export const categorySeo: Record<string, CategorySeo> = {
     description:
       "Fotografia de empreendimentos imobiliários em São Paulo: fachadas, áreas comuns, decorados e obra. Imagens para lançamentos, portais e material de venda.",
   },
+
+  // Galerias que antes caíam no recorte automático do texto raspado.
+  "fotos-aereas": {
+    title: "Fotos e Vídeo Aéreo com Drone em São Paulo",
+    description:
+      "Fotografia e vídeo aéreo com drone em São Paulo: obras, empreendimentos, plantas industriais e eventos. Piloto habilitado e orçamento no mesmo dia.",
+  },
+  "fotografo-de-culinaria": {
+    title: "Fotografia de Culinária em São Paulo | Fotos de Pratos",
+    description:
+      "Fotografia de culinária em São Paulo: pratos, bebidas e sobremesas para cardápio, delivery e redes sociais. Luz, direção de arte e entrega rápida.",
+  },
+  "fotografo-de-arquitetura-e-interiores": {
+    title: "Fotografia de Arquitetura e Interiores em São Paulo",
+    description:
+      "Fotografia de arquitetura e interiores em São Paulo: projetos residenciais, corporativos e comerciais com linhas corrigidas e luz natural valorizada.",
+  },
+  "banco-de-imagens-para-escolas": {
+    title: "Banco de Imagens para Escolas em São Paulo",
+    description:
+      "Banco de imagens para escolas em São Paulo: alunos, professores, aulas e estrutura em fotos autorizadas para site, matrículas e campanhas do ano todo.",
+  },
+  "foto-impressa-na-hora": {
+    title: "Foto Impressa na Hora para Eventos em São Paulo",
+    description:
+      "Foto lembrança com impressão na hora em eventos corporativos em São Paulo: moldura com sua marca, entrega em segundos e operação discreta.",
+  },
+  "fotografo-de-grupos-times-e-equipes": {
+    title: "Fotógrafo de Grupos, Times e Equipes em São Paulo",
+    description:
+      "Foto de grupo e de equipe em São Paulo, na sua empresa ou em estúdio: direção de pose, todos nítidos e olhando para a câmera. Orçamento no mesmo dia.",
+  },
+  "fotografo-festa-de-confraternizacao": {
+    title: "Fotógrafo para Festa da Firma em São Paulo",
+    description:
+      "Fotógrafo para festa de confraternização de empresas em São Paulo: chegada, brindes, premiações e clima da equipe. Prévia das fotos no mesmo dia.",
+  },
+  "fotografo-festa-de-confraternizacao-1-1": {
+    title: "Fotografia para Festa de Confraternização em SP",
+    description:
+      "Cobertura fotográfica de festa de confraternização em São Paulo: retratos espontâneos, grupos e decoração. Material pronto para endomarketing e redes.",
+  },
+  "totem-fotografico-totem-mania": {
+    title: "Totem Fotográfico para Eventos e Feiras em São Paulo",
+    description:
+      "Totem fotográfico para eventos corporativos e feiras em São Paulo: impressão na hora, moldura com sua marca e captura de contatos no estande.",
+  },
+  "fotografo-de-drinks-coqueteis": {
+    title: "Fotografia de Drinks e Coquetéis em São Paulo",
+    description:
+      "Fotografia de drinks e coquetéis em São Paulo para bares, restaurantes e marcas de bebidas: gelo, textura e cor tratados para cardápio e redes sociais.",
+  },
+  "ensaio-feminino": {
+    title: "Ensaio Fotográfico Feminino Corporativo em São Paulo",
+    description:
+      "Ensaio feminino corporativo em São Paulo: retratos com presença e naturalidade para LinkedIn, site e imprensa. Direção de pose do começo ao fim.",
+  },
+  "fotos-de-hamburguer": {
+    title: "Fotos de Hambúrguer em São Paulo | Food Photography",
+    description:
+      "Fotos de hambúrguer em São Paulo para cardápio, delivery e anúncios: montagem, luz e retoque que mostram o produto do jeito que ele chega ao cliente.",
+  },
+  "fotos-para-restaurantes": {
+    title: "Fotos para Restaurantes em São Paulo | Pratos e Ambiente",
+    description:
+      "Fotos para restaurantes em São Paulo: pratos, drinks, ambiente e equipe em um só dia de produção. Imagens prontas para cardápio, delivery e Google.",
+  },
+  "ensaio-fotografico-para-redes-sociais": {
+    title: "Ensaio para Redes Sociais em São Paulo | Fotos e Vídeos",
+    description:
+      "Ensaio de fotos e vídeos para redes sociais em São Paulo: conteúdo em formato vertical para Instagram, reels e LinkedIn, com várias trocas de look.",
+  },
+  "fotos-de-paes": {
+    title: "Fotos de Pães Artesanais em São Paulo | Padaria",
+    description:
+      "Fotografia de pães artesanais em São Paulo: casca, miolo e fermentação valorizados em imagens para padarias, cafés e marcas. Entrega rápida dos arquivos.",
+  },
 };
+
 
 /** Limpa descrições longas raspadas do site antigo para uso em meta description. */
 export function cleanDescription(raw: string, max = 158): string {

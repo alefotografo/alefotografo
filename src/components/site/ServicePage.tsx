@@ -100,6 +100,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
     .map((slug) => categories.find((c) => c.slug === slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c?.cover));
   const heroImg = gallery[0]?.cover;
+  const deliveryKind = deliveryKindForPath(cfg.path);
 
   return (
     <>

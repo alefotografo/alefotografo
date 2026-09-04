@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
+import { naturalDims } from "@/lib/imageDims";
 
 type Props = {
   src: string;
@@ -60,6 +61,9 @@ export function SmartImage({
     if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
   }, []);
 
+  const natural = naturalDims(src);
+  const finalWidth = width ?? natural?.width;
+  const finalHeight = height ?? natural?.height;
   const finalSrc = fallback ? src : imgUrl(src, baseWidth);
   const srcSet = fallback ? undefined : imgSrcSet(src, widths);
 
@@ -70,8 +74,8 @@ export function SmartImage({
       srcSet={srcSet}
       sizes={srcSet ? sizes : undefined}
       alt={alt}
-      width={width}
-      height={height}
+      width={finalWidth}
+      height={finalHeight}
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : "auto"}
       decoding={priority ? "sync" : "async"}

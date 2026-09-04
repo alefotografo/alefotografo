@@ -222,6 +222,8 @@ function PortfolioHub() {
                               alt={`Case de ${c.title}`}
                               baseWidth={768}
                               priority={bi === 0 && i < 3}
+                              width={1200}
+                              height={900}
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                               className="h-full w-full object-cover group-hover:scale-105"
                             />

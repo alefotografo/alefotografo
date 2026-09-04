@@ -136,6 +136,8 @@ export function Header() {
               alt="Alê Fotógrafo"
               width={160}
               height={48}
+              loading="eager"
+              fetchPriority="high"
               className="h-8 w-auto sm:h-10 lg:h-12"
             />
           </Link>

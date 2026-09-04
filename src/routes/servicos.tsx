@@ -132,6 +132,8 @@ function CardShell({
             baseWidth={768}
             priority={priority}
             placeholderRatio={ratio}
+            width={1200}
+            height={Math.round(1200 / (ratio === "4 / 5" ? 4 / 5 : ratio === "4 / 3" ? 4 / 3 : 3 / 2))}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
             className="h-full w-full object-cover group-hover:scale-105"
           />
@@ -244,6 +246,8 @@ function ServicosPage() {
                     alt={c.title}
                     baseWidth={480}
                     placeholderRatio="4 / 3"
+                    width={1200}
+                    height={900}
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
                     className="h-full w-full object-cover group-hover:scale-105"
                   />

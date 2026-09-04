@@ -104,6 +104,7 @@ const EXACT: Record<string, string> = {
   "/fotografo-corporativo-sao-paulo": "/fotografo-corporativo",
   "/foto-profissional-sao-paulo": "/foto-profissional",
   "/foto-para-linkedin": "/foto-profissional-para-linkedin",
+  "/fotografo-corporativo/fotografo-de-linkedin": "/foto-profissional-para-linkedin",
   "/fotos-para-medicos": "/fotos-profissionais-medicos",
   "/fotografia-para-medicos": "/fotos-profissionais-medicos",
   "/fotos-para-advogados": "/fotografia-para-advogados",

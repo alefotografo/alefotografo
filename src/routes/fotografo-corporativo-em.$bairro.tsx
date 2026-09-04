@@ -59,6 +59,8 @@ function BairroPage() {
   const b = Route.useLoaderData();
   const cats = categories.slice(0, 8);
   const contexto: string[] = bairroContexto[b.slug] ?? [];
+  const vizinhos = bairros.filter((x) => x.regiao === b.regiao && x.slug !== b.slug);
+
 
   return (
     <>

@@ -10,6 +10,7 @@ import { StatsBand } from "@/components/site/StatsBand";
 import { serviceStats, statsLead } from "@/data/stats";
 import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import type { Faq } from "@/lib/faqs";
+import { BlockText } from "@/components/site/BlockText";
 
 const URL_PATH = "/foto-profissional";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -284,7 +285,7 @@ function FotoProfissionalPage() {
           {paraQuem.map((b) => (
             <article key={b.h} className="rounded-sm border border-border bg-surface p-6">
               <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
             </article>
           ))}
         </div>

@@ -11,6 +11,7 @@ import { StatsBand } from "@/components/site/StatsBand";
 import { deliveryKindForPath, serviceStats, statsLead } from "@/data/stats";
 import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import type { Faq } from "@/lib/faqs";
+import { BlockText } from "@/components/site/BlockText";
 
 export interface ServicePageConfig {
   path: string;
@@ -217,7 +218,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               className="rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
             >
               <h2 className="font-display text-lg font-semibold">{b.h}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.p}</p>
+              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
             </article>
           ))}
         </div>

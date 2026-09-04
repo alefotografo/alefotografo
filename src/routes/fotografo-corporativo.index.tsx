@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
 function PortfolioIndex() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotos" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotos</p>

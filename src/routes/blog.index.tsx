@@ -6,6 +6,7 @@ import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { postCover } from "@/lib/postCover";
 import { SmartImage } from "@/components/site/SmartImage";
 import { postDateISO } from "@/lib/postDate";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 const PAGE_SIZE = 24;
 
@@ -61,6 +62,7 @@ function BlogIndex() {
 
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Blog</p>

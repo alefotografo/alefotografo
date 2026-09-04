@@ -3,6 +3,7 @@ import { site } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import type { Faq } from "@/lib/faqs";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 const URL_PATH = "/foto-profissional-para-linkedin";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
@@ -107,6 +108,7 @@ const checklist = [
 function LinkedinPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos" }, { label: "Foto para LinkedIn" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">

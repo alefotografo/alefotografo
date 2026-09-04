@@ -6,6 +6,7 @@ import { useTrackConversion } from "@/hooks/useTrackConversion";
 import { LazySection } from "@/components/site/LazySection";
 import GoogleMapCard from "@/components/site/GoogleMapCard";
 import { Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 
 const localBusinessSchema = {
@@ -88,6 +89,7 @@ function Contato() {
 
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Contato" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Contato</p>

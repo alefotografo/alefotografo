@@ -4,6 +4,7 @@ import { buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
 import { ArrowUpRight } from "lucide-react";
 import { waLink } from "@/lib/whatsapp";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 /**
  * /portfolio é o hub de prova: cada bloco de intenção aponta para (a) a página
@@ -150,6 +151,7 @@ export const Route = createFileRoute("/portfolio/")({
 function PortfolioHub() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Portfólio" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Portfólio</p>

@@ -3,6 +3,7 @@ import { categories, site } from "@/data/catalog";
 import { buildMeta } from "@/lib/seo";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { Award, Camera, Target, Zap } from "lucide-react";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 const PORTRAIT =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
@@ -71,6 +72,7 @@ export const Route = createFileRoute("/sobre")({
 function SobrePage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Sobre" }]} />
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:gap-16 md:px-8 md:py-24">
           <div className="md:col-span-7">

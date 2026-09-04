@@ -38,6 +38,21 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
             bairroServiceGraph({ b: loaderData, url, title, description }),
           ),
         },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            buildBreadcrumbList([
+              {
+                name: "Fotógrafo Corporativo São Paulo",
+                item: "https://www.alefotografo.com.br/fotografo-corporativo",
+              },
+              {
+                name: `Fotógrafo Corporativo ${prep} ${loaderData.nome}`,
+                item: url,
+              },
+            ]),
+          ),
+        },
       ],
     };
   },

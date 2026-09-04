@@ -92,7 +92,8 @@ function Home() {
                     <Link to="/fotos-corporativas" className="underline decoration-ember/50 underline-offset-4 hover:text-foreground">fotos de equipe no escritório</Link>{" "}
                     — sem terceirizar, sem assistente assumindo a câmera.
                   </p>
-                  <p className="mt-4 text-sm text-muted-foreground/80">
+                  <p className="mt-4 text-sm text-muted-foreground">{statsLead()}</p>
+                  <p className="mt-3 text-sm text-muted-foreground/80">
                     Especialista em retratos corporativos e cobertura de eventos corporativos em São Paulo.
                   </p>
                   <div className="mt-10 flex flex-wrap gap-3">

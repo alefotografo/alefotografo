@@ -39,40 +39,13 @@ export const Route = createFileRoute("/quem-e-o-ale")({
           url: `${SITE_ORIGIN}/quem-e-o-ale`,
           inLanguage: "pt-BR",
           isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
-          // A definição completa da Person vive no @graph do root; aqui só
-          // declaramos que esta página é a página oficial dessa entidade.
-          mainEntity: {
-            "@type": "Person",
-            "@id": `${SITE_ORIGIN}/quem-e-o-ale#person`,
-            name: "Alexandre Machado",
-            alternateName: "Alê Fotógrafo",
-            jobTitle: "Fotógrafo de retrato corporativo",
-            description:
-              "Fotógrafo em São Paulo com mais de 30 anos de carreira: retratos corporativos e executivos, foto para LinkedIn, médicos, advogados e lideranças, com direção de pose e atendimento direto.",
-            image: PORTRAIT,
-            url: `${SITE_ORIGIN}/quem-e-o-ale`,
-            worksFor: { "@id": `${SITE_ORIGIN}/#business` },
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Alameda Santos, 1165",
-              addressLocality: "São Paulo",
-              addressRegion: "SP",
-              postalCode: "01419-002",
-              addressCountry: "BR",
-            },
-            knowsAbout: [
-              "Retrato corporativo",
-              "Retrato executivo",
-              "Foto para LinkedIn",
-              "Retratos de médicos e advogados",
-              "Direção de pose",
-              "Vídeo institucional",
-            ],
-            sameAs: [site.instagram, site.linkedin],
-          },
+          // Definição única da entidade — src/data/person.ts, o mesmo nó
+          // publicado no @graph do root.
+          mainEntity: personSchema,
         }),
       },
     ],
+
 
   }),
   component: QuemEOAlePage,

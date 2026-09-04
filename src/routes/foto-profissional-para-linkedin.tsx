@@ -108,6 +108,39 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Por que ter uma foto profissional no LinkedIn?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Perfis com foto profissional recebem até 14x mais visualizações no LinkedIn. Uma imagem de qualidade transmite credibilidade, aumenta conexões aceitas e melhora a percepção de autoridade profissional.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Como deve ser a foto para LinkedIn?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "A foto ideal para LinkedIn é um enquadramento de busto em fundo neutro, com boa iluminação e expressão confiante. Evite selfies, fotos de eventos ou imagens recortadas. Um fotógrafo profissional garante resultado consistente.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Quanto tempo leva a sessão de foto para LinkedIn?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "A sessão de foto profissional para LinkedIn dura entre 20 e 40 minutos. As fotos editadas são entregues em até 3 dias úteis, prontas para upload na plataforma.",
+              },
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: LinkedinPage,

@@ -101,6 +101,24 @@ function QuemEOAlePage() {
         </div>
       </section>
 
+      {/* Fatos verificáveis: espelham o schema Person para leitura direta por
+          pessoas e por mecanismos de IA, que leem o texto e não só o JSON-LD. */}
+      <section className="border-b border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-ember">
+            Ficha do profissional
+          </h2>
+          <dl className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+            {personFacts.map((fact) => (
+              <div key={fact.term}>
+                <dt className="text-xs uppercase tracking-wider text-muted-foreground">{fact.term}</dt>
+                <dd className="mt-1 text-sm font-medium text-foreground">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
         <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
           <p>

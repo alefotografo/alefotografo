@@ -163,8 +163,11 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
         </div>
       </section>
 
+      <StatsBand items={serviceStats(deliveryKind)} />
+
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="max-w-3xl space-y-4 text-muted-foreground md:text-lg">
+          <p className="text-foreground">{statsLead(deliveryKind)}</p>
           {cfg.intro.map((p) => (
             <p key={p}>{p}</p>
           ))}

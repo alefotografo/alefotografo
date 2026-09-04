@@ -100,7 +100,7 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: (editorialFor(params.slug)?.faqs ?? faqs.slice(0, 5)).map((f) => ({
+            mainEntity: (params.slug === "retrato-corporativo" ? retratoCorporativoFaqs : (editorialFor(params.slug)?.faqs ?? faqs.slice(0, 5))).map((f) => ({
               "@type": "Question",
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },

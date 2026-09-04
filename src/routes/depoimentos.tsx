@@ -8,26 +8,16 @@ import {
   testimonialInitials,
   type Testimonial,
 } from "@/data/testimonials";
-import { aggregateRatingSchema, googleReviewsSummary } from "@/data/reviews";
+import { googleReviewsSummary } from "@/data/reviews";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
+// A entidade do negócio (com nome, endereço, sameAs e aggregateRating) vive uma
+// única vez no @graph do __root. Aqui só acrescentamos as avaliações ao MESMO
+// nó, via @id — declarar um segundo LocalBusiness criava entidade duplicada com
+// duas notas agregadas para o mesmo negócio.
 const reviewsSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Alê Fotógrafo",
-  url: "https://www.alefotografo.com.br/depoimentos",
-  telephone: "+55-11-91355-0533",
-  email: "comercial@alefotografo.com.br",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Alameda Santos, 1165",
-    addressLocality: "São Paulo",
-    addressRegion: "SP",
-    postalCode: "01419-002",
-    addressCountry: "BR",
-  },
-  sameAs: [site.instagram, site.linkedin],
-  aggregateRating: aggregateRatingSchema,
+  "@id": "https://www.alefotografo.com.br/#business",
   review: allTestimonials.map((t) => ({
     "@type": "Review",
     author: { "@type": "Person", name: t.name },
@@ -41,6 +31,7 @@ const reviewsSchema = {
     reviewBody: t.text,
   })),
 };
+
 
 export const Route = createFileRoute("/depoimentos")({
   head: () => ({

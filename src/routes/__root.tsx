@@ -23,7 +23,7 @@ import { TestimonialsCarousel } from "../components/site/TestimonialsCarousel";
 import { LazySection } from "../components/site/LazySection";
 import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
 import { site } from "../data/catalog";
-import { aggregateRatingSchema } from "../data/reviews";
+import { aggregateRatingSchema, reviewSchema } from "../data/reviews";
 
 
 function NotFoundComponent() {

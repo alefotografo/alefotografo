@@ -91,6 +91,8 @@ function PortfolioIndex() {
                     alt={c.title}
                     baseWidth={768}
                     priority={i < 3}
+                    width={1200}
+                    height={i % 6 === 0 ? 1500 : 900}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                     className="h-full w-full object-cover group-hover:scale-105"
                   />

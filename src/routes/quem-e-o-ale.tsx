@@ -223,6 +223,8 @@ function QuemEOAlePage() {
                   srcSet={imgSrcSet(c.cover!, [480, 768, 1024])}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                   alt={c.title}
+                  width={1200}
+                  height={900}
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

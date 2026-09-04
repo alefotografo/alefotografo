@@ -321,6 +321,8 @@ function Home() {
                     <img
                       src={`https://i.ytimg.com/vi/${v.youtube}/hqdefault.jpg`}
                       alt={v.title}
+                      width={1280}
+                      height={720}
                       loading="lazy"
                       decoding="async"
                       className="h-full w-full object-cover opacity-80 group-hover:opacity-100"

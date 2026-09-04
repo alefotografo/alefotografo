@@ -101,6 +101,8 @@ export function ServiceChooser() {
                 <img
                   src={imgUrl(s.img, 480)}
                   alt={s.title}
+                  width={1200}
+                  height={750}
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"

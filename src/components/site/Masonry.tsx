@@ -43,6 +43,8 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
               priority={i === 0}
               baseWidth={768}
               placeholderRatio="4 / 3"
+              width={1200}
+              height={900}
               sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 400px"
               onBroken={() =>
                 setBroken((prev) => {

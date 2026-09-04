@@ -92,7 +92,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-5">
 
         <div className="md:col-span-2">
-          <img src={logo.url} alt="Alê Fotógrafo" width={200} height={60} className="h-14 w-auto" />
+          <img src={logo.url} alt="Alê Fotógrafo" width={200} height={60} loading="lazy" decoding="async" className="h-14 w-auto" />
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             {site.description}
           </p>

@@ -195,8 +195,12 @@ export function Footer() {
       <div className="border-t border-border/60">
         <div className="mx-auto max-w-7xl px-5 py-8 md:px-8">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Fotógrafo corporativo em São Paulo — atendemos
+            Fotógrafo corporativo em São Paulo —{" "}
+            <Link to="/fotografo-corporativo-em" className="text-ember hover:underline">
+              todas as páginas por bairro
+            </Link>
           </p>
+
           <div className="flex flex-wrap gap-2">
             {bairros.map((b) => (
               <Link

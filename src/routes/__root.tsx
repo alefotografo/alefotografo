@@ -245,6 +245,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          name: "Alê Fotógrafo Corporativo",
+          description:
+            "Fotografia corporativa profissional em São Paulo — retratos, headshots e eventos empresariais.",
+          url: "https://alefotografo.com.br",
+          telephone: "+55-11-91355-0533",
+          image:
+            "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: site.address.street,
+            addressLocality: site.address.locality,
+            addressRegion: site.address.region,
+            postalCode: site.address.postalCode,
+            addressCountry: site.address.country,
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: Number(site.geo.lat),
+            longitude: Number(site.geo.lon),
+          },
+          areaServed: [
+            "Vila Olímpia",
+            "Itaim Bibi",
+            "Faria Lima",
+            "Paulista",
+            "Jardins",
+            "Pinheiros",
+            "Moema",
+            "Brooklin",
+          ],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "144",
+            bestRating: "5",
+          },
+          priceRange: "$$",
+        }),
+      },
     ],
 
   }),

@@ -239,6 +239,12 @@ function FotografiaParaClinicasPage() {
         </div>
       </section>
 
+      <StatsBand items={serviceStats()} />
+
+      <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8 md:pt-16">
+        <p className="max-w-3xl text-muted-foreground md:text-lg">{statsLead()}</p>
+      </section>
+
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">
           O que entra na produção de uma clínica

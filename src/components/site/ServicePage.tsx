@@ -17,7 +17,14 @@ export interface ServicePageConfig {
   eyebrow: string;
   h1: string;
   subtitle: string;
+  /**
+   * Bloco de resposta direta de 40–60 palavras: responde "o que é este serviço
+   * e para quem" na primeira frase, sem depender do resto da página.
+   */
+  answerBlock: string;
   intro: string[];
+  /** Tabela comparativa de formatos de sessão. */
+  formats: SessionFormat[];
   /** Nota editorial apontando para o site da equipe (coberturas de grande porte). */
   teamSiteNote?: string;
   serviceType: string;

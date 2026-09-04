@@ -6,6 +6,8 @@ import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { StatsBand } from "@/components/site/StatsBand";
+import { serviceStats, statsLead } from "@/data/stats";
 
 const URL_PATH = "/fotos-corporativas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;

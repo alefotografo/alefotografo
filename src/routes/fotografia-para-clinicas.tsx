@@ -7,6 +7,8 @@ import { FaqList } from "@/components/site/Faq";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { StatsBand } from "@/components/site/StatsBand";
+import { serviceStats, statsLead } from "@/data/stats";
 
 
 const URL_PATH = "/fotografia-para-clinicas";

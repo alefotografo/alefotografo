@@ -6,6 +6,8 @@ import { FaqList } from "@/components/site/Faq";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import { waLink } from "@/lib/whatsapp";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { StatsBand } from "@/components/site/StatsBand";
+import { serviceStats, statsLead } from "@/data/stats";
 import type { Faq } from "@/lib/faqs";
 
 const URL_PATH = "/foto-profissional";

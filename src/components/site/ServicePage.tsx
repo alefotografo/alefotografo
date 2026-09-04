@@ -9,6 +9,7 @@ import { SITE_ORIGIN } from "@/lib/seo";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
 import { StatsBand } from "@/components/site/StatsBand";
 import { deliveryKindForPath, serviceStats, statsLead } from "@/data/stats";
+import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import type { Faq } from "@/lib/faqs";
 
 export interface ServicePageConfig {
@@ -64,7 +65,8 @@ export function servicePageSchema(cfg: ServicePageConfig) {
         "@type": "Service",
         name: cfg.h1,
         serviceType: cfg.serviceType,
-        description: cfg.description,
+        description: cfg.answerBlock,
+        disambiguatingDescription: cfg.description,
         url: canonical,
         areaServed: { "@type": "City", name: "São Paulo" },
         aggregateRating: aggregateRatingSchema,
@@ -90,6 +92,16 @@ export function servicePageSchema(cfg: ServicePageConfig) {
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
+      },
+      {
+        "@type": "WebPage",
+        "@id": canonical,
+        url: canonical,
+        inLanguage: "pt-BR",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+        },
       },
       {
         "@type": "BreadcrumbList",
@@ -174,6 +186,12 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="max-w-3xl space-y-4 text-muted-foreground md:text-lg">
+          <p
+            data-answer-block
+            className="border-l-2 border-ember pl-5 text-lg font-medium text-foreground md:text-xl"
+          >
+            {cfg.answerBlock}
+          </p>
           <p className="text-foreground">{statsLead(deliveryKind)}</p>
           {cfg.intro.map((p) => (
             <p key={p}>{p}</p>
@@ -241,6 +259,8 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
           </div>
         </div>
       </section>
+
+      <FormatsTable items={cfg.formats} />
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-3xl">Como funciona</h2>

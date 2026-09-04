@@ -88,6 +88,95 @@ do site (`/faq`), começando pela resposta direta:
 Uma publicação por semana no painel, sempre com link para uma página real do
 site — de preferência um artigo do blog recém-publicado.
 
+## 10. Área de atendimento — declarar as 6 cidades, não os 33 bairros
+
+No painel, o campo de área de atendimento aceita cidades e regiões, não
+bairros. Declarar exatamente estas 6, na mesma ordem do schema do site:
+
+1. São Paulo, SP
+2. Santo André, SP
+3. São Bernardo do Campo, SP
+4. São Caetano do Sul, SP
+5. Diadema, SP
+6. Barueri, SP
+
+Não passar de 6 nem incluir "Grande São Paulo" genérico: área ampla demais
+dilui a proximidade, que é o principal fator de posição no mapa.
+
+Os bairros entram de outra forma: como link em publicações do painel, nas
+respostas de avaliação e nas descrições de serviço. Cada um tem página
+própria no site, com `ProfessionalService` e `serviceArea` já publicados.
+
+### São Paulo (23)
+
+| Bairro | Página do site |
+| --- | --- |
+| Vila Olímpia | https://www.alefotografo.com.br/fotografo-corporativo-em/vila-olimpia |
+| Faria Lima | https://www.alefotografo.com.br/fotografo-corporativo-em/faria-lima |
+| Avenida Paulista | https://www.alefotografo.com.br/fotografo-corporativo-em/avenida-paulista |
+| Berrini | https://www.alefotografo.com.br/fotografo-corporativo-em/berrini |
+| Itaim Bibi | https://www.alefotografo.com.br/fotografo-corporativo-em/itaim-bibi |
+| Pinheiros | https://www.alefotografo.com.br/fotografo-corporativo-em/pinheiros |
+| Jardim Paulistano | https://www.alefotografo.com.br/fotografo-corporativo-em/jardim-paulistano |
+| Brooklin | https://www.alefotografo.com.br/fotografo-corporativo-em/brooklin |
+| Cidade Monções | https://www.alefotografo.com.br/fotografo-corporativo-em/cidade-moncoes |
+| Vila Madalena | https://www.alefotografo.com.br/fotografo-corporativo-em/vila-madalena |
+| Cerqueira César | https://www.alefotografo.com.br/fotografo-corporativo-em/cerqueira-cesar |
+| Consolação | https://www.alefotografo.com.br/fotografo-corporativo-em/consolacao |
+| República | https://www.alefotografo.com.br/fotografo-corporativo-em/republica |
+| Moema | https://www.alefotografo.com.br/fotografo-corporativo-em/moema |
+| Vila Mariana | https://www.alefotografo.com.br/fotografo-corporativo-em/vila-mariana |
+| Perdizes | https://www.alefotografo.com.br/fotografo-corporativo-em/perdizes |
+| Lapa | https://www.alefotografo.com.br/fotografo-corporativo-em/lapa |
+| Santana | https://www.alefotografo.com.br/fotografo-corporativo-em/santana |
+| Tatuapé | https://www.alefotografo.com.br/fotografo-corporativo-em/tatuape |
+| Mooca | https://www.alefotografo.com.br/fotografo-corporativo-em/mooca |
+| Água Branca | https://www.alefotografo.com.br/fotografo-corporativo-em/agua-branca |
+| Morumbi | https://www.alefotografo.com.br/fotografo-corporativo-em/morumbi |
+| Santo Amaro | https://www.alefotografo.com.br/fotografo-corporativo-em/santo-amaro |
+
+### Santo André (3)
+
+| Bairro | Página do site |
+| --- | --- |
+| Centro de Santo André | https://www.alefotografo.com.br/fotografo-corporativo-em/centro-santo-andre |
+| Bairro Campestre | https://www.alefotografo.com.br/fotografo-corporativo-em/campestre-santo-andre |
+| Vila Assunção | https://www.alefotografo.com.br/fotografo-corporativo-em/vila-assuncao-santo-andre |
+
+### São Bernardo do Campo (3)
+
+| Bairro | Página do site |
+| --- | --- |
+| Centro de São Bernardo do Campo | https://www.alefotografo.com.br/fotografo-corporativo-em/centro-sao-bernardo |
+| Rudge Ramos | https://www.alefotografo.com.br/fotografo-corporativo-em/rudge-ramos |
+| Baeta Neves | https://www.alefotografo.com.br/fotografo-corporativo-em/baeta-neves |
+
+### São Caetano do Sul (2)
+
+| Bairro | Página do site |
+| --- | --- |
+| Centro de São Caetano do Sul | https://www.alefotografo.com.br/fotografo-corporativo-em/centro-sao-caetano |
+| Santa Paula | https://www.alefotografo.com.br/fotografo-corporativo-em/santa-paula-sao-caetano |
+
+### Diadema (1)
+
+| Bairro | Página do site |
+| --- | --- |
+| Centro de Diadema | https://www.alefotografo.com.br/fotografo-corporativo-em/centro-diadema |
+
+### Barueri (1)
+
+| Bairro | Página do site |
+| --- | --- |
+| Alphaville | https://www.alefotografo.com.br/fotografo-corporativo-em/alphaville-barueri |
+
+Uso prático dessas URLs no painel:
+
+- Publicação semanal citando um bairro: link para a página do bairro
+- Resposta a avaliação de cliente daquela região: citar o bairro por nome
+- Nunca criar uma "localização" separada no painel por bairro: o endereço
+  comercial é um só (Alameda Santos, 1165)
+
 ## 9. Bing Places
 
 `https://www.bingplaces.com` permite importar o perfil do Google inteiro.
@@ -101,3 +190,8 @@ mais curto e evita divergência entre os dois.
 - Links "Ver avaliações no Google" e "Avaliar no Google" visíveis na home e
   em `/depoimentos`
 - Nota e contagem de avaliações vindas de uma fonte única no código
+- As 33 páginas de bairro publicam `ProfessionalService` com `serviceArea`
+  (GeoCircle de 40 km a partir do estúdio), `geo` e endereço do estúdio, e
+  `areaServed` com o bairro, os vizinhos da região e as 6 cidades
+- Telefone no mesmo formato (`+55-11-91355-0533`) no nó do negócio e nas
+  páginas de bairro, para não haver divergência de NAP

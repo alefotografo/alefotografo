@@ -26,7 +26,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Quanto tempo dura um ensaio de retrato e quando recebo as fotos?",
-    a: "Um retrato individual leva de 20 a 40 minutos; em ensaios de equipe, de 10 a 15 minutos por pessoa. As imagens tratadas ficam prontas em 1 a 3 dias úteis, com ajuste de cor, retoque natural de pele e cortes já prontos para LinkedIn, site e apresentações.",
+    a: "Um retrato individual leva de 20 a 40 minutos; em ensaios de equipe, de 10 a 15 minutos por pessoa. As imagens tratadas ficam prontas em 1 dia útil, com ajuste de cor, retoque natural de pele e cortes já prontos para LinkedIn, site e apresentações. Em cobertura de evento, a seleção das melhores imagens sai no mesmo dia.",
   },
   {
     q: "Você fotografa no escritório da empresa?",

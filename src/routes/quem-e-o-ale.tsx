@@ -4,6 +4,7 @@ import { categories, posts, site } from "@/data/catalog";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Award, Camera, Target, Zap, ArrowUpRight } from "lucide-react";
+import { personFacts, personSchema } from "@/data/person";
 
 const PORTRAIT =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
@@ -39,40 +40,13 @@ export const Route = createFileRoute("/quem-e-o-ale")({
           url: `${SITE_ORIGIN}/quem-e-o-ale`,
           inLanguage: "pt-BR",
           isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
-          // A definição completa da Person vive no @graph do root; aqui só
-          // declaramos que esta página é a página oficial dessa entidade.
-          mainEntity: {
-            "@type": "Person",
-            "@id": `${SITE_ORIGIN}/quem-e-o-ale#person`,
-            name: "Alexandre Machado",
-            alternateName: "Alê Fotógrafo",
-            jobTitle: "Fotógrafo de retrato corporativo",
-            description:
-              "Fotógrafo em São Paulo com mais de 30 anos de carreira: retratos corporativos e executivos, foto para LinkedIn, médicos, advogados e lideranças, com direção de pose e atendimento direto.",
-            image: PORTRAIT,
-            url: `${SITE_ORIGIN}/quem-e-o-ale`,
-            worksFor: { "@id": `${SITE_ORIGIN}/#business` },
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Alameda Santos, 1165",
-              addressLocality: "São Paulo",
-              addressRegion: "SP",
-              postalCode: "01419-002",
-              addressCountry: "BR",
-            },
-            knowsAbout: [
-              "Retrato corporativo",
-              "Retrato executivo",
-              "Foto para LinkedIn",
-              "Retratos de médicos e advogados",
-              "Direção de pose",
-              "Vídeo institucional",
-            ],
-            sameAs: [site.instagram, site.linkedin],
-          },
+          // Definição única da entidade — src/data/person.ts, o mesmo nó
+          // publicado no @graph do root.
+          mainEntity: personSchema,
         }),
       },
     ],
+
 
   }),
   component: QuemEOAlePage,
@@ -124,6 +98,24 @@ function QuemEOAlePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Fatos verificáveis: espelham o schema Person para leitura direta por
+          pessoas e por mecanismos de IA, que leem o texto e não só o JSON-LD. */}
+      <section className="border-b border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-[0.25em] text-ember">
+            Ficha do profissional
+          </h2>
+          <dl className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+            {personFacts.map((fact) => (
+              <div key={fact.term}>
+                <dt className="text-xs uppercase tracking-wider text-muted-foreground">{fact.term}</dt>
+                <dd className="mt-1 text-sm font-medium text-foreground">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

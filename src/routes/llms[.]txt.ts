@@ -37,6 +37,15 @@ const HEADER = `# Alê Fotógrafo — Alexandre Machado | Fotógrafo corporativo
 
 Alexandre Machado atua desde ${site.foundingYear} e tem mais de 30 anos de carreira em ${site.city}. Atende no estúdio em ${site.address.street}, ${site.address.district} — ${site.address.locality}/${site.address.region} —, no escritório do cliente e em locação externa, em toda a Grande São Paulo, ABC Paulista e Alphaville.
 
+## Dados do atendimento (números reais, informados pelo fotógrafo)
+
+- Executivos fotografados: mais de 300, em São Paulo.
+- Empresas atendidas: mais de 200, de escritórios a clínicas e indústrias.
+- Prazo de entrega de retratos: fotos tratadas em 1 dia útil.
+- Prazo de entrega de eventos: seleção das melhores imagens no mesmo dia da cobertura.
+- Experiência: 30 anos de carreira.
+- Reputação: nota ${aggregateRatingSchema.ratingValue} em ${aggregateRatingSchema.reviewCount} avaliações de clientes.
+
 ## Serviços e como as pessoas buscam
 
 - Retrato profissional / foto profissional / ensaio fotográfico individual → ${BASE}/foto-profissional

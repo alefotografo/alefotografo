@@ -204,6 +204,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               employee: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
               sameAs: [site.instagram, site.linkedin, "https://alefotografos.com.br"],
               aggregateRating: aggregateRatingSchema,
+              // Avaliações reais publicadas por clientes no Perfil da Empresa
+              // no Google — mesma fonte da nota agregada.
+              review: reviewSchema,
+
               priceRange: "$$",
               makesOffer: [
                 "Fotografia corporativa",

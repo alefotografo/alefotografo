@@ -8,7 +8,7 @@ import {
   testimonialInitials,
   type Testimonial,
 } from "@/data/testimonials";
-import { googleReviewsSummary } from "@/data/reviews";
+import { googleBusinessProfileUrl, googleReviewUrl, googleReviewsSummary } from "@/data/reviews";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 // A entidade do negócio (com nome, endereço, sameAs e aggregateRating) vive uma

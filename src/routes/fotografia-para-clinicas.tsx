@@ -79,7 +79,8 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
               "@type": "Service",
               name: "Fotografia para clínicas em São Paulo",
               serviceType: "Fotografia para clínicas e consultórios",
-              description: DESCRIPTION,
+              description: ANSWER_BLOCK,
+              disambiguatingDescription: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
               aggregateRating: aggregateRatingSchema,
@@ -108,6 +109,16 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
               })),
+            },
+            {
+              "@type": "WebPage",
+              "@id": CANONICAL,
+              url: CANONICAL,
+              inLanguage: "pt-BR",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+              },
             },
             {
               "@type": "BreadcrumbList",

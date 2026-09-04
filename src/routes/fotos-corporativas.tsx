@@ -64,7 +64,8 @@ export const Route = createFileRoute("/fotos-corporativas")({
               "@type": "Service",
               name: "Fotos corporativas em São Paulo",
               serviceType: "Fotografia corporativa",
-              description: DESCRIPTION,
+              description: ANSWER_BLOCK,
+              disambiguatingDescription: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
               provider: {
@@ -89,6 +90,16 @@ export const Route = createFileRoute("/fotos-corporativas")({
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
               })),
+            },
+            {
+              "@type": "WebPage",
+              "@id": CANONICAL,
+              url: CANONICAL,
+              inLanguage: "pt-BR",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+              },
             },
             {
               "@type": "BreadcrumbList",

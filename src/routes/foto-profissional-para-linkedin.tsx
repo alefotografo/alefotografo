@@ -61,7 +61,8 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
               "@type": "Service",
               name: "Foto profissional para LinkedIn em São Paulo",
               serviceType: "Retrato profissional / headshot",
-              description: DESCRIPTION,
+              description: ANSWER_BLOCK,
+              disambiguatingDescription: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
               provider: {
@@ -86,6 +87,16 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
               })),
+            },
+            {
+              "@type": "WebPage",
+              "@id": CANONICAL,
+              url: CANONICAL,
+              inLanguage: "pt-BR",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+              },
             },
             {
               "@type": "BreadcrumbList",

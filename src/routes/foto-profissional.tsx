@@ -136,7 +136,8 @@ export const Route = createFileRoute("/foto-profissional")({
               "@type": "Service",
               name: "Foto profissional em São Paulo",
               serviceType: "Retrato profissional e corporativo",
-              description: DESCRIPTION,
+              description: ANSWER_BLOCK,
+              disambiguatingDescription: DESCRIPTION,
               url: CANONICAL,
               areaServed: { "@type": "City", name: "São Paulo" },
               aggregateRating: aggregateRatingSchema,
@@ -164,6 +165,16 @@ export const Route = createFileRoute("/foto-profissional")({
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
               })),
+            },
+            {
+              "@type": "WebPage",
+              "@id": CANONICAL,
+              url: CANONICAL,
+              inLanguage: "pt-BR",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["[data-answer-block]", "[data-faq-question]", "[data-faq-answer]"],
+              },
             },
             {
               "@type": "BreadcrumbList",

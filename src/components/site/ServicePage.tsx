@@ -7,6 +7,8 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { LinkHub } from "@/components/site/LinkHub";
 import { SITE_ORIGIN } from "@/lib/seo";
 import { aggregateRatingSchema, reviewSchema } from "@/data/reviews";
+import { StatsBand } from "@/components/site/StatsBand";
+import { deliveryKindForPath, serviceStats, statsLead } from "@/data/stats";
 import type { Faq } from "@/lib/faqs";
 
 export interface ServicePageConfig {

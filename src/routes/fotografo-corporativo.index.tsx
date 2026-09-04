@@ -12,6 +12,49 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
       path: "/fotografo-corporativo",
     }),
     links: [{ rel: "canonical", href: "https://alefotografo.com.br/fotografo-corporativo" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Quanto custa uma sessão de fotografia corporativa em São Paulo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Uma sessão de fotografia corporativa em São Paulo varia entre R$ 800 e R$ 3.000 dependendo do número de fotos, locação e uso. O Alê Fotógrafo oferece pacotes para equipes e individuais, com entrega em até 5 dias úteis.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Quanto tempo dura uma sessão de fotos corporativas?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Uma sessão individual de fotografia corporativa dura entre 30 minutos e 1 hora. Para equipes corporativas, planejamos roteiros de 15 a 20 minutos por colaborador para garantir qualidade e eficiência.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "O fotógrafo atende em toda São Paulo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sim. O Alê Fotógrafo atende em toda São Paulo e Grande SP, com especialização nos bairros corporativos: Faria Lima, Itaim Bibi, Vila Olímpia, Paulista, Jardins, Moema e Brooklin.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "As fotos podem ser usadas em LinkedIn, site e materiais de RH?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sim. Todos os pacotes incluem licença de uso comercial completa — LinkedIn, site institucional, materiais de RH, apresentações e imprensa. As fotos são entregues em alta resolução e versão otimizada para web.",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: PortfolioIndex,
 });

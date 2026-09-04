@@ -53,6 +53,23 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify(faqJsonLd(homeFaqs)),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Alexandre Machado",
+          alternateName: "Alê Fotógrafo",
+          jobTitle: "Fotógrafo Corporativo",
+          worksFor: {
+            "@type": "Organization",
+            name: "Alê Fotógrafo Corporativo",
+            url: "https://alefotografo.com.br",
+          },
+          url: "https://alefotografo.com.br",
+          sameAs: [site.instagram, site.linkedin],
+        }),
+      },
       // A empresa e a pessoa (Alexandre Machado) são declaradas uma única vez
       // no @graph do __root (#business e #person). Repetir aqui como
       // "#organization" criava duas entidades para o mesmo negócio, com

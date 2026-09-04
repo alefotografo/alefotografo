@@ -1,3 +1,5 @@
+import { SITE_ORIGIN } from "@/lib/seo";
+
 export interface Faq {
   q: string;
   a: string;
@@ -70,6 +72,15 @@ export function faqJsonLd(items: Faq[] = faqs) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: "pt-BR",
+    // Vincula as respostas à entidade que as assina, em vez de texto anônimo.
+    about: { "@id": `${SITE_ORIGIN}/#business` },
+    author: { "@id": `${SITE_ORIGIN}/quem-e-o-ale#person` },
+    // Sinaliza os blocos citáveis para assistentes de voz e parsers de IA.
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["[data-faq-question]", "[data-faq-answer]"],
+    },
     mainEntity: items.map((f) => ({
       "@type": "Question",
       name: f.q,

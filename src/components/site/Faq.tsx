@@ -17,13 +17,13 @@ export function FaqList({ items, defaultOpen = 0 }: { items: FaqItem[]; defaultO
               aria-expanded={isOpen}
               className="flex w-full items-start justify-between gap-4 py-5 text-left"
             >
-              <h3 className="font-display text-base font-semibold leading-snug md:text-lg">{f.q}</h3>
+              <h3 data-faq-question className="font-display text-base font-semibold leading-snug md:text-lg">{f.q}</h3>
               <span className="mt-1 shrink-0 rounded-full border border-border p-1.5 text-ember">
                 {isOpen ? <Minus size={14} /> : <Plus size={14} />}
               </span>
             </button>
             {isOpen && (
-              <div className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <div data-faq-answer className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground md:text-base">
                 {f.a}
               </div>
             )}

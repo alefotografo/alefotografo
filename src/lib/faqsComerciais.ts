@@ -12,7 +12,7 @@ export const faqsComerciais: Faq[] = [
   },
   {
     q: "Qual a diferença entre headshot e retrato corporativo?",
-    a: "Headshot é o enquadramento fechado — rosto e ombros, fundo limpo, feito para foto de perfil no LinkedIn, assinatura de e-mail e página de equipe. Retrato corporativo é o conjunto mais amplo: meio corpo ou corpo inteiro, muitas vezes com o ambiente de trabajo em cena, usado em site institucional, relatório anual, apresentações e imprensa. Na prática os dois saem do mesmo ensaio: fotografo primeiro o headshot padronizado e depois abro o enquadramento, então você fica com as duas leituras sem contratar duas sessões.",
+    a: "Headshot é o enquadramento fechado — rosto e ombros, fundo limpo, feito para foto de perfil no LinkedIn, assinatura de e-mail e página de equipe. Retrato corporativo é o conjunto mais amplo: meio corpo ou corpo inteiro, muitas vezes com o ambiente de trabalho em cena, usado em site institucional, relatório anual, apresentações e imprensa. Na prática os dois saem do mesmo ensaio: fotografo primeiro o headshot padronizado e depois abro o enquadramento, então você fica com as duas leituras sem contratar duas sessões.",
   },
   {
     q: "Vocês fotografam no escritório da empresa?",

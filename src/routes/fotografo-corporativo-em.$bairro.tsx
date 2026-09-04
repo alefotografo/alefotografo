@@ -3,6 +3,8 @@ import { bairroBySlug, bairros } from "@/data/bairros";
 import { bairroContexto } from "@/data/bairroContexto";
 import { buildMeta } from "@/lib/seo";
 import { site, categories } from "@/data/catalog";
+import { aggregateRatingSchema } from "@/data/reviews";
+
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";

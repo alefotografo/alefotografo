@@ -125,6 +125,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
+      // Feed anunciado em todas as páginas: agregadores e crawlers de IA
+      // descobrem publicação nova sem passar pelo hub /blog.
+      { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
       { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: fontBody500, crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },

@@ -16,6 +16,7 @@ import { faqsComerciais } from "@/lib/faqsComerciais";
 import { ServiceChooser } from "@/components/site/ServiceChooser";
 import { SegmentGrid } from "@/components/site/SegmentGrid";
 import { waLink } from "@/lib/whatsapp";
+import { homeStats, statsLead } from "@/data/stats";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 

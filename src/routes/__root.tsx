@@ -23,7 +23,7 @@ import { TestimonialsCarousel } from "../components/site/TestimonialsCarousel";
 import { LazySection } from "../components/site/LazySection";
 import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
 import { site } from "../data/catalog";
-import { aggregateRatingSchema, reviewSchema } from "../data/reviews";
+import { aggregateRatingSchema, googleBusinessProfileUrl, reviewSchema } from "../data/reviews";
 import { personSchema } from "../data/person";
 
 
@@ -175,7 +175,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 latitude: site.geo.lat,
                 longitude: site.geo.lon,
               },
-              hasMap: `https://www.google.com/maps/search/?api=1&query=${site.geo.lat},${site.geo.lon}`,
+              // Aponta para o Perfil da Empresa no Google, não para uma busca por coordenadas.
+              hasMap: googleBusinessProfileUrl,
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
@@ -203,7 +204,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               ],
               founder: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
               employee: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
-              sameAs: [site.instagram, site.linkedin, "https://alefotografos.com.br"],
+              sameAs: [
+                site.instagram,
+                site.linkedin,
+                googleBusinessProfileUrl,
+                "https://alefotografos.com.br",
+              ],
               aggregateRating: aggregateRatingSchema,
               // Avaliações reais publicadas por clientes no Perfil da Empresa
               // no Google — mesma fonte da nota agregada.

@@ -20,7 +20,7 @@ import { homeStats, statsLead } from "@/data/stats";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-import { googleReviews, googleReviewsSummary } from "@/data/reviews";
+import { googleBusinessProfileUrl, googleReviewUrl, googleReviews, googleReviewsSummary } from "@/data/reviews";
 
 const HERO_IMG = heroPhoto.src;
 
@@ -344,12 +344,20 @@ function Home() {
             Nota {googleReviewsSummary.ratingValue.toLocaleString("pt-BR")} de 5 em{" "}
             {googleReviewsSummary.reviewCount} avaliações no Google.{" "}
             <a
-              href={googleReviewsSummary.profileUrl}
+              href={googleBusinessProfileUrl}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="text-ember underline underline-offset-4"
             >
               Ver avaliações no Google
+            </a>{" "}
+            <a
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="underline underline-offset-4 hover:text-foreground"
+            >
+              Avaliar
             </a>
           </p>
           <div className="grid gap-6 md:grid-cols-3">

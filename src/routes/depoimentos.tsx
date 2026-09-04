@@ -8,7 +8,7 @@ import {
   testimonialInitials,
   type Testimonial,
 } from "@/data/testimonials";
-import { googleReviewsSummary } from "@/data/reviews";
+import { googleBusinessProfileUrl, googleReviewUrl, googleReviewsSummary } from "@/data/reviews";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 // A entidade do negócio (com nome, endereço, sameAs e aggregateRating) vive uma
@@ -127,14 +127,24 @@ function Depoimentos() {
             Nota {googleReviewsSummary.ratingValue.toLocaleString("pt-BR")} de 5 em{" "}
             {googleReviewsSummary.reviewCount} avaliações no Google.
           </p>
-          <a
-            href={googleReviewsSummary.profileUrl}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className="mt-4 inline-block text-sm text-ember underline underline-offset-4"
-          >
-            Ver o perfil no Google
-          </a>
+          <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a
+              href={googleBusinessProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-ember underline underline-offset-4"
+            >
+              Ver o perfil no Google
+            </a>
+            <a
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-muted-foreground underline underline-offset-4 hover:text-foreground"
+            >
+              Avaliar no Google
+            </a>
+          </p>
         </div>
       </section>
 

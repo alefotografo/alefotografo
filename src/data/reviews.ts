@@ -8,6 +8,15 @@ export const googleReviewsSummary = {
   profileUrl: "https://maps.google.com/?cid=624227612892811793",
 };
 
+/**
+ * URL canônica do Perfil da Empresa no Google. Valor único usado no schema
+ * (sameAs / hasMap) e nos links visíveis — não escrever à mão em outro lugar.
+ */
+export const googleBusinessProfileUrl = googleReviewsSummary.profileUrl;
+
+/** Link que abre o formulário de avaliação do mesmo perfil. */
+export const googleReviewUrl = `${googleBusinessProfileUrl}&action=review`;
+
 export interface GoogleReview {
   author: string;
   rating: number;

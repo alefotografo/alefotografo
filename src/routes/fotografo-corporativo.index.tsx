@@ -15,6 +15,15 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
     scripts: [
       {
         type: "application/ld+json",
+        children: JSON.stringify(buildBreadcrumbList([
+          {
+            name: "Fotógrafo Corporativo São Paulo",
+            item: "https://www.alefotografo.com.br/fotografo-corporativo",
+          },
+        ])),
+      },
+      {
+        type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

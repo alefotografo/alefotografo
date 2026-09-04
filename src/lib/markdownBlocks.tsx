@@ -103,6 +103,45 @@ export function MarkdownBlock({
   }
 
   const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
+
+  // Tabela markdown: cabeçalho, linha separadora (|---|---|) e corpo.
+  const isTable =
+    lines.length >= 3 &&
+    lines.every((l) => l.startsWith("|") && l.endsWith("|")) &&
+    /^\|[\s:-]*\|[\s:|-]*$/.test(lines[1]!);
+  if (isTable) {
+    const cells = (l: string) =>
+      l.slice(1, -1).split("|").map((c) => c.trim());
+    const head = cells(lines[0]!);
+    const rows = lines.slice(2).map(cells);
+    return (
+      <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+          <thead>
+            <tr className="border-b border-border">
+              {head.map((c, i) => (
+                <th key={i} className="py-2 pr-4 font-medium text-foreground">
+                  {inlineMarkdown(c, ctx, 1)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i} className="border-b border-border/60 last:border-0">
+                {r.map((c, j) => (
+                  <td key={j} className="py-2 pr-4 align-top leading-relaxed text-muted-foreground">
+                    {inlineMarkdown(c, ctx, 1)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   const isBulletList = lines.length > 0 && lines.every((l) => /^[-•]\s+/.test(l));
   if (isBulletList) {
     return (

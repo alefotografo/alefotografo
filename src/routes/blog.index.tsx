@@ -19,7 +19,7 @@ export const Route = createFileRoute("/blog/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/blog" },
-      { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
+      // O rel="alternate" do RSS vive em __root (links concatenam; aqui duplicaria).
     ],
     scripts: [
       {

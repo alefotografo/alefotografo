@@ -7,6 +7,8 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
 import { LinkHub } from "@/components/site/LinkHub";
+import { LinkFixo } from "@/components/site/LinkFixo";
+
 import { ArrowUpRight, MapPin, Check } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({

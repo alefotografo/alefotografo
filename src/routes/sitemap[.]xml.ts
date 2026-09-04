@@ -41,7 +41,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/faq", changefreq: "monthly", priority: "0.8" },
           { path: "/contato", changefreq: "monthly", priority: "0.8" },
           ...categories.map((c) => ({ path: `/fotografo-corporativo/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
+          { path: "/fotografo-corporativo-em", changefreq: "monthly", priority: "0.8" },
           ...bairros.map((b) => ({ path: `/fotografo-corporativo-em/${b.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
+
           // URLs alias (/portfolio/:slug e /fotografo-corporativo/categoria/:slug)
           // apontam para /fotografo-corporativo/:slug via canonical/redirect.
           // Não devem entrar no sitemap: geram "Página com redirecionamento" no GSC.

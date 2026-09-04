@@ -7,6 +7,8 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
 import { LinkHub } from "@/components/site/LinkHub";
+import { LinkFixo } from "@/components/site/LinkFixo";
+
 import { ArrowUpRight, MapPin, Check } from "lucide-react";
 
 export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
@@ -59,6 +61,8 @@ function BairroPage() {
   const b = Route.useLoaderData();
   const cats = categories.slice(0, 8);
   const contexto: string[] = bairroContexto[b.slug] ?? [];
+  const vizinhos = bairros.filter((x) => x.regiao === b.regiao && x.slug !== b.slug);
+
 
   return (
     <>
@@ -157,9 +161,32 @@ function BairroPage() {
               </span>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-2">
+          {vizinhos.length > 0 && (
+            <>
+              <p className="mt-10 text-xs uppercase tracking-wider text-muted-foreground">
+                Outros bairros — {b.regiao}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {vizinhos.map((x) => (
+                  <Link
+                    key={x.slug}
+                    to="/fotografo-corporativo-em/$bairro"
+                    params={{ bairro: x.slug }}
+                    className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-ember hover:text-ember"
+                  >
+                    Fotógrafo {x.prep ?? "na"} {x.nome}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+
+          <p className="mt-10 text-xs uppercase tracking-wider text-muted-foreground">
+            Todas as regiões atendidas
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
             {bairros
-              .filter((x) => x.slug !== b.slug)
+              .filter((x) => x.slug !== b.slug && x.regiao !== b.regiao)
               .map((x) => (
                 <Link
                   key={x.slug}
@@ -171,8 +198,21 @@ function BairroPage() {
                 </Link>
               ))}
           </div>
+          <div className="mt-6">
+            <Link
+              to="/fotografo-corporativo-em"
+              className="inline-flex items-center gap-2 text-sm font-medium text-ember hover:underline"
+            >
+              Ver todas as páginas por bairro <ArrowUpRight size={14} />
+            </Link>
+          </div>
+
+          <div className="mt-10">
+            <LinkFixo url={`https://www.alefotografo.com.br/fotografo-corporativo-em/${b.slug}`} />
+          </div>
         </div>
       </section>
+
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8">

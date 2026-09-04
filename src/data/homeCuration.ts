@@ -21,11 +21,11 @@ export interface HomePhoto {
 
 /** Hero definitivo da Home. */
 export const heroPhoto = {
-  src: `${CDN}/90047/fotografo-de-retratos-corporativos_emilio-carazzai-3.jpg`,
+  src: "/__l5e/assets-v1/1bfa8045-e3a6-42ac-af3d-8d0ff25b523b/ale-hero.jpeg",
   gallery: "fotografo-de-retratos-corporativos",
-  alt: "Retrato corporativo de executivo fotografado por Alexandre Machado em São Paulo",
-  width: 720,
-  height: 1080,
+  alt: "Alexandre Machado, fotógrafo corporativo em São Paulo",
+  width: 1217,
+  height: 1600,
 };
 
 /** Alternativas já validadas para o recorte desktop/mobile do hero. */

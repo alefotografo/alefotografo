@@ -22,8 +22,8 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const url = `https://www.alefotografo.com.br/fotografo-corporativo-em/${params.bairro}`;
-    const prep = loaderData.prep ?? "na";
-    const title = `Fotógrafo Corporativo ${prep} ${loaderData.nome} — SP`;
+    const h1 = `Fotógrafo Corporativo em ${loaderData.nome}, São Paulo`;
+    const title = `Fotógrafo Corporativo em ${loaderData.nome} SP | Alê Fotógrafo`;
     const description = `Fotógrafo corporativo na ${loaderData.nome} (${loaderData.regiao}): retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência em SP.`;
     return {
       meta: buildMeta({ title, description, path: `/fotografo-corporativo-em/${params.bairro}`, type: "article" }),
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
                 item: "https://www.alefotografo.com.br/fotografo-corporativo",
               },
               {
-                name: `Fotógrafo Corporativo ${prep} ${loaderData.nome}`,
+                name: h1,
                 item: url,
               },
             ]),
@@ -82,7 +82,7 @@ function BairroPage() {
             <MapPin size={14} /> {b.regiao}
           </p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Fotógrafo Corporativo {b.prep ?? "na"} {b.nome}
+            Fotógrafo Corporativo em {b.nome}, São Paulo
           </h1>
           <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">{b.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">

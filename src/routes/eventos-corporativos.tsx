@@ -13,6 +13,14 @@ const cfg: ServicePageConfig = {
   subtitle:
     "Retratos feitos no próprio evento, fotos da diretoria e do time completo, palestrantes e homenageados — com direção de pose no meio da programação.",
   h1: "Retratos e fotos de equipe em eventos de empresa",
+  /** Bloco de resposta direta: 40–60 palavras, autocontido. */
+  answerBlock:
+    "Fotografia de evento corporativo é a cobertura de convenções, premiações, palestras e confraternizações de empresa, com retratos de convidados e fotos de equipe durante o evento. É indicada para empresas, agências e organizadores em São Paulo. Fotografo pessoalmente e entrego a seleção das melhores imagens no mesmo dia.",
+  formats: [
+    { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia" },
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+  ],
   intro: [
     "Em eventos de empresa, o que costuma faltar depois é imagem das pessoas: o retrato do palestrante, a foto da diretoria reunida, o homenageado recebendo o prêmio, o time completo em um único enquadramento. É esse recorte que eu fotografo, com direção de pose no meio do evento.",
     "A cobertura é planejada a partir do roteiro, com os momentos de pessoas definidos antes e prévia de imagens liberada ainda durante ou logo após a realização.",

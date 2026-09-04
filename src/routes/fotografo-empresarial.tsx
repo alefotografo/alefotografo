@@ -13,6 +13,15 @@ const cfg: ServicePageConfig = {
   h1: "Fotógrafo empresarial em São Paulo para equipe, escritório e operação",
   subtitle:
     "Cobertura fotográfica completa da sua empresa em um único dia: retratos da equipe, ambientes, processos, indústria, logística e imagens de bastidor para todos os canais.",
+  /** Bloco de resposta direta: 40–60 palavras, autocontido. */
+  answerBlock:
+    "Fotografia empresarial é o registro da empresa em funcionamento: retratos da equipe, escritório, operação e ambiente de trabalho, feitos para site, redes sociais e material institucional. É indicada para empresas de qualquer porte em São Paulo. Fotografo pessoalmente, no seu endereço, e entrego as imagens tratadas em 1 dia útil.",
+  formats: [
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia" },
+  ],
   intro: [
     "A fotografia empresarial documenta a empresa como ela realmente é: pessoas trabalhando, ambientes organizados, operação em andamento e lideranças em retratos padronizados. É o material que substitui banco de imagens genérico no site, no LinkedIn e nas apresentações comerciais.",
     "Atendemos escritórios, indústrias, centros de distribuição, clínicas e prestadores de serviço em toda a Grande São Paulo, com roteiro de captação definido antes da visita para aproveitar cada hora no local.",

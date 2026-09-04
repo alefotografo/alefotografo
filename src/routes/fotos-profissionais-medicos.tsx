@@ -13,6 +13,14 @@ const cfg: ServicePageConfig = {
   h1: "Fotos profissionais para médicos e clínicas em São Paulo",
   subtitle:
     "Fotografias profissionais ajudam médicos, clínicas e profissionais da saúde a transmitirem confiança, acolhimento e autoridade em sites, redes sociais, Google, Doctoralia, apresentações e materiais institucionais.",
+  /** Bloco de resposta direta: 40–60 palavras, autocontido. */
+  answerBlock:
+    "Foto profissional para médicos é o retrato clínico e institucional que transmite confiança antes da primeira consulta: retrato do profissional, da equipe e do consultório. É indicada para médicos, dentistas, psicólogos e clínicas em São Paulo. Fotografo no seu consultório ou em estúdio e entrego as imagens tratadas em 1 dia útil.",
+  formats: [
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+  ],
   intro: [
     "O paciente decide antes de entrar na clínica. Retratos e imagens reais do ambiente reduzem a insegurança de quem pesquisa no Google, compara perfis e agenda pelo celular.",
     "A produção é planejada para respeitar a rotina de atendimento: fotografamos em blocos, com iluminação própria, sem interferir na privacidade dos pacientes.",

@@ -1,9 +1,14 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
-import { SearchResults } from "@/components/site/SearchResults";
-import { searchSite, trackSearch } from "@/lib/search";
+import type { SearchResults as SearchResultsModel } from "@/lib/search";
 import { Button } from "@/components/ui/button";
+
+const SearchResults = lazy(() =>
+  import("@/components/site/SearchResults").then((module) => ({ default: module.SearchResults })),
+);
+
+const EMPTY_RESULTS: SearchResultsModel = { photos: [], videos: [], blog: [], total: 0 };
 
 type Item = { to: string; label: string; hint?: string };
 type Entry = { label: string; to?: string; items?: Item[] };
@@ -60,6 +65,7 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [term, setTerm] = useState("");
   const [debouncedTerm, setDebouncedTerm] = useState("");
+  const [results, setResults] = useState<SearchResultsModel>(EMPTY_RESULTS);
   const navRef = useRef<HTMLElement | null>(null);
   const searchRef = useRef<HTMLDivElement | null>(null);
   const mobileSearchRef = useRef<HTMLDivElement | null>(null);
@@ -67,7 +73,6 @@ export function Header() {
   const mobileInputRef = useRef<HTMLInputElement | null>(null);
   const desktopSearchTriggerRef = useRef<HTMLButtonElement | null>(null);
   const mobileSearchTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const results = useMemo(() => searchSite(debouncedTerm), [debouncedTerm]);
 
   const closeSearch = () => {
     setSearchOpen(false);
@@ -89,8 +94,25 @@ export function Header() {
   }, [term]);
 
   useEffect(() => {
-    if (debouncedTerm.length >= 2) trackSearch(debouncedTerm, results.total);
-  }, [debouncedTerm, results.total]);
+    let active = true;
+    if (!searchOpen || debouncedTerm.length < 2) {
+      setResults(EMPTY_RESULTS);
+      return () => {
+        active = false;
+      };
+    }
+
+    void import("@/lib/search").then(({ searchSite, trackSearch }) => {
+      if (!active) return;
+      const nextResults = searchSite(debouncedTerm);
+      setResults(nextResults);
+      trackSearch(debouncedTerm, nextResults.total);
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [debouncedTerm, searchOpen]);
 
   // travar rolagem do body com o menu ou busca mobile abertos
   useEffect(() => {
@@ -267,7 +289,9 @@ export function Header() {
               )}
               {searchOpen && (
                 <div className="absolute right-0 top-full z-50 mt-2 max-h-[min(70vh,42rem)] w-[min(32rem,calc(100vw-2rem))] overflow-y-auto overscroll-contain rounded-sm border border-border bg-background shadow-xl shadow-background/60">
-                  <SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} />
+                  <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
+                    <SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} />
+                  </Suspense>
                 </div>
               )}
             </div>
@@ -367,7 +391,11 @@ export function Header() {
             {term ? <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}><X size={18} /></Button> : null}
             <Button type="button" variant="outline" size="icon" aria-label="Fechar busca" onClick={closeSearch}><X size={18} /></Button>
           </div>
-          <div className="flex-1 overflow-y-auto overscroll-contain" aria-live="polite"><SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} /></div>
+          <div className="flex-1 overflow-y-auto overscroll-contain" aria-live="polite">
+            <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
+              <SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} />
+            </Suspense>
+          </div>
         </div>
       )}
     </>

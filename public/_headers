@@ -9,4 +9,4 @@
 /*.webp
   Cache-Control: public, max-age=2592000
 /index.html
-  Cache-Control: no-cache, no-store, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400

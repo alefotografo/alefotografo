@@ -1,10 +1,15 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { buildMeta } from "@/lib/seo";
-import { searchSite, trackSearch } from "@/lib/search";
-import { SearchResults } from "@/components/site/SearchResults";
+import type { SearchResults as SearchResultsModel } from "@/lib/search";
 import { Button } from "@/components/ui/button";
+
+const SearchResults = lazy(() =>
+  import("@/components/site/SearchResults").then((module) => ({ default: module.SearchResults })),
+);
+
+const EMPTY_RESULTS: SearchResultsModel = { photos: [], videos: [], blog: [], total: 0 };
 
 export const Route = createFileRoute("/busca")({
   validateSearch: (search: Record<string, unknown>): { q: string } => ({ q: typeof search.q === "string" ? search.q.slice(0, 120) : "" }),
@@ -19,9 +24,28 @@ function BuscaPage() {
   const { q } = Route.useSearch();
   const navigate = useNavigate();
   const [term, setTerm] = useState(q);
-  const results = useMemo(() => searchSite(q), [q]);
+  const [results, setResults] = useState<SearchResultsModel>(EMPTY_RESULTS);
   useEffect(() => { setTerm(q); }, [q]);
-  useEffect(() => { if (q.trim().length >= 2) trackSearch(q, results.total); }, [q, results.total]);
+  useEffect(() => {
+    let active = true;
+    if (q.trim().length < 2) {
+      setResults(EMPTY_RESULTS);
+      return () => {
+        active = false;
+      };
+    }
+
+    void import("@/lib/search").then(({ searchSite, trackSearch }) => {
+      if (!active) return;
+      const nextResults = searchSite(q);
+      setResults(nextResults);
+      trackSearch(q, nextResults.total);
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [q]);
   return (
     <main id="conteudo" className="mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
       <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">Busca</p>
@@ -34,7 +58,7 @@ function BuscaPage() {
           <Button type="submit" size="sm">Buscar</Button>
         </div>
       </form>
-      {q ? <div className="mt-10"><SearchResults query={q} results={results} /></div> : <p className="mt-8 text-sm text-muted-foreground">Busque por um serviço, profissão, tipo de evento ou assunto.</p>}
+      {q ? <div className="mt-10"><Suspense fallback={<p className="text-sm text-muted-foreground">Preparando busca…</p>}><SearchResults query={q} results={results} /></Suspense></div> : <p className="mt-8 text-sm text-muted-foreground">Busque por um serviço, profissão, tipo de evento ou assunto.</p>}
     </main>
   );
 }

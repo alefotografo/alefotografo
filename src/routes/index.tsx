@@ -37,9 +37,18 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
-      // Sem preload manual do hero: o React já emite automaticamente um
-      // <link rel="preload" as="image"> com srcSet/sizes para o <img> eager
-      // fetchPriority="high" do hero. Declarar aqui duplicava a tag no <head>.
+      // Um único preload do hero, apontando para as variantes WebP (as mesmas
+      // do <source> do <picture>), para o LCP baixar exatamente o candidato
+      // que será exibido.
+      {
+        rel: "preload",
+        as: "image",
+        type: "image/webp",
+        href: heroPhoto.webpSrc,
+        imageSrcSet: heroPhoto.webpSrcSet,
+        imageSizes: heroPhoto.sizes,
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {
@@ -151,18 +160,24 @@ function Home() {
           </div>
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong md:flex md:justify-center">
-              <img
-                src={imgUrl(HERO_IMG, 720)}
-                srcSet={imgSrcSet(HERO_IMG, undefined, heroPhoto.width)}
-                sizes="(max-width: 768px) 100vw, 40vw"
-                alt={heroPhoto.alt}
-                width={heroPhoto.width}
-                height={heroPhoto.height}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="h-auto w-full md:max-h-[78vh] md:w-auto"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={heroPhoto.webpSrcSet}
+                  sizes={heroPhoto.sizes}
+                />
+                <img
+                  src={heroPhoto.fallbackSrc}
+                  sizes={heroPhoto.sizes}
+                  alt={heroPhoto.alt}
+                  width={heroPhoto.width}
+                  height={heroPhoto.height}
+                  loading="eager"
+                  decoding="async"
+                  className="h-auto w-full md:max-h-[78vh] md:w-auto"
+                />
+              </picture>
+
             </div>
           </div>
         </div>

@@ -31,4 +31,4 @@ Allow: /
 Sitemap: https://www.alefotografo.com.br/sitemap-index.xml
 
 # Resumo do site para agentes de IA
-LLMs: https://www.alefotografo.com.br/llms.txt
+# For AI/LLM reference: https://www.alefotografo.com.br/llms.txt

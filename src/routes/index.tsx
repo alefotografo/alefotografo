@@ -37,9 +37,18 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
-      // Sem preload manual do hero: o React já emite automaticamente um
-      // <link rel="preload" as="image"> com srcSet/sizes para o <img> eager
-      // fetchPriority="high" do hero. Declarar aqui duplicava a tag no <head>.
+      // Um único preload do hero, apontando para as variantes WebP (as mesmas
+      // do <source> do <picture>), para o LCP baixar exatamente o candidato
+      // que será exibido.
+      {
+        rel: "preload",
+        as: "image",
+        type: "image/webp",
+        href: heroPhoto.webpSrc,
+        imageSrcSet: heroPhoto.webpSrcSet,
+        imageSizes: heroPhoto.sizes,
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {

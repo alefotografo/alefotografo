@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { site } from "@/data/site";
 import { homePosts, homeVideos } from "@/data/homeSummary";
 import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
@@ -70,6 +71,10 @@ function Home() {
   const recentPosts = homePosts;
   const recentVideos = homeVideos;
 
+  useEffect(() => {
+    const el = document.getElementById('static-hero');
+    if (el) el.remove();
+  }, []);
 
   return (
     <>
@@ -141,8 +146,37 @@ function Home() {
                   </dl>
           </div>
           <div className="md:col-span-5">
-            <div className="w-full overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+            <div className="grid w-full overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <picture
+                id="static-hero"
+                aria-hidden="true"
+                className="col-start-1 row-start-1"
+                style={{ display: "block", aspectRatio: "1217 / 1600", width: "100%" }}
+              >
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="/img/hero-portrait-mobile.webp"
+                  type="image/webp"
+                  width="480"
+                  height="630"
+                />
+                <source
+                  srcSet="/img/hero-portrait.webp"
+                  type="image/webp"
+                  width="1217"
+                  height="1600"
+                />
+                <img
+                  src="/img/hero-portrait.jpg"
+                  alt=""
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="sync"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              </picture>
+              <picture
+                className="col-start-1 row-start-1"
                 style={{ display: "block", aspectRatio: "1217 / 1600", width: "100%" }}
               >
                 <source

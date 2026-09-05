@@ -4,7 +4,6 @@ import { waLink } from "@/lib/whatsapp";
 
 export default function HomeCta() {
   return (
-      {/* CTA */}
       <section className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 py-20 md:flex-row md:items-center md:px-8">
           <div className="max-w-xl">

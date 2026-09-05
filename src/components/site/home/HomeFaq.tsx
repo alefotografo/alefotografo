@@ -5,7 +5,6 @@ import { faqsComerciais } from "@/lib/faqsComerciais";
 
 export default function HomeFaq() {
   return (
-      {/* FAQ */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-24">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>

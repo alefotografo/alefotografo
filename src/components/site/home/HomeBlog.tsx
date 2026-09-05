@@ -4,7 +4,6 @@ import { homePosts } from "@/data/homeSummary";
 
 export default function HomeBlog() {
   return (
-      {/* Blog teaser */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>

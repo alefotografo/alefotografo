@@ -4,7 +4,6 @@ import { googleBusinessProfileUrl, googleReviewUrl, googleReviews, googleReviews
 
 export default function HomeSocialProof() {
   return (
-      {/* Social proof — depoimentos */}
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">

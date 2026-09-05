@@ -6,7 +6,6 @@ import { galleryTitle, selectedWorks, worksCtas } from "@/data/homeCuration";
 export default function HomeSelectedWorks() {
   return (
 
-      {/* Trabalhos selecionados — curadoria real do acervo */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">

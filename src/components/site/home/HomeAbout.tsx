@@ -4,7 +4,6 @@ import { imgUrl } from "@/lib/img";
 
 export default function HomeAbout() {
   return (
-      {/* Quem está por trás — retrato do Alê */}
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-12 md:gap-16 md:px-8 md:py-28">
           <div className="md:col-span-5">

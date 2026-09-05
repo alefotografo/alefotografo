@@ -4,7 +4,6 @@ import { homeVideos } from "@/data/homeSummary";
 
 export default function HomeVideos() {
   return (
-      {/* Videos teaser */}
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">

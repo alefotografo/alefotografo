@@ -1,6 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
-import { postBody } from "@/data/postBodies";
 import { postSeo } from "@/data/postSeo";
 
 
@@ -36,10 +35,12 @@ function toISODate(input?: string): string | undefined {
 }
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const p = postBySlug(params.slug);
     if (!p) throw notFound();
-    // O corpo do texto vive num módulo próprio: só esta rota o carrega.
+    // O corpo do texto vive num módulo próprio, importado dinamicamente: assim
+    // os ~630 KB de texto ficam fora do bundle de entrada de todas as páginas.
+    const { postBody } = await import("@/data/postBodies");
     return { ...p, ...postBody(params.slug) };
   },
 

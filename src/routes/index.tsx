@@ -23,8 +23,6 @@ const homeFaqs = faqsComerciais.slice(0, 6);
 
 import { googleBusinessProfileUrl, googleReviewUrl, googleReviews, googleReviewsSummary } from "@/data/reviews";
 
-const HERO_IMG = heroPhoto.src;
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: buildMeta({
@@ -169,7 +167,8 @@ function Home() {
                   width={heroPhoto.width}
                   height={heroPhoto.height}
                   loading="eager"
-                  decoding="async"
+                  decoding="sync"
+                  fetchPriority="high"
                   className="h-full w-full object-contain"
                 />
               </picture>

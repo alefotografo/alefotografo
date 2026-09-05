@@ -29,14 +29,11 @@ function isRemote(src: string) {
 /** URL otimizada de uma imagem para uma largura alvo. */
 export function imgUrl(src: string, width?: number, quality = DEFAULT_QUALITY): string {
   if (!src || !isRemote(src)) return src;
-  const params = new URLSearchParams({
-    url: src,
-    q: String(quality),
-    output: "webp",
-  });
+  const params = new URLSearchParams({ src, q: String(quality) });
   if (width) params.set("w", String(width));
   return `${ENDPOINT}?${params.toString()}`;
 }
+
 
 /**
  * srcset responsivo; vazio quando a imagem não é remota

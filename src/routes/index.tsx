@@ -33,16 +33,22 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
-      // Um único preload do hero, apontando para as variantes WebP (as mesmas
-      // do <source> do <picture>), para o LCP baixar exatamente o candidato
-      // que será exibido.
+      // Preloads da hero como primeiros recursos do <head>: o navegador baixa
+      // a imagem LCP antes de stylesheets, scripts e fontes.
       {
         rel: "preload",
         as: "image",
         type: "image/webp",
-        href: heroPhoto.webpSrc,
-        imageSrcSet: heroPhoto.webpSrcSet,
-        imageSizes: heroPhoto.sizes,
+        href: "/img/hero-portrait-mobile.webp",
+        media: "(max-width: 768px)",
+        fetchPriority: "high",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        type: "image/webp",
+        href: "/img/hero-portrait.webp",
+        media: "(min-width: 769px)",
         fetchPriority: "high",
       },
     ],

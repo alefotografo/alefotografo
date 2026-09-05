@@ -21,7 +21,7 @@ export function WhatsappCta() {
   const track = useTrackConversion();
 
   return (
-    <>
+    <aside aria-label="Atalhos de contato">
       {/* Barra de ações mobile */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 backdrop-blur-md md:hidden">
         <div className="grid grid-cols-2 gap-2 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
@@ -30,7 +30,7 @@ export function WhatsappCta() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("whatsapp")}
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#25D366] text-sm font-medium text-white"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#075E54] text-sm font-medium text-white"
           >
             <WhatsappIcon size={18} />
             WhatsApp
@@ -51,11 +51,11 @@ export function WhatsappCta() {
         rel="noopener noreferrer"
         onClick={() => track("whatsapp")}
         aria-label="Falar no WhatsApp"
-        className="fixed bottom-7 right-7 z-50 hidden h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 text-sm font-medium text-white shadow-lg shadow-black/40 transition-transform hover:scale-105 md:inline-flex"
+        className="fixed bottom-7 right-7 z-50 hidden h-12 items-center justify-center gap-2 rounded-full bg-[#075E54] px-4 text-sm font-medium text-white shadow-lg shadow-black/40 transition-transform hover:scale-105 md:inline-flex"
       >
         <WhatsappIcon />
         WhatsApp
       </a>
-    </>
+    </aside>
   );
 }

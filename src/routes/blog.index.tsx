@@ -170,7 +170,7 @@ function BlogIndex() {
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground text-pretty">
             Catálogo completo em ordem alfabética. Para ver os trabalhos, vá ao{" "}
-            <Link to="/portfolio" className="text-ember hover:underline">
+            <Link to="/portfolio" className="text-ember underline underline-offset-4">
               portfólio de cases
             </Link>
             .

@@ -74,7 +74,7 @@ function FaqPage() {
       </section>
 
       <section className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
-        <FaqList items={primeiras} />
+        <FaqList items={primeiras} headingLevel="h2" />
 
         <LazySection minHeight={480} className="mt-4">
           <h2 className="mb-4 mt-8 font-display text-xl font-semibold md:text-2xl">

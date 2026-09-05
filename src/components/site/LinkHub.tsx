@@ -120,7 +120,7 @@ export function LinkHub({
               to={i.to}
               className="group flex items-start gap-2 rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground/90 transition-colors hover:border-ember hover:text-ember"
             >
-              <span className="mt-0.5 text-xs uppercase tracking-wider text-ember/70">
+              <span className="mt-0.5 text-xs uppercase tracking-wider text-ember">
                 {i.kind === "post" ? "Blog" : i.kind === "galeria" ? "Fotos" : i.kind === "bairro" ? "Região" : "Serviço"}
               </span>
               <span className="line-clamp-2 font-medium">{i.label}</span>

@@ -128,7 +128,7 @@ function CardShell({
         {card.cover ? (
           <SmartImage
             src={card.cover}
-            alt={card.title}
+            alt=""
             baseWidth={768}
             priority={priority}
             placeholderRatio={ratio}
@@ -243,7 +243,7 @@ function ServicosPage() {
                 {c.cover ? (
                   <SmartImage
                     src={c.cover}
-                    alt={c.title}
+                    alt=""
                     baseWidth={480}
                     placeholderRatio="4 / 3"
                     width={1200}

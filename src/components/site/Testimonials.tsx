@@ -26,7 +26,7 @@ export function Testimonials({
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {googleReviews.map((r) => (
             <figure key={r.author} className="rounded-sm border border-border bg-background p-6">
-              <div className="flex items-center gap-1 text-ember" aria-label={`${r.rating} de 5 estrelas`}>
+              <div role="img" className="flex items-center gap-1 text-ember" aria-label={`${r.rating} de 5 estrelas`}>
                 {Array.from({ length: r.rating }).map((_, i) => (
                   <span key={i} aria-hidden="true">
                     ★

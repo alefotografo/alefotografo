@@ -73,7 +73,7 @@ function Card({ t }: { t: Testimonial }) {
         aria-hidden="true"
       />
       <div className="flex items-center gap-2">
-        <span className="flex items-center gap-0.5 text-ember" aria-label={`${t.rating} de 5 estrelas`}>
+        <span role="img" className="flex items-center gap-0.5 text-ember" aria-label={`${t.rating} de 5 estrelas`}>
           {Array.from({ length: t.rating }).map((_, i) => (
             <span key={i} aria-hidden="true">
               ★

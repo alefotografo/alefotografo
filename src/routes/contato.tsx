@@ -156,7 +156,7 @@ function Contato() {
           </form>
         </div>
 
-        <aside className="space-y-6 md:col-span-2">
+        <div className="space-y-6 md:col-span-2">
           <div className="rounded-sm border border-border bg-surface p-6">
             <h2 className="font-display text-lg font-semibold">Canais diretos</h2>
             <ul className="mt-5 space-y-4 text-sm">
@@ -209,7 +209,7 @@ function Contato() {
               Sábados sob demanda para eventos.
             </p>
           </div>
-        </aside>
+        </div>
       </section>
     </>
   );

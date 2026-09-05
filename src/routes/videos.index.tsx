@@ -569,7 +569,7 @@ function VideosIndex() {
                     }`}
                   >
                     {g.label}
-                    <span className="ml-2 text-xs opacity-70">{g.items.length}</span>
+                    <span className="ml-2 text-xs">{g.items.length}</span>
                   </button>
                 ))}
               </div>
@@ -597,7 +597,7 @@ function VideosIndex() {
 
               <p className="mt-10 text-sm text-muted-foreground">
                 Não sabe qual formato precisa?{" "}
-                <Link to="/contato" className="text-ember hover:underline">
+                <Link to="/contato" className="text-ember underline underline-offset-4">
                   Fale comigo
                 </Link>
               </p>
@@ -616,7 +616,7 @@ function VideosIndex() {
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground text-pretty">
             Catálogo completo em ordem alfabética. Para retratos de pessoas e equipes, veja o{" "}
-            <Link to="/portfolio" className="text-ember hover:underline">
+            <Link to="/portfolio" className="text-ember underline underline-offset-4">
               portfólio de fotografia
             </Link>
             .
@@ -788,11 +788,11 @@ function VideosIndex() {
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               WhatsApp{" "}
-              <a href={waLink("Olá Alexandre, quero conversar sobre um vídeo corporativo.")} target="_blank" rel="noopener noreferrer" className="text-ember hover:underline">
+              <a href={waLink("Olá Alexandre, quero conversar sobre um vídeo corporativo.")} target="_blank" rel="noopener noreferrer" className="text-ember underline underline-offset-4">
                 (11) 91355-0533
               </a>{" "}
               · E-mail{" "}
-              <a href={`mailto:${site.email}`} className="text-ember hover:underline">
+              <a href={`mailto:${site.email}`} className="text-ember underline underline-offset-4">
                 {site.email}
               </a>
             </p>

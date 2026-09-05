@@ -188,9 +188,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "preconnect", href: "https://images.weserv.nl", crossOrigin: "anonymous" },
 
       ],
-    };
-  },
-    scripts: [
+      scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({

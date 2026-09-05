@@ -1,10 +1,11 @@
-// Otimização de imagens remotas (CDN legado) servida pelo images.weserv.nl.
-// A rota intermediária no próprio domínio não é usada aqui porque pode falhar no
-// runtime publicado; o CDN de imagens entrega WebP responsivo e cacheado direto.
+// Otimização de imagens remotas (CDN legado) servida pelo próprio domínio.
+// A rota /api/public/img converte para WebP redimensionado na borda, com cache
+// permanente — nenhum host de terceiro aparece no HTML entregue ao navegador.
 // Reduz de ~300–500 KB para ~20–60 KB por foto, em WebP redimensionado.
 
-const ENDPOINT = "https://images.weserv.nl/";
+const ENDPOINT = "/api/public/img";
 const REMOTE_HOSTS = [".rackcdn.com"];
+
 
 /** Larguras para imagens grandes (hero, capa de página). */
 export const IMG_WIDTHS = [480, 720, 1024, 1440];

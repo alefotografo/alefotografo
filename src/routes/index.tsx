@@ -93,8 +93,8 @@ function Home() {
     <>
       {/* Hero — texto + fotografia real */}
       <section className="relative overflow-hidden border-b border-border">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-12 md:items-center md:gap-14 md:px-8 md:py-24">
-          <div className="md:col-span-7">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-12 md:items-start md:gap-14 md:px-8 md:py-24">
+          <div className="md:col-span-7 md:min-h-[55.5rem]">
                   <p className="mb-5 text-xs font-medium uppercase tracking-[0.25em] text-ember">
                     Alexandre Machado · 30 anos · São Paulo
                   </p>

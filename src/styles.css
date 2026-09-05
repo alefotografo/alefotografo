@@ -59,11 +59,20 @@
   size-adjust: 107%;
 }
 
+@font-face {
+  font-family: "DM Sans Fallback";
+  src: local("Arial");
+  ascent-override: 94%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 101%;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-display: "Space Grotesk", "Space Grotesk Fallback", Arial, sans-serif;
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", "DM Sans Fallback", Arial, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

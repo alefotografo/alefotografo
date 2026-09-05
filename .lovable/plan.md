@@ -1,29 +1,39 @@
-# Deixar o título da home aparecer mais rápido no celular
+# Zerar o CLS da home no desktop sem afetar o celular
 
-## O que muda para você
+## Diagnóstico confirmado
 
-No teste de celular, o título grande da home ("Sou Alexandre Machado...") é o elemento medido pelo Google e hoje demora ~1,1s. O objetivo é reduzir esse tempo com ajustes de carregamento, sem mudar o texto nem o layout.
+- O título usa **Space Grotesk 600**, enquanto o texto corrido usa **DM Sans 400**. As duas fontes já são pré-carregadas, mas a família de reserva atual (`ui-sans-serif/system-ui`) não tem métricas calibradas e pode mudar as quebras de linha quando a Space Grotesk entra.
+- A foto da capa é vertical, com proporção real **1217 × 1600** — portanto, não deve receber 16:9.
+- Embora o `<img>` já tenha `width` e `height`, o contêiner `<picture>` não reserva a altura no layout em grade. Em uma medição desktop local, ele começou com apenas 2 px e saltou para 626 px quando a foto carregou, gerando CLS.
+- Nessa medição, o único deslocamento observado foi a foto da capa. Cabeçalho, botões e títulos das seções não se moveram; por isso, não serão adicionadas alturas fixas indiscriminadamente.
 
-## Antes de mexer: medir a causa real
+## Mudanças
 
-O texto do título já vem pronto no HTML enviado pelo servidor, então ele não depende do código de comportamento para aparecer. Por isso, antes de aplicar mudanças no empacotamento, vou medir no celular simulado qual recurso está de fato atrasando a pintura do título: a folha de estilos, a fonte usada no título, ou o código carregado no início. A medição é rápida e evita otimizar a coisa errada.
+1. **Reserva estável para a foto da capa**
+   - Aplicar ao contêiner a proporção real `1217 / 1600`, não `16 / 9`.
+   - Fazer o `<picture>` ocupar o espaço reservado desde o primeiro desenho e manter a imagem contida, sem corte.
+   - Preservar `width="1217"`, `height="1600"`, carregamento prioritário e o WebP responsivo existentes.
+   - Usar a mesma proporção em desktop e celular para não regredir o CLS móvel.
 
-## Mudanças previstas
+2. **Fallback calibrado para o título**
+   - Criar `Space Grotesk Fallback` com Arial local e métricas ajustadas (`ascent-override`, `descent-override`, `line-gap-override` e `size-adjust`).
+   - Atualizar o token global da fonte de títulos para: `'Space Grotesk', 'Space Grotesk Fallback', Arial, sans-serif`.
+   - Como todos os H1–H6 e usos de `font-display` consomem esse token, a correção valerá para o H1 da home e demais títulos sem duplicação de regras.
+   - Manter o corpo em DM Sans, adicionando uma reserva equivalente apenas se a medição mostrar deslocamento no texto corrido; trocar o body para Space Grotesk alteraria a identidade tipográfica sem ajudar o H1.
 
-1. Fonte do título: garantir que o texto apareça imediatamente com a fonte do sistema e troque pela fonte final quando ela chegar (sem "pisca-pisca" de layout), com pré-carregamento apenas do arquivo realmente usado no primeiro rolar.
-2. Estilos: manter só o CSS necessário para a primeira tela como bloqueante e adiar o restante.
-3. Código: a divisão em partes menores já existe no projeto (React, roteador, ícones e componentes visuais em pacotes separados). Vou revisar o que a home puxa sem precisar no primeiro instante — carrossel, gráficos, blocos abaixo da dobra e listas de catálogo — e passar esses trechos para carregamento posterior, reduzindo o peso inicial.
-4. Confirmar que nenhum script externo (incluindo o de estatísticas de visitas) roda antes da primeira pintura.
+3. **Demais elementos acima da dobra**
+   - Repetir a captura de `layout-shift` com fonte e imagem sem cache.
+   - Só adicionar `min-height` ou contenção a um elemento se ele aparecer como fonte real de deslocamento. Não usar `content-visibility` na primeira tela, pois isso pode atrasar a pintura do H1.
 
-## Como vou validar
+## Validação
 
-- Medição em celular simulado (390px) antes e depois, registrando o tempo do título e o peso do código inicial.
-- Conferência visual da home para garantir que nada mudou de aparência.
-- Verificação de tipos e, se você quiser, publicação em seguida.
+- Medir desktop em 1280 px com cache frio e rede/processador reduzidos, registrando cada fonte de deslocamento.
+- Medir também em 390 × 844 para confirmar que o CLS móvel continua em 0.
+- Conferir visualmente que a foto mantém o enquadramento vertical e que título, navegação e botões não mudam de posição.
+- Validar tipos antes de concluir.
 
 ## Detalhes técnicos
 
-- Medição com Playwright + PerformanceObserver (`largest-contentful-paint`) em 390x844, DPR 3, CPU/rede afuniladas; comparação do `element` reportado.
-- `manualChunks` já cobre react/router/radix/lucide/supabase/embla/recharts em `vite.config.ts`; próximo ganho vem de `React.lazy` + `Suspense` nas seções abaixo da dobra de `src/routes/index.tsx` e de evitar importar `@/data/catalog` inteiro no módulo da rota.
-- `@fontsource` woff2 importados em `__root.tsx`: revisar `font-display: swap` e manter um único `<link rel="preload">` por arquivo de fonte.
-- Nada de `ssr.external`/`resolve.external`; nada de novo plugin no config.
+- Arquivos previstos: `src/styles.css` e `src/routes/index.tsx`.
+- O fallback será declarado antes do uso e ligado pelo token `--font-display`; não existe configuração Tailwind separada neste projeto.
+- A proporção será expressa por classe/utilitário no contêiner, com `<picture>` em bloco e dimensões estáveis.

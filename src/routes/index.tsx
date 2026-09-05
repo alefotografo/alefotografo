@@ -32,7 +32,6 @@ export const Route = createFileRoute("/")({
       path: "/",
     }),
     links: [
-      { rel: "canonical", href: "https://www.alefotografo.com.br/" },
       // Preloads da hero como primeiros recursos do <head>: o navegador baixa
       // a imagem LCP antes de stylesheets, scripts e fontes.
       {
@@ -51,6 +50,7 @@ export const Route = createFileRoute("/")({
         media: "(min-width: 769px)",
         fetchPriority: "high",
       },
+      { rel: "canonical", href: "https://www.alefotografo.com.br/" },
     ],
     scripts: [
       {

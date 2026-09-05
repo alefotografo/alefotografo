@@ -337,9 +337,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           priceRange: "$$",
         }),
       },
-    ],
-
-  }),
+     ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

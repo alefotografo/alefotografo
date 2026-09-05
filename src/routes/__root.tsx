@@ -157,6 +157,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
       { rel: "dns-prefetch", href: "https://i.ytimg.com" },
       { rel: "dns-prefetch", href: "https://www.youtube-nocookie.com" },
+      // Otimizador de imagens do acervo: antecipa DNS/TLS antes da primeira foto.
+      { rel: "dns-prefetch", href: "https://images.weserv.nl" },
+      { rel: "preconnect", href: "https://images.weserv.nl", crossOrigin: "anonymous" },
+
     ],
     scripts: [
       {

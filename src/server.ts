@@ -119,6 +119,26 @@ function redirectLegacy(request: Request): Response | undefined {
   });
 }
 
+// Páginas públicas montadas na hora (detalhes de galeria/blog/vídeo) ficavam com
+// no-cache, então cada visita pagava o SSR inteiro (TTFB ~1,2s no campo). Com
+// s-maxage + stale-while-revalidate a borda entrega a cópia guardada na hora e
+// revalida em segundo plano. Nunca aplicar em área logada nem em APIs.
+const HTML_EDGE_CACHE = "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400";
+const NO_EDGE_CACHE = /^\/(auth|admin|api)(\/|$)/;
+
+function withEdgeCache(request: Request, response: Response): Response {
+  if (response.status !== 200) return response;
+  if (!(response.headers.get("content-type") ?? "").includes("text/html")) return response;
+  const { pathname } = new URL(request.url);
+  if (NO_EDGE_CACHE.test(pathname)) return response;
+  if (request.method !== "GET" && request.method !== "HEAD") return response;
+
+  const headers = new Headers(response.headers);
+  headers.set("cache-control", HTML_EDGE_CACHE);
+  headers.set("vary", "Accept-Encoding");
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const hostRedirect = redirectCanonicalHost(request);
@@ -134,8 +154,9 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(request, response);
+      return withEdgeCache(request, await normalizeCatastrophicSsrResponse(request, response));
     } catch (error) {
+
       if (isClientAbort(request, error)) {
         return new Response(null, { status: CLIENT_CLOSED_REQUEST });
       }

@@ -5,13 +5,47 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { bairros } from "./src/data/bairros";
+
+// Páginas com HTML idêntico para todo visitante: geradas no build e servidas
+// como arquivo estático pela borda (TTFB ~50ms em vez de 1,2s de SSR).
+// Nada de área logada aqui — e autoStaticPathsDiscovery fica desligado para
+// que /auth e /admin/* nunca entrem por descoberta automática.
+const staticPages = [
+  "/",
+  "/servicos",
+  "/quem-e-o-ale",
+  "/sobre",
+  "/contato",
+  "/faq",
+  "/depoimentos",
+  "/foto-profissional",
+  "/foto-profissional-para-linkedin",
+  "/fotografia-executiva",
+  "/fotografia-para-advogados",
+  "/fotografia-para-clinicas",
+  "/fotografo-de-feira-de-negocios",
+  "/fotografo-empresarial",
+  "/fotos-corporativas",
+  "/fotos-profissionais-medicos",
+  "/eventos-corporativos",
+  "/fotografo-corporativo",
+  "/fotografo-corporativo-em",
+  "/blog",
+  "/videos",
+  "/portfolio",
+  ...bairros.map((b) => `/fotografo-corporativo-em/${b.slug}`),
+].map((path) => ({ path }));
 
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    pages: staticPages,
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
+
   vite: {
     build: {
       target: "es2020",

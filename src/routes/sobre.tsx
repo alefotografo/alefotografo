@@ -20,14 +20,8 @@ export const Route = createFileRoute("/sobre")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/sobre" },
-      {
-        rel: "preload",
-        as: "image",
-        href: imgUrl(PORTRAIT, 720),
-        imageSrcSet: imgSrcSet(PORTRAIT, [480, 720, 1024]),
-        imageSizes: "(max-width: 768px) 100vw, 40vw",
-        fetchPriority: "high",
-      },
+      // O preload do retrato é emitido automaticamente pelo React a partir do
+      // <img> eager fetchPriority="high"; declarar aqui duplicava a tag.
     ],
     scripts: [
       {

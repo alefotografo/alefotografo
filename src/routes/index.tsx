@@ -37,16 +37,9 @@ export const Route = createFileRoute("/")({
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
-      // O preload precisa casar exatamente com src/srcSet/sizes do <img> do hero,
-      // senão o browser baixa outro candidato e o LCP atrasa (~1,5s de load delay).
-      {
-        rel: "preload",
-        as: "image",
-        href: imgUrl(HERO_IMG, 720),
-        imageSrcSet: imgSrcSet(HERO_IMG, undefined, heroPhoto.width),
-        imageSizes: "(max-width: 768px) 100vw, 40vw",
-        fetchPriority: "high",
-      },
+      // Sem preload manual do hero: o React já emite automaticamente um
+      // <link rel="preload" as="image"> com srcSet/sizes para o <img> eager
+      // fetchPriority="high" do hero. Declarar aqui duplicava a tag no <head>.
     ],
     scripts: [
       {

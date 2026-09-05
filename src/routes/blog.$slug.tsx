@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
+import { postBody } from "@/data/postBodies";
 import { postSeo } from "@/data/postSeo";
+
 
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { RelatedLinks } from "@/components/site/RelatedLinks";

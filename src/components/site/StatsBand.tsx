@@ -22,10 +22,10 @@ export function StatsBand({
               </dt>
               <dd className="mt-2 font-display text-3xl font-semibold text-foreground md:text-4xl">
                 {s.value}
+                <span className="mt-2 block font-sans text-sm font-normal leading-relaxed text-muted-foreground text-pretty">
+                  {s.detail}
+                </span>
               </dd>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-pretty">
-                {s.detail}
-              </p>
             </div>
           ))}
         </dl>

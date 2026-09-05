@@ -569,7 +569,7 @@ function VideosIndex() {
                     }`}
                   >
                     {g.label}
-                    <span className="ml-2 text-xs opacity-70">{g.items.length}</span>
+                    <span className="ml-2 text-xs">{g.items.length}</span>
                   </button>
                 ))}
               </div>

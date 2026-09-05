@@ -216,7 +216,7 @@ function QuemEOAlePage() {
                   src={imgUrl(c.cover!, 768)}
                   srcSet={imgSrcSet(c.cover!, [480, 768, 1024])}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
-                  alt={c.title}
+                  alt=""
                   width={1200}
                   height={900}
                   loading="lazy"

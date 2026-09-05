@@ -68,7 +68,8 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
     meta: buildMeta({ title: TITLE, description: DESCRIPTION, path: URL_PATH }),
     links: [
       { rel: "canonical", href: CANONICAL },
-      { rel: "preload", as: "image", href: imgUrl(HERO_IMG, 1440), fetchPriority: "high" },
+      // O preload do hero é emitido automaticamente pelo React a partir do
+      // <img> eager fetchPriority="high"; declarar aqui duplicava a tag.
     ],
     scripts: [
       {

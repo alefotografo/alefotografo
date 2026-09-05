@@ -1,126 +1,93 @@
-import { posts, videos } from "@/data/catalog";
+import { categories, posts, videos, type Category, type Post, type Video } from "@/data/catalog";
+import { photoTaxonomy, videoTaxonomy, type SearchTaxonomyEntry } from "@/data/searchTaxonomy";
+import { videoThumb } from "@/lib/videoThumb";
 
-/** Normaliza para busca: sem acentos, minúsculo. */
-export function normalizeSearch(s: string) {
-  return s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
+export function normalize(value: string) {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
-export type SearchGroup = "Serviços e páginas" | "Artigos do blog" | "Vídeos";
-
-export type SearchHit =
-  | { kind: "page"; to: PagePath; title: string; description: string; group: SearchGroup }
-  | { kind: "post" | "video"; slug: string; title: string; description: string; group: SearchGroup };
-
-/** Páginas fixas do site — títulos e termos alinhados às páginas comerciais. */
-const PAGES = [
-  { to: "/foto-profissional", title: "Retrato profissional", description: "Ensaio individual com direção de pose em estúdio ou na empresa.", terms: "foto profissional retrato headshot ensaio" },
-  { to: "/foto-profissional-para-linkedin", title: "Foto para LinkedIn", description: "Headshot de perfil para LinkedIn e redes profissionais.", terms: "linkedin perfil headshot rede social curriculo" },
-  { to: "/fotografia-executiva", title: "Fotografia executiva", description: "Retratos de liderança, CEOs e C-levels.", terms: "executivo ceo diretor lideranca c-level presidente" },
-  { to: "/fotos-corporativas", title: "Fotos corporativas e de equipe", description: "Retratos de time e imagens do ambiente de escritório.", terms: "equipe time corporativo empresa escritorio" },
-  { to: "/fotos-profissionais-medicos", title: "Fotos para médicos", description: "Retratos profissionais para a área da saúde.", terms: "medico medica saude consultorio hospital" },
-  { to: "/fotografia-para-advogados", title: "Fotografia para advogados", description: "Retratos de sócios e escritórios de advocacia.", terms: "advogado advocacia juridico socio escritorio direito" },
-  { to: "/fotografia-para-clinicas", title: "Fotografia para clínicas", description: "Equipe, ambientes e retratos para clínicas.", terms: "clinica consultorio saude estetica odonto" },
-  { to: "/eventos-corporativos", title: "Eventos corporativos", description: "Retratos e cobertura de pessoas em eventos de empresa.", terms: "evento congresso palestra convencao feira" },
-  { to: "/fotografo-empresarial", title: "Fotógrafo empresarial", description: "Fotografia para empresas em São Paulo.", terms: "empresarial empresa negocios business" },
-  { to: "/fotografo-de-feira-de-negocios", title: "Fotógrafo de feira de negócios", description: "Cobertura fotográfica em feiras e estandes.", terms: "feira estande expo negocios" },
-  { to: "/servicos", title: "Todos os serviços", description: "Panorama completo dos serviços de fotografia.", terms: "servicos precos pacotes" },
-  { to: "/portfolio", title: "Portfólio", description: "Trabalhos selecionados por especialidade.", terms: "portfolio galeria trabalhos fotos" },
-  { to: "/fotografo-corporativo", title: "Galerias por segmento", description: "Fotos organizadas por segmento e especialidade.", terms: "galeria segmento categorias fotos" },
-  { to: "/videos", title: "Vídeos", description: "Produções audiovisuais e vídeos institucionais.", terms: "video institucional audiovisual filmagem" },
-  { to: "/depoimentos", title: "Depoimentos", description: "O que os clientes dizem sobre o trabalho.", terms: "depoimento avaliacao clientes review" },
-  { to: "/quem-e-o-ale", title: "Quem é o Alê", description: "Trajetória de Alexandre Machado, 30 anos de fotografia.", terms: "alexandre machado ale sobre biografia fotografo" },
-  { to: "/sobre", title: "Sobre o estúdio", description: "Como o estúdio trabalha e o que esperar do ensaio.", terms: "sobre estudio historia" },
-  { to: "/faq", title: "Perguntas frequentes", description: "Dúvidas sobre ensaios, prazos e entrega.", terms: "faq duvidas perguntas prazo entrega preco" },
-  { to: "/blog", title: "Blog", description: "Artigos sobre fotografia e imagem profissional.", terms: "blog artigos dicas" },
-  { to: "/contato", title: "Contato e orçamento", description: "Fale com o estúdio e solicite um orçamento.", terms: "contato orcamento whatsapp telefone email endereco" },
-] as const;
-
-type PagePath = (typeof PAGES)[number]["to"];
-
-/** Palavras muito comuns que não devem restringir a busca. */
+export const normalizeSearch = normalize;
 const STOP_WORDS = new Set(["de", "da", "do", "das", "dos", "para", "em", "e", "a", "o", "as", "os", "com", "no", "na"]);
 
-/** Divide a consulta em termos normalizados, ignorando palavras vazias. */
-function tokenize(query: string): string[] {
-  const all = normalizeSearch(query.trim())
-    .split(/[^a-z0-9]+/)
-    .filter((t) => t.length >= 2);
-  const meaningful = all.filter((t) => !STOP_WORDS.has(t));
-  return meaningful.length ? meaningful : all;
+function tokens(value: string) {
+  const all = normalize(value).split(" ").filter((token) => token.length >= 2);
+  const useful = all.filter((token) => !STOP_WORDS.has(token));
+  return useful.length ? useful : all;
 }
 
-/** Verdadeiro quando todos os termos aparecem no texto (em qualquer ordem, com raiz comum). */
-function matchesTokens(haystack: string, tokens: string[]): boolean {
-  const text = normalizeSearch(haystack);
-  const words = text.split(/[^a-z0-9]+/).filter(Boolean);
-  return tokens.every(
-    (t) =>
-      text.includes(t) ||
-      // "fotos" encontra "fotografia" e vice-versa (raiz de 4+ caracteres)
-      words.some((w) => {
-        let i = 0;
-        const max = Math.min(w.length, t.length);
-        while (i < max && w[i] === t[i]) i++;
-        return i >= 4;
-      }),
-  );
+function tokenMatch(word: string, query: string) {
+  if (word === query) return 1;
+  if (word.startsWith(query) || query.startsWith(word)) return 0.72;
+  let common = 0;
+  while (common < word.length && common < query.length && word[common] === query[common]) common++;
+  return common >= 4 ? 0.48 : 0;
 }
 
-export function searchSite(query: string, limitPerGroup = 8): SearchHit[] {
-  const allTokens = tokenize(query);
-  if (!allTokens.length) return [];
-
-  // Se a combinação completa não retornar nada, reduz para o termo mais relevante.
-  let tokens = allTokens;
-  if (allTokens.length > 1) {
-    const hasAny = (ts: string[]) =>
-      PAGES.some((p) => matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, ts)) ||
-      posts.some((p) => matchesTokens(`${p.title} ${p.description}`, ts)) ||
-      videos.some((v) => matchesTokens(`${v.title} ${v.subtitle} ${v.description}`, ts));
-    if (!hasAny(allTokens)) {
-      const fallback = [...allTokens].sort((a, b) => b.length - a.length).find((t) => hasAny([t]));
-      if (!fallback) return [];
-      tokens = [fallback];
-    }
+export function scoreEntry(query: string, fields: { title: string; keywords?: string; description?: string; priority?: number }) {
+  const queryText = normalize(query);
+  const queryTokens = tokens(query);
+  if (!queryText || !queryTokens.length) return 0;
+  const title = normalize(fields.title);
+  const keywords = normalize(fields.keywords ?? "");
+  const description = normalize(fields.description ?? "");
+  let score = fields.priority ?? 0;
+  if (title === queryText) score += 140;
+  else if (title.includes(queryText)) score += 90;
+  if (keywords.includes(queryText)) score += 65;
+  if (description.includes(queryText)) score += 25;
+  const titleWords = title.split(" ");
+  const keywordWords = keywords.split(" ");
+  const descriptionWords = description.split(" ");
+  for (const token of queryTokens) {
+    score += Math.max(0, ...titleWords.map((word) => tokenMatch(word, token))) * 36;
+    score += Math.max(0, ...keywordWords.map((word) => tokenMatch(word, token))) * 22;
+    score += Math.max(0, ...descriptionWords.map((word) => tokenMatch(word, token))) * 8;
   }
+  const matched = queryTokens.filter((token) => `${title} ${keywords} ${description}`.includes(token)).length;
+  if (matched === queryTokens.length) score += 30;
+  return matched || score >= 40 ? Math.round(score * 100) / 100 : 0;
+}
 
+function taxonomyForSlug(slug: string, taxonomy: SearchTaxonomyEntry[]) {
+  return taxonomy.filter((entry) => entry.slugs.includes(slug));
+}
 
-  const pageHits: SearchHit[] = PAGES.filter((p) =>
-    matchesTokens(`${p.title} ${p.description} ${p.terms ?? ""}`, tokens),
-  )
-    .slice(0, limitPerGroup)
-    .map((p) => ({
-      kind: "page" as const,
-      to: p.to,
-      title: p.title,
-      description: p.description,
-      group: "Serviços e páginas" as const,
-    }));
+export type PhotoResult = Category & { kind: "photo"; score: number; keywords: string };
+export type VideoResult = Video & { kind: "video"; score: number; thumbnail: string | null; keywords: string };
+export type BlogResult = Post & { kind: "blog"; score: number };
 
-  const postHits: SearchHit[] = posts
-    .filter((p) => matchesTokens(`${p.title} ${p.description}`, tokens))
-    .slice(0, limitPerGroup * 3)
-    .map((p) => ({
-      kind: "post" as const,
-      slug: p.slug,
-      title: p.title,
-      description: p.description,
-      group: "Artigos do blog" as const,
-    }));
+export function searchPhotos(query: string, limit = 5): PhotoResult[] {
+  return categories.map((item) => {
+    const taxonomy = taxonomyForSlug(item.slug, photoTaxonomy);
+    const keywords = taxonomy.flatMap((entry) => [entry.label, ...entry.keywords]).join(" ");
+    return { ...item, kind: "photo" as const, keywords, score: scoreEntry(query, { title: item.title, keywords: `${item.slug} ${keywords}`, description: `${item.subtitle} ${item.description}`, priority: Math.max(0, ...taxonomy.map((entry) => entry.priority)) }) };
+  }).filter((item) => item.score > 0).sort((a, b) => b.score - a.score || a.title.localeCompare(b.title, "pt-BR")).slice(0, limit);
+}
 
-  const videoHits: SearchHit[] = videos
-    .filter((v) => matchesTokens(`${v.title} ${v.subtitle} ${v.description}`, tokens))
-    .slice(0, limitPerGroup)
-    .map((v) => ({
-      kind: "video" as const,
-      slug: v.slug,
-      title: v.title,
-      description: v.subtitle || v.description,
-      group: "Vídeos" as const,
-    }));
+export function searchVideos(query: string, limit = 5): VideoResult[] {
+  return videos.map((item) => {
+    const taxonomy = taxonomyForSlug(item.slug, videoTaxonomy);
+    const keywords = taxonomy.flatMap((entry) => [entry.label, ...entry.keywords]).join(" ");
+    return { ...item, kind: "video" as const, keywords, thumbnail: videoThumb(item), score: scoreEntry(query, { title: item.title, keywords: `${item.slug} ${keywords}`, description: `${item.subtitle} ${item.description}`, priority: Math.max(0, ...taxonomy.map((entry) => entry.priority)) }) };
+  }).filter((item) => item.score > 0).sort((a, b) => b.score - a.score || a.title.localeCompare(b.title, "pt-BR")).slice(0, limit);
+}
 
-  return [...pageHits, ...postHits, ...videoHits];
+export function searchBlog(query: string, limit = 5): BlogResult[] {
+  return posts.map((item) => ({ ...item, kind: "blog" as const, score: scoreEntry(query, { title: item.title, keywords: `${item.seo_title} ${item.slug}`, description: item.description }) })).filter((item) => item.score > 0).sort((a, b) => b.score - a.score || a.title.localeCompare(b.title, "pt-BR")).slice(0, limit);
+}
+
+export type SearchResults = { photos: PhotoResult[]; videos: VideoResult[]; blog: BlogResult[]; total: number };
+export function searchSite(query: string, limit = 5): SearchResults {
+  const cleanQuery = query.trim().slice(0, 120);
+  if (cleanQuery.length < 2) return { photos: [], videos: [], blog: [], total: 0 };
+  const photos = searchPhotos(cleanQuery, limit);
+  const videoResults = searchVideos(cleanQuery, limit);
+  const blog = searchBlog(cleanQuery, limit);
+  return { photos, videos: videoResults, blog, total: photos.length + videoResults.length + blog.length };
+}
+
+export function trackSearch(query: string, total: number) {
+  if (typeof window === "undefined" || query.trim().length < 2) return;
+  const dataLayer = (window as Window & { dataLayer?: unknown[] }).dataLayer;
+  dataLayer?.push({ event: "site_search", search_term: query.trim().slice(0, 120), result_count: total });
 }

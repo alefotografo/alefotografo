@@ -324,7 +324,7 @@ function Home() {
                   {v.youtube ? (
                     <img
                       src={`https://i.ytimg.com/vi/${v.youtube}/hqdefault.jpg`}
-                      alt={v.title}
+                      alt=""
                       width={1280}
                       height={720}
                       loading="lazy"
@@ -386,7 +386,7 @@ function Home() {
           <div className="grid gap-6 md:grid-cols-3">
             {googleReviews.slice(0, 3).map((r) => (
               <figure key={r.author} className="rounded-sm border border-border bg-background p-7">
-                <div className="flex items-center gap-1 text-ember" aria-label={`${r.rating} de 5 estrelas`}>
+                <div role="img" className="flex items-center gap-1 text-ember" aria-label={`${r.rating} de 5 estrelas`}>
                   {Array.from({ length: r.rating }).map((_, i) => (
                     <span key={i} aria-hidden="true">★</span>
                   ))}

@@ -69,9 +69,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const recentPosts = homePosts;
-  const recentVideos = homeVideos;
-
   return (
     <>
       {/* Hero — texto + fotografia real */}

@@ -160,18 +160,24 @@ function Home() {
           </div>
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong md:flex md:justify-center">
-              <img
-                src={imgUrl(HERO_IMG, 720)}
-                srcSet={imgSrcSet(HERO_IMG, undefined, heroPhoto.width)}
-                sizes="(max-width: 768px) 100vw, 40vw"
-                alt={heroPhoto.alt}
-                width={heroPhoto.width}
-                height={heroPhoto.height}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="h-auto w-full md:max-h-[78vh] md:w-auto"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={heroPhoto.webpSrcSet}
+                  sizes={heroPhoto.sizes}
+                />
+                <img
+                  src={heroPhoto.fallbackSrc}
+                  sizes={heroPhoto.sizes}
+                  alt={heroPhoto.alt}
+                  width={heroPhoto.width}
+                  height={heroPhoto.height}
+                  loading="eager"
+                  decoding="async"
+                  className="h-auto w-full md:max-h-[78vh] md:w-auto"
+                />
+              </picture>
+
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { FaqList } from "@/components/site/Faq";
 import type { Faq } from "@/lib/faqs";

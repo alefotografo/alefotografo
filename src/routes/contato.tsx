@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { buildMeta } from "@/lib/seo";
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 import { useTrackConversion } from "@/hooks/useTrackConversion";
 import { LazySection } from "@/components/site/LazySection";
 import GoogleMapCard from "@/components/site/GoogleMapCard";

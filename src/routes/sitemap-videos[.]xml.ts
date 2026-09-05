@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { videos, site } from "@/data/catalog";
+import { videos } from "@/data/catalog";
+import { site } from "@/data/site";
 import { videoThumb } from "@/lib/videoThumb";
 
 const BASE_URL = "https://www.alefotografo.com.br";

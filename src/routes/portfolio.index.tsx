@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, videos, site } from "@/data/catalog";
+import { categories, videos } from "@/data/catalog";
+import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
 import { ArrowUpRight } from "lucide-react";
@@ -238,8 +239,8 @@ function PortfolioHub() {
                           <h3 className="font-display text-base font-semibold leading-tight group-hover:text-ember">
                             {c.title}
                           </h3>
-                          {c.images.length > 0 && (
-                            <p className="mt-1 text-xs text-muted-foreground">{c.images.length} fotos</p>
+                          {c.image_count > 0 && (
+                            <p className="mt-1 text-xs text-muted-foreground">{c.image_count} fotos</p>
                           )}
                         </div>
                       </Link>

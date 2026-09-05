@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { bairros } from "@/data/bairros";
-import { posts, site } from "@/data/catalog";
+import { posts } from "@/data/catalog";
+import { site } from "@/data/site";
 import { aggregateRatingSchema } from "@/data/reviews";
 
 const BASE = "https://www.alefotografo.com.br";

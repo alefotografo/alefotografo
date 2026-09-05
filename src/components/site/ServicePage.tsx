@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { categories, site } from "@/data/catalog";
+import { categories } from "@/data/catalog";
+import { site } from "@/data/site";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { waLink } from "@/lib/whatsapp";
 import { FaqList } from "@/components/site/Faq";

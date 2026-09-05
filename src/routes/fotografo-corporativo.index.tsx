@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, site } from "@/data/catalog";
+import { categories } from "@/data/catalog";
+import { site } from "@/data/site";
 import { buildBreadcrumbList, buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -114,8 +115,8 @@ function PortfolioIndex() {
               </div>
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h2 className="font-display text-lg font-semibold leading-tight">{c.title}</h2>
-                {c.images.length > 0 && (
-                  <p className="mt-1 text-xs text-muted-foreground">{c.images.length} fotos</p>
+                {c.image_count > 0 && (
+                  <p className="mt-1 text-xs text-muted-foreground">{c.image_count} fotos</p>
                 )}
               </div>
             </Link>

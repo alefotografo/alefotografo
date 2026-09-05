@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { categoryBySlug, categories, site } from "@/data/catalog";
+import { categoryBySlug, categories } from "@/data/catalog";
+import { site } from "@/data/site";
 import { categorySeo, cleanDescription } from "@/data/categorySeo";
 
 import { buildMeta } from "@/lib/seo";
@@ -34,10 +35,13 @@ const retratoCorporativoFaqs = [
 
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const cat = categoryBySlug(params.slug);
     if (!cat) throw notFound();
-    return cat;
+    // As listas de fotos (~330 KB somadas) são importadas dinamicamente: só a
+    // rota da galeria paga esse peso.
+    const { categoryImages } = await import("@/data/categoryImages");
+    return { ...cat, images: categoryImages(params.slug) };
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };

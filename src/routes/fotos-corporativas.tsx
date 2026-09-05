@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, categoryBySlug, site } from "@/data/catalog";
+import { categories, categoryBySlug } from "@/data/catalog";
+import { site } from "@/data/site";
 import { imgUrl } from "@/lib/img";
 import { bairros } from "@/data/bairros";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";

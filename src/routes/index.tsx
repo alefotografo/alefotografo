@@ -141,23 +141,32 @@ function Home() {
                   </dl>
           </div>
           <div className="md:col-span-5">
-            <div className="relative aspect-[1217/1600] w-full overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
-              <picture className="block h-full w-full">
+            <div className="w-full overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+              <picture
+                style={{ display: "block", aspectRatio: "1217 / 1600", width: "100%" }}
+              >
                 <source
+                  media="(max-width: 768px)"
+                  srcSet={heroPhoto.mobileSrc}
                   type="image/webp"
-                  srcSet={heroPhoto.webpSrcSet}
-                  sizes={heroPhoto.sizes}
+                  width="480"
+                  height="630"
+                />
+                <source
+                  srcSet={heroPhoto.webpSrc}
+                  type="image/webp"
+                  width="1217"
+                  height="1600"
                 />
                 <img
                   src={heroPhoto.fallbackSrc}
-                  sizes={heroPhoto.sizes}
                   alt={heroPhoto.alt}
                   width={heroPhoto.width}
                   height={heroPhoto.height}
                   loading="eager"
                   decoding="sync"
                   fetchPriority="high"
-                  className="h-full w-full object-contain"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </picture>
 

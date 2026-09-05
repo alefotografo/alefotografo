@@ -38,14 +38,19 @@ export function scoreEntry(query: string, fields: { title: string; keywords?: st
   const titleWords = title.split(" ");
   const keywordWords = keywords.split(" ");
   const descriptionWords = description.split(" ");
+  let tokenSignals = 0;
   for (const token of queryTokens) {
-    score += Math.max(0, ...titleWords.map((word) => tokenMatch(word, token))) * 36;
-    score += Math.max(0, ...keywordWords.map((word) => tokenMatch(word, token))) * 22;
-    score += Math.max(0, ...descriptionWords.map((word) => tokenMatch(word, token))) * 8;
+    const titleSignal = Math.max(0, ...titleWords.map((word) => tokenMatch(word, token)));
+    const keywordSignal = Math.max(0, ...keywordWords.map((word) => tokenMatch(word, token)));
+    const descriptionSignal = Math.max(0, ...descriptionWords.map((word) => tokenMatch(word, token)));
+    if (Math.max(titleSignal, keywordSignal, descriptionSignal) > 0) tokenSignals++;
+    score += titleSignal * 36;
+    score += keywordSignal * 22;
+    score += descriptionSignal * 8;
   }
   const matched = queryTokens.filter((token) => `${title} ${keywords} ${description}`.includes(token)).length;
   if (matched === queryTokens.length) score += 30;
-  return matched || score >= 40 ? Math.round(score * 100) / 100 : 0;
+  return tokenSignals === queryTokens.length ? Math.round(score * 100) / 100 : 0;
 }
 
 function taxonomyForSlug(slug: string, taxonomy: SearchTaxonomyEntry[]) {

@@ -1,4 +1,4 @@
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 
 // Link direto para o WhatsApp com mensagem pré-preenchida.
 // Usado nos CTAs comerciais do site (hero, cards de serviço, segmentos, FAQ).

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
-import { site, categories } from "@/data/catalog";
+import { site } from "@/data/site";
 import { bairros } from "@/data/bairros";
 import { waLink } from "@/lib/whatsapp";
 import { useTrackConversion } from "@/hooks/useTrackConversion";
@@ -8,21 +8,16 @@ import { imgUrl, imgSrcSet } from "@/lib/img";
 
 
 // Curadoria de capas (8 destaques) para a faixa "Siga no Instagram" do rodapé.
-const INSTAGRAM_SLUGS = [
-  "retrato-corporativo",
-  "fotografo-de-retratos-corporativos",
-  "fotografo-de-eventos-corporativos",
-  "fotografia-corporativa-em-sao-paulo",
-  "fotografia-institucional-em-saopaulo",
-  "fotografia-industrial",
-  "fotos-para-clinicas-medicas",
-  "fotografo-de-grupos-times-e-equipes",
-];
-
-const instagramTiles = INSTAGRAM_SLUGS
-  .map((slug) => categories.find((c) => c.slug === slug))
-  .filter((c): c is NonNullable<typeof c> => Boolean(c?.cover))
-  .map((c) => ({ src: c.cover as string, title: c.title }));
+const instagramTiles = [
+  { title: "Retrato Corporativo", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg" },
+  { title: "Retratos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90047/fotografo-de-retratos-corporativos_retratos-corporativos-27.jpg" },
+  { title: "Fotógrafo de Eventos Corporativos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG" },
+  { title: "Fotografia Corporativa", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg" },
+  { title: "Fotografia Institucional", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg" },
+  { title: "Fotografia Industrial", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66655/industrial_dsc7266.jpg" },
+  { title: "Fotos para Clínicas Médicas", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG" },
+  { title: "Fotógrafo de Grupos, Times e Equipes", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg" },
+] as const;
 
 export function Footer() {
   const track = useTrackConversion();

@@ -8,7 +8,7 @@ import {
   Scripts,
   useRouterState,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 // Fontes críticas pré-carregadas: sem isso o swap tardio gerava CLS (~0,09) na home.
@@ -19,10 +19,9 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
-import { TestimonialsCarousel } from "../components/site/TestimonialsCarousel";
 import { LazySection } from "../components/site/LazySection";
 import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
-import { site } from "../data/catalog";
+import { site } from "../data/site";
 import { aggregateRatingSchema, googleBusinessProfileUrl, reviewSchema } from "../data/reviews";
 import { personSchema } from "../data/person";
 import {
@@ -30,6 +29,12 @@ import {
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
 } from "../lib/seo";
+
+const TestimonialsCarousel = lazy(() =>
+  import("../components/site/TestimonialsCarousel").then((module) => ({
+    default: module.TestimonialsCarousel,
+  })),
+);
 
 
 function NotFoundComponent() {
@@ -338,7 +343,9 @@ function RootComponent() {
       </main>
       {!hideTestimonials && (
         <LazySection minHeight={320} rootMargin="300px">
-          <TestimonialsCarousel />
+          <Suspense fallback={null}>
+            <TestimonialsCarousel />
+          </Suspense>
         </LazySection>
       )}
       {/* Rodapé fica no HTML (links internos importam para indexação) */}

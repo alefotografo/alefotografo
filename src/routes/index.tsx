@@ -153,7 +153,7 @@ function Home() {
                   </dl>
           </div>
           <div className="md:col-span-5">
-            <div className="relative aspect-[1217/1600] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+            <div className="relative aspect-[1217/1600] w-full overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
               <picture className="block h-full w-full">
                 <source
                   type="image/webp"

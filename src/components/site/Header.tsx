@@ -179,6 +179,7 @@ export function Header() {
                 width={192}
                 height={109}
                 fetchPriority="high"
+                loading="eager"
                 decoding="async"
                 className="h-8 w-auto sm:h-10 lg:h-12"
               />

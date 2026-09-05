@@ -17,7 +17,6 @@ import fontBody400 from "@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff
 import fontDisplay600 from "@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
-import { Footer } from "../components/site/Footer";
 import { WhatsappCta } from "../components/site/WhatsappCta";
 import { LazySection } from "../components/site/LazySection";
 import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
@@ -29,6 +28,10 @@ import {
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
 } from "../lib/seo";
+
+const Footer = lazy(() =>
+  import("../components/site/Footer").then((module) => ({ default: module.Footer })),
+);
 
 const TestimonialsCarousel = lazy(() =>
   import("../components/site/TestimonialsCarousel").then((module) => ({
@@ -80,7 +83,9 @@ function NotFoundComponent() {
           Voltar para o início
         </Link>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
@@ -379,7 +384,9 @@ function RootComponent() {
         </LazySection>
       )}
       {/* Rodapé fica no HTML (links internos importam para indexação) */}
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <WhatsappCta />
       <DeferredAnalytics />
     </QueryClientProvider>

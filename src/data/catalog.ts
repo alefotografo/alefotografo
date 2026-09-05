@@ -234,8 +234,9 @@ const POST_ORDER: string[] = [
 // Conjunto completo — uso interno (gate, relatório, resolução de slug).
 // Não deve alimentar listagens públicas: pode conter registros datados no futuro.
 export const allPosts: Post[] = data.posts
-  .map((p) => ({ ...cleanItem(p), body: p.body.map(decode) }))
+  .map((p) => cleanItem(p))
   .sort((a, b) => (postDateISO(a.date) ?? "").localeCompare(postDateISO(b.date) ?? "") * -1);
+
 
 /**
  * Publicação: somente registros com data <= hoje (America/Sao_Paulo),

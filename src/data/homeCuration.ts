@@ -19,18 +19,11 @@ export interface HomePhoto {
 
 /** Hero definitivo da Home. */
 export const heroPhoto = {
-  src: "/img/ale-hero.jpeg",
-  /** Fallback JPEG reduzido (navegadores sem WebP). */
-  fallbackSrc: "/img/ale-hero-720.jpg",
-  /** Variantes WebP geradas do original (200 KB → 10–39 KB). */
-  webpSrcSet: [480, 720, 1024, 1217].map((w) => `/img/ale-hero-${w}.webp ${w}w`).join(", "),
-  webpSrc: "/img/ale-hero-720.webp",
-  // No celular (DPR 3) "100vw" pedia a variante de 1217 px e roubava banda do
-  // CSS; 60vw seleciona a de 720 px, indistinguível numa foto nessa tela.
-  sizes: "(max-width: 768px) 60vw, 40vw",
-
+  mobileSrc: "/img/hero-portrait-mobile.webp",
+  webpSrc: "/img/hero-portrait.webp",
+  fallbackSrc: "/img/hero-portrait.jpg",
   gallery: "fotografo-de-retratos-corporativos",
-  alt: "Alexandre Machado, fotógrafo corporativo em São Paulo",
+  alt: "Alexandre Ferreira - Fotógrafo Corporativo São Paulo",
   width: 1217,
   height: 1600,
 };

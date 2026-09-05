@@ -32,24 +32,6 @@ export const Route = createFileRoute("/")({
       path: "/",
     }),
     links: [
-      // Preloads da hero como primeiros recursos do <head>: o navegador baixa
-      // a imagem LCP antes de stylesheets, scripts e fontes.
-      {
-        rel: "preload",
-        as: "image",
-        type: "image/webp",
-        href: "/img/hero-portrait-mobile.webp",
-        media: "(max-width: 768px)",
-        fetchPriority: "high",
-      },
-      {
-        rel: "preload",
-        as: "image",
-        type: "image/webp",
-        href: "/img/hero-portrait.webp",
-        media: "(min-width: 769px)",
-        fetchPriority: "high",
-      },
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
     ],
     scripts: [

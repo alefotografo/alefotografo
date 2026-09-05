@@ -119,49 +119,77 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#1a1a1a" },
-      { name: "google-site-verification", content: "v9fgg9CFkZcU72isBJ8We8unyyHJmM9vtA140QnDzpY" },
-      { name: "author", content: "Alexandre Machado" },
-      { property: "og:site_name", content: site.name },
-      { property: "og:locale", content: "pt_BR" },
-      { property: "og:type", content: "website" },
-      // Padrões globais de compartilhamento: cada rota sobrescreve title,
-      // description, og:title/description e og:url pelo buildMeta().
-      { property: "og:image", content: DEFAULT_OG_IMAGE },
-      { property: "og:image:width", content: String(DEFAULT_OG_IMAGE_WIDTH) },
-      { property: "og:image:height", content: String(DEFAULT_OG_IMAGE_HEIGHT) },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
-      { name: "twitter:site", content: "@alefotografo" },
-      { title: site.name },
-      { name: "description", content: "Alexandre Machado fotografa pessoalmente retratos profissionais, headshots para LinkedIn e fotos de executivos e equipes em São Paulo. 30 anos de carreira." },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
-      // Feed anunciado em todas as páginas: agregadores e crawlers de IA
-      // descobrem publicação nova sem passar pelo hub /blog.
-      { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
-      // Só as fontes usadas acima da dobra são pré-carregadas: as demais têm
-      // font-display: swap e chegam sem competir por banda com o CSS crítico.
-      { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },
+  head: (ctx) => {
+    // O último match é a rota folha. Se for a home, colocamos os preloads da
+    // hero como primeiros recursos do <head> — antes do CSS e das fontes.
+    const leaf = ctx.matches[ctx.matches.length - 1];
+    const isHome = leaf?.pathname === "/";
 
-      // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
-      // apontava toda página para a home e conflitava com o canonical.
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "theme-color", content: "#1a1a1a" },
+        { name: "google-site-verification", content: "v9fgg9CFkZcU72isBJ8We8unyyHJmM9vtA140QnDzpY" },
+        { name: "author", content: "Alexandre Machado" },
+        { property: "og:site_name", content: site.name },
+        { property: "og:locale", content: "pt_BR" },
+        { property: "og:type", content: "website" },
+        // Padrões globais de compartilhamento: cada rota sobrescreve title,
+        // description, og:title/description e og:url pelo buildMeta().
+        { property: "og:image", content: DEFAULT_OG_IMAGE },
+        { property: "og:image:width", content: String(DEFAULT_OG_IMAGE_WIDTH) },
+        { property: "og:image:height", content: String(DEFAULT_OG_IMAGE_HEIGHT) },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: DEFAULT_OG_IMAGE },
+        { name: "twitter:site", content: "@alefotografo" },
+        { title: site.name },
+        { name: "description", content: "Alexandre Machado fotografa pessoalmente retratos profissionais, headshots para LinkedIn e fotos de executivos e equipes em São Paulo. 30 anos de carreira." },
+      ],
+      links: [
+        ...(isHome
+          ? [
+              {
+                rel: "preload" as const,
+                as: "image" as const,
+                type: "image/webp",
+                href: "/img/hero-portrait-mobile.webp",
+                media: "(max-width: 768px)",
+                fetchPriority: "high" as const,
+              },
+              {
+                rel: "preload" as const,
+                as: "image" as const,
+                type: "image/webp",
+                href: "/img/hero-portrait.webp",
+                media: "(min-width: 769px)",
+                fetchPriority: "high" as const,
+              },
+            ]
+          : []),
+        { rel: "stylesheet", href: appCss },
+        { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
+        // Feed anunciado em todas as páginas: agregadores e crawlers de IA
+        // descobrem publicação nova sem passar pelo hub /blog.
+        { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
+        // Só as fontes usadas acima da dobra são pré-carregadas: as demais têm
+        // font-display: swap e chegam sem competir por banda com o CSS crítico.
+        { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
+        { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },
 
-      { rel: "dns-prefetch", href: "https://i.ytimg.com" },
-      { rel: "dns-prefetch", href: "https://www.youtube-nocookie.com" },
-      // Otimizador de imagens do acervo: antecipa DNS/TLS antes da primeira foto.
-      { rel: "dns-prefetch", href: "https://images.weserv.nl" },
-      { rel: "preconnect", href: "https://images.weserv.nl", crossOrigin: "anonymous" },
+        // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
+        // apontava toda página para a home e conflitava com o canonical.
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
 
-    ],
+        { rel: "dns-prefetch", href: "https://i.ytimg.com" },
+        { rel: "dns-prefetch", href: "https://www.youtube-nocookie.com" },
+        // Otimizador de imagens do acervo: antecipa DNS/TLS antes da primeira foto.
+        { rel: "dns-prefetch", href: "https://images.weserv.nl" },
+        { rel: "preconnect", href: "https://images.weserv.nl", crossOrigin: "anonymous" },
+
+      ],
+    };
+  },
     scripts: [
       {
         type: "application/ld+json",

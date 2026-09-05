@@ -51,14 +51,22 @@ export const Route = createFileRoute("/api/public/img")({
         const quality = ALLOWED_QUALITY.has(qParam) ? qParam : 66;
 
         // Cache na borda: a chave é a própria URL normalizada desta rota.
+        // Todo o caminho abaixo é à prova de falha: qualquer erro cai no
+        // fallback (original do CDN) em vez de devolver 500 e quebrar a foto.
         const cacheKey = new Request(
           `${url.origin}${url.pathname}?src=${encodeURIComponent(src.toString())}&w=${width ?? 0}&q=${quality}`,
           { method: "GET" },
         );
-        const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
-        if (cache) {
-          const hit = await cache.match(cacheKey);
-          if (hit) return hit;
+
+        let cache: Cache | undefined;
+        try {
+          cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
+          if (cache) {
+            const hit = await cache.match(cacheKey);
+            if (hit) return hit;
+          }
+        } catch {
+          cache = undefined;
         }
 
         const params = new URLSearchParams({
@@ -72,28 +80,56 @@ export const Route = createFileRoute("/api/public/img")({
           params.set("we", "1");
         }
 
-        const upstream = await fetch(`${UPSTREAM}?${params.toString()}`, {
-          headers: { Accept: "image/webp,image/*" },
-        });
+        const serveOriginal = async () => {
+          try {
+            const original = await fetch(src.toString(), {
+              signal: AbortSignal.timeout(15000),
+            });
+            if (!original.ok || !original.body) {
+              return new Response("Upstream error", {
+                status: 502,
+                headers: { "Cache-Control": "public, max-age=60" },
+              });
+            }
+            return new Response(original.body, {
+              status: 200,
+              headers: {
+                "Content-Type": original.headers.get("Content-Type") ?? "image/jpeg",
+                "Cache-Control": "public, max-age=3600",
+                "X-Content-Type-Options": "nosniff",
+              },
+            });
+          } catch {
+            // Último recurso: manda o navegador buscar direto no acervo.
+            return new Response(null, {
+              status: 302,
+              headers: {
+                Location: src.toString(),
+                "Cache-Control": "public, max-age=60",
+              },
+            });
+          }
+        };
 
-        if (!upstream.ok || !upstream.body) {
-          // Fallback: entrega o original do CDN em vez de quebrar a imagem.
-          const original = await fetch(src.toString());
-          if (!original.ok) return new Response("Upstream error", { status: 502 });
-          return new Response(original.body, {
-            status: 200,
-            headers: {
-              "Content-Type": original.headers.get("Content-Type") ?? "image/jpeg",
-              "Cache-Control": "public, max-age=3600",
-            },
+        let body: ArrayBuffer;
+        let contentType = "image/webp";
+        try {
+          const upstream = await fetch(`${UPSTREAM}?${params.toString()}`, {
+            headers: { Accept: "image/webp,image/*" },
+            signal: AbortSignal.timeout(12000),
           });
+          if (!upstream.ok || !upstream.body) return await serveOriginal();
+          body = await upstream.arrayBuffer();
+          contentType = upstream.headers.get("Content-Type") ?? "image/webp";
+          if (body.byteLength === 0) return await serveOriginal();
+        } catch {
+          return await serveOriginal();
         }
 
-        const body = await upstream.arrayBuffer();
         const response = new Response(body, {
           status: 200,
           headers: {
-            "Content-Type": upstream.headers.get("Content-Type") ?? "image/webp",
+            "Content-Type": contentType,
             "Cache-Control": "public, max-age=31536000, immutable",
             "X-Content-Type-Options": "nosniff",
           },
@@ -107,6 +143,7 @@ export const Route = createFileRoute("/api/public/img")({
           }
         }
         return response;
+
       },
     },
   },

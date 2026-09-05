@@ -62,14 +62,17 @@ export function Header() {
   const [debouncedTerm, setDebouncedTerm] = useState("");
   const navRef = useRef<HTMLElement | null>(null);
   const searchRef = useRef<HTMLDivElement | null>(null);
+  const mobileSearchRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const mobileInputRef = useRef<HTMLInputElement | null>(null);
-  const searchTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const desktopSearchTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const mobileSearchTriggerRef = useRef<HTMLButtonElement | null>(null);
   const results = useMemo(() => searchSite(debouncedTerm), [debouncedTerm]);
 
   const closeSearch = () => {
     setSearchOpen(false);
-    searchTriggerRef.current?.focus();
+    if (window.matchMedia("(min-width: 768px)").matches) desktopSearchTriggerRef.current?.focus();
+    else mobileSearchTriggerRef.current?.focus();
   };
 
   // fecha tudo ao trocar de rota
@@ -111,7 +114,8 @@ export function Header() {
     // click e o alvo original sai do DOM, o que faria o contains() falhar.
     const onPointerDown = (e: MouseEvent) => {
       if (!navRef.current?.contains(e.target as Node)) setOpenGroup(null);
-      if (!searchRef.current?.contains(e.target as Node)) setSearchOpen(false);
+      const target = e.target as Node;
+      if (!searchRef.current?.contains(target) && !mobileSearchRef.current?.contains(target)) setSearchOpen(false);
     };
     document.addEventListener("keydown", onKey);
     document.addEventListener("mousedown", onPointerDown);
@@ -170,7 +174,7 @@ export function Header() {
                 return (
                   <Link
                     key={entry.label}
-                    to={entry.to!}
+                    to={entry.to ?? "/"}
                     className={`whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground lg:px-3 lg:text-sm ${
                       active ? "text-foreground" : "text-muted-foreground"
                     }`}
@@ -253,7 +257,7 @@ export function Header() {
                   aria-label="Abrir busca"
                   aria-expanded={false}
                   onClick={() => setSearchOpen(true)}
-                  ref={searchTriggerRef}
+                  ref={desktopSearchTriggerRef}
                   className="inline-flex h-9 w-9 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Search size={16} />
@@ -276,7 +280,7 @@ export function Header() {
 
           {/* Ações mobile (< 768px) */}
           <div className="flex items-center gap-2 md:hidden">
-            <button ref={searchTriggerRef} type="button" aria-label="Abrir busca" aria-expanded={searchOpen} onClick={() => { setMobileOpen(false); setSearchOpen(true); }} className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground">
+            <button ref={mobileSearchTriggerRef} type="button" aria-label="Abrir busca" aria-expanded={searchOpen} onClick={() => { setMobileOpen(false); setSearchOpen(true); }} className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground">
               <Search size={18} />
             </button>
             <Link
@@ -306,7 +310,7 @@ export function Header() {
                   return (
                     <Link
                       key={entry.label}
-                      to={entry.to!}
+                      to={entry.to ?? "/"}
                       className="border-b border-border/40 py-4 text-foreground"
                     >
                       {entry.label}
@@ -353,7 +357,7 @@ export function Header() {
         )}
       </header>
       {searchOpen && (
-        <div className="fixed inset-0 z-[70] flex flex-col bg-background md:hidden" role="dialog" aria-modal="true" aria-label="Busca no site">
+        <div ref={mobileSearchRef} className="fixed inset-0 z-[70] flex flex-col bg-background md:hidden" role="dialog" aria-modal="true" aria-label="Busca no site">
           <div className="flex items-center gap-2 border-b border-border p-4">
             <Search size={18} className="shrink-0 text-muted-foreground" aria-hidden="true" />
             <label htmlFor="mobile-search-overlay" className="sr-only">Buscar no site</label>

@@ -64,25 +64,25 @@ export function SearchResults({ query, results, onSelect, compact = false }: { q
     </div>
   );
 
-  const sections = [
-    { title: "Fotos", count: results.photos.length, items: results.photos, render: (item: PhotoResult) => <GallerySegmentCard key={item.slug} item={item} query={query} onSelect={onSelect} /> },
-    { title: "Vídeos", count: results.videos.length, items: results.videos, render: (item: VideoResult) => <VideoSegmentCard key={item.slug} item={item} query={query} onSelect={onSelect} /> },
-    { title: "Blog", count: results.blog.length, items: results.blog, render: (item: BlogResult) => <BlogResultCard key={item.slug} item={item} query={query} onSelect={onSelect} /> },
-  ];
   return (
     <div className={compact ? "space-y-6 p-4" : "space-y-10"} aria-label={`${results.total} resultados de busca`}>
-      {sections.map((section) => section.count ? (
-        <section key={section.title} aria-labelledby={`search-${section.title.toLowerCase()}`}>
-          <div className="mb-3 flex items-center justify-between">
-            <h2 id={`search-${section.title.toLowerCase()}`} className="font-display text-base font-semibold">{section.title}</h2>
-            <span className="text-xs text-muted-foreground">{section.count}</span>
-          </div>
-          <div className={compact ? "grid gap-2" : "grid gap-3 sm:grid-cols-2"}>{section.items.map((item) => section.render(item as never))}</div>
-        </section>
-      ) : null)}
+      {results.photos.length ? <ResultSection title="Fotos" count={results.photos.length} compact={compact}>{results.photos.map((item) => <GallerySegmentCard key={item.slug} item={item} query={query} onSelect={onSelect} />)}</ResultSection> : null}
+      {results.videos.length ? <ResultSection title="Vídeos" count={results.videos.length} compact={compact}>{results.videos.map((item) => <VideoSegmentCard key={item.slug} item={item} query={query} onSelect={onSelect} />)}</ResultSection> : null}
+      {results.blog.length ? <ResultSection title="Blog" count={results.blog.length} compact={compact}>{results.blog.map((item) => <BlogResultCard key={item.slug} item={item} query={query} onSelect={onSelect} />)}</ResultSection> : null}
       {compact ? <Link to="/busca" search={{ q: query.trim().slice(0, 120) }} onClick={onSelect} className="inline-flex items-center gap-1 text-sm text-ember underline underline-offset-4">Ver resultados em página inteira <ArrowUpRight size={14} /></Link> : null}
     </div>
   );
+}
+
+function ResultSection({ title, count, compact, children }: { title: string; count: number; compact: boolean; children: React.ReactNode }) {
+  const id = `search-${normalize(title)}`;
+  return <section aria-labelledby={id}>
+    <div className="mb-3 flex items-center justify-between">
+      <h2 id={id} className="font-display text-base font-semibold">{title}</h2>
+      <span className="text-xs text-muted-foreground">{count}</span>
+    </div>
+    <div className={compact ? "grid gap-2" : "grid gap-3 sm:grid-cols-2"}>{children}</div>
+  </section>;
 }
 
 export { GallerySegmentCard, VideoSegmentCard, BlogResultCard };

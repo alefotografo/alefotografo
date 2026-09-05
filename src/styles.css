@@ -53,6 +53,7 @@
 @font-face {
   font-family: "Space Grotesk Fallback";
   src: local("Arial");
+  font-display: optional;
   ascent-override: 93%;
   descent-override: 24%;
   line-gap-override: 0%;
@@ -62,6 +63,7 @@
 @font-face {
   font-family: "DM Sans Fallback";
   src: local("Arial");
+  font-display: optional;
   ascent-override: 94%;
   descent-override: 25%;
   line-gap-override: 0%;

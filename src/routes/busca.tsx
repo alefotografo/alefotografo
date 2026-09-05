@@ -30,7 +30,7 @@ function BuscaPage() {
         <label htmlFor="busca-input" className="sr-only">Buscar no site</label>
         <div className="flex items-center gap-2 rounded-sm border border-border bg-surface px-3 focus-within:border-ember">
           <Search size={16} className="shrink-0 text-muted-foreground" aria-hidden="true" />
-          <input id="busca-input" type="search" value={term} onChange={(event) => setTerm(event.target.value.slice(0, 120))} placeholder="Ex.: foto para LinkedIn, advogados, eventos" className="min-h-11 w-full bg-transparent py-2 text-sm text-foreground outline-none placeholder:text-muted-foreground" />
+          <input id="busca-input" type="text" inputMode="search" value={term} onChange={(event) => setTerm(event.target.value.slice(0, 120))} placeholder="Ex.: foto para LinkedIn, advogados, eventos" className="min-h-11 w-full bg-transparent py-2 text-sm text-foreground outline-none placeholder:text-muted-foreground" />
           <Button type="submit" size="sm">Buscar</Button>
         </div>
       </form>

@@ -94,7 +94,8 @@ export function Header() {
 
   // travar rolagem do body com o menu ou busca mobile abertos
   useEffect(() => {
-    if (!mobileOpen && !searchOpen) return;
+    const mobileSearchOpen = searchOpen && window.matchMedia("(max-width: 767px)").matches;
+    if (!mobileOpen && !mobileSearchOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -243,7 +244,8 @@ export function Header() {
                   <input
                     id="header-search"
                     ref={inputRef}
-                    type="search"
+                    type="text"
+                    inputMode="search"
                     value={term}
                     onChange={(e) => setTerm(e.target.value.slice(0, 120))}
                     placeholder="Buscar no site"
@@ -361,7 +363,7 @@ export function Header() {
           <div className="flex items-center gap-2 border-b border-border p-4">
             <Search size={18} className="shrink-0 text-muted-foreground" aria-hidden="true" />
             <label htmlFor="mobile-search-overlay" className="sr-only">Buscar no site</label>
-            <input ref={mobileInputRef} id="mobile-search-overlay" type="search" value={term} onChange={(event) => setTerm(event.target.value.slice(0, 120))} placeholder="Buscar fotos, vídeos e artigos" className="min-h-11 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground" />
+            <input ref={mobileInputRef} id="mobile-search-overlay" type="text" inputMode="search" value={term} onChange={(event) => setTerm(event.target.value.slice(0, 120))} placeholder="Buscar fotos, vídeos e artigos" className="min-h-11 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground" />
             {term ? <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}><X size={18} /></Button> : null}
             <Button type="button" variant="outline" size="icon" aria-label="Fechar busca" onClick={closeSearch}><X size={18} /></Button>
           </div>

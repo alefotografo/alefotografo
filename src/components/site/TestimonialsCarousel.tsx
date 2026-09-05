@@ -19,7 +19,7 @@ import {
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div className="flex items-center gap-0.5 text-ember" aria-label={`${rating} de 5 estrelas`}>
+    <div role="img" className="flex items-center gap-0.5 text-ember" aria-label={`${rating} de 5 estrelas`}>
       {Array.from({ length: rating }).map((_, i) => (
         <span key={i} aria-hidden="true">
           ★
@@ -161,7 +161,7 @@ export function TestimonialsCarousel({
           </CarouselContent>
 
           <div className="mt-6 flex items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-2" role="tablist" aria-label="Selecionar depoimento">
+            <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Selecionar depoimento">
               {Array.from({ length: count }).map((_, i) => (
                 <button
                   key={i}

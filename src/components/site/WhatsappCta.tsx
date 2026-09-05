@@ -30,7 +30,7 @@ export function WhatsappCta() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("whatsapp")}
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#25D366] text-sm font-medium text-white"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#075E54] text-sm font-medium text-white"
           >
             <WhatsappIcon size={18} />
             WhatsApp
@@ -51,7 +51,7 @@ export function WhatsappCta() {
         rel="noopener noreferrer"
         onClick={() => track("whatsapp")}
         aria-label="Falar no WhatsApp"
-        className="fixed bottom-7 right-7 z-50 hidden h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 text-sm font-medium text-white shadow-lg shadow-black/40 transition-transform hover:scale-105 md:inline-flex"
+        className="fixed bottom-7 right-7 z-50 hidden h-12 items-center justify-center gap-2 rounded-full bg-[#075E54] px-4 text-sm font-medium text-white shadow-lg shadow-black/40 transition-transform hover:scale-105 md:inline-flex"
       >
         <WhatsappIcon />
         WhatsApp

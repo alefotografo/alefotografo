@@ -304,6 +304,19 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        {/* Render-blocking resources ficam DEPOIS do HeadContent para que os
+            preloads da home (injetados pela rota /) sejam os primeiros tags
+            do <head>, antes de CSS, fontes e outros links. */}
+        <link rel="stylesheet" href={appCss} />
+        <link rel="preload" as="font" type="font/woff2" href={fontBody400} crossOrigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href={fontDisplay600} crossOrigin="anonymous" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="llms.txt" href="/llms.txt" type="text/plain" />
+        <link rel="alternate" type="application/rss+xml" title="Alê Fotógrafo — Blog RSS" href="https://www.alefotografo.com.br/blog/rss.xml" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
+        <link rel="dns-prefetch" href="https://images.weserv.nl" />
+        <link rel="preconnect" href="https://images.weserv.nl" crossOrigin="anonymous" />
       </head>
       <body>
         {children}

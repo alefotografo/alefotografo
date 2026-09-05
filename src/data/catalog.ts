@@ -23,6 +23,11 @@ export interface Video {
   vimeo: string | null;
 }
 
+/**
+ * Índice de artigo — sem o corpo do texto. O corpo e as imagens internas
+ * vivem em `@/data/postBodies` e só são carregados pela rota /blog/$slug,
+ * mantendo ~630 KB fora do JS de todas as outras páginas.
+ */
 export interface Post {
   slug: string;
   title: string;
@@ -30,13 +35,12 @@ export interface Post {
   description: string;
   seo_title: string;
   cover: string | null;
-  body: string[];
-  images?: { src: string; alt: string; after: number; credit?: string }[];
   /** Crédito da capa, quando a imagem exige atribuição (ex.: Unsplash). */
   cover_credit?: string | null;
 }
 
 const data = raw as { cats: Category[]; vids: Video[]; posts: Post[] };
+
 
 // Decode common HTML entities present in scraped descriptions
 function decode(s: string): string {
@@ -230,8 +234,9 @@ const POST_ORDER: string[] = [
 // Conjunto completo — uso interno (gate, relatório, resolução de slug).
 // Não deve alimentar listagens públicas: pode conter registros datados no futuro.
 export const allPosts: Post[] = data.posts
-  .map((p) => ({ ...cleanItem(p), body: p.body.map(decode) }))
+  .map((p) => cleanItem(p))
   .sort((a, b) => (postDateISO(a.date) ?? "").localeCompare(postDateISO(b.date) ?? "") * -1);
+
 
 /**
  * Publicação: somente registros com data <= hoje (America/Sao_Paulo),

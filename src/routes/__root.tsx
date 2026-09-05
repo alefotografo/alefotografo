@@ -13,7 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 // Fontes críticas pré-carregadas: sem isso o swap tardio gerava CLS (~0,09) na home.
 import fontBody400 from "@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2?url";
-import fontBody500 from "@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2?url";
+
 import fontDisplay600 from "@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
@@ -141,9 +141,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // Feed anunciado em todas as páginas: agregadores e crawlers de IA
       // descobrem publicação nova sem passar pelo hub /blog.
       { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
+      // Só as fontes usadas acima da dobra são pré-carregadas: as demais têm
+      // font-display: swap e chegam sem competir por banda com o CSS crítico.
       { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: fontBody500, crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },
+
       // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
       // apontava toda página para a home e conflitava com o canonical.
       { rel: "icon", type: "image/png", href: "/favicon.png" },

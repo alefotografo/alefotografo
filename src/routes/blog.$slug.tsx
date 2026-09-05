@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts, site } from "@/data/catalog";
+import { postBody } from "@/data/postBodies";
 import { postSeo } from "@/data/postSeo";
+
 
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
@@ -37,8 +39,10 @@ export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const p = postBySlug(params.slug);
     if (!p) throw notFound();
-    return p;
+    // O corpo do texto vive num módulo próprio: só esta rota o carrega.
+    return { ...p, ...postBody(params.slug) };
   },
+
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const override = postSeo[params.slug];

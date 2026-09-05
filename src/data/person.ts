@@ -1,4 +1,4 @@
-import { site } from "./catalog";
+import { site } from "./site";
 
 const ORIGIN = "https://www.alefotografo.com.br";
 

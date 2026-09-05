@@ -1,4 +1,4 @@
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 import { MapPin, Navigation } from "lucide-react";
 
 const LAT = Number(site.geo.lat);

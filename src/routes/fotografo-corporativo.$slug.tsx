@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { categoryBySlug, categories, site } from "@/data/catalog";
+import { categoryBySlug, categories } from "@/data/catalog";
+import { site } from "@/data/site";
 import { categorySeo, cleanDescription } from "@/data/categorySeo";
 
 import { buildMeta } from "@/lib/seo";

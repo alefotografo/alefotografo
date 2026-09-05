@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { postBySlug, posts, site } from "@/data/catalog";
+import { postBySlug, posts } from "@/data/catalog";
+import { site } from "@/data/site";
 import { postSeo } from "@/data/postSeo";
 
 

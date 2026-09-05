@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { bairros } from "@/data/bairros";
 import { buildMeta } from "@/lib/seo";
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ArrowUpRight, MapPin } from "lucide-react";
 

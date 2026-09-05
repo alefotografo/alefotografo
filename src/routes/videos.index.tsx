@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { videos, videoBySlug, site } from "@/data/catalog";
+import { videos, videoBySlug } from "@/data/catalog";
+import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { Search, Video, X } from "lucide-react";
 import { videoThumb, ytFallback } from "@/lib/videoThumb";

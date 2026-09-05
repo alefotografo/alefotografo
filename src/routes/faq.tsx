@@ -5,7 +5,7 @@ import { faqsComerciais } from "@/lib/faqsComerciais";
 import { FaqList } from "@/components/site/Faq";
 import { LazySection } from "@/components/site/LazySection";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 import { waLink } from "@/lib/whatsapp";
 import { ArrowUpRight } from "lucide-react";
 

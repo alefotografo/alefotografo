@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { posts, site } from "@/data/catalog";
+import { posts } from "@/data/catalog";
+import { site } from "@/data/site";
 import { postDateRFC822 } from "@/lib/postDate";
 
 const BASE_URL = "https://www.alefotografo.com.br";

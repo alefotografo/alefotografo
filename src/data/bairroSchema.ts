@@ -2,7 +2,7 @@
 // Fonte única: o endereço e as coordenadas do estúdio vêm de `site`, a área
 // atendida vem de `bairros`. Nenhum dado inventado aqui.
 
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 import { bairros, type Bairro } from "@/data/bairros";
 import { BUSINESS_ID, PERSON_ID } from "@/data/person";
 import { aggregateRatingSchema } from "@/data/reviews";

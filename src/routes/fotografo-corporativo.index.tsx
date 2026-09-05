@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, site } from "@/data/catalog";
+import { categories } from "@/data/catalog";
+import { site } from "@/data/site";
 import { buildBreadcrumbList, buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";

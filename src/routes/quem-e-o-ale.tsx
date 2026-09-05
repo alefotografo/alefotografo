@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { imgSrcSet, imgUrl } from "@/lib/img";
-import { categories, posts, site } from "@/data/catalog";
+import { categories, posts } from "@/data/catalog";
+import { site } from "@/data/site";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Award, Camera, Target, Zap, ArrowUpRight } from "lucide-react";

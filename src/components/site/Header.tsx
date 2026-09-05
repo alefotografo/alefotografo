@@ -1,7 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
-import logo from "@/assets/logo-alefotografo.png.asset.json";
 
 type Item = { to: string; label: string; hint?: string };
 type Entry = { label: string; to?: string; items?: Item[] };
@@ -132,7 +131,7 @@ export function Header() {
             aria-label="Alê Fotógrafo — Início"
           >
             <img
-              src={logo.url}
+              src="/img/logo-alefotografo.png"
               alt="Alê Fotógrafo"
               width={160}
               height={48}

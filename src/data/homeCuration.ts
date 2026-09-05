@@ -21,7 +21,7 @@ export interface HomePhoto {
 
 /** Hero definitivo da Home. */
 export const heroPhoto = {
-  src: "/__l5e/assets-v1/1bfa8045-e3a6-42ac-af3d-8d0ff25b523b/ale-hero.jpeg",
+  src: "/img/ale-hero.jpeg",
   gallery: "fotografo-de-retratos-corporativos",
   alt: "Alexandre Machado, fotógrafo corporativo em São Paulo",
   width: 1217,

@@ -1,4 +1,4 @@
-import { site } from "@/data/catalog";
+import { site } from "@/data/site";
 
 export const SITE_ORIGIN = "https://www.alefotografo.com.br";
 

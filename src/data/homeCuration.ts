@@ -1,7 +1,5 @@
 // Fonte central da curadoria visual da Home (Fase 6B).
 // Nenhum nome de asset deve ser escrito diretamente no JSX da Home.
-import { categories } from "./catalog";
-
 const CDN =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem";
 
@@ -194,8 +192,21 @@ export const segmentPhotos: Record<string, SegmentPhoto> = {
 
 /** Título da galeria vindo do catálogo (evita duplicar dados). */
 export function galleryTitle(slug: string): string {
-  return categories.find((c) => c.slug === slug)?.title ?? "";
+  return HOME_GALLERY_TITLES[slug] ?? "";
 }
+
+const HOME_GALLERY_TITLES: Record<string, string> = {
+  "retrato-corporativo": "Retrato Corporativo",
+  "fotografia-para-escritorios-de-advocacia": "Fotografia para escritórios de advocacia",
+  "fotografo-de-retratos-corporativos": "Retratos",
+  "fotos-profissionais-para-medicos": "Fotos Profissionais para Médicos",
+  "fotografo-de-grupos-times-e-equipes": "Fotógrafo de Grupos, Times e Equipes",
+  "retratos-de-medicas": "Retratos de Médicas",
+  "fotografo-de-eventos-corporativos": "Fotógrafo de Eventos Corporativos",
+  "eventos-corporativos": "Fotógrafo de Eventos Empresariais",
+  "fotografo-feiras-stands": "Fotógrafo de Feiras de Negócios",
+  "fotografo-festa-de-confraternizacao": "Festa da Firma",
+};
 
 /** CTAs comerciais abaixo do grid — URLs existentes, não criar novas. */
 export const worksCtas = [

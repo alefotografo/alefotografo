@@ -14,6 +14,8 @@ export default defineConfig({
   },
   vite: {
     build: {
+      target: "es2020",
+      minify: "esbuild",
       rollupOptions: {
         output: {
           // Divide o bundle do cliente: dependências estáveis (React, router,

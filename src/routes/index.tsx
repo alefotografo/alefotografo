@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, featuredPosts, site, videos } from "@/data/catalog";
+import { site } from "@/data/site";
+import { homePosts, homeVideos } from "@/data/homeSummary";
 import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
 import {
   galleryTitle,
@@ -25,9 +26,6 @@ import { googleBusinessProfileUrl, googleReviewUrl, googleReviews, googleReviews
 const HERO_IMG = heroPhoto.src;
 
 export const Route = createFileRoute("/")({
-  loader: () => ({
-    recentPosts: featuredPosts.slice(0, 3),
-  }),
   head: () => ({
     meta: buildMeta({
       title: "Fotógrafo Corporativo em São Paulo | Alê Fotógrafo",
@@ -83,10 +81,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  // O snapshot do loader mantém SSR e hidratação idênticos quando um post
-  // agendado cruza a data de publicação entre builds.
-  const { recentPosts } = Route.useLoaderData();
-  const recentVideos = videos.slice(0, 3);
+  const recentPosts = homePosts;
+  const recentVideos = homeVideos;
 
 
   return (

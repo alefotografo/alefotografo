@@ -34,10 +34,13 @@ const retratoCorporativoFaqs = [
 
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const cat = categoryBySlug(params.slug);
     if (!cat) throw notFound();
-    return cat;
+    // As listas de fotos (~330 KB somadas) são importadas dinamicamente: só a
+    // rota da galeria paga esse peso.
+    const { categoryImages } = await import("@/data/categoryImages");
+    return { ...cat, images: categoryImages(params.slug) };
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };

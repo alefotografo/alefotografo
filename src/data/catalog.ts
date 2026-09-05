@@ -10,7 +10,8 @@ export interface Category {
   subtitle: string;
   description: string;
   seo_title: string;
-  images: string[];
+  /** Quantidade de fotos da galeria; a lista vive em `@/data/categoryImages`. */
+  image_count: number;
   cover: string | null;
 }
 

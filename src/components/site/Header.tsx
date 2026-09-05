@@ -130,15 +130,19 @@ export function Header() {
             className="flex min-w-0 shrink-0 items-center"
             aria-label="Alê Fotógrafo — Início"
           >
-            <img
-              src="/img/logo-alefotografo.png"
-              alt="Alê Fotógrafo"
-              width={160}
-              height={48}
-              loading="eager"
-              fetchPriority="high"
-              className="h-8 w-auto sm:h-10 lg:h-12"
-            />
+            <picture>
+              <source srcSet="/img/logo-alefotografo.webp" type="image/webp" />
+              <img
+                src="/img/logo-alefotografo.png"
+                alt="Alê Fotógrafo"
+                width={170}
+                height={51}
+                fetchPriority="high"
+                decoding="async"
+                style={{ objectFit: "contain" }}
+                className="h-8 w-auto sm:h-10 lg:h-12"
+              />
+            </picture>
           </Link>
 
           {/* Menu horizontal a partir de tablet (768px) */}

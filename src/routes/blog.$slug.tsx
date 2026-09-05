@@ -3,7 +3,6 @@ import { postBySlug, posts, site } from "@/data/catalog";
 import { postSeo } from "@/data/postSeo";
 
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
-import logoAsset from "@/assets/logo-alefotografo.png.asset.json";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { PillarLinks } from "@/components/site/PillarLinks";
 import { LinkHub } from "@/components/site/LinkHub";
@@ -89,7 +88,7 @@ export const Route = createFileRoute("/blog/$slug")({
               name: site.name,
               logo: {
                 "@type": "ImageObject",
-                url: `${SITE_ORIGIN}${logoAsset.url}`,
+                url: `${SITE_ORIGIN}/img/logo-alefotografo.png`,
                 width: 794,
                 height: 450,
               },

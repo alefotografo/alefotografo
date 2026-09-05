@@ -1,5 +1,4 @@
 import { site } from "@/data/catalog";
-import ogAsset from "@/assets/og-alefotografo-camera.jpg.asset.json";
 
 export const SITE_ORIGIN = "https://www.alefotografo.com.br";
 
@@ -7,7 +6,7 @@ export const SITE_ORIGIN = "https://www.alefotografo.com.br";
 // simultâneas). Declarado apenas como `sameAs`/link editorial — nunca como
 // canonical — para o Google e as IAs entenderem que são escopos diferentes.
 export const TEAM_SITE_ORIGIN = "https://alefotografos.com.br";
-export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}${ogAsset.url}`;
+export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/img/og-alefotografo-camera.jpg`;
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;
 export const DEFAULT_OG_IMAGE_HEIGHT = 630;
 

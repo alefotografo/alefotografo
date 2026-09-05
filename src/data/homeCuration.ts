@@ -27,7 +27,10 @@ export const heroPhoto = {
   /** Variantes WebP geradas do original (200 KB → 10–39 KB). */
   webpSrcSet: [480, 720, 1024, 1217].map((w) => `/img/ale-hero-${w}.webp ${w}w`).join(", "),
   webpSrc: "/img/ale-hero-720.webp",
-  sizes: "(max-width: 768px) 100vw, 40vw",
+  // No celular (DPR 3) "100vw" pedia a variante de 1217 px e roubava banda do
+  // CSS; 60vw seleciona a de 720 px, indistinguível numa foto nessa tela.
+  sizes: "(max-width: 768px) 60vw, 40vw",
+
   gallery: "fotografo-de-retratos-corporativos",
   alt: "Alexandre Machado, fotógrafo corporativo em São Paulo",
   width: 1217,

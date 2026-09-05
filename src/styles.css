@@ -1,12 +1,54 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/space-grotesk/400.css";
-@import "@fontsource/space-grotesk/500.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/dm-sans/400.css";
-@import "@fontsource/dm-sans/500.css";
-@import "@fontsource/dm-sans/600.css";
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("@fontsource/dm-sans/files/dm-sans-latin-600-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+}
 
 @font-face {
   font-family: "Space Grotesk Fallback";

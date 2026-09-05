@@ -22,6 +22,12 @@ export interface HomePhoto {
 /** Hero definitivo da Home. */
 export const heroPhoto = {
   src: "/img/ale-hero.jpeg",
+  /** Fallback JPEG reduzido (navegadores sem WebP). */
+  fallbackSrc: "/img/ale-hero-720.jpg",
+  /** Variantes WebP geradas do original (200 KB → 10–39 KB). */
+  webpSrcSet: [480, 720, 1024, 1217].map((w) => `/img/ale-hero-${w}.webp ${w}w`).join(", "),
+  webpSrc: "/img/ale-hero-720.webp",
+  sizes: "(max-width: 768px) 100vw, 40vw",
   gallery: "fotografo-de-retratos-corporativos",
   alt: "Alexandre Machado, fotógrafo corporativo em São Paulo",
   width: 1217,

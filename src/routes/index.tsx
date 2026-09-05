@@ -159,8 +159,8 @@ function Home() {
                   </dl>
           </div>
           <div className="md:col-span-5">
-            <div className="relative overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong md:flex md:justify-center">
-              <picture>
+            <div className="relative aspect-[1217/1600] overflow-hidden rounded-sm bg-surface ring-1 ring-border-strong">
+              <picture className="block h-full w-full">
                 <source
                   type="image/webp"
                   srcSet={heroPhoto.webpSrcSet}
@@ -174,7 +174,7 @@ function Home() {
                   height={heroPhoto.height}
                   loading="eager"
                   decoding="async"
-                  className="h-auto w-full md:max-h-[78vh] md:w-auto"
+                  className="h-full w-full object-contain"
                 />
               </picture>
 

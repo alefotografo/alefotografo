@@ -1,7 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts } from "@/data/catalog";
 import { site } from "@/data/site";
-import { postSeo } from "@/data/postSeo";
+// `postSeo` (títulos/descrições escritos à mão) é carregado dentro do loader,
+// por import dinâmico: são ~40 KB que ficavam no bundle de entrada de todas as
+// páginas do site só porque o head desta rota os lia diretamente.
+
 
 
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";

@@ -11,10 +11,7 @@ import {
 import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-// Fontes críticas pré-carregadas: sem isso o swap tardio gerava CLS (~0,09) na home.
-import fontBody400 from "@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2?url";
-
-import fontDisplay600 from "@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2?url";
+// Fontes críticas: arquivos próprios em /public/fonts (nome fixo, cache longo).
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { WhatsappCta } from "../components/site/WhatsappCta";

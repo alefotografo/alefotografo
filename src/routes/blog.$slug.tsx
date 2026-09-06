@@ -1,7 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { postBySlug, posts } from "@/data/catalog";
 import { site } from "@/data/site";
-import { postSeo } from "@/data/postSeo";
+// `postSeo` (títulos/descrições escritos à mão) é carregado dentro do loader,
+// por import dinâmico: são ~40 KB que ficavam no bundle de entrada de todas as
+// páginas do site só porque o head desta rota os lia diretamente.
+
 
 
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
@@ -41,19 +44,23 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!p) throw notFound();
     // O corpo do texto vive num módulo próprio, importado dinamicamente: assim
     // os ~630 KB de texto ficam fora do bundle de entrada de todas as páginas.
-    const { postBody } = await import("@/data/postBodies");
-    return { ...p, ...postBody(params.slug) };
+    const [{ postBody }, { postSeo }] = await Promise.all([
+      import("@/data/postBodies"),
+      import("@/data/postSeo"),
+    ]);
+    return { ...p, ...postBody(params.slug), seo: postSeo[params.slug] ?? null };
   },
 
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
-    const override = postSeo[params.slug];
+    const override = loaderData.seo;
     return {
       meta: buildMeta({
         title: override
           ? override.title
           : loaderData.title.length > 60 ? `${loaderData.title.slice(0, 57).trimEnd()}…` : loaderData.title,
         description: override ? override.description : (() => {
+
           const base = (loaderData.description || loaderData.title || "").trim();
           if (base.length > 158) return `${base.slice(0, 155).trimEnd()}…`;
           if (base.length >= 50) return base;

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { site } from "@/data/site";
 import { heroPhoto } from "@/data/homeCuration";
 import { buildMeta } from "@/lib/seo";
@@ -8,22 +8,24 @@ import { faqJsonLd } from "@/lib/faqs";
 import { faqsComerciais } from "@/lib/faqsComerciais";
 import { waLink } from "@/lib/whatsapp";
 import { homeStats, statsLead } from "@/data/stats";
+import { lazyAfterInteractive } from "@/lib/deferredLazy";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
-const HomeSelectedWorks = lazy(() => import("@/components/site/home/HomeSelectedWorks"));
-const ServiceChooser = lazy(() =>
+const HomeSelectedWorks = lazyAfterInteractive(() => import("@/components/site/home/HomeSelectedWorks"));
+const ServiceChooser = lazyAfterInteractive(() =>
   import("@/components/site/ServiceChooser").then((module) => ({ default: module.ServiceChooser })),
 );
-const SegmentGrid = lazy(() =>
+const SegmentGrid = lazyAfterInteractive(() =>
   import("@/components/site/SegmentGrid").then((module) => ({ default: module.SegmentGrid })),
 );
-const HomeAbout = lazy(() => import("@/components/site/home/HomeAbout"));
-const HomeVideos = lazy(() => import("@/components/site/home/HomeVideos"));
-const HomeSocialProof = lazy(() => import("@/components/site/home/HomeSocialProof"));
-const HomeBlog = lazy(() => import("@/components/site/home/HomeBlog"));
-const HomeFaq = lazy(() => import("@/components/site/home/HomeFaq"));
-const HomeCta = lazy(() => import("@/components/site/home/HomeCta"));
+const HomeAbout = lazyAfterInteractive(() => import("@/components/site/home/HomeAbout"));
+const HomeVideos = lazyAfterInteractive(() => import("@/components/site/home/HomeVideos"));
+const HomeSocialProof = lazyAfterInteractive(() => import("@/components/site/home/HomeSocialProof"));
+const HomeBlog = lazyAfterInteractive(() => import("@/components/site/home/HomeBlog"));
+const HomeFaq = lazyAfterInteractive(() => import("@/components/site/home/HomeFaq"));
+const HomeCta = lazyAfterInteractive(() => import("@/components/site/home/HomeCta"));
+
 
 export const Route = createFileRoute("/")({
   head: () => ({

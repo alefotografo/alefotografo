@@ -169,15 +169,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               },
             ]
           : []),
+        // Fontes acima da dobra: carregam em paralelo com o CSS. Todas usam
+        // font-display: optional para nunca bloquear a primeira renderização.
+        { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-400.woff2", crossOrigin: "anonymous" },
+        { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-500.woff2", crossOrigin: "anonymous" },
+        { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/space-grotesk-600.woff2", crossOrigin: "anonymous" },
         { rel: "stylesheet", href: appCss },
         { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
         // Feed anunciado em todas as páginas: agregadores e crawlers de IA
         // descobrem publicação nova sem passar pelo hub /blog.
         { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
-        // Só as fontes usadas acima da dobra são pré-carregadas: todas usam
-        // font-display: optional para nunca bloquear a primeira renderização.
-        { rel: "preload", as: "font", type: "font/woff2", href: fontBody400, crossOrigin: "anonymous" },
-        { rel: "preload", as: "font", type: "font/woff2", href: fontDisplay600, crossOrigin: "anonymous" },
 
         // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
         // apontava toda página para a home e conflitava com o canonical.

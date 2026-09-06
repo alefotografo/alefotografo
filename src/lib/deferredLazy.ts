@@ -38,8 +38,9 @@ const ready: Promise<void> =
       });
 
 /** Igual a React.lazy, mas só busca o módulo depois de `ready`. */
-export function lazyAfterInteractive<T extends ComponentType<never>>(
+export function lazyAfterInteractive<T extends ComponentType<any>>(
   factory: () => Promise<{ default: T }>,
 ) {
-  return lazy(() => ready.then(factory));
+  return lazy<T>(() => ready.then(factory));
 }
+

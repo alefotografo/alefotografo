@@ -25,6 +25,8 @@ import {
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
 } from "../lib/seo";
+import { lazyAfterInteractive } from "../lib/deferredLazy";
+
 
 const Footer = lazyAfterInteractive(() =>
   import("../components/site/Footer").then((module) => ({ default: module.Footer })),

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SmartImage } from "@/components/site/SmartImage";
 
-const STEP = 24;
+const STEP = 12;
 
 export function Masonry({ images, alt }: { images: string[]; alt: string }) {
   const unique = Array.from(new Set(images));
@@ -21,7 +21,7 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) setCount((c) => c + STEP);
       },
-      { rootMargin: "600px 0px" },
+      { rootMargin: "1200px 0px" },
     );
     io.observe(node);
     return () => io.disconnect();
@@ -35,7 +35,7 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
         {shown.map((src, i) => (
           <figure
             key={src}
-            className="group break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-border-strong"
+            className="group break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-border-strong [content-visibility:auto] [contain-intrinsic-size:auto_320px]"
           >
             <SmartImage
               src={src}
@@ -54,7 +54,7 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
                   return next;
                 })
               }
-              className="h-auto w-full transform-gpu group-hover:scale-[1.03]"
+              className="h-auto w-full transform-gpu transition-[opacity,transform] duration-200 group-hover:scale-[1.03]"
             />
           </figure>
         ))}

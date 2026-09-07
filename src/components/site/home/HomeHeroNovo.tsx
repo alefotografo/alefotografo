@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { WA_DEFAULT, waLink } from "@/lib/whatsapp";
 
@@ -26,8 +25,7 @@ export default function HomeHeroNovo() {
             fetchPriority="high"
             decoding="sync"
             referrerPolicy="no-referrer"
-            className="block w-full object-cover"
-            style={{ height: "320px" }}
+            className="block h-[320px] w-full object-cover md:h-[560px]"
           />
           <div
             aria-hidden="true"
@@ -37,23 +35,14 @@ export default function HomeHeroNovo() {
 
         <div className="md:absolute md:inset-0 md:flex md:items-center">
           <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-6 md:py-0 lg:px-8">
-            <div style={{ maxWidth: "660px" }}>
-              <p
-                className="uppercase text-muted-foreground"
-                style={{ fontSize: "12px", letterSpacing: "0.12em", lineHeight: 1.4 }}
-              >
+            <div className="max-w-[660px]">
+              <p className="text-[12px] uppercase leading-[1.4] tracking-[0.12em] text-muted-foreground">
                 Alexandre Machado · Fotógrafo corporativo em São Paulo · desde 1991
               </p>
-              <h1
-                className="mt-6 font-display font-semibold text-foreground"
-                style={{ fontSize: "32px", lineHeight: 1.1 }}
-              >
+              <h1 className="mt-6 font-display text-[32px] font-semibold leading-[1.1] text-foreground md:text-[48px]">
                 Fotógrafo corporativo em São Paulo: sua empresa para de usar foto de banco
               </h1>
-              <p
-                className="mt-6 text-muted-foreground"
-                style={{ fontSize: "16px", lineHeight: 1.6 }}
-              >
+              <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
                 Olhe o site da sua empresa agora. Quantas fotos são realmente suas — suas
                 pessoas, seu galpão, seu escritório? Faço foto profissional e vídeo para
                 empresas em São Paulo desde 1991: banco de imagens, institucional, indústria,
@@ -79,18 +68,6 @@ export default function HomeHeroNovo() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (min-width: 768px) {
-          section > div > figure > img { height: 560px !important; }
-          section h1 { font-size: 48px !important; }
-          section p.uppercase + h1 + p { font-size: 17px !important; }
-        }
-      `}</style>
-      {/* fallback de link interno para rastreabilidade do crawler */}
-      <Link to="/fotografo-corporativo" className="sr-only">
-        Fotógrafo corporativo
-      </Link>
     </section>
   );
 }

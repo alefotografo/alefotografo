@@ -80,6 +80,14 @@ export function Header() {
     else mobileSearchTriggerRef.current?.focus();
   };
 
+  const submitSearch = () => {
+    const q = term.trim();
+    if (!q) return;
+    setSearchOpen(false);
+    navigate({ to: "/busca", search: { q } });
+  };
+
+
   // fecha tudo ao trocar de rota
   useEffect(() => {
     setMobileOpen(false);

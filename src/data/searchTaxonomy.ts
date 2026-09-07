@@ -43,7 +43,7 @@ export const photoTaxonomy: SearchTaxonomyEntry[] = [
       "recordacao",
       "ativacao",
     ],
-    slugs: ["totem-fotografico-totem-mania", "foto-impressa-na-hora"],
+    slugs: ["foto-impressa-na-hora", "totem-fotografico-totem-mania"],
     priority: 9,
   },
   {

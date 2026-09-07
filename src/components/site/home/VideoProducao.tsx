@@ -53,7 +53,8 @@ function VideoFacade({ id, cliente }: { id: string; cliente: string }) {
 }
 
 export default function VideoProducao() {
-  if (VIDEOS.length === 0) return null;
+  if (!VIDEOS.length) return null;
+
 
   return (
     <section className="py-14 md:py-24">

@@ -133,9 +133,9 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Banco de imagens para escolas em São Paulo: alunos, professores, aulas e estrutura em fotos autorizadas para site, matrículas e campanhas do ano todo.",
   },
   "foto-impressa-na-hora": {
-    title: "Foto Lembrança Impressa na Hora para Eventos em São Paulo",
+    title: "Foto Lembrança Impressa na Hora em SP | Alê Fotógrafo",
     description:
-      "Foto lembrança com impressão na hora em eventos corporativos em São Paulo: moldura com sua marca, entrega em segundos e operação discreta.",
+      "Foto lembrança impressa na hora em eventos corporativos em São Paulo: moldura com a sua marca, entrega em segundos e orçamento no mesmo dia.",
   },
   "fotografo-de-grupos-times-e-equipes": {
     title: "Fotógrafo de Grupos, Times e Equipes em São Paulo",

@@ -133,7 +133,7 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Banco de imagens para escolas em São Paulo: alunos, professores, aulas e estrutura em fotos autorizadas para site, matrículas e campanhas do ano todo.",
   },
   "foto-impressa-na-hora": {
-    title: "Foto Impressa na Hora para Eventos em São Paulo",
+    title: "Foto Lembrança Impressa na Hora para Eventos em São Paulo",
     description:
       "Foto lembrança com impressão na hora em eventos corporativos em São Paulo: moldura com sua marca, entrega em segundos e operação discreta.",
   },

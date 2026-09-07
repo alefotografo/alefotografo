@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 import type { SearchResults as SearchResultsModel } from "@/lib/search";
@@ -59,6 +59,7 @@ function isEntryActive(entry: Entry, pathname: string) {
 
 export function Header() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileGroup, setMobileGroup] = useState<string | null>(null);
@@ -79,6 +80,14 @@ export function Header() {
     if (window.matchMedia("(min-width: 768px)").matches) desktopSearchTriggerRef.current?.focus();
     else mobileSearchTriggerRef.current?.focus();
   };
+
+  const submitSearch = () => {
+    const q = term.trim();
+    if (!q) return;
+    setSearchOpen(false);
+    navigate({ to: "/busca", search: { q } });
+  };
+
 
   // fecha tudo ao trocar de rota
   useEffect(() => {
@@ -257,6 +266,7 @@ export function Header() {
                   role="search"
                   onSubmit={(e) => {
                     e.preventDefault();
+                    submitSearch();
                   }}
                   className="flex items-center gap-2 rounded-sm border border-border bg-surface px-2 focus-within:border-ember"
                 >
@@ -385,13 +395,13 @@ export function Header() {
       </header>
       {searchOpen && (
         <div ref={mobileSearchRef} className="fixed inset-0 z-[70] flex flex-col bg-background md:hidden" role="dialog" aria-modal="true" aria-label="Busca no site">
-          <div className="flex items-center gap-2 border-b border-border p-4">
+          <form role="search" onSubmit={(e) => { e.preventDefault(); submitSearch(); }} className="flex items-center gap-2 border-b border-border p-4">
             <Search size={18} className="shrink-0 text-muted-foreground" aria-hidden="true" />
             <label htmlFor="mobile-search-overlay" className="sr-only">Buscar no site</label>
             <input ref={mobileInputRef} id="mobile-search-overlay" type="text" inputMode="search" value={term} onChange={(event) => setTerm(event.target.value.slice(0, 120))} placeholder="Buscar fotos, vídeos e artigos" className="min-h-11 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground" />
             {term ? <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}><X size={18} /></Button> : null}
             <Button type="button" variant="outline" size="icon" aria-label="Fechar busca" onClick={closeSearch}><X size={18} /></Button>
-          </div>
+          </form>
           <div className="flex-1 overflow-y-auto overscroll-contain" aria-live="polite">
             <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
               <SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} />

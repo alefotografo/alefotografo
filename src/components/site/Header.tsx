@@ -173,7 +173,7 @@ export function Header() {
         Pular para o conteúdo
       </a>
 
-      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background">
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5 md:gap-6 md:py-4 xl:px-8">
           <Link
             to="/"

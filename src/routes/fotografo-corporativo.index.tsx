@@ -92,7 +92,7 @@ function PortfolioIndex() {
               key={c.slug}
               to="/fotografo-corporativo/$slug"
               params={{ slug: c.slug }}
-              className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
+              className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-ember [content-visibility:auto] [contain-intrinsic-size:auto_360px]"
             >
               <div className={`relative ${i % 6 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}>
                 {c.cover ? (
@@ -104,7 +104,7 @@ function PortfolioIndex() {
                     width={1200}
                     height={i % 6 === 0 ? 1500 : 900}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
-                    className="h-full w-full object-cover group-hover:scale-105"
+                    className="h-full w-full transform-gpu object-cover transition-[opacity,transform] duration-200 group-hover:scale-105"
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background text-muted-foreground">

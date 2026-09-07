@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
 import { naturalDims } from "@/lib/imageDims";
 
@@ -39,27 +39,26 @@ export function SmartImage({
   placeholderRatio,
   onBroken,
 }: Props) {
-  const [loaded, setLoaded] = useState(false);
   const [fallback, setFallback] = useState(false);
-  const ref = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    setLoaded(false);
     setFallback(false);
   }, [src]);
 
-  // A imagem pode terminar o download antes da hidratação: nesse caso o onLoad
-  // nunca dispara e ela ficaria presa em opacity-0. Consultamos o estado real
-  // do elemento após montar/atualizar.
-  useEffect(() => {
-    const el = ref.current;
-    if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
-  });
-
-  const attach = useCallback((el: HTMLImageElement | null) => {
-    ref.current = el;
-    if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
+  // Ao concluir o download liberamos a proporção reservada direto no DOM: nada
+  // de setState por foto, que geraria dezenas de re-renders durante a rolagem.
+  const settle = useCallback((el: HTMLImageElement | null) => {
+    if (!el) return;
+    el.style.removeProperty("aspect-ratio");
+    el.style.opacity = "1";
   }, []);
+
+  const attach = useCallback(
+    (el: HTMLImageElement | null) => {
+      if (el && el.complete && el.naturalWidth > 0) settle(el);
+    },
+    [settle],
+  );
 
   const natural = naturalDims(src);
   const finalWidth = width ?? natural?.width;
@@ -80,13 +79,16 @@ export function SmartImage({
       fetchPriority={priority ? "high" : "auto"}
       decoding={priority ? "sync" : "async"}
       referrerPolicy="no-referrer"
-      style={placeholderRatio && !loaded ? { aspectRatio: placeholderRatio } : undefined}
-      onLoad={() => setLoaded(true)}
+      style={{
+        ...(placeholderRatio ? { aspectRatio: placeholderRatio } : null),
+        opacity: priority ? 1 : 0,
+      }}
+      onLoad={(e) => settle(e.currentTarget)}
       onError={() => {
         if (!fallback) setFallback(true);
         else onBroken?.();
       }}
-      className={`${className} ${loaded ? "opacity-100" : "bg-surface opacity-0"} transition-opacity duration-500`}
+      className={`${className} bg-surface transition-opacity duration-200`}
     />
   );
 }

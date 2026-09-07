@@ -31,9 +31,19 @@ export const photoTaxonomy: SearchTaxonomyEntry[] = [
     priority: 9,
   },
   {
-    label: "Totem e foto impressa",
-    keywords: ["totem", "foto impressa", "impressao", "lembranca", "ativacao"],
-    slugs: ["totem-fotografico-totem-mania", "foto-impressa-na-hora"],
+    label: "Foto lembrança impressa e totem",
+    keywords: [
+      "totem",
+      "foto lembranca impressa",
+      "lembranca impressa",
+      "foto lembranca",
+      "foto impressa",
+      "impressao",
+      "lembranca",
+      "recordacao",
+      "ativacao",
+    ],
+    slugs: ["foto-impressa-na-hora", "totem-fotografico-totem-mania"],
     priority: 9,
   },
   {

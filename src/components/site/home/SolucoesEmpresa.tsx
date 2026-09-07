@@ -15,7 +15,7 @@ const CARDS = [
       "Monto um acervo com as suas pessoas, seu ambiente e seus processos",
       "Entregue catalogado por tema, pronto para o ano inteiro",
     ],
-    to: "/fotografo-corporativo/banco-de-imagens-para-empresas",
+    slug: "banco-de-imagens-para-empresas",
     img: `${CDN}/125396/banco-de-imagens-para-empresas_ala-servicos-39.jpg`,
     alt: "Banco de Imagens Empresarial — foto 1",
   },
@@ -29,7 +29,7 @@ const CARDS = [
       "Foto e vídeo institucional na mesma produção, com drone e locução",
       "Retratos da diretoria e da equipe no mesmo padrão",
     ],
-    to: "/fotografo-corporativo/fotografia-institucional-em-saopaulo",
+    slug: "fotografia-institucional-em-saopaulo",
     img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg`,
     alt: "Fotografia Institucional — foto 1",
   },
@@ -43,7 +43,7 @@ const CARDS = [
       "Frota, armazenagem, separação, expedição e linha de produção",
       "Aérea com drone da planta inteira",
     ],
-    to: "/fotografo-corporativo/fotografia-industrial",
+    slug: "fotografia-industrial",
     img: `${CDN}/66655/industrial_dsc7266.jpg`,
     alt: "Fotografia Industrial — foto 1",
   },
@@ -57,7 +57,7 @@ const CARDS = [
       "Todo mundo fotografado no mesmo padrão, no seu escritório",
       "Cinquenta pessoas em um dia, entrega em um dia útil",
     ],
-    to: "/fotografo-corporativo/fotografo-de-grupos-times-e-equipes",
+    slug: "fotografo-de-grupos-times-e-equipes",
     img: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
     alt: "Fotógrafo de Grupos, Times e Equipes — foto 1",
   },
@@ -71,7 +71,7 @@ const CARDS = [
       "Fotos publicadas durante o evento, achadas por reconhecimento facial",
       "Aftermovie editado no local e exibido no encerramento",
     ],
-    to: "/eventos-corporativos",
+    slug: null,
     img: `${CDN}/66941/eventos-corporativos_fotografo-de-eventos-corporativos-eventos-pessoas-em-evento-fotos-de-eventos-corporaticos-alefotografo0174.JPG`,
     alt: "Fotógrafo de Eventos Empresariais — foto 1",
   },
@@ -85,11 +85,14 @@ const CARDS = [
       "Estande em operação, atendimentos, produtos e visitantes",
       "Vídeo da participação pronto ainda durante a feira",
     ],
-    to: "/fotografo-corporativo/fotografo-feiras-stands",
+    slug: "fotografo-feiras-stands",
     img: `${CDN}/66936/feiras_feiras-stand-fotografo-oficial-de-feiras-stands-exposicoes-alefotografo0048.jpg`,
     alt: "Fotógrafo de Feiras de Negócios — foto 1",
   },
 ] as const;
+
+const LINK_CLASS =
+  "rounded-sm after:absolute after:inset-0 after:content-[''] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
 
 export default function SolucoesEmpresa() {
   return (
@@ -110,7 +113,7 @@ export default function SolucoesEmpresa() {
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {CARDS.map((card) => (
             <article
-              key={card.to}
+              key={card.title}
               className="group relative flex h-full flex-col overflow-hidden rounded-sm border border-border bg-card"
             >
               <div className="overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
@@ -128,12 +131,19 @@ export default function SolucoesEmpresa() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-[18px] font-semibold leading-[1.3] text-foreground md:text-[20px]">
-                  <Link
-                    to={card.to}
-                    className="rounded-sm after:absolute after:inset-0 after:content-[''] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                  >
-                    {card.title}
-                  </Link>
+                  {card.slug ? (
+                    <Link
+                      to="/fotografo-corporativo/$slug"
+                      params={{ slug: card.slug }}
+                      className={LINK_CLASS}
+                    >
+                      {card.title}
+                    </Link>
+                  ) : (
+                    <Link to="/eventos-corporativos" className={LINK_CLASS}>
+                      {card.title}
+                    </Link>
+                  )}
                 </h3>
 
                 <ul className="mt-6 space-y-2">

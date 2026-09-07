@@ -1,16 +1,19 @@
-Trocar "Foto Recordação" por "Foto Lembrança" na página /fotografo-corporativo/foto-impressa-na-hora, mantendo a URL e priorizando SEO.
+Tornar a página `/fotografo-corporativo/foto-impressa-na-hora` a página de destino oficial do termo "foto lembrança impressa".
 
 ## O que será feito
 
-1. Manter o slug da URL `foto-impressa-na-hora` e a rota `/fotografo-corporativo/foto-impressa-na-hora` para não perder ranqueamento. Não criar redirecionamento para novo slug.
-2. Trocar o título da categoria no catálogo (`src/data/catalog.cats.json`) de "Foto Recordação impressas na hora" para "Foto Lembrança Impressa na Hora".
-3. Trocar o subtítulo da categoria para o slogan "Não existe melhor lembrança que uma foto".
-4. Atualizar o SEO title e meta description em `src/data/categorySeo.ts` para usar "Foto Lembrança" com acento, mantendo o texto com palavras-chave para eventos corporativos.
-5. Revisar o texto longo da categoria em `src/data/catalog.cats.json`, mantendo "foto lembrança" como termo principal e "foto recordação" apenas como sinônimo opcional, para não perder buscas por esse termo.
-6. Trocar o mapeamento de autolink em `src/lib/autoLink.tsx` para usar "foto lembrança" como termo principal, mantendo "foto recordação" como termo alternativo.
-7. Deixar inalterados os slugs/listagens em `src/data/searchTaxonomy.ts`, `src/routes/portfolio.index.tsx` e `src/lib/legacy-redirects.ts`, já que a URL não muda.
-8. Build e verificação visual da página para confirmar H1, subtítulo e slogan corretos.
+1. Título de busca (Google): trocar para começar exatamente pelo termo alvo — "Foto Lembrança Impressa na Hora em SP | Alê Fotógrafo" — mantendo até 60 caracteres.
+2. Descrição de busca: reescrever começando por "Foto lembrança impressa na hora", com cidade, moldura com a marca e chamada para orçamento, até 158 caracteres.
+3. Manter a URL atual, sem redirecionamento, para preservar o ranqueamento já conquistado.
+4. Ligações internas (o texto do site vira link automaticamente): priorizar "foto lembrança impressa", "foto lembrança impressa na hora" e "foto lembrança" como termos que apontam para esta página, mantendo "foto recordação" como sinônimo.
+5. Reforçar as ligações que chegam à página a partir das páginas de eventos corporativos, feiras de negócios, festa de confraternização e totem fotográfico, para concentrar autoridade no termo.
+6. Na busca interna do site, incluir "foto lembranca impressa" e "lembranca impressa" entre as palavras que levam a esta página, e ajustar o rótulo do grupo para "Foto lembrança impressa e totem".
+7. Verificar a página publicada localmente: título, descrição, subtítulo e os links internos apontando corretamente.
 
-## Por que a URL fica a mesma
+## Detalhes técnicos
 
-Mudar o slug exigiria redirecionamento 301 e ajuste de sitemap. Como o usuário priorizou o ranqueamento, mantemos `/fotografo-corporativo/foto-impressa-na-hora` e alteramos apenas o título, subtítulo e SEO visível.
+- `src/data/categorySeo.ts`: atualizar `title` e `description` do slug `foto-impressa-na-hora`.
+- `src/lib/autoLink.tsx`: reordenar os `extras` do slug com as variações do termo alvo (frases mais longas primeiro já são priorizadas pelo índice).
+- `src/data/searchTaxonomy.ts`: novo `label` e novas `keywords` no grupo "Totem e foto impressa".
+- `src/data/catalog.cats.json`: garantir que o texto das categorias de eventos/feiras/confraternização/totem contenha a frase "foto lembrança impressa na hora", que o autolink converte em link para esta página.
+- Nenhuma mudança de rota, sitemap, canonical ou redirecionamento.

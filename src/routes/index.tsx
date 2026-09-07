@@ -1,13 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Suspense } from "react";
 import { site } from "@/data/site";
-import { heroPhoto } from "@/data/homeCuration";
 import { buildMeta } from "@/lib/seo";
-import { ArrowUpRight } from "lucide-react";
 import { faqJsonLd } from "@/lib/faqs";
 import { faqsComerciais } from "@/lib/faqsComerciais";
-import { waLink } from "@/lib/whatsapp";
-import { homeStats, statsLead } from "@/data/stats";
 import { lazyAfterInteractive } from "@/lib/deferredLazy";
 import HomeHeroNovo from "@/components/site/home/HomeHeroNovo";
 import FaixaClientes from "@/components/site/home/FaixaClientes";

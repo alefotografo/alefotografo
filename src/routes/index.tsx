@@ -11,6 +11,9 @@ import SolucoesEmpresa from "@/components/site/home/SolucoesEmpresa";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
+const BancoDeImagens = lazyAfterInteractive(() => import("@/components/site/home/BancoDeImagens"));
+const VideoProducao = lazyAfterInteractive(() => import("@/components/site/home/VideoProducao"));
+const EventoCompleto = lazyAfterInteractive(() => import("@/components/site/home/EventoCompleto"));
 const HomeSelectedWorks = lazyAfterInteractive(() => import("@/components/site/home/HomeSelectedWorks"));
 const ServiceChooser = lazyAfterInteractive(() =>
   import("@/components/site/ServiceChooser").then((module) => ({ default: module.ServiceChooser })),
@@ -77,6 +80,9 @@ function Home() {
       <SolucoesEmpresa />
 
       <Suspense fallback={null}>
+        <BancoDeImagens />
+        <VideoProducao />
+        <EventoCompleto />
         <HomeSelectedWorks />
         <ServiceChooser />
         <SegmentGrid />

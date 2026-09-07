@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
 import { naturalDims } from "@/lib/imageDims";
 

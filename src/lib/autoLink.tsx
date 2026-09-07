@@ -41,7 +41,7 @@ function phrasesFor(c: Category): string[] {
     "fotografo-de-eventos-corporativos": ["eventos corporativos", "evento corporativo"],
     "fotografo-feiras-stands": ["feiras e stands", "feira de negócios", "stand"],
     "totem-fotografico-totem-mania": ["totem fotográfico", "totem mania"],
-    "foto-impressa-na-hora": ["foto impressa na hora", "foto recordação"],
+    "foto-impressa-na-hora": ["foto lembrança", "foto impressa na hora", "foto recordação"],
     "fotografia-de-logistica": ["logística", "armazém", "operação logística"],
     "ensaio-fotografico-para-dentistas": ["dentistas", "dentista", "consultório odontológico"],
     "fotografo-de-arquitetura-e-interiores": ["arquitetura", "interiores", "arquitetura e interiores"],

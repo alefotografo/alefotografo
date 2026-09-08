@@ -6,19 +6,15 @@ const CDN =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/125396";
 
 const MINIATURAS = [
-  { legenda: "Fachada e portaria", src: `${CDN}/banco-de-imagens-para-empresas_ala-servicos-178.jpg` },
-  { legenda: "Frota", src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-74.jpg` },
-  { legenda: "Recebimento", src: `${CDN}/banco-de-imagens-para-empresas_carriers-24.jpg` },
-  { legenda: "Armazenagem", src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-260.jpg` },
-  {
-    legenda: "Separação e expedição",
-    src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-113.jpg`,
-  },
   { legenda: "Linha de produção", src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-34.jpg` },
   { legenda: "Equipe em operação", src: `${CDN}/banco-de-imagens-para-empresas_carriers-11.jpg` },
   {
     legenda: "Vista aérea com drone",
     src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-11.jpg`,
+  },
+  {
+    legenda: "Ambientes corporativos",
+    src: `${CDN}/banco-de-imagens-para-empresas_ala-servicos-178.jpg`,
   },
 ] as const;
 

@@ -2,6 +2,10 @@
 
 ## O que está acontecendo
 
+O hero fixa a altura da foto em 320px no celular e 560px no desktop e preenche por corte. Como a foto é horizontal (1920 × 1275), topo e base ficam de fora — é o corte que você está vendo, mais visível no celular.
+
+
+
 ## Medidas ideais
 
 - **Desktop (acima de 1024px)**: faixa de 1920 × 640 px (proporção 3:1), altura entre 560 e 640 px. É a faixa que acomoda o texto sobre a foto sem cortar rostos.

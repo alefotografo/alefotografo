@@ -105,39 +105,15 @@ export default function SolucoesEmpresa() {
                       {card.title}
                     </Link>
                   ) : (
-                    <Link to="/eventos-corporativos" className={LINK_CLASS}>
+                    <Link to={card.to!} className={LINK_CLASS}>
                       {card.title}
                     </Link>
                   )}
                 </h3>
 
-                <ul className="mt-6 space-y-2">
-                  {card.dores.map((d) => (
-                    <li
-                      key={d}
-                      className="flex gap-2 text-[16px] leading-[1.6] text-muted-foreground"
-                    >
-                      <span aria-hidden="true">–</span>
-                      <span>{d}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <hr className="my-6 border-t border-border" />
-
-                <ul className="space-y-2">
-                  {card.solucoes.map((s) => (
-                    <li
-                      key={s}
-                      className="flex gap-2 text-[16px] font-medium leading-[1.6] text-foreground"
-                    >
-                      <span aria-hidden="true" className="text-ember">
-                        +
-                      </span>
-                      <span>{s}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground">
+                  {card.texto}
+                </p>
               </div>
             </article>
           ))}

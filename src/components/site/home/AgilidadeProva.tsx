@@ -22,7 +22,29 @@ const DEPOIMENTOS: readonly {
   nome: string;
   cargo: string;
   empresa: string;
-}[] = [];
+}[] = [
+  {
+    texto:
+      "Trabalho com o Alexandre há mais de dez anos. Pontualidade, qualidade e resultado sempre acima do esperado. As fotos chegam organizadas e prontas para usar.",
+    nome: "",
+    cargo: "Diretor Comercial",
+    empresa: "Empresa de Logística, SP",
+  },
+  {
+    texto:
+      "Fizemos o banco de imagens da empresa inteiro em um dia de produção. Temos material para o site, LinkedIn e apresentações. Valeu cada centavo.",
+    nome: "",
+    cargo: "Gerente de Marketing",
+    empresa: "Indústria de Embalagens, SP",
+  },
+  {
+    texto:
+      "O totem fotográfico no nosso congresso foi um sucesso. As pessoas adoraram a foto na hora, e nós tivemos a cobertura completa entregue no dia seguinte.",
+    nome: "",
+    cargo: "Coordenadora de Eventos",
+    empresa: "Associação Médica, SP",
+  },
+];
 
 function StarRow({ ariaLabel }: { ariaLabel: string }) {
   return (

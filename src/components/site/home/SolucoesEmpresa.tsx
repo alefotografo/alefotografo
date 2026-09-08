@@ -6,84 +6,84 @@ const CDN =
 
 const CARDS = [
   {
-    title: "Você usa as mesmas fotos desde 2019",
+    title: "Banco de Imagens Corporativo",
     dores: [
-      "Metade das pessoas daquelas fotos já saiu da empresa",
-      "Toda área pede foto para o marketing e o marketing não tem",
+      "Seu site e apresentações usam fotos de stock que não representam a sua empresa",
+      "Cada novo material exige buscar imagens que nunca encaixam direito",
     ],
     solucoes: [
-      "Monto um acervo com as suas pessoas, seu ambiente e seus processos",
-      "Entregue catalogado por tema, pronto para o ano inteiro",
+      "Crio um acervo completo com sua equipe, operação, produtos e espaços",
+      "Imagens exclusivas da sua empresa, prontas para usar em qualquer canal",
     ],
     slug: "banco-de-imagens-para-empresas",
     img: `${CDN}/125396/banco-de-imagens-para-empresas_ala-servicos-39.jpg`,
     alt: "Banco de Imagens Empresarial — foto 1",
   },
   {
-    title: "O site novo vai ao ar e não tem foto para colocar",
+    title: "Vídeo Institucional",
     dores: [
-      "O layout ficou pronto antes do conteúdo, e agora falta imagem",
-      "Foto de banco entrega um escritório que não é o seu",
+      "Apresentar a empresa em reuniões ainda depende de texto e fala",
+      "Potenciais clientes saem sem uma impressão visual forte",
     ],
     solucoes: [
-      "Foto e vídeo institucional na mesma produção, com drone e locução",
-      "Retratos da diretoria e da equipe no mesmo padrão",
+      "Produzo vídeo institucional com roteiro, locução e trilha profissional",
+      "Seu cliente entende quem você é antes mesmo de sentar à mesa",
     ],
     slug: "fotografia-institucional-em-saopaulo",
     img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg`,
     alt: "Fotografia Institucional — foto 1",
   },
   {
-    title: "Seu cliente não faz ideia do tamanho da sua operação",
+    title: "Fotografia Industrial e de Infraestrutura",
     dores: [
-      "A proposta fala em 12 mil m² e não mostra nenhum",
-      "Concorrente menor parece maior porque tem imagem melhor",
+      "A estrutura da empresa nunca foi registrada como merece",
+      "Propostas mostram o que a empresa faz, mas não o que ela é",
     ],
     solucoes: [
-      "Frota, armazenagem, separação, expedição e linha de produção",
-      "Aérea com drone da planta inteira",
+      "Fotografo instalações, processos e logística com luz e composição profissional",
+      "Imagens que mostram a capacidade operacional da sua empresa com clareza",
     ],
     slug: "fotografia-industrial",
     img: `${CDN}/66655/industrial_dsc7266.jpg`,
     alt: "Fotografia Industrial — foto 1",
   },
   {
-    title: "A página da equipe tem uma foto de cada jeito",
+    title: "Retrato Corporativo de Equipe",
     dores: [
-      "Um recortado de festa, outro contra a janela, outro do celular",
-      "Executivo novo entra e não tem foto para o LinkedIn",
+      "As fotos da equipe no site e no LinkedIn têm qualidades completamente diferentes",
+      "Não passa profissionalismo — e a própria equipe sabe disso",
     ],
     solucoes: [
-      "Todo mundo fotografado no mesmo padrão, no seu escritório",
-      "Cinquenta pessoas em um dia, entrega em um dia útil",
+      "Sessão com direção de poses para toda a equipe, do analista ao CEO",
+      "Padrão visual uniforme que transmite coesão e profissionalismo",
     ],
     slug: "fotografo-de-grupos-times-e-equipes",
     img: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
     alt: "Fotógrafo de Grupos, Times e Equipes — foto 1",
   },
   {
-    title: "No fim do evento todo mundo pergunta quando saem as fotos",
+    title: "Cobertura de Eventos Corporativos",
     dores: [
-      "As fotos chegam três dias depois, quando ninguém mais posta",
-      "O post do evento sai na quinta, o evento foi na segunda",
+      "O evento acontece, as pessoas aprovam — mas as fotos não traduzem o que foi vivido",
+      "O registro não chega às redes nem à comunicação interna",
     ],
     solucoes: [
-      "Fotos publicadas durante o evento, achadas por reconhecimento facial",
-      "Aftermovie editado no local e exibido no encerramento",
+      "Cobertura completa com entrega organizada por momento e por pessoa",
+      "Fotos que realmente contam o evento e que a equipe quer compartilhar",
     ],
     slug: null,
     img: `${CDN}/66941/eventos-corporativos_fotografo-de-eventos-corporativos-eventos-pessoas-em-evento-fotos-de-eventos-corporaticos-alefotografo0174.JPG`,
     alt: "Fotógrafo de Eventos Empresariais — foto 1",
   },
   {
-    title: "Você gastou o ano inteiro de verba em quatro dias de feira",
+    title: "Imagem Aérea com Drone",
     dores: [
-      "Terminou a feira e sobraram três fotos de celular do estande",
-      "Não há o que mostrar para a diretoria nem para as redes",
+      "A extensão e a localização da operação nunca foram mostradas com impacto",
+      "Concorrentes com estrutura menor parecem maiores por terem imagens aéreas",
     ],
     solucoes: [
-      "Estande em operação, atendimentos, produtos e visitantes",
-      "Vídeo da participação pronto ainda durante a feira",
+      "Voo fotográfico sobre instalações, empreendimentos e eventos",
+      "Perspectiva que só o ar oferece — e que transforma como a empresa é percebida",
     ],
     slug: "fotografo-feiras-stands",
     img: `${CDN}/66936/feiras_feiras-stand-fotografo-oficial-de-feiras-stands-exposicoes-alefotografo0048.jpg`,
@@ -102,12 +102,11 @@ export default function SolucoesEmpresa() {
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-          O que um fotógrafo corporativo resolve para a sua empresa
+          O que posso produzir para a sua empresa
         </h2>
         <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-          Ninguém contrata "uma sessão de fotos". Contrata porque o site vai ao ar em três
-          semanas, porque a feira é em maio, porque a diretoria mudou. Escolha a situação que é
-          a sua.
+          Seis formas de usar foto e vídeo para fortalecer a presença da sua empresa no site, nas
+          redes e nos materiais comerciais.
         </p>
 
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">

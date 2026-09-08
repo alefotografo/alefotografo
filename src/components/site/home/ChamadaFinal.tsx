@@ -9,11 +9,11 @@ export default function ChamadaFinal() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mx-auto max-w-[640px] text-center">
           <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-            Me conte o que precisa produzir
+            Vamos conversar sobre o que você precisa produzir?
           </h2>
           <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-            Tipo de produção, quantas pessoas, onde e para quando. Respondo com escopo e valor no
-            mesmo dia útil. Se não for o meu tipo de trabalho, eu falo na hora.
+            Atendo empresas em São Paulo e região metropolitana desde 1991. Me chame no WhatsApp,
+            conte o projeto e eu te respondo com uma proposta clara.
           </p>
 
           <p className="mt-12">

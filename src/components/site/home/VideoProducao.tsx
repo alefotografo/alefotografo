@@ -60,12 +60,12 @@ export default function VideoProducao() {
     <section className="py-14 md:py-24">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-          Vídeo Institucional com Produção Completa
+          Vídeos corporativos com produção completa
         </h2>
         <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-          Roteiro, filmagem, edição, locução e trilha. Produzo o vídeo institucional do começo ao
-          fim, sem terceiros. O resultado é um vídeo que apresenta a empresa com clareza e cria
-          credibilidade antes do primeiro contato.
+          Planejamento, roteiro, captação, direção, edição, locução e trilha reunidos em uma
+          produção audiovisual completa. Criamos vídeos para apresentar empresas, serviços,
+          estruturas, equipes, cases e projetos com comunicação clara e profissional.
         </p>
 
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">

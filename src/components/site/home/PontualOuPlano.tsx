@@ -13,13 +13,12 @@ export default function PontualOuPlano() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-[68ch]">
               <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-                Contrate uma produção ou um ano de produção
+                Trabalho pontual ou calendário de produção — você escolhe
               </h2>
               <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-                Toda vez que aparece uma necessidade de imagem, começa de novo: pedir orçamento,
-                aprovar, agendar. No plano anual sua empresa compra crédito uma vez e vai consumindo
-                ao longo do ano — o crédito vale mais que o valor pago, a agenda é prioritária e o
-                prazo de entrega é menor. Sem processo de compra a cada foto.
+                Atendo projetos únicos com prazo definido e também empresas que precisam de produção
+                regular ao longo do ano. Entre em contato, me conte o que precisa produzir e eu
+                preparo uma proposta.
               </p>
             </div>
 

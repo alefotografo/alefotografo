@@ -25,13 +25,13 @@ export default function EventoCompleto() {
           <div className="grid grid-cols-1 gap-6 p-6 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-                As fotos no celular de quem foi, antes de o evento acabar
+                Cobertura de Eventos com Entrega em Tempo Real
               </h2>
               <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-                Hoje é assim: o evento termina, as fotos chegam três dias depois num link, alguém do
-                marketing garimpa e posta na quinta-feira. O assunto já morreu. Com QR code na
-                entrada, o participante aponta a câmera, o reconhecimento facial acha as fotos dele
-                e ele posta ainda no coffee break — marcando a sua empresa.
+                Para congressos, convenções e feiras de negócios: cobertura completa, totem
+                fotográfico com foto lembrança impressa na hora e entrega de fotos identificadas por
+                reconhecimento facial durante o próprio evento. A comunicação começa enquanto o
+                evento ainda está acontecendo.
               </p>
 
               <ul className="mt-6 space-y-2">

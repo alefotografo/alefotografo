@@ -40,13 +40,12 @@ export default function HomeHeroNovo() {
                 Alexandre Machado · Fotógrafo corporativo em São Paulo · desde 1991
               </p>
               <h1 className="mt-6 font-display text-[32px] font-semibold leading-[1.1] text-foreground md:text-[48px]">
-                Fotógrafo corporativo em São Paulo: sua empresa para de usar foto de banco
+                Fotografia e vídeo corporativo em São Paulo desde 1991
               </h1>
               <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-                Olhe o site da sua empresa agora. Quantas fotos são realmente suas — suas
-                pessoas, seu galpão, seu escritório? Faço foto profissional e vídeo para
-                empresas em São Paulo desde 1991: banco de imagens, institucional, indústria,
-                evento e retrato de equipe.
+                Banco de imagens próprias, institucional, eventos e retratos de equipe. Produção
+                completa para empresas que precisam de imagem profissional no site, nas redes e
+                nos materiais comerciais.
               </p>
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a

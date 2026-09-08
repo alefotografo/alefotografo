@@ -28,14 +28,13 @@ export default function BancoDeImagens() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mx-auto max-w-[640px] text-center">
           <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-            Sua empresa paga por foto de banco e o concorrente usa a mesma imagem
+            Banco de Imagens: o serviço mais estratégico que uma empresa pode contratar
           </h2>
           <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-            É a mesma biblioteca para todo mundo. O sorriso da recepcionista do site da sua empresa
-            está no site de mais três. Banco de imagens próprio resolve isso de uma vez: um ou dois
-            dias de produção na sua operação geram o acervo que abastece site, apresentação
-            comercial, proposta, rede social, folder e catálogo pelo ano inteiro. Quem precisar de
-            foto pega na pasta, em vez de pedir para o marketing.
+            Um acervo fotográfico próprio é o ativo de comunicação com maior retorno de longo prazo.
+            Produzimos em um único dia de trabalho — ou em ciclos ao longo do ano — imagens da equipe,
+            da operação, dos produtos e dos espaços. Entrego tudo organizado, com direitos de uso
+            irrestrito.
           </p>
           <p className="mt-12">
             <a

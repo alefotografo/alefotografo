@@ -30,12 +30,12 @@ export default function RetratoProfissional() {
 
           <div className="lg:col-span-2">
             <h3 className="font-display text-[18px] font-semibold leading-[1.3] text-foreground md:text-[20px]">
-              Precisa só da sua foto?
+              Foto Profissional para LinkedIn e Apresentações
             </h3>
             <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-              Executivos, médicos e advogados que precisam de uma foto profissional decente para
-              LinkedIn, site e palestra. Sessão individual com direção de pose do primeiro ao
-              último clique — você não precisa saber posar, isso é problema meu.
+              Para executivos, médicos e advogados que precisam de uma foto individual com
+              qualidade. Sessão com direção de pose do início ao fim — você não precisa saber posar,
+              isso é minha responsabilidade.
             </p>
 
             <p className="mt-6 flex flex-wrap gap-6">

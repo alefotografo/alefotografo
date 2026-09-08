@@ -60,13 +60,12 @@ export default function VideoProducao() {
     <section className="py-14 md:py-24">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-          O vídeo institucional que sua empresa tem é de 2018
+          Vídeo Institucional com Produção Completa
         </h2>
         <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-          Ou não existe, e a apresentação comercial é um PDF. Gravo com a mesma equipe que
-          fotografa, na mesma diária — sai mais barato do que contratar duas produtoras e sua
-          empresa não para duas vezes. Institucional com locução e drone, case de cliente com
-          depoimento, cobertura de evento e cortes verticais para as redes.
+          Roteiro, filmagem, edição, locução e trilha. Produzo o vídeo institucional do começo ao
+          fim, sem terceiros. O resultado é um vídeo que apresenta a empresa com clareza e cria
+          credibilidade antes do primeiro contato.
         </p>
 
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">

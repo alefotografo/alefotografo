@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+import { companiesStat, ratingStat } from "@/data/stats";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { WA_DEFAULT, waLink } from "@/lib/whatsapp";
 
@@ -8,6 +10,12 @@ const HERO = {
   width: 1920,
   height: 1275,
 };
+
+const HERO_STATS = [
+  { value: "30+", label: "anos de experiência" },
+  { value: companiesStat.value, label: "empresas atendidas" },
+  { value: ratingStat.value, label: "no Google" },
+];
 
 export default function HomeHeroNovo() {
   return (
@@ -33,36 +41,42 @@ export default function HomeHeroNovo() {
           />
         </figure>
 
-
         <div className="md:absolute md:inset-0 md:flex md:items-center">
           <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-6 md:py-0 lg:px-8">
             <div className="max-w-[660px]">
-              <p className="text-[12px] uppercase leading-[1.4] tracking-[0.12em] text-muted-foreground">
-                Alexandre Machado · Fotógrafo corporativo em São Paulo · desde 1991
-              </p>
-              <h1 className="mt-6 font-display text-[32px] font-semibold leading-[1.1] text-foreground md:text-[48px]">
-                Fotografia e vídeo corporativo em São Paulo desde 1991
+              <h1 className="font-display text-[32px] font-semibold leading-[1.1] text-foreground md:text-[48px]">
+                Fotógrafo profissional e fotógrafo corporativo em São Paulo
               </h1>
               <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-                Banco de imagens próprias, institucional, eventos e retratos de equipe. Produção
-                completa para empresas que precisam de imagem profissional no site, nas redes e
-                nos materiais comerciais.
+                Fotografia e produção audiovisual para empresas, executivos e profissionais. Nossa
+                equipe realiza fotografia corporativa, retratos profissionais, eventos, banco de
+                imagens e vídeos para empresas em São Paulo e região.
               </p>
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href="#solucoes"
-                  className="inline-flex w-full items-center justify-center rounded-sm bg-ember px-6 py-3.5 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
-                >
-                  Ver o que sua empresa precisa produzir
-                </a>
                 <a
                   href={waLink(WA_DEFAULT)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-sm bg-ember px-6 py-3.5 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
                 >
-                  Falar no WhatsApp
+                  Solicitar orçamento
                 </a>
+                <Link
+                  to="/fotografo-corporativo"
+                  className="inline-flex w-full items-center justify-center rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
+                >
+                  Ver portfólio
+                </Link>
+              </div>
+              <div className="mt-10 grid grid-cols-3 gap-4">
+                {HERO_STATS.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="font-display text-xl font-semibold text-foreground md:text-2xl">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

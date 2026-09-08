@@ -85,9 +85,9 @@ const CARDS = [
       "Voo fotográfico sobre instalações, empreendimentos e eventos",
       "Perspectiva que só o ar oferece — e que transforma como a empresa é percebida",
     ],
-    slug: "fotografo-feiras-stands",
-    img: `${CDN}/66936/feiras_feiras-stand-fotografo-oficial-de-feiras-stands-exposicoes-alefotografo0048.jpg`,
-    alt: "Fotógrafo de Feiras de Negócios — foto 1",
+    slug: "fotos-aereas",
+    img: `${CDN}/66650/fotos-aereas_fotos-aereas-de-empresas-empreendimentos-captadas-por-drone-helicopetero-fotografo-aereo-especializado-2.jpg`,
+    alt: "Fotos Aéreas — foto 1",
   },
 ] as const;
 

@@ -89,6 +89,10 @@ function Home() {
         <BancoDeImagens />
         <VideoProducao />
         <EventoCompleto />
+        <PontualOuPlano />
+        <AgilidadeProva />
+        <RetratoProfissional />
+        <ChamadaFinal />
         <HomeSelectedWorks />
         <ServiceChooser />
         <SegmentGrid />

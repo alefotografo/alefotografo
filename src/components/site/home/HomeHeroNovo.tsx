@@ -45,7 +45,7 @@ export default function HomeHeroNovo() {
           <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-6 md:py-0 lg:px-8">
             <div className="max-w-[660px]">
               <h1 className="font-display text-[32px] font-semibold leading-[1.1] text-foreground md:text-[48px]">
-                Fotógrafo profissional e fotógrafo corporativo em São Paulo
+                Fotógrafo profissional e corporativo em São Paulo
               </h1>
               <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
                 Fotografia e produção audiovisual para empresas, executivos e profissionais. Nossa

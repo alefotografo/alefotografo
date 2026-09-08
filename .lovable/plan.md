@@ -6,12 +6,16 @@ O hero fixa a altura da foto em 320px no celular e 560px no desktop e preenche p
 
 
 
-## Medidas ideais
+## Medida única
 
-- **Desktop (acima de 1024px)**: faixa de 1920 × 640 px (proporção 3:1), altura entre 560 e 640 px. É a faixa que acomoda o texto sobre a foto sem cortar rostos.
-- **Tablet (768–1024px)**: mesma faixa, altura 440 px.
-- **Celular (abaixo de 768px)**: 1080 × 810 px (proporção 4:3), altura ~300 px na tela.
-- A foto atual tem 1920 × 1275 (3:2): no desktop ela sempre vira faixa recortada, no celular aparece praticamente inteira.
+**2400 × 1350 px (16:9)** — uma só foto, com o assunto principal centralizado e folga nas bordas. A partir dela o site faz o recorte automático:
+
+- Celular: mostra o miolo em 4:3, altura ~300 px.
+- Tablet: faixa horizontal, altura 440 px.
+- Desktop: faixa horizontal, altura 600 px.
+
+A foto atual (1920 × 1275) continua funcionando com essa mesma lógica; a medida 2400 × 1350 é a referência para qualquer foto nova de capa.
+
 
 ## Mudanças propostas (somente o hero)
 

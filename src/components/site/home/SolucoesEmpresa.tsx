@@ -7,87 +7,57 @@ const CDN =
 const CARDS = [
   {
     title: "Banco de Imagens Corporativo",
-    dores: [
-      "Seu site e apresentações usam fotos de stock que não representam a sua empresa",
-      "Cada novo material exige buscar imagens que nunca encaixam direito",
-    ],
-    solucoes: [
-      "Crio um acervo completo com sua equipe, operação, produtos e espaços",
-      "Imagens exclusivas da sua empresa, prontas para usar em qualquer canal",
-    ],
+    texto:
+      "Desenvolvemos acervos fotográficos exclusivos com equipes, ambientes, operações, produtos e serviços. Imagens profissionais para sites, apresentações, campanhas, redes sociais e comunicação interna.",
     slug: "banco-de-imagens-para-empresas",
+    to: null,
     img: `${CDN}/125396/banco-de-imagens-para-empresas_ala-servicos-39.jpg`,
     alt: "Banco de Imagens Empresarial — foto 1",
   },
   {
-    title: "Vídeo Institucional",
-    dores: [
-      "Apresentar a empresa em reuniões ainda depende de texto e fala",
-      "Potenciais clientes saem sem uma impressão visual forte",
-    ],
-    solucoes: [
-      "Produzo vídeo institucional com roteiro, locução e trilha profissional",
-      "Seu cliente entende quem você é antes mesmo de sentar à mesa",
-    ],
+    title: "Fotografia Corporativa",
+    texto:
+      "Produções fotográficas para empresas, equipes, ambientes e operações, alinhadas à identidade e aos objetivos de comunicação de cada organização.",
     slug: "fotografia-institucional-em-saopaulo",
+    to: null,
     img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg`,
     alt: "Fotografia Institucional — foto 1",
   },
   {
-    title: "Fotografia Industrial e de Infraestrutura",
-    dores: [
-      "A estrutura da empresa nunca foi registrada como merece",
-      "Propostas mostram o que a empresa faz, mas não o que ela é",
-    ],
-    solucoes: [
-      "Fotografo instalações, processos e logística com luz e composição profissional",
-      "Imagens que mostram a capacidade operacional da sua empresa com clareza",
-    ],
-    slug: "fotografia-industrial",
-    img: `${CDN}/66655/industrial_dsc7266.jpg`,
-    alt: "Fotografia Industrial — foto 1",
-  },
-  {
-    title: "Retrato Corporativo de Equipe",
-    dores: [
-      "As fotos da equipe no site e no LinkedIn têm qualidades completamente diferentes",
-      "Não passa profissionalismo — e a própria equipe sabe disso",
-    ],
-    solucoes: [
-      "Sessão com direção de poses para toda a equipe, do analista ao CEO",
-      "Padrão visual uniforme que transmite coesão e profissionalismo",
-    ],
-    slug: "fotografo-de-grupos-times-e-equipes",
+    title: "Retratos Profissionais",
+    texto:
+      "Retratos de executivos, profissionais e equipes para LinkedIn, sites, apresentações, imprensa e comunicação corporativa.",
+    slug: null,
+    to: "/foto-profissional",
     img: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
     alt: "Fotógrafo de Grupos, Times e Equipes — foto 1",
   },
   {
-    title: "Cobertura de Eventos Corporativos",
-    dores: [
-      "O evento acontece, as pessoas aprovam — mas as fotos não traduzem o que foi vivido",
-      "O registro não chega às redes nem à comunicação interna",
-    ],
-    solucoes: [
-      "Cobertura completa com entrega organizada por momento e por pessoa",
-      "Fotos que realmente contam o evento e que a equipe quer compartilhar",
-    ],
+    title: "Eventos Corporativos",
+    texto:
+      "Fotografia e vídeo para congressos, convenções, feiras, palestras e encontros empresariais.",
     slug: null,
+    to: "/eventos-corporativos",
     img: `${CDN}/66941/eventos-corporativos_fotografo-de-eventos-corporativos-eventos-pessoas-em-evento-fotos-de-eventos-corporaticos-alefotografo0174.JPG`,
     alt: "Fotógrafo de Eventos Empresariais — foto 1",
   },
   {
-    title: "Imagem Aérea com Drone",
-    dores: [
-      "A extensão e a localização da operação nunca foram mostradas com impacto",
-      "Concorrentes com estrutura menor parecem maiores por terem imagens aéreas",
-    ],
-    solucoes: [
-      "Voo fotográfico sobre instalações, empreendimentos e eventos",
-      "Perspectiva que só o ar oferece — e que transforma como a empresa é percebida",
-    ],
-    slug: "fotos-aereas",
+    title: "Vídeos Corporativos",
+    texto:
+      "Produção audiovisual para apresentar empresas, serviços, estruturas, equipes, projetos e cases.",
+    slug: null,
+    to: "/videos",
     img: `${CDN}/66650/fotos-aereas_fotos-aereas-de-empresas-empreendimentos-captadas-por-drone-helicopetero-fotografo-aereo-especializado-2.jpg`,
     alt: "Fotos Aéreas — foto 1",
+  },
+  {
+    title: "Fotografia Industrial",
+    texto:
+      "Registro de instalações, processos, equipamentos, equipes e operações para comunicação institucional, comercial e técnica.",
+    slug: "fotografia-industrial",
+    to: null,
+    img: `${CDN}/66655/industrial_dsc7266.jpg`,
+    alt: "Fotografia Industrial — foto 1",
   },
 ] as const;
 

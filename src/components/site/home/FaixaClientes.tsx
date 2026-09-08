@@ -18,7 +18,7 @@ export default function FaixaClientes() {
     <section className="bg-card py-12">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <p className="text-center text-[14px] leading-[1.4] text-muted-foreground">
-          Empresas que já produziram comigo
+          Empresas que confiam em nosso trabalho
         </p>
 
         {/* mobile: linha única com rolagem horizontal */}

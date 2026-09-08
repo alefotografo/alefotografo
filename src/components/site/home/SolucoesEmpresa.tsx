@@ -72,12 +72,8 @@ export default function SolucoesEmpresa() {
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-          O que posso produzir para a sua empresa
+          Soluções em fotografia e vídeo para empresas
         </h2>
-        <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-          Seis formas de usar foto e vídeo para fortalecer a presença da sua empresa no site, nas
-          redes e nos materiais comerciais.
-        </p>
 
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {CARDS.map((card) => (

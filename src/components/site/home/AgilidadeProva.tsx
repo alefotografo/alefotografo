@@ -19,30 +19,22 @@ const NUMEROS: readonly NumeroItem[] = [
 
 const DEPOIMENTOS: readonly {
   texto: string;
-  nome: string;
-  cargo: string;
-  empresa: string;
+  autor: string;
 }[] = [
   {
     texto:
       "Trabalho com o Alexandre há mais de dez anos. Pontualidade, qualidade e resultado sempre acima do esperado. As fotos chegam organizadas e prontas para usar.",
-    nome: "",
-    cargo: "Diretor Comercial",
-    empresa: "Empresa de Logística, SP",
+    autor: "Diretor Comercial, Empresa de Logística, SP",
   },
   {
     texto:
       "Fizemos o banco de imagens da empresa inteiro em um dia de produção. Temos material para o site, LinkedIn e apresentações. Valeu cada centavo.",
-    nome: "",
-    cargo: "Gerente de Marketing",
-    empresa: "Indústria de Embalagens, SP",
+    autor: "Gerente de Marketing, Indústria de Embalagens, SP",
   },
   {
     texto:
       "O totem fotográfico no nosso congresso foi um sucesso. As pessoas adoraram a foto na hora, e nós tivemos a cobertura completa entregue no dia seguinte.",
-    nome: "",
-    cargo: "Coordenadora de Eventos",
-    empresa: "Associação Médica, SP",
+    autor: "Coordenadora de Eventos, Associação Médica, SP",
   },
 ];
 
@@ -106,17 +98,14 @@ export default function AgilidadeProva() {
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {DEPOIMENTOS.map((depoimento) => (
               <article
-                key={depoimento.nome}
+                key={depoimento.autor}
                 className="flex h-full flex-col rounded-sm border border-border bg-card p-6"
               >
                 <blockquote className="flex-grow text-[16px] leading-[1.6] text-foreground md:text-[17px]">
                   {depoimento.texto}
                 </blockquote>
                 <cite className="mt-6 not-italic border-t border-border pt-4 text-[14px] leading-[1.4] text-muted-foreground">
-                  <span className="block text-foreground">{depoimento.nome}</span>
-                  <span>
-                    {depoimento.cargo}, {depoimento.empresa}
-                  </span>
+                  <span className="block text-foreground">{depoimento.autor}</span>
                 </cite>
               </article>
             ))}

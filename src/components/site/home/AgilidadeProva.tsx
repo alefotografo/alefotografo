@@ -98,17 +98,14 @@ export default function AgilidadeProva() {
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {DEPOIMENTOS.map((depoimento) => (
               <article
-                key={depoimento.nome}
+                key={depoimento.autor}
                 className="flex h-full flex-col rounded-sm border border-border bg-card p-6"
               >
                 <blockquote className="flex-grow text-[16px] leading-[1.6] text-foreground md:text-[17px]">
                   {depoimento.texto}
                 </blockquote>
                 <cite className="mt-6 not-italic border-t border-border pt-4 text-[14px] leading-[1.4] text-muted-foreground">
-                  <span className="block text-foreground">{depoimento.nome}</span>
-                  <span>
-                    {depoimento.cargo}, {depoimento.empresa}
-                  </span>
+                  <span className="block text-foreground">{depoimento.autor}</span>
                 </cite>
               </article>
             ))}

@@ -14,6 +14,12 @@ const homeFaqs = faqsComerciais.slice(0, 6);
 const BancoDeImagens = lazyAfterInteractive(() => import("@/components/site/home/BancoDeImagens"));
 const VideoProducao = lazyAfterInteractive(() => import("@/components/site/home/VideoProducao"));
 const EventoCompleto = lazyAfterInteractive(() => import("@/components/site/home/EventoCompleto"));
+const PontualOuPlano = lazyAfterInteractive(() => import("@/components/site/home/PontualOuPlano"));
+const AgilidadeProva = lazyAfterInteractive(() => import("@/components/site/home/AgilidadeProva"));
+const RetratoProfissional = lazyAfterInteractive(() =>
+  import("@/components/site/home/RetratoProfissional"),
+);
+const ChamadaFinal = lazyAfterInteractive(() => import("@/components/site/home/ChamadaFinal"));
 const HomeSelectedWorks = lazyAfterInteractive(() => import("@/components/site/home/HomeSelectedWorks"));
 const ServiceChooser = lazyAfterInteractive(() =>
   import("@/components/site/ServiceChooser").then((module) => ({ default: module.ServiceChooser })),
@@ -83,6 +89,10 @@ function Home() {
         <BancoDeImagens />
         <VideoProducao />
         <EventoCompleto />
+        <PontualOuPlano />
+        <AgilidadeProva />
+        <RetratoProfissional />
+        <ChamadaFinal />
         <HomeSelectedWorks />
         <ServiceChooser />
         <SegmentGrid />

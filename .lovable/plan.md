@@ -27,8 +27,8 @@ Nenhum outro arquivo, nenhum texto, nenhum link, nenhuma imagem nova, nada de ti
 ## Detalhes técnicos
 
 - Arquivo: `src/components/site/home/HomeHeroNovo.tsx` (apenas classes utilitárias da `<img>` e do contêiner).
-- Mobile: contêiner com `aspect-[1920/1275]` e imagem `h-auto w-full object-contain` (ou `object-cover` com a mesma proporção — sem corte em ambos os casos).
-- Desktop: `md:h-[560px] md:object-cover md:object-[center_30%]`.
+- Mobile: contêiner `aspect-[4/3]` com `object-cover object-[center_35%]`.
+- Desktop: `md:aspect-auto md:h-[600px] md:object-[center_30%]`; tablet `h-[440px]`.
 - Sem novas dependências, sem mudança de estrutura de títulos.
 
 ## Alternativa, caso prefira

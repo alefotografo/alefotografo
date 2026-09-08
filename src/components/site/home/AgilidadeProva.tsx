@@ -1,6 +1,12 @@
 import { googleBusinessProfileUrl } from "@/data/reviews";
 
-const NUMEROS = [
+interface NumeroItem {
+  valor: string;
+  legenda: string;
+  href?: string;
+}
+
+const NUMEROS: readonly NumeroItem[] = [
   { valor: "30", legenda: "anos — de carreira, desde 1991" },
   { valor: "200+", legenda: "empresas atendidas" },
   { valor: "300+", legenda: "executivos fotografados" },
@@ -9,7 +15,7 @@ const NUMEROS = [
     legenda: "no Google, em 144 avaliações",
     href: googleBusinessProfileUrl,
   },
-] as const;
+];
 
 const DEPOIMENTOS: readonly {
   texto: string;

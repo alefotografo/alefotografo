@@ -7,15 +7,27 @@ const FOTO = {
   alt: "Fotógrafo de Eventos Corporativos em São Paulo — plateia de participantes durante evento empresarial",
 };
 
-const ITENS = [
-  "QR code personalizado com a arte do seu evento",
-  "Fotos publicadas durante o evento, não depois",
-  "Reconhecimento facial: cada pessoa acha as próprias fotos",
-  "Download direto no celular, pronto para postar",
+const SOLUCOES = [
+  {
+    title: "Cobertura fotográfica",
+    texto: "Registro de palestras, público, networking, ativações, patrocinadores e bastidores.",
+  },
+  {
+    title: "Fotos em tempo real",
+    texto: "Disponibilização das imagens durante o evento para utilização imediata pela organização e participantes.",
+  },
+  {
+    title: "Reconhecimento facial",
+    texto: "Cada participante pode localizar suas fotografias por reconhecimento facial e fazer o download diretamente no celular.",
+  },
+  {
+    title: "Produção audiovisual e aftermovie",
+    texto: "Filmagem integral, captação em takes e produção de vídeos com os principais momentos do evento.",
+  },
 ] as const;
 
-const LINK_CLASS =
-  "text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none";
+const MENSAGEM =
+  "Olá Alexandre, quero falar sobre cobertura de evento da minha empresa. Pode me ajudar?";
 
 export default function EventoCompleto() {
   return (
@@ -25,54 +37,28 @@ export default function EventoCompleto() {
           <div className="grid grid-cols-1 gap-6 p-6 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
-                Cobertura de Eventos com Entrega em Tempo Real
+                Soluções para eventos corporativos
               </h2>
               <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-                Para congressos, convenções e feiras de negócios: cobertura completa, totem
-                fotográfico com foto lembrança impressa na hora e entrega de fotos identificadas por
-                reconhecimento facial durante o próprio evento. A comunicação começa enquanto o
-                evento ainda está acontecendo.
+                Fotografia e produção audiovisual para congressos, convenções, feiras, palestras,
+                lançamentos e encontros empresariais.
               </p>
 
-              <ul className="mt-6 space-y-2">
-                {ITENS.map((item) => (
+              <ul className="mt-6 space-y-4">
+                {SOLUCOES.map((item) => (
                   <li
-                    key={item}
-                    className="flex gap-2 text-[16px] leading-[1.6] text-foreground md:text-[17px]"
+                    key={item.title}
+                    className="flex flex-col gap-1 text-[16px] leading-[1.6] text-foreground md:text-[17px]"
                   >
-                    <span aria-hidden="true">–</span>
-                    <span>{item}</span>
+                    <span className="font-semibold">{item.title}</span>
+                    <span className="text-muted-foreground">{item.texto}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-6 max-w-[68ch] text-[14px] leading-[1.4] text-muted-foreground">
-                No mesmo evento entram fotógrafo e filmmaker, aftermovie editado no local e exibido
-                no encerramento, totem fotográfico e foto lembrança impressa na hora.
-              </p>
-
-              <p className="mt-6 flex flex-wrap gap-6">
-                <Link
-                  to="/fotografo-corporativo/$slug"
-                  params={{ slug: "totem-fotografico-totem-mania" }}
-                  className={LINK_CLASS}
-                >
-                  Totem fotográfico
-                </Link>
-                <Link
-                  to="/fotografo-corporativo/$slug"
-                  params={{ slug: "foto-impressa-na-hora" }}
-                  className={LINK_CLASS}
-                >
-                  Foto lembrança impressa na hora
-                </Link>
-              </p>
-
               <p className="mt-12">
                 <a
-                  href={waLink(
-                    "Olá Alexandre, quero falar sobre cobertura de evento da minha empresa. Pode me ajudar?",
-                  )}
+                  href={waLink(MENSAGEM)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block rounded-sm bg-ember px-6 py-3 text-[16px] font-medium leading-[1.6] text-accent-foreground transition-colors hover:bg-ember-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"

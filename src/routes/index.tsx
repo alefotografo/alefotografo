@@ -14,7 +14,6 @@ const homeFaqs = faqsComerciais.slice(0, 6);
 const BancoDeImagens = lazyAfterInteractive(() => import("@/components/site/home/BancoDeImagens"));
 const VideoProducao = lazyAfterInteractive(() => import("@/components/site/home/VideoProducao"));
 const EventoCompleto = lazyAfterInteractive(() => import("@/components/site/home/EventoCompleto"));
-const PontualOuPlano = lazyAfterInteractive(() => import("@/components/site/home/PontualOuPlano"));
 const AgilidadeProva = lazyAfterInteractive(() => import("@/components/site/home/AgilidadeProva"));
 const RetratoProfissional = lazyAfterInteractive(() =>
   import("@/components/site/home/RetratoProfissional"),
@@ -89,7 +88,6 @@ function Home() {
         <BancoDeImagens />
         <VideoProducao />
         <EventoCompleto />
-        <PontualOuPlano />
         <AgilidadeProva />
         <RetratoProfissional />
         <ChamadaFinal />

@@ -88,7 +88,7 @@ export default function SolucoesEmpresa() {
                   width={640}
                   height={480}
                   baseWidth={640}
-                  sizes="(max-width: 767px) 100vw, 50vw"
+                  sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1279px) calc(50vw - 40px), 620px"
                   placeholderRatio="4 / 3"
                   className="h-full w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
                 />

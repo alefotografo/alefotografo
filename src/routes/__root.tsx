@@ -124,11 +124,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: (ctx) => {
-    // O último match é a rota folha. Se for a home, colocamos os preloads da
-    // hero como primeiros recursos do <head> — antes do CSS e das fontes.
-    const leaf = ctx.matches[ctx.matches.length - 1];
-    const isHome = leaf?.pathname === "/";
+  head: () => {
+
 
     return {
       meta: [
@@ -152,26 +149,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "description", content: "Alexandre Machado fotografa pessoalmente retratos profissionais, headshots para LinkedIn e fotos de executivos e equipes em São Paulo. 30 anos de carreira." },
       ],
       links: [
-        ...(isHome
-          ? [
-              {
-                rel: "preload" as const,
-                as: "image" as const,
-                type: "image/webp",
-                href: "/img/hero-portrait-mobile.webp",
-                media: "(max-width: 768px)",
-                fetchPriority: "high" as const,
-              },
-              {
-                rel: "preload" as const,
-                as: "image" as const,
-                type: "image/webp",
-                href: "/img/hero-portrait.webp",
-                media: "(min-width: 769px)",
-                fetchPriority: "high" as const,
-              },
-            ]
-          : []),
+
         // Fontes acima da dobra: carregam em paralelo com o CSS. Todas usam
         // font-display: optional para nunca bloquear a primeira renderização.
         { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-400.woff2", crossOrigin: "anonymous" },

@@ -24,7 +24,7 @@ export default function HomeHeroNovo() {
         <figure className="relative m-0 aspect-[4/3] md:aspect-auto md:h-[440px] lg:h-[600px]">
           <img
             src={imgUrl(HERO.src, 1440)}
-            srcSet={imgSrcSet(HERO.src, [720, 1024, 1440, 1920], HERO.width)}
+            srcSet={imgSrcSet(HERO.src, [480, 720, 900, 1200, 1440, 1920], HERO.width)}
             sizes="100vw"
             alt={HERO.alt}
             width={HERO.width}

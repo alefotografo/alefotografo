@@ -169,10 +169,16 @@ export function TestimonialsCarousel({
                   onClick={() => goTo(i)}
                   aria-label={`Ir para o depoimento ${i + 1}`}
                   aria-current={i === selected}
-                  className={`h-1.5 rounded-full transition-all ${
-                    i === selected ? "w-6 bg-ember" : "w-2 bg-border hover:bg-muted-foreground/40"
-                  }`}
-                />
+                  className="flex h-6 w-6 items-center justify-center"
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`block h-1.5 rounded-full transition-all ${
+                      i === selected ? "w-6 bg-ember" : "w-2 bg-border hover:bg-muted-foreground/40"
+                    }`}
+                  />
+                </button>
+
               ))}
             </div>
             <div className="flex items-center gap-2">

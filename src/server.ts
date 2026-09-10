@@ -139,6 +139,24 @@ function withEdgeCache(request: Request, response: Response): Response {
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
+// Fontes e imagens da pasta pública têm nome estável e conteúdo imutável, mas a
+// borda não estava aplicando as regras do _headers: sem cache-control, cada
+// visita rebaixa o LCP. Aplicado aqui, no mesmo caminho de resposta.
+const IMMUTABLE_ASSETS = /^\/(fonts|img|assets)\//;
+
+function withStaticCache(request: Request, response: Response): Response {
+  if (response.status !== 200) return response;
+  if (request.method !== "GET" && request.method !== "HEAD") return response;
+  const { pathname } = new URL(request.url);
+  if (!IMMUTABLE_ASSETS.test(pathname)) return response;
+  if (response.headers.get("cache-control")) return response;
+
+  const headers = new Headers(response.headers);
+  headers.set("cache-control", "public, max-age=31536000, immutable");
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const hostRedirect = redirectCanonicalHost(request);
@@ -154,7 +172,11 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return withEdgeCache(request, await normalizeCatastrophicSsrResponse(request, response));
+      return withStaticCache(
+        request,
+        withEdgeCache(request, await normalizeCatastrophicSsrResponse(request, response)),
+      );
+
     } catch (error) {
 
       if (isClientAbort(request, error)) {

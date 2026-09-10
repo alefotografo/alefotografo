@@ -63,7 +63,7 @@ export default function BancoDeImagens() {
               <div className="overflow-hidden rounded-sm" style={{ aspectRatio: "1 / 1" }}>
                 <SmartImage
                   src={foto.src}
-                  alt={foto.legenda}
+                  alt=""
                   width={300}
                   height={300}
                   baseWidth={400}

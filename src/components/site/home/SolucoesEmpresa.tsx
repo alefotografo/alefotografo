@@ -119,7 +119,26 @@ export default function SolucoesEmpresa() {
           ))}
         </div>
 
-        <p className="mt-12 text-center">
+        <p className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[14px] leading-[1.4] text-muted-foreground">
+          <span>Outras soluções:</span>
+          <Link
+            to="/fotografo-corporativo/$slug"
+            params={{ slug: "fotografo-de-grupos-times-e-equipes" }}
+            className="underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            Grupos, times e equipes
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link
+            to="/fotografo-corporativo/$slug"
+            params={{ slug: "fotografo-feiras-stands" }}
+            className="underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            Feiras e stands
+          </Link>
+        </p>
+
+        <p className="mt-8 text-center">
           <Link
             to="/fotografo-corporativo"
             className="text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"

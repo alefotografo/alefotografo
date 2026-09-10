@@ -369,7 +369,7 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const hideTestimonials = pathname.replace(/\/+$/, "") === "/depoimentos";
+  const hideTestimonials = ["/", "/depoimentos"].includes(pathname.replace(/\/+$/, ""));
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -28,7 +28,6 @@ const SegmentGrid = lazyAfterInteractive(() =>
 );
 const HomeAbout = lazyAfterInteractive(() => import("@/components/site/home/HomeAbout"));
 const HomeVideos = lazyAfterInteractive(() => import("@/components/site/home/HomeVideos"));
-const HomeSocialProof = lazyAfterInteractive(() => import("@/components/site/home/HomeSocialProof"));
 const HomeBlog = lazyAfterInteractive(() => import("@/components/site/home/HomeBlog"));
 const HomeFaq = lazyAfterInteractive(() => import("@/components/site/home/HomeFaq"));
 const HomeCta = lazyAfterInteractive(() => import("@/components/site/home/HomeCta"));
@@ -96,7 +95,6 @@ function Home() {
         <SegmentGrid />
         <HomeAbout />
         <HomeVideos />
-        <HomeSocialProof />
         <HomeBlog />
         <HomeFaq />
         <HomeCta />

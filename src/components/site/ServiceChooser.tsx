@@ -9,72 +9,65 @@ type Service = {
   cta: string;
   wa: string;
   see: string;
-  to?: "/foto-profissional" | "/fotos-corporativas" | "/foto-profissional-para-linkedin" | "/videos";
+  to?: "/fotos-corporativas" | "/foto-profissional" | "/eventos-corporativos" | "/videos" | "/banco-de-imagens" | "/fotografo-empresarial";
   catSlug?: string;
   img: string;
 };
 
-// Especialidades secundárias — sinalizam amplitude sem competir com os 5 CTAs principais.
-// Cada slug aponta para a galeria própria em /fotografo-corporativo/$slug.
-const EXTRA_SPECIALTIES: { slug: string; label: string }[] = [
-  { slug: "fotografia-industrial", label: "Fotografia industrial" },
-  { slug: "fotos-aereas", label: "Fotos aéreas" },
-  { slug: "fotografo-de-culinaria", label: "Fotografia de culinária" },
-  { slug: "fotografo-de-arquitetura-e-interiores", label: "Arquitetura e interiores" },
-  { slug: "fotografo-feiras-stands", label: "Feiras de negócios" },
-  { slug: "empreendimentos-imobiliarios", label: "Empreendimentos imobiliários" },
-  { slug: "fotografo-de-drinks-coqueteis", label: "Fotografia de drinks" },
-  { slug: "totem-fotografico-totem-mania", label: "Totem fotográfico" },
-  { slug: "fotografo-festa-de-confraternizacao", label: "Festa da firma" },
-  { slug: "banco-de-imagens-para-empresas", label: "Banco de imagens" },
-];
-
-
 const SERVICES: Service[] = [
   {
-    title: "Retrato profissional",
-    text: "Fotos profissionais para LinkedIn, site, apresentações, imprensa e posicionamento executivo.",
-    cta: "Quero meu retrato profissional",
-    wa: "Olá Alexandre, quero fazer um retrato profissional. Pode me passar valores e disponibilidade?",
-    see: "Ver foto profissional",
-    to: "/foto-profissional",
-    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
-  },
-  {
-    title: "Fotografia corporativa para empresas",
-    text: "Fotos de equipe, diretoria, ambientes, processos e comunicação institucional.",
-    cta: "Solicitar orçamento para empresa",
+    title: "Fotografia Corporativa",
+    text: "Produções fotográficas para empresas, equipes, ambientes e operações, alinhadas à identidade e aos objetivos de comunicação de cada organização.",
+    cta: "Solicitar orçamento",
     wa: "Olá Alexandre, preciso de fotografia corporativa para minha empresa. Pode me enviar um orçamento?",
     see: "Ver fotografia corporativa",
     to: "/fotos-corporativas",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg",
   },
   {
-    title: "Eventos corporativos",
-    text: "Cobertura fotográfica e audiovisual para congressos, palestras, convenções, lançamentos e encontros empresariais.",
-    cta: "Orçar cobertura de evento",
+    title: "Retratos Profissionais",
+    text: "Retratos de executivos, profissionais e equipes para LinkedIn, sites, apresentações, imprensa e comunicação corporativa.",
+    cta: "Solicitar orçamento",
+    wa: "Olá Alexandre, quero fazer um retrato profissional. Pode me passar valores e disponibilidade?",
+    see: "Ver retratos profissionais",
+    to: "/foto-profissional",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
+  },
+  {
+    title: "Eventos Corporativos",
+    text: "Fotografia e vídeo para congressos, convenções, feiras, palestras e encontros empresariais.",
+    cta: "Solicitar orçamento",
     wa: "Olá Alexandre, gostaria de orçar a cobertura de um evento corporativo.",
-    see: "Ver cobertura de eventos",
-    catSlug: "fotografo-de-eventos-corporativos",
+    see: "Ver eventos corporativos",
+    to: "/eventos-corporativos",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG",
   },
   {
-    title: "Vídeo institucional",
-    text: "Vídeos para apresentar sua empresa, serviço, estrutura, equipe e diferenciais comerciais.",
-    cta: "Planejar meu vídeo institucional",
-    wa: "Olá Alexandre, quero planejar um vídeo institucional para minha empresa.",
-    see: "Ver vídeos institucionais",
+    title: "Vídeos Corporativos",
+    text: "Produção audiovisual para apresentar empresas, serviços, estruturas, equipes, projetos e cases.",
+    cta: "Solicitar orçamento",
+    wa: "Olá Alexandre, quero planejar um vídeo corporativo para minha empresa.",
+    see: "Ver vídeos corporativos",
     to: "/videos",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
   },
   {
-    title: "Foto para LinkedIn",
-    text: "Imagem profissional para aumentar confiança, autoridade e presença digital.",
-    cta: "Agendar foto para LinkedIn",
-    wa: "Olá Alexandre, quero agendar uma foto profissional para o meu LinkedIn.",
-    see: "Ver foto para LinkedIn",
-    to: "/foto-profissional-para-linkedin",
-    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/98854/fotografo-profissional-em-sao-paulo_rodrigo-trindade-batista-31.jpg",
+    title: "Banco de Imagens",
+    text: "Desenvolvemos acervos fotográficos exclusivos com equipes, ambientes, operações, produtos e serviços para comunicação consistente ao longo do ano.",
+    cta: "Solicitar orçamento",
+    wa: "Olá Alexandre, quero montar um banco de imagens para minha empresa. Pode me ajudar?",
+    see: "Ver banco de imagens",
+    to: "/banco-de-imagens",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/125396/banco-de-imagens-para-empresas_ala-servicos-39.jpg",
+  },
+  {
+    title: "Fotografia Industrial",
+    text: "Registro de instalações, processos, equipamentos, equipes e operações para comunicação institucional, comercial e técnica.",
+    cta: "Solicitar orçamento",
+    wa: "Olá Alexandre, preciso de fotografia industrial para minha empresa. Pode me enviar um orçamento?",
+    see: "Ver fotografia industrial",
+    to: "/fotografo-empresarial",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66655/industrial_dsc7266.jpg",
   },
 ];
 
@@ -84,11 +77,10 @@ export function ServiceChooser() {
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
         <h2 id="escolha-servico" className="font-display text-3xl font-semibold text-balance md:text-4xl">
-          Escolha o serviço ideal para sua empresa
+          Soluções em fotografia e vídeo para empresas
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Cada objetivo pede um tipo de imagem. Selecione o serviço mais próximo da sua necessidade
-          e receba o orçamento direto pelo WhatsApp.
+          Cada projeto recebe planejamento, execução e entrega alinhados aos objetivos de comunicação da empresa.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -140,26 +132,7 @@ export function ServiceChooser() {
           ))}
         </div>
 
-        {/* Também atendemos — especialidades secundárias */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-3">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">
-              Também atendemos
-            </p>
-            <ul className="flex flex-wrap gap-2">
-              {EXTRA_SPECIALTIES.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    to="/fotografo-corporativo/$slug"
-                    params={{ slug: s.slug }}
-                    className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-ember hover:text-ember"
-                  >
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-10 flex justify-end border-t border-border pt-8">
           <Link
             to="/fotografo-corporativo"
             className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-muted-foreground hover:text-ember"

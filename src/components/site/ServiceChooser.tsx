@@ -9,7 +9,7 @@ type Service = {
   cta: string;
   wa: string;
   see: string;
-  to?: "/fotos-corporativas" | "/foto-profissional" | "/eventos-corporativos" | "/videos" | "/banco-de-imagens" | "/fotografo-empresarial";
+  to?: "/fotos-corporativas" | "/foto-profissional" | "/eventos-corporativos" | "/videos" | "/fotografo-empresarial";
   catSlug?: string;
   img: string;
 };

@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { homePosts } from "@/data/homeSummary";
+import { postCover } from "@/lib/postCover";
+import { imgUrl } from "@/lib/img";
 
 export default function HomeBlog() {
   return (
@@ -15,18 +17,38 @@ export default function HomeBlog() {
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {homePosts.map((p) => (
-            <Link
-              key={p.slug}
-              to="/blog/$slug"
-              params={{ slug: p.slug }}
-              className="group block rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
-            >
-              {p.date && <time className="text-xs uppercase tracking-wider text-muted-foreground">{p.date}</time>}
-              <h3 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">{p.title}</h3>
-              <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{p.description}</p>
-            </Link>
-          ))}
+          {homePosts.map((p) => {
+            const cover = postCover(p);
+            return (
+              <Link
+                key={p.slug}
+                to="/blog/$slug"
+                params={{ slug: p.slug }}
+                className="group flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-background">
+                  {cover ? (
+                    <img
+                      src={imgUrl(cover, 480)}
+                      alt={p.title}
+                      width={640}
+                      height={400}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="h-full w-full bg-surface" />
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  {p.date && <time className="text-xs uppercase tracking-wider text-muted-foreground">{p.date}</time>}
+                  <h3 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">{p.title}</h3>
+                  <p className="mt-3 line-clamp-3 flex-1 text-sm text-muted-foreground">{p.description}</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
   );

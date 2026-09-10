@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { MapPin } from "lucide-react";
 import { SmartImage } from "@/components/site/SmartImage";
 
 const FOTO = {
@@ -7,7 +8,7 @@ const FOTO = {
 };
 
 const LINK_CLASS =
-  "text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none";
+  "inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-[14px] font-medium leading-[1.4] hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none";
 
 export default function RetratoProfissional() {
   return (
@@ -30,24 +31,30 @@ export default function RetratoProfissional() {
 
           <div className="lg:col-span-2">
             <h3 className="font-display text-[18px] font-semibold leading-[1.3] text-foreground md:text-[20px]">
-              Foto Profissional para LinkedIn e Apresentações
+              Retratos profissionais
             </h3>
             <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
-              Para executivos, médicos e advogados que precisam de uma foto individual com
-              qualidade. Sessão com direção de pose do início ao fim — você não precisa saber posar,
-              isso é minha responsabilidade.
+              Retratos para executivos, profissionais e equipes, com direção durante a sessão e
+              imagens preparadas para LinkedIn, sites, apresentações, imprensa e comunicação
+              profissional.
             </p>
 
-            <p className="mt-6 flex flex-wrap gap-6">
-              <Link
-                to="/fotografo-corporativo/$slug"
-                params={{ slug: "retrato-corporativo" }}
-                className={LINK_CLASS}
-              >
-                Retrato corporativo
-              </Link>
-              <Link to="/foto-profissional-para-linkedin" className={LINK_CLASS}>
-                Foto profissional para LinkedIn
+            <div className="mt-6 max-w-[68ch] rounded-sm border border-border bg-surface p-4">
+              <p className="flex items-start gap-2 text-[14px] leading-[1.4] text-foreground">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-ember" aria-hidden="true" />
+                <span>
+                  <strong>Atendimento na região da Avenida Paulista</strong>
+                  <br />
+                  Contamos com local para sessões de retratos profissionais na Alameda Santos, 1165,
+                  próximo à Avenida Paulista, além de atendimento nas empresas e em locações na
+                  Grande São Paulo.
+                </span>
+              </p>
+            </div>
+
+            <p className="mt-8">
+              <Link to="/foto-profissional" className={LINK_CLASS}>
+                Conhecer Retratos Profissionais
               </Link>
             </p>
           </div>

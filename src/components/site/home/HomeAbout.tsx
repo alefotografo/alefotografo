@@ -24,17 +24,17 @@ export default function HomeAbout() {
           <div className="md:col-span-7 md:pt-6">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Quem está por trás</p>
             <h2 className="font-display text-3xl font-semibold leading-tight text-balance md:text-5xl">
-              Alexandre Machado — três décadas traduzindo empresas em imagem.
+              Experiência à frente de cada projeto
             </h2>
             <p className="mt-6 text-base text-muted-foreground md:text-lg text-pretty">
-              Fotógrafo profissional em São Paulo, especializado em fotografia corporativa, retratos executivos e cobertura de eventos para empresas que precisam de imagens com intenção estratégica — não só estética.
+              Alexandre Machado atua com fotografia profissional há mais de três décadas e está à frente da direção das produções da Ale Fotógrafo.
             </p>
             <p className="mt-4 text-muted-foreground">
-              Cada produção começa pelo entendimento do posicionamento, do público e do objetivo da comunicação. Resultado: fotos que transmitem autoridade, geram confiança e valorizam a marca.
+              A experiência construída em projetos para empresas, executivos, indústrias, eventos e diferentes segmentos orienta um trabalho baseado em planejamento, cuidado técnico e compreensão das necessidades de cada cliente.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/sobre" className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
-                Conheça a trajetória <ArrowUpRight size={14} />
+                Conheça nossa trajetória <ArrowUpRight size={14} />
               </Link>
               <Link to="/depoimentos" className="inline-flex items-center gap-2 text-sm text-ember hover:underline">
                 Ver depoimentos de clientes

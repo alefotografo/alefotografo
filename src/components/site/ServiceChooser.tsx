@@ -57,7 +57,7 @@ const SERVICES: Service[] = [
     cta: "Solicitar orçamento",
     wa: "Olá Alexandre, quero montar um banco de imagens para minha empresa. Pode me ajudar?",
     see: "Ver banco de imagens",
-    to: "/banco-de-imagens",
+    catSlug: "banco-de-imagens-para-empresas",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/125396/banco-de-imagens-para-empresas_ala-servicos-39.jpg",
   },
   {

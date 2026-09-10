@@ -1,74 +1,72 @@
 import { Link } from "@tanstack/react-router";
-import { waLink } from "@/lib/whatsapp";
-import { GRID_WIDTHS, imgSrcSet, imgUrl } from "@/lib/img";
-import { segmentPhotos } from "@/data/homeCuration";
+import { imgUrl } from "@/lib/img";
 import { ArrowUpRight } from "lucide-react";
 
 type Segment = {
   title: string;
-  dor: string;
-  imagem: string;
-  beneficio: string;
-  wa: string;
-  to?: "/fotografia-para-clinicas" | "/foto-profissional" | "/fotos-corporativas" | "/videos";
+  img: string;
+  alt: string;
+  width: number;
+  height: number;
+  to?: "/fotografo-empresarial" | "/fotos-profissionais-medicos" | "/fotografia-para-advogados" | "/fotos-corporativas" | "/eventos-corporativos";
   catSlug?: string;
   seeLabel: string;
 };
 
 const SEGMENTS: Segment[] = [
   {
-    title: "Advogados e escritórios de advocacia",
-    dor: "Perfis e sites com fotos improvisadas enfraquecem a percepção de solidez do escritório.",
-    imagem: "Retratos individuais padronizados, fotos de sócios, equipe e ambiente do escritório.",
-    beneficio: "Reputação e credibilidade coerentes em site, LinkedIn, propostas e imprensa.",
-    wa: "Olá Alexandre, sou da área jurídica e quero um orçamento de fotos para o escritório.",
-    catSlug: "fotografia-para-escritorios-de-advocacia",
-    seeLabel: "Ver fotos para advocacia",
+    title: "Indústria",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66655/industrial_dsc7266.jpg",
+    alt: "Fotografia industrial de instalações e equipamentos",
+    width: 1920,
+    height: 1280,
+    to: "/fotografo-empresarial",
+    seeLabel: "Ver fotografia industrial",
   },
   {
-    title: "Médicos e clínicas",
-    dor: "O paciente decide antes de entrar: sem imagens reais, a insegurança trava o agendamento.",
-    imagem: "Retratos dos profissionais, ambientes, recepção, equipamentos e equipe em atendimento.",
-    beneficio: "Mais confiança no site, no Google e nos anúncios da clínica.",
-    wa: "Olá Alexandre, sou da área da saúde e quero um orçamento de fotos para clínica/consultório.",
-    to: "/fotografia-para-clinicas",
-    seeLabel: "Ver fotografia para clínicas",
+    title: "Transportes e Logística",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-1.jpg",
+    alt: "Fotografia de logística e transportes",
+    width: 1920,
+    height: 1280,
+    catSlug: "fotografia-de-logistica",
+    seeLabel: "Ver logística e transportes",
   },
   {
-    title: "Executivos e empresários",
-    dor: "Foto antiga ou informal não sustenta o cargo e a autoridade que a carreira já conquistou.",
-    imagem: "Retrato corporativo com direção de pose, luz controlada e enquadramentos versáteis.",
-    beneficio: "Presença executiva consistente em LinkedIn, palestras, mídia e apresentações.",
-    wa: "Olá Alexandre, quero um retrato executivo profissional. Pode me passar valores?",
-    to: "/foto-profissional",
-    seeLabel: "Ver foto profissional",
+    title: "Saúde",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/132060/fotos-profissionais-para-medicos_driuri-tomaz-de-vasconcelos-7.JPG",
+    alt: "Fotografia profissional para médicos e clínicas",
+    width: 1920,
+    height: 1277,
+    to: "/fotos-profissionais-medicos",
+    seeLabel: "Ver fotografia para saúde",
   },
   {
-    title: "Empresas e equipes",
-    dor: "Banco de imagens genérico não comunica quem a empresa realmente é.",
-    imagem: "Retratos de equipe, diretoria, ambientes, processos e cultura interna.",
-    beneficio: "Um acervo próprio para site, recrutamento, campanhas e comunicação interna.",
-    wa: "Olá Alexandre, preciso de fotos corporativas para a minha empresa e equipe.",
+    title: "Advocacia",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/130271/fotografia-para-escritorios-de-advocacia_fotografia-de-advogados-4.jpg",
+    alt: "Fotografia para escritórios de advocacia",
+    width: 1920,
+    height: 1280,
+    to: "/fotografia-para-advogados",
+    seeLabel: "Ver fotografia para advocacia",
+  },
+  {
+    title: "Empresas e Equipes",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg",
+    alt: "Fotografia de equipes e empresas",
+    width: 1920,
+    height: 1539,
     to: "/fotos-corporativas",
     seeLabel: "Ver fotografia corporativa",
   },
   {
-    title: "Eventos corporativos",
-    dor: "Eventos bem produzidos que rendem pouco conteúdo depois desperdiçam investimento.",
-    imagem: "Cobertura de palcos, público, networking, patrocinadores e bastidores, em foto e vídeo.",
-    beneficio: "Material imediato para divulgação, relatório para patrocinadores e próxima edição.",
-    wa: "Olá Alexandre, quero orçamento para cobertura de um evento corporativo.",
-    catSlug: "fotografo-de-eventos-corporativos",
-    seeLabel: "Ver cobertura de eventos",
-  },
-  {
-    title: "Palestrantes e profissionais liberais",
-    dor: "Sem imagens de autoridade, a negociação de cachê e de contratos fica mais difícil.",
-    imagem: "Retratos de marca pessoal, fotos em ação no palco e conteúdo vertical para redes.",
-    beneficio: "Autoridade percebida antes da primeira conversa comercial.",
-    wa: "Olá Alexandre, sou palestrante/profissional liberal e quero fotos de marca pessoal.",
-    to: "/foto-profissional",
-    seeLabel: "Ver retratos profissionais",
+    title: "Eventos e Feiras",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG",
+    alt: "Fotografia de eventos corporativos e feiras",
+    width: 1920,
+    height: 1278,
+    to: "/eventos-corporativos",
+    seeLabel: "Ver eventos e feiras",
   },
 ];
 
@@ -78,76 +76,50 @@ export function SegmentGrid() {
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Segmentos</p>
         <h2 id="segmentos" className="font-display text-3xl font-semibold text-balance md:text-4xl">
-          Fotografia corporativa para diferentes segmentos
+          Experiência em diferentes segmentos
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          A necessidade de imagem muda conforme o público. Veja o que costuma ser prioridade em cada
-          segmento atendido em São Paulo.
+          Conheça alguns dos mercados atendidos em São Paulo e as soluções desenvolvidas para cada um.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {SEGMENTS.map((s) => {
-            const photo = segmentPhotos[s.title];
-            return (
-              <article
-                key={s.title}
-                className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
-              >
-                {photo && (
-                  <img
-                    src={imgUrl(photo.src, 400)}
-                    srcSet={imgSrcSet(photo.src, GRID_WIDTHS, photo.width)}
-                    sizes="(max-width: 768px) 96vw, (max-width: 1024px) 48vw, 31vw"
-                    alt={photo.alt}
-                    width={photo.width}
-                    height={photo.height}
-                    loading="lazy"
-                    decoding="async"
-                    fetchPriority="low"
-                    className="h-auto w-full"
-                  />
-                )}
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-lg font-semibold">{s.title}</h3>
-                  <dl className="mt-4 space-y-3 text-sm leading-relaxed">
-                    <div>
-                      <dt className="text-xs uppercase tracking-[0.15em] text-ember">Desafio</dt>
-                      <dd className="mt-1 text-muted-foreground">{s.dor}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-xs uppercase tracking-[0.15em] text-ember">Imagens necessárias</dt>
-                      <dd className="mt-1 text-muted-foreground">{s.imagem}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-xs uppercase tracking-[0.15em] text-ember">Resultado</dt>
-                      <dd className="mt-1 text-muted-foreground">{s.beneficio}</dd>
-                    </div>
-                  </dl>
-                  <a
-                    href={waLink(s.wa)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+          {SEGMENTS.map((s) => (
+            <article
+              key={s.title}
+              className="group relative flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-background">
+                <img
+                  src={imgUrl(s.img, 480)}
+                  alt={s.alt}
+                  width={s.width}
+                  height={s.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-lg font-semibold">{s.title}</h3>
+                {s.to ? (
+                  <Link
+                    to={s.to}
+                    className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
                   >
-                    Solicitar orçamento
-                  </a>
-                  {s.to ? (
-                    <Link to={s.to} className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember">
-                      {s.seeLabel} <ArrowUpRight size={14} />
-                    </Link>
-                  ) : (
-                    <Link
-                      to="/fotografo-corporativo/$slug"
-                      params={{ slug: s.catSlug as string }}
-                      className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
-                    >
-                      {s.seeLabel} <ArrowUpRight size={14} />
-                    </Link>
-                  )}
-                </div>
-              </article>
-            );
-          })}
+                    {s.seeLabel} <ArrowUpRight size={14} />
+                  </Link>
+                ) : (
+                  <Link
+                    to="/fotografo-corporativo/$slug"
+                    params={{ slug: s.catSlug as string }}
+                    className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                  >
+                    {s.seeLabel} <ArrowUpRight size={14} />
+                  </Link>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

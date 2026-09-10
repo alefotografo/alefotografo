@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { waLink } from "@/lib/whatsapp";
 
@@ -14,23 +13,17 @@ export default function HomeCta() {
               Fotografia e vídeo para empresas em São Paulo e região.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex w-full flex-wrap gap-3 md:w-auto">
             <a
               href={waLink(
                 "Olá, gostaria de solicitar um orçamento de fotografia e vídeo para empresa.",
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow"
+              className="inline-flex max-w-full items-center gap-2 rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Solicitar orçamento <ArrowUpRight size={16} />
             </a>
-            <Link
-              to="/contato"
-              className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-7 py-4 font-medium hover:bg-surface"
-            >
-              Outras formas de contato
-            </Link>
           </div>
         </div>
       </section>

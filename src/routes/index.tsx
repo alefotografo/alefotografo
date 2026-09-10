@@ -18,11 +18,7 @@ const AgilidadeProva = lazyAfterInteractive(() => import("@/components/site/home
 const RetratoProfissional = lazyAfterInteractive(() =>
   import("@/components/site/home/RetratoProfissional"),
 );
-const ChamadaFinal = lazyAfterInteractive(() => import("@/components/site/home/ChamadaFinal"));
 const HomeSelectedWorks = lazyAfterInteractive(() => import("@/components/site/home/HomeSelectedWorks"));
-const ServiceChooser = lazyAfterInteractive(() =>
-  import("@/components/site/ServiceChooser").then((module) => ({ default: module.ServiceChooser })),
-);
 const SegmentGrid = lazyAfterInteractive(() =>
   import("@/components/site/SegmentGrid").then((module) => ({ default: module.SegmentGrid })),
 );
@@ -89,9 +85,7 @@ function Home() {
         <EventoCompleto />
         <AgilidadeProva />
         <RetratoProfissional />
-        <ChamadaFinal />
         <HomeSelectedWorks />
-        <ServiceChooser />
         <SegmentGrid />
         <HomeAbout />
         <HomeVideos />

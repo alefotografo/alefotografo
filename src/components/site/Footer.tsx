@@ -235,7 +235,7 @@ export function Footer() {
               </a>
             </div>
             <p className="text-center md:text-left">
-              Alexandre Machado Fotografia — CNPJ {site.cnpj} — Desde {site.foundingYear} atendendo clientes especiais
+              Alexandre Machado Fotografia — CNPJ {site.cnpj} — 30+ anos de experiência
             </p>
           </div>
           <p>© {new Date().getFullYear()} Alê Fotógrafo — Alexandre Machado. Todos os direitos reservados.</p>

@@ -65,9 +65,11 @@ export function TestimonialCard({ t }: { t: Testimonial }) {
 export function TestimonialsCarousel({
   title = "O que os clientes dizem",
   subtitle,
+  testimonials = allTestimonials,
 }: {
   title?: string;
   subtitle?: string;
+  testimonials?: readonly Testimonial[];
 }) {
   const [api, setApi] = useState<CarouselApi>();
   const [selected, setSelected] = useState(0);
@@ -150,7 +152,7 @@ export function TestimonialsCarousel({
           opts={{ align: "start", loop: true }}
         >
           <CarouselContent className="-ml-6 items-stretch">
-            {allTestimonials.map((t) => (
+            {testimonials.map((t) => (
               <CarouselItem
                 key={`${t.source}-${t.name}`}
                 className="h-full pl-6 sm:basis-1/2 lg:basis-1/3"

@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { faqJsonLd } from "@/lib/faqs";
 import { faqsComerciais } from "@/lib/faqsComerciais";
-import { imgUrl } from "@/lib/img";
+import { imgSrcSet, imgUrl } from "@/lib/img";
 import { lazyAfterInteractive } from "@/lib/deferredLazy";
 import HomeHeroNovo from "@/components/site/home/HomeHeroNovo";
 import FaixaClientes from "@/components/site/home/FaixaClientes";
@@ -45,20 +45,15 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },
       // Foto principal da home: inicia download o mais cedo possível,
-      // reduzindo LCP. Versões condicionais para mobile e desktop/tablet.
+      // reduzindo LCP. O imagesrcset/imageSizes deixa o navegador escolher
+      // a largura correta para cada viewport, igual ao <img> do hero.
       {
         rel: "preload",
         as: "image",
-        href: imgUrl(HERO_IMAGE_SRC, 720),
+        href: imgUrl(HERO_IMAGE_SRC, 480),
+        imageSrcSet: imgSrcSet(HERO_IMAGE_SRC, [480, 720, 900, 1200, 1440, 1920], 1920),
+        imageSizes: "100vw",
         fetchPriority: "high",
-        media: "(max-width: 767px)",
-      },
-      {
-        rel: "preload",
-        as: "image",
-        href: imgUrl(HERO_IMAGE_SRC, 1440),
-        fetchPriority: "high",
-        media: "(min-width: 768px)",
       },
     ],
     scripts: [

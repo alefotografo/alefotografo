@@ -21,21 +21,11 @@ export default function FaixaClientes() {
           Empresas que confiam em nosso trabalho
         </p>
 
-        {/* mobile: linha única com rolagem horizontal */}
-        <ul className="mt-6 flex gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:hidden">
-          {CLIENTES.map((nome) => (
-            <li key={nome} className="text-[14px] leading-[1.4] text-muted-foreground">
-              {nome}
-            </li>
-          ))}
-        </ul>
-
-        {/* desktop/tablet: 6 colunas, 2 linhas */}
-        <ul className="mt-6 hidden grid-cols-6 gap-6 md:grid">
+        <ul className="mt-6 flex gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-6 md:gap-6 md:overflow-visible md:whitespace-normal">
           {CLIENTES.map((nome) => (
             <li
               key={nome}
-              className="text-center text-[14px] leading-[1.4] text-muted-foreground"
+              className="text-[14px] leading-[1.4] text-muted-foreground md:text-center"
             >
               {nome}
             </li>

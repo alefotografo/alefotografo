@@ -1,22 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { SmartImage } from "@/components/site/SmartImage";
 import { waLink } from "@/lib/whatsapp";
-
-const CDN =
-  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/125396";
-
-const MINIATURAS = [
-  { legenda: "Linha de produção", src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-34.jpg` },
-  { legenda: "Equipe em operação", src: `${CDN}/banco-de-imagens-para-empresas_carriers-11.jpg` },
-  {
-    legenda: "Vista aérea com drone",
-    src: `${CDN}/banco-de-imagens-para-empresas_ativa-itapevi-11.jpg`,
-  },
-  {
-    legenda: "Ambientes corporativos",
-    src: `${CDN}/banco-de-imagens-para-empresas_ala-servicos-178.jpg`,
-  },
-] as const;
 
 export default function BancoDeImagens() {
   return (
@@ -54,39 +37,17 @@ export default function BancoDeImagens() {
               Vamos conversar
             </a>
           </p>
+
+          <p className="mt-6 text-center">
+            <Link
+              to="/fotografo-corporativo/$slug"
+              params={{ slug: "banco-de-imagens-para-empresas" }}
+              className="text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
+            >
+              Como funciona o banco de imagens
+            </Link>
+          </p>
         </div>
-
-
-        <ul className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-          {MINIATURAS.map((foto) => (
-            <li key={foto.legenda}>
-              <div className="overflow-hidden rounded-sm" style={{ aspectRatio: "1 / 1" }}>
-                <SmartImage
-                  src={foto.src}
-                  alt=""
-                  width={300}
-                  height={300}
-                  baseWidth={400}
-                  widths={[300, 400, 600]}
-                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 300px"
-                  placeholderRatio="1 / 1"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <p className="mt-2 text-[14px] leading-[1.4] text-muted-foreground">{foto.legenda}</p>
-            </li>
-          ))}
-        </ul>
-
-        <p className="mt-6 text-center">
-          <Link
-            to="/fotografo-corporativo/$slug"
-            params={{ slug: "banco-de-imagens-para-empresas" }}
-            className="text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
-          >
-            Como funciona o banco de imagens
-          </Link>
-        </p>
       </div>
     </section>
   );

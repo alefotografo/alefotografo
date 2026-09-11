@@ -138,14 +138,6 @@ export default function SolucoesEmpresa() {
           </Link>
         </p>
 
-        <p className="mt-8 text-center">
-          <Link
-            to="/fotografo-corporativo"
-            className="text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-          >
-            Conheça o trabalho do fotógrafo corporativo
-          </Link>
-        </p>
       </div>
     </section>
   );

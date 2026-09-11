@@ -15,6 +15,8 @@ export interface HomePhoto {
   /** Dimensões reais do asset — usadas para reservar proporção sem crop. */
   width: number;
   height: number;
+  /** Nome curto exibido no portfólio da Home. */
+  title?: string;
 }
 
 /** Hero definitivo da Home. */
@@ -42,25 +44,17 @@ export const heroAlternatives = [
   },
 ];
 
-/** 10 fotografias reais do acervo — 6 retratos + 4 eventos. */
+/** Seis frentes B2B representadas com fotografias reais do acervo. */
 export const selectedWorks: HomePhoto[] = [
   {
-    src: `${CDN}/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-34.JPG`,
-    gallery: "retrato-corporativo",
-    pillar: "retrato",
-    orientation: "vertical",
-    alt: "Retrato corporativo em São Paulo com direção de pose",
-    width: 1067,
-    height: 1600,
-  },
-  {
-    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-2.jpg`,
-    gallery: "fotografia-para-escritorios-de-advocacia",
+    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
+    gallery: "fotografo-de-grupos-times-e-equipes",
     pillar: "retrato",
     orientation: "horizontal",
-    alt: "Fotografia profissional de advogados em escritório de advocacia",
+    alt: "Foto de equipe corporativa em grupo no escritório",
     width: 1920,
-    height: 1410,
+    height: 1539,
+    title: "Fotografia Corporativa",
   },
   {
     src: `${CDN}/90047/fotografia-de-retrato-profissional-em-sao-paulo_paulo-henrique-gomes-camara-8.jpg`,
@@ -70,51 +64,27 @@ export const selectedWorks: HomePhoto[] = [
     alt: "Retrato profissional corporativo com iluminação de estúdio",
     width: 1067,
     height: 1600,
+    title: "Retratos Profissionais",
   },
   {
-    src: `${CDN}/132060/fotos-profissionais-para-medicos_driuri-tomaz-de-vasconcelos-7.JPG`,
-    gallery: "fotos-profissionais-para-medicos",
+    src: `${CDN}/66655/industrial_dsc7266.jpg`,
+    gallery: "fotografia-industrial",
     pillar: "retrato",
     orientation: "horizontal",
-    alt: "Foto profissional de médico para divulgação e redes sociais",
-    width: 1920,
-    height: 1277,
-  },
-  {
-    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
-    gallery: "fotografo-de-grupos-times-e-equipes",
-    pillar: "retrato",
-    orientation: "horizontal",
-    alt: "Foto de equipe corporativa em grupo no escritório",
-    width: 1920,
-    height: 1539,
-  },
-  {
-    src: `${CDN}/153050/retratos-de-medicas_mila-rodrigues-da-silva-4.JPG`,
-    gallery: "retratos-de-medicas",
-    pillar: "retrato",
-    orientation: "horizontal",
-    alt: "Retrato profissional de médica em consultório",
+    alt: "Fotografia industrial de instalações e equipamentos",
     width: 1920,
     height: 1280,
+    title: "Indústria",
   },
   {
-    src: `${CDN}/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG`,
-    gallery: "fotografo-de-eventos-corporativos",
-    pillar: "evento",
+    src: `${CDN}/124025/fotografia-de-logistica_fotografo-de-logistica-1.jpg`,
+    gallery: "fotografia-de-logistica",
+    pillar: "retrato",
     orientation: "horizontal",
-    alt: "Cobertura fotográfica de evento corporativo em São Paulo",
+    alt: "Fotografia de logística e transportes",
     width: 1920,
-    height: 1278,
-  },
-  {
-    src: `${CDN}/66941/fotografo-de-eventos-corporativos-em-sao-paulo_jantar-abradilan-2019-278.jpg`,
-    gallery: "eventos-corporativos",
-    pillar: "evento",
-    orientation: "horizontal",
-    alt: "Jantar de evento empresarial fotografado em São Paulo",
-    width: 1920,
-    height: 1054,
+    height: 1280,
+    title: "Transportes e Logística",
   },
   {
     src: `${CDN}/66936/fotografo-de-feiras-de-negocios-em-sao-paulo_procooler-39.jpg`,
@@ -124,15 +94,17 @@ export const selectedWorks: HomePhoto[] = [
     alt: "Cobertura fotográfica de feira de negócios e stand",
     width: 1920,
     height: 1282,
+    title: "Eventos e Feiras",
   },
   {
-    src: `${CDN}/89025/festa-da-firma-confraternizacoes_swift-701.jpg`,
-    gallery: "fotografo-festa-de-confraternizacao",
-    pillar: "evento",
+    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-2.jpg`,
+    gallery: "fotografia-para-escritorios-de-advocacia",
+    pillar: "retrato",
     orientation: "horizontal",
-    alt: "Festa de confraternização de empresa fotografada em São Paulo",
+    alt: "Fotografia profissional de advogados em escritório de advocacia",
     width: 1920,
-    height: 1280,
+    height: 1410,
+    title: "Saúde e Advocacia",
   },
 ];
 

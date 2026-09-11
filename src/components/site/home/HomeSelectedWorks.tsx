@@ -22,13 +22,13 @@ export default function HomeSelectedWorks() {
           </Link>
         </div>
 
-        <div className="columns-1 gap-4 md:columns-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {selectedWorks.map((w) => (
             <Link
               key={w.src}
               to="/fotografo-corporativo/$slug"
               params={{ slug: w.gallery }}
-              className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
+              className="group relative block aspect-[4/3] overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
               <img
                 src={imgUrl(w.src, 640)}
@@ -40,12 +40,12 @@ export default function HomeSelectedWorks() {
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
-                className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-3 md:p-5">
                 <h3 className="font-display text-sm font-semibold text-foreground md:text-lg">
-                  {galleryTitle(w.gallery)}
+                  {w.title ?? galleryTitle(w.gallery)}
                 </h3>
                 <span className="mt-1 hidden items-center gap-1 text-xs text-ember opacity-0 transition-opacity group-hover:opacity-100 md:inline-flex">
                   Ver galeria <ArrowUpRight size={12} />

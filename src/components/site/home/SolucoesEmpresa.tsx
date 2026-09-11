@@ -47,8 +47,8 @@ const CARDS = [
       "Produção audiovisual para apresentar empresas, serviços, estruturas, equipes, projetos e cases.",
     slug: null,
     to: "/videos",
-    img: `${CDN}/66650/fotos-aereas_fotos-aereas-de-empresas-empreendimentos-captadas-por-drone-helicopetero-fotografo-aereo-especializado-2.jpg`,
-    alt: "Fotos Aéreas — foto 1",
+    img: "https://i.ytimg.com/vi/nkHJbeXx5Qo/hqdefault.jpg",
+    alt: "Capa do vídeo institucional da Ativa Logística",
   },
   {
     title: "Fotografia Industrial",

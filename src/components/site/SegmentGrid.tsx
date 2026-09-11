@@ -73,13 +73,13 @@ const SEGMENTS: Segment[] = [
 export function SegmentGrid() {
   return (
     <section className="border-b border-border" aria-labelledby="segmentos">
-      <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+      <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Segmentos</p>
         <h2 id="segmentos" className="font-display text-3xl font-semibold text-balance md:text-4xl">
           Experiência em diferentes segmentos
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Conheça alguns dos mercados atendidos em São Paulo e as soluções desenvolvidas para cada um.
+          Experiência em produções realizadas em diferentes ambientes e setores empresariais.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -104,7 +104,7 @@ export function SegmentGrid() {
                 {s.to ? (
                   <Link
                     to={s.to}
-                    className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                    className="mt-4 inline-flex min-h-[44px] items-center gap-1 text-sm text-muted-foreground hover:text-ember"
                   >
                     {s.seeLabel} <ArrowUpRight size={14} />
                   </Link>
@@ -112,7 +112,7 @@ export function SegmentGrid() {
                   <Link
                     to="/fotografo-corporativo/$slug"
                     params={{ slug: s.catSlug as string }}
-                    className="mt-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
+                    className="mt-4 inline-flex min-h-[44px] items-center gap-1 text-sm text-muted-foreground hover:text-ember"
                   >
                     {s.seeLabel} <ArrowUpRight size={14} />
                   </Link>

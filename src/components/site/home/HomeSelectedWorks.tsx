@@ -6,13 +6,16 @@ import { galleryTitle, selectedWorks, worksCtas } from "@/data/homeCuration";
 export default function HomeSelectedWorks() {
   return (
 
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+      <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-6 md:mb-10">
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotos</p>
-            <h2 className="font-display text-3xl font-semibold md:text-5xl text-balance">
+            <h2 className="font-display text-3xl font-semibold text-balance md:text-5xl">
               Trabalhos selecionados
             </h2>
+            <p className="mt-4 max-w-2xl text-muted-foreground">
+              Uma seleção de projetos realizados para empresas, profissionais e diferentes segmentos.
+            </p>
           </div>
           <Link
             to="/fotografo-corporativo"

@@ -103,7 +103,6 @@ function Home() {
         <HomeSelectedWorks />
         <SegmentGrid />
         <HomeAbout />
-        <HomeVideos />
         <HomeBlog />
         <HomeFaq />
         <HomeCta />

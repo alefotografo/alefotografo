@@ -1,4 +1,5 @@
-import { googleBusinessProfileUrl } from "@/data/reviews";
+import { googleBusinessProfileUrl, googleReviewsSummary } from "@/data/reviews";
+import { googleTestimonials } from "@/data/testimonials";
 import { TestimonialsCarousel } from "@/components/site/TestimonialsCarousel";
 
 interface NumeroItem {
@@ -13,7 +14,7 @@ const NUMEROS: readonly NumeroItem[] = [
   { valor: "300+", legenda: "executivos fotografados" },
   {
     valor: "4,9",
-    legenda: "no Google",
+    legenda: `no Google · ${googleReviewsSummary.reviewCount} avaliações`,
     href: googleBusinessProfileUrl,
   },
 ];
@@ -40,14 +41,14 @@ export default function AgilidadeProva() {
             <h2 className="font-display text-[24px] font-semibold leading-[1.2] text-foreground md:text-[32px]">
               Experiência que acompanha cada produção
             </h2>
-            <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
+            <p className="mt-4 text-[16px] leading-[1.6] text-muted-foreground md:mt-6 md:text-[17px]">
               Mais de três décadas de atuação profissional trouxeram experiência em diferentes
               ambientes, segmentos e desafios de produção. Esse repertório orienta o planejamento,
               a execução e a entrega de cada projeto.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-6 md:mt-12 md:grid-cols-4 md:gap-6">
             {NUMEROS.map((item) => (
               <div key={item.valor} className="text-center">
                 <p
@@ -77,7 +78,10 @@ export default function AgilidadeProva() {
         </div>
       </section>
 
-      <TestimonialsCarousel title="Depoimentos de clientes" />
+       <TestimonialsCarousel
+         title="Depoimentos de clientes"
+         testimonials={googleTestimonials}
+       />
     </>
   );
 }

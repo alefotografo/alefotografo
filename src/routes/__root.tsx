@@ -28,6 +28,7 @@ import {
 import { lazyAfterInteractive } from "../lib/deferredLazy";
 
 
+
 const Footer = lazyAfterInteractive(() =>
   import("../components/site/Footer").then((module) => ({ default: module.Footer })),
 );
@@ -125,8 +126,6 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => {
-
-
     return {
       meta: [
         { charSet: "utf-8" },
@@ -347,7 +346,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const hideTestimonials = ["/", "/depoimentos"].includes(pathname.replace(/\/+$/, ""));
+  const normalizedPathname = pathname.replace(/\/+$/, "") || "/";
+  const hideTestimonials = ["/", "/depoimentos"].includes(normalizedPathname);
 
   return (
     <QueryClientProvider client={queryClient}>

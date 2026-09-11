@@ -26,6 +26,12 @@ import {
   DEFAULT_OG_IMAGE_WIDTH,
 } from "../lib/seo";
 import { lazyAfterInteractive } from "../lib/deferredLazy";
+import { imgUrl } from "../lib/img";
+
+// Fonte da imagem principal da home (mantida em sincronia com HomeHeroNovo).
+const HERO_IMAGE_SRC =
+  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg";
+
 
 
 const Footer = lazyAfterInteractive(() =>
@@ -124,8 +130,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => {
-
+  head: ({ matches }) => {
+    const isHome = matches.some(
+      (m) => m.routeId === "/" || m.pathname === "/",
+    );
 
     return {
       meta: [
@@ -155,6 +163,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-400.woff2", crossOrigin: "anonymous" },
         { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-500.woff2", crossOrigin: "anonymous" },
         { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/space-grotesk-600.woff2", crossOrigin: "anonymous" },
+
+        // Foto principal da home: inicia download o mais cedo possível,
+        // reduzindo LCP. Versões condicionais para mobile e desktop/tablet.
+        ...(isHome
+          ? [
+              {
+                rel: "preload" as const,
+                as: "image" as const,
+                href: imgUrl(HERO_IMAGE_SRC, 720),
+                fetchPriority: "high" as const,
+                media: "(max-width: 767px)",
+              },
+              {
+                rel: "preload" as const,
+                as: "image" as const,
+                href: imgUrl(HERO_IMAGE_SRC, 1440),
+                fetchPriority: "high" as const,
+                media: "(min-width: 768px)",
+              },
+            ]
+          : []),
+
         { rel: "stylesheet", href: appCss },
         { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
         // Feed anunciado em todas as páginas: agregadores e crawlers de IA
@@ -347,7 +377,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const hideTestimonials = ["/", "/depoimentos"].includes(pathname.replace(/\/+$/, ""));
+  const normalizedPathname = pathname.replace(/\/+$/, "") || "/";
+  const hideTestimonials = ["/", "/depoimentos"].includes(normalizedPathname);
 
   return (
     <QueryClientProvider client={queryClient}>

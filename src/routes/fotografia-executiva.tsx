@@ -62,7 +62,7 @@ const cfg: ServicePageConfig = {
   gallerySlugs: [
     "retrato-corporativo",
     "fotografo-de-retratos-corporativos",
-    "fotografo-de-retratos-profissionais",
+    
     "fotografia-institucional-em-saopaulo",
     "fotografo-de-grupos-times-e-equipes",
     "fotografia-corporativa-em-sao-paulo",

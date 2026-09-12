@@ -33,13 +33,18 @@ const HomeFaq = lazyAfterInteractive(() => import("@/components/site/home/HomeFa
 const HomeCta = lazyAfterInteractive(() => import("@/components/site/home/HomeCta"));
 
 
+const HOME_TITLE = "Fotógrafo Corporativo em São Paulo | Fotografia Profissional";
+const HOME_DESCRIPTION =
+  "Fotografia corporativa em São Paulo para empresas, executivos e equipes. Retratos profissionais, eventos, indústria, logística e vídeos corporativos.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo | Alê Fotógrafo",
-      description:
-        "Fotografia corporativa profissional em SP. Retratos, headshots e eventos. Nota 4,9 com 144 avaliações.",
-      path: "/",
+    meta: buildMeta({ title: HOME_TITLE, description: HOME_DESCRIPTION, path: "/" }).map((m) => {
+      if ("title" in m) return { title: HOME_TITLE };
+      if (m.name === "description") return { name: "description", content: HOME_DESCRIPTION };
+      if (m.property === "og:title") return { property: "og:title", content: HOME_TITLE };
+      if (m.property === "og:description") return { property: "og:description", content: HOME_DESCRIPTION };
+      return m;
     }),
     links: [
       { rel: "canonical", href: "https://www.alefotografo.com.br/" },

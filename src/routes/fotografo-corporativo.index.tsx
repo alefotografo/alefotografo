@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { site } from "@/data/site";
 import { buildBreadcrumbList, buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
@@ -87,7 +88,7 @@ function PortfolioIndex() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((c, i) => (
+          {categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).map((c, i) => (
             <Link
               key={c.slug}
               to="/fotografo-corporativo/$slug"

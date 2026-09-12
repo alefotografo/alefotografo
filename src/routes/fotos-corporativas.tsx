@@ -150,8 +150,8 @@ const blocos: Bloco[] = [
   {
     h: "Escritórios, fábricas e operação",
     p: "Fotografia de ambientes corporativos, indústria e processos produtivos, mostrando escala, tecnologia e cuidado operacional da empresa.",
-    img: catCover("fotografia-industrial"),
-    catSlug: "fotografia-industrial",
+    img: catCover("fotografia-industrial-em-sp"),
+    catSlug: "fotografia-industrial-em-sp",
     linkLabel: "Ver fotografia industrial",
   },
   {
@@ -178,7 +178,7 @@ const blocos: Bloco[] = [
 ];
 
 const maisEspecialidades: { slug: string; label: string }[] = [
-  { slug: "fotografia-industrial", label: "Fotografia industrial" },
+  { slug: "fotografia-industrial-em-sp", label: "Fotografia industrial" },
   { slug: "fotos-aereas", label: "Fotos aéreas" },
   { slug: "fotografo-de-arquitetura-e-interiores", label: "Arquitetura e interiores" },
   { slug: "fotografo-feiras-stands", label: "Feiras de negócios e stands" },

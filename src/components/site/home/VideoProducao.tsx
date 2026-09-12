@@ -67,6 +67,23 @@ export default function VideoProducao() {
           produção audiovisual completa. Criamos vídeos para apresentar empresas, serviços,
           estruturas, equipes, cases e projetos com comunicação clara e profissional.
         </p>
+        <p className="mt-4 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
+          Especializações:{" "}
+          <Link
+            to="/video-institucional"
+            className="text-ember hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            Vídeo Institucional
+          </Link>{" "}
+          e{" "}
+          <Link
+            to="/video-de-eventos-corporativos"
+            className="text-ember hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            Vídeos de Eventos Corporativos
+          </Link>
+          .
+        </p>
 
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {VIDEOS.map((video) => (

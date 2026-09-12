@@ -8,8 +8,8 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotos Corporativas por Segmento em São Paulo",
-      description: `Veja ${categories.length} galerias reais: retrato executivo, equipes, escritórios, clínicas, advocacia, indústria e eventos. Orçamento no mesmo dia em São Paulo.`,
+      title: "Fotógrafo Corporativo em São Paulo | Portfólio",
+      description: "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Veja trabalhos para empresas, executivos, indústria, logística, saúde e eventos.",
       path: "/fotografo-corporativo",
     }),
     links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/fotografo-corporativo" }],

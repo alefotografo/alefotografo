@@ -21,18 +21,26 @@ export default function RetratoProfissional() {
     <section className="py-14 md:py-24">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-3">
-          <div className="overflow-hidden rounded-sm lg:col-span-1" style={{ aspectRatio: "3 / 2" }}>
-            <SmartImage
-              src={FOTO.src}
-              alt={FOTO.alt}
-              width={1920}
-              height={1280}
-              baseWidth={900}
-              widths={[400, 640, 900, 1200]}
-              sizes="(max-width: 1023px) 100vw, 380px"
-              placeholderRatio="3 / 2"
-              className="h-full w-full object-cover"
-            />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-1">
+            {FOTOS.map((foto) => (
+              <div
+                key={foto.src}
+                className="overflow-hidden rounded-sm"
+                style={{ aspectRatio: "3 / 4" }}
+              >
+                <SmartImage
+                  src={foto.src}
+                  alt={foto.alt}
+                  width={1200}
+                  height={1600}
+                  baseWidth={640}
+                  widths={[400, 640, 900]}
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 190px"
+                  placeholderRatio="3 / 4"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+            ))}
           </div>
 
           <div className="lg:col-span-2">

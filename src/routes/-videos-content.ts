@@ -10,6 +10,7 @@ export const TIPOS: Tipo[] = [
     title: "Vídeo institucional",
     text: "Apresenta a empresa, a estrutura, a equipe e os diferenciais para clientes, parceiros e licitações.",
     wa: "vídeo institucional",
+    to: "/video-institucional",
   },
   {
     title: "Vídeo de treinamento",

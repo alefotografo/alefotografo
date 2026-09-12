@@ -22,8 +22,9 @@ const SHOWREEL_SLUG = "ativa-log";
 export const Route = createFileRoute("/videos/")({
   head: () => ({
     meta: buildMeta({
-      title: "Vídeo Institucional para Empresas em São Paulo",
-      description: `Vídeo institucional, treinamento, depoimentos, eventos e feiras em São Paulo: roteiro, captação e edição. Veja ${videos.length} produções e peça seu orçamento.`,
+      title: "Vídeos Corporativos em São Paulo | Produção para Empresas",
+      description:
+        "Produção de vídeos corporativos em São Paulo para empresas: institucional, eventos, treinamento e comunicação interna, com roteiro, captação e edição.",
       path: "/videos",
     }),
     links: [

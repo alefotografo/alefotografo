@@ -33,6 +33,7 @@ import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.
 import { Route as SitemapVideosDotxmlRouteImport } from './routes/sitemap-videos[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as VideoInstitucionalRouteImport } from './routes/video-institucional'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
@@ -174,6 +175,11 @@ const SobreRoute = SobreRouteImport.update({
   path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VideoInstitucionalRoute = VideoInstitucionalRouteImport.update({
+  id: '/video-institucional',
+  path: '/video-institucional',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -297,6 +303,7 @@ export interface FileRoutesByFullPath {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/video-institucional': typeof VideoInstitucionalRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -340,6 +347,7 @@ export interface FileRoutesByTo {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/video-institucional': typeof VideoInstitucionalRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -385,6 +393,7 @@ export interface FileRoutesById {
   '/sitemap-videos.xml': typeof SitemapVideosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/video-institucional': typeof VideoInstitucionalRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -430,6 +439,7 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/video-institucional'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -473,6 +483,7 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/video-institucional'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -517,6 +528,7 @@ export interface FileRouteTypes {
     | '/sitemap-videos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/video-institucional'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -562,6 +574,7 @@ export interface RootRouteChildren {
   SitemapVideosDotxmlRoute: typeof SitemapVideosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  VideoInstitucionalRoute: typeof VideoInstitucionalRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
@@ -749,6 +762,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/video-institucional': {
+      id: '/video-institucional'
+      path: '/video-institucional'
+      fullPath: '/video-institucional'
+      preLoaderRoute: typeof VideoInstitucionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -918,6 +938,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapVideosDotxmlRoute: SitemapVideosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  VideoInstitucionalRoute: VideoInstitucionalRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,

@@ -1,4 +1,5 @@
 import { categories, posts, type Category, type Post } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 
 const STOP = new Set([
   "de","da","do","das","dos","a","o","e","em","para","com","sem","por","no","na","nos","nas","um","uma","uns","umas",
@@ -25,7 +26,7 @@ function score(a: string, b: string): number {
 
 export function relatedCategories(seed: string, exclude?: string, limit = 4): Category[] {
   return categories
-    .filter((c) => c.slug !== exclude)
+    .filter((c) => c.slug !== exclude && !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
     .map((c) => ({ c, s: score(seed, `${c.title} ${c.subtitle} ${c.description}`) }))
     .sort((a, b) => b.s - a.s)
     .filter((x) => x.s > 0)

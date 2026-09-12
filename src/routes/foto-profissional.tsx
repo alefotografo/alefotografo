@@ -22,7 +22,6 @@ const DESCRIPTION =
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",
-  
   "fotografo-de-retratos-corporativos",
   "fotografia-para-escritorios-de-advocacia",
   "retratos-de-medicos",

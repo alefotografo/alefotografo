@@ -22,7 +22,7 @@ const BLOCKS = [
       { to: "/foto-profissional", label: "Contratar foto profissional" },
       { to: "/foto-profissional-para-linkedin", label: "Headshot para LinkedIn" },
     ],
-    gals: ["retrato-corporativo", "fotografo-de-retratos-corporativos", "fotografo-de-retratos-profissionais"],
+    gals: ["retrato-corporativo", "fotografo-de-retratos-corporativos"],
   },
   {
     id: "executivos",
@@ -82,7 +82,6 @@ const BLOCKS = [
     services: [{ to: "/eventos-corporativos", label: "Eventos corporativos" }],
     gals: [
       "fotografo-de-eventos-corporativos",
-      "eventos-corporativos",
       "fotografo-festa-de-confraternizacao",
       "fotografo-festa-de-confraternizacao-1-1",
       "fotografo-de-drinks-coqueteis",
@@ -102,7 +101,7 @@ const BLOCKS = [
     blurb:
       "Operação, planta, frota e centros de distribuição fotografados com segurança e leitura técnica do processo.",
     services: [{ to: "/fotografo-empresarial", label: "Falar sobre projeto industrial" }],
-    gals: ["fotografia-industrial", "fotografia-industrial-em-sp", "fotografia-de-logistica", "fotos-aereas"],
+    gals: ["fotografia-industrial-em-sp", "fotografia-de-logistica", "fotos-aereas"],
   },
   {
     id: "arquitetura",

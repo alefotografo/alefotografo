@@ -31,7 +31,7 @@ export const TIPOS: Tipo[] = [
     title: "Vídeos para eventos corporativos",
     text: "Registro, aftermovie e cortes de convenções, congressos, palestras e premiações.",
     wa: "vídeo de evento corporativo",
-    to: "/eventos-corporativos",
+    to: "/video-de-eventos-corporativos",
   },
   {
     title: "Vídeos para clínicas e hospitais",

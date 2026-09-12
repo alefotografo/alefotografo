@@ -366,6 +366,60 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
     waMessage:
       "Olá Alexandre, quero conversar sobre uma produção fotográfica em São Paulo. Pode me explicar como funciona?",
   },
+  "retratos-de-medicos": {
+    eyebrow: "A sessão por dentro",
+    sections: [
+      {
+        h: "Retratos profissionais para médicos",
+        paragraphs: [
+          [
+            "A sessão é planejada de acordo com a especialidade, o ambiente e a forma como as imagens serão utilizadas. Trabalhamos expressão, postura, enquadramento e iluminação para produzir retratos profissionais com naturalidade e consistência.",
+          ],
+        ],
+      },
+      {
+        h: "No consultório ou em estúdio",
+        paragraphs: [
+          [
+            "Os retratos podem ser produzidos no próprio consultório, aproveitando elementos do ambiente profissional, ou em estúdio com fundo e iluminação controlados. Também contamos com local para sessões na Alameda Santos, próximo à Avenida Paulista.",
+          ],
+        ],
+      },
+      {
+        h: "Imagens para diferentes canais profissionais",
+        paragraphs: [
+          [
+            "Os retratos podem ser utilizados em sites, perfis profissionais, LinkedIn, redes sociais, apresentações, materiais de imprensa e comunicação do consultório.",
+          ],
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Onde podem ser feitos os retratos profissionais para médicos?",
+        a: "No próprio consultório, aproveitando o ambiente profissional, ou em estúdio com fundo e iluminação controlados. Também contamos com local para sessões na Alameda Santos, próximo à Avenida Paulista, em São Paulo.",
+      },
+      {
+        q: "Vocês orientam poses e expressão durante a sessão?",
+        a: "Sim. A direção faz parte da sessão: trabalhamos postura, expressão, enquadramento e iluminação para que o retrato saia natural e consistente, sem que o médico precise saber posar.",
+      },
+      {
+        q: "As fotos podem ser feitas dentro do consultório?",
+        a: "Podem. A sessão no consultório aproveita elementos do próprio ambiente profissional e é planejada para acontecer com o mínimo de interferência na rotina de atendimento.",
+      },
+      {
+        q: "Os retratos podem ser usados no LinkedIn e no site profissional?",
+        a: "Sim. Os retratos são produzidos já pensando nos canais em que serão publicados: site, perfis profissionais, LinkedIn, redes sociais, apresentações, materiais de imprensa e comunicação do consultório.",
+      },
+      {
+        q: "Vocês possuem local para realizar a sessão em São Paulo?",
+        a: "Sim. Contamos com local para sessões na Alameda Santos, próximo à Avenida Paulista, com fundo e iluminação controlados.",
+      },
+    ],
+    ctaLabel: "Conversar sobre seus retratos",
+    waMessage:
+      "Olá Alexandre, quero conversar sobre retratos profissionais para médico. Pode me explicar como funciona?",
+  },
 };
 
 export function editorialFor(slug: string): CategoryEditorial | undefined {

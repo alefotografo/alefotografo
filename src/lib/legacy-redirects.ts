@@ -153,7 +153,7 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   if (portfolio) {
     const slug = portfolio[1];
     return CATEGORY_SLUGS.has(slug)
-      ? `/fotografo-corporativo/${slug}`
+      ? `/fotografo-corporativo/${canonicalCategory(slug)}`
       : "/fotografo-corporativo";
   }
 
@@ -195,7 +195,7 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   // Categoria fora do prefixo (/{slug} de categoria conhecida)
   const bare = path.match(/^\/([^/]+)$/);
   if (bare && CATEGORY_SLUGS.has(bare[1])) {
-    return `/fotografo-corporativo/${bare[1]}`;
+    return `/fotografo-corporativo/${canonicalCategory(bare[1])}`;
   }
 
   // Arquivos do WordPress antigo: /category/{slug}, /tag/{slug}, /author/{slug}

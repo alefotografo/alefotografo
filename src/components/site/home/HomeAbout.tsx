@@ -36,7 +36,7 @@ export default function HomeAbout() {
               <Link to="/sobre" className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
                 Conheça nossa trajetória <ArrowUpRight size={14} />
               </Link>
-              <Link to="/depoimentos" className="inline-flex items-center gap-2 text-sm text-ember hover:underline">
+              <Link to="/depoimentos" className="inline-flex min-h-11 items-center gap-2 text-sm text-ember hover:underline md:min-h-0">
                 Ver depoimentos de clientes
               </Link>
             </div>

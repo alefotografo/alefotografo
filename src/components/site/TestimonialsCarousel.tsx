@@ -134,12 +134,12 @@ export function TestimonialsCarousel({
                 href={googleReviewsSummary.profileUrl}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="text-ember underline underline-offset-4"
+                className="inline-flex min-h-11 items-center text-ember underline underline-offset-4 md:min-h-0"
               >
                 Ver no Google
               </a>{" "}
               ·{" "}
-              <Link to="/depoimentos" className="text-ember underline underline-offset-4">
+              <Link to="/depoimentos" className="inline-flex min-h-11 items-center text-ember underline underline-offset-4 md:min-h-0">
                 Todos os depoimentos
               </Link>
             </p>

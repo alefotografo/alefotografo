@@ -59,7 +59,7 @@ function phrasesFor(c: Category): string[] {
     "empreendimentos-imobiliarios": ["empreendimentos imobiliários", "imobiliário", "incorporadora"],
     "fotografo-festa-de-confraternizacao": ["festa da firma", "confraternização"],
     "fotografo-festa-de-confraternizacao-1-1": ["festa de confraternização", "confraternização da empresa"],
-    "fotografo-profissional-em-sao-paulo": ["fotógrafo profissional", "fotografia empresarial"],
+    "fotografo-profissional-em-sao-paulo": ["fotógrafo profissional"],
     "banco-de-imagens-para-escolas": ["escolas", "escola", "instituição de ensino"],
     "fotografo-de-grupos-times-e-equipes": ["grupos", "times", "equipes", "time da empresa"],
     "fotografia-industrial-em-sp": ["fotografia industrial", "indústria"],
@@ -90,6 +90,10 @@ const PILLAR_PAGES: Array<{ path: string; phrases: string[] }> = [
   {
     path: "/fotografia-para-clinicas",
     phrases: ["fotografia para clínicas", "fotografia para clínica", "fotos para clínica", "foto em clínica", "fotos de clínica"],
+  },
+  {
+    path: "/fotografo-empresarial",
+    phrases: ["fotografia empresarial"],
   },
 ];
 

@@ -56,6 +56,7 @@ const INTERNAL_LINKS: { to: string; label: string }[] = [
   { to: "/fotografo-de-feira-de-negocios", label: "Fotógrafo de feira de negócios" },
   { to: "/eventos-corporativos", label: "Eventos corporativos" },
   { to: "/video-institucional", label: "Vídeo institucional" },
+  { to: "/video-de-eventos-corporativos", label: "Vídeo de eventos corporativos" },
 ];
 
 export function servicePageSchema(cfg: ServicePageConfig) {

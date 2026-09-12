@@ -50,7 +50,6 @@ const pageFaqs: Faq[] = [
 const clinicCategorySlugs = [
   "fotos-para-clinicas-medicas",
   "fotos-profissionais-para-medicos",
-  "retratos-de-medicos",
   "retratos-de-medicas",
   "ensaio-fotografico-para-dentistas",
 ];
@@ -197,12 +196,6 @@ const segmentos = [
     escopo: "Consultório, materiais de trabalho e retratos em tom mais humano.",
     p: "Direção de pose voltada a proximidade e escuta, com fotos que funcionam em site, LinkedIn e plataformas de agendamento.",
     slug: "fotos-profissionais-para-medicos",
-  },
-  {
-    h: "Hospitais e operadoras",
-    escopo: "Múltiplos setores, equipes por área e cobertura de rotina assistencial.",
-    p: "Projetos orçados por unidade, com cronograma por setor, autorizações de imagem e entrega organizada por pasta temática.",
-    slug: "retratos-de-medicos",
   },
 ];
 

@@ -42,7 +42,7 @@ export default function BancoDeImagens() {
             <Link
               to="/fotografo-corporativo/$slug"
               params={{ slug: "banco-de-imagens-para-empresas" }}
-              className="text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
+              className="inline-flex min-h-11 items-center text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none md:min-h-0"
             >
               Como funciona o banco de imagens
             </Link>

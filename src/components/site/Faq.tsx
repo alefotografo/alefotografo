@@ -34,11 +34,14 @@ export function FaqList({
                 {isOpen ? <Minus size={14} /> : <Plus size={14} />}
               </span>
             </button>
-            {isOpen && (
-              <div id={answerId} data-faq-answer className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground md:text-base">
-                {f.a}
-              </div>
-            )}
+            <div
+              id={answerId}
+              data-faq-answer
+              hidden={!isOpen}
+              className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground md:text-base"
+            >
+              {f.a}
+            </div>
           </div>
         );
       })}

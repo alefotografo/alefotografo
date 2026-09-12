@@ -2,10 +2,16 @@ import { Link } from "@tanstack/react-router";
 import { MapPin } from "lucide-react";
 import { SmartImage } from "@/components/site/SmartImage";
 
-const FOTO = {
-  src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
-  alt: "Retrato corporativo individual em São Paulo",
-};
+const FOTOS = [
+  {
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/129397/foto-de-perfil-profissional-feminino_mila-rodrigues-da-silva-4.jpg",
+    alt: "Retrato profissional feminino em São Paulo",
+  },
+  {
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
+    alt: "Retrato corporativo individual em São Paulo",
+  },
+];
 
 const LINK_CLASS =
   "inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-[14px] font-medium leading-[1.4] hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none";

@@ -18,8 +18,8 @@ const CARDS = [
     title: "Fotografia Corporativa",
     texto:
       "Produções fotográficas para empresas, equipes, ambientes e operações, alinhadas à identidade e aos objetivos de comunicação de cada organização.",
-    slug: "fotografia-institucional-em-saopaulo",
-    to: null,
+    slug: null,
+    to: "/fotos-corporativas",
     img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg`,
     alt: "Fotografia Institucional — foto 1",
   },

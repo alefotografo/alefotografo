@@ -65,7 +65,7 @@ export default function HomeHeroNovo() {
                   to="/fotografo-corporativo"
                   className="inline-flex w-full items-center justify-center rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
                 >
-                  Fotografia corporativa
+                  Ver portfólio corporativo
                 </Link>
               </div>
               <div className="mt-10 grid grid-cols-1 gap-2 min-[376px]:grid-cols-3 min-[376px]:gap-4">

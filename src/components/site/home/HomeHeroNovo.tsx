@@ -68,9 +68,9 @@ export default function HomeHeroNovo() {
                   Ver portfólio
                 </Link>
               </div>
-              <div className="mt-10 grid grid-cols-3 gap-4">
+              <div className="mt-10 grid grid-cols-1 gap-2 min-[376px]:grid-cols-3 min-[376px]:gap-4">
                 {HERO_STATS.map((stat) => (
-                  <div key={stat.label}>
+                  <div key={stat.label} className="flex items-baseline gap-2 min-[376px]:block">
                     <p className="font-display text-xl font-semibold text-foreground md:text-2xl">
                       {stat.value}
                     </p>

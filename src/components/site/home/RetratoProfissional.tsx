@@ -4,12 +4,12 @@ import { SmartImage } from "@/components/site/SmartImage";
 
 const FOTOS = [
   {
-    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/129397/foto-de-perfil-profissional-feminino_mila-rodrigues-da-silva-4.jpg",
-    alt: "Retrato profissional feminino em São Paulo",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/129397/foto-de-perfil-profissional-feminino_renata-marques-26.jpg",
+    alt: "Retrato profissional de mulher executiva em ambiente corporativo",
   },
   {
-    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
-    alt: "Retrato corporativo individual em São Paulo",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90047/fotografia-de-retrato-profissional-em-sao-paulo_gustavo-pereira-13.jpg",
+    alt: "Retrato profissional de homem executivo em estúdio",
   },
 ];
 

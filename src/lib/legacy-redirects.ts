@@ -39,6 +39,13 @@ function canonicalCategory(slug: string): string {
   return CATEGORY_ALIASES[slug] ?? slug;
 }
 
+// Slugs de galeria que respondem 301: não entram no sitemap nem em links internos.
+export const REDIRECTED_CATEGORY_SLUGS = new Set([
+  "fotografia-industrial",
+  "fotografo-de-retratos-profissionais",
+  "eventos-corporativos",
+]);
+
 // Slugs de categoria válidos no site novo (usados pelas regras dinâmicas).
 const CATEGORY_SLUGS = new Set([
   "fotos-aereas",
@@ -202,7 +209,7 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   const wpCat = path.match(/^\/category\/([^/]+)$/);
   if (wpCat) {
     return CATEGORY_SLUGS.has(wpCat[1])
-      ? `/fotografo-corporativo/${wpCat[1]}`
+      ? `/fotografo-corporativo/${canonicalCategory(wpCat[1])}`
       : "/blog";
   }
   if (/^\/(?:tag|tags|author|arquivo|archives)\/[^/]+$/.test(path)) return "/blog";

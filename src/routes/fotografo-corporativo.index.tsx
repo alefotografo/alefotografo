@@ -72,15 +72,15 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
 function PortfolioIndex() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotos" }]} />
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotógrafo Corporativo" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotos</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotógrafo Corporativo</p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Conheça nossas especialidades
+            Fotógrafo corporativo em São Paulo
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            Explore galerias por categoria. Cada trabalho é pensado para gerar confiança, valor e percepção profissional para a marca do cliente.
+            Há mais de 30 anos, produzimos fotografia profissional para empresas, executivos e equipes em São Paulo. Explore o portfólio por especialidade, com trabalhos em ambientes corporativos, indústria, logística, saúde, advocacia, eventos e outros segmentos.
           </p>
         </div>
       </section>

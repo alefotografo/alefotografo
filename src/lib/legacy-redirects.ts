@@ -27,7 +27,17 @@ const REMOVED_VIDEO_SLUGS = new Set([
 const CATEGORY_ALIASES: Record<string, string> = {
   "banco-de-imagem-corporativo": "banco-de-imagens-para-empresas",
   "fotografo-festa-da-firma": "fotografo-festa-de-confraternizacao",
+  // Consolidação de duplicidades (lote 1): sinais concentrados nas URLs
+  // com desempenho orgânico superior no Search Console.
+  "fotografia-industrial": "fotografia-industrial-em-sp",
+  "fotografo-de-retratos-profissionais": "banco-de-imagens-para-empresas",
+  "eventos-corporativos": "fotografo-de-eventos-corporativos",
 };
+
+// Resolve alias de categoria para o slug final (evita cadeia de 301).
+function canonicalCategory(slug: string): string {
+  return CATEGORY_ALIASES[slug] ?? slug;
+}
 
 // Slugs de categoria válidos no site novo (usados pelas regras dinâmicas).
 const CATEGORY_SLUGS = new Set([

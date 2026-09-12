@@ -51,13 +51,14 @@ const CARDS = [
     alt: "Capa do vídeo institucional da Ativa Logística",
   },
   {
-    title: "Fotografia Industrial",
+    title: "Vídeos de Feiras e Eventos",
     texto:
-      "Registro de instalações, processos, equipamentos, equipes e operações para comunicação institucional, comercial e técnica.",
-    slug: "fotografia-industrial",
+      "Produção de vídeos para feiras, congressos e eventos corporativos, com captação de stands, entrevistas, apresentações e melhores momentos.",
+    slug: null,
     to: null,
-    img: `${CDN}/66655/industrial_dsc7266.jpg`,
-    alt: "Fotografia Industrial — foto 1",
+    videoSlug: "sq-quimica-na-fce-pharma-cobertura-profissional-em-video-para-feiras-e-eventos-c",
+    img: "https://img.youtube.com/vi/WGtAZjK5v9Q/hqdefault.jpg",
+    alt: "Capa da produção em vídeo da SQ Química na feira FCE Pharma",
   },
 ] as const;
 
@@ -96,7 +97,15 @@ export default function SolucoesEmpresa() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-[18px] font-semibold leading-[1.3] text-foreground md:text-[20px]">
-                  {card.slug ? (
+                  {"videoSlug" in card ? (
+                    <Link
+                      to="/videos/$slug"
+                      params={{ slug: card.videoSlug }}
+                      className={LINK_CLASS}
+                    >
+                      {card.title}
+                    </Link>
+                  ) : card.slug ? (
                     <Link
                       to="/fotografo-corporativo/$slug"
                       params={{ slug: card.slug }}

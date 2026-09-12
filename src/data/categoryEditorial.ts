@@ -310,6 +310,62 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
     waMessage:
       "Olá Alexandre, quero fotografia institucional / banco de imagens para a minha empresa. Pode me explicar como funciona?",
   },
+  "fotografo-profissional-em-sao-paulo": {
+    eyebrow: "A experiência por dentro",
+    sections: [
+      {
+        h: "Experiência em diferentes tipos de produção",
+        paragraphs: [
+          [
+            "Ao longo dos anos, produzimos imagens para empresas, profissionais, eventos, ambientes e operações em diferentes setores. A experiência em situações variadas permite adaptar direção, iluminação e linguagem visual às necessidades de cada projeto.",
+          ],
+        ],
+      },
+      {
+        h: "Fotografia profissional para empresas e profissionais",
+        paragraphs: [
+          [
+            "As produções podem envolver pessoas, equipes, ambientes, serviços, eventos e outros elementos importantes para a comunicação de uma empresa ou profissional. O planejamento considera onde as imagens serão utilizadas e qual mensagem precisam transmitir.",
+          ],
+        ],
+      },
+      {
+        h: "Atendimento em São Paulo e região",
+        paragraphs: [
+          [
+            "Atendemos empresas e profissionais em São Paulo, Grande São Paulo e região do ABC, além de produções em outras localidades conforme o projeto.",
+          ],
+        ],
+      },
+    ],
+    // Mesmas perguntas genéricas já exibidas nesta página antes do editorial —
+    // falam da contratação do fotógrafo, sem depender de "fotografia empresarial".
+    faqs: [
+      {
+        q: "Qual a diferença entre alefotografo.com.br e alefotografos.com.br?",
+        a: "Aqui, no alefotografo.com.br, sou eu, Alexandre Machado, quem fotografa: retratos profissionais, headshots para LinkedIn, executivos, sócios e equipes. O alefotografos.com.br é operado pela equipe Alê Fotógrafo e cuida de coberturas de grande porte — feiras, congressos, convenções e produções com vários fotógrafos ao mesmo tempo. Se o seu projeto é imagem de pessoas com direção de pose, é comigo.",
+      },
+      {
+        q: "Quem fotografa o meu ensaio: você ou um assistente?",
+        a: "Eu. Em todos os projetos contratados por este site sou eu quem atende, dirige o ensaio, fotografa e finaliza as imagens. Não há repasse para terceiros nem substituição de última hora — se eu não tiver a data disponível, eu digo, em vez de mandar outra pessoa.",
+      },
+      {
+        q: "Quanto custa um retrato profissional em São Paulo?",
+        a: "Depende do número de pessoas, do local (meu estúdio ou o seu escritório) e da quantidade de imagens finalizadas. Ensaios individuais de retrato têm valor fechado; para times, o cálculo é por bloco de horas, com custo por pessoa caindo conforme o volume. Me envie quantas pessoas e a data desejada pelo WhatsApp e eu devolvo o orçamento no mesmo dia.",
+      },
+      {
+        q: "Nunca fico bem em foto. Isso tem solução?",
+        a: "Tem, e quase sempre é direção, não aparência. Postura de ombros, distância do queixo em relação ao peito, ângulo de rosto, para onde o olhar vai e o momento de respirar antes do clique mudam completamente o resultado. Eu conduzo isso do começo ao fim do ensaio — ninguém precisa saber posar sozinho.",
+      },
+      {
+        q: "Quanto tempo dura um ensaio de retrato e quando recebo as fotos?",
+        a: "Um retrato individual leva de 20 a 40 minutos; em ensaios de equipe, de 10 a 15 minutos por pessoa. As imagens tratadas ficam prontas em 1 dia útil, com ajuste de cor, retoque natural de pele e cortes já prontos para LinkedIn, site e apresentações. Em cobertura de evento, a seleção das melhores imagens sai no mesmo dia.",
+      },
+    ],
+    ctaLabel: "Conversar sobre seu projeto",
+    waMessage:
+      "Olá Alexandre, quero conversar sobre uma produção fotográfica em São Paulo. Pode me explicar como funciona?",
+  },
 };
 
 export function editorialFor(slug: string): CategoryEditorial | undefined {

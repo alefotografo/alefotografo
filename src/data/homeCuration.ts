@@ -68,7 +68,7 @@ export const selectedWorks: HomePhoto[] = [
   },
   {
     src: `${CDN}/66655/industrial_dsc7266.jpg`,
-    gallery: "fotografia-industrial",
+    gallery: "fotografia-industrial-em-sp",
     pillar: "retrato",
     orientation: "horizontal",
     alt: "Fotografia industrial de instalações e equipamentos",

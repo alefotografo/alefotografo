@@ -25,7 +25,6 @@ function StarRow({ ariaLabel }: { ariaLabel: string }) {
       role="img"
       aria-label={ariaLabel}
       className="text-ember"
-      aria-hidden="true"
     >
       ★★★★★
     </span>
@@ -62,10 +61,10 @@ export default function AgilidadeProva() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-flex flex-col items-center gap-1 text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
+                    className="mt-2 inline-flex min-h-11 flex-col items-center justify-center gap-1 text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none md:min-h-0"
                   >
                     <span>{item.legenda}</span>
-                    <StarRow ariaLabel="5 de 5 estrelas no Google" />
+                    <StarRow ariaLabel="4,9 de 5 estrelas no Google" />
                   </a>
                 ) : (
                   <p className="mt-2 text-[14px] leading-[1.4] text-muted-foreground">

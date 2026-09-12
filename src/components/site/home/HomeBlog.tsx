@@ -12,7 +12,7 @@ export default function HomeBlog() {
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Insights</p>
             <h2 className="font-display text-3xl font-semibold md:text-4xl">Do blog</h2>
           </div>
-          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/blog" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:min-h-0">
             Todos os posts <ArrowUpRight size={14} />
           </Link>
         </div>

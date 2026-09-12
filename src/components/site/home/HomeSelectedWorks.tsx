@@ -19,7 +19,7 @@ export default function HomeSelectedWorks() {
           </div>
           <Link
             to="/fotografo-corporativo"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+            className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:min-h-0"
           >
             Ver todos os segmentos <ArrowUpRight size={14} />
           </Link>

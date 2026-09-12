@@ -124,7 +124,7 @@ export default function SolucoesEmpresa() {
           <Link
             to="/fotografo-corporativo/$slug"
             params={{ slug: "fotografo-de-grupos-times-e-equipes" }}
-            className="underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            className="inline-flex min-h-11 items-center underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:min-h-0"
           >
             Grupos, times e equipes
           </Link>
@@ -132,7 +132,7 @@ export default function SolucoesEmpresa() {
           <Link
             to="/fotografo-corporativo/$slug"
             params={{ slug: "fotografo-feiras-stands" }}
-            className="underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            className="inline-flex min-h-11 items-center underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:min-h-0"
           >
             Feiras e stands
           </Link>

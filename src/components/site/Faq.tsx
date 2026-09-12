@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import type { Faq as FaqItem } from "@/lib/faqs";
 
@@ -13,17 +13,20 @@ export function FaqList({
 }) {
   const Heading = headingLevel;
   const [open, setOpen] = useState<number | null>(defaultOpen);
+  const faqId = useId();
 
   return (
     <div className="divide-y divide-border border-y border-border">
       {items.map((f, i) => {
         const isOpen = open === i;
+        const answerId = `${faqId}-answer-${i}`;
         return (
           <div key={i} className="py-2">
             <button
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}
+              aria-controls={answerId}
               className="flex w-full items-start justify-between gap-4 py-5 text-left"
             >
               <Heading data-faq-question className="font-display text-base font-semibold leading-snug md:text-lg">{f.q}</Heading>
@@ -32,7 +35,7 @@ export function FaqList({
               </span>
             </button>
             {isOpen && (
-              <div data-faq-answer className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <div id={answerId} data-faq-answer className="pb-6 pr-10 text-sm leading-relaxed text-muted-foreground md:text-base">
                 {f.a}
               </div>
             )}

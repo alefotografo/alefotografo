@@ -47,7 +47,7 @@ const CARDS = [
       "Produção audiovisual para apresentar empresas, serviços, estruturas, equipes, projetos e cases.",
     slug: null,
     to: "/videos",
-    img: "https://i.ytimg.com/vi/nkHJbeXx5Qo/hqdefault.jpg",
+    img: "https://img.youtube.com/vi/nkHJbeXx5Qo/hqdefault.jpg",
     alt: "Capa do vídeo institucional da Ativa Logística",
   },
   {

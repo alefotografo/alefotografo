@@ -9,7 +9,7 @@ export const photoTaxonomy: SearchTaxonomyEntry[] = [
   {
     label: "Retratos profissionais e corporativos",
     keywords: ["retrato", "headshot", "perfil", "linkedin", "executivo", "empresario", "profissional"],
-    slugs: ["retrato-corporativo", "fotografo-de-retratos-profissionais", "fotografo-de-retratos-corporativos", "fotografo-profissional-em-sao-paulo", "ensaio-fotografico-para-redes-sociais", "ensaio-feminino"],
+    slugs: ["retrato-corporativo", "fotografo-de-retratos-corporativos", "fotografo-profissional-em-sao-paulo", "ensaio-fotografico-para-redes-sociais", "ensaio-feminino"],
     priority: 10,
   },
   {
@@ -27,7 +27,7 @@ export const photoTaxonomy: SearchTaxonomyEntry[] = [
   {
     label: "Eventos, feiras e confraternizações",
     keywords: ["evento", "feira", "stand", "estande", "congresso", "convencao", "palestra", "confraternizacao", "festa"],
-    slugs: ["fotografo-de-eventos-corporativos", "eventos-corporativos", "fotografo-feiras-stands", "fotografo-festa-de-confraternizacao", "fotografo-festa-de-confraternizacao-1-1"],
+    slugs: ["fotografo-de-eventos-corporativos", "fotografo-feiras-stands", "fotografo-festa-de-confraternizacao", "fotografo-festa-de-confraternizacao-1-1"],
     priority: 9,
   },
   {
@@ -61,7 +61,7 @@ export const photoTaxonomy: SearchTaxonomyEntry[] = [
   {
     label: "Indústria e logística",
     keywords: ["industria", "industrial", "fabrica", "logistica", "operacao", "processo", "armazem"],
-    slugs: ["fotografia-industrial", "fotografia-industrial-em-sp", "fotografia-de-logistica"],
+    slugs: ["fotografia-industrial-em-sp", "fotografia-de-logistica"],
     priority: 8,
   },
   {

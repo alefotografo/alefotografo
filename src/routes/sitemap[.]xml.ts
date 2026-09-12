@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { categories, videos, posts } from "@/data/catalog";
 import { bairros } from "@/data/bairros";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 
 // Base URL do site publicado. Atualize se mudar o domínio final.
 const BASE_URL = "https://www.alefotografo.com.br";
@@ -40,7 +41,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/depoimentos", changefreq: "monthly", priority: "0.7" },
           { path: "/faq", changefreq: "monthly", priority: "0.8" },
           { path: "/contato", changefreq: "monthly", priority: "0.8" },
-          ...categories.map((c) => ({ path: `/fotografo-corporativo/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
+          ...categories
+            .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
+            .map((c) => ({ path: `/fotografo-corporativo/${c.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
           { path: "/fotografo-corporativo-em", changefreq: "monthly", priority: "0.8" },
           ...bairros.map((b) => ({ path: `/fotografo-corporativo-em/${b.slug}`, changefreq: "monthly" as const, priority: "0.8" })),
 

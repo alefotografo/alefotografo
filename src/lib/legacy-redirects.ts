@@ -27,7 +27,24 @@ const REMOVED_VIDEO_SLUGS = new Set([
 const CATEGORY_ALIASES: Record<string, string> = {
   "banco-de-imagem-corporativo": "banco-de-imagens-para-empresas",
   "fotografo-festa-da-firma": "fotografo-festa-de-confraternizacao",
+  // Consolidação de duplicidades (lote 1): sinais concentrados nas URLs
+  // com desempenho orgânico superior no Search Console.
+  "fotografia-industrial": "fotografia-industrial-em-sp",
+  "fotografo-de-retratos-profissionais": "banco-de-imagens-para-empresas",
+  "eventos-corporativos": "fotografo-de-eventos-corporativos",
 };
+
+// Resolve alias de categoria para o slug final (evita cadeia de 301).
+function canonicalCategory(slug: string): string {
+  return CATEGORY_ALIASES[slug] ?? slug;
+}
+
+// Slugs de galeria que respondem 301: não entram no sitemap nem em links internos.
+export const REDIRECTED_CATEGORY_SLUGS = new Set([
+  "fotografia-industrial",
+  "fotografo-de-retratos-profissionais",
+  "eventos-corporativos",
+]);
 
 // Slugs de categoria válidos no site novo (usados pelas regras dinâmicas).
 const CATEGORY_SLUGS = new Set([
@@ -143,7 +160,7 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   if (portfolio) {
     const slug = portfolio[1];
     return CATEGORY_SLUGS.has(slug)
-      ? `/fotografo-corporativo/${slug}`
+      ? `/fotografo-corporativo/${canonicalCategory(slug)}`
       : "/fotografo-corporativo";
   }
 
@@ -185,14 +202,14 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   // Categoria fora do prefixo (/{slug} de categoria conhecida)
   const bare = path.match(/^\/([^/]+)$/);
   if (bare && CATEGORY_SLUGS.has(bare[1])) {
-    return `/fotografo-corporativo/${bare[1]}`;
+    return `/fotografo-corporativo/${canonicalCategory(bare[1])}`;
   }
 
   // Arquivos do WordPress antigo: /category/{slug}, /tag/{slug}, /author/{slug}
   const wpCat = path.match(/^\/category\/([^/]+)$/);
   if (wpCat) {
     return CATEGORY_SLUGS.has(wpCat[1])
-      ? `/fotografo-corporativo/${wpCat[1]}`
+      ? `/fotografo-corporativo/${canonicalCategory(wpCat[1])}`
       : "/blog";
   }
   if (/^\/(?:tag|tags|author|arquivo|archives)\/[^/]+$/.test(path)) return "/blog";

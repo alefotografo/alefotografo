@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { categories, posts } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { bairros } from "@/data/bairros";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 
@@ -56,7 +57,7 @@ export function LinkHub({
     .map((s) => ({ to: s.to, label: s.label, kind: "servico" as const }));
 
   const cats = relatedCategories(seed, excludeSlug, 3);
-  const catFallback = categories.filter((c) => c.slug !== excludeSlug).slice(0, 3);
+  const catFallback = categories.filter((c) => c.slug !== excludeSlug && !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).slice(0, 3);
   const galerias: Item[] = (cats.length ? cats : catFallback).slice(0, 3).map((c) => ({
     to: `/fotografo-corporativo/${c.slug}`,
     label: c.title,
@@ -99,7 +100,7 @@ export function LinkHub({
   for (const c of categories) {
     if (items.length >= 10) break;
     const to = `/fotografo-corporativo/${c.slug}`;
-    if (seen.has(to) || c.slug === excludeSlug) continue;
+    if (seen.has(to) || c.slug === excludeSlug || REDIRECTED_CATEGORY_SLUGS.has(c.slug)) continue;
     seen.add(to);
     items.push({ to, label: c.title, kind: "galeria" });
   }

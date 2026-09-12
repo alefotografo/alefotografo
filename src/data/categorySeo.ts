@@ -55,9 +55,9 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Retratos profissionais para médicas em São Paulo com direção de pose e luz. Fotos elegantes para consultório, redes sociais, LinkedIn e imprensa.",
   },
   "fotografo-profissional-em-sao-paulo": {
-    title: "Fotografia Empresarial em São Paulo | Fotógrafo Profissional",
+    title: "Fotógrafo Profissional em São Paulo | Alexandre Machado",
     description:
-      "Fotografia empresarial em São Paulo: equipes, ambientes, produtos e eventos. Um fotógrafo profissional para abastecer site, campanhas e redes da empresa.",
+      "Fotógrafo profissional em São Paulo com mais de 30 anos de experiência em produções para empresas, executivos, profissionais, eventos e diferentes segmentos.",
   },
   "fotografia-corporativa-em-sao-paulo": {
     title: "Fotografia Corporativa em SP | Orçamento no Mesmo Dia",

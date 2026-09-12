@@ -96,15 +96,7 @@ export default function SolucoesEmpresa() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-[18px] font-semibold leading-[1.3] text-foreground md:text-[20px]">
-                  {"videoSlug" in card ? (
-                    <Link
-                      to="/videos/$slug"
-                      params={{ slug: card.videoSlug }}
-                      className={LINK_CLASS}
-                    >
-                      {card.title}
-                    </Link>
-                  ) : card.slug ? (
+                  {card.slug ? (
                     <Link
                       to="/fotografo-corporativo/$slug"
                       params={{ slug: card.slug }}

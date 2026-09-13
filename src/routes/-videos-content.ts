@@ -34,6 +34,12 @@ export const TIPOS: Tipo[] = [
     to: "/video-de-eventos-corporativos",
   },
   {
+    title: "Vídeos para feiras e stands",
+    text: "Registra a participação da empresa em feiras de negócios e exposições, com captação no próprio evento.",
+    wa: "vídeo para feiras e stands",
+    to: "/video-para-feiras-e-stands",
+  },
+  {
     title: "Vídeos para clínicas e hospitais",
     text: "Mostra estrutura, equipe e atendimento com linguagem sóbria e adequada à área da saúde.",
     wa: "vídeo para clínica",

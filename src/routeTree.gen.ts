@@ -35,6 +35,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as VideoDeEventosCorporativosRouteImport } from './routes/video-de-eventos-corporativos'
 import { Route as VideoInstitucionalRouteImport } from './routes/video-institucional'
+import { Route as VideoParaFeirasEStandsRouteImport } from './routes/video-para-feiras-e-stands'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
@@ -187,6 +188,11 @@ const VideoInstitucionalRoute = VideoInstitucionalRouteImport.update({
   path: '/video-institucional',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VideoParaFeirasEStandsRoute = VideoParaFeirasEStandsRouteImport.update({
+  id: '/video-para-feiras-e-stands',
+  path: '/video-para-feiras-e-stands',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -312,6 +318,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/video-de-eventos-corporativos': typeof VideoDeEventosCorporativosRoute
   '/video-institucional': typeof VideoInstitucionalRoute
+  '/video-para-feiras-e-stands': typeof VideoParaFeirasEStandsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -357,6 +364,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/video-de-eventos-corporativos': typeof VideoDeEventosCorporativosRoute
   '/video-institucional': typeof VideoInstitucionalRoute
+  '/video-para-feiras-e-stands': typeof VideoParaFeirasEStandsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -404,6 +412,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/video-de-eventos-corporativos': typeof VideoDeEventosCorporativosRoute
   '/video-institucional': typeof VideoInstitucionalRoute
+  '/video-para-feiras-e-stands': typeof VideoParaFeirasEStandsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
@@ -451,6 +460,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/video-de-eventos-corporativos'
     | '/video-institucional'
+    | '/video-para-feiras-e-stands'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -496,6 +506,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/video-de-eventos-corporativos'
     | '/video-institucional'
+    | '/video-para-feiras-e-stands'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -542,6 +553,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/video-de-eventos-corporativos'
     | '/video-institucional'
+    | '/video-para-feiras-e-stands'
     | '/blog/$slug'
     | '/blog/rss.xml'
     | '/fotografo-corporativo-em/$bairro'
@@ -589,6 +601,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   VideoDeEventosCorporativosRoute: typeof VideoDeEventosCorporativosRoute
   VideoInstitucionalRoute: typeof VideoInstitucionalRoute
+  VideoParaFeirasEStandsRoute: typeof VideoParaFeirasEStandsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
@@ -790,6 +803,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VideoInstitucionalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/video-para-feiras-e-stands': {
+      id: '/video-para-feiras-e-stands'
+      path: '/video-para-feiras-e-stands'
+      fullPath: '/video-para-feiras-e-stands'
+      preLoaderRoute: typeof VideoParaFeirasEStandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -961,6 +981,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   VideoDeEventosCorporativosRoute: VideoDeEventosCorporativosRoute,
   VideoInstitucionalRoute: VideoInstitucionalRoute,
+  VideoParaFeirasEStandsRoute: VideoParaFeirasEStandsRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,

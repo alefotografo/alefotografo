@@ -57,6 +57,7 @@ const INTERNAL_LINKS: { to: string; label: string }[] = [
   { to: "/eventos-corporativos", label: "Eventos corporativos" },
   { to: "/video-institucional", label: "Vídeo institucional" },
   { to: "/video-de-eventos-corporativos", label: "Vídeo de eventos corporativos" },
+  { to: "/video-para-feiras-e-stands", label: "Vídeo para feiras e stands" },
 ];
 
 export function servicePageSchema(cfg: ServicePageConfig) {

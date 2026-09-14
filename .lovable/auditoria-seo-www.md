@@ -1,6 +1,6 @@
 # Auditoria SEO — host canônico `www.alefotografo.com.br`
 
-Última verificação: **04/09/2026, 02:05 UTC** (03/09 23:05 em São Paulo).
+Última verificação: **13/09/2026** (reconferência das pendências; ver seção 5). Auditoria original: 04/09/2026, 02:05 UTC (03/09 23:05 em São Paulo).
 
 ## 1. Redirects — as quatro combinações
 
@@ -57,7 +57,7 @@ Ao contar as URLs do sitemap publicado apareceu **162 em produção contra 317 n
 
 ## 5. Pendências
 
-1. **Publicar** — a correção do blog só vale em produção depois do deploy. Enquanto isso, 156 URLs indexadas seguem em 404.
-2. Depois de publicar: reconferir `sitemap.xml` (deve voltar a 317 URLs) e reinspecionar 2 ou 3 artigos no Search Console.
-3. `/blog.rss.xml` responde 404 (também na build local): a rota `blog.rss[.]xml.ts` não está resolvendo nesse caminho. Não é regressão desta rodada; fica registrado para corrigir.
+1. ~~**Publicar**~~ — **Resolvido (13/09):** produção servindo build corrigida; sitemap com 327 URLs (165 de blog).
+2. ~~Reconferir sitemap~~ — **Resolvido (13/09):** 327 URLs ao vivo, blog completo de volta.
+3. ~~`/blog.rss.xml` 404~~ — **Resolvido (13/09):** responde 200 `application/rss+xml` em produção e em build local; detalhes em `plan/seo-cirurgia-10b-*.md`.
 4. Elevar o 302 do apex a 301 é opcional e depende da decisão de CDN próprio (Cloudflare) ainda pendente.

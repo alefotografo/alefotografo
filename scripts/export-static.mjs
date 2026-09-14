@@ -52,7 +52,7 @@ async function writeFileSafe(file, content) {
 
 /** Assets externalizados (/__l5e/...) precisam ser baixados para o Hostinger. */
 async function downloadExternalAssets(htmlFiles) {
-  const cdnBase = process.env.CDN_BASE || "https://alefotografos.com.br";
+  const cdnBase = process.env.CDN_BASE || "https://www.alefotografo.com.br";
   const paths = new Set();
   for (const file of htmlFiles) {
     const html = await fs.readFile(file, "utf8");

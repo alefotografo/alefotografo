@@ -136,10 +136,10 @@ export const segmentPhotos: Record<string, SegmentPhoto> = {
     alt: "Retrato profissional de executivo fotografado em São Paulo",
   },
   "Empresas e equipes": {
-    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg`,
+    src: `${CDN}/102590/fotografia-corporativa-em-sao-paulo_contactone-218.jpg`,
     width: 1920,
-    height: 1275,
-    alt: "Foto de equipe corporativa reunida em ambiente de trabalho",
+    height: 1623,
+    alt: "Equipe corporativa reunida em escritório em São Paulo",
   },
   "Eventos corporativos": {
     src: `${CDN}/90046/fotografo-de-eventos-corporativos_jantar-e-encontro-febrafar-2024-532.JPG`,

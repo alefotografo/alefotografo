@@ -20,8 +20,8 @@ const CARDS = [
       "Produções fotográficas para empresas, equipes, ambientes e operações, alinhadas à identidade e aos objetivos de comunicação de cada organização.",
     slug: null,
     to: "/fotos-corporativas",
-    img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg`,
-    alt: "Fotografia Institucional — foto 1",
+    img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0005.jpg`,
+    alt: "Executivo analisando documentos em ambiente corporativo",
   },
   {
     title: "Retratos Profissionais",
@@ -29,8 +29,8 @@ const CARDS = [
       "Retratos de executivos, profissionais e equipes para LinkedIn, sites, apresentações, imprensa e comunicação corporativa.",
     slug: null,
     to: "/foto-profissional",
-    img: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
-    alt: "Fotógrafo de Grupos, Times e Equipes — foto 1",
+    img: `${CDN}/102590/fotografia-corporativa-em-sao-paulo_adv-62.jpg`,
+    alt: "Retrato profissional de executivos em escritório",
   },
   {
     title: "Eventos Corporativos",

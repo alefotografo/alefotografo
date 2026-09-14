@@ -52,10 +52,10 @@ const SEGMENTS: Segment[] = [
   },
   {
     title: "Empresas e Equipes",
-    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg",
-    alt: "Fotografia de equipes e empresas",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_contactone-218.jpg",
+    alt: "Equipe corporativa reunida em escritório em São Paulo",
     width: 1920,
-    height: 1539,
+    height: 1623,
     to: "/fotos-corporativas",
     seeLabel: "Ver fotografia corporativa",
   },

@@ -6,10 +6,14 @@ const FOTOS = [
   {
     src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/129397/foto-de-perfil-profissional-feminino_renata-marques-26.jpg",
     alt: "Retrato profissional de mulher executiva em ambiente corporativo",
+    w: 1196,
+    h: 1600,
   },
   {
-    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90047/fotografia-de-retrato-profissional-em-sao-paulo_gustavo-pereira-13.jpg",
-    alt: "Retrato profissional de homem executivo em estúdio",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_roberto-santos-de-araujo-15.JPG",
+    alt: "Retrato profissional de homem executivo em ambiente corporativo",
+    w: 1068,
+    h: 1600,
   },
 ];
 
@@ -31,8 +35,8 @@ export default function RetratoProfissional() {
                 <SmartImage
                   src={foto.src}
                   alt={foto.alt}
-                  width={1200}
-                  height={1600}
+                  width={foto.w}
+                  height={foto.h}
                   baseWidth={640}
                   widths={[400, 640, 900]}
                   sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 190px"

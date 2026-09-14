@@ -174,7 +174,7 @@ function CategoryPage() {
         </div>
       </section>
 
-      {editorial && <EditorialBlock data={editorial} />}
+      {editorial && editorial.sections.length > 0 && <EditorialBlock data={editorial} />}
 
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">

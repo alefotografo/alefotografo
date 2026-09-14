@@ -36,20 +36,13 @@ const INSTITUCIONAL = "/fotografo-corporativo/fotografia-institucional-em-saopau
 
 export const categoryEditorial: Record<string, CategoryEditorial> = {
   "fotografo-de-eventos-corporativos": {
-    eyebrow: "Cobertura de eventos corporativos",
-    sections: [
-      {
-        h: "Como planejamos a cobertura do seu evento",
-        paragraphs: [
-          [
-            "Cada evento corporativo começa pelo briefing: entendo a programação, os momentos que não podem faltar e onde o material será usado depois. A partir disso definimos os pontos de captação — palco, plateia, networking, estandes de patrocinadores e os retratos de convidados que pedem foto no momento.",
-          ],
-          [
-            "Eventos de grande porte, com vários ambientes acontecendo ao mesmo tempo, contam com equipe dedicada — o mesmo padrão de trabalho da cobertura de equipe em alefotografos.com.br. O resultado é um acervo coerente, pronto para site, LinkedIn, comunicação interna e imprensa.",
-          ],
-        ],
-      },
-    ],
+    // Entrada mínima: existe apenas para fornecer as 5 FAQs específicas e
+    // derrubar o fallback de retrato do template. Sem bloco editorial visível
+    // (sections vazio; o template só renderiza EditorialBlock quando há
+    // seções) e sem CTA próprio — eyebrow/ctaLabel/waMessage são exigidos
+    // pelo tipo, mas não chegam a renderizar.
+    eyebrow: "",
+    sections: [],
     faqs: [
       {
         q: "Vocês fazem cobertura fotográfica de eventos corporativos?",
@@ -72,9 +65,8 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
         a: "Sim. Atendemos eventos corporativos em São Paulo e região. Para projetos em outras localidades, o atendimento é definido conforme briefing e logística da produção.",
       },
     ],
-    ctaLabel: "Pedir orçamento de cobertura de evento corporativo",
-    waMessage:
-      "Olá Alexandre, quero orçamento para cobertura fotográfica de um evento corporativo em São Paulo.",
+    ctaLabel: "",
+    waMessage: "",
   },
   "fotografia-corporativa-em-sao-paulo": {
     eyebrow: "O trabalho por dentro",

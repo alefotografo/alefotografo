@@ -9,9 +9,9 @@ export interface CategorySeo {
 
 export const categorySeo: Record<string, CategorySeo> = {
   "retrato-corporativo": {
-    title: "Retrato Corporativo em SP | Orçamento no Mesmo Dia",
+    title: "Retrato Corporativo em SP | Orçamento em 1 Dia Útil",
     description:
-      "Retrato corporativo em São Paulo e Grande SP: direção de pose, luz e edição para LinkedIn e site. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento no mesmo dia.",
+      "Retrato corporativo em São Paulo e Grande SP: direção de pose, luz e edição para LinkedIn e site. 30 anos de experiência, nota 4,9 (144 avaliações) e orçamento em até 1 dia útil.",
   },
   "fotografo-de-retratos-corporativos": {
     title: "Retratos Profissionais em São Paulo | Ensaio Executivo",
@@ -19,9 +19,9 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Ensaio de retratos profissionais em São Paulo, em estúdio ou na sua empresa. Fotos com naturalidade e padrão executivo para currículo, LinkedIn e mídia.",
   },
   "fotos-para-clinicas-medicas": {
-    title: "Fotos para Clínicas Médicas em SP | Orçamento Hoje",
+    title: "Fotos para Clínicas Médicas em SP | Orçamento em 1 Dia Útil",
     description:
-      "Fotógrafo de clínicas em São Paulo: fotos de ambientes, recepção, equipe e procedimentos com padrão de credibilidade. Nota 4,9 (144 avaliações) e orçamento no mesmo dia.",
+      "Fotógrafo de clínicas em São Paulo: fotos de ambientes, recepção, equipe e procedimentos com padrão de credibilidade. Nota 4,9 (144 avaliações) e orçamento em até 1 dia útil.",
   },
   "fotografia-de-logistica": {
     title: "Fotografia de Logística em SP | Armazém e Frota",
@@ -31,12 +31,12 @@ export const categorySeo: Record<string, CategorySeo> = {
   "fotografia-industrial-em-sp": {
     title: "Fotografia Industrial em São Paulo | Fábrica e Produção",
     description:
-      "Fotografia industrial em São Paulo: linha de produção, maquinário, equipes e ambientes de fábrica com segurança e padrão técnico. Orçamento no mesmo dia no WhatsApp.",
+      "Fotografia industrial em São Paulo: linha de produção, maquinário, equipes e ambientes de fábrica com segurança e padrão técnico. Orçamento em até 1 dia útil pelo WhatsApp.",
   },
   "fotografo-feiras-stands": {
     title: "Fotógrafo de Feiras e Stands em São Paulo",
     description:
-      "Fotógrafo de feiras e stands em São Paulo: cobertura de expositores, produtos, palestras e visitantes no São Paulo Expo, Expo Center Norte e Anhembi. Prévia no mesmo dia.",
+      "Fotógrafo de feiras e stands em São Paulo: cobertura de expositores, produtos, palestras e visitantes no São Paulo Expo, Expo Center Norte e Anhembi. Prévia no mesmo dia quando prevista no escopo.",
   },
 
   "fotos-profissionais-para-medicos": {
@@ -60,19 +60,19 @@ export const categorySeo: Record<string, CategorySeo> = {
       "Fotógrafo profissional em São Paulo com mais de 30 anos de experiência em produções para empresas, executivos, profissionais, eventos e diferentes segmentos.",
   },
   "fotografia-corporativa-em-sao-paulo": {
-    title: "Fotografia Corporativa em SP | Orçamento no Mesmo Dia",
+    title: "Fotografia Corporativa em SP | Orçamento em 1 Dia Útil",
     description:
-      "Fotografia corporativa em São Paulo: retratos de equipe, ambientes e operação na sua empresa. 30 anos de experiência, nota 4,9 (144 avaliações) e prévia das fotos no mesmo dia.",
+      "Fotografia corporativa em São Paulo: retratos de equipe, ambientes e operação na sua empresa. 30 anos de experiência, nota 4,9 (144 avaliações) e prévia das fotos no mesmo dia quando prevista no escopo.",
   },
   "ensaio-fotografico-para-dentistas": {
     title: "Ensaio Fotográfico para Dentistas em SP | Consultório",
     description:
-      "Ensaio fotográfico para dentistas em São Paulo, no seu consultório: retratos, equipe, ambientes e procedimentos. Fotos que passam confiança ao paciente, com orçamento no mesmo dia.",
+      "Ensaio fotográfico para dentistas em São Paulo, no seu consultório: retratos, equipe, ambientes e procedimentos. Fotos que passam confiança ao paciente, com orçamento em até 1 dia útil.",
   },
   "banco-de-imagens-para-empresas": {
     title: "Banco de Imagens para Empresas | São Paulo",
     description:
-      "Monte o banco de imagens da sua empresa em São Paulo: pessoas, ambientes e processos reais, com direito de uso e acervo organizado por tema. Orçamento no mesmo dia.",
+      "Monte o banco de imagens da sua empresa em São Paulo: pessoas, ambientes e processos reais, com direito de uso e acervo organizado por tema. Orçamento em até 1 dia útil.",
   },
   "fotografo-de-retratos-profissionais": {
     title: "Banco de Imagens Corporativo | Fotografia em São Paulo",
@@ -82,13 +82,13 @@ export const categorySeo: Record<string, CategorySeo> = {
   "fotografia-institucional-em-saopaulo": {
     title: "Fotografia Institucional em SP | Empresas e Liderança",
     description:
-      "Fotografia institucional em São Paulo: retratos de liderança, ambientes e processos para relatórios, sites e comunicação corporativa. Prévia no mesmo dia pelo WhatsApp.",
+      "Fotografia institucional em São Paulo: retratos de liderança, ambientes e processos para relatórios, sites e comunicação corporativa. Prévia no mesmo dia pelo WhatsApp quando prevista no escopo.",
   },
 
   "eventos-corporativos": {
     title: "Fotógrafo de Eventos Empresariais em São Paulo",
     description:
-      "Cobertura fotográfica de eventos empresariais em São Paulo: convenções, palestras, kick-offs e premiações. Seleção no mesmo dia e entrega em 48h.",
+      "Cobertura fotográfica de eventos empresariais em São Paulo: convenções, palestras, kick-offs e premiações. Seleção das melhores imagens no mesmo dia, quando prevista no escopo.",
   },
   "fotografo-de-eventos-corporativos": {
     title: "Fotógrafo de Eventos Corporativos em São Paulo",
@@ -115,7 +115,7 @@ export const categorySeo: Record<string, CategorySeo> = {
   "fotos-aereas": {
     title: "Fotos e Vídeo Aéreo com Drone em São Paulo",
     description:
-      "Fotografia e vídeo aéreo com drone em São Paulo: obras, empreendimentos, plantas industriais e eventos. Piloto habilitado e orçamento no mesmo dia.",
+      "Fotografia e vídeo aéreo com drone em São Paulo: obras, empreendimentos, plantas industriais e eventos. Piloto habilitado e orçamento em até 1 dia útil.",
   },
   "fotografo-de-culinaria": {
     title: "Fotografia de Culinária em São Paulo | Fotos de Pratos",
@@ -135,17 +135,17 @@ export const categorySeo: Record<string, CategorySeo> = {
   "foto-impressa-na-hora": {
     title: "Foto Lembrança Impressa na Hora em SP | Alê Fotógrafo",
     description:
-      "Foto lembrança impressa na hora em eventos corporativos em São Paulo: moldura com a sua marca, entrega em segundos e orçamento no mesmo dia.",
+      "Foto lembrança impressa na hora em eventos corporativos em São Paulo: moldura com a sua marca, entrega em segundos e orçamento em até 1 dia útil.",
   },
   "fotografo-de-grupos-times-e-equipes": {
     title: "Fotógrafo de Grupos, Times e Equipes em São Paulo",
     description:
-      "Foto de grupo e de equipe em São Paulo, na sua empresa ou em estúdio: direção de pose, todos nítidos e olhando para a câmera. Orçamento no mesmo dia.",
+      "Foto de grupo e de equipe em São Paulo, na sua empresa ou em estúdio: direção de pose, todos nítidos e olhando para a câmera. Orçamento em até 1 dia útil.",
   },
   "fotografo-festa-de-confraternizacao": {
     title: "Fotógrafo para Festa da Firma em São Paulo",
     description:
-      "Fotógrafo para festa de confraternização de empresas em São Paulo: chegada, brindes, premiações e clima da equipe. Prévia das fotos no mesmo dia.",
+      "Fotógrafo para festa de confraternização de empresas em São Paulo: chegada, brindes, premiações e clima da equipe. Prévia das fotos no mesmo dia quando prevista no escopo.",
   },
   "fotografo-festa-de-confraternizacao-1-1": {
     title: "Fotografia para Festa de Confraternização em SP",

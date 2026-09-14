@@ -8,7 +8,7 @@ export const faqsComerciais: Faq[] = [
   },
   {
     q: "Quanto custa fotografia corporativa para empresas?",
-    a: "Projetos corporativos são orçados por escopo: número de pessoas retratadas, ambientes, tempo de captação e usos previstos das imagens. Empresas costumam contratar meia diária (retratos de diretoria e equipe) ou diária completa (retratos, ambientes, processos e banco de imagens). Descreva o cenário pelo WhatsApp e recebe uma proposta clara em até 24 horas úteis.",
+    a: "Projetos corporativos são orçados por escopo: número de pessoas retratadas, ambientes, tempo de captação e usos previstos das imagens. Empresas costumam contratar meia diária (retratos de diretoria e equipe) ou diária completa (retratos, ambientes, processos e banco de imagens). Descreva o cenário pelo WhatsApp e recebe uma proposta clara em até 1 dia útil.",
   },
   {
     q: "Qual a diferença entre headshot e retrato corporativo?",
@@ -44,7 +44,7 @@ export const faqsComerciais: Faq[] = [
   },
   {
     q: "Em quanto tempo as fotos ficam prontas?",
-    a: "Retratos e projetos corporativos são entregues em 1 dia útil após a seleção. Em eventos, uma prévia pode ser liberada no mesmo dia para publicação imediata. Se houver prazo de campanha, avise no orçamento que ajustamos o cronograma.",
+    a: "Retratos e projetos corporativos são entregues em até 1 dia útil após a seleção, conforme o escopo. Em eventos, uma prévia pode ser liberada no mesmo dia, quando prevista no escopo, para publicação rápida. Se houver prazo de campanha, avise no orçamento que ajustamos o cronograma.",
   },
   {
     q: "Como pedir orçamento pelo WhatsApp?",

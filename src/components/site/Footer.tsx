@@ -91,7 +91,7 @@ export function Footer() {
             {site.description}
           </p>
           <p className="mt-4 text-xs text-muted-foreground">
-            {site.city}, {site.state} — atendemos toda Grande São Paulo e Brasil.
+            {site.city}, {site.state} — Grande São Paulo e outras regiões do Brasil sob consulta.
           </p>
         </div>
 

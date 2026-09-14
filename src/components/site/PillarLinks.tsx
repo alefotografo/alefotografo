@@ -8,7 +8,7 @@ const PILLARS: Pillar[] = [
   {
     path: "/fotos-corporativas",
     label: "Fotos corporativas em São Paulo",
-    blurb: "Retratos, equipes, escritório, eventos e produtos com entrega em 1 dia útil.",
+    blurb: "Retratos, equipes, escritório e produtos com entrega em até 1 dia útil, conforme o escopo.",
     keys: ["corporativ", "empresa", "equipe", "escritório", "evento", "indústria", "institucional", "banco de imagens"],
   },
   {
@@ -50,7 +50,7 @@ const PILLARS: Pillar[] = [
   {
     path: "/eventos-corporativos",
     label: "Eventos corporativos",
-    blurb: "Congressos, convenções, palestras e premiações em foto e vídeo, com prévia no mesmo dia.",
+    blurb: "Congressos, convenções, palestras e premiações em foto e vídeo, com prévia no mesmo dia quando prevista no escopo.",
     keys: ["evento", "congresso", "convenção", "palestra", "premiação", "kick-off", "feira", "confraterniza"],
   },
 ];

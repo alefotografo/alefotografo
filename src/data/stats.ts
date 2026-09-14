@@ -22,12 +22,12 @@ export const deliveryStat: Record<DeliveryKind, BusinessStat> = {
   retrato: {
     value: "1 dia útil",
     label: "Entrega das fotos",
-    detail: "Imagens tratadas, com cor e retoque natural, entregues em 1 dia útil.",
+    detail: "Imagens tratadas, com cor e retoque natural, entregues em até 1 dia útil, conforme o escopo.",
   },
   evento: {
     value: "Mesmo dia",
     label: "Entrega da seleção",
-    detail: "Seleção das melhores imagens do evento entregue no mesmo dia da cobertura.",
+    detail: "Seleção das melhores imagens no mesmo dia, quando prevista no escopo da cobertura.",
   },
 };
 
@@ -81,7 +81,7 @@ export function deliveryKindForPath(path: string): DeliveryKind {
 export function statsLead(kind: DeliveryKind = "retrato"): string {
   const entrega =
     kind === "evento"
-      ? "a seleção das melhores imagens sai no mesmo dia do evento"
-      : "as fotos tratadas são entregues em 1 dia útil";
-  return `Em 30 anos de carreira já fotografei mais de 300 executivos e atendi mais de 200 empresas em São Paulo. Todo ensaio é fotografado por mim, pessoalmente, e ${entrega}.`;
+      ? "a seleção das melhores imagens sai no mesmo dia, quando prevista no escopo"
+      : "as fotos tratadas são entregues em até 1 dia útil, conforme o escopo";
+  return `Em 30 anos de carreira já fotografei mais de 300 executivos e atendi mais de 200 empresas em São Paulo. A produção é sempre dirigida por mim e realizada por mim e/ou pela minha equipe, conforme o escopo do projeto — e ${entrega}.`;
 }

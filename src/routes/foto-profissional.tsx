@@ -18,7 +18,7 @@ const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const TITLE = "Foto Profissional em SP | Alexandre Machado — Direção de Pose";
 const DESCRIPTION =
-  "Ensaio de foto profissional em São Paulo com direção de pose do início ao fim. Ideal para LinkedIn, currículo e marca pessoal. Fotografado pessoalmente por Alexandre Machado. Solicite orçamento.";
+  "Ensaio de foto profissional em São Paulo com direção de pose do início ao fim. Ideal para LinkedIn, currículo e marca pessoal. Podendo ser fotografado pessoalmente por Alexandre Machado, conforme agenda. Solicite orçamento.";
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",
@@ -82,7 +82,7 @@ const comoFunciona = [
     p: "Você escolhe as imagens preferidas em galeria online. O tratamento inclui ajuste de cor, luz e retoque profissional, sem descaracterizar o rosto.",
   },
   {
-    h: "5. Entrega em 1 dia útil",
+    h: "5. Entrega em até 1 dia útil",
     p: "Arquivos em alta resolução e versões otimizadas para web, em recortes quadrado, vertical e horizontal, com uso comercial liberado sem prazo.",
   },
 ];
@@ -110,17 +110,17 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Em quanto tempo recebo as fotos?",
-    a: "Em 1 dia útil após a sua seleção, por galeria online com download em alta resolução e versões prontas para web e redes sociais.",
+    a: "Em até 1 dia útil após a sua seleção, conforme o escopo, por galeria online com download em alta resolução e versões prontas para web e redes sociais.",
   },
 ];
 
 const ANSWER_BLOCK =
-  "Foto profissional é o retrato feito com luz, direção de pose e tratamento adequados ao uso profissional: LinkedIn, currículo, site, propostas e imprensa. É indicada para quem precisa de uma imagem confiável de si mesmo, em qualquer área. Fotografo em São Paulo, pessoalmente, e entrego as imagens tratadas em 1 dia útil.";
+  "Foto profissional é o retrato feito com luz, direção de pose e tratamento adequados ao uso profissional: LinkedIn, currículo, site, propostas e imprensa. É indicada para quem precisa de uma imagem confiável de si mesmo, em qualquer área. Retratos individuais podem ser realizados por mim pessoalmente, conforme agenda e formato contratado. Entrego as imagens tratadas em até 1 dia útil.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
 ];
 
 export const Route = createFileRoute("/foto-profissional")({

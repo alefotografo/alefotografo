@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Fotos para Médicos e Clínicas em SP | Alexandre Machado";
 const DESCRIPTION =
-  "Retrato profissional de médicos e dentistas em São Paulo, com jaleco ou traje social: confiança sem distância, fotografado pessoalmente por Alexandre Machado. Solicite orçamento.";
+  "Retrato profissional de médicos e dentistas em São Paulo, com jaleco ou traje social: confiança sem distância, podendo ser fotografado pessoalmente por Alexandre Machado, conforme agenda e formato. Solicite orçamento.";
 
 const cfg: ServicePageConfig = {
   path: "/fotos-profissionais-medicos",
@@ -15,11 +15,11 @@ const cfg: ServicePageConfig = {
     "Fotografias profissionais ajudam médicos, clínicas e profissionais da saúde a transmitirem confiança, acolhimento e autoridade em sites, redes sociais, Google, Doctoralia, apresentações e materiais institucionais.",
   /** Bloco de resposta direta: 40–60 palavras, autocontido. */
   answerBlock:
-    "Foto profissional para médicos é o retrato clínico e institucional que transmite confiança antes da primeira consulta: retrato do profissional, da equipe e do consultório. É indicada para médicos, dentistas, psicólogos e clínicas em São Paulo. Fotografo no seu consultório ou em estúdio e entrego as imagens tratadas em 1 dia útil.",
+    "Foto profissional para médicos é o retrato clínico e institucional que transmite confiança antes da primeira consulta: retrato do profissional, da equipe e do consultório. É indicada para médicos, dentistas, psicólogos e clínicas em São Paulo. Realizo a produção no seu consultório ou em estúdio — retratos individuais podem ser conduzidos pessoalmente, conforme agenda — e entrego as imagens tratadas em até 1 dia útil.",
   formats: [
-    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
-    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
   ],
   intro: [
     "O paciente decide antes de entrar na clínica. Retratos e imagens reais do ambiente reduzem a insegurança de quem pesquisa no Google, compara perfis e agenda pelo celular.",
@@ -57,7 +57,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Direção na sessão", p: "Direção de pose, postura e expressão para retratos, além de organização de cena nos ambientes." },
     { h: "4. Seleção", p: "Galeria online com as melhores imagens para escolha por profissional e por ambiente." },
     { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque natural, mantendo credibilidade clínica." },
-    { h: "6. Entrega digital", p: "Alta resolução e versões web em 1 dia útil, com uso comercial liberado sem prazo." },
+    { h: "6. Entrega digital", p: "Alta resolução e versões web em até 1 dia útil, com uso comercial liberado sem prazo." },
   ],
   gallerySlugs: [
     "retratos-de-medicos",
@@ -69,10 +69,10 @@ const cfg: ServicePageConfig = {
   ],
   faqs: [
     { q: "Fazem fotos para médicos e clínicas?", a: "Sim, é um dos serviços mais procurados: retratos dos profissionais, equipe, ambientes e equipamentos, com imagens prontas para site, Google e redes sociais." },
-    { q: "Quanto custa fotografar uma clínica?", a: "O valor depende do número de profissionais retratados, dos ambientes e do tempo de captação. Descreva a clínica pelo WhatsApp e receba a proposta em até 24 horas úteis." },
+    { q: "Quanto custa fotografar uma clínica?", a: "O valor depende do número de profissionais retratados, dos ambientes e do tempo de captação. Descreva a clínica pelo WhatsApp e receba a proposta em até 1 dia útil." },
     { q: "Vocês fotografam no consultório?", a: "Sim. Levamos iluminação e fundo portátil ao consultório ou clínica em toda a Grande São Paulo, sem necessidade de estúdio." },
     { q: "Pacientes aparecem nas fotos?", a: "Somente com autorização. Na maioria dos projetos usamos a própria equipe para simular o atendimento, preservando a privacidade dos pacientes." },
-    { q: "Em quanto tempo recebo as fotos?", a: "Em 1 dia útil após a seleção, por galeria online com download em alta resolução." },
+    { q: "Em quanto tempo recebo as fotos?", a: "Em até 1 dia útil após a seleção, conforme o escopo, por galeria online com download em alta resolução." },
     { q: "Como pedir orçamento pelo WhatsApp?", a: "Envie a especialidade, o bairro da clínica, quantos profissionais serão fotografados e a data pretendida." },
   ],
   wa: "Olá Alexandre, quero orçamento de fotos profissionais para médico/clínica em São Paulo.",

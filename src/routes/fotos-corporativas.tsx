@@ -18,7 +18,7 @@ const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const TITLE = "Fotos Corporativas em SP | Retratos de Equipe — Alexandre Machado";
 const DESCRIPTION =
-  "Eu fotografo o time inteiro no seu escritório com o mesmo fundo, luz e enquadramento: 15 a 25 pessoas em meio período, padrão visual igual para site e LinkedIn. Peça orçamento.";
+  "Fotografamos o time inteiro no seu escritório — produção dirigida por Alexandre Machado, com equipe conforme o escopo — com o mesmo fundo, luz e enquadramento: 15 a 25 pessoas em meio período, padrão visual igual para site e LinkedIn. Peça orçamento.";
 
 const pageFaqs: Faq[] = [
   {
@@ -27,7 +27,7 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Quanto custa uma sessão de fotos corporativas em São Paulo?",
-    a: "O valor depende do número de pessoas fotografadas, do tempo de captação, do local e dos direitos de uso. Retratos em estúdio para pequenos times têm valor por pessoa; produções em escritório, fábrica ou evento são orçadas por hora ou por projeto. Envie o briefing pelo WhatsApp e receba um orçamento em até 24 horas.",
+    a: "O valor depende do número de pessoas fotografadas, do tempo de captação, do local e dos direitos de uso. Retratos em estúdio para pequenos times têm valor por pessoa; produções em escritório, fábrica ou evento são orçadas por hora ou por projeto. Envie o briefing pelo WhatsApp e receba um orçamento em até 1 dia útil.",
   },
   {
     q: "As fotos corporativas podem ser feitas na minha empresa?",
@@ -35,7 +35,7 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Em quanto tempo recebo as fotos tratadas?",
-    a: "Em 1 dia útil para retratos, ambientes e produtos, já com ajuste de cor, retoque profissional e padronização. Em eventos corporativos há entrega em tempo real, com reconhecimento facial para que cada participante encontre suas fotos ainda durante o evento.",
+    a: "Em até 1 dia útil para retratos, ambientes e produtos, conforme o escopo, já com ajuste de cor, retoque profissional e padronização. Em eventos corporativos há entrega de prévia no mesmo dia quando prevista no escopo, com reconhecimento facial para que cada participante encontre suas fotos ainda durante o evento.",
   },
   {
     q: "A empresa fica com os direitos das imagens?",
@@ -44,13 +44,13 @@ const pageFaqs: Faq[] = [
 ];
 
 const ANSWER_BLOCK =
-  "Fotografia corporativa é o conjunto de imagens que representa uma empresa: retratos da equipe e da diretoria, escritório, operação e eventos internos. É indicada para empresas que precisam de material próprio para site, LinkedIn, propostas e imprensa. Fotografo em São Paulo e entrego as imagens tratadas em 1 dia útil.";
+  "Fotografia corporativa é o conjunto de imagens que representa uma empresa: retratos da equipe e da diretoria, escritório, operação e eventos internos. É indicada para empresas que precisam de material próprio para site, LinkedIn, propostas e imprensa. Fotografamos em São Paulo e entregamos as imagens tratadas em até 1 dia útil, conforme o escopo.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
-  { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
-  { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia" },
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+  { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
+  { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia, quando prevista no escopo" },
 ];
 
 export const Route = createFileRoute("/fotos-corporativas")({
@@ -207,7 +207,7 @@ function FotosCorporativasPage() {
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
             Retratos profissionais, equipes, escritório, eventos e produtos — produzidos por{" "}
             {site.fullName}, com 30 anos fotografando empresas na Grande São Paulo. Tratamento
-            profissional e entrega em 1 dia útil.
+            profissional e entrega em até 1 dia útil.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

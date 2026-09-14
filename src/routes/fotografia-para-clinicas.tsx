@@ -22,7 +22,7 @@ const HERO_IMG = `${CDN}/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinic
 
 const TITLE = "Fotos para Clínicas em SP | Equipe e Ambientes — Alexandre Machado";
 const DESCRIPTION =
-  "Retratos da equipe da clínica e imagens de recepção, salas e atendimento em São Paulo — tudo em uma agenda, fotografado pessoalmente por Alexandre Machado. Solicite orçamento.";
+  "Retratos da equipe da clínica e imagens de recepção, salas e atendimento em São Paulo — tudo em uma agenda, podendo ser fotografado pessoalmente por Alexandre Machado, conforme formato contratado. Solicite orçamento.";
 
 const pageFaqs: Faq[] = [
   {
@@ -39,7 +39,7 @@ const pageFaqs: Faq[] = [
   },
   {
     q: "Quanto custa fotografia para clínica em São Paulo?",
-    a: "O orçamento depende do tempo de captação, do número de profissionais retratados e da quantidade de ambientes. Clínicas pequenas normalmente resolvem em meia diária; centros médicos com várias unidades são orçados por projeto. Envie o briefing pelo WhatsApp e receba o valor em até 24 horas.",
+    a: "O orçamento depende do tempo de captação, do número de profissionais retratados e da quantidade de ambientes. Clínicas pequenas normalmente resolvem em meia diária; centros médicos com várias unidades são orçados por projeto. Envie o briefing pelo WhatsApp e receba o valor em até 1 dia útil.",
   },
   {
     q: "As fotos servem para site, Google e redes sociais?",
@@ -55,12 +55,12 @@ const clinicCategorySlugs = [
 ];
 
 const ANSWER_BLOCK =
-  "Fotografia para clínicas é o conjunto de imagens da estrutura e da equipe de saúde: retrato dos profissionais, recepção, consultórios e atendimento. É indicada para clínicas médicas, odontológicas e estéticas em São Paulo. Fotografo no seu endereço, com respeito à rotina de pacientes, e entrego as imagens tratadas em 1 dia útil.";
+  "Fotografia para clínicas é o conjunto de imagens da estrutura e da equipe de saúde: retrato dos profissionais, recepção, consultórios e atendimento. É indicada para clínicas médicas, odontológicas e estéticas em São Paulo. Realizo a produção no seu endereço, com respeito à rotina de pacientes, e entrego as imagens tratadas em até 1 dia útil.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
-  { formato: "Consultório e recepção", onde: "Na clínica, com a operação em funcionamento", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+  { formato: "Consultório e recepção", onde: "Na clínica, com a operação em funcionamento", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
 ];
 
 export const Route = createFileRoute("/fotografia-para-clinicas")({

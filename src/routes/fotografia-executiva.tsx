@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Retrato Executivo em SP | Alexandre Machado — Diretoria e Sócios";
 const DESCRIPTION =
-  "Retrato de liderança fotografado pessoalmente por Alexandre Machado no seu escritório ou em estúdio: 15 minutos por executivo e padrão visual igual para toda a diretoria. Orçamento pelo WhatsApp.";
+  "Retrato de liderança que pode ser fotografado pessoalmente por Alexandre Machado, conforme agenda, no seu escritório ou em estúdio: 15 minutos por executivo e padrão visual igual para toda a diretoria. Orçamento pelo WhatsApp.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografia-executiva",
@@ -15,11 +15,11 @@ const cfg: ServicePageConfig = {
     "Retratos executivos ajudam líderes, sócios, diretores, médicos, advogados e empresários a fortalecerem sua presença profissional em canais digitais e materiais institucionais.",
   /** Bloco de resposta direta: 40–60 palavras, autocontido. */
   answerBlock:
-    "Fotografia executiva é o retrato profissional de lideranças feito com padrão visual único para toda a diretoria: mesma luz, mesmo fundo, mesmo enquadramento. É indicada para C-level, sócios, conselheiros, gestores e porta-vozes da empresa. Fotografo no seu escritório, em estúdio ou em locação em São Paulo, e entrego as imagens tratadas em 1 dia útil.",
+    "Fotografia executiva é o retrato profissional de lideranças feito com padrão visual único para toda a diretoria: mesma luz, mesmo fundo, mesmo enquadramento. É indicada para C-level, sócios, conselheiros, gestores e porta-vozes da empresa. Realizo a produção no seu escritório, em estúdio ou em locação em São Paulo — retratos individuais podem ser conduzidos pessoalmente por Alexandre Machado, conforme agenda e formato — e entrego as imagens tratadas em até 1 dia útil.",
   formats: [
-    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
-    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
   ],
   intro: [
     "A fotografia executiva trata o retrato como parte da comunicação da empresa: mesma luz, mesmo fundo e mesmo enquadramento para toda a liderança, com direção de pose e expressão adequada ao cargo.",
@@ -57,7 +57,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Direção na sessão", p: "Direção contínua de pose, postura e expressão — não é necessário saber posar." },
     { h: "4. Seleção", p: "As imagens ficam em galeria online para escolha por pessoa ou por área." },
     { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque sem descaracterizar o rosto, com padrão igual para toda a liderança." },
-    { h: "6. Entrega digital", p: "Download em alta resolução e versões para web em 1 dia útil, com uso comercial liberado." },
+    { h: "6. Entrega digital", p: "Download em alta resolução e versões para web em até 1 dia útil, com uso comercial liberado." },
   ],
   gallerySlugs: [
     "retrato-corporativo",
@@ -71,7 +71,7 @@ const cfg: ServicePageConfig = {
     { q: "Vocês atendem no escritório da empresa?", a: "Sim. Levamos iluminação profissional e fundo portátil até o seu endereço em toda a Grande São Paulo, reduzindo o tempo de afastamento dos executivos." },
     { q: "Quanto tempo dura a sessão?", a: "Cerca de uma hora para retratos individuais e de 10 a 15 minutos por pessoa em sessões de equipe, organizadas por blocos de horário." },
     { q: "As fotos recebem tratamento?", a: "Sim. Todas as imagens entregues passam por ajuste de cor, luz e retoque profissional, mantendo a naturalidade do rosto." },
-    { q: "Em quanto tempo recebo as fotos?", a: "Em 1 dia útil após a sua seleção, por galeria online com download em alta resolução." },
+    { q: "Em quanto tempo recebo as fotos?", a: "Em até 1 dia útil após a sua seleção, conforme o escopo, por galeria online com download em alta resolução." },
     { q: "Como pedir orçamento pelo WhatsApp?", a: "Envie quantas pessoas serão fotografadas, o bairro ou cidade e a data pretendida. Com isso o orçamento sai fechado, sem reunião prévia." },
   ],
   wa: "Olá Alexandre, quero agendar um retrato executivo. Pode me passar valores e disponibilidade?",

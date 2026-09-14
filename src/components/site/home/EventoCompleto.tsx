@@ -14,7 +14,7 @@ const SOLUCOES = [
   },
   {
     title: "Fotos em tempo real",
-    texto: "Disponibilização das imagens durante o evento para utilização imediata pela organização e participantes.",
+    texto: "Seleção de imagens durante o evento para publicação rápida, quando contratada.",
   },
   {
     title: "Reconhecimento facial",

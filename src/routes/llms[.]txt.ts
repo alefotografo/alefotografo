@@ -43,8 +43,8 @@ Alexandre Machado atua desde ${site.foundingYear} e tem mais de 30 anos de carre
 
 - Executivos fotografados: mais de 300, em São Paulo.
 - Empresas atendidas: mais de 200, de escritórios a clínicas e indústrias.
-- Prazo de entrega de retratos: fotos tratadas em 1 dia útil.
-- Prazo de entrega de eventos: seleção das melhores imagens no mesmo dia da cobertura.
+- Prazo de entrega de retratos: fotos tratadas em até 1 dia útil, conforme o escopo.
+- Prazo de entrega de eventos: seleção das melhores imagens no mesmo dia da cobertura, quando prevista no escopo.
 - Experiência: 30 anos de carreira.
 - Reputação: nota ${aggregateRatingSchema.ratingValue} em ${aggregateRatingSchema.reviewCount} avaliações de clientes.
 
@@ -82,11 +82,11 @@ const PAGINAS = `## Páginas principais
 const FAQ = `## Perguntas frequentes (respostas publicadas no site)
 
 - **Quanto custa uma foto profissional em São Paulo?** O valor depende do formato — estúdio, escritório da empresa ou locação externa — e da quantidade de fotos tratadas na entrega. Sessões individuais para LinkedIn, currículo e site resolvem em cerca de uma hora de captação e o orçamento é fechado por WhatsApp.
-- **Quanto custa fotografia corporativa para empresas?** Orçado por escopo: número de pessoas, ambientes, tempo de captação e usos das imagens. Empresas costumam contratar meia diária (diretoria e equipe) ou diária completa (retratos, ambientes, processos e banco de imagens), com proposta em até 24 horas úteis.
+- **Quanto custa fotografia corporativa para empresas?** Orçado por escopo: número de pessoas, ambientes, tempo de captação e usos das imagens. Empresas costumam contratar meia diária (diretoria e equipe) ou diária completa (retratos, ambientes, processos e banco de imagens), com proposta em até 1 dia útil.
 - **Fotografam no escritório da empresa?** Sim, com iluminação profissional e fundos portáteis, em toda a Grande São Paulo.
 - **Fazem foto para LinkedIn?** Sim. Inclui direção de pose e expressão e entrega em versões quadrada, vertical e horizontal.
 - **Fazem retratos de equipes inteiras?** Sim, com fundo, luz, enquadramento e tratamento padronizados, organizados por blocos de horário e entrega por nome.
-- **Em quanto tempo as fotos ficam prontas?** Retratos e projetos corporativos em 1 dia útil após a seleção; em eventos, prévia no mesmo dia.
+- **Em quanto tempo as fotos ficam prontas?** Retratos e projetos corporativos em até 1 dia útil após a seleção, conforme o escopo; em eventos, prévia no mesmo dia quando prevista no escopo.
 - **Como recebo as fotos?** Galeria online com download em alta resolução, versões otimizadas para web e cessão de uso comercial sem prazo.
 - **Também produzem vídeo institucional?** Sim, muitas vezes na mesma diária da fotografia.
 - **Atende ABC Paulista e Alphaville?** Sim — Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Alphaville (Barueri) têm páginas próprias listadas acima.

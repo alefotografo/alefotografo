@@ -35,7 +35,7 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
               name: "Quanto custa uma sessão de fotografia corporativa em São Paulo?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Uma sessão de fotografia corporativa em São Paulo varia entre R$ 800 e R$ 3.000 dependendo do número de fotos, locação e uso. O Alê Fotógrafo oferece pacotes para equipes e individuais, com entrega em até 5 dias úteis.",
+                text: "O valor depende do escopo: número de pessoas, locação, duração e uso das imagens. O orçamento fechado é enviado em até 1 dia útil após o briefing.",
               },
             },
             {
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
               name: "Quanto tempo dura uma sessão de fotos corporativas?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Uma sessão individual de fotografia corporativa dura entre 30 minutos e 1 hora. Para equipes corporativas, planejamos roteiros de 15 a 20 minutos por colaborador para garantir qualidade e eficiência.",
+                text: "Uma sessão individual de fotografia corporativa dura entre 30 minutos e 1 hora. Para equipes corporativas, planejamos roteiros em geral de 15 a 20 minutos por colaborador para garantir qualidade e eficiência.",
               },
             },
             {

@@ -182,7 +182,7 @@ function ServicosPage() {
             Todos os serviços de foto e vídeo
           </h1>
           <p className="mt-5 max-w-2xl text-muted-foreground md:text-lg">
-            Escolha pelo objetivo ou pelo seu segmento. Orçamento no mesmo dia em São Paulo.
+            Escolha pelo objetivo ou pelo seu segmento. Orçamento em até 1 dia útil.
           </p>
           <a
             href={waLink(

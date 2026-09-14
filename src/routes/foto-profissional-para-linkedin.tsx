@@ -39,12 +39,12 @@ const pageFaqs: Faq[] = [
 ];
 
 const ANSWER_BLOCK =
-  "Foto profissional para LinkedIn é o retrato enquadrado para o formato circular da plataforma, com fundo neutro, expressão profissional e recorte que mantém o rosto legível em miniatura. É indicada para executivos, profissionais liberais e quem busca recolocação. Fotografo em São Paulo e entrego as imagens tratadas em 1 dia útil.";
+  "Foto profissional para LinkedIn é o retrato enquadrado para o formato circular da plataforma, com fundo neutro, expressão profissional e recorte que mantém o rosto legível em miniatura. É indicada para executivos, profissionais liberais e quem busca recolocação. Fotografo em São Paulo e entrego as imagens tratadas em até 1 dia útil, conforme o escopo.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em 1 dia útil" },
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil" },
+  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
 ];
 
 export const Route = createFileRoute("/foto-profissional-para-linkedin")({
@@ -135,7 +135,7 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
               name: "Quanto tempo leva a sessão de foto para LinkedIn?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "A sessão de foto profissional para LinkedIn dura entre 20 e 40 minutos. As fotos editadas são entregues em até 3 dias úteis, prontas para upload na plataforma.",
+                text: "A sessão de foto profissional para LinkedIn dura entre 20 e 40 minutos. As fotos editadas são entregues em até 1 dia útil, conforme o escopo, prontas para upload na plataforma.",
               },
             },
           ],
@@ -150,7 +150,7 @@ const passos = [
   { h: "1. Briefing rápido", p: "Definimos o objetivo do perfil, o estilo de fundo e o figurino mais adequado ao seu setor." },
   { h: "2. Sessão de 20 a 40 min", p: "Direção de pose e expressão em estúdio ou no seu escritório, com revisão das fotos na hora." },
   { h: "3. Seleção", p: "Você escolhe as favoritas em uma galeria online, sem pressa." },
-  { h: "4. Tratamento e entrega", p: "Retoque natural, ajuste de cor e recortes prontos para LinkedIn, site e currículo em até 3 dias úteis." },
+  { h: "4. Tratamento e entrega", p: "Retoque natural, ajuste de cor e recortes prontos para LinkedIn, site e currículo em até 1 dia útil, conforme o escopo." },
 ];
 
 const checklist = [

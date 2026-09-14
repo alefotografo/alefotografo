@@ -4,7 +4,7 @@ import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/compon
 
 const TITLE = "Fotos de Equipe em Feiras de Negócios — SP | Alexandre Machado";
 const DESCRIPTION =
-  "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia. Peça orçamento.";
+  "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia quando prevista no escopo. Peça orçamento.";
 
 const cfg: ServicePageConfig = {
   path: "/fotografo-de-feira-de-negocios",
@@ -15,15 +15,15 @@ const cfg: ServicePageConfig = {
     "Retratos individuais no stand, foto do time completo e registro de atendimentos reais — material de imagem profissional aproveitando o dia em que todos estão juntos.",
   /** Bloco de resposta direta: 40–60 palavras, autocontido. */
   answerBlock:
-    "Fotografia de feira de negócios é a cobertura de stand, congresso e exposição: retratos da equipe comercial no estande, atendimento a visitantes, palestras e ambientação da marca. É indicada para expositores e organizadores em São Paulo. Fotografo durante todo o evento e entrego a seleção no mesmo dia.",
+    "Fotografia de feira de negócios é a cobertura de stand, congresso e exposição: retratos da equipe comercial no estande, atendimento a visitantes, palestras e ambientação da marca. É indicada para expositores e organizadores em São Paulo. Dirijo a cobertura da feira, com equipe conforme o escopo, e entrego a seleção no mesmo dia quando prevista no escopo.",
   formats: [
-    { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia" },
-    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
+    { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia, quando prevista no escopo" },
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
   ],
   intro: [
     "Feira é o raro momento em que o time comercial inteiro está no mesmo lugar, arrumado e em ação. Aproveito isso para produzir retratos individuais no stand, fotos do time completo e imagens de atendimento real — material que serve o ano inteiro em LinkedIn, propostas e apresentações.",
-    "Atendo os principais pavilhões de São Paulo — São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo e Pro Magno — com prévia de imagens no mesmo dia.",
+    "Atendo os principais pavilhões de São Paulo — São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo e Pro Magno — com prévia de imagens no mesmo dia quando prevista no escopo.",
   ],
   teamSiteNote:
     "Cobertura completa da feira, com vários dias, múltiplos ambientes e mais de um fotógrafo simultâneo, é atendida pela equipe Alê Fotógrafo em",
@@ -35,7 +35,7 @@ const cfg: ServicePageConfig = {
     { h: "Produtos e demonstrações", p: "Fotos dos produtos expostos e das demonstrações técnicas, prontas para catálogo e site." },
     { h: "Equipe em ação", p: "Time comercial atendendo, reuniões e apresentações — imagens úteis para LinkedIn e relatórios." },
     { h: "Palestras e painéis", p: "Cobertura de palestras, mesas e premiações com registro do palco, plateia e telão." },
-    { h: "Prévia no mesmo dia", p: "Seleção tratada entregue durante o evento para publicação em tempo real." },
+    { h: "Prévia no mesmo dia", p: "Quando prevista no escopo, seleção tratada entregue durante o evento para publicação rápida." },
   ],
   paraQuem: [
     "Expositores e patrocinadores",
@@ -57,9 +57,9 @@ const cfg: ServicePageConfig = {
     { h: "1. Briefing do evento", p: "Você informa pavilhão, número do stand, dias, horários e prioridades de registro." },
     { h: "2. Roteiro por dia", p: "Definimos os blocos de cobertura: montagem pronta, horários de pico, palestras e reuniões." },
     { h: "3. Cobertura", p: "Captação discreta com equipamento adequado à iluminação mista dos pavilhões." },
-    { h: "4. Prévia no mesmo dia", p: "Uma seleção tratada é enviada ainda durante o evento para publicação imediata." },
+    { h: "4. Prévia no mesmo dia", p: "Uma seleção tratada, quando contratada, é enviada durante o evento para publicação rápida." },
     { h: "5. Tratamento completo", p: "Ajuste de cor, luz e retoque em todas as imagens selecionadas." },
-    { h: "6. Entrega final", p: "Galeria online com download em alta resolução em 1 dia útil e uso comercial liberado." },
+    { h: "6. Entrega final", p: "Galeria online com download em alta resolução em até 1 dia útil e uso comercial liberado." },
   ],
   gallerySlugs: [
     "fotografo-feiras-stands",
@@ -70,11 +70,11 @@ const cfg: ServicePageConfig = {
   ],
   faqs: [
     { q: "Quanto custa a cobertura de uma feira de negócios?", a: "O valor é calculado por período (algumas horas, meia diária ou diária) e pelo número de dias do evento. Envie o pavilhão e as datas pelo WhatsApp e receba o orçamento fechado." },
-    { q: "Consigo fotos para publicar durante a feira?", a: "Sim. Uma prévia tratada é entregue no mesmo dia, geralmente em poucas horas após o bloco de cobertura." },
+    { q: "Consigo fotos para publicar durante a feira?", a: "Sim. Uma prévia tratada é entregue no mesmo dia, quando prevista no escopo, geralmente em poucas horas após o bloco de cobertura." },
     { q: "Em quais pavilhões vocês atendem?", a: "São Paulo Expo, Expo Center Norte, Distrito Anhembi, Transamerica Expo, Pro Magno e outros espaços da Grande São Paulo." },
     { q: "Também fazem vídeo na feira?", a: "Sim. É possível combinar foto e vídeo — teaser curto para redes sociais e depoimentos de clientes gravados no stand." },
     { q: "É preciso credenciamento?", a: "A maioria dos eventos exige credencial de fotógrafo. Você envia os dados solicitados pela organização e cuidamos do restante." },
-    { q: "Quantas fotos são entregues?", a: "Depende do tempo de cobertura; uma diária costuma gerar algumas centenas de imagens tratadas, entregues em galeria organizada." },
+    { q: "Quantas fotos são entregues?", a: "Depende do tempo de cobertura; o volume de imagens varia conforme duração, dinâmica e escopo da cobertura, entregue em galeria organizada." },
   ],
   wa: "Olá Alexandre, preciso de cobertura fotográfica em uma feira de negócios. Pode me passar valores?",
   ctaLabel: "Pedir orçamento para a feira",

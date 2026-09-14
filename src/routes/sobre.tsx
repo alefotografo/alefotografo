@@ -95,8 +95,8 @@ function SobrePage() {
             </h1>
             <p className="mt-6 text-muted-foreground md:text-lg">
               Mais de 30 anos fotografando pessoas em São Paulo: retrato profissional, headshot para
-              LinkedIn, executivos, sócios e equipes. Quem atende, dirige o ensaio e entrega as
-              imagens é sempre eu — não há repasse para terceiros.
+              LinkedIn, executivos, sócios e equipes. Em retratos individuais é sempre eu quem
+              fotografa; em produções maiores, quem dirige sou eu.
             </p>
           </div>
           <div className="md:col-span-5">
@@ -130,8 +130,8 @@ function SobrePage() {
           <p className="text-muted-foreground">
             A maior parte das pessoas que fotografo diz, no começo, que não se sai bem em foto. Isso
             é direção, não genética: eu conduzo postura, ângulo de rosto, olhar e respiração durante
-            todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem está atrás
-            da câmera em todos os projetos deste site.
+            todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem dirige
+            todos os projetos deste site — e quem fotografa nos retratos individuais.
           </p>
           <p className="text-muted-foreground">
             Antes de fotografar, alinho o objetivo: onde a imagem vai ser usada, que público vai
@@ -162,7 +162,7 @@ function SobrePage() {
               { icon: Target, title: "Direção de pose", desc: "Eu conduzo postura, ângulo, olhar e expressão do início ao fim do ensaio." },
               { icon: Camera, title: "Luz de retrato", desc: "30 anos de bagagem em iluminação de rosto, composição e retoque natural de pele." },
               { icon: Zap, title: "Agenda enxuta", desc: "10 a 15 minutos por pessoa no seu escritório, sem travar a operação do time." },
-              { icon: Award, title: "Atendimento direto", desc: "Você fala comigo do orçamento à entrega — sem intermediários e sem substituição." },
+              { icon: Award, title: "Atendimento direto", desc: "Você fala comigo do orçamento à entrega — sem intermediários." },
             ].map((p) => (
               <div key={p.title} className="rounded-sm border border-border bg-background p-6">
                 <p.icon className="text-ember" size={26} strokeWidth={1.5} />

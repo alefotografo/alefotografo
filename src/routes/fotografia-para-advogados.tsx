@@ -15,11 +15,11 @@ const cfg: ServicePageConfig = {
     "Retratos profissionais e fotografias institucionais ajudam escritórios de advocacia a transmitirem seriedade, confiança e posicionamento premium.",
   /** Bloco de resposta direta: 40–60 palavras, autocontido. */
   answerBlock:
-    "Fotografia para advogados é o retrato institucional de sócios, associados e escritório, com linguagem sóbria adequada ao setor jurídico. É indicada para bancas de qualquer tamanho, advogados autônomos e departamentos jurídicos em São Paulo. Fotografo no escritório ou em estúdio e entrego as imagens tratadas em 1 dia útil.",
+    "Fotografia para advogados é o retrato institucional de sócios, associados e escritório, com linguagem sóbria adequada ao setor jurídico. É indicada para bancas de qualquer tamanho, advogados autônomos e departamentos jurídicos em São Paulo. Realizo a produção no escritório ou em estúdio e entrego as imagens tratadas em até 1 dia útil, conforme o escopo.",
   formats: [
-    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em 1 dia útil" },
-    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em 1 dia útil" },
-    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em 1 dia útil" },
+    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
+    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
   ],
   intro: [
     "No jurídico, a percepção de solidez começa antes da primeira reunião. Retratos padronizados de sócios e equipe, somados a imagens reais do escritório, sustentam o posicionamento do escritório em site, LinkedIn e propostas.",
@@ -57,7 +57,7 @@ const cfg: ServicePageConfig = {
     { h: "3. Direção na sessão", p: "Fotografamos por blocos de horário, com direção de pose e postura, sem interromper a operação." },
     { h: "4. Seleção", p: "Galeria online organizada por nome e por área para escolha das imagens." },
     { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque discreto, adequado ao tom sóbrio do setor." },
-    { h: "6. Entrega digital", p: "Alta resolução e versões web em 1 dia útil, com uso comercial liberado sem prazo." },
+    { h: "6. Entrega digital", p: "Alta resolução e versões web em até 1 dia útil, com uso comercial liberado sem prazo." },
   ],
   gallerySlugs: [
     "fotografia-para-escritorios-de-advocacia",

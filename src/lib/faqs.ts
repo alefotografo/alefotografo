@@ -16,11 +16,11 @@ export const faqs: Faq[] = [
   },
   {
     q: "Quem fotografa o meu ensaio: você ou um assistente?",
-    a: "Eu. Em todos os projetos contratados por este site sou eu quem atende, dirige o ensaio, fotografa e finaliza as imagens. Não há repasse para terceiros nem substituição de última hora — se eu não tiver a data disponível, eu digo, em vez de mandar outra pessoa.",
+    a: "Os projetos são dirigidos por mim e executados por mim e por profissionais da equipe, conforme o escopo. Em retratos individuais, quem fotografa sou eu. Se eu não tiver a data disponível, eu digo, em vez de prometer o impossível.",
   },
   {
     q: "Quanto custa um retrato profissional em São Paulo?",
-    a: "Depende do número de pessoas, do local (meu estúdio ou o seu escritório) e da quantidade de imagens finalizadas. Ensaios individuais de retrato têm valor fechado; para times, o cálculo é por bloco de horas, com custo por pessoa caindo conforme o volume. Me envie quantas pessoas e a data desejada pelo WhatsApp e eu devolvo o orçamento no mesmo dia.",
+    a: "Depende do número de pessoas, do local (meu estúdio ou o seu escritório) e da quantidade de imagens finalizadas. Ensaios individuais de retrato têm valor fechado; para times, o cálculo é por bloco de horas, com custo por pessoa caindo conforme o volume. Me envie quantas pessoas e a data desejada pelo WhatsApp e eu devolvo o orçamento em até 1 dia útil.",
   },
   {
     q: "Nunca fico bem em foto. Isso tem solução?",
@@ -28,7 +28,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Quanto tempo dura um ensaio de retrato e quando recebo as fotos?",
-    a: "Um retrato individual leva de 20 a 40 minutos; em ensaios de equipe, de 10 a 15 minutos por pessoa. As imagens tratadas ficam prontas em 1 dia útil, com ajuste de cor, retoque natural de pele e cortes já prontos para LinkedIn, site e apresentações. Em cobertura de evento, a seleção das melhores imagens sai no mesmo dia.",
+    a: "Um retrato individual leva de 20 a 40 minutos; em ensaios de equipe, de 10 a 15 minutos por pessoa. As imagens tratadas ficam prontas em até 1 dia útil, conforme o escopo, com ajuste de cor, retoque natural de pele e cortes já prontos para LinkedIn, site e apresentações. Em cobertura de evento, a seleção das melhores imagens sai no mesmo dia, quando prevista no escopo.",
   },
   {
     q: "Você fotografa no escritório da empresa?",
@@ -64,7 +64,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Como pedir um orçamento?",
-    a: "Me chame no WhatsApp ou use o formulário de contato com quatro informações: quantas pessoas serão fotografadas, onde, a data desejada e onde as imagens serão usadas. Com isso eu devolvo escopo, prazo e valor fechado no mesmo dia útil.",
+    a: "Me chame no WhatsApp ou use o formulário de contato com quatro informações: quantas pessoas serão fotografadas, onde, a data desejada e onde as imagens serão usadas. Com isso eu devolvo escopo, prazo e valor fechado em até 1 dia útil.",
   },
 ];
 

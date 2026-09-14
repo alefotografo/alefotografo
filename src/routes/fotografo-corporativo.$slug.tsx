@@ -18,20 +18,29 @@ import { autoLink } from "@/lib/autoLink";
 import { serviceFor } from "@/lib/serviceMatch";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
-const retratoCorporativoFaqs = [
-  {
-    q: "Qual a diferença entre headshot e retrato corporativo?",
-    a: "Headshot é uma foto de busto focada no rosto, usada em LinkedIn e cartões de visita. Retrato corporativo é mais elaborado: inclui contexto do ambiente de trabalho, transmite mais personalidade e é ideal para sites institucionais e press kits.",
-  },
-  {
-    q: "O retrato corporativo pode ser feito no escritório da empresa?",
-    a: "Sim. Realizamos sessões no estúdio ou diretamente na empresa do cliente em São Paulo. A locação no ambiente corporativo autentica a imagem e facilita a logística para equipes grandes.",
-  },
-  {
-    q: "Quantas fotos são entregues em um retrato corporativo?",
-    a: "Os pacotes de retrato corporativo incluem de 5 a 20 fotos editadas por colaborador, dependendo do pacote escolhido. Todas entregues em alta resolução em até 5 dias úteis.",
-  },
-];
+/**
+ * Slugs de galerias cuja intenção é retrato/ensaio/foto profissional e que
+ * podem reutilizar o pool de FAQs de retrato. Galerias FORA desta lista e sem
+ * `categoryEditorial.faqs` não exibem FAQ nem FAQPage — o fallback universal
+ * `faqs.slice(0,5)` colocava perguntas de ensaio em páginas de indústria,
+ * logística, gastronomia etc. (auditoria P3, 2026-09-14).
+ */
+const RETRATO_FAQ_SLUGS = new Set([
+  "fotografo-de-retratos-corporativos",
+  "retratos-de-medicas",
+  "ensaio-feminino",
+  "ensaio-fotografico-para-dentistas",
+  "ensaio-fotografico-para-redes-sociais",
+  "fotos-profissionais-para-medicos",
+]);
+
+/** FAQ da página: editorial específico → pool de retrato (allowlist) → nenhum. */
+function pageFaqs(slug: string) {
+  const editorial = editorialFor(slug);
+  if (editorial?.faqs?.length) return editorial.faqs;
+  if (RETRATO_FAQ_SLUGS.has(slug)) return faqs.slice(0, 5);
+  return null;
+}
 
 
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
@@ -99,18 +108,22 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             aggregateRating: aggregateRatingSchema,
           }),
         },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: (params.slug === "retrato-corporativo" ? retratoCorporativoFaqs : (editorialFor(params.slug)?.faqs ?? faqs.slice(0, 5))).map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        },
+        ...(pageFaqs(params.slug)?.length
+          ? [
+              {
+                type: "application/ld+json" as const,
+                children: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: pageFaqs(params.slug)!.map((f) => ({
+                    "@type": "Question",
+                    name: f.q,
+                    acceptedAnswer: { "@type": "Answer", text: f.a },
+                  })),
+                }),
+              },
+            ]
+          : []),
       ],
     };
   },
@@ -219,18 +232,20 @@ function CategoryPage() {
       </section>
 
 
-      <section className="border-t border-border">
-        <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
-          <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
-            Perguntas frequentes sobre {cat.title.toLowerCase()}
-          </h2>
-          <FaqList items={editorial?.faqs ?? faqs.slice(0, 5)} />
-          <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
-            Ver todas as perguntas →
-          </Link>
-        </div>
-      </section>
+      {pageFaqs(cat.slug) && (
+        <section className="border-t border-border">
+          <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
+            <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
+              Perguntas frequentes sobre {cat.title.toLowerCase()}
+            </h2>
+            <FaqList items={pageFaqs(cat.slug)!} />
+            <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
+              Ver todas as perguntas →
+            </Link>
+          </div>
+        </section>
+      )}
 
 
 

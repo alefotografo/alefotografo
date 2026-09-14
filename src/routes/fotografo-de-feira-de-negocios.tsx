@@ -64,7 +64,6 @@ const cfg: ServicePageConfig = {
   gallerySlugs: [
     "fotografo-feiras-stands",
     "fotografo-de-eventos-corporativos",
-    "eventos-corporativos",
     "fotografia-corporativa-em-sao-paulo",
     "banco-de-imagens-para-empresas",
     "fotografo-de-grupos-times-e-equipes",

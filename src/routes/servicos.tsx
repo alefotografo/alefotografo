@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
@@ -233,7 +234,9 @@ function ServicosPage() {
           </Link>
         </div>
         <div className="mt-8 grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          {categories.map((c) => (
+          {categories
+            .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
+            .map((c) => (
             <Link
               key={c.slug}
               to="/fotografo-corporativo/$slug"

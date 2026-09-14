@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, videos } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { SmartImage } from "@/components/site/SmartImage";
@@ -256,10 +257,11 @@ function PortfolioHub() {
         <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16">
           <h2 className="font-display text-2xl font-semibold md:text-3xl">Índice completo de galerias</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-            Todas as {categories.length} galerias, em ordem alfabética.
+            Todas as {categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).length} galerias, em ordem alfabética.
           </p>
           <ul className="mt-8 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[...categories]
+              .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
               .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"))
               .map((c) => (
                 <li key={c.slug}>

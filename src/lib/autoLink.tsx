@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { categories, type Category } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 
 // Normalize string: lowercase + strip accents
 function norm(s: string): string {
@@ -109,6 +110,10 @@ function getIndex(): PhraseEntry[] {
   if (PHRASE_INDEX) return PHRASE_INDEX;
   const list: PhraseEntry[] = [];
   for (const c of categories) {
+    // Slugs consolidados (301) ficam de fora do índice: a frase continua
+    // casando com a categoria vencedora equivalente, e nenhum link interno
+    // passa por redirect (auditoria P4, 2026-09-14).
+    if (REDIRECTED_CATEGORY_SLUGS.has(c.slug)) continue;
     for (const p of phrasesFor(c)) {
       list.push({ slug: c.slug, phrase: p, normalized: norm(p) });
     }

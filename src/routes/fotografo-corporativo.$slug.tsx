@@ -11,6 +11,7 @@ import { LinkHub } from "@/components/site/LinkHub";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FaqList } from "@/components/site/Faq";
 import { faqs } from "@/lib/faqs";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { editorialFor } from "@/data/categoryEditorial";
 import { EditorialBlock } from "@/components/site/EditorialBlock";
 import { relatedCategories, relatedPosts } from "@/lib/related";
@@ -141,9 +142,12 @@ function shorten(s: string, max = 180): string {
 
 function CategoryPage() {
   const cat = Route.useLoaderData();
-  const idx = categories.findIndex((c) => c.slug === cat.slug);
-  const prev = categories[(idx - 1 + categories.length) % categories.length];
-  const next = categories[(idx + 1) % categories.length];
+  // Navegação anterior/próxima ignora slugs consolidados (301): nunca linkar
+  // internamente para URL redirecionada (auditoria P4).
+  const navCats = categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug));
+  const idx = navCats.findIndex((c) => c.slug === cat.slug);
+  const prev = navCats[(idx - 1 + navCats.length) % navCats.length];
+  const next = navCats[(idx + 1) % navCats.length];
   const related = relatedCategories(`${cat.title} ${cat.subtitle} ${cat.description}`, cat.slug, 6);
   const service = serviceFor(`${cat.title} ${cat.subtitle ?? ""} ${cat.description ?? ""}`);
   const editorial = editorialFor(cat.slug);

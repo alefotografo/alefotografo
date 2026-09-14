@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories, categoryBySlug } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { site } from "@/data/site";
 import { imgUrl } from "@/lib/img";
 import { bairros } from "@/data/bairros";
@@ -332,7 +333,9 @@ function FotosCorporativasPage() {
             Veja trabalhos reais em cada especialidade de fotografia corporativa.
           </p>
           <ul className="mt-8 flex flex-wrap gap-2">
-            {categories.map((c) => (
+            {categories
+              .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
+              .map((c) => (
               <li key={c.slug}>
                 <Link
                   to="/fotografo-corporativo/$slug"

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { categories } from "@/data/catalog";
+import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { imgSrcSet, imgUrl } from "@/lib/img";
@@ -183,7 +184,9 @@ function SobrePage() {
           </Link>
         </div>
         <div className="flex flex-wrap gap-3">
-          {categories.map((c) => (
+          {categories
+            .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
+            .map((c) => (
             <Link
               key={c.slug}
               to="/fotografo-corporativo/$slug"

@@ -19,31 +19,6 @@ export interface HomePhoto {
   title?: string;
 }
 
-/** Hero definitivo da Home. */
-export const heroPhoto = {
-  mobileSrc: "/img/hero-portrait-mobile.webp",
-  webpSrc: "/img/hero-portrait.webp",
-  fallbackSrc: "/img/hero-portrait.jpg",
-  gallery: "fotografo-de-retratos-corporativos",
-  alt: "Alexandre Ferreira - Fotógrafo Corporativo São Paulo",
-  width: 1217,
-  height: 1600,
-};
-
-/** Alternativas já validadas para o recorte desktop/mobile do hero. */
-export const heroAlternatives = [
-  {
-    src: `${CDN}/90047/fotografo-de-retratos-corporativos_retratos-corporativos-1.jpg`,
-    gallery: "fotografo-de-retratos-corporativos",
-    alt: "Retrato corporativo profissional em São Paulo",
-  },
-  {
-    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-12.jpg`,
-    gallery: "fotografia-para-escritorios-de-advocacia",
-    alt: "Retrato profissional de advogado em escritório de advocacia",
-  },
-];
-
 /** Seis frentes B2B representadas com fotografias reais do acervo. */
 export const selectedWorks: HomePhoto[] = [
   {
@@ -107,53 +82,6 @@ export const selectedWorks: HomePhoto[] = [
     title: "Saúde e Advocacia",
   },
 ];
-
-/** Fotografia real de cada card de segmento da Home (Fase 6C), na mesma ordem de SEGMENTS. */
-export interface SegmentPhoto {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-}
-
-export const segmentPhotos: Record<string, SegmentPhoto> = {
-  "Advogados e escritórios de advocacia": {
-    src: `${CDN}/130271/fotografia-para-escritorios-de-advocacia_fotografia-profissional-de-advogados-11.jpg`,
-    width: 1067,
-    height: 1600,
-    alt: "Fotografia profissional de advogado em escritório de advocacia em São Paulo",
-  },
-  "Médicos e clínicas": {
-    src: `${CDN}/132060/fotos-profissionais-para-medicos-e-ambientes_draeugenia-5.jpg`,
-    width: 1067,
-    height: 1600,
-    alt: "Foto profissional de médica em ambiente de consultório",
-  },
-  "Executivos e empresários": {
-    src: `${CDN}/90047/fotografia-de-retrato-profissional-em-sao-paulo_gustavo-pereira-13.jpg`,
-    width: 1067,
-    height: 1600,
-    alt: "Retrato profissional de executivo fotografado em São Paulo",
-  },
-  "Empresas e equipes": {
-    src: `${CDN}/102590/fotografia-corporativa-em-sao-paulo_contactone-218.jpg`,
-    width: 1920,
-    height: 1623,
-    alt: "Equipe corporativa reunida em escritório em São Paulo",
-  },
-  "Eventos corporativos": {
-    src: `${CDN}/90046/fotografo-de-eventos-corporativos_jantar-e-encontro-febrafar-2024-532.JPG`,
-    width: 1920,
-    height: 1079,
-    alt: "Público e interação em evento corporativo fotografado em São Paulo",
-  },
-  "Palestrantes e profissionais liberais": {
-    src: `${CDN}/90046/fotografo-de-eventos-corporativos_8-forum-abradilan-2023-707.jpg`,
-    width: 1920,
-    height: 1280,
-    alt: "Palestrante em apresentação no palco de fórum corporativo",
-  },
-};
 
 /** Título da galeria vindo do catálogo (evita duplicar dados). */
 export function galleryTitle(slug: string): string {

@@ -6,16 +6,31 @@ import { buildMeta } from "@/lib/seo";
 import { Search, Video, X } from "lucide-react";
 import { videoThumb, ytFallback } from "@/lib/videoThumb";
 import { FaqList } from "@/components/site/Faq";
-import { faqs, faqJsonLd } from "@/lib/faqs";
+import { faqJsonLd } from "@/lib/faqs";
+import type { Faq } from "@/lib/faqs";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { LazySection } from "@/components/site/LazySection";
 import { waLink } from "@/lib/whatsapp";
 import { TIPOS, SERVICOS, SEGMENTOS, PROCESSO, DIFERENCIAIS, GROUP_DEFS, type Group } from "./-videos-content";
 
-const featuredFaqs = faqs
-  .filter((f) => /v[ií]deo|institucional|evento|drone|cobertura|pre[çc]o|custa|prazo/i.test(f.q))
-  .slice(0, 8);
+/* FAQ exclusivamente audiovisual/corporativo. Não filtrar o pool geral
+   (faqs) por palavras-chave: o filtro anterior puxava perguntas de retrato
+   ("Quanto custa um retrato profissional?") para o hub de vídeos. */
+const featuredFaqs: Faq[] = [
+  {
+    q: "Quanto custa a produção de um vídeo corporativo?",
+    a: "O orçamento depende do formato do vídeo, duração da produção, locais de gravação, necessidade de roteiro e características específicas do projeto. Nossa equipe prepara a proposta a partir do briefing da empresa.",
+  },
+  {
+    q: "Vocês ajudam com o roteiro?",
+    a: "Sim. O roteiro faz parte da produção: a partir do briefing, planejamos a narrativa, a sequência dos assuntos e o que precisa ser gravado em cada ambiente.",
+  },
+  {
+    q: "O material rende versões curtas para redes sociais?",
+    a: "Sim. Além da versão principal, a edição pode gerar cortes curtos e verticais para LinkedIn, Instagram e comunicação interna, definidos no escopo antes da produção.",
+  },
+];
 
 const SHOWREEL_SLUG = "ativa-log";
 

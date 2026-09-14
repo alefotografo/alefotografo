@@ -123,7 +123,9 @@ export function Footer() {
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/videos" className="hover:text-foreground">Vídeo corporativo</Link></li>
-            <li><Link to="/videos" className="hover:text-foreground">Vídeo institucional</Link></li>
+            <li><Link to="/video-institucional" className="hover:text-foreground">Vídeo institucional</Link></li>
+            <li><Link to="/video-de-eventos-corporativos" className="hover:text-foreground">Vídeos de Eventos Corporativos</Link></li>
+            <li><Link to="/video-para-feiras-e-stands" className="hover:text-foreground">Vídeos para Feiras e Stands</Link></li>
             <li><Link to="/videos" hash="portfolio" className="hover:text-foreground">Portfólio de vídeos</Link></li>
             <li><Link to="/videos" hash="portfolio" className="hover:text-foreground">Reels e social</Link></li>
           </ul>

@@ -35,6 +35,47 @@ const CORPORATIVA = "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo"
 const INSTITUCIONAL = "/fotografo-corporativo/fotografia-institucional-em-saopaulo";
 
 export const categoryEditorial: Record<string, CategoryEditorial> = {
+  "fotografo-de-eventos-corporativos": {
+    eyebrow: "Cobertura de eventos corporativos",
+    sections: [
+      {
+        h: "Como planejamos a cobertura do seu evento",
+        paragraphs: [
+          [
+            "Cada evento corporativo começa pelo briefing: entendo a programação, os momentos que não podem faltar e onde o material será usado depois. A partir disso definimos os pontos de captação — palco, plateia, networking, estandes de patrocinadores e os retratos de convidados que pedem foto no momento.",
+          ],
+          [
+            "Eventos de grande porte, com vários ambientes acontecendo ao mesmo tempo, contam com equipe dedicada — o mesmo padrão de trabalho da cobertura de equipe em alefotografos.com.br. O resultado é um acervo coerente, pronto para site, LinkedIn, comunicação interna e imprensa.",
+          ],
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Vocês fazem cobertura fotográfica de eventos corporativos?",
+        a: "Sim. Nossa equipe realiza cobertura fotográfica de eventos corporativos em São Paulo, registrando os principais momentos do evento de acordo com o briefing e a programação definida com a empresa.",
+      },
+      {
+        q: "Quais tipos de eventos corporativos vocês fotografam?",
+        a: "Atendemos diferentes formatos de eventos empresariais, como congressos, convenções, encontros corporativos, palestras, premiações, confraternizações e outros projetos realizados por empresas e organizações.",
+      },
+      {
+        q: "A cobertura pode incluir palco, plateia e networking?",
+        a: "Sim. O planejamento pode contemplar diferentes momentos do evento, incluindo apresentações, interação entre participantes, networking, convidados e demais situações relevantes para a comunicação da empresa.",
+      },
+      {
+        q: "As fotografias podem ser usadas na comunicação da empresa?",
+        a: "Sim. As imagens podem ser utilizadas em canais corporativos como site, LinkedIn, redes sociais, comunicação interna, imprensa e materiais institucionais, conforme a necessidade do projeto.",
+      },
+      {
+        q: "Vocês atendem eventos corporativos em São Paulo?",
+        a: "Sim. Atendemos eventos corporativos em São Paulo e região. Para projetos em outras localidades, o atendimento é definido conforme briefing e logística da produção.",
+      },
+    ],
+    ctaLabel: "Pedir orçamento de cobertura de evento corporativo",
+    waMessage:
+      "Olá Alexandre, quero orçamento para cobertura fotográfica de um evento corporativo em São Paulo.",
+  },
   "fotografia-corporativa-em-sao-paulo": {
     eyebrow: "O trabalho por dentro",
     sections: [

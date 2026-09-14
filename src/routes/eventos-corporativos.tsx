@@ -64,7 +64,6 @@ const cfg: ServicePageConfig = {
   gallerySlugs: [
     "fotografo-de-grupos-times-e-equipes",
     "fotografo-de-eventos-corporativos",
-    "eventos-corporativos",
     "fotografia-corporativa-em-sao-paulo",
     "fotografo-festa-de-confraternizacao",
     "totem-fotografico-totem-mania",

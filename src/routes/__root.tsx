@@ -284,7 +284,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Alê Fotógrafo Corporativo",
           description:
             "Fotografia corporativa profissional em São Paulo — retratos, headshots e eventos empresariais.",
-          url: "https://alefotografo.com.br",
+          url: "https://www.alefotografo.com.br",
           telephone: "+55-11-91355-0533",
           image:
             "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",

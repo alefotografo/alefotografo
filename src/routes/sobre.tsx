@@ -70,9 +70,9 @@ export const Route = createFileRoute("/sobre")({
           worksFor: {
             "@type": "Organization",
             name: "Alê Fotógrafo Corporativo",
-            url: "https://alefotografo.com.br",
+            url: "https://www.alefotografo.com.br",
           },
-          url: "https://alefotografo.com.br",
+          url: "https://www.alefotografo.com.br",
           sameAs: [site.instagram, site.linkedin],
         }),
       },

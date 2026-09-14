@@ -83,5 +83,5 @@ export function statsLead(kind: DeliveryKind = "retrato"): string {
     kind === "evento"
       ? "a seleção das melhores imagens sai no mesmo dia, quando prevista no escopo"
       : "as fotos tratadas são entregues em até 1 dia útil, conforme o escopo";
-  return `Em 30 anos de carreira já fotografei mais de 300 executivos e atendi mais de 200 empresas em São Paulo. A produção é sempre dirigida por mim e realizada por mim e/ou pela minha equipe, conforme o escopo do projeto — e ${entrega}.`;
+  return `Em 30 anos de carreira já fotografei mais de 300 executivos e atendi mais de 200 empresas em São Paulo. A produção é dirigida por mim e realizada por mim e/ou pela minha equipe, conforme o escopo do projeto — e ${entrega}.`;
 }

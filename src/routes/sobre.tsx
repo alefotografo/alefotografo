@@ -131,7 +131,7 @@ function SobrePage() {
             A maior parte das pessoas que fotografo diz, no começo, que não se sai bem em foto. Isso
             é direção, não genética: eu conduzo postura, ângulo de rosto, olhar e respiração durante
             todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem dirige
-            todos os projetos deste site — e quem fotografa nos retratos individuais.
+            os projetos deste site — e quem fotografa nos retratos individuais.
           </p>
           <p className="text-muted-foreground">
             Antes de fotografar, alinho o objetivo: onde a imagem vai ser usada, que público vai

@@ -40,7 +40,7 @@ function FaqFallback() {
       <h1 className="font-display text-3xl font-semibold">Perguntas frequentes</h1>
       <p className="mt-4 text-muted-foreground">
         Não conseguimos carregar esta seção agora. Fale direto com Alexandre Machado pelo WhatsApp
-        que respondemos suas dúvidas na hora.
+        que retornamos em até 1 dia útil.
       </p>
       <a
         href={waLink("Olá Alexandre, tenho uma dúvida sobre fotografia corporativa.")}

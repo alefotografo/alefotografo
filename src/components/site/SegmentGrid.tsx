@@ -16,17 +16,17 @@ type Segment = {
 const SEGMENTS: Segment[] = [
   {
     title: "Indústria",
-    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66655/industrial_dsc7266.jpg",
-    alt: "Fotografia industrial de instalações e equipamentos",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-2.JPG",
+    alt: "Máquina em linha de produção industrial",
     width: 1920,
-    height: 1280,
+    height: 1285,
     to: "/fotografo-empresarial",
     seeLabel: "Ver fotografia industrial",
   },
   {
     title: "Transportes e Logística",
-    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-1.jpg",
-    alt: "Fotografia de logística e transportes",
+    img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-49.jpg",
+    alt: "Operação em centro de distribuição logística",
     width: 1920,
     height: 1280,
     catSlug: "fotografia-de-logistica",

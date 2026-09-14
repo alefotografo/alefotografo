@@ -14,7 +14,7 @@ const instagramTiles = [
   { title: "Fotógrafo de Eventos Corporativos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG" },
   { title: "Fotografia Corporativa", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg" },
   { title: "Fotografia Institucional", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg" },
-  { title: "Fotografia Industrial", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66655/industrial_dsc7266.jpg" },
+  { title: "Fotografia Industrial", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-11.JPG" },
   { title: "Fotos para Clínicas Médicas", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG" },
   { title: "Fotógrafo de Grupos, Times e Equipes", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg" },
 ] as const;

@@ -453,6 +453,86 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
     waMessage:
       "Olá Alexandre, quero conversar sobre retratos profissionais para médico. Pode me explicar como funciona?",
   },
+  "fotografia-de-logistica": {
+    eyebrow: "Fotografia para logística e transportes",
+    sections: [
+      {
+        h: "O que documentamos em uma operação logística",
+        paragraphs: [
+          [
+            "Produzimos fotografia em operações logísticas de verdade: frotas, caminhões, centros de distribuição, armazéns, docas e áreas de expedição. O roteiro também pode incluir as pessoas que movem a operação — equipes, motoristas, liderança e executivos — e a estrutura física que sustenta o processo. Tudo é definido no briefing, conforme o que cada empresa precisa mostrar.",
+          ],
+          [
+            "Esse material é parte da nossa atuação de ",
+            { to: "/fotografo-empresarial", label: "fotografia empresarial" },
+            " e segue o mesmo padrão de ",
+            { to: "/fotos-corporativas", label: "fotografia corporativa" },
+            ": imagens consistentes, com direção e tratamento profissionais, prontas para os canais da empresa.",
+          ],
+        ],
+        bullets: [
+          "Frota: caminhões, vans, carretas e padronização visual",
+          "Centros de distribuição e armazéns",
+          "Operação: docas, expedição e movimentação de cargas",
+          "Equipes, motoristas e liderança",
+          "Estrutura física e processos",
+        ],
+      },
+      {
+        h: "Para onde vão as imagens",
+        paragraphs: [
+          [
+            "Transportadoras e operadores logísticos usam esse material no site institucional, em apresentações comerciais e propostas, na comunicação corporativa e interna, em materiais de RH e recrutamento e nas redes profissionais da empresa. Para quem precisa de acervo contínuo, estruturamos um ",
+            { to: "/fotografo-corporativo/banco-de-imagens-para-empresas", label: "banco de imagens corporativo" },
+            " com as fotografias organizadas por tema, prontas para uso ao longo do ano.",
+          ],
+          [
+            "Quando o projeto pede uma visão mais ampla da estrutura, a cobertura também pode integrar ",
+            { to: "/fotografo-corporativo/fotos-aereas", label: "fotografia aérea" },
+            ", para mostrar a dimensão da operação a partir de outra perspectiva.",
+          ],
+          [
+            "Projetos podem ainda unir fotografia e ",
+            { to: "/videos", label: "produção de vídeos corporativos" },
+            " em um mesmo planejamento, quando isso faz sentido para o objetivo da empresa — um único roteiro de captação alimenta os dois materiais.",
+          ],
+        ],
+      },
+      {
+        h: "Como planejamos a produção",
+        paragraphs: [
+          [
+            "Tudo começa com o briefing: entendemos o objetivo das imagens, os locais disponíveis (frota, armazém, docas, escritório) e as áreas de acesso. A partir disso, montamos um roteiro de captação junto com a equipe de operações, definindo horários e percursos que buscam reduzir interferências na rotina da empresa, dentro das normas de segurança de cada local. Depois da captação, fazemos a seleção e o tratamento das imagens, com entrega conforme o escopo contratado.",
+          ],
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Que tipos de imagens podem ser produzidas em uma operação logística?",
+        a: "Depende do escopo definido no briefing. Em geral, o roteiro pode contemplar frota, centros de distribuição e armazéns, docas e expedição, movimentação de cargas, equipes em operação, liderança e estrutura física da empresa.",
+      },
+      {
+        q: "Vocês fotografam frotas, armazéns e centros de distribuição?",
+        a: "Sim. Esses são os cenários mais recorrentes em projetos de fotografia de logística. Atendemos em São Paulo e região; projetos em outras regiões são avaliados conforme a logística da produção.",
+      },
+      {
+        q: "É possível fotografar a operação sem interromper a rotina da empresa?",
+        a: "O planejamento busca reduzir interferências: roteiro de locais e horários é definido junto com a equipe de operações, respeitando as normas de segurança de cada área e os fluxos de trabalho do dia a dia.",
+      },
+      {
+        q: "É possível produzir fotos e vídeos no mesmo projeto?",
+        a: "Sim, quando previsto no escopo. Fotografia e produção audiovisual podem ser planejadas em um mesmo roteiro de captação, com equipes integradas e direção visual consistente entre os materiais.",
+      },
+      {
+        q: "Como funciona o planejamento de uma produção fotográfica para transportadoras e empresas de logística?",
+        a: "O processo parte de um briefing sobre objetivo, locais e equipes envolvidas. A partir dele definimos o roteiro de captação, realizamos a produção nas instalações da empresa e entregamos a seleção de imagens tratadas, conforme o escopo acordado.",
+      },
+    ],
+    ctaLabel: "Falar sobre sua operação",
+    waMessage:
+      "Olá! Trabalhamos com logística e queremos fotografar nossa operação. Pode me explicar como funciona?",
+  },
 };
 
 export function editorialFor(slug: string): CategoryEditorial | undefined {

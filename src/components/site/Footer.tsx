@@ -11,7 +11,7 @@ import { imgUrl, imgSrcSet } from "@/lib/img";
 const instagramTiles = [
   { title: "Retrato Corporativo", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg" },
   { title: "Retratos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90047/fotografo-de-retratos-corporativos_retratos-corporativos-27.jpg" },
-  { title: "Fotógrafo de Eventos Corporativos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG" },
+  { title: "Fotógrafo de Eventos Corporativos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_cristalia-latino-farma-convencao-2022-169.jpg" },
   { title: "Fotografia Corporativa", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg" },
   { title: "Fotografia Institucional", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg" },
   { title: "Fotografia Industrial", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-11.JPG" },

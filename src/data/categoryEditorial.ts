@@ -506,6 +506,29 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
           ],
         ],
       },
+      {
+        h: "Projetos em logística",
+        paragraphs: [
+          [
+            "Nossa equipe já produziu fotografia e vídeo para empresas do setor logístico. Na ATIVA Logística, desenvolvemos uma série de projetos que documentam a operação e a estrutura da empresa — como o vídeo ",
+            { to: "/videos/ativa-log-estrutura-operacao-e-eficiencia-logistica", label: "Estrutura, Operação e Eficiência Logística" },
+            ", a apresentação do ",
+            { to: "/videos/ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi", label: "Centro de Distribuição em Itapevi" },
+            " e o registro da ",
+            { to: "/videos/ativa-logistica-unidade-barueri", label: "unidade de Barueri" },
+            " — além de outros projetos institucionais e comemorativos.",
+          ],
+          [
+            "Também produzimos vídeos institucionais para outras empresas do setor, como a ",
+            { to: "/videos/fiorde-logistica-solucoes-logisticas-integradas-para-empresas", label: "Fiorde Logística" },
+            " e a ",
+            { to: "/videos/video-institucional-bmx-logistica", label: "BMX Logística" },
+            ". Quando o projeto prevê, fotografia e audiovisual são planejados em conjunto — conheça a variedade de formatos em ",
+            { to: "/videos", label: "outros vídeos corporativos" },
+            ".",
+          ],
+        ],
+      },
     ],
     faqs: [
       {

@@ -47,23 +47,23 @@ export const heroAlternatives = [
 /** Seis frentes B2B representadas com fotografias reais do acervo. */
 export const selectedWorks: HomePhoto[] = [
   {
-    src: `${CDN}/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg`,
+    src: `${CDN}/102590/fotografia-corporativa-em-sao-paulo_contactone-259.jpg`,
     gallery: "fotografo-de-grupos-times-e-equipes",
     pillar: "retrato",
     orientation: "horizontal",
-    alt: "Foto de equipe corporativa em grupo no escritório",
+    alt: "Reunião de equipe em escritório corporativo em São Paulo",
     width: 1920,
-    height: 1539,
+    height: 1280,
     title: "Fotografia Corporativa",
   },
   {
-    src: `${CDN}/90047/fotografia-de-retrato-profissional-em-sao-paulo_paulo-henrique-gomes-camara-8.jpg`,
+    src: `${CDN}/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-37.jpg`,
     gallery: "fotografo-de-retratos-corporativos",
     pillar: "retrato",
-    orientation: "vertical",
-    alt: "Retrato profissional corporativo com iluminação de estúdio",
-    width: 1067,
-    height: 1600,
+    orientation: "horizontal",
+    alt: "Retrato profissional de executivo em ambiente de escritório",
+    width: 1920,
+    height: 1670,
     title: "Retratos Profissionais",
   },
   {

@@ -30,7 +30,7 @@ export default function RetratoProfissional() {
               <div
                 key={foto.src}
                 className="overflow-hidden rounded-sm"
-                style={{ aspectRatio: "3 / 4" }}
+                style={{ aspectRatio: "2 / 3" }}
               >
                 <SmartImage
                   src={foto.src}
@@ -40,7 +40,7 @@ export default function RetratoProfissional() {
                   baseWidth={640}
                   widths={[400, 640, 900]}
                   sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 190px"
-                  placeholderRatio="3 / 4"
+                  placeholderRatio="2 / 3"
                   className="h-full w-full object-cover object-top"
                 />
               </div>

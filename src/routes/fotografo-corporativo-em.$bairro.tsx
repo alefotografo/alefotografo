@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { bairroBySlug, bairros } from "@/data/bairros";
-import { bairroContexto } from "@/data/bairroContexto";
+import { bairroContexto, bairroLinks } from "@/data/bairroContexto";
 import { buildBreadcrumbList, buildMeta } from "@/lib/seo";
 import { categories } from "@/data/catalog";
 import { bairroServiceGraph } from "@/data/bairroSchema";
@@ -63,6 +63,7 @@ function BairroPage() {
   const b = Route.useLoaderData();
   const cats = categories.slice(0, 8);
   const contexto: string[] = bairroContexto[b.slug] ?? [];
+  const logisticaLink = bairroLinks[b.slug];
   const vizinhos = bairros.filter((x) => x.regiao === b.regiao && x.slug !== b.slug);
 
 
@@ -114,6 +115,19 @@ function BairroPage() {
                   {p}
                 </p>
               ))}
+              {logisticaLink && (
+                <p className="text-muted-foreground md:text-lg">
+                  Para produções em operações logísticas — frota, armazéns e centros de distribuição —
+                  temos uma página dedicada a esse recorte:{" "}
+                  <Link
+                    to={logisticaLink.to}
+                    className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+                  >
+                    {logisticaLink.label}
+                  </Link>
+                  .
+                </p>
+              )}
             </div>
           </div>
         </section>

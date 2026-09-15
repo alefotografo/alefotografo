@@ -139,3 +139,16 @@ export const bairroContexto: Record<string, string[]> = {
     "A logística é peculiar: distâncias internas grandes, condomínios corporativos fechados com controle de acesso por veículo e necessidade de cadastro prévio de equipamento. Vou de carro, com autorização enviada com antecedência, e reservo uma hora de margem para acesso. Como muitos times trabalham em regime híbrido, o formato mais eficiente aqui é o day of photos: monto um estúdio temporário em sala de reunião num dia de presença obrigatória e fotografo 40 a 80 pessoas com agendamento por link, entregando arquivos nomeados conforme o padrão do RH global.",
   ],
 };
+
+/**
+ * Link contextual para o hub de logística, exibido ao final da seção de
+ * contexto apenas nos bairros cujo texto descreve operação logística real
+ * (frota, armazém, centro de distribuição). Bairros sem esse contexto não
+ * recebem link — evita bloco artificial de logística em página local.
+ */
+export const bairroLinks: Record<string, { to: string; label: string }> = {
+  lapa: { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+  "agua-branca": { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+  "rudge-ramos": { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+  "centro-diadema": { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+};

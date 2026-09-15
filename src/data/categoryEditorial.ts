@@ -460,7 +460,9 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
         h: "O que documentamos em uma operação logística",
         paragraphs: [
           [
-            "Produzimos fotografia em operações logísticas de verdade: frotas, caminhões, centros de distribuição, armazéns, docas e áreas de expedição. O roteiro também pode incluir as pessoas que movem a operação — equipes, motoristas, liderança e executivos — e a estrutura física que sustenta o processo. Tudo é definido no briefing, conforme o que cada empresa precisa mostrar.",
+            "Produzimos fotografia em operações logísticas de verdade: frotas, caminhões, centros de distribuição, armazéns, docas e áreas de expedição. O roteiro também pode incluir as pessoas que movem a operação — equipes, motoristas, liderança e executivos — e a estrutura física que sustenta o processo. Tudo é definido no briefing, conforme o que cada empresa precisa mostrar. No blog, detalhamos ",
+            { to: "/blog/fotografia-para-transportadoras", label: "o que fotografar para montar o acervo de uma transportadora" },
+            " — da frota às docas.",
           ],
           [
             "Esse material é parte da nossa atuação de ",
@@ -494,7 +496,9 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
           [
             "Projetos podem ainda unir fotografia e ",
             { to: "/videos", label: "produção de vídeos corporativos" },
-            " em um mesmo planejamento, quando isso faz sentido para o objetivo da empresa — um único roteiro de captação alimenta os dois materiais.",
+            " em um mesmo planejamento, quando isso faz sentido para o objetivo da empresa — um único roteiro de captação alimenta os dois materiais. No blog, mostramos ",
+            { to: "/blog/video-institucional-para-transportadoras", label: "como o vídeo institucional apresenta estrutura, operação e pessoas de uma transportadora" },
+            ", com cases reais do setor.",
           ],
         ],
       },
@@ -516,7 +520,9 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
             { to: "/videos/ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi", label: "Centro de Distribuição em Itapevi" },
             " e o registro da ",
             { to: "/videos/ativa-logistica-unidade-barueri", label: "unidade de Barueri" },
-            " — além de outros projetos institucionais e comemorativos.",
+            " — além de outros projetos institucionais e comemorativos. Contamos esse trabalho em detalhes no ",
+            { to: "/blog/case-ativa-logistica-fotografia-video", label: "case da ATIVA Logística" },
+            ", publicado no blog.",
           ],
           [
             "Também produzimos vídeos institucionais para outras empresas do setor, como a ",
@@ -555,6 +561,36 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
     ctaLabel: "Falar sobre sua operação",
     waMessage:
       "Olá! Trabalhamos com logística e queremos fotografar nossa operação. Pode me explicar como funciona?",
+  },
+  "banco-de-imagens-para-empresas": {
+    eyebrow: "Acervo fotográfico da empresa",
+    sections: [
+      {
+        h: "Um acervo planejado para render o ano inteiro",
+        paragraphs: [
+          [
+            "Banco de imagens empresarial é o conjunto de fotos profissionais que a sua empresa passa a ter sob medida: retratos de liderança e equipe, ambientes, processos, atendimento, produtos e cultura. Produzo esse acervo em São Paulo para empresas que precisam de volume com consistência — imagens prontas para alimentar site, LinkedIn, campanhas e apresentações sem depender de foto genérica de banco.",
+          ],
+          [
+            "O planejamento é parte do serviço: cada sessão é roteirizada para render variações — horizontal, vertical, close e plano aberto — com o mesmo padrão de luz e linguagem, para o material servir a diferentes formatos ao longo do ano.",
+          ],
+        ],
+      },
+      {
+        h: "Operações reais no acervo",
+        paragraphs: [
+          [
+            "Parte do nosso acervo vem de operações industriais e logísticas: frotas, armazéns, centros de distribuição, docas e equipes em operação. Para empresas do setor, o banco é estruturado com esse recorte — o mesmo trabalho que detalhamos na página de ",
+            { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+            ".",
+          ],
+        ],
+      },
+    ],
+    faqs: [],
+    ctaLabel: "Planejar meu banco de imagens",
+    waMessage:
+      "Olá Alexandre, quero estruturar um banco de imagens para minha empresa. Pode me explicar como funciona?",
   },
 };
 

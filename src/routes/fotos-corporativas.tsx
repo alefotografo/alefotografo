@@ -206,8 +206,17 @@ function FotosCorporativasPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
             Retratos profissionais, equipes, escritório, eventos e produtos — produzidos por{" "}
-            {site.fullName}, com 30 anos fotografando empresas na Grande São Paulo. Tratamento
-            profissional e entrega em até 1 dia útil.
+            {site.fullName}, com 30 anos fotografando empresas na Grande São Paulo. Na operação
+            logística, esse material inclui frota, armazéns e centros de distribuição, como mostra a
+            página de{" "}
+            <Link
+              to="/fotografo-corporativo/$slug"
+              params={{ slug: "fotografia-de-logistica" }}
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              fotografia de logística
+            </Link>
+            . Tratamento profissional e entrega em até 1 dia útil.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

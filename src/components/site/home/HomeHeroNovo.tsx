@@ -21,7 +21,7 @@ export default function HomeHeroNovo() {
   return (
     <section className="border-b border-border">
       <div className="relative">
-        <figure className="relative m-0 aspect-[4/3] md:aspect-auto md:h-[440px] lg:h-[600px]">
+        <figure className="relative m-0">
           <img
             src={imgUrl(HERO.src, 1440)}
             srcSet={imgSrcSet(HERO.src, [480, 720, 900, 1200, 1440, 1920], HERO.width)}
@@ -33,16 +33,16 @@ export default function HomeHeroNovo() {
             fetchPriority="high"
             decoding="sync"
             referrerPolicy="no-referrer"
-            className="block h-full w-full object-cover object-[center_35%] md:object-[center_30%]"
+            className="block h-auto w-full"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 hidden bg-background/75 md:block"
+            className="pointer-events-none absolute inset-0 hidden bg-background/75 xl:block"
           />
         </figure>
 
-        <div className="md:absolute md:inset-0 md:flex md:items-center">
-          <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-6 md:py-0 lg:px-8">
+        <div className="xl:absolute xl:inset-0 xl:flex xl:items-start">
+          <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-6 lg:px-8 xl:py-16">
             <div className="max-w-[660px]">
               <h1 className="font-display text-[32px] font-semibold leading-[1.1] text-foreground md:text-[48px]">
                 Fotógrafo profissional e corporativo em São Paulo

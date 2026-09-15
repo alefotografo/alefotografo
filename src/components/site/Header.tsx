@@ -10,6 +10,8 @@ const SearchResults = lazy(() =>
 
 const EMPTY_RESULTS: SearchResultsModel = { photos: [], videos: [], blog: [], total: 0 };
 
+const MOBILE_PANEL_ID = "nav-mobile-panel";
+
 type Item = { to: string; label: string; hint?: string };
 type Entry = { label: string; to?: string; items?: Item[] };
 
@@ -69,25 +71,30 @@ export function Header() {
   const [results, setResults] = useState<SearchResultsModel>(EMPTY_RESULTS);
   const navRef = useRef<HTMLElement | null>(null);
   const searchRef = useRef<HTMLDivElement | null>(null);
-  const mobileSearchRef = useRef<HTMLDivElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const mobileInputRef = useRef<HTMLInputElement | null>(null);
   const desktopSearchTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const mobileSearchTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const panelCloseRef = useRef<HTMLButtonElement | null>(null);
+  const wasPanelOpen = useRef(false);
 
   const closeSearch = () => {
     setSearchOpen(false);
-    if (window.matchMedia("(min-width: 768px)").matches) desktopSearchTriggerRef.current?.focus();
-    else mobileSearchTriggerRef.current?.focus();
+    if (window.matchMedia("(min-width: 1280px)").matches) {
+      desktopSearchTriggerRef.current?.focus();
+    } else if (mobileOpen) {
+      mobileInputRef.current?.focus();
+    }
   };
 
   const submitSearch = () => {
     const q = term.trim();
     if (!q) return;
     setSearchOpen(false);
+    setMobileOpen(false);
     navigate({ to: "/busca", search: { q } });
   };
-
 
   // fecha tudo ao trocar de rota
   useEffect(() => {
@@ -104,7 +111,7 @@ export function Header() {
 
   useEffect(() => {
     let active = true;
-    if (!searchOpen || debouncedTerm.length < 2) {
+    if ((!searchOpen && !mobileOpen) || debouncedTerm.length < 2) {
       setResults(EMPTY_RESULTS);
       return () => {
         active = false;
@@ -121,23 +128,77 @@ export function Header() {
     return () => {
       active = false;
     };
-  }, [debouncedTerm, searchOpen]);
+  }, [debouncedTerm, searchOpen, mobileOpen]);
 
-  // travar rolagem do body com o menu ou busca mobile abertos
+  // trava a página com o painel mobile aberto. Fixa o body para que a rolagem
+  // de fundo pare em qualquer browser (incl. iOS) sem perder a posição de scroll.
   useEffect(() => {
-    const mobileSearchOpen = searchOpen && window.matchMedia("(max-width: 767px)").matches;
-    if (!mobileOpen && !mobileSearchOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    if (!mobileOpen) return;
+    const scrollY = window.scrollY;
+    const body = document.body;
+    const prevPosition = body.style.position;
+    const prevTop = body.style.top;
+    const prevLeft = body.style.left;
+    const prevRight = body.style.right;
+    const prevWidth = body.style.width;
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
     return () => {
-      document.body.style.overflow = prev;
+      body.style.position = prevPosition;
+      body.style.top = prevTop;
+      body.style.left = prevLeft;
+      body.style.right = prevRight;
+      body.style.width = prevWidth;
+      window.scrollTo(0, scrollY);
     };
-  }, [mobileOpen, searchOpen]);
+  }, [mobileOpen]);
+
+  // foco: ao abrir, entra no painel (botão fechar); ao fechar, volta ao hamburger
+  useEffect(() => {
+    if (mobileOpen) {
+      wasPanelOpen.current = true;
+      panelCloseRef.current?.focus();
+    } else if (wasPanelOpen.current) {
+      wasPanelOpen.current = false;
+      menuTriggerRef.current?.focus({ preventScroll: true });
+    }
+  }, [mobileOpen]);
+
+  // mantém o Tab circulando dentro do painel
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusables = panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])',
+      );
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !panel.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
 
   // Esc fecha; clique fora fecha o submenu de desktop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
+      // o campo de busca do painel cuida do próprio Escape (limpa + tira o foco)
+      if ((e.target as HTMLElement | null)?.id === "mobile-menu-search") return;
       setOpenGroup(null);
       setMobileOpen(false);
       closeSearch();
@@ -146,8 +207,7 @@ export function Header() {
     // click e o alvo original sai do DOM, o que faria o contains() falhar.
     const onPointerDown = (e: MouseEvent) => {
       if (!navRef.current?.contains(e.target as Node)) setOpenGroup(null);
-      const target = e.target as Node;
-      if (!searchRef.current?.contains(target) && !mobileSearchRef.current?.contains(target)) setSearchOpen(false);
+      if (!searchRef.current?.contains(e.target as Node)) setSearchOpen(false);
     };
     document.addEventListener("keydown", onKey);
     document.addEventListener("mousedown", onPointerDown);
@@ -157,11 +217,10 @@ export function Header() {
     };
   }, []);
 
-  // foco automático na busca adequada a cada largura
+  // foco automático na busca desktop ao abrir
   useEffect(() => {
     if (!searchOpen) return;
-    if (window.matchMedia("(min-width: 768px)").matches) inputRef.current?.focus();
-    else mobileInputRef.current?.focus();
+    if (window.matchMedia("(min-width: 1280px)").matches) inputRef.current?.focus();
   }, [searchOpen]);
 
   return (
@@ -174,7 +233,7 @@ export function Header() {
       </a>
 
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background">
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5 md:gap-6 md:py-4 xl:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-3 sm:px-5 md:gap-4 md:py-4 xl:gap-6 xl:px-8">
           <Link
             to="/"
             className="flex min-w-0 shrink-0 items-center"
@@ -195,10 +254,10 @@ export function Header() {
             </picture>
           </Link>
 
-          {/* Menu horizontal a partir de tablet (768px) */}
+          {/* Menu horizontal a partir de 1280px (desktop) */}
           <nav
             ref={navRef}
-            className="hidden min-w-0 items-center justify-end gap-1 md:flex lg:gap-2"
+            className="hidden min-w-0 items-center justify-end gap-1 xl:flex xl:gap-2"
             aria-label="Principal"
           >
             {NAV.map((entry) => {
@@ -208,7 +267,7 @@ export function Header() {
                   <Link
                     key={entry.label}
                     to={entry.to ?? "/"}
-                    className={`whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground lg:px-3 lg:text-sm ${
+                    className={`whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground xl:px-3 xl:text-sm ${
                       active ? "text-foreground" : "text-muted-foreground"
                     }`}
                   >
@@ -229,7 +288,7 @@ export function Header() {
                     aria-expanded={open}
                     aria-haspopup="true"
                     onClick={() => setOpenGroup(open ? null : entry.label)}
-                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground lg:px-3 lg:text-sm ${
+                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-sm px-2 py-2 text-[13px] transition-colors hover:text-foreground xl:px-3 xl:text-sm ${
                       active || open ? "text-foreground" : "text-muted-foreground"
                     }`}
                   >
@@ -282,7 +341,7 @@ export function Header() {
                     value={term}
                     onChange={(e) => setTerm(e.target.value.slice(0, 120))}
                     placeholder="Buscar no site"
-                    className="w-40 bg-transparent py-2 text-[13px] text-foreground outline-none placeholder:text-muted-foreground lg:w-52"
+                    className="w-40 bg-transparent py-2 text-[13px] text-foreground outline-none placeholder:text-muted-foreground xl:w-52"
                   />
                   {term ? <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}><X size={14} /></Button> : null}
                 </form>
@@ -309,103 +368,158 @@ export function Header() {
 
             <Link
               to="/contato"
-              className="ml-1 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-[13px] font-medium text-accent-foreground hover:bg-ember-glow lg:px-4 lg:text-sm"
+              className="ml-1 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-[13px] font-medium text-accent-foreground hover:bg-ember-glow xl:px-4 xl:text-sm"
             >
               Orçamento
             </Link>
           </nav>
 
-          {/* Ações mobile (< 768px) */}
-          <div className="flex items-center gap-2 md:hidden">
-            <button ref={mobileSearchTriggerRef} type="button" aria-label="Abrir busca" aria-expanded={searchOpen} onClick={() => { setMobileOpen(false); setSearchOpen(true); }} className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground">
-              <Search size={18} />
-            </button>
+          {/* Ações mobile/tablet (< 1280px): só Orçamento + Menu */}
+          <div className="flex items-center gap-2 xl:hidden">
             <Link
               to="/contato"
-              className="min-h-11 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-xs font-medium leading-7 text-accent-foreground hover:bg-ember-glow"
+              className="flex min-h-12 items-center whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-xs font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Orçamento
             </Link>
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground"
+              ref={menuTriggerRef}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-sm border border-border text-foreground"
               aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={mobileOpen}
+              aria-controls={MOBILE_PANEL_ID}
               onClick={() => setMobileOpen((v) => !v)}
             >
-              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Acordeão mobile */}
-        {mobileOpen && (
-          <div className="max-h-[calc(100svh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-background md:hidden">
-            <nav className="mx-auto flex max-w-7xl flex-col px-4 pb-8 pt-2 sm:px-5" aria-label="Menu">
-              {NAV.map((entry) => {
-                if (!entry.items) {
+      {/* Painel de navegação em tela cheia (< 1280px) */}
+      {mobileOpen && (
+        <div
+          id={MOBILE_PANEL_ID}
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu de navegação"
+          className="fixed inset-0 z-[60] flex h-dvh flex-col bg-background xl:hidden"
+          style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
+        >
+          <div className="flex h-14 shrink-0 items-center justify-between border-b border-border px-4">
+            <span className="text-sm font-medium text-muted-foreground">Menu</span>
+            <button
+              type="button"
+              ref={panelCloseRef}
+              onClick={() => setMobileOpen(false)}
+              aria-label="Fechar menu"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-sm text-foreground"
+            >
+              <X size={26} />
+            </button>
+          </div>
+
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+            <div className="mx-auto flex max-w-7xl flex-col px-4 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] pt-3">
+              <form
+                role="search"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  submitSearch();
+                }}
+                className="flex items-center gap-2 rounded-sm border border-border bg-surface px-3 focus-within:border-ember"
+              >
+                <Search size={18} className="shrink-0 text-muted-foreground" aria-hidden="true" />
+                <label htmlFor="mobile-menu-search" className="sr-only">
+                  Buscar no site
+                </label>
+                <input
+                  ref={mobileInputRef}
+                  id="mobile-menu-search"
+                  type="text"
+                  inputMode="search"
+                  value={term}
+                  onChange={(e) => setTerm(e.target.value.slice(0, 120))}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") {
+                      e.stopPropagation();
+                      setTerm("");
+                      e.currentTarget.blur();
+                    }
+                  }}
+                  placeholder="Buscar no site"
+                  className="min-h-12 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground"
+                />
+                {term ? (
+                  <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}>
+                    <X size={18} />
+                  </Button>
+                ) : null}
+              </form>
+
+              {debouncedTerm.length >= 2 && (
+                <div className="mt-2 overflow-hidden rounded-sm border border-border" aria-live="polite">
+                  <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
+                    <SearchResults query={debouncedTerm} results={results} compact onSelect={() => setMobileOpen(false)} />
+                  </Suspense>
+                </div>
+              )}
+
+              <nav className="mt-2 flex flex-col" aria-label="Menu">
+                {NAV.map((entry) => {
+                  if (!entry.items) {
+                    return (
+                      <Link
+                        key={entry.label}
+                        to={entry.to ?? "/"}
+                        className="flex min-h-12 items-center border-b border-border/40 text-foreground"
+                      >
+                        {entry.label}
+                      </Link>
+                    );
+                  }
+                  const open = mobileGroup === entry.label;
+                  const groupId = `mobile-group-${entry.label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`;
                   return (
-                    <Link
-                      key={entry.label}
-                      to={entry.to ?? "/"}
-                      className="border-b border-border/40 py-4 text-foreground"
-                    >
-                      {entry.label}
-                    </Link>
+                    <div key={entry.label} className="border-b border-border/40">
+                      <button
+                        type="button"
+                        aria-expanded={open}
+                        aria-controls={groupId}
+                        onClick={() => setMobileGroup(open ? null : entry.label)}
+                        className="flex min-h-12 w-full items-center justify-between text-left text-foreground"
+                      >
+                        {entry.label}
+                        <ChevronDown size={18} className={open ? "rotate-180 transition-transform" : "transition-transform"} />
+                      </button>
+                      {open && (
+                        <ul id={groupId} className="pb-1">
+                          {entry.items.map((item) => (
+                            <li key={item.to}>
+                              <Link
+                                to={item.to}
+                                className="flex min-h-11 items-center py-1 pl-4 text-sm text-muted-foreground hover:text-foreground"
+                              >
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   );
-                }
-                const open = mobileGroup === entry.label;
-                return (
-                  <div key={entry.label} className="border-b border-border/40">
-                    <button
-                      type="button"
-                      aria-expanded={open}
-                      onClick={() => setMobileGroup(open ? null : entry.label)}
-                      className="flex w-full items-center justify-between py-4 text-left text-foreground"
-                    >
-                      {entry.label}
-                      <ChevronDown size={16} className={open ? "rotate-180" : ""} />
-                    </button>
-                    {open && (
-                      <ul className="pb-2">
-                        {entry.items.map((item) => (
-                          <li key={item.to}>
-                            <Link
-                              to={item.to}
-                              className="block py-3 pl-4 text-sm text-muted-foreground hover:text-foreground"
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                );
-              })}
+                })}
+              </nav>
+
               <Link
                 to="/contato"
-                className="mt-4 min-h-12 rounded-sm bg-ember px-4 py-3 text-center text-sm font-medium leading-6 text-accent-foreground"
+                className="mt-6 flex min-h-12 items-center justify-center rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground"
               >
                 Solicitar orçamento
               </Link>
-            </nav>
-          </div>
-        )}
-      </header>
-      {searchOpen && (
-        <div ref={mobileSearchRef} className="fixed inset-0 z-[70] flex flex-col bg-background md:hidden" role="dialog" aria-modal="true" aria-label="Busca no site">
-          <form role="search" onSubmit={(e) => { e.preventDefault(); submitSearch(); }} className="flex items-center gap-2 border-b border-border p-4">
-            <Search size={18} className="shrink-0 text-muted-foreground" aria-hidden="true" />
-            <label htmlFor="mobile-search-overlay" className="sr-only">Buscar no site</label>
-            <input ref={mobileInputRef} id="mobile-search-overlay" type="text" inputMode="search" value={term} onChange={(event) => setTerm(event.target.value.slice(0, 120))} placeholder="Buscar fotos, vídeos e artigos" className="min-h-11 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground" />
-            {term ? <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}><X size={18} /></Button> : null}
-            <Button type="button" variant="outline" size="icon" aria-label="Fechar busca" onClick={closeSearch}><X size={18} /></Button>
-          </form>
-          <div className="flex-1 overflow-y-auto overscroll-contain" aria-live="polite">
-            <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
-              <SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} />
-            </Suspense>
+            </div>
           </div>
         </div>
       )}

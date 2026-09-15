@@ -7,7 +7,6 @@ import { faqsComerciais } from "@/lib/faqsComerciais";
 import { imgSrcSet, imgUrl } from "@/lib/img";
 import { lazyAfterInteractive } from "@/lib/deferredLazy";
 import HomeHeroNovo from "@/components/site/home/HomeHeroNovo";
-import FaixaClientes from "@/components/site/home/FaixaClientes";
 import SolucoesEmpresa from "@/components/site/home/SolucoesEmpresa";
 
 // Fonte da imagem principal da home (mantida em sincronia com HomeHeroNovo).
@@ -96,7 +95,6 @@ function Home() {
   return (
     <>
       <HomeHeroNovo />
-      <FaixaClientes />
       <SolucoesEmpresa />
 
       <Suspense fallback={null}>

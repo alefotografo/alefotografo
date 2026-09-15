@@ -76,7 +76,7 @@ export const videoTaxonomy: SearchTaxonomyEntry[] = [
   {
     label: "Vídeos institucionais",
     keywords: ["video institucional", "institucional", "empresa", "manifesto", "corporativo"],
-    slugs: ["flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional", "ativa-log", "unitec-video-institucional", "video-institucional-rocha-queiroz-advogados", "video-manifesto-empreendimento-estrutura-e-proposito"],
+    slugs: ["flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional", "ativa-log", "unitec-video-institucional", "video-institucional-rocha-queiroz-advogados", "video-manifesto-empreendimento-estrutura-e-proposito", "nitriflex-industria-quimica-de-polimeros-especiais-e-borrachas-nitrilicas"],
     priority: 10,
   },
   {
@@ -94,7 +94,7 @@ export const videoTaxonomy: SearchTaxonomyEntry[] = [
   {
     label: "Indústria e logística em vídeo",
     keywords: ["industria", "fabrica", "logistica", "operacao", "centro de distribuicao"],
-    slugs: ["ativa-log-estrutura-operacao-e-eficiencia-logistica", "fiorde-logistica-solucoes-logisticas-integradas-para-empresas", "nitriflex-industria-quimica-de-polimeros-especiais-e-borrachas-nitrilicas", "ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi"],
+    slugs: ["ativa-log-estrutura-operacao-e-eficiencia-logistica", "fiorde-logistica-solucoes-logisticas-integradas-para-empresas", "ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi"],
     priority: 8,
   },
   {

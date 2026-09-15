@@ -736,4 +736,19 @@ export const postSeo: Record<string, PostSeo> = {
       description:
         "Como transformar o banco de imagens da sua empresa em conteúdo constante para redes sociais: temas, formatos, cortes verticais e calendário de publicação.",
     },
+  "case-ativa-logistica-fotografia-video": {
+    title: "Case ATIVA Logística: Fotografia e Vídeo Corporativo",
+    description:
+      "Case real: fotografia de estrutura e operação e vídeos institucionais produzidos para a ATIVA Logística — CD Itapevi, unidade Barueri e 30 anos.",
+  },
+  "fotografia-para-transportadoras": {
+    title: "Fotografia para Transportadoras: Frota, Operação e Equipe",
+    description:
+      "O que fotografar para montar o banco de imagens de uma transportadora: frota, armazém, centro de distribuição, docas, equipes e liderança.",
+  },
+  "video-institucional-para-transportadoras": {
+    title: "Vídeo Institucional para Transportadoras e Empresas de Logística",
+    description:
+      "Como o vídeo institucional apresenta estrutura, operação e equipes de transportadoras — com cases reais produzidos para ATIVA, Fiorde e BMX.",
+  },
 };

@@ -175,6 +175,12 @@ const paths: Record<string, string> = {
     "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_cocacola-454.jpg",
   "retrato-ambientado-executivo-contexto":
     "GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_salomao-concursos-104.JPG",
+  "case-ativa-logistica-fotografia-video":
+    "GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-9.jpg",
+  "fotografia-para-transportadoras":
+    "GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-33.jpg",
+  "video-institucional-para-transportadoras":
+    "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-20.jpg",
 };
 
 export const curatedCovers: Record<string, string> = Object.fromEntries(

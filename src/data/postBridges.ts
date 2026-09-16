@@ -33,7 +33,7 @@ export const postBridges: Record<string, PostBridge> = {
         "Vale lembrar por que esses detalhes pesam tanto: a sua foto de perfil comunica antes da primeira conversa. Ela é lida em segundos e sinaliza senioridade, cuidado e coerência com o que você diz fazer — muitas vezes antes de alguém rolar até a sua experiência.",
       ],
       [
-        "Eu sou Alexandre Machado e fotografo pessoalmente esse tipo de imagem em São Paulo, seja como ",
+        "Eu sou Alexandre Machado e dirijo pessoalmente esse tipo de produção em São Paulo — retratos individuais podem ser fotografados por mim, conforme agenda e formato —, seja como ",
         { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
         " ou como parte de um ",
         { to: "/fotografo-corporativo/retrato-corporativo", label: "ensaio de retrato corporativo" },

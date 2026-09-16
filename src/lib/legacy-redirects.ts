@@ -175,7 +175,17 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   if (removedVideo && REMOVED_VIDEO_SLUGS.has(removedVideo[1])) return "/videos";
 
 
-  // Loja antiga (pacotes) → página de contato/orçamento
+  // Loja antiga Epics (pacotes de retrato) → destino semanticamente equivalente.
+  // Inventário (Wayback, 2020–2025): pacotes Prata/Ouro/Diamante/Safira,
+  // Ensaio VIP, Influencer e Pacote dos Sonhos eram todos ensaios individuais
+  // de retrato → /foto-profissional. Gerenciamento de redes sociais → /servicos.
+  // Qualquer outra URL sob /loja/ cai no fallback de orçamento abaixo.
+  if (/^\/loja\/(pacote-(prata|ouro|diamante|safira|influencer|dos-sonhos)|retrato-profissional|ensaio-vip|ensaio-fotografico-pacote-dos-sonhos)/.test(path)) {
+    return "/foto-profissional";
+  }
+  if (path === "/loja/gerenciamento-de-redes-sociais-mensal") return "/servicos";
+
+  // Loja antiga (demais URLs) → página de contato/orçamento
   if (/^\/loja\//.test(path)) return "/contato";
 
   // Galerias renomeadas

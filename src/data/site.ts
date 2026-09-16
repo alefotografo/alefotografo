@@ -4,7 +4,7 @@ export const site = {
   fullName: "Alexandre Machado — Alê Fotógrafo",
   tagline: "Retrato corporativo autoral em São Paulo",
   description:
-    "Alexandre Machado fotografa pessoalmente retratos profissionais em São Paulo: headshot para LinkedIn, executivos, sócios e equipes, com direção de pose.",
+    "Alexandre Machado — Alê Fotógrafo — realiza retratos profissionais em São Paulo: headshot para LinkedIn, executivos, sócios e equipes, com direção de pose. Mais de 30 anos de experiência em fotografia e produção de imagem.",
   city: "São Paulo",
   state: "SP",
   whatsapp: "5511913550533",
@@ -14,7 +14,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/alefotografo",
   originalUrl: "https://www.alefotografo.com.br",
   cnpj: "03230626/0001-82",
-  foundingYear: 1995,
+  foundingYear: 1999,
   address: {
     street: "Alameda Santos, 1165",
     district: "Jardim Paulista",

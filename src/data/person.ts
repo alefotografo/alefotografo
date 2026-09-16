@@ -8,7 +8,7 @@ export const BUSINESS_ID = `${ORIGIN}/#business`;
 export const personImage =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
 
-/** Anos de carreira confirmados pelo fotógrafo (desde 1995). */
+/** Anos de experiência confirmados pelo fotógrafo ("mais de 30 anos"). */
 export const personYearsOfExperience = 30;
 
 export const personKnowsAbout = [
@@ -44,7 +44,7 @@ export const personSchema = {
   alternateName: ["Alê Fotógrafo", "Alê"],
   jobTitle: "Fotógrafo de retrato corporativo",
   description:
-    "Fotógrafo em São Paulo com mais de 30 anos de carreira. Fotografa pessoalmente retratos corporativos, headshots para LinkedIn, retratos de executivos, médicos e advogados, e dirige produções audiovisuais institucionais.",
+    "Fotógrafo em São Paulo com mais de 30 anos de experiência. Dirige retratos corporativos, headshots para LinkedIn, retratos de executivos, médicos e advogados, e produções audiovisuais institucionais — executadas por ele e/ou pela equipe, conforme o escopo; retratos individuais podem ser conduzidos pessoalmente, de acordo com o formato contratado e a disponibilidade.",
   image: personImage,
   url: `${ORIGIN}/quem-e-o-ale`,
   mainEntityOfPage: { "@id": `${ORIGIN}/quem-e-o-ale` },
@@ -88,7 +88,7 @@ export const personFacts: { term: string; value: string }[] = [
   { term: "Nome", value: "Alexandre Machado" },
   { term: "Também conhecido como", value: "Alê Fotógrafo" },
   { term: "Atuação", value: "Fotógrafo de retrato corporativo e executivo" },
-  { term: "Anos de carreira", value: `${personYearsOfExperience}+ anos (desde ${site.foundingYear})` },
+  { term: "Anos de experiência", value: "Mais de 30 anos em fotografia e produção de imagem" },
   { term: "Base", value: `${site.address.street} — ${site.address.district}, ${site.address.locality}/${site.address.region}` },
   { term: "Atende", value: "São Paulo e região metropolitana" },
   {

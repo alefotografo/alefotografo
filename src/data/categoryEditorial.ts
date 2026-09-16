@@ -78,7 +78,7 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
             "Fotografia corporativa é tudo aquilo que a empresa usa para se apresentar sem estar presente: o retrato do sócio na proposta comercial, a foto da equipe na página “quem somos”, o registro do escritório, da linha de produção, de uma reunião real acontecendo. Não é uma foto bonita isolada — é um conjunto coerente, com a mesma luz, o mesmo tratamento e a mesma intenção.",
           ],
           [
-            "Sou Alexandre Machado. Fotografo em São Paulo há mais de 30 anos e atendo pessoalmente cada projeto: eu vou até a empresa, eu dirijo as pessoas, eu finalizo as imagens. Quando o assunto é ",
+            "Sou Alexandre Machado. Fotografo em São Paulo há mais de 30 anos e dirijo cada projeto: eu vou até a empresa, conduzo as pessoas e finalizo as imagens, com a equipe quando a produção pede mais mãos. Quando o assunto é ",
             { to: RETRATO, label: "retratos de liderança e equipe" },
             ", essa continuidade importa mais do que equipamento — é o que faz o CEO e o analista recém-contratado parecerem parte da mesma empresa.",
           ],

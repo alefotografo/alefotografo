@@ -145,7 +145,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:image", content: DEFAULT_OG_IMAGE },
         { name: "twitter:site", content: "@alefotografo" },
         { title: site.name },
-        { name: "description", content: "Alexandre Machado fotografa pessoalmente retratos profissionais, headshots para LinkedIn e fotos de executivos e equipes em São Paulo. 30 anos de carreira." },
+        { name: "description", content: "Alexandre Machado dirige retratos profissionais e fotografia corporativa em São Paulo: headshots para LinkedIn, fotos de executivos e equipes. Mais de 30 anos de experiência." },
       ],
       links: [
 

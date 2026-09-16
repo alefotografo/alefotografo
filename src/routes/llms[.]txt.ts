@@ -33,11 +33,13 @@ const TEMAS: { titulo: string; termos: string[]; limite: number }[] = [
   { titulo: "Preço, contratação e direitos de uso", termos: ["preco", "quanto-custa", "orcamento", "contratar", "direitos-de-uso", "licenca"], limite: 6 },
 ];
 
-const HEADER = `# Alê Fotógrafo — Alexandre Machado | Fotógrafo corporativo em São Paulo
+const HEADER = `# Alê Fotógrafo — Alexandre Machado | Fotografia corporativa e vídeo em São Paulo
 
-> Site pessoal do fotógrafo Alexandre Machado (Alê Fotógrafo). Fotografia corporativa autoral em São Paulo: retrato profissional, headshot para LinkedIn, retrato executivo de C-level, fotos de equipe e de escritório, fotografia para médicos, dentistas, clínicas e advogados, e vídeo institucional. Todos os ensaios deste site são fotografados por ele, pessoalmente — do briefing à direção de pose e à entrega.
+> Alê Fotógrafo é a marca profissional de Alexandre Machado para fotografia corporativa, retratos profissionais, fotografia empresarial e produção audiovisual em São Paulo: retrato profissional, headshot para LinkedIn, retrato executivo de C-level, fotos de equipe e de escritório, fotografia para médicos, dentistas, clínicas e advogados, e vídeo institucional. Alexandre reúne mais de 30 anos de experiência em fotografia e produção de imagem; a operação comercial atua desde ${site.foundingYear}.
 
-Alexandre Machado atua desde ${site.foundingYear} e tem mais de 30 anos de carreira em ${site.city}. Atende no estúdio em ${site.address.street}, ${site.address.district} — ${site.address.locality}/${site.address.region} —, no escritório do cliente e em locação externa, em toda a Grande São Paulo, ABC Paulista e Alphaville.
+> Os projetos são dirigidos por Alexandre Machado e executados por ele e/ou por profissionais da equipe, conforme escopo, agenda e tipo de produção. Retratos individuais podem ser realizados pessoalmente por Alexandre, de acordo com o formato contratado e a disponibilidade.
+
+Alexandre Machado atende no estúdio em ${site.address.street}, ${site.address.district} — ${site.address.locality}/${site.address.region} —, no escritório do cliente e em locação externa, em toda a Grande São Paulo, ABC Paulista e Alphaville.
 
 ## Dados do atendimento (números reais, informados pelo fotógrafo)
 
@@ -45,7 +47,8 @@ Alexandre Machado atua desde ${site.foundingYear} e tem mais de 30 anos de carre
 - Empresas atendidas: mais de 200, de escritórios a clínicas e indústrias.
 - Prazo de entrega de retratos: fotos tratadas em até 1 dia útil, conforme o escopo.
 - Prazo de entrega de eventos: seleção das melhores imagens no mesmo dia da cobertura, quando prevista no escopo.
-- Experiência: 30 anos de carreira.
+- Experiência: mais de 30 anos em fotografia e produção de imagem.
+- Atuação comercial: desde ${site.foundingYear}.
 - Reputação: nota ${aggregateRatingSchema.ratingValue} em ${aggregateRatingSchema.reviewCount} avaliações de clientes.
 
 ## Serviços e como as pessoas buscam

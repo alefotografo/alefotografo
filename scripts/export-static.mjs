@@ -125,6 +125,11 @@ RewriteRule ^blog/(categoria|category|tag)/.*$ /blog [R=301,L]
 RewriteRule ^blog/page/[0-9]+/?$ /blog [R=301,L]
 RewriteRule ^portfolio-do-fotografo/(.+)$ /fotografo-corporativo/$1 [R=301,L]
 
+# Loja antiga Epics: pacotes de retrato → foto-profissional; demais URLs → contato
+RewriteRule ^loja/(pacote-(prata|ouro|diamante|safira|influencer|dos-sonhos)|retrato-profissional|ensaio-vip|ensaio-fotografico-pacote-dos-sonhos) /foto-profissional [R=301,L]
+RewriteRule ^loja/gerenciamento-de-redes-sociais-mensal/?$ /servicos [R=301,L]
+RewriteRule ^loja/(.+)$ /contato [R=301,L]
+
 
 # Serve o HTML pré-gerado de cada rota
 RewriteCond %{REQUEST_FILENAME} !-f

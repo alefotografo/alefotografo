@@ -106,7 +106,7 @@ const EXACT: Record<string, string> = {
   "/filmagem-corporativa": "/videos",
   "/producao-de-video": "/videos",
   "/portfolio-do-fotografo": "/fotografo-corporativo",
-  "/loja": "/contato",
+  "/loja": "/foto-profissional",
   "/orcamento": "/contato",
   "/fale-conosco": "/contato",
   "/sobre-o-ale": "/quem-e-o-ale",

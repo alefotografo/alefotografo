@@ -15,7 +15,7 @@ export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: buildMeta({
       title: "Alexandre Machado — fotógrafo de retrato corporativo",
-      description: "Sou Alexandre Machado e dirijo pessoalmente cada produção em São Paulo: retratos profissionais com direção de pose, mais de 30 anos de experiência e atendimento direto comigo.",
+      description: "Sou Alexandre Machado, fotógrafo e diretor de imagem em São Paulo, com mais de 30 anos de experiência. Dirijo projetos de retrato e fotografia corporativa, executados por mim e/ou pela equipe conforme o escopo.",
       path: "/sobre",
       image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
@@ -91,12 +91,13 @@ function SobrePage() {
           <div className="md:col-span-7">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Sobre</p>
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-              Sou Alexandre Machado e dirijo pessoalmente cada produção
+              Sou Alexandre Machado e dirijo projetos de fotografia corporativa
             </h1>
             <p className="mt-6 text-muted-foreground md:text-lg">
               Mais de 30 anos fotografando pessoas em São Paulo: retrato profissional, headshot para
-              LinkedIn, executivos, sócios e equipes. Em retratos individuais quem fotografa sou eu;
-              em produções maiores, quem dirige sou eu, com a equipe quando o escopo pede.
+              LinkedIn, executivos, sócios e equipes. Em retratos individuais posso fotografar
+              pessoalmente, conforme o formato contratado; em produções maiores, dirijo a execução
+              com a equipe participando conforme o escopo.
             </p>
           </div>
           <div className="md:col-span-5">

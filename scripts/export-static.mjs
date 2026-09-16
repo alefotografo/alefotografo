@@ -86,7 +86,7 @@ const LEGACY_301 = [
   ["videos-para-empresas", "videos"],
   ["videos-corporativos", "videos"],
   ["portfolio-do-fotografo", "fotografo-corporativo"],
-  ["loja", "contato"],
+  ["loja", "foto-profissional"],
   ["orcamento", "contato"],
   ["fale-conosco", "contato"],
   ["sobre-o-ale", "quem-e-o-ale"],

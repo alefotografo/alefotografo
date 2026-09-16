@@ -8,9 +8,6 @@ export const BUSINESS_ID = `${ORIGIN}/#business`;
 export const personImage =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
 
-/** Anos de experiência confirmados pelo fotógrafo ("mais de 30 anos"). */
-export const personYearsOfExperience = 30;
-
 export const personKnowsAbout = [
   "Retrato corporativo",
   "Retrato executivo",
@@ -62,11 +59,6 @@ export const personSchema = {
     occupationLocation: { "@type": "City", name: "São Paulo" },
     skills:
       "Retrato corporativo, retrato executivo, headshot para LinkedIn, direção de pose, iluminação de estúdio e locação, direção de vídeo institucional",
-    experienceRequirements: {
-      "@type": "OccupationalExperienceRequirements",
-      // schema.org não tem "yearsOfExperience" em Person: 30 anos = 360 meses.
-      monthsOfExperience: personYearsOfExperience * 12,
-    },
   },
   areaServed: [
     { "@type": "City", name: "São Paulo" },

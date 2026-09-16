@@ -78,7 +78,7 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
             "Fotografia corporativa é tudo aquilo que a empresa usa para se apresentar sem estar presente: o retrato do sócio na proposta comercial, a foto da equipe na página “quem somos”, o registro do escritório, da linha de produção, de uma reunião real acontecendo. Não é uma foto bonita isolada — é um conjunto coerente, com a mesma luz, o mesmo tratamento e a mesma intenção.",
           ],
           [
-            "Sou Alexandre Machado. Fotografo em São Paulo há mais de 30 anos e dirijo cada projeto: eu vou até a empresa, conduzo as pessoas e finalizo as imagens, com a equipe quando a produção pede mais mãos. Quando o assunto é ",
+            "Sou Alexandre Machado. Trabalho com fotografia corporativa em São Paulo há mais de 30 anos e participo da direção dos projetos. Conforme o escopo, a produção é executada por mim e/ou pela equipe, mantendo o mesmo padrão de direção, iluminação e tratamento. Quando o assunto é ",
             { to: RETRATO, label: "retratos de liderança e equipe" },
             ", essa continuidade importa mais do que equipamento — é o que faz o CEO e o analista recém-contratado parecerem parte da mesma empresa.",
           ],
@@ -157,7 +157,7 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
       },
       {
         q: "Quem fotografa é você mesmo?",
-        a: "Sim. Todo projeto contratado por este site é fotografado, dirigido e finalizado por mim. Coberturas de grande porte com vários fotógrafos ao mesmo tempo são atendidas pela equipe, em alefotografos.com.br.",
+        a: "A direção é sempre minha. Retratos individuais podem ser fotografados pessoalmente por mim, de acordo com o formato contratado; produções maiores são executadas por mim e/ou pela equipe, conforme o escopo. Coberturas de grande porte com vários fotógrafos ao mesmo tempo são atendidas pela equipe, em alefotografos.com.br.",
       },
       {
         q: "A empresa pode usar as imagens em qualquer lugar?",

@@ -3,69 +3,83 @@ import type { videos } from "@/data/catalog";
 /* Conteúdo editorial da página /videos. Vive fora do arquivo de rota para não
    entrar no bundle compartilhado carregado em todas as páginas. */
 
-export type Tipo = { title: string; text: string; wa: string; to?: string };
+export type Tipo = { title: string; text: string; wa: string; to?: string; thumbSlug: string };
 
+/* thumbSlug aponta para uma produção real do catálogo (src/data/catalog.vids.json)
+   cujo frame representa visualmente o tipo. Só é afirmação factual quando o título
+   do vídeo comprova o formato; nos demais casos é apenas compatibilidade visual. */
 export const TIPOS: Tipo[] = [
   {
     title: "Vídeo institucional",
     text: "Apresenta a empresa, a estrutura, a equipe e os diferenciais para clientes, parceiros e licitações.",
     wa: "vídeo institucional",
     to: "/video-institucional",
+    thumbSlug: "flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional",
   },
   {
     title: "Vídeo de treinamento",
     text: "Padroniza procedimentos e reduz retrabalho em equipes distribuídas em várias unidades.",
     wa: "vídeo de treinamento",
+    thumbSlug: "salomao-concursos-aulao-em-sao-paulo",
   },
   {
     title: "Vídeo de integração",
     text: "Recebe novos colaboradores com cultura, normas e estrutura explicadas sempre da mesma forma.",
     wa: "vídeo de integração",
+    thumbSlug: "onemba-class-2023-sao-paulo",
   },
   {
     title: "Depoimentos em vídeo",
     text: "Prova social com clientes, parceiros e colaboradores falando de resultado real.",
     wa: "depoimentos em vídeo",
+    thumbSlug: "depoimento-de-cliente-hausy-robotton-producao-ale-fotografo",
   },
   {
     title: "Vídeos para eventos corporativos",
     text: "Registro, aftermovie e cortes de convenções, congressos, palestras e premiações.",
     wa: "vídeo de evento corporativo",
     to: "/video-de-eventos-corporativos",
+    thumbSlug: "video-corporativo-do-11o-forum-abradilan-2026-cobertura-de-evento-empresarial",
   },
   {
     title: "Vídeos para feiras e stands",
     text: "Registra a participação da empresa em feiras de negócios e exposições, com captação no próprio evento.",
     wa: "vídeo para feiras e stands",
     to: "/video-para-feiras-e-stands",
+    thumbSlug: "sq-quimica-na-fce-pharma-cobertura-profissional-em-video-para-feiras-e-eventos-c",
   },
   {
     title: "Vídeos para clínicas e hospitais",
     text: "Mostra estrutura, equipe e atendimento com linguagem sóbria e adequada à área da saúde.",
     wa: "vídeo para clínica",
     to: "/fotografia-para-clinicas",
+    thumbSlug: "genesis-inteligencia-artificial-na-feira-hospitalar",
   },
   {
     title: "Vídeos para escritórios e profissionais",
     text: "Constrói autoridade de advogados, consultores e profissionais liberais antes do primeiro contato.",
     wa: "vídeo para escritório de advocacia",
     to: "/fotografia-para-advogados",
+    thumbSlug: "video-institucional-rocha-queiroz-advogados",
   },
   {
     title: "Vídeos para indústria e logística",
     text: "Registra planta, operação, frota e centros de distribuição sem parar a produção.",
     wa: "vídeo para indústria e logística",
     to: "/fotos-corporativas",
+    thumbSlug: "nitriflex-industria-quimica-de-polimeros-especiais-e-borrachas-nitrilicas",
   },
   {
     title: "Reels corporativos",
     text: "Cortes verticais com legendas para LinkedIn, Instagram, YouTube Shorts e TikTok.",
     wa: "reels corporativos",
+    thumbSlug: "teaser-ibis-botucatu-sp",
   },
   {
     title: "Vídeos para campanhas e redes sociais",
     text: "Peças curtas para tráfego pago, lançamento de produto e marca empregadora.",
     wa: "vídeo para campanha e redes sociais",
+    thumbSlug: "ativa-logistica-30-anos",
   },
 ];
 
@@ -76,6 +90,7 @@ export type Servico = {
   entrega: string;
   cta: string;
   wa: string;
+  thumbSlug: string;
 };
 
 export const SERVICOS: Servico[] = [
@@ -86,6 +101,7 @@ export const SERVICOS: Servico[] = [
     entrega: "Roteiro, direção de cena, captação nas suas unidades, edição, color grading, trilha e versões para site, YouTube e apresentações.",
     cta: "Planejar meu vídeo institucional",
     wa: "vídeo institucional",
+    thumbSlug: "video-institucional-bmx-logistica",
   },
   {
     title: "Vídeo de treinamento",
@@ -94,6 +110,7 @@ export const SERVICOS: Servico[] = [
     entrega: "Roteiro didático a partir do procedimento da empresa, gravação em operação, narração, legendas e módulos por tema.",
     cta: "Falar sobre meu vídeo de treinamento",
     wa: "vídeo de treinamento",
+    thumbSlug: "curso-de-prestacao-de-contas-eleitorais-2026-turma-sao-paulo",
   },
   {
     title: "Vídeo de integração",
@@ -102,6 +119,7 @@ export const SERVICOS: Servico[] = [
     entrega: "Vídeo de boas-vindas, tour pelas áreas, mensagem da liderança, versões curtas por assunto e formato pronto para o portal de RH.",
     cta: "Planejar meu vídeo de integração",
     wa: "vídeo de integração",
+    thumbSlug: "onemba",
   },
   {
     title: "Depoimentos em vídeo",
@@ -110,6 +128,7 @@ export const SERVICOS: Servico[] = [
     entrega: "Condução da entrevista, direção para quem não é acostumado à câmera, áudio limpo e cortes de 30s, 60s e versão completa.",
     cta: "Quero gravar depoimentos de clientes",
     wa: "depoimentos em vídeo com clientes",
+    thumbSlug: "depoimento-de-cliente-hausy-robotton-producao-ale-fotografo",
   },
   {
     title: "Cobertura de eventos corporativos",
@@ -118,6 +137,7 @@ export const SERVICOS: Servico[] = [
     entrega: "Cobertura durante o evento, entrevistas com participantes, aftermovie, cortes para redes sociais e entrega acelerada.",
     cta: "Orçar cobertura do meu evento",
     wa: "cobertura de vídeo do meu evento corporativo",
+    thumbSlug: "ibde-rio2026",
   },
   {
     title: "Reels corporativos",
@@ -126,6 +146,7 @@ export const SERVICOS: Servico[] = [
     entrega: "Captação vertical, edição dinâmica, legendas queimadas e pacotes com vários cortes gravados na mesma diária.",
     cta: "Falar sobre reels corporativos",
     wa: "reels corporativos",
+    thumbSlug: "9faznegocios",
   },
 ];
 

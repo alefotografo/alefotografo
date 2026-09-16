@@ -103,6 +103,7 @@ function VideosIndex() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<string>("institucional");
   const [expanded, setExpanded] = useState(false);
+  const [indiceOpen, setIndiceOpen] = useState(false);
 
   const showreel = videoBySlug(SHOWREEL_SLUG) ?? videos[0];
 
@@ -229,27 +230,56 @@ function VideosIndex() {
           </p>
 
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {TIPOS.map((t) => (
-              <li key={t.title} className="flex flex-col rounded-sm border border-border bg-surface p-6">
-                <h3 className="font-display text-lg font-semibold">{t.title}</h3>
-                <p className="mt-3 flex-1 text-sm text-muted-foreground text-pretty">{t.text}</p>
-                <div className="mt-5 flex flex-wrap items-center gap-4">
-                  <a
-                    href={waLink(`Olá Alexandre, quero um orçamento de ${t.wa} para minha empresa.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-ember hover:underline"
-                  >
-                    Solicitar orçamento
-                  </a>
-                  {t.to && (
-                    <Link to={t.to} className="text-sm text-muted-foreground hover:text-foreground">
-                      Saber mais →
-                    </Link>
-                  )}
-                </div>
-              </li>
-            ))}
+            {TIPOS.map((t) => {
+              const thumbVideo = videoBySlug(t.thumbSlug);
+              const thumb = thumbVideo ? videoThumb(thumbVideo, "sm") : null;
+              return (
+                <li key={t.title} className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface">
+                  <div className="relative aspect-video overflow-hidden bg-black">
+                    {thumb ? (
+                      <img
+                        src={thumb}
+                        alt={`Frame real de produção: ${thumbVideo!.title}`}
+                        width={320}
+                        height={180}
+                        loading="lazy"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          const next = ytFallback(img.src);
+                          if (next && next !== img.src) img.src = next;
+                        }}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background">
+                        <Video size={40} className="text-ember/70" aria-hidden="true" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="font-display text-lg font-semibold">{t.title}</h3>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground text-pretty">{t.text}</p>
+                    <div className="mt-4 flex flex-wrap items-center gap-4">
+                      <a
+                        href={waLink(`Olá Alexandre, quero um orçamento de ${t.wa} para minha empresa.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-ember hover:underline"
+                      >
+                        Solicitar orçamento
+                      </a>
+                      {t.to && (
+                        <Link to={t.to} className="text-sm text-muted-foreground hover:text-foreground">
+                          Saber mais →
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
@@ -267,33 +297,64 @@ function VideosIndex() {
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {SERVICOS.map((s) => (
-                <article key={s.title} className="rounded-sm border border-border bg-background p-6">
-                  <h3 className="font-display text-xl font-semibold">{s.title}</h3>
-                  <dl className="mt-5 space-y-4 text-sm">
-                    <div>
-                      <dt className="text-xs uppercase tracking-[0.18em] text-ember">Para quem é</dt>
-                      <dd className="mt-1 text-muted-foreground text-pretty">{s.quem}</dd>
+              {SERVICOS.map((s) => {
+                const thumbVideo = videoBySlug(s.thumbSlug);
+                const thumb = thumbVideo ? videoThumb(thumbVideo, "sm") : null;
+                return (
+                  <article key={s.title} className="overflow-hidden rounded-sm border border-border bg-background">
+                    <div className="flex items-center gap-4 border-b border-border bg-surface p-4 sm:gap-5 sm:p-5">
+                      <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-sm bg-black ring-1 ring-border sm:w-36">
+                        {thumb ? (
+                          <img
+                            src={thumb}
+                            alt={`Frame real de produção: ${thumbVideo!.title}`}
+                            width={320}
+                            height={180}
+                            loading="lazy"
+                            decoding="async"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const img = e.currentTarget;
+                              const next = ytFallback(img.src);
+                              if (next && next !== img.src) img.src = next;
+                            }}
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background">
+                            <Video size={28} className="text-ember/70" aria-hidden="true" />
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="font-display text-xl font-semibold">{s.title}</h3>
                     </div>
-                    <div>
-                      <dt className="text-xs uppercase tracking-[0.18em] text-ember">Quando usar</dt>
-                      <dd className="mt-1 text-muted-foreground text-pretty">{s.quando}</dd>
+                    <div className="p-6">
+                      <dl className="space-y-4 text-sm">
+                        <div>
+                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">Para quem é</dt>
+                          <dd className="mt-1 text-muted-foreground text-pretty">{s.quem}</dd>
+                        </div>
+                        <div>
+                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">Quando usar</dt>
+                          <dd className="mt-1 text-muted-foreground text-pretty">{s.quando}</dd>
+                        </div>
+                        <div>
+                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">O que entregamos</dt>
+                          <dd className="mt-1 text-muted-foreground text-pretty">{s.entrega}</dd>
+                        </div>
+                      </dl>
+                      <a
+                        href={waLink(`Olá Alexandre, quero falar sobre um projeto de ${s.wa}.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex rounded-sm bg-ember px-4 py-2 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+                      >
+                        {s.cta}
+                      </a>
                     </div>
-                    <div>
-                      <dt className="text-xs uppercase tracking-[0.18em] text-ember">O que entregamos</dt>
-                      <dd className="mt-1 text-muted-foreground text-pretty">{s.entrega}</dd>
-                    </div>
-                  </dl>
-                  <a
-                    href={waLink(`Olá Alexandre, quero falar sobre um projeto de ${s.wa}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex rounded-sm bg-ember px-4 py-2 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
-                  >
-                    {s.cta}
-                  </a>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -384,7 +445,9 @@ function VideosIndex() {
       </section>
 
       {/* Índice completo — todos os vídeos com link real no HTML servido, sem
-          depender de aba ativa ou JS. Evita páginas de vídeo órfãs. */}
+          depender de aba ativa ou JS. Evita páginas de vídeo órfãs.
+          No mobile o índice abre colapsado com botão de expansão acessível;
+          no desktop continua sempre expandido. */}
       <section className="border-b border-border" aria-labelledby="indice-videos">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Índice</p>
@@ -398,7 +461,19 @@ function VideosIndex() {
             </Link>
             .
           </p>
-          <ul className="mt-8 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          <button
+            type="button"
+            aria-expanded={indiceOpen}
+            aria-controls="indice-lista"
+            onClick={() => setIndiceOpen((v) => !v)}
+            className="mt-6 inline-flex rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface lg:hidden"
+          >
+            {indiceOpen ? "Ocultar índice" : `Ver índice completo (${videos.length})`}
+          </button>
+          <ul
+            id="indice-lista"
+            className={`mt-8 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3 ${indiceOpen ? "grid" : "hidden lg:grid"}`}
+          >
             {[...videos]
               .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"))
               .map((v) => (

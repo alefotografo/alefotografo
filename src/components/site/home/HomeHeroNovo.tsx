@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { companiesStat, ratingStat } from "@/data/stats";
-import { imgSrcSet, imgUrl } from "@/lib/img";
+import { HERO_JPG_FALLBACK, HERO_JPG_SRCSET, HERO_WEBP_SRCSET } from "@/components/site/home/heroAssets";
 import { WA_DEFAULT, waLink } from "@/lib/whatsapp";
 
-// Foto de origem: /fotografo-corporativo/fotografo-de-grupos-times-e-equipes (grupos-3, horizontal)
+// Foto de origem: /fotografo-corporativo/fotografo-de-grupos-times-e-equipes (grupos-3, horizontal).
+// Os arquivos servidos são cópias otimizadas locais (src/assets/hero) — ver heroAssets.ts.
 const HERO = {
-  src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg",
   alt: "Fotógrafo de Grupos, Times e Equipes — foto 2",
   width: 1920,
   height: 1275,
@@ -22,19 +22,22 @@ export default function HomeHeroNovo() {
     <section className="border-b border-border">
       <div className="relative">
         <figure className="relative m-0">
-          <img
-            src={imgUrl(HERO.src, 1440)}
-            srcSet={imgSrcSet(HERO.src, [480, 720, 900, 1200, 1440, 1920], HERO.width)}
-            sizes="100vw"
-            alt={HERO.alt}
-            width={HERO.width}
-            height={HERO.height}
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-            referrerPolicy="no-referrer"
-            className="block h-auto w-full"
-          />
+          <picture>
+            <source type="image/webp" srcSet={HERO_WEBP_SRCSET} sizes="100vw" />
+            <img
+              src={HERO_JPG_FALLBACK}
+              srcSet={HERO_JPG_SRCSET}
+              sizes="100vw"
+              alt={HERO.alt}
+              width={HERO.width}
+              height={HERO.height}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+              referrerPolicy="no-referrer"
+              className="block h-auto w-full"
+            />
+          </picture>
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 hidden bg-background/75 xl:block"

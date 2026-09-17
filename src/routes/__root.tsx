@@ -11,7 +11,11 @@ import {
 import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-// Fontes críticas: arquivos próprios em /public/fonts (nome fixo, cache longo).
+// Fontes críticas: arquivos locais servidos pelo build (URL com hash,
+// Cache-Control immutable de 1 ano — ver Fase 3 P18B.1).
+import fontDmSans400 from "../assets/fonts/dm-sans-400.woff2";
+import fontDmSans500 from "../assets/fonts/dm-sans-500.woff2";
+import fontSpaceGrotesk600 from "../assets/fonts/space-grotesk-600.woff2";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { WhatsappCta } from "../components/site/WhatsappCta";
@@ -151,9 +155,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
         // Fontes acima da dobra: carregam em paralelo com o CSS. Todas usam
         // font-display: optional para nunca bloquear a primeira renderização.
-        { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-400.woff2", crossOrigin: "anonymous" },
-        { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/dm-sans-500.woff2", crossOrigin: "anonymous" },
-        { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/space-grotesk-600.woff2", crossOrigin: "anonymous" },
+        { rel: "preload", as: "font", type: "font/woff2", href: fontDmSans400, crossOrigin: "anonymous" },
+        { rel: "preload", as: "font", type: "font/woff2", href: fontDmSans500, crossOrigin: "anonymous" },
+        { rel: "preload", as: "font", type: "font/woff2", href: fontSpaceGrotesk600, crossOrigin: "anonymous" },
         { rel: "stylesheet", href: appCss },
         { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
         // Feed anunciado em todas as páginas: agregadores e crawlers de IA

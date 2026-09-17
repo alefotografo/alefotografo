@@ -4,14 +4,10 @@ import { site } from "@/data/site";
 import { buildMeta } from "@/lib/seo";
 import { faqJsonLd } from "@/lib/faqs";
 import { faqsComerciais } from "@/lib/faqsComerciais";
-import { imgSrcSet, imgUrl } from "@/lib/img";
 import { lazyAfterInteractive } from "@/lib/deferredLazy";
 import HomeHeroNovo from "@/components/site/home/HomeHeroNovo";
 import SolucoesEmpresa from "@/components/site/home/SolucoesEmpresa";
-
-// Fonte da imagem principal da home (mantida em sincronia com HomeHeroNovo).
-const HERO_IMAGE_SRC =
-  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-3.jpg";
+import { HERO_WEBP_480, HERO_WEBP_SRCSET } from "@/components/site/home/heroAssets";
 
 const homeFaqs = faqsComerciais.slice(0, 6);
 
@@ -53,8 +49,8 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: imgUrl(HERO_IMAGE_SRC, 480),
-        imageSrcSet: imgSrcSet(HERO_IMAGE_SRC, [480, 720, 900, 1200, 1440, 1920], 1920),
+        href: HERO_WEBP_480,
+        imageSrcSet: HERO_WEBP_SRCSET,
         imageSizes: "100vw",
         fetchPriority: "high",
       },

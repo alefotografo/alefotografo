@@ -1,43 +1,34 @@
-# 07 — Roadmap de prioridades (GSC) — NÃO IMPLEMENTAR sem revisão
+# 07 — Roadmap de prioridades (snapshot 17/09 — RECALCULADO DO ZERO)
 
-Data: 17/09/2026 · Base: GSC últimos 3 meses (05-26 → 08-25) · Tudo aqui é proposta de trabalho para revisão do Alexandre/ChatGPT — **nenhuma alteração de página foi feita**.
+Data: 18/09/2026 · Base: GSC 15/06 → 14/09/2026 (8.414 cliques / 1.587.554 impressões) · Proposta — **nada implementado**.
 
-## P0 — Erro/problema técnico
-Nenhum erro técnico novo detectado nos dados (canonical/host/sitemap saudáveis). Único item técnico: **convergência de índice** — `/loja*` (4.048 impr) e `/videos-para-empresas/*` (~15k impr) ainda recebem impressões; redirects 301 já estão ativos; ação = aguardar recrawl e monitorar (não otimizar URL velha).
+## P0 — erro/problema técnico
+Nenhum erro técnico novo. Convergência de índice segue: /loja* (~5.000 impr) e /videos-para-empresas/* seguem com impressões pós-301 — monitorar.
 
-## P1 — Grandes oportunidades comerciais (posição 4–15)
+## P1 — grandes oportunidades comerciais
 
-1. **Cluster foto-profissional → /foto-profissional** (133 queries, 95.445 impr, pos média 4.1)
-   - "foto profissional" 16.926 impr pos 3.24 CTR 0.16% → empurrar para top 3 (title/CTR) — ganho estimado é o maior do site
-   - "fotos profissionais" 16.771 impr pos 7.1 CTR 0.1%
-   - "retratos profissionais para negócios" 894 impr pos 9.46 **CTR 0%**
-   - "fotografia profissional" 1.105 impr pos 13.55
-   - CTR dos pares "sem foto de perfil"/"perfil sem foto" (23.881 impr combinadas, pos 1.1–1.3, CTR 0.05–0.08%) — intenção está no blog; manter como funil editorial
-2. **LinkedIn → /foto-profissional-para-linkedin** (23 queries, 5.942 impr, pos 4.7): CTR saudável (0.5–3.3%) — otimizar "capa linkedin"/"dimensões capa linkedin" (596 impr pos ~10) com conteúdo; avaliar par PROVÁVEL com /fotografo-corporativo/categoria/foto-para-linkedin (05)
-3. **Advocacia → /fotografia-para-advogados + Case Rocha & Queiroz** (12 queries, 3.240 impr, pos 5.8): "rocha e queiroz advogados" 1.734 impr pos 9.45 — Case aqui captura demanda navegacional existente
-4. **Eventos** (19 queries, 1.352 impr, pos 9.2): "fotografia de eventos" 452 impr pos 14.3; "fotografo de eventos" pos 16–21 — páginas /eventos-corporativos e nicho precisam de reforço (ver sobreposição interna em 05)
-5. **Retrato executivo → /fotografia-executiva** (pos média 18.5!): "fotografia de retrato corporativo" 1.003 impr pos 22.8; "retrato corporativo" 952 impr pos 25.64 — **pior posição entre clusters comerciais com volume**; ação CONTENT (a página /fotografo-corporativo/retrato-corporativo está pos 5.33 — avaliar consolidação de sinais entre as duas URLs, sem mudar slug)
-6. **Totem/foto na hora** (5 queries, 927 impr, pos 7.3): "foto impressa" 535 impr pos 9.75 CTR 0%
-7. **Gastronomia** (15 queries, 16.179 impr, pos 3.2): forte e saudável — manter; é o 2º cluster em impressões entre comerciais
-8. **Logística → Case ATIVA + /fotografia-de-logistica** (pos 11.22 na money page; navegacional ATIVA ~1.000 impr/mês) — ver 06
+1. **INVESTIGAÇÃO "foto profissional" (NOVO #1).** Query: 17.107 impr, pos 3.92. Página /foto-profissional: **59 impr, 0 cliques**. A intenção está na HOME (25.212 impr/pos 1.6) e em blog posts. **Ação: NÃO mexer em title/meta da página** (bloqueado pela regra query×url). Primeiro: identificar a URL real no GSC (Performance → filtro de página = /foto-profissional e filtro de query cruzado) ou API. Depois decidir: reforçar internal links blog→/foto-profissional e home→/foto-profissional, ou aceitar home como URL ranqueada.
+2. **Case Advocacia (Rocha & Queiroz).** "rocha e queiroz advogados" 1.598 impr pos 9.60 CTR 0.13% — demanda navegacional top do site. Money page /fotografia-para-escritorios-de-advocacia 12.480 impr pos 4.9 (estável e forte).
+3. **LinkedIn + "capa linkedin" (NOVO).** Cluster 6.417 impr pos 4.6; "capa linkedin" TRIPLICOU para 1.157 impr pos 10.11; "dimensões capa linkedin" 130 impr pos 9.93. Oportunidade de conteúdo dedicado (guia de capa do LinkedIn) + reforço em /foto-profissional-para-linkedin.
+4. **Case ATIVA + logística.** Navegacional ATIVA ~1.100 impr/mês; money page /fotografia-de-logistica 542 impr pos 10.7. Cluster +11% de volume no delta. Case + blog transportadoras (já planejado) atacam o gap de genéricos.
+5. **Retrato executivo.** "retrato corporativo" 890 impr pos 25.40; "fotografia de retrato corporativo" 965 impr pos 22.53. Melhorou (18.5→15.6 média do cluster) mas segue PIOR posição entre comerciais com volume. Content + consolidação de sinais entre /fotografia-executiva e /fotografo-corporativo/retrato-corporativo (5.33 pos, 3.599 impr).
+6. **Eventos.** "fotografia de eventos" 497 impr pos 11.32; "fotografo de eventos corporativos" 140 impr pos 20.77. Cluster pequeno (1.309 impr) mas serviço de alto valor — reforço em /eventos-corporativos + nicho.
+7. **Totem/foto na hora.** "foto impressa" 399 impr pos 9.77 CTR 0%; volume do cluster caiu 19% no delta — prioridade menor que na análise anterior.
 
-## P2 — Fortalecimento / internal links / Cases
-- **Blog → money (04):** 30 posts mapeados com 0–3 links contextuais sugeridos. Posts de retrato (5-poses 807 clicks/162k impr, plano-de-fundo 302/72k, linguagem-corporal 322/35k, dress-code 255/30k) → /foto-profissional, /fotografia-executiva. Post aplicativos-de-vídeo (1.561 clicks/405k impr) → 1 link contextual /videos.
-- **Fragmentação saúde (CONFIRMADA em 05):** 4 URLs comerciais ativas para mesma intenção-família — decidir hub (recomendado: manter ensaios por sub-nicho com canonical interno de links, não consolidar slug agora).
-- **Cases ATIVA + Advocacia** (ordem definida em 06).
-- **fotografo-generico** ("fotografo" 4.284 impr pos 9.4; "fotografo sao paulo" pos 21.27): home já é o destino (H1 LOCK); reforçar via internal links e autoridade, sem tocar H1.
+## P2 — fortalecimento / internal links / Cases
+- **Blog → money (04):** 30 posts mapeados. Top: 10-lugares (1.931 clicks/49.801 impr) → 0 links (editorial puro, manter); 5-poses (730/162.493) → /fotografia-executiva; 11-ideias-fundo (247/67.747) → /foto-profissional; linguagem-corporal (245/27.532) → /foto-profissional; aplicativos-vídeo (1.515/386.810) → /videos (1 link).
+- **Fragmentação saúde (CONFIRMADA, 05):** 4 URLs ativas — decidir hub.
+- **Gastronomia:** 14.210 impr pos 3.0 — forte, manter (prova: foto de comida 8.763 impr pos 1.2).
+- **fotografo-generico:** "fotografo" 4.146 impr pos 10.2; "fotografo sao paulo" pos 21.27 — home é o destino (H1 LOCK); reforçar internal links/autoridade.
 
-## P3 — Monitoramento
-- INFORMATIVA (404 queries, 140k+ impr em edicao-apps): alto tráfego de apps/editores — não é dinheiro; manter como autoridade e funil leve
-- BRANDED web (1 query): navegação de marca vai por GBP/local pack — monitorar
-- IRRELEVANTE (19): nada a fazer
-- /loja e /videos-para-empresas: convergência de índice
+## P3 — monitoramento
+INFORMATIVA/apps (413 queries, 132k impr) · BRANDED web (1) · IRRELEVANTE (19) · legados (convergência) · totem (queda de volume) · property-level (-5% cliques no delta — monitorar próximo snapshot).
 
-## Ordem recomendada de execução (quando autorizado)
-1. Title/meta/CTR de /foto-profissional (maior ganho isolado)
-2. Case ATIVA + ajustes em /fotografia-de-logistica
-3. Case Advocacia (Rocha & Queiroz) + /fotografia-para-advogados
-4. Conteúdo /fotografia-executiva (pos 18–26)
-5. Internal links blog→money (lote único, 1–3 links por post)
-6. Decisão de fragmentação saúde
-7. Eventos/totem reforço
+## Ordem recomendada
+1. Investigação query×page "foto profissional" (GSC/API) — destrava a maior decisão do site
+2. Case Advocacia + ajustes finos em /fotografia-para-escritorios-de-advocacia
+3. Conteúdo "capa linkedin" + reforço /foto-profissional-para-linkedin
+4. Case ATIVA + /fotografia-de-logistica
+5. Content retrato executivo
+6. Internal links blog→money (lote único)
+7. Eventos + decisão saúde

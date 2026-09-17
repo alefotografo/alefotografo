@@ -1,39 +1,41 @@
-# 06 — Oportunidades para os futuros Cases (definidas pelos dados)
+# 06 — Oportunidades para os futuros Cases (snapshot 17/09 — RECALCULADO)
 
-Data: 17/09/2026 · Fonte: GSC real, últimos 3 meses (2026-05-26 → 2026-08-25) · Nenhum Case foi criado — isto define PAPEL de cada Case pelos dados de busca.
+Data: 18/09/2026 · Fonte: GSC 15/06 → 14/09/2026 · Nenhum Case criado — papel definido pela demanda real de busca.
 
-## ATIVA Logística — Case âncora do cluster logística (dados: 9 queries, 1.282 impressões, posição média 5.9)
+## ATIVA Logística — Case âncora do cluster (dados: 9 queries, 1.337 impressões, pos média 6.6)
 
-Queries que o Case ATIVA deve apoiar:
-- **"ativa logistica"** — 540 impr, pos 7.66, CTR 0.19% (volume navegacional da marca do cliente; quem pesquisa o cliente encontra o trabalho do Alê)
-- "ativa log" — 338 impr, pos 9.13
-- "bmx logistica" — 73 impr, pos 7.73 (vídeo institucional BMX já ranqueia)
-- "empresa ativa logística" — 65 impr, pos 8.62
-- Plus: queries genéricas do cluster (fotografia de logística, transportadora, frota, galpão) — hoje **ausentes do top-1000** (gap = o que o Case + blog precisam conquistar, não o que já existe)
+Demanda navegacional JÁ EXISTE e é o motor do cluster:
+- "ativa logistica" — 417 impr, pos 7.35, CTR 0.24%
+- "ativa log" — 308 impr, pos 9.36
+- **"ativa logística barueri" — 269 impr, pos 10.28 (NOVO — cresceu; liga direto ao vídeo legado /videos-para-empresas/ativa-logistica-unidade-barueri, 3.649 impr/pos 4)**
+- "empresa ativa logística" — 69 impr, pos 8.81
+- Genéricos (fotografia de logística, transportadora, frota, galpão): continuam AUSENTES do top-1000 — gap a conquistar com Case + blog.
 
-Leitura: o Case ATIVA deve (1) consolidar a autoridade navegacional ("ativa logistica" já gera ~1.000 impressões/mês para páginas do Alê), (2) atacar as intenções genéricas logística/indústria que hoje não aparecem, (3) apoiar o cluster P17 (/fotografo-corporativo/fotografia-de-logistica, pos 11.22 — página MONEY em faixa 11–15, ver 02).
+Papel do Case ATIVA: consolidar a demanda navegacional (que hoje cai majoritariamente em URLs LEGADAS de vídeo) e atacar os genéricos. Nota do delta: volume do cluster +11% vs snapshot anterior, mas posição piorou (5.9→6.6) — o Case é a resposta.
 
-## Rocha & Queiroz (advogados) — NÃO planejado como Case, mas dado relevante
+## Advocacia / Rocha & Queiroz — demanda navegacional madura
 
-- **"rocha e queiroz advogados"** é a query de MAIOR opportunity do site inteiro (1.734 impr, pos 9.45, CTR 0.17%): quem pesquisa o escritório vê o vídeo institucional do Alê. 
-- O futuro **Case Advocacia** (ou a seção de cases dentro de /fotografia-para-advogados) deve usar Rocha & Queiroz como prova — a demanda navegacional já existe e está capturada pela URL legada `/videos-para-empresas/video-institucional-rocha-queiroz-advogados` (3.591 impr, pos 9.19 — INDEX CONVERGENCE para `/videos/video-institucional-rocha-queiroz-advogados`).
+- "rocha e queiroz advogados" — 1.598 impr, pos 9.60, CTR 0.13% (TOP 1 opportunity do site; estável vs snapshot anterior)
+- "rocha queiroz advogados" — 93 impr, pos 9.52
+- Cluster advocacia total: 12 queries, 3.651 impr, pos 5.6 (MELHOROU vs 08/27)
+- Ativo que captura hoje: URL legada /videos-para-empresas/video-institucional-rocha-queiroz-advogados (2.826 impr/pos 7.5) + nova /videos/video-institucional-rocha-queiroz-advogados (559 impr/pos 8.77) + /fotografia-para-escritorios-de-advocacia (12.480 impr/pos 4.9 — maior money page do cluster)
+
+Papel: Case Advocacia (ou seção de prova em /fotografia-para-advogados) organiza o funil Rocha & Queiroz + captura genéricos ("foto advogado" 596 impr pos 1.24 já é dominado; "fotos advogada profissional" 262 impr pos 7.18 tem espaço).
 
 ## All Facilities / Seu Mart
 
-- **Zero queries** no export relacionadas (all facilities, seu mart, varejo, autoatendimento). 
-- Papel pelo dado: Case de **autoridade setorial sem demanda de busca navegacional própria** — deve apoiar intenções genéricas ("fotógrafo para varejo", "fotografia de loja") que **não existem hoje no top-1000** (gap). Não esperar tráfego navegacional; o valor é prova comercial + conteúdo editorial derivado.
+Zero queries próprias no snapshot (all facilities, seu mart, varejo, autoatendimento — nenhuma). Papel: prova setorial para intenções genéricas inexistentes hoje (gap editorial). Não esperar tráfego navegacional; valor = prova comercial.
 
-## Alfa Silk — AGUARDA BRIEFING (dados insuficientes)
+## Alfa Silk — AGUARDA BRIEFING
 
-- Nenhuma query relacionada no export. Sem briefing não há como definir queries-alvo. Quando o briefing chegar: repetir esta consulta sobre o export mais recente.
+Zero queries relacionadas. Sem briefing não há queries-alvo. Reprocessar quando houver material.
 
-## Dra. Luciana — AGUARDA BRIEFING, mas cluster saúde já valida o tema
+## Dra. Luciana — AGUARDA BRIEFING; tema validado pelo cluster saúde
 
-Cluster saúde hoje: 14 queries, 1.274 impr, posição média 3.2 (foto medico 433 impr pos 1.15; "fotos dentista profissional" 140 impr pos 4.49; ensaio dentista 62 impr pos 3.39 CTR 4.84%).
-- Papel: Case odontologia deve apoiar as sub-intenções **dentista/consultório** (que hoje caem em /fotografo-corporativo/ensaio-fotografico-para-dentistas, 4.016 impr pos 5.46) e organizar a fragmentação (4 URLs de saúde ativas — ver 05).
+Saúde hoje: 14 queries, 1.194 impr, pos 3.0. Sub-intenção **dentista** já é real: "fotos dentista profissional" 141 impr pos 4.28; "fotos de dentista no consultório" 82 impr pos 8.41; "ensaio fotografico dentista" 60 impr pos 3.5 (CTR 0.05% — snippet fraco). Fragmentação: 4 URLs ativas (ver 05). Papel: Case odontologia apoia dentista/consultório e organiza o cluster.
 
-## Regra geral tirada dos dados
+## Regra geral (inalterada)
 
-1. Case navegacional (ATIVA, Rocha & Queiroz) = captura demanda que JÁ EXISTE ("ativa logistica", "rocha e queiroz advogados") — prioridade máxima porque o volume é hoje.
-2. Case setorial sem demanda navegacional (All Facilities) = cria ativos para intenções genéricas que hoje são gap — prioridade editorial, não de tráfego imediato.
-3. Briefings pendentes (Alfa Silk, Dra. Luciana) não bloqueiam os Cases 1 e 2.
+1. Case navegacional (ATIVA, Rocha & Queiroz) = captura demanda que já existe → prioridade.
+2. Case setorial sem demanda (All Facilities) = ativo para gap → prioridade editorial.
+3. Briefings pendentes (Alfa Silk, Dra. Luciana) não bloqueiam os itens 1 e 2.

@@ -1,0 +1,33 @@
+keyword_theme,intent,primary_domain,primary_url_if_known,secondary_domain_allowed,secondary_role,risk_of_cannibalization,notes
+fotógrafo profissional,contratar serviço,alefotografo.com.br,/fotografo-profissional-em-sao-paulo,fotografoale.com.br (legado até migrar),nenhum depois da migração,ALTA hoje,"ales e legado ranqueiam para a mesma intenção; SERP mostra home duplicada 4º/5º"
+fotógrafo corporativo,contratar serviço,alefotografo.com.br,/fotografo-corporativo,alefotografos.com.br (futuro: só escala/equipe),redirecionar ales para principal em termos de corpus,ALTA,"2 domínios próprios top-5 na mesma SERP (baseline query 1)"
+fotografia corporativa,contratar serviço,alefotografo.com.br,/fotografo-corporativo/fotografia-corporativa-em-sao-paulo,—,—,ALTA (ales espelha),—
+foto profissional,contratar serviço,alefotografo.com.br,/foto-profissional,—,—,ALTA,"baseline: /loja/pacote-ouro antiga ainda aparece 2º — índice em convergência"
+retrato profissional,contratar serviço,alefotografo.com.br,/foto-profissional,fotodeperfilprofissional.com.br (legado até migrar),migrar,ALTA hoje,"legado inteiro é sobre retrato"
+retrato corporativo,contratar serviço,alefotografo.com.br,/fotografo-corporativo/retrato-corporativo,—,—,MÉDIA (ales espelha),—
+fotografia executiva,contratar serviço,alefotografo.com.br,/fotografia-executiva,—,—,MÉDIA,—
+foto LinkedIn,contratar serviço,alefotografo.com.br,/foto-profissional-para-linkedin,—,—,MÉDIA (ales espelha),—
+headshot,contratar serviço,alefotografo.com.br,/fotografia-executiva,—,—,BAIXA,sem página dedicada headshot — oportunidade
+fotógrafo empresarial,contratar serviço,alefotografo.com.br,/fotografo-empresarial,—,—,MÉDIA (ales espelha),—
+eventos corporativos,contratar serviço,alefotografo.com.br,/fotografo-corporativo/fotografo-de-eventos-corporativos,alefotografos.com.br (futuro: grandes eventos/equipe),ales assume eventos de grande escala,ALTA hoje,"baseline query 6: ale 1º e ~7º (duplicata); ales compete com homepage genérica em vídeo"
+fotógrafo eventos,contratar serviço,alefotografo.com.br,/eventos-corporativos,alefotografos.com.br (escala),—,ALTA hoje,—
+grande evento / equipe de fotógrafos,contratar serviço,alefotografos.com.br,/ (futuro hub de escala),alefotografo.com.br (link natural quando escopo exige equipe),INTENÇÃO QUE SÓ ALES DEVE TER,BAIXA depois do reposicionamento,"hoje ales não possui conteúdo próprio de escala — gap"
+congresso / convenção,contratar serviço,alefotografos.com.br,futuro landing,—,—,BAIXA,sem cobertura dedicada hoje
+feira / stand,contratar serviço,alefotografo.com.br,/fotografo-corporativo/fotografo-feiras-stands + /fotografo-de-feira-de-negocios,videoscorporativos.com.br (versão em vídeo),vídeo→VC foto→Ale,MÉDIA,"baseline query 7: ALE e FOTOGRAFOALE na mesma SERP (6º) — canibalização legado"
+fotografia industrial,contratar serviço,alefotografo.com.br,/fotografo-corporativo/fotografia-industrial-em-sp,—,—,MÉDIA,—
+logística (foto),contratar serviço,alefotografo.com.br,/fotografo-corporativo/fotografia-de-logistica,alefotografos.com.br NÃO deve manter página espelhada,consolidar no Ale,ALTA hoje,"baseline query 9: ALES ranqueia 3º com página espelhada; Ale (dono do cluster P17) some — inversão de autoridade"
+transportadora / frota / galpão,contratar serviço,alefotografo.com.br,/blog/video-institucional-para-transportadoras + futuro case ATIVA,—,—,MÉDIA,gap: pouca página serviço dedicada a transportadoras em foto
+médicos / clínicas / dentistas,contratar serviço,alefotografo.com.br,/fotos-profissionais-medicos + /fotografia-para-clinicas,—,—,ALTA hoje,"baseline query 14: 5 aparições próprias divididas entre ale (3) e ales (2) — mesma intenção 2 domínios"
+advogados / advocacia,contratar serviço,alefotografo.com.br,/fotografia-para-advogados,—,—,ALTA hoje,"baseline query 15: ALES 1º e ALE ~5º para a MESMA página espelhada"
+vídeo corporativo,contratar serviço,videoscorporativos.com.br,/,alefotografo.com.br/videos (portfólio integrado),Ale=prova integrada foto+vídeo,ALTA hoje,"baseline query 10: VC não apareceu; ALES apareceu 2º com homepage genérica — VC está invisível para sua head term"
+vídeo institucional,contratar serviço,videoscorporativos.com.br,/video-institucional-sao-paulo,alefotografo.com.br,/video-institucional (reformula como integrado),ALTA hoje,"baseline query 11: nenhum domínio próprio; VC tem a página mas não ranqueia na amostra"
+produção de vídeo corporativo,contratar serviço,videoscorporativos.com.br,landing dedicada (existe? manter),alefotografo.com.br/videos,não disputar,ALTA hoje,"baseline query 12: ale/videos ranqueia 2º — disputa direta com VC"
+vídeo para empresas,contratar serviço,videoscorporativos.com.br,/,—,—,ALTA hoje,"baseline query 13: ALES ~7º; VC invisível"
+vídeo eventos corporativos,contratar serviço,videoscorporativos.com.br,/filmagem-evento-corporativo-sao-paulo,alefotografo.com.br,/video-de-eventos-corporativos (reformular),ALTA hoje,ambos têm páginas espelhadas
+vídeo feiras e stands,contratar serviço,videoscorporativos.com.br,/video-para-feira-de-negocios,alefotografo.com.br,/video-para-feiras-e-stands (reformular),ALTA hoje,—
+vídeo treinamento / integração / depoimentos,contratar serviço,videoscorporativos.com.br,landings de serviço,alefotografo.com.br/videos (índice),VC dono do tema,ALTA hoje,"VC já tem landings por tipo (confirmar cobertura total dos 11 tipos)"
+vídeo indústria / logística,contratar serviço,videoscorporativos.com.br,landings nicho,alefotografo.com.br (case integrado ATIVA),—,MÉDIA,VC deve criar landings logística/indústria se ainda não existirem
+comunicação interna em vídeo,contratar serviço,videoscorporativos.com.br,landing/blog,—,—,BAIXA,—
+foto + vídeo (produção integrada),contratar serviço,alefotografo.com.br,/videos (reformulado como integrado),videoscorporativos.com.br,ambos com papéis distintos,MÉDIA,única intenção onde os dois devem CO-EXISTIR com crosslink
+banco de imagens empresarial,contratar serviço,alefotografo.com.br,hub futuro ou serviço dedicado,—,—,BAIXA,"VC tem blog sobre banco de imagens; Ale não tem página serviço dedicada — gap"
+Cases,prova social,alefotografo.com.br,/portfolio/cases (futuro) + VC /cases (próprio),cada domínio com seus cases,case completo no domínio dono + crosslink natural,MÉDIA,VC já tem /cases com 66+ itens; Ale ainda não tem hub

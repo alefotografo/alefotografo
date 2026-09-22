@@ -16,7 +16,7 @@ Data: 21/09/2026 · Evidência: amostra SERP (12 buscas, 21/09) + GSC (P18A.6R) 
 | Hub /fotografo-corporativo com apenas 394 palavras | corporate | CONTENT | MEDIUM | galeria pesada, texto mínimo — pouco extratável por IA |
 | "foto profissional": intenção de 17.107 impressões sem URL reconhecida | professional_photo | TECHNICAL + CITATION | HIGH (GSC) | decisão pendente (query×page) antes de qualquer otimização |
 | Fragmentação saúde (4 URLs) | health | TECHNICAL | HIGH (GSC, P18A.6R) | IAs podem citar qualquer uma das 4; sem hub claro |
-| Confusão de domínios próprios (alemachado, ales, legado foto-de-perfil) | entity | OWNED DOMAIN CONFUSION | MEDIUM | sinais fracionados da mesma entidade |
+| Confusão de domínios próprios (alemachado, ales, legado foto-de-perfil, fotosprofissionais) | entity | OWNED DOMAIN CONFUSION | MEDIUM | fotosprofissionais.com.br reclassificado como OWNED DOMAIN confirmado (P18G.0A, 7º do ecossistema) com OWNED DOMAIN LEAKAGE na busca "foto profissional"; sinais fracionados da mesma entidade; sem decisão estratégica antes do levantamento |
 | GBP/local: map pack não avaliável na amostra | local | LOCAL | LOW | ferramenta não reproduz local pack; verificar GBP diretamente com proprietário |
 
 ## O que NÃO é gap (evitar desperdício)

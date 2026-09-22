@@ -153,7 +153,11 @@ export function Header() {
       body.style.left = prevLeft;
       body.style.right = prevRight;
       body.style.width = prevWidth;
-      window.scrollTo(0, scrollY);
+      // Se a rota mudou com o menu aberto, a página nova começa no topo —
+      // não restaurar o scroll da página anterior.
+      if (window.location.pathname === openedPath) {
+        window.scrollTo(0, scrollY);
+      }
     };
   }, [mobileOpen]);
 

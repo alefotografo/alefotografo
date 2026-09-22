@@ -28,7 +28,7 @@ Consequência: as métricas de menção/citação em IA **não puderam ser medid
 3. **Content citability audit** — 14 páginas-chave avaliadas manualmente (arquivo 10).
 4. **Page citation map** — intenção → página preferida, validada contra arquitetura real (arquivo 08). Inclui os casos "TARGET PAGE UNDER REVIEW" vindos do GSC (P18A.6R: "foto profissional" tem 17.107 impressões mas /foto-profissional só 59 — NÃO assumimos que a página é a URL reconhecida).
 5. **SERP amostral** (12 buscas, ferramenta de busca, amostra única, ordem ≠ posição oficial) — usada como **proxy de visibilidade de descoberta** e para mapear concorrentes/fontes. É o dado "vivo" disponível no ambiente; rotulado como SEARCH SNIPPET SAMPLING, separado de qualquer medição de IA.
-6. **Owned-domain detection** — ecossistema monitorado na amostra (inclui achados: alemachado.com.br ranqueando em advocacia; fotosprofissionais.com.br com copy da marca — **ownership a confirmar com o proprietário**).
+6. **Owned-domain detection** — ecossistema de **7 domínios oficiais** (atualização P18G.0A: fotosprofissionais.com.br confirmado pelo proprietário como owned). Achados na amostra: alemachado.com.br ranqueando em advocacia; fotosprofissionais.com.br com copy da marca na busca "foto profissional" — reclassificado como OWNED DOMAIN LEAKAGE até análise estratégica.
 
 ## Regras de medição (valem para a execução manual futura)
 
@@ -45,6 +45,6 @@ Consequência: as métricas de menção/citação em IA **não puderam ser medid
 ## Classificação usada
 
 - Citation types: MAIN DOMAIN / OWNED SPECIALIST DOMAIN / OWNED LEGACY DOMAIN / THIRD PARTY / COMPETITOR / NONE.
-- Own domains: videoscorporativos.com.br citado para intenção de vídeo = **OWNED ECOSYSTEM WIN** (nunca concorrente automático). alefotografos/fotografoale/fotodeperfil/alemachado como destino de consulta do principal = **OWNED DOMAIN LEAKAGE** (até revisão; alemachado tem papel próprio a avaliar).
+- Own domains: videoscorporativos.com.br citado para intenção de vídeo = **OWNED ECOSYSTEM WIN** (nunca concorrente automático). alefotografos/fotografoale/fotodeperfil/alemachado/fotosprofissionais como destino de consulta do principal = **OWNED DOMAIN LEAKAGE** (até revisão; alemachado tem papel próprio a avaliar; fotosprofissionais confirmado owned em 21/09 — P18G.0A). fotosprofissionais em consultas de foto profissional/fotografia profissional/retrato/LinkedIn/perfil profissional = inicialmente **OWNED DOMAIN VISIBILITY**, reclassificado para LEAKAGE quando compete com intenção do principal.
 - Gaps: TECHNICAL / ENTITY / CONTENT / CASE / EXTERNAL AUTHORITY / LOCAL / VIDEO / IMAGE / DRONE / CITATION / OWNED DOMAIN CONFUSION / UNKNOWN.
 - Evidence: HIGH (vários engines/prompts) · MEDIUM (repetido em um engine ou site+resposta) · LOW (resultado único/hipótese).

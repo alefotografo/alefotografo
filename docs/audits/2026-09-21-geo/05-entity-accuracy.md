@@ -30,8 +30,8 @@ Zero divergência factual no domínio principal. Nenhum telefone antigo (99483),
 
 ## Riscos de entidade detectados (alimentam 07 e 11)
 
-1. **OWNED DOMAIN CONFUSION (evidence MEDIUM)**: alemachado.com.br (Alboom) e alefotografos.com.br ranqueiam com a mesma entidade "Alê/Alexandre" para intenções do principal — IAs podem aprender relações fracionadas entre 4 domínios com o mesmo dono.
-2. **DOMÍNIO NÃO MAPEADO (evidence MEDIUM)**: fotosprofissionais.com.br apareceu na amostra com copy "30 anos de experiência" — CONFIRMAR COM PROPRIETÁRIO (owned não listado ou cópia de terceiro).
+1. **OWNED DOMAIN CONFUSION (evidence MEDIUM)**: alemachado.com.br (Alboom) e alefotografos.com.br ranqueiam com a mesma entidade "Alê/Alexandre" para intenções do principal — IAs podem aprender relações fracionadas entre múltiplos domínios do mesmo dono (7 oficiais desde P18G.0A).
+2. **OWNED DOMAIN LEAKAGE (evidence MEDIUM)**: fotosprofissionais.com.br — **ownership confirmado pelo proprietário em 21/09 (P18G.0A; 7º domínio do ecossistema)** — apareceu na amostra com copy "30 anos de experiência" na busca "foto profissional". A copy usa fato real da marca (nenhum fato incorreto), mas o domínio compete com a intenção que pertence preferencialmente ao principal. Levantamento (GSC, backlinks, URLs, conteúdo, tráfego, ranking, intenção) antes de qualquer decisão estratégica.
 3. **Legacy URL no lugar da entidade** (evidence HIGH no GSC): "foto profissional" → /loja?img_picture=... — IAs que copiarem SERP podem citar URL legada com metadados antigos.
 4. **Regra de execução factual para IAs** (llms.txt): "dirigidos por Alexandre e executados por ele e/ou equipe" — correto e sem promessa universal; preserva retrato individual pessoal "conforme formato" (fato verdadeiro).
 

@@ -17,17 +17,17 @@ Data: 21/09/2026 · Domínio principal: https://www.alefotografo.com.br · Branc
 
 ## Alertas para o proprietário
 
-- **fotosprofissionais.com.br** apareceu na amostra com copy "30 anos de experiência" — **confirmar se é domínio seu** (não listado nos 6) ou cópia de terceiro.
-- Decisões pendentes que afetam GEO: papel do alemachado.com.br (Alboom), query×page de "foto profissional", e o plano de vídeo do ecossistema (VC invisível na amostra).
+- **fotosprofissionais.com.br — OWNED DOMAIN confirmado pelo proprietário em 21/09 (atualização P18G.0A; 7º domínio do ecossistema).** Apareceu na amostra com copy "30 anos de experiência" na busca "foto profissional" — reclassificado como **OWNED DOMAIN LEAKAGE** (intenção que pertence preferencialmente ao principal) até análise estratégica. **Nenhuma** decisão de redirect/migração/desativação/consolidação/mudança de conteúdo antes do levantamento (GSC, backlinks, URLs, conteúdo, tráfego, ranking, intenção).
+- Decisões pendentes que afetam GEO: levantamento estratégico do fotosprofissionais.com.br (owned), papel do alemachado.com.br (Alboom), query×page de "foto profissional", e o plano de vídeo do ecossistema (VC invisível na amostra).
 
 ## Top 5 ações (detalhe em 15)
 
 1. Executar o Manual Test Pack (17) — destrava as métricas de IA.
 2. Case ATIVA + Case Advocacia (prova nomeada citável).
 3. Decisão "foto profissional" via GSC query×page.
-4. Confirmar ownership fotosprofissionais.com.br + papel alemachado.
+4. Levantar fotosprofissionais.com.br (owned confirmado P18G.0A — GSC/backlinks/URLs/conteúdo/tráfego) + definir papel do alemachado.
 5. Citability do hub /fotografo-corporativo (394 palavras → extratível).
 
 ## Métricas (estado)
 
-NON-BRANDED MENTION SHARE / MAIN DOMAIN CITATION SHARE / CORRECT PAGE RATE em IA: **NOT TESTED** (coleta manual pendente) · ENTITY ACCURACY (site): 100% consistente · OWNED ECOSYSTEM VISIBILITY (proxy): principal 6/12, ales 2/12, alemachado 1/12, VC 0/12 · COMMERCIAL COVERAGE (proxy): 5/11 clusters · LOCAL COVERAGE (proxy): presente nas buscas SP amostradas · OWNED DOMAIN LEAKAGE: 2 AMBIGUOUS + 1 LEGACY.
+NON-BRANDED MENTION SHARE / MAIN DOMAIN CITATION SHARE / CORRECT PAGE RATE em IA: **NOT TESTED** (coleta manual pendente) · ENTITY ACCURACY (site): 100% consistente · OWNED ECOSYSTEM VISIBILITY (proxy): principal 6/12, ales 2/12, alemachado 1/12, fotosprofissionais 1/12 (owned confirmado P18G.0A), VC 0/12 · COMMERCIAL COVERAGE (proxy): 5/11 clusters · LOCAL COVERAGE (proxy): presente nas buscas SP amostradas · OWNED DOMAIN LEAKAGE: 2 AMBIGUOUS + 1 LEGACY + 1 OWNED_DOMAIN_LEAKAGE confirmado (fotosprofissionais em "foto profissional").

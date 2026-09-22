@@ -8,7 +8,7 @@ Data: 21/09/2026 · Ordenado por evidência × intenção comercial × impacto �
 2. **Case ATIVA Logística** (GEO + SEO) — evidence HIGH (GSC + gaps 11/12). Converte o melhor cluster em entidade citável com URL preferida. Esforço médio. Sem risco de SEO se seguir o template (11-case-architecture).
 3. **Case Advocacia (Rocha & Queiroz)** — evidence HIGH (top opportunity do GSC). Esforço médio.
 4. **Resolver a decisão "foto profissional" via GSC query×page** (filtro de página na interface ou API) — evidence HIGH. Bloqueia qualquer otimização da intenção #1 em volume. Esforço: 15 min com acesso GSC.
-5. **Confirmar ownership de fotosprofissionais.com.br** com o proprietário — evidence MEDIUM; se for dele: owned asset não mapeado; se não for: cópia da marca por terceiro. Esforço: uma pergunta.
+5. **Levantar fotosprofissionais.com.br** — ownership **confirmado** pelo proprietário em 21/09 (P18G.0A; 7º domínio do ecossistema); evidence MEDIUM. Antes de qualquer decisão (redirect/migração/desativação/consolidação/mudança de conteúdo): levantar GSC, backlinks, URLs indexadas, conteúdo, tráfego, ranking e intenção do domínio. Esforço: médio (depende de acessos).
 6. **Definir papel do alemachado.com.br (Alboom)** — evidence MEDIUM: portfólio isolado ranqueia acima do principal em advocacia; decidí-lo como KEEP/CONSOLIDATE afeta owned-domain leakage. Esforço: decisão + possível ação futura.
 7. **Fortalecer citability do hub /fotografo-corporativo** (texto extratível além da galeria — 394 palavras) — evidence MEDIUM. Esforço baixo-médio, risco baixo.
 8. **Página/parágrafo dedicado a "acompanhamento de obra com drone"** — evidence LOW-MEDIUM. Só depois dos Cases P1.
@@ -18,7 +18,7 @@ Data: 21/09/2026 · Ordenado por evidência × intenção comercial × impacto �
 ## Prioridades GEO
 
 - **GEO-P0** (erro factual/ técnico que prejudica acesso-entidade): nenhum novo detectado nesta missão (acesso saudável, entidade consistente). O item mais próximo: URL legada /loja como face da intenção "foto profissional" — técnico, em convergência (monitorar; não ação nova).
-- **GEO-P1**: itens 1–6 acima (execução do baseline em IA, Cases ATIVA+Advocacia, decisão foto-profissional, ownerships de domínio).
+- **GEO-P1**: itens 1–6 acima (execução do baseline em IA, Cases ATIVA+Advocacia, decisão foto-profissional, levantamento de domínios owned — fotosprofissionais confirmado, papel do alemachado).
 - **GEO-P2**: citability (hub, industrial, drone), fragmentação saúde, plano de vídeo pós-medição, totem.
 - **GEO-P3**: experimentos de baixa evidência (ex.: formatos de conteúdo vistos na amostra: "quanto custa", guias — replicar só com evidência de IA).
 

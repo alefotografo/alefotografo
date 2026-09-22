@@ -1,0 +1,7 @@
+"prompt_id","engine","expected_domain","actual_owned_domain","classification","main_domain_missing","notes"
+"39","SERP SAMPLE","alefotografo.com.br","alefotografos.com.br","AMBIGUOUS","NO","espelho do principal ranqueia ~11 na mesma busca; ales precisa de repositioning (P18A.4)"
+"43","SERP SAMPLE","alefotografo.com.br","alemachado.com.br","AMBIGUOUS","NO","portfólio Alboom ranqueia ~3 (acima do principal ~4); alemachado tem papel editorial próprio a definir com o proprietário"
+"05","SERP SAMPLE","alefotografo.com.br","alefotografo.com.br (URL legada /loja)","LEGACY_LEAKAGE","YES","único resultado próprio é URL legada Joomla com query string — convergência de índice em andamento (301 ativo)"
+"30","SERP SAMPLE","videoscorporativos.com.br","nenhum","NO_PROBLEM","n/a","VC ausente na busca de vídeo — não é confusão de domínio, é ausência de visibilidade do especialista"
+"46","SERP SAMPLE","alefotografo.com.br","nenhum","NO_PROBLEM","n/a","ausência total; SERP dominada por mídia/stock"
+"ALL","MANUAL","alefotografo.com.br","fotosprofissionais.com.br","AMBIGUOUS","n/a","DOMÍNIO NÃO LISTADO apareceu na busca ""foto profissional"" com copy ""30 anos de experiência"" — CONFIRMAR COM PROPRIETÁRIO se é propriedade; se for, owned asset não mapeado; se não for, cópia de marca por terceiro"

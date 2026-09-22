@@ -1,0 +1,100 @@
+query,date,position,domain,url,type,flag,note
+fotógrafo corporativo,2026-09-21,1,dlcorporatephoto.com,,(blog),THIRD-PARTY,amostra contaminada ES; único BR: Curitiba
+fotógrafo corporativo,2026-09-21,2,barcelonaphotographer.com,,(serviço),THIRD-PARTY,ES
+fotógrafo corporativo,2026-09-21,4,agnaldoteixeira.com.br,,(blog),THIRD-PARTY,BR fora SP
+fotógrafo corporativo,2026-09-21,6,crealityphotostudio.com.br,,(serviço),THIRD-PARTY,Curitiba
+fotógrafo corporativo são paulo,2026-09-21,1,instagram.com/lucascardosoph,,(social),THIRD-PARTY,Instagram pos. 1 — autoridade social
+fotógrafo corporativo são paulo,2026-09-21,2,alefotografo.com.br,/fotografo-corporativo,página de serviço,OWNED-YES,
+fotógrafo corporativo são paulo,2026-09-21,3,andersonfotografo.com.br,,(serviço),THIRD-PARTY,
+fotógrafo corporativo são paulo,2026-09-21,5,www.alefotografo.com.br,/,homepage,OWNED-YES,srsltid
+fotógrafo corporativo são paulo,2026-09-21,7,hernanmuttoni.com,,(serviço),THIRD-PARTY,
+fotógrafo corporativo são paulo,2026-09-21,8,jottaphotopro.com.br,,(portfolio),THIRD-PARTY,3 URLs na mesma query
+fotógrafo corporativo são paulo,2026-09-21,10,evorastudio.com.br,,(serviço),THIRD-PARTY,
+foto profissional,2026-09-21,1,fotoslinkedin.com.br,,(blog),THIRD-PARTY,2x na query — domina intenção informacional
+foto profissional,2026-09-21,3,restauraai.com.br,,(blog/app),THIRD-PARTY,
+foto profissional,2026-09-21,4,menzzo.com.br,,(blog),THIRD-PARTY,
+foto profissional,2026-09-21,5,www.alefotografo.com.br,/loja,página legada,OWNED-YES,único resultado owned = URL legada /loja
+fotos profissionais,2026-09-21,1,pexels.com,,(banco de imagens),THIRD-PARTY,
+fotos profissionais,2026-09-21,2,pt.linkedin.com,,(social),THIRD-PARTY,LinkedIn Pulse
+fotos profissionais,2026-09-21,3,kapwing.com,,(app-ferramenta),THIRD-PARTY,gerador IA
+fotos profissionais,2026-09-21,6,rejanewolff.com.br,,(serviço),THIRD-PARTY,também em retrato profissional
+fotos profissionais,2026-09-21,9,fotosdeperfil.org,,(blog),THIRD-PARTY,NÃO é owned (owned = fotosprofissionais.com.br)
+fotos profissionais,2026-09-21,~,—,,—,—,ALE AUSENTE no top 10; nenhum owned apareceu
+fotografia corporativa,2026-09-21,1,risnicfotografia.com.br,,(serviço),THIRD-PARTY,também pos.1 em retrato corporativo
+fotografia corporativa,2026-09-21,2,loripaula.com,,(homepage),THIRD-PARTY,
+fotografia corporativa,2026-09-21,~,—,,—,—,ALE AUSENTE (só 6 resultados; mistura PT/ES)
+fotos corporativas,2026-09-21,1,insmind.com,,(app-ferramenta),THIRD-PARTY,2x na query
+fotos corporativas,2026-09-21,3,www.alefotografo.com.br,/blog/quanto-custa-sessao-fotos-corporativas-sao-paulo,blog,OWNED-YES,blog ranqueia; money page ausente
+fotos corporativas,2026-09-21,7,neopix.com.br,,(serviço),THIRD-PARTY,
+fotos corporativas,2026-09-21,9,retratocorporativo.com,,(homepage),THIRD-PARTY,domínio exato-keyword
+retrato profissional,2026-09-21,2,crealityphotostudio.com.br,,(serviço),THIRD-PARTY,
+retrato profissional,2026-09-21,4,evorastudio.com.br,,(serviço),THIRD-PARTY,
+retrato profissional,2026-09-21,5,www.alefotografo.com.br,/blog/fotografo-5-poses-para-retrato-corporativo,blog,OWNED-YES,
+retrato profissional,2026-09-21,8,ivandiasfoto.com.br,,(serviço),THIRD-PARTY,
+retrato corporativo,2026-09-21,1,risnicfotografia.com.br,,(serviço),THIRD-PARTY,
+retrato corporativo,2026-09-21,3,www.alefotografo.com.br,/blog/fotografo-5-poses-para-retrato-corporativo,blog,OWNED-YES,
+retrato corporativo,2026-09-21,5,evorastudio.com.br,,(serviço),THIRD-PARTY,
+retrato corporativo,2026-09-21,6,www.alefotografo.com.br,/fotografo-corporativo/retrato-corporativo,página de serviço,OWNED-YES,
+foto de perfil profissional,2026-09-21,1,extra.globo.com,,(mídia),THIRD-PARTY,mídia grande domina
+foto de perfil profissional,2026-09-21,4,rejanewolff.com.br,,(serviço),THIRD-PARTY,
+foto de perfil profissional,2026-09-21,~,—,,—,—,ALE AUSENTE; query 100% informacional
+foto para linkedin,2026-09-21,2,fotoslinkedin.com.br,,(blog),THIRD-PARTY,
+foto para linkedin,2026-09-21,3,fotoparalinkedin.com,,(homepage),THIRD-PARTY,Peru
+foto para linkedin,2026-09-21,5,blog.waalaxy.com,,(blog),THIRD-PARTY,geradores IA
+foto para linkedin,2026-09-21,~,—,,—,—,ALE AUSENTE no top 7; nenhum fotógrafo BR
+fotógrafo de eventos corporativos,2026-09-21,~,—,,—,—,ALE AUSENTE (só 4 resultados; MX/CL/GO)
+fotografia de eventos corporativos,2026-09-21,2,alefotografo.com.br,/fotografo-corporativo/fotografo-de-eventos-corporativos,página de serviço,OWNED-YES,
+fotografia de eventos corporativos,2026-09-21,3,thiagotasso.com.br,,(homepage),THIRD-PARTY,
+fotografia de eventos corporativos,2026-09-21,5,risnicfotografia.com.br,,(serviço),THIRD-PARTY,
+fotografia de eventos corporativos,2026-09-21,9,neopix.com.br,,(serviço),THIRD-PARTY,
+foto lembrança para eventos,2026-09-21,1,lapisdenoiva.com,,(diretório),THIRD-PARTY,lista curada
+foto lembrança para eventos,2026-09-21,3,photoa.com.br,,(serviço),THIRD-PARTY,
+foto lembrança para eventos,2026-09-21,~,—,,—,—,ALE AUSENTE; dominam locadoras/apps
+foto lembrança impressa na hora,2026-09-21,1,instagram.com,,(social),THIRD-PARTY,reel
+foto lembrança impressa na hora,2026-09-21,7,alefotografo.com.br,/fotografo-corporativo/foto-impressa-na-hora,página de serviço,OWNED-YES,
+foto lembrança impressa na hora,2026-09-21,~,—,,—,—,locadoras regionais dominam o restante
+totem fotográfico para eventos,2026-09-21,2,clicksvipcabine.com.br,,(locadora),THIRD-PARTY,
+totem fotográfico para eventos,2026-09-21,3,photoa.com.br,,(locadora),THIRD-PARTY,
+totem fotográfico para eventos,2026-09-21,9,casamentos.com.br,,(diretório),THIRD-PARTY,diretório com reviews
+totem fotográfico para eventos,2026-09-21,~,—,,—,—,ALE AUSENTE no top 9
+vídeos corporativos,2026-09-21,~,—,,—,—,VC AUSENTE; SERP ~100% Espanha; nenhum .br no top 9
+vídeos corporativos,2026-09-21,3,storisell.es,,(serviço),THIRD-PARTY,2x
+vídeos institucionais,2026-09-21,1,wonderproducoes.com.br,,(blog),THIRD-PARTY,
+vídeos institucionais,2026-09-21,2,nathanfilmes.com.br,,(serviço),THIRD-PARTY,
+vídeos institucionais,2026-09-21,6,vslexpert.com.br,,(homepage),THIRD-PARTY,
+vídeos institucionais,2026-09-21,~,—,,—,—,VC AUSENTE
+vídeo institucional,2026-09-21,2,videoinstitucional.app.br,,(homepage),THIRD-PARTY,EMD concorrente SP
+vídeo institucional,2026-09-21,5,producaodevideo.com.br,,(serviço),THIRD-PARTY,2x
+vídeo institucional,2026-09-21,~,—,,—,—,VC AUSENTE
+vídeo de eventos corporativos,2026-09-21,1,youtube.com,,(vídeo),THIRD-PARTY,YouTube pos.1
+vídeo de eventos corporativos,2026-09-21,2,youtube.com,,(vídeo),THIRD-PARTY,
+vídeo de eventos corporativos,2026-09-21,4,neopix.com.br,,(homepage),THIRD-PARTY,
+vídeo de eventos corporativos,2026-09-21,~,—,,—,—,VC AUSENTE
+fotógrafo especializado em logística,2026-09-21,1,fotografoivanalmeida.com.br,/fotografia-logistica,serviço,THIRD-PARTY,concorrente direto do nicho
+fotógrafo especializado em logística,2026-09-21,6,alefotografo.com.br,/blog/…,blog,OWNED-YES,
+fotógrafo especializado em logística,2026-09-21,7,alefotografos.com.br,/fotografo-corporativo/fotografia-de-logistica,serviço,OWNED-YES,espelho owned ranqueando
+fotógrafo especializado em logística,2026-09-21,~11,alefotografo.com.br,/fotografo-corporativo/fotografia-de-logistica,serviço,OWNED-YES,
+fotógrafo para transportadoras,2026-09-21,~,—,,—,—,query mal resolvida (stock/Pinterest); nicho sem competidor dedicado
+fotografia de logística,2026-09-21,4,unsplash.com,,(stock),THIRD-PARTY,stock domina
+fotografia de logística,2026-09-21,~11-13,alefotografo.com.br,/fotografia-de-logistica,serviço,OWNED-YES,logo abaixo do top 10
+fotógrafo industrial,2026-09-21,~,—,,—,—,ALE AUSENTE; SERP dominada por ES — baixa concorrência BR (oportunidade)
+fotógrafo para advogados,2026-09-21,1,instagram.com,,(reels),THIRD-PARTY,3 reels no topo
+fotógrafo para advogados,2026-09-21,4,jottaphotopro.com.br,,(serviço),THIRD-PARTY,
+fotógrafo para advogados,2026-09-21,7,alefotografo.com.br,/fotografia-para-escritorios-de-advocacia,serviço,OWNED-YES,
+fotografia para escritórios de advocacia,2026-09-21,2,alemachado.com.br,,(portfolio),OWNED-YES,Alboom pos. 2 — acima do principal
+fotografia para escritórios de advocacia,2026-09-21,3,alefotografo.com.br,,(blog),OWNED-YES,
+fotografia para escritórios de advocacia,2026-09-21,4,alefotografo.com.br,/fotografia-para-escritorios-de-advocacia,serviço,OWNED-YES,
+fotografia para escritórios de advocacia,2026-09-21,5,alefotografos.com.br,,(serviço),OWNED-YES,3 domínios owned na mesma query — canibalização
+fotógrafo para médicos,2026-09-21,~,—,,—,—,ALE AUSENTE; marketing médico e ES/MX dominam
+fotógrafo para dentistas,2026-09-21,7,alefotografo.com.br,/fotografo-corporativo (portfólio citando dentistas),portfólio genérico,OWNED-YES,página dedicada de dentistas NÃO ranqueia aqui
+fotos aéreas com drone,2026-09-21,1,estadao.com.br,,(mídia),THIRD-PARTY,
+fotos aéreas com drone,2026-09-21,2,shutterstock.com,,(banco),THIRD-PARTY,
+fotos aéreas com drone,2026-09-21,~,—,,—,—,ALE AUSENTE; mídia/stock dominam
+vídeos aéreos com drone,2026-09-21,3,agenciaadsbrasil.com,,(serviço),THIRD-PARTY,2x — único BR forte
+vídeos aéreos com drone,2026-09-21,~,—,,—,—,ALE/VC AUSENTES
+acompanhamento de obra com drone,2026-09-21,4,dronefilmagemaerea.com,,(serviço),THIRD-PARTY,também pos.3 em foto e vídeo de obra
+acompanhamento de obra com drone,2026-09-21,~,—,,—,—,concorrência = empresas de drone/topografia; ALE AUSENTE
+foto e vídeo de obra com drone,2026-09-21,1,youtube.com,,(vídeo),THIRD-PARTY,YouTube pos.1
+foto e vídeo de obra com drone,2026-09-21,~,—,,—,—,ALE AUSENTE
+,,,,,,,
+RESUMO,2026-09-21,,,,,,"ALE presente em ~11/31 consultas; owned em 14/31 (principal 11, ales 2, alemachado 1); VC 0/4; fotosprofissionais 0/31; concorrentes mais repetidos: jottaphotopro (3 clusters), risnicfotografia (2), evorastudio (3), fotografoivanalmeida (logística), neopix (2), fotoslinkedin.com.br (2), locadoras de totem (4)"

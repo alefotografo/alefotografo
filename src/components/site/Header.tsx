@@ -135,6 +135,7 @@ export function Header() {
   useEffect(() => {
     if (!mobileOpen) return;
     const scrollY = window.scrollY;
+    const openedPath = window.location.pathname;
     const body = document.body;
     const prevPosition = body.style.position;
     const prevTop = body.style.top;

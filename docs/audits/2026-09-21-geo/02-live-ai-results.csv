@@ -1,336 +1,336 @@
-"timestamp","engine","engine_mode","prompt_id","prompt","response_available","ale_mentioned","alexandre_mentioned","main_domain_mentioned","main_domain_cited","owned_domain_cited","owned_domain","citation_url","mention_order_snapshot","competitors","competitor_domains","external_sources","entity_accuracy","wrong_facts","notes"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","01","fotógrafo corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","02","fotógrafo corporativo em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","03","fotógrafo profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","04","fotógrafo profissional em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","05","foto profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","06","fotos profissionais em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","07","fotografia corporativa","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","08","fotos corporativas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","09","fotógrafo empresarial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","10","fotógrafo para empresas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","11","fotógrafo para equipes de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","12","fotógrafo para banco de imagens empresarial","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","13","retrato profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","14","retrato corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","15","retrato executivo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","16","foto de perfil profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","17","foto para LinkedIn","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","18","fotógrafo para LinkedIn em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","19","ensaio corporativo feminino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","20","ensaio corporativo masculino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","21","fotógrafo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","22","fotógrafo para eventos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","23","fotografia de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","24","fotógrafo para convenções empresariais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","25","fotógrafo para congressos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","26","fotógrafo para feiras e stands","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","27","foto lembrança para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","28","foto lembrança impressa na hora","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","29","totem fotográfico para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","30","vídeos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","31","empresa de vídeos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","32","vídeos institucionais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","33","vídeo institucional para empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","34","vídeos para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","35","vídeo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","36","produtora de vídeo para eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","37","gravação de depoimentos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","38","vídeo para treinamento de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","39","fotógrafo especializado em logística","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","40","fotógrafo para transportadoras","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","41","fotógrafo para centros de distribuição","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","42","fotógrafo industrial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","43","fotógrafo para escritórios de advocacia","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","44","fotógrafo para médicos e clínicas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","45","fotógrafo para dentistas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","46","fotos aéreas com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","47","vídeos aéreos com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","48","fotografia aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","49","filmagem aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","50","acompanhamento de obra com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","51","acompanhamento de obra com foto e vídeo feito com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","52","foto e vídeo de obra com drone em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","53","Totem Mania","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","54","Totem Mania fotografia para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","55","Quem é Alê Fotógrafo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","56","Quem é Alexandre Machado fotógrafo em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","57","Quais serviços o Alê Fotógrafo oferece?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R01","Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R02","Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R03","Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R04","Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R05","Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R06","Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R07","Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R08","Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R09","Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","ChatGPT Search","NOT TESTED — AUTH REQUIRED","R10","Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","01","fotógrafo corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","02","fotógrafo corporativo em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","03","fotógrafo profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","04","fotógrafo profissional em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","05","foto profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","06","fotos profissionais em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","07","fotografia corporativa","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","08","fotos corporativas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","09","fotógrafo empresarial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","10","fotógrafo para empresas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","11","fotógrafo para equipes de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","12","fotógrafo para banco de imagens empresarial","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","13","retrato profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","14","retrato corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","15","retrato executivo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","16","foto de perfil profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","17","foto para LinkedIn","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","18","fotógrafo para LinkedIn em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","19","ensaio corporativo feminino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","20","ensaio corporativo masculino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","21","fotógrafo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","22","fotógrafo para eventos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","23","fotografia de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","24","fotógrafo para convenções empresariais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","25","fotógrafo para congressos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","26","fotógrafo para feiras e stands","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","27","foto lembrança para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","28","foto lembrança impressa na hora","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","29","totem fotográfico para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","30","vídeos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","31","empresa de vídeos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","32","vídeos institucionais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","33","vídeo institucional para empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","34","vídeos para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","35","vídeo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","36","produtora de vídeo para eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","37","gravação de depoimentos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","38","vídeo para treinamento de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","39","fotógrafo especializado em logística","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","40","fotógrafo para transportadoras","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","41","fotógrafo para centros de distribuição","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","42","fotógrafo industrial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","43","fotógrafo para escritórios de advocacia","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","44","fotógrafo para médicos e clínicas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","45","fotógrafo para dentistas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","46","fotos aéreas com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","47","vídeos aéreos com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","48","fotografia aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","49","filmagem aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","50","acompanhamento de obra com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","51","acompanhamento de obra com foto e vídeo feito com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","52","foto e vídeo de obra com drone em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","53","Totem Mania","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","54","Totem Mania fotografia para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","55","Quem é Alê Fotógrafo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","56","Quem é Alexandre Machado fotógrafo em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","57","Quais serviços o Alê Fotógrafo oferece?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R01","Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R02","Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R03","Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R04","Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R05","Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R06","Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R07","Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R08","Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R09","Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Google AI Mode","NOT TESTED — AUTH REQUIRED","R10","Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","01","fotógrafo corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","02","fotógrafo corporativo em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","03","fotógrafo profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","04","fotógrafo profissional em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","05","foto profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","06","fotos profissionais em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","07","fotografia corporativa","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","08","fotos corporativas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","09","fotógrafo empresarial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","10","fotógrafo para empresas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","11","fotógrafo para equipes de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","12","fotógrafo para banco de imagens empresarial","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","13","retrato profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","14","retrato corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","15","retrato executivo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","16","foto de perfil profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","17","foto para LinkedIn","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","18","fotógrafo para LinkedIn em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","19","ensaio corporativo feminino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","20","ensaio corporativo masculino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","21","fotógrafo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","22","fotógrafo para eventos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","23","fotografia de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","24","fotógrafo para convenções empresariais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","25","fotógrafo para congressos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","26","fotógrafo para feiras e stands","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","27","foto lembrança para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","28","foto lembrança impressa na hora","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","29","totem fotográfico para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","30","vídeos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","31","empresa de vídeos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","32","vídeos institucionais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","33","vídeo institucional para empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","34","vídeos para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","35","vídeo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","36","produtora de vídeo para eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","37","gravação de depoimentos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","38","vídeo para treinamento de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","39","fotógrafo especializado em logística","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","40","fotógrafo para transportadoras","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","41","fotógrafo para centros de distribuição","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","42","fotógrafo industrial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","43","fotógrafo para escritórios de advocacia","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","44","fotógrafo para médicos e clínicas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","45","fotógrafo para dentistas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","46","fotos aéreas com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","47","vídeos aéreos com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","48","fotografia aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","49","filmagem aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","50","acompanhamento de obra com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","51","acompanhamento de obra com foto e vídeo feito com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","52","foto e vídeo de obra com drone em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","53","Totem Mania","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","54","Totem Mania fotografia para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","55","Quem é Alê Fotógrafo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","56","Quem é Alexandre Machado fotógrafo em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","57","Quais serviços o Alê Fotógrafo oferece?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R01","Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R02","Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R03","Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R04","Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R05","Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R06","Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R07","Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R08","Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R09","Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Perplexity","NOT TESTED — AUTH REQUIRED","R10","Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","01","fotógrafo corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","02","fotógrafo corporativo em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","03","fotógrafo profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","04","fotógrafo profissional em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","05","foto profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","06","fotos profissionais em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","07","fotografia corporativa","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","08","fotos corporativas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","09","fotógrafo empresarial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","10","fotógrafo para empresas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","11","fotógrafo para equipes de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","12","fotógrafo para banco de imagens empresarial","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","13","retrato profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","14","retrato corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","15","retrato executivo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","16","foto de perfil profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","17","foto para LinkedIn","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","18","fotógrafo para LinkedIn em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","19","ensaio corporativo feminino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","20","ensaio corporativo masculino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","21","fotógrafo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","22","fotógrafo para eventos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","23","fotografia de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","24","fotógrafo para convenções empresariais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","25","fotógrafo para congressos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","26","fotógrafo para feiras e stands","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","27","foto lembrança para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","28","foto lembrança impressa na hora","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","29","totem fotográfico para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","30","vídeos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","31","empresa de vídeos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","32","vídeos institucionais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","33","vídeo institucional para empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","34","vídeos para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","35","vídeo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","36","produtora de vídeo para eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","37","gravação de depoimentos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","38","vídeo para treinamento de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","39","fotógrafo especializado em logística","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","40","fotógrafo para transportadoras","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","41","fotógrafo para centros de distribuição","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","42","fotógrafo industrial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","43","fotógrafo para escritórios de advocacia","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","44","fotógrafo para médicos e clínicas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","45","fotógrafo para dentistas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","46","fotos aéreas com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","47","vídeos aéreos com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","48","fotografia aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","49","filmagem aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","50","acompanhamento de obra com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","51","acompanhamento de obra com foto e vídeo feito com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","52","foto e vídeo de obra com drone em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","53","Totem Mania","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","54","Totem Mania fotografia para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","55","Quem é Alê Fotógrafo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","56","Quem é Alexandre Machado fotógrafo em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","57","Quais serviços o Alê Fotógrafo oferece?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R01","Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R02","Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R03","Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R04","Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R05","Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R06","Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R07","Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R08","Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R09","Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Copilot","NOT TESTED — AUTH REQUIRED","R10","Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","01","fotógrafo corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","02","fotógrafo corporativo em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","03","fotógrafo profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","04","fotógrafo profissional em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","05","foto profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","06","fotos profissionais em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","07","fotografia corporativa","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","08","fotos corporativas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","09","fotógrafo empresarial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","10","fotógrafo para empresas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","11","fotógrafo para equipes de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","12","fotógrafo para banco de imagens empresarial","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","13","retrato profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","14","retrato corporativo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","15","retrato executivo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","16","foto de perfil profissional","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","17","foto para LinkedIn","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","18","fotógrafo para LinkedIn em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","19","ensaio corporativo feminino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","20","ensaio corporativo masculino","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","21","fotógrafo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","22","fotógrafo para eventos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","23","fotografia de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","24","fotógrafo para convenções empresariais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","25","fotógrafo para congressos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","26","fotógrafo para feiras e stands","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","27","foto lembrança para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","28","foto lembrança impressa na hora","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","29","totem fotográfico para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","30","vídeos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","31","empresa de vídeos corporativos em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","32","vídeos institucionais","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","33","vídeo institucional para empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","34","vídeos para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","35","vídeo de eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","36","produtora de vídeo para eventos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","37","gravação de depoimentos corporativos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","38","vídeo para treinamento de empresas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","39","fotógrafo especializado em logística","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","40","fotógrafo para transportadoras","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","41","fotógrafo para centros de distribuição","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","42","fotógrafo industrial em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","43","fotógrafo para escritórios de advocacia","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","44","fotógrafo para médicos e clínicas","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","45","fotógrafo para dentistas em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","46","fotos aéreas com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","47","vídeos aéreos com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","48","fotografia aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","49","filmagem aérea corporativa com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","50","acompanhamento de obra com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","51","acompanhamento de obra com foto e vídeo feito com drone","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","52","foto e vídeo de obra com drone em São Paulo","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","53","Totem Mania","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","54","Totem Mania fotografia para eventos","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","55","Quem é Alê Fotógrafo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","56","Quem é Alexandre Machado fotógrafo em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","57","Quais serviços o Alê Fotógrafo oferece?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R01","Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R02","Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R03","Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R04","Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R05","Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R06","Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R07","Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R08","Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R09","Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
-"2026-09-21","Claude","NOT TESTED — AUTH REQUIRED","R10","Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?","NO","","","","","","","","","","","","","","","","COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md"
+timestamp,engine,engine_mode,prompt_id,prompt,response_available,ale_mentioned,alexandre_mentioned,main_domain_mentioned,main_domain_cited,owned_domain_cited,owned_domain,citation_url,mention_order_snapshot,competitors,competitor_domains,external_sources,entity_accuracy,wrong_facts,notes
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,01,fotógrafo corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,02,fotógrafo corporativo em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,03,fotógrafo profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,04,fotógrafo profissional em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,05,foto profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,06,fotos profissionais em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,07,fotografia corporativa,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,08,fotos corporativas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,09,fotógrafo empresarial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,10,fotógrafo para empresas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,11,fotógrafo para equipes de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,12,fotógrafo para banco de imagens empresarial,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,13,retrato profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,14,retrato corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,15,retrato executivo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,16,foto de perfil profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,17,foto para LinkedIn,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,18,fotógrafo para LinkedIn em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,19,ensaio corporativo feminino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,20,ensaio corporativo masculino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,21,fotógrafo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,22,fotógrafo para eventos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,23,fotografia de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,24,fotógrafo para convenções empresariais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,25,fotógrafo para congressos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,26,fotógrafo para feiras e stands,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,27,foto lembrança para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,28,foto lembrança impressa na hora,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,29,totem fotográfico para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,30,vídeos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,31,empresa de vídeos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,32,vídeos institucionais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,33,vídeo institucional para empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,34,vídeos para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,35,vídeo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,36,produtora de vídeo para eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,37,gravação de depoimentos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,38,vídeo para treinamento de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,39,fotógrafo especializado em logística,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,40,fotógrafo para transportadoras,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,41,fotógrafo para centros de distribuição,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,42,fotógrafo industrial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,43,fotógrafo para escritórios de advocacia,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,44,fotógrafo para médicos e clínicas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,45,fotógrafo para dentistas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,46,fotos aéreas com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,47,vídeos aéreos com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,48,fotografia aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,49,filmagem aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,50,acompanhamento de obra com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,51,acompanhamento de obra com foto e vídeo feito com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,52,foto e vídeo de obra com drone em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,53,Totem Mania,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,54,Totem Mania fotografia para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,55,Quem é Alê Fotógrafo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,56,Quem é Alexandre Machado fotógrafo em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,57,Quais serviços o Alê Fotógrafo oferece?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R01,Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R02,Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R03,Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R04,Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R05,"Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?",NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R06,Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R07,Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R08,Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R09,Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,ChatGPT Search,NOT TESTED — AUTH REQUIRED,R10,Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,01,fotógrafo corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,02,fotógrafo corporativo em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,03,fotógrafo profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,04,fotógrafo profissional em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,05,foto profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,06,fotos profissionais em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,07,fotografia corporativa,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,08,fotos corporativas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,09,fotógrafo empresarial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,10,fotógrafo para empresas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,11,fotógrafo para equipes de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,12,fotógrafo para banco de imagens empresarial,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,13,retrato profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,14,retrato corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,15,retrato executivo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,16,foto de perfil profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,17,foto para LinkedIn,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,18,fotógrafo para LinkedIn em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,19,ensaio corporativo feminino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,20,ensaio corporativo masculino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,21,fotógrafo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,22,fotógrafo para eventos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,23,fotografia de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,24,fotógrafo para convenções empresariais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,25,fotógrafo para congressos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,26,fotógrafo para feiras e stands,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,27,foto lembrança para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,28,foto lembrança impressa na hora,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,29,totem fotográfico para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,30,vídeos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,31,empresa de vídeos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,32,vídeos institucionais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,33,vídeo institucional para empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,34,vídeos para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,35,vídeo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,36,produtora de vídeo para eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,37,gravação de depoimentos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,38,vídeo para treinamento de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,39,fotógrafo especializado em logística,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,40,fotógrafo para transportadoras,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,41,fotógrafo para centros de distribuição,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,42,fotógrafo industrial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,43,fotógrafo para escritórios de advocacia,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,44,fotógrafo para médicos e clínicas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,45,fotógrafo para dentistas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,46,fotos aéreas com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,47,vídeos aéreos com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,48,fotografia aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,49,filmagem aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,50,acompanhamento de obra com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,51,acompanhamento de obra com foto e vídeo feito com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,52,foto e vídeo de obra com drone em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,53,Totem Mania,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,54,Totem Mania fotografia para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,55,Quem é Alê Fotógrafo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,56,Quem é Alexandre Machado fotógrafo em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,57,Quais serviços o Alê Fotógrafo oferece?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R01,Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R02,Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R03,Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R04,Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R05,"Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?",NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R06,Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R07,Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R08,Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R09,Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Google AI Mode,NOT TESTED — AUTH REQUIRED,R10,Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,01,fotógrafo corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,02,fotógrafo corporativo em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,03,fotógrafo profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,04,fotógrafo profissional em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,05,foto profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,06,fotos profissionais em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,07,fotografia corporativa,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,08,fotos corporativas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,09,fotógrafo empresarial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,10,fotógrafo para empresas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,11,fotógrafo para equipes de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,12,fotógrafo para banco de imagens empresarial,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,13,retrato profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,14,retrato corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,15,retrato executivo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,16,foto de perfil profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,17,foto para LinkedIn,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,18,fotógrafo para LinkedIn em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,19,ensaio corporativo feminino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,20,ensaio corporativo masculino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,21,fotógrafo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,22,fotógrafo para eventos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,23,fotografia de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,24,fotógrafo para convenções empresariais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,25,fotógrafo para congressos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,26,fotógrafo para feiras e stands,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,27,foto lembrança para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,28,foto lembrança impressa na hora,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,29,totem fotográfico para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,30,vídeos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,31,empresa de vídeos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,32,vídeos institucionais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,33,vídeo institucional para empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,34,vídeos para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,35,vídeo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,36,produtora de vídeo para eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,37,gravação de depoimentos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,38,vídeo para treinamento de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,39,fotógrafo especializado em logística,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,40,fotógrafo para transportadoras,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,41,fotógrafo para centros de distribuição,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,42,fotógrafo industrial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,43,fotógrafo para escritórios de advocacia,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,44,fotógrafo para médicos e clínicas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,45,fotógrafo para dentistas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,46,fotos aéreas com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,47,vídeos aéreos com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,48,fotografia aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,49,filmagem aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,50,acompanhamento de obra com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,51,acompanhamento de obra com foto e vídeo feito com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,52,foto e vídeo de obra com drone em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,53,Totem Mania,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,54,Totem Mania fotografia para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,55,Quem é Alê Fotógrafo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,56,Quem é Alexandre Machado fotógrafo em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,57,Quais serviços o Alê Fotógrafo oferece?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R01,Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R02,Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R03,Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R04,Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R05,"Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?",NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R06,Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R07,Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R08,Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R09,Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Perplexity,NOT TESTED — AUTH REQUIRED,R10,Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,01,fotógrafo corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,02,fotógrafo corporativo em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,03,fotógrafo profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,04,fotógrafo profissional em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,05,foto profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,06,fotos profissionais em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,07,fotografia corporativa,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,08,fotos corporativas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,09,fotógrafo empresarial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,10,fotógrafo para empresas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,11,fotógrafo para equipes de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,12,fotógrafo para banco de imagens empresarial,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,13,retrato profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,14,retrato corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,15,retrato executivo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,16,foto de perfil profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,17,foto para LinkedIn,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,18,fotógrafo para LinkedIn em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,19,ensaio corporativo feminino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,20,ensaio corporativo masculino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,21,fotógrafo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,22,fotógrafo para eventos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,23,fotografia de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,24,fotógrafo para convenções empresariais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,25,fotógrafo para congressos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,26,fotógrafo para feiras e stands,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,27,foto lembrança para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,28,foto lembrança impressa na hora,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,29,totem fotográfico para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,30,vídeos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,31,empresa de vídeos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,32,vídeos institucionais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,33,vídeo institucional para empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,34,vídeos para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,35,vídeo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,36,produtora de vídeo para eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,37,gravação de depoimentos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,38,vídeo para treinamento de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,39,fotógrafo especializado em logística,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,40,fotógrafo para transportadoras,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,41,fotógrafo para centros de distribuição,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,42,fotógrafo industrial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,43,fotógrafo para escritórios de advocacia,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,44,fotógrafo para médicos e clínicas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,45,fotógrafo para dentistas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,46,fotos aéreas com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,47,vídeos aéreos com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,48,fotografia aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,49,filmagem aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,50,acompanhamento de obra com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,51,acompanhamento de obra com foto e vídeo feito com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,52,foto e vídeo de obra com drone em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,53,Totem Mania,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,54,Totem Mania fotografia para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,55,Quem é Alê Fotógrafo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,56,Quem é Alexandre Machado fotógrafo em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,57,Quais serviços o Alê Fotógrafo oferece?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R01,Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R02,Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R03,Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R04,Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R05,"Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?",NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R06,Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R07,Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R08,Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R09,Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Copilot,NOT TESTED — AUTH REQUIRED,R10,Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,01,fotógrafo corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,02,fotógrafo corporativo em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,03,fotógrafo profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,04,fotógrafo profissional em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,05,foto profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,06,fotos profissionais em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,07,fotografia corporativa,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,08,fotos corporativas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,09,fotógrafo empresarial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,10,fotógrafo para empresas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,11,fotógrafo para equipes de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,12,fotógrafo para banco de imagens empresarial,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,13,retrato profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,14,retrato corporativo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,15,retrato executivo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,16,foto de perfil profissional,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,17,foto para LinkedIn,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,18,fotógrafo para LinkedIn em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,19,ensaio corporativo feminino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,20,ensaio corporativo masculino,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,21,fotógrafo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,22,fotógrafo para eventos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,23,fotografia de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,24,fotógrafo para convenções empresariais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,25,fotógrafo para congressos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,26,fotógrafo para feiras e stands,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,27,foto lembrança para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,28,foto lembrança impressa na hora,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,29,totem fotográfico para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,30,vídeos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,31,empresa de vídeos corporativos em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,32,vídeos institucionais,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,33,vídeo institucional para empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,34,vídeos para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,35,vídeo de eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,36,produtora de vídeo para eventos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,37,gravação de depoimentos corporativos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,38,vídeo para treinamento de empresas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,39,fotógrafo especializado em logística,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,40,fotógrafo para transportadoras,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,41,fotógrafo para centros de distribuição,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,42,fotógrafo industrial em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,43,fotógrafo para escritórios de advocacia,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,44,fotógrafo para médicos e clínicas,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,45,fotógrafo para dentistas em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,46,fotos aéreas com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,47,vídeos aéreos com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,48,fotografia aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,49,filmagem aérea corporativa com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,50,acompanhamento de obra com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,51,acompanhamento de obra com foto e vídeo feito com drone,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,52,foto e vídeo de obra com drone em São Paulo,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,53,Totem Mania,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,54,Totem Mania fotografia para eventos,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,55,Quem é Alê Fotógrafo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,56,Quem é Alexandre Machado fotógrafo em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,57,Quais serviços o Alê Fotógrafo oferece?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R01,Preciso contratar um fotógrafo corporativo em São Paulo. Quais profissionais ou empresas devo considerar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R02,Preciso fazer fotos profissionais para LinkedIn em São Paulo. Quais fotógrafos trabalham com esse tipo de retrato?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R03,Minha empresa precisa atualizar as fotos dos executivos e da equipe. Quem faz fotografia corporativa em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R04,Preciso de um fotógrafo para um evento corporativo em São Paulo. Quais opções você recomenda pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R05,"Tenho uma transportadora e preciso produzir fotos profissionais de frota, galpão, equipe e operação logística. Quais fotógrafos em São Paulo trabalham com esse tipo de projeto?",NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R06,Preciso produzir um vídeo institucional para uma empresa em São Paulo. Quais empresas ou profissionais devo pesquisar?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R07,Preciso de foto e vídeo para um evento corporativo. Quem oferece os dois serviços em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R08,Preciso de fotos aéreas e vídeos com drone para uma empresa. Quais profissionais trabalham com isso em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R09,Preciso acompanhar uma obra periodicamente com fotos e vídeos feitos por drone. Quais empresas ou profissionais oferecem esse serviço em São Paulo?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md
+2026-09-21,Claude,NOT TESTED — AUTH REQUIRED,R10,Quero oferecer foto lembrança impressa na hora em um evento corporativo. Quais empresas ou fotógrafos trabalham com esse serviço?,NO,,,,,,,,,,,,,,COLETA MANUAL PENDENTE — ver 17-manual-test-pack.md

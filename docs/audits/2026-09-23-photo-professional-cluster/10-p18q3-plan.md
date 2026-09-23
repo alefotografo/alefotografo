@@ -1,5 +1,13 @@
 # 10 — Plano P18Q3 (pré-requisitos e escopo proposto)
 
+> **Atualização P18Q2R (2026-09-23):** gate de entrada ATENDIDO com dados
+> reais (detalhes e números em `12-p18q2r-corrections.md`). Resultado: a
+> demanda "ensaio" existe no domínio (799 impressões somadas nas 4 queries),
+> mas tem ZERO linhas para `/foto-profissional`; queries exatas "são paulo"
+> não retornam linha. **Decisão provisória: NÃO alterar title/meta/H1/URL/
+> schema/estrutura.** O item 1 abaixo fica suspenso. As bridges do item 2
+> foram executadas na missão P18Q2I.
+
 P18Q3 = missão seguinte: definir e executar o reforço comercial de
 `/foto-profissional`. Esta missão (P18Q2) entrega o diagnóstico; P18Q3 decide
 com dados de validação.

@@ -44,6 +44,10 @@ O template atual (`blog.$slug.tsx`) já entrega links internos extensos
 
 ## Gaps reais encontrados (e o plano)
 
+> **Correção P18Q2R:** contagem e destinos reconciliados — 7 links novos em 4
+> bridges (3 apontando para `/foto-profissional`); detalhes em
+> `12-p18q2r-corrections.md`.
+
 1. **Só 1 dos 5 vencedores tem bridge editorial** (`postBridges.ts`). Plano:
    bridges editoriais nos outros 4, com 1–2 links contextuais cada, âncoras
    naturais variadas, apontando para `/fotografo-corporativo/retrato-corporativo`,

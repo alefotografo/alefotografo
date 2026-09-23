@@ -1,5 +1,11 @@
 # 11 — Próximas ações (saída da P18Q2)
 
+> **Atualização P18Q2R/P18Q2I (2026-09-23):** itens 1, 2 e 5 foram absorvidos
+> por esta sequência — dados do gate extraídos (ver `12`), plano `06`
+> reconciliado com destinos para `/foto-profissional`, e 4 bridges implementadas
+> na branch `feat/p18q2-editorial-bridges`. Itens 4 e 6–7 seguem pendentes com
+> as ressalvas do `10` (title suspenso por falta de evidência "ensaio"→página).
+
 Ordem sugerida. Nenhuma item abaixo foi executado nesta missão.
 
 ## Imediatas (proprietário, ~30 min)

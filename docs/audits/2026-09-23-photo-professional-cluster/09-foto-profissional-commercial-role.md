@@ -48,11 +48,13 @@ Validação: extrair do GSC as top 50 queries da página + queries contendo
 ## Notas para P18Q3
 
 - Corrigir title truncado (único pacote de busca do cluster com "…" hoje,
-  junto com 7-dicas).
+  junto com 7-dicas). **Atualização P18Q2R: suspenso** — novos dados GSC
+  mostram zero demanda com "ensaio"/"são paulo" para a página (ver `12`);
+  sem evidência, title/meta/H1 não mudam.
 - Fortalecer prova: vídeo de bastidor ou depoimento curto (0 vídeos hoje);
   avaliar 1 case nomeado quando os cases existirem (ver P18-NIGHT docs 17–22).
 - Manter FAQ factual; não inflar.
 - Links internos DE entrada: hoje vem de LinkHub/PillarLinks de todos os
-  posts; ganhar 1 link contextual por bridge nos 4 posts sem bridge
-  (quando aprovado) e avaliar inclusão de `/foto-profissional` como pillar
-  page do `autoLink` (decisão de código para P18Q3, fora do escopo desta).
+  posts; **3 das 4 bridges novas do plano reconciliado (`06`) apontam para
+  esta página** — executado na missão P18Q2I. Avaliação de pillar page do
+  `autoLink` permanece decisão futura de código.

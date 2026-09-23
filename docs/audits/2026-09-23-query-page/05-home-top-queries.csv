@@ -1,5 +1,5 @@
 query,clicks,impressions,ctr,position,note
-NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,"BLOCKED — exige GSC autenticado. FILTRO PRONTO: page = https://www.alefotografo.com.br/ (home) · periodo 2026-06-15 a 2026-09-14 · tipo web · exportar aba QUERIAS (top 50)"
-COLETA_PREPARADA,,,,,,"Na interface GSC: Performance → filtro de PAGINA (URL da home) → aba Consultas → Exportar CSV"
-VERIFICACAO_PEDIDA,,,,,,"Ao obter o dado, confirmar presenca de: foto profissional; fotografo/fotógrafo profissional; fotografia profissional; fotógrafo corporativo; fotografia corporativa (missao, FASE 14)"
-CONTEXTO_SEPARADO,,,,,,"Fato ancorado (dimensao PAGINAS isolada, 09/17): home teve 25.212 impressoes no periodo, provenientes de TODAS as queries que a alcancam — composicao so via top-50 real"
+NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,BLOCKED — exige GSC autenticado. FILTRO PRONTO: page = https://www.alefotografo.com.br/ (home) · periodo 2026-06-15 a 2026-09-14 · tipo web · exportar aba QUERIAS (top 50)
+COLETA_PREPARADA,,,,,Na interface GSC: Performance → filtro de PAGINA (URL da home) → aba Consultas → Exportar CSV
+VERIFICACAO_PEDIDA,,,,,"Ao obter o dado, confirmar presenca de: foto profissional; fotografo/fotógrafo profissional; fotografia profissional; fotógrafo corporativo; fotografia corporativa (missao, FASE 14)"
+CONTEXTO_SEPARADO,,,,,"Fato ancorado (dimensao PAGINAS isolada, 09/17): home teve 25.212 impressoes no periodo, provenientes de TODAS as queries que a alcancam — composicao so via top-50 real"

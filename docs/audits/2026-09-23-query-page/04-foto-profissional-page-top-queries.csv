@@ -1,4 +1,4 @@
 query,clicks,impressions,ctr,position,note
-NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,"BLOCKED — TOP QUERIES DA PAGINA exige GSC autenticado. FILTRO PRONTO: page = https://www.alefotografo.com.br/foto-profissional · periodo 2026-06-15 a 2026-09-14 · tipo web · exportar aba QUERIAS (top 50). Passo a passo em 08-recommendation.md"
-COLETA_PREPARADA,,,,,,"Na interface GSC: Performance → filtro de PAGINA (URL exata acima) → aba Consultas → Exportar CSV. Na API: searchanalytics.query com dimensionFilterGroups page == URL e dimensions [query]"
-CONTEXTO_SEPARADO,,,,,,"Fato ancorado (dimensao PAGINAS isolada, 09/17): /foto-profissional teve ~59 impressoes no periodo — distribuidas entre queries DESCONHECIDAS; o top-50 real so o GSC mostra"
+NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,BLOCKED — TOP QUERIES DA PAGINA exige GSC autenticado. FILTRO PRONTO: page = https://www.alefotografo.com.br/foto-profissional · periodo 2026-06-15 a 2026-09-14 · tipo web · exportar aba QUERIAS (top 50). Passo a passo em 08-recommendation.md
+COLETA_PREPARADA,,,,,Na interface GSC: Performance → filtro de PAGINA (URL exata acima) → aba Consultas → Exportar CSV. Na API: searchanalytics.query com dimensionFilterGroups page == URL e dimensions [query]
+CONTEXTO_SEPARADO,,,,,"Fato ancorado (dimensao PAGINAS isolada, 09/17): /foto-profissional teve ~59 impressoes no periodo — distribuidas entre queries DESCONHECIDAS; o top-50 real so o GSC mostra"

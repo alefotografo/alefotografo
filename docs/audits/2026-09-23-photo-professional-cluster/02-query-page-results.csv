@@ -1,0 +1,11 @@
+query,clicks,impressions,ctr,position,note
+foto profissional,21,17107,0.0012,3.9181,total da query no periodo
+/blog/fotografo-5-poses-para-retrato-corporativo,10,11958,0.0008,2.5211,owner primario
+/blog/11-ideias-para-o-plano-de-fundo-de-seu-retrato-profissional,8,10469,0.0008,7.3565,owner secundario
+/blog/7-dicas-para-voce-nunca-mais-errar-na-aparencia-ao-tirar-fotos-profissionais,1,1719,0.0006,7.2065,terciario
+/blog/fotografo-ensina-que-foto-profissional-aparece-14-vezes-mais-do-que-uma-foto-amadora-no-linkedin,0,323,0,4.452,presenca menor
+/fotografo-corporativo (apex),0,319,0,5.9812,money page com presenca minima
+/ (Home www),1,314,0.0032,16.1465,relevancia para head query baixa
+/fotografo-corporativo/retrato-corporativo,1,211,0.0047,4.7393,money page com presenca minima
+/foto-profissional (www),0,5,0,8.8,nao e owner da head query
+/foto-profissional (apex),0,4,0,9.5,nao e owner da head query

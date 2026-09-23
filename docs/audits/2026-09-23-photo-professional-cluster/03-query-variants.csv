@@ -1,0 +1,13 @@
+query,clicks,impressions,ctr,position,main_pages_observed,note
+fotos profissionais,25,22547,0.0011,6.7295,/blog/11-ideias-para-o-plano-de-fundo-de-seu-retrato-profissional (11806 impr / 10 clicks / pos 8.427); /blog/7-dicas-para-voce-nunca-mais-errar-na-aparencia-ao-tirar-fotos-profissionais (5030 impr / 1 click / pos 5.9396); /blog/7-lugares-incriveis-para-tirar-fotos-profissionais-em-sao-paulo (4066 impr / 5 clicks / pos 2.3185); /fotografo-corporativo www (2053 impr); /fotografo-corporativo apex (1945 impr),plural mantem o mesmo padrao: blog domina
+fotografia profissional,4,1232,0.0032,13.1485,NOT_AVAILABLE,cluster com presenca fraca
+fotografo profissional,5,713,0.007,9.1725,NOT_AVAILABLE,sem acento
+fotografo profissional (Home),,676,,7.58,/,Home com relevancia real
+fotografo profissional (Home),,512,,5.72,/,variante sem acento
+fotografo profissional sp (Home),,273,,1.79,/,intencao local forte
+fotografia profissional sp (Home),,263,,2.85,/,intencao local forte
+fotografo corporativo sao paulo (Home),10,348,0.0287,1.84,/,melhor query comercial da Home
+foto para linkedin,10,1266,0.0079,4.4858,NOT_AVAILABLE,cluster LinkedIn separado
+foto profissional linkedin,4,695,0.0058,4.7338,NOT_AVAILABLE,cluster LinkedIn separado
+foto de perfil profissional,0,473,0,8.296,NOT_AVAILABLE,cluster LinkedIn separado
+foto perfil profissional,1,382,0.0026,7.4398,NOT_AVAILABLE,cluster LinkedIn separado

@@ -41,6 +41,57 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "11-ideias-para-o-plano-de-fundo-de-seu-retrato-profissional": {
+    paragraphs: [
+      [
+        "Escolher o fundo é metade do resultado. A outra metade é a condução: no ",
+        { to: "/foto-profissional", label: "ensaio de foto profissional" },
+        " que produzimos, nossa equipe dirige a pose e o enquadramento do início ao fim da sessão, no escritório ou em locação.",
+      ],
+      [
+        "Quando as fotos são para a empresa inteira — time, site e materiais — o formato é o ",
+        { to: "/fotografo-corporativo/retrato-corporativo", label: "ensaio de retrato corporativo" },
+        ", realizado no seu escritório.",
+      ],
+    ],
+  },
+  "7-dicas-para-voce-nunca-mais-errar-na-aparencia-ao-tirar-fotos-profissionais": {
+    paragraphs: [
+      [
+        "Postura, roupa e expressão funcionam melhor com direção em tempo real. É assim que conduzimos a ",
+        { to: "/foto-profissional", label: "sessão de foto profissional" },
+        ": cada detalhe ajustado antes do clique.",
+      ],
+      [
+        "Para equipes, realizamos a ",
+        { to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo", label: "fotografia corporativa no escritório" },
+        ", padronizando a aparência de todo o time em uma única produção.",
+      ],
+    ],
+  },
+  "7-lugares-incriveis-para-tirar-fotos-profissionais-em-sao-paulo": {
+    paragraphs: [
+      [
+        "Esses mesmos cenários funcionam em uma ",
+        { to: "/foto-profissional", label: "produção de retrato profissional em locação" },
+        ": nossa equipe prepara o percurso, a luz e a direção de pose em cada ponto.",
+      ],
+      [
+        "Para empresas, desenvolvemos ",
+        { to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo", label: "ensaios corporativos em São Paulo" },
+        " com equipes e times, no escritório ou em locação externa.",
+      ],
+    ],
+  },
+  "fotografo-ensina-que-foto-profissional-aparece-14-vezes-mais-do-que-uma-foto-amadora-no-linkedin": {
+    paragraphs: [
+      [
+        "Para atualizar o perfil com esse padrão, produzimos a ",
+        { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
+        " com direção de pose pensada para o recorte do perfil e a leitura no feed.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

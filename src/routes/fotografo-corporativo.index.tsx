@@ -3,8 +3,31 @@ import { categories } from "@/data/catalog";
 import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 import { site } from "@/data/site";
 import { buildBreadcrumbList, buildMeta } from "@/lib/seo";
+import type { Faq } from "@/lib/faqs";
 import { SmartImage } from "@/components/site/SmartImage";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { FaqList } from "@/components/site/Faq";
+
+// Fonte única do FAQ desta página: alimenta o FAQPage JSON-LD (head) e o
+// accordion visível. Manter as duas saídas derivadas desta constante.
+const corporateFaqs: Faq[] = [
+  {
+    q: "Quanto custa uma sessão de fotografia corporativa em São Paulo?",
+    a: "O valor depende do escopo: número de pessoas, locação, duração e uso das imagens. O orçamento fechado é enviado em até 1 dia útil após o briefing.",
+  },
+  {
+    q: "Quanto tempo dura uma sessão de fotos corporativas?",
+    a: "Uma sessão individual de fotografia corporativa dura entre 30 minutos e 1 hora. Para equipes corporativas, planejamos roteiros em geral de 15 a 20 minutos por colaborador para garantir qualidade e eficiência.",
+  },
+  {
+    q: "O fotógrafo atende em toda São Paulo?",
+    a: "Sim. O Alê Fotógrafo atende em toda São Paulo e Grande SP, com especialização nos bairros corporativos: Faria Lima, Itaim Bibi, Vila Olímpia, Paulista, Jardins, Moema e Brooklin.",
+  },
+  {
+    q: "As fotos podem ser usadas em LinkedIn, site e materiais de RH?",
+    a: "Sim. Todos os pacotes incluem licença de uso comercial completa — LinkedIn, site institucional, materiais de RH, apresentações e imprensa. As fotos são entregues em alta resolução e versão otimizada para web.",
+  },
+];
 
 export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
@@ -29,40 +52,14 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "Quanto custa uma sessão de fotografia corporativa em São Paulo?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "O valor depende do escopo: número de pessoas, locação, duração e uso das imagens. O orçamento fechado é enviado em até 1 dia útil após o briefing.",
-              },
+          mainEntity: corporateFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a,
             },
-            {
-              "@type": "Question",
-              name: "Quanto tempo dura uma sessão de fotos corporativas?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Uma sessão individual de fotografia corporativa dura entre 30 minutos e 1 hora. Para equipes corporativas, planejamos roteiros em geral de 15 a 20 minutos por colaborador para garantir qualidade e eficiência.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "O fotógrafo atende em toda São Paulo?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Sim. O Alê Fotógrafo atende em toda São Paulo e Grande SP, com especialização nos bairros corporativos: Faria Lima, Itaim Bibi, Vila Olímpia, Paulista, Jardins, Moema e Brooklin.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "As fotos podem ser usadas em LinkedIn, site e materiais de RH?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Sim. Todos os pacotes incluem licença de uso comercial completa — LinkedIn, site institucional, materiais de RH, apresentações e imprensa. As fotos são entregues em alta resolução e versão otimizada para web.",
-              },
-            },
-          ],
+          })),
         }),
       },
     ],
@@ -122,6 +119,16 @@ function PortfolioIndex() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
+          <h2 className="mb-8 font-display text-2xl font-semibold md:text-3xl">
+            Perguntas frequentes sobre fotografia corporativa
+          </h2>
+          <FaqList items={corporateFaqs} />
         </div>
       </section>
 

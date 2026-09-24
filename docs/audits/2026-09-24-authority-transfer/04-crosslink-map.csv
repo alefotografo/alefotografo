@@ -1,0 +1,12 @@
+source,target,anchor,location,note
+/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,/cases/rocha-e-queiroz-advogados,case Rocha & Queiroz Advogados,Bloco 4 (prova nomeada),principal
+/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,/cases/rocha-e-queiroz-advogados,case Rocha & Queiroz,Bloco 5 (foto+vídeo),reforço contextual
+/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,/depoimentos,depoimentos,Bloco 4 (fonte do depoimento),
+/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,/video-institucional,vídeo institucional,Bloco 5 (foto+vídeo),
+/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,/fotografia-para-advogados,fotografia profissional para advogados,Bloco 6 (como contratar),owner de conversão
+/fotografo-corporativo/fotografia-de-logistica,/cases/ativa-logistica,case ATIVA Logística,Bloco 1 (prova cedo),
+/fotografo-corporativo/fotografia-de-logistica,/fotografo-empresarial,fotografia empresarial,Bloco 1 (preservado),
+/fotografo-corporativo/fotografia-de-logistica,/fotos-corporativas,fotografia corporativa,Bloco 1 (preservado),
+/cases/rocha-e-queiroz-advogados,/fotografia-para-advogados,Fotografia para advogados,Serviços relacionados (P19C),reciprocidade
+/cases/ativa-logistica,/fotografo-corporativo/fotografia-de-logistica,Fotografia de logística,Serviços relacionados (P19C),reciprocidade
+/fotografia-para-advogados,/cases/rocha-e-queiroz-advogados,Rocha & Queiroz Advogados,Prova visual caseLinks (P19C),reciprocidade

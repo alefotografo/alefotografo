@@ -1,0 +1,12 @@
+query,page_type,intent,owner,secondary_support,canibalization_risk,action
+foto advogado,commercial visual,fotos de advogado,/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,,NONE,preservada
+fotos profissionais advogada,commercial visual,fotos de advogada,/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,,NONE,preservada
+foto de advocacia,commercial visual,fotos do setor juridico,/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,,NONE,preservada
+fotos de advogados no escritório,commercial visual,retratos no escritorio,/fotografo-corporativo/fotografia-para-escritorios-de-advocacia,,NONE,preservada
+contratar fotógrafo para advogados,transactional,orcamento e contratacao,/fotografia-para-advogados,/cases/rocha-e-queiroz-advogados,LOW,owner de conversao mantida
+orçamento fotografia para advogados,transactional,preco,/fotografia-para-advogados,,LOW,owner de conversao mantida
+rocha e queiroz advogados,navigational,case nomeado,/cases/rocha-e-queiroz-advogados,/videos/video-institucional-rocha-queiroz-advogados,NONE,case como owner navegacional
+fotografo logistica,commercial visual,fotografo do setor,/fotografo-corporativo/fotografia-de-logistica,,NONE,owner preservada
+fotografia logistica,commercial visual,fotografia da operacao,/fotografo-corporativo/fotografia-de-logistica,,NONE,owner preservada
+case ativa logistica,navigational,case nomeado,/cases/ativa-logistica,/videos/ativa-logistica-unidade-barueri,NONE,case como owner navegacional
+ativa logística barueri,navigational,unidade barueri,/cases/ativa-logistica,/videos/ativa-logistica-unidade-barueri,NONE,case reforcado com prova cedo na owner de servico

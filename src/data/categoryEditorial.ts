@@ -453,6 +453,107 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
     waMessage:
       "Olá Alexandre, quero conversar sobre retratos profissionais para médico. Pode me explicar como funciona?",
   },
+  "fotografia-para-escritorios-de-advocacia": {
+    eyebrow: "Fotografia para o setor jurídico",
+    sections: [
+      {
+        h: "Fotografia para escritórios de advocacia em São Paulo",
+        paragraphs: [
+          [
+            "Produzimos fotografia para escritórios de advocacia em São Paulo, com retratos de sócios e advogados, fotos de equipe e imagens institucionais dos ambientes do escritório. A produção pode ser realizada na própria sede, com iluminação profissional e direção de pose, criando um padrão visual consistente para site, LinkedIn, propostas e imprensa.",
+          ],
+          [
+            "O escopo é definido no briefing: o tamanho da banca, os ambientes disponíveis e onde as imagens serão usadas. A partir disso, montamos um roteiro de captação que aproveita salas de reunião, recepção e áreas de trabalho como cenário, sem interromper a rotina do escritório.",
+          ],
+        ],
+      },
+      {
+        h: "Retratos, equipe e ambientes do escritório",
+        paragraphs: [
+          [
+            "O projeto pode incluir, conforme o escopo contratado, retratos individuais de sócios e associados, fotos da equipe no mesmo padrão visual e imagens dos ambientes — recepção, salas de reunião, biblioteca e áreas de trabalho. Para quem precisa de acervo contínuo, estruturamos um banco de imagens do escritório, pronto para uso ao longo do ano.",
+          ],
+        ],
+        bullets: [
+          "Retratos individuais de sócios e associados",
+          "Fotos da equipe no mesmo padrão visual",
+          "Ambientes: recepção, salas de reunião e áreas de trabalho",
+          "Banco de imagens do escritório",
+        ],
+      },
+      {
+        h: "Onde as fotografias são usadas",
+        paragraphs: [
+          [
+            "Os escritórios usam esse material no site institucional e na página de equipe, nos perfis de LinkedIn dos sócios e da banca, em propostas e RFPs, em rankings e publicações do setor e em materiais de imprensa. A entrega em alta resolução, com versões otimizadas para web, atende esses diferentes usos.",
+          ],
+        ],
+      },
+      {
+        h: "Case real: Rocha & Queiroz Advogados",
+        paragraphs: [
+          [
+            "Para Rocha & Queiroz Advogados Associados, produzimos fotografia e vídeo institucional. As duas produções em vídeo estão publicadas no portfólio, e a coordenadora administrativa do escritório registrou recomendação sobre o trabalho no LinkedIn, reproduzida na página de ",
+            { to: "/depoimentos", label: "depoimentos" },
+            " e no ",
+            { to: "/cases/rocha-e-queiroz-advogados", label: "case Rocha & Queiroz Advogados" },
+            ".",
+          ],
+        ],
+      },
+      {
+        h: "Fotografia e vídeo para a mesma comunicação institucional",
+        paragraphs: [
+          [
+            "Quando o projeto prevê os dois formatos, fotografia e vídeo são planejados em conjunto: a mesma preparação de locais e equipe alimenta os dois materiais, do retrato ao ",
+            { to: "/video-institucional", label: "vídeo institucional" },
+            ". O ",
+            { to: "/cases/rocha-e-queiroz-advogados", label: "case Rocha & Queiroz" },
+            " mostra como essa combinação foi publicada na prática.",
+          ],
+        ],
+      },
+      {
+        h: "Como contratar",
+        paragraphs: [
+          [
+            "A contratação parte de um briefing sobre o tamanho da banca, os ambientes disponíveis e os usos das imagens. A página de ",
+            { to: "/fotografia-para-advogados", label: "fotografia profissional para advogados" },
+            " detalha formatos de sessão, prazos de entrega e como solicitar um orçamento.",
+          ],
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Que fotos um escritório de advocacia precisa ter?",
+        a: "O essencial costuma ser o retrato dos sócios, os retratos da equipe no mesmo padrão visual e imagens dos ambientes do escritório. O escopo exato é definido no briefing, conforme o uso das imagens — site, LinkedIn, propostas ou imprensa.",
+      },
+      {
+        q: "As fotos podem ser feitas no próprio escritório?",
+        a: "Sim. A produção é realizada na sede do escritório, em toda a Grande São Paulo, com iluminação profissional e fundos portáteis. A preparação dos ambientes é combinada no planejamento, antes do dia da captação.",
+      },
+      {
+        q: "É possível fotografar todos os sócios e advogados com o mesmo padrão visual?",
+        a: "Sim. Padronizamos fundo, luz, enquadramento e tratamento para que todos os retratos tenham a mesma linguagem visual, mesmo quando a captação acontece em blocos de horário.",
+      },
+      {
+        q: "As imagens podem ser usadas no site e no LinkedIn?",
+        a: "Sim. As fotografias são entregues para uso do escritório nos canais dele — site institucional, página de equipe, LinkedIn, propostas e materiais de imprensa — conforme o escopo contratado.",
+      },
+      {
+        q: "É possível produzir fotografia e vídeo no mesmo projeto?",
+        a: "Sim. Quando previsto no escopo, a mesma produção reúne os dois formatos: os retratos e as imagens do escritório são captados junto com o material para vídeo institucional, aproveitando a mesma preparação de locais e equipe.",
+      },
+      {
+        q: "Como funciona o planejamento para uma banca maior?",
+        a: "O planejamento organiza a captação em blocos de horário, por pessoa e por ambiente, para manter o padrão visual e reduzir a interferência na rotina do escritório. O roteiro é definido junto com a coordenação antes do dia da produção.",
+      },
+    ],
+    ctaLabel: "Falar sobre o seu escritório",
+    waMessage:
+      "Olá! Somos um escritório de advocacia e queremos produzir fotos da banca e dos ambientes. Pode me explicar como funciona?",
+  },
   "fotografia-de-logistica": {
     eyebrow: "Fotografia para logística e transportes",
     sections: [
@@ -460,7 +561,12 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
         h: "O que documentamos em uma operação logística",
         paragraphs: [
           [
-            "Produzimos fotografia em operações logísticas de verdade: frotas, caminhões, centros de distribuição, armazéns, docas e áreas de expedição. O roteiro também pode incluir as pessoas que movem a operação — equipes, motoristas, liderança e executivos — e a estrutura física que sustenta o processo. Tudo é definido no briefing, conforme o que cada empresa precisa mostrar. No blog, detalhamos ",
+            "Produzimos fotografia para transportadoras e operadores logísticos em operações de verdade: frotas, caminhões, centros de distribuição, armazéns, docas e áreas de expedição. Um exemplo desse tipo de produção é o trabalho realizado para a ATIVA Logística, com fotografia de operação e uma série de produções em vídeo em Itapevi e Barueri, reunidos no ",
+            { to: "/cases/ativa-logistica", label: "case ATIVA Logística" },
+            ".",
+          ],
+          [
+            "O roteiro também pode incluir as pessoas que movem a operação — equipes, motoristas, liderança e executivos — e a estrutura física que sustenta o processo. Tudo é definido no briefing, conforme o que cada empresa precisa mostrar. No blog, detalhamos ",
             { to: "/blog/fotografia-para-transportadoras", label: "o que fotografar para montar o acervo de uma transportadora" },
             " — da frota às docas.",
           ],

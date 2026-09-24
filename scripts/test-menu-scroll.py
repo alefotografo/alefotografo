@@ -43,7 +43,7 @@ async def run_case(page, group, label, path):
 async def control_case(page):
     panel, start_y = await prepare(page, 2000)
     await panel.get_by_role("button", name="Fechar menu").first.click()
-    await page.wait_for_timeout(500)
+    await page.wait_for_timeout(2000)
     y = await page.evaluate("window.scrollY")
     return abs(y - start_y) < 5, f"antes={start_y} depois={y}"
 

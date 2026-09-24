@@ -15,6 +15,11 @@ type Props = {
   priority?: boolean;
   /** proporção reservada enquanto a foto não carrega (ex.: "4 / 3"); evita salto de layout */
   placeholderRatio?: string;
+  /**
+   * fade-in ao carregar (default true). Em galerias com proporção real reservada
+   * use fade={false}: a foto aparece direto e nunca fica transparente no scroll.
+   */
+  fade?: boolean;
   onBroken?: () => void;
 };
 
@@ -37,6 +42,7 @@ export function SmartImage({
   height,
   priority = false,
   placeholderRatio,
+  fade = true,
   onBroken,
 }: Props) {
   const [fallback, setFallback] = useState(false);
@@ -81,14 +87,14 @@ export function SmartImage({
       referrerPolicy="no-referrer"
       style={{
         ...(placeholderRatio ? { aspectRatio: placeholderRatio } : null),
-        opacity: priority ? 1 : 0,
+        opacity: priority || !fade ? 1 : 0,
       }}
       onLoad={(e) => settle(e.currentTarget)}
       onError={() => {
         if (!fallback) setFallback(true);
         else onBroken?.();
       }}
-      className={`${className} bg-surface transition-opacity duration-200`}
+      className={`${className} bg-surface ${fade ? "transition-opacity duration-200" : ""}`}
     />
   );
 }

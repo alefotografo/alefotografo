@@ -1,50 +1,42 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { SmartImage } from "@/components/site/SmartImage";
+import categoryDims from "@/data/categoryImageDims.json";
 
-const STEP = 12;
+// Dimensões reais medidas nas fotos das galerias (scripts/gen-category-image-dims.py).
+// Cada item reserva, antes de carregar, a proporção real da própria foto —
+// é o que elimina o reflow/tremor quando a imagem conclui o download.
+const GALLERY_DIMS = categoryDims as unknown as Record<string, number[]>;
 
+// Todas as figuras são renderizadas de uma vez: com as proporções reais
+// reservadas, o CSS columns balanceia as colunas uma única vez, antes da
+// pintura. A paginação incremental foi removida porque cada lote adicionado
+// rebalanceava as colunas e fazia fotos visíveis pularem de posição.
+// O lazy loading nativo das imagens mantém o custo de rede sob controle.
 export function Masonry({ images, alt }: { images: string[]; alt: string }) {
-  const unique = Array.from(new Set(images));
   const [broken, setBroken] = useState<Set<string>>(new Set());
-  const [count, setCount] = useState(STEP);
-  const sentinel = useRef<HTMLDivElement | null>(null);
 
-  const visible = unique.filter((src) => !broken.has(src));
-  const shown = visible.slice(0, count);
-  const hasMore = count < visible.length;
-
-  useEffect(() => {
-    if (!hasMore) return;
-    const node = sentinel.current;
-    if (!node || typeof IntersectionObserver === "undefined") return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) setCount((c) => c + STEP);
-      },
-      { rootMargin: "1200px 0px" },
-    );
-    io.observe(node);
-    return () => io.disconnect();
-  }, [hasMore, count]);
+  const visible = Array.from(new Set(images)).filter((src) => !broken.has(src));
 
   if (!visible.length) return null;
 
   return (
-    <>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
-        {shown.map((src, i) => (
+    <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
+      {visible.map((src, i) => {
+        const d = GALLERY_DIMS[src];
+        return (
           <figure
             key={src}
-            className="group break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-border-strong [content-visibility:auto] [contain-intrinsic-size:auto_320px]"
+            className="group break-inside-avoid overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-border-strong"
           >
             <SmartImage
               src={src}
               alt={`${alt} — foto ${i + 1}`}
               priority={i === 0}
               baseWidth={768}
-              placeholderRatio="4 / 3"
-              width={1200}
-              height={900}
+              placeholderRatio={d && d.length >= 2 ? `${d[0]} / ${d[1]}` : "4 / 3"}
+              width={d?.[0] ?? 1200}
+              height={d?.[1] ?? 900}
+              fade={false}
               sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 400px"
               onBroken={() =>
                 setBroken((prev) => {
@@ -54,23 +46,11 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
                   return next;
                 })
               }
-              className="h-auto w-full transform-gpu transition-[opacity,transform] duration-200 group-hover:scale-[1.03]"
+              className="h-auto w-full [content-visibility:visible]"
             />
           </figure>
-        ))}
-      </div>
-
-      {hasMore && (
-        <div ref={sentinel} className="mt-8 flex justify-center">
-          <button
-            type="button"
-            onClick={() => setCount((c) => c + STEP)}
-            className="rounded-sm border border-border bg-surface px-5 py-3 text-sm font-medium hover:border-ember"
-          >
-            Carregar mais fotos ({visible.length - count} restantes)
-          </button>
-        </div>
-      )}
-    </>
+        );
+      })}
+    </div>
   );
 }

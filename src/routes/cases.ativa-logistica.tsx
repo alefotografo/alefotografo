@@ -121,8 +121,8 @@ function CaseAtiva() {
             ATIVA Logística — fotografia e vídeo para mostrar estrutura e operação
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produzimos fotografia e vídeo para a ATIVA Logística registrarem a estrutura, a operação
-            e as unidades da empresa — do centro de distribuição em Itapevi à unidade de Barueri.
+            Produzimos fotografia e vídeo para registrar a estrutura, a operação e as unidades da
+            ATIVA Logística — do centro de distribuição em Itapevi à unidade de Barueri.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a

@@ -142,7 +142,7 @@ function CaseRochaQueiroz() {
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
             <p>
               Para Rocha & Queiroz Advogados Associados, produzimos vídeo institucional que
-              apresenta o escritório e a equipe. As duas produções publicadas — o vídeo
+              apresenta a estrutura do escritório. As duas produções publicadas — o vídeo
               institucional e o vídeo do escritório — estão disponíveis no catálogo de vídeos e
               reproduzidas abaixo.
             </p>

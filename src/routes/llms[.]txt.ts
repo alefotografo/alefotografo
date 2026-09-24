@@ -83,6 +83,13 @@ const PAGINAS = `## Páginas principais
 - [Busca do site](${BASE}/busca)
 `;
 
+const CASES_SECTION = `## Cases de clientes
+
+- [Cases — hub](${BASE}/cases): índice dos cases comerciais nomeados.
+- [ATIVA Logística](${BASE}/cases/ativa-logistica) — fotografia e vídeo corporativo de operação logística, com registros em Itapevi e Barueri.
+- [Rocha & Queiroz Advogados Associados](${BASE}/cases/rocha-e-queiroz-advogados) — fotografia e vídeo institucional para escritório de advocacia, com duas produções em vídeo publicadas e depoimento da equipe.
+`;
+
 const FAQ = `## Perguntas frequentes (respostas publicadas no site)
 
 - **Quanto custa uma foto profissional em São Paulo?** O valor depende do formato — estúdio, escritório da empresa ou locação externa — e da quantidade de fotos tratadas na entrega. Sessões individuais para LinkedIn, currículo e site resolvem em cerca de uma hora de captação e o orçamento é fechado por WhatsApp.
@@ -166,7 +173,7 @@ export const Route = createFileRoute("/llms.txt")({
   server: {
     handlers: {
       GET: async () => {
-        const body = [HEADER, coberturaBlock(), PAGINAS, blogBlock(), FAQ, CONTATO].join("\n");
+        const body = [HEADER, coberturaBlock(), PAGINAS, CASES_SECTION, blogBlock(), FAQ, CONTATO].join("\n");
         return new Response(body, {
           headers: {
             "Content-Type": "text/plain; charset=utf-8",

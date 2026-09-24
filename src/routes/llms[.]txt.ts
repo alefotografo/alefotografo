@@ -76,6 +76,7 @@ const PAGINAS = `## Páginas principais
 - [Início](${BASE}/): fotógrafo corporativo em São Paulo, retrato autoral com Alexandre Machado.
 - [Serviços](${BASE}/servicos): panorama completo de fotografia corporativa.
 - [Portfólio](${BASE}/portfolio) e [Galerias por segmento](${BASE}/fotografo-corporativo).
+- [Cases](${BASE}/cases): cases comerciais nomeados — ATIVA Logística (fotografia e vídeo de operação logística) e Rocha & Queiroz Advogados (vídeo institucional e fotografia).
 - [Blog](${BASE}/blog) · [RSS](${BASE}/blog/rss.xml): retrato, imagem pessoal, LinkedIn, poses e preparação para ensaio.
 - [Quem é o Alê](${BASE}/quem-e-o-ale) e [Sobre](${BASE}/sobre): trajetória de Alexandre Machado.
 - [Depoimentos](${BASE}/depoimentos) · [Perguntas frequentes](${BASE}/faq) · [Contato e orçamento](${BASE}/contato)

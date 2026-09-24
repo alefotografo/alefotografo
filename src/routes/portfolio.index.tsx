@@ -180,6 +180,46 @@ function PortfolioHub() {
         </div>
       </section>
 
+      {/* Cases de clientes nomeados */}
+      <section className="border-b border-border bg-surface" aria-labelledby="cases-clientes">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Cases</p>
+          <h2 id="cases-clientes" className="font-display text-2xl font-semibold md:text-4xl">
+            Cases de clientes
+          </h2>
+          <p className="mt-4 max-w-3xl text-muted-foreground text-pretty">
+            Projetos reais organizados por cliente, com as produções publicadas e o contexto de cada trabalho.
+          </p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            <Link
+              to="/cases/ativa-logistica"
+              className="group block rounded-sm border border-border bg-background p-6 transition-all hover:border-ember"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Logística</p>
+              <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-ember">ATIVA Logística</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Fotografia de operação e 8 produções em vídeo — Itapevi e Barueri.
+              </p>
+            </Link>
+            <Link
+              to="/cases/rocha-e-queiroz-advogados"
+              className="group block rounded-sm border border-border bg-background p-6 transition-all hover:border-ember"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Advocacia</p>
+              <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-ember">Rocha & Queiroz Advogados</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Vídeo institucional, fotografia e depoimento da equipe.
+              </p>
+            </Link>
+          </div>
+          <p className="mt-6">
+            <Link to="/cases" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              Ver todos os cases →
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {BLOCKS.map((b, bi) => {
         const gals = b.gals.map((s) => bySlug.get(s)).filter((c): c is NonNullable<typeof c> => Boolean(c));
         return (

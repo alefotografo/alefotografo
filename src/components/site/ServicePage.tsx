@@ -38,6 +38,8 @@ export interface ServicePageConfig {
   ondeUsar: string[];
   comoFunciona: { h: string; p: string }[];
   gallerySlugs: string[];
+  /** Cases comerciais nomeados relacionados a este serviço (ex.: /cases/...). */
+  caseLinks?: { to: string; label: string; desc: string }[];
   faqs: Faq[];
   wa: string;
   ctaLabel: string;
@@ -295,6 +297,22 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               </Link>
               .
             </p>
+            {cfg.caseLinks && cfg.caseLinks.length > 0 && (
+              <p className="mt-4 max-w-3xl text-sm text-muted-foreground text-pretty">
+                {cfg.caseLinks.map((c) => (
+                  <span key={c.to}>
+                    Case comercial:{" "}
+                    <Link
+                      to={c.to}
+                      className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+                    >
+                      {c.label}
+                    </Link>{" "}
+                    — {c.desc}
+                  </span>
+                ))}
+              </p>
+            )}
             <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {gallery.map((c) => (
                 <li key={c.slug}>

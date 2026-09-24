@@ -522,7 +522,9 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
             { to: "/videos/ativa-logistica-unidade-barueri", label: "unidade de Barueri" },
             " — além de outros projetos institucionais e comemorativos. Contamos esse trabalho em detalhes no ",
             { to: "/blog/case-ativa-logistica-fotografia-video", label: "case da ATIVA Logística" },
-            ", publicado no blog.",
+            ", publicado no blog, e reunimos as produções comprovadas no ",
+            { to: "/cases/ativa-logistica", label: "case comercial da ATIVA Logística" },
+            ".",
           ],
           [
             "Também produzimos vídeos institucionais para outras empresas do setor, como a ",

@@ -154,6 +154,16 @@ function Depoimentos() {
             <Card key={`${t.source}-${t.name}`} t={t} />
           ))}
         </div>
+        <p className="mt-10 text-sm text-muted-foreground">
+          O depoimento de Vanessa Cantieri, da Rocha & Queiroz Advogados Associados, também está no{" "}
+          <Link
+            to="/cases/rocha-e-queiroz-advogados"
+            className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+          >
+            case comercial do escritório
+          </Link>
+          , junto das produções em vídeo publicadas.
+        </p>
       </section>
 
       <section className="border-t border-border bg-surface">

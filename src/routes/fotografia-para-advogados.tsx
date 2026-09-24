@@ -67,6 +67,13 @@ const cfg: ServicePageConfig = {
     "fotografia-institucional-em-saopaulo",
     "fotografo-de-grupos-times-e-equipes",
   ],
+  caseLinks: [
+    {
+      to: "/cases/rocha-e-queiroz-advogados",
+      label: "Rocha & Queiroz Advogados",
+      desc: "vídeo institucional, fotografia e depoimento da equipe.",
+    },
+  ],
   faqs: [
     { q: "Fazem fotos para advogados?", a: "Sim. Produzimos retratos de sócios e equipe, além de fotos do escritório para site, LinkedIn, propostas e imprensa." },
     { q: "Quanto custa fotografar um escritório de advocacia?", a: "O orçamento é por escopo: número de advogados, ambientes e tempo de captação. Meia diária cobre sócios e parte da equipe; diária completa inclui ambientes e banco de imagens." },

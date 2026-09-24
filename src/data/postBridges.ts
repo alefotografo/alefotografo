@@ -92,6 +92,15 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "case-ativa-logistica-fotografia-video": {
+    paragraphs: [
+      [
+        "Este artigo conta o projeto por dentro. As produções comprovadas — fotografias da operação e os vídeos publicados — estão reunidas no ",
+        { to: "/cases/ativa-logistica", label: "case comercial da ATIVA Logística" },
+        ", com o resumo do projeto e os links para cada material.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

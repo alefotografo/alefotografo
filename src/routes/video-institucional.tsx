@@ -236,6 +236,17 @@ function VideoInstitucional() {
           <Link to="/videos" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
             Ver todas as produções de vídeo corporativo →
           </Link>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Cases comerciais com o contexto completo do projeto:{" "}
+            <Link to="/cases/ativa-logistica" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              ATIVA Logística
+            </Link>{" "}
+            e{" "}
+            <Link to="/cases/rocha-e-queiroz-advogados" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              Rocha & Queiroz Advogados
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

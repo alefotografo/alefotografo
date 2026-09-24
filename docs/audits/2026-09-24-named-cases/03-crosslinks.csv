@@ -1,0 +1,15 @@
+source,target,location,anchor_type,note
+/portfolio,/cases,Seção Cases de clientes (após hero),Ver todos os cases →,hub
+/portfolio,/cases/ativa-logistica,Seção Cases de clientes,card ATIVA Logística,cliente nomeado
+/portfolio,/cases/rocha-e-queiroz-advogados,Seção Cases de clientes,card Rocha & Queiroz Advogados,cliente nomeado
+/cases/ativa-logistica,/blog/case-ativa-logistica-fotografia-video,Seção desafio,case da ATIVA publicado no blog,recíproco com bridge
+/blog/case-ativa-logistica-fotografia-video,/cases/ativa-logistica,Bridge editorial (postBridges),case comercial da ATIVA Logística,recíproco
+/fotografo-corporativo/fotografia-de-logistica,/cases/ativa-logistica,Editorial Projetos em logística,case comercial da ATIVA Logística,categoria forte
+/video-institucional,/cases/ativa-logistica,Após lista de cases,ATIVA Logística,1 link natural
+/video-institucional,/cases/rocha-e-queiroz-advogados,Após lista de cases,Rocha & Queiroz Advogados,1 link natural
+/fotografia-para-advogados,/cases/rocha-e-queiroz-advogados,Bloco prova visual (caseLinks),Rocha & Queiroz Advogados,campo novo opcional do ServicePage
+/depoimentos,/cases/rocha-e-queiroz-advogados,Após grid de depoimentos,case comercial do escritório,depoimento Vanessa
+/cases/ativa-logistica,/fotografo-corporativo/fotografia-de-logistica,Serviços relacionados,Fotografia de logística,out
+/cases/ativa-logistica,/videos,Serviços relacionados + após vídeos,Vídeos para empresas,out
+/cases/rocha-e-queiroz-advogados,/fotografia-para-advogados,Serviços relacionados,Fotografia para advogados,out
+/cases/rocha-e-queiroz-advogados,/depoimentos,Após depoimento,Ver todos os depoimentos,out

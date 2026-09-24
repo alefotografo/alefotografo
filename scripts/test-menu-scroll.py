@@ -15,10 +15,10 @@ CASES = [
 ]
 
 
-async def prepare(page):
+async def prepare(page, target=None):
     await page.goto(BASE + "/", wait_until="load")
     await page.wait_for_timeout(1500)
-    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+    await page.evaluate(f"window.scrollTo(0, {target if target is not None else 'document.body.scrollHeight'})")
     await page.wait_for_timeout(400)
     y = await page.evaluate("window.scrollY")
     await page.get_by_role("button", name="Abrir menu").click()
@@ -41,7 +41,7 @@ async def run_case(page, group, label, path):
 
 
 async def control_case(page):
-    panel, start_y = await prepare(page)
+    panel, start_y = await prepare(page, 2000)
     await panel.get_by_role("button", name="Fechar menu").first.click()
     await page.wait_for_timeout(500)
     y = await page.evaluate("window.scrollY")

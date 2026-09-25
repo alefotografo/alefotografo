@@ -68,6 +68,13 @@ const cfg: ServicePageConfig = {
     "fotografo-de-grupos-times-e-equipes",
     "fotografia-institucional-em-saopaulo",
   ],
+  caseLinks: [
+    {
+      to: "/cases/ativa-logistica",
+      label: "ATIVA Logística",
+      desc: "fotografia de operação, estrutura logística e produções em vídeo.",
+    },
+  ],
   faqs: [
     { q: "Quanto custa contratar um fotógrafo empresarial em São Paulo?", a: "O valor depende do tempo de captação (meia diária ou diária), do número de ambientes e de pessoas e da quantidade de imagens tratadas. Envie o cenário pelo WhatsApp e receba o orçamento fechado em até 1 dia útil." },
     { q: "Vocês fotografam dentro da indústria ou do centro de distribuição?", a: "Sim. Levamos iluminação portátil, seguimos as normas internas de segurança e usamos os EPIs exigidos pela empresa." },

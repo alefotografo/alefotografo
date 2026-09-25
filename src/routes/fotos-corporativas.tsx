@@ -292,6 +292,24 @@ function FotosCorporativasPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8 md:pb-20">
+        <div className="max-w-3xl border-l-2 border-ember pl-5">
+          <h2 className="font-display text-xl font-semibold md:text-2xl">Prova real: estrutura e operação</h2>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
+            Em projetos de fotografia corporativa, também documentamos estrutura e operação. No
+            trabalho realizado para a{" "}
+            <Link
+              to="/cases/ativa-logistica"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              ATIVA Logística
+            </Link>
+            , produzimos fotografias da operação e uma série de produções em vídeo nas unidades de
+            Itapevi e Barueri.
+          </p>
+        </div>
+      </section>
+
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <h2 className="font-display text-2xl font-semibold md:text-4xl">

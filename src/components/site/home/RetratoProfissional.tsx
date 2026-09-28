@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin } from "lucide-react";
 import { SmartImage } from "@/components/site/SmartImage";
+import equipeAsset from "@/assets/retratos-equipe.png.asset.json";
 
 const FOTOS = [
   {
-    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/129397/foto-de-perfil-profissional-feminino_renata-marques-26.jpg",
-    alt: "Retrato profissional de mulher executiva em ambiente corporativo",
-    w: 1196,
-    h: 1600,
+    src: equipeAsset.url,
+    alt: "Equipe executiva em reunião em sala corporativa em São Paulo",
+    w: 400,
+    h: 166,
   },
   {
     src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo-em-sao-paulo_roberto-santos-de-araujo-15.JPG",

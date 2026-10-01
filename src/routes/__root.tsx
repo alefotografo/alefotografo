@@ -21,6 +21,7 @@ import { Header } from "../components/site/Header";
 import { WhatsappCta } from "../components/site/WhatsappCta";
 import { LazySection } from "../components/site/LazySection";
 import { DeferredAnalytics } from "../components/site/DeferredAnalytics";
+import { Tracking } from "../components/site/Tracking";
 import { site } from "../data/site";
 import { aggregateRatingSchema, googleBusinessProfileUrl, reviewSchema } from "../data/reviews";
 import { personSchema } from "../data/person";
@@ -372,6 +373,7 @@ function RootComponent() {
       </Suspense>
       <WhatsappCta />
       <DeferredAnalytics />
+      <Tracking />
     </QueryClientProvider>
   );
 }

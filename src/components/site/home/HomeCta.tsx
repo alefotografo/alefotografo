@@ -20,6 +20,7 @@ export default function HomeCta() {
               )}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Solicitar orçamento de fotografia e vídeo para empresa pelo WhatsApp"
               className="inline-flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-sm bg-ember px-7 py-3 font-medium text-accent-foreground hover:bg-ember-glow sm:w-auto"
             >
               Solicitar orçamento <ArrowUpRight size={16} />

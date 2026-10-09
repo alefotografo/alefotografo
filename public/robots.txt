@@ -1,3 +1,5 @@
+Agentmap: https://www.alefotografo.com.br/.well-known/ai-catalog.json
+
 User-agent: *
 Allow: /
 Disallow: /auth

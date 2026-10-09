@@ -1,0 +1,25 @@
+# Deploy Netlify — alefotografo.com.br
+# Build: TanStack Start + Nitro. O preset "netlify" gera funções serverless
+# para as rotas SSR (/auth, /admin, /busca, /api/*) e serve as páginas
+# pré-renderizadas (home, blog, serviços, bairros) como estáticos via CDN.
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
+  NODE_VERSION = "22"
+
+# Assets com hash no nome: cache imutável de 1 ano (o vite já gera nomes
+# versionados, então invalidação é automática a cada deploy).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML: sempre revalidado na borda — visitante nunca vê versão velha,
+# mas a borda responde em ~50 ms em vez dos 2,6 s de SSR atual.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

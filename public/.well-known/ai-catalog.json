@@ -1,0 +1,28 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Alê Fotógrafo — Alexandre Machado",
+    "identifier": "alefotografo.com.br",
+    "documentationUrl": "https://www.alefotografo.com.br/llms.txt",
+    "logoUrl": "https://www.alefotografo.com.br/img/logo-alefotografo.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:alefotografo.com.br:site:orcamento",
+      "displayName": "Solicitar orçamento de fotografia corporativa",
+      "type": "text/html",
+      "url": "https://www.alefotografo.com.br/contato",
+      "description": "Formulário WebMCP (toolname: solicitar-orcamento) para pedir orçamento de fotografia corporativa, retrato profissional, headshot para LinkedIn, eventos e vídeo institucional em São Paulo.",
+      "tags": ["fotografia corporativa", "retrato profissional", "headshot linkedin", "evento corporativo", "vídeo institucional", "são paulo"],
+      "capabilities": ["webmcp:solicitar-orcamento"],
+      "representativeQueries": [
+        "Solicitar orçamento de fotógrafo corporativo em São Paulo",
+        "Quanto custa um retrato profissional para LinkedIn em SP",
+        "Contratar fotógrafo para evento corporativo na Faria Lima",
+        "Fotógrafo para headshot de equipe de escritório de advocacia",
+        "Orçamento de vídeo institucional para empresa"
+      ],
+      "updatedAt": "2026-10-09"
+    }
+  ]
+}

@@ -23,3 +23,8 @@
 
 /index.html
   Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400
+
+/.well-known/ai-catalog.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400

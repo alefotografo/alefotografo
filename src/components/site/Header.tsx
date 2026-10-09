@@ -520,6 +520,7 @@ export function Header() {
 
               <Link
                 to="/contato"
+                aria-label="Solicitar orçamento — página de contato"
                 className="mt-6 flex min-h-12 items-center justify-center rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground"
               >
                 Solicitar orçamento

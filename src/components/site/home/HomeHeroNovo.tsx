@@ -60,6 +60,7 @@ export default function HomeHeroNovo() {
                   href={waLink(WA_DEFAULT)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Solicitar orçamento de fotografia pelo WhatsApp"
                   className="inline-flex w-full items-center justify-center rounded-sm bg-ember px-6 py-3.5 text-sm font-medium text-accent-foreground transition-colors hover:bg-ember-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
                 >
                   Solicitar orçamento

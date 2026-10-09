@@ -104,14 +104,20 @@ function Contato() {
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-5 md:px-8 md:py-24">
         <div className="md:col-span-3">
-          <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-5"
+            noValidate
+            toolname="solicitar-orcamento"
+            tooldescription="Solicita um orçamento de fotografia corporativa, retrato profissional, evento ou vídeo em São Paulo. Preenche nome, e-mail, empresa, telefone e mensagem, e abre a conversa no WhatsApp do estúdio."
+          >
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Nome" name="nome" required autoComplete="name" />
-              <Field label="E-mail" name="email" type="email" required autoComplete="email" inputMode="email" />
+              <Field label="Nome" name="nome" required autoComplete="name" toolparamdescription="Nome completo da pessoa que solicita o orçamento" />
+              <Field label="E-mail" name="email" type="email" required autoComplete="email" inputMode="email" toolparamdescription="E-mail corporativo de contato para retorno do orçamento" />
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Empresa (opcional)" name="empresa" autoComplete="organization" />
-              <Field label="Telefone (opcional)" name="telefone" type="tel" autoComplete="tel" inputMode="tel" />
+              <Field label="Empresa (opcional)" name="empresa" autoComplete="organization" toolparamdescription="Nome da empresa contratante, se houver" />
+              <Field label="Telefone (opcional)" name="telefone" type="tel" autoComplete="tel" inputMode="tel" toolparamdescription="Telefone ou WhatsApp com DDD" />
             </div>
             <div>
               <label htmlFor="mensagem" className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -121,6 +127,7 @@ function Contato() {
                 id="mensagem"
                 name="mensagem"
                 required
+                toolparamdescription="Descrição do projeto: tipo de fotografia ou vídeo desejado, prazo, local e número de pessoas a fotografar"
                 rows={6}
                 placeholder="Conte sobre seu projeto, prazo, e quantas pessoas serão fotografadas."
                 className="w-full rounded-sm border border-border bg-surface px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:border-ember focus:outline-none"
@@ -215,7 +222,7 @@ function Contato() {
   );
 }
 
-function Field({ label, name, ...props }: { label: string; name: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+function Field({ label, name, ...props }: { label: string; name: string; toolparamdescription?: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
       <label htmlFor={name} className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">

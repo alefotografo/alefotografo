@@ -1,13 +1,15 @@
 # Deploy Netlify — alefotografo.com.br
 # Build em duas fases:
-#   1) Build padrão: pré-renderiza as 352 páginas estáticas em .output/public
+#   1) Build com NITRO_PRESET=node-server (sem isso, o Nitro AUTO-DETECTA
+#      o ambiente Netlify e gera functions em vez do servidor Node que o
+#      prerender precisa): pré-renderiza as 352 páginas estáticas em .output/public
 #      (o crawl precisa de um servidor Node, que o preset netlify não expõe).
 #   2) Build com NITRO_PRESET=netlify e SKIP_PRERENDER=1: gera as serverless
 #      functions em .netlify/functions-internal (SSR de /admin/*, /api/*, /auth).
 # Ao final, o HTML estático da fase 1 é restaurado em .output/public. A Netlify
 # serve os arquivos estáticos pela CDN e delega o restante à function.
 [build]
-  command = "npm run build && mv .output/public .static-save && NITRO_PRESET=netlify SKIP_PRERENDER=1 npm run build && mkdir -p .output/public && cp -r .static-save/. .output/public/ && rm -rf .static-save"
+  command = "NITRO_PRESET=node-server npm run build && mv .output/public .static-save && NITRO_PRESET=netlify SKIP_PRERENDER=1 npm run build && mkdir -p .output/public && cp -r .static-save/. .output/public/ && rm -rf .static-save"
   publish = ".output/public"
 
 [build.environment]

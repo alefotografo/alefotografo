@@ -40,8 +40,10 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
 import { Route as CasesIndexRouteImport } from './routes/cases.index'
+import { Route as CasesAbradilanRouteImport } from './routes/cases.abradilan'
 import { Route as CasesAtivaLogisticaRouteImport } from './routes/cases.ativa-logistica'
 import { Route as CasesRochaEQueirozAdvogadosRouteImport } from './routes/cases.rocha-e-queiroz-advogados'
+import { Route as CasesSqQuimicaRouteImport } from './routes/cases.sq-quimica'
 import { Route as FotografoCorporativoEmIndexRouteImport } from './routes/fotografo-corporativo-em.index'
 import { Route as FotografoCorporativoEmBairroRouteImport } from './routes/fotografo-corporativo-em.$bairro'
 import { Route as FotografoCorporativoIndexRouteImport } from './routes/fotografo-corporativo.index'
@@ -216,6 +218,11 @@ const CasesIndexRoute = CasesIndexRouteImport.update({
   path: '/cases/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasesAbradilanRoute = CasesAbradilanRouteImport.update({
+  id: '/cases/abradilan',
+  path: '/cases/abradilan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CasesAtivaLogisticaRoute = CasesAtivaLogisticaRouteImport.update({
   id: '/cases/ativa-logistica',
   path: '/cases/ativa-logistica',
@@ -227,6 +234,11 @@ const CasesRochaEQueirozAdvogadosRoute =
     path: '/cases/rocha-e-queiroz-advogados',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CasesSqQuimicaRoute = CasesSqQuimicaRouteImport.update({
+  id: '/cases/sq-quimica',
+  path: '/cases/sq-quimica',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FotografoCorporativoEmIndexRoute =
   FotografoCorporativoEmIndexRouteImport.update({
     id: '/fotografo-corporativo-em/',
@@ -340,8 +352,10 @@ export interface FileRoutesByFullPath {
   '/video-para-feiras-e-stands': typeof VideoParaFeirasEStandsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
+  '/cases/abradilan': typeof CasesAbradilanRoute
   '/cases/ativa-logistica': typeof CasesAtivaLogisticaRoute
   '/cases/rocha-e-queiroz-advogados': typeof CasesRochaEQueirozAdvogadosRoute
+  '/cases/sq-quimica': typeof CasesSqQuimicaRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -389,8 +403,10 @@ export interface FileRoutesByTo {
   '/video-para-feiras-e-stands': typeof VideoParaFeirasEStandsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
+  '/cases/abradilan': typeof CasesAbradilanRoute
   '/cases/ativa-logistica': typeof CasesAtivaLogisticaRoute
   '/cases/rocha-e-queiroz-advogados': typeof CasesRochaEQueirozAdvogadosRoute
+  '/cases/sq-quimica': typeof CasesSqQuimicaRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -440,8 +456,10 @@ export interface FileRoutesById {
   '/video-para-feiras-e-stands': typeof VideoParaFeirasEStandsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
+  '/cases/abradilan': typeof CasesAbradilanRoute
   '/cases/ativa-logistica': typeof CasesAtivaLogisticaRoute
   '/cases/rocha-e-queiroz-advogados': typeof CasesRochaEQueirozAdvogadosRoute
+  '/cases/sq-quimica': typeof CasesSqQuimicaRoute
   '/fotografo-corporativo-em/$bairro': typeof FotografoCorporativoEmBairroRoute
   '/fotografo-corporativo/$slug': typeof FotografoCorporativoSlugRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -491,8 +509,10 @@ export interface FileRouteTypes {
     | '/video-para-feiras-e-stands'
     | '/blog/$slug'
     | '/blog/rss.xml'
+    | '/cases/abradilan'
     | '/cases/ativa-logistica'
     | '/cases/rocha-e-queiroz-advogados'
+    | '/cases/sq-quimica'
     | '/fotografo-corporativo-em/$bairro'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
@@ -540,8 +560,10 @@ export interface FileRouteTypes {
     | '/video-para-feiras-e-stands'
     | '/blog/$slug'
     | '/blog/rss.xml'
+    | '/cases/abradilan'
     | '/cases/ativa-logistica'
     | '/cases/rocha-e-queiroz-advogados'
+    | '/cases/sq-quimica'
     | '/fotografo-corporativo-em/$bairro'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
@@ -590,8 +612,10 @@ export interface FileRouteTypes {
     | '/video-para-feiras-e-stands'
     | '/blog/$slug'
     | '/blog/rss.xml'
+    | '/cases/abradilan'
     | '/cases/ativa-logistica'
     | '/cases/rocha-e-queiroz-advogados'
+    | '/cases/sq-quimica'
     | '/fotografo-corporativo-em/$bairro'
     | '/fotografo-corporativo/$slug'
     | '/portfolio/$slug'
@@ -641,8 +665,10 @@ export interface RootRouteChildren {
   VideoParaFeirasEStandsRoute: typeof VideoParaFeirasEStandsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
+  CasesAbradilanRoute: typeof CasesAbradilanRoute
   CasesAtivaLogisticaRoute: typeof CasesAtivaLogisticaRoute
   CasesRochaEQueirozAdvogadosRoute: typeof CasesRochaEQueirozAdvogadosRoute
+  CasesSqQuimicaRoute: typeof CasesSqQuimicaRoute
   FotografoCorporativoEmBairroRoute: typeof FotografoCorporativoEmBairroRoute
   FotografoCorporativoSlugRoute: typeof FotografoCorporativoSlugRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
@@ -878,6 +904,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cases/abradilan': {
+      id: '/cases/abradilan'
+      path: '/cases/abradilan'
+      fullPath: '/cases/abradilan'
+      preLoaderRoute: typeof CasesAbradilanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cases/ativa-logistica': {
       id: '/cases/ativa-logistica'
       path: '/cases/ativa-logistica'
@@ -890,6 +923,13 @@ declare module '@tanstack/react-router' {
       path: '/cases/rocha-e-queiroz-advogados'
       fullPath: '/cases/rocha-e-queiroz-advogados'
       preLoaderRoute: typeof CasesRochaEQueirozAdvogadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases/sq-quimica': {
+      id: '/cases/sq-quimica'
+      path: '/cases/sq-quimica'
+      fullPath: '/cases/sq-quimica'
+      preLoaderRoute: typeof CasesSqQuimicaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fotografo-corporativo-em/': {
@@ -1045,8 +1085,10 @@ const rootRouteChildren: RootRouteChildren = {
   VideoParaFeirasEStandsRoute: VideoParaFeirasEStandsRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
+  CasesAbradilanRoute: CasesAbradilanRoute,
   CasesAtivaLogisticaRoute: CasesAtivaLogisticaRoute,
   CasesRochaEQueirozAdvogadosRoute: CasesRochaEQueirozAdvogadosRoute,
+  CasesSqQuimicaRoute: CasesSqQuimicaRoute,
   FotografoCorporativoEmBairroRoute: FotografoCorporativoEmBairroRoute,
   FotografoCorporativoSlugRoute: FotografoCorporativoSlugRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,

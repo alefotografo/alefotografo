@@ -68,6 +68,13 @@ const cfg: ServicePageConfig = {
     "banco-de-imagens-para-empresas",
     "fotografo-de-grupos-times-e-equipes",
   ],
+  caseLinks: [
+    {
+      to: "/cases/sq-quimica",
+      label: "SQ Química",
+      desc: "cobertura da FCE Pharma e do ABRAFATI Show 2022, com fotografia e vídeo na mesma operação.",
+    },
+  ],
   faqs: [
     { q: "Quanto custa a cobertura de uma feira de negócios?", a: "O valor é calculado por período (algumas horas, meia diária ou diária) e pelo número de dias do evento. Envie o pavilhão e as datas pelo WhatsApp e receba o orçamento fechado." },
     { q: "Consigo fotos para publicar durante a feira?", a: "Sim. Uma prévia tratada é entregue no mesmo dia, quando prevista no escopo, geralmente em poucas horas após o bloco de cobertura." },

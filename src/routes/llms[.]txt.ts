@@ -76,7 +76,7 @@ const PAGINAS = `## Páginas principais
 - [Início](${BASE}/): fotógrafo corporativo em São Paulo, retrato autoral com Alexandre Machado.
 - [Serviços](${BASE}/servicos): panorama completo de fotografia corporativa.
 - [Portfólio](${BASE}/portfolio) e [Galerias por segmento](${BASE}/fotografo-corporativo).
-- [Cases](${BASE}/cases): cases comerciais nomeados — ATIVA Logística (fotografia e vídeo de operação logística) e Rocha & Queiroz Advogados (vídeo institucional e fotografia).
+- [Cases](${BASE}/cases): cases comerciais nomeados — ATIVA Logística (fotografia e vídeo de operação logística), Rocha & Queiroz Advogados (vídeo institucional e fotografia), SQ Química (vídeo institucional e cobertura de feiras) e ABRADILAN (cobertura de fóruns e convenções).
 - [Blog](${BASE}/blog) · [RSS](${BASE}/blog/rss.xml): retrato, imagem pessoal, LinkedIn, poses e preparação para ensaio.
 - [Quem é o Alê](${BASE}/quem-e-o-ale) e [Sobre](${BASE}/sobre): trajetória de Alexandre Machado.
 - [Depoimentos](${BASE}/depoimentos) · [Perguntas frequentes](${BASE}/faq) · [Contato e orçamento](${BASE}/contato)
@@ -88,6 +88,8 @@ const CASES_SECTION = `## Cases de clientes
 - [Cases — hub](${BASE}/cases): índice dos cases comerciais nomeados.
 - [ATIVA Logística](${BASE}/cases/ativa-logistica) — fotografia e vídeo corporativo de operação logística, com registros em Itapevi e Barueri.
 - [Rocha & Queiroz Advogados Associados](${BASE}/cases/rocha-e-queiroz-advogados) — fotografia e vídeo institucional para escritório de advocacia, com duas produções em vídeo publicadas e depoimento da equipe.
+- [SQ Química](${BASE}/cases/sq-quimica) — vídeo institucional da unidade de Vinhedo e cobertura de feiras de negócios (FCE Pharma e ABRAFATI Show 2022) com fotografia e vídeo.
+- [ABRADILAN](${BASE}/cases/abradilan) — cobertura em vídeo do 7º ao 11º Fórum de Desenvolvimento Empresarial, da 15ª Convenção em Punta Cana e das produções comemorativas da entidade.
 `;
 
 const FAQ = `## Perguntas frequentes (respostas publicadas no site)

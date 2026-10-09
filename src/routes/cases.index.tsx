@@ -23,6 +23,22 @@ const CASES = [
     proof: "video" as const,
     videoSlug: "video-institucional-rocha-queiroz-advogados",
   },
+  {
+    to: "/cases/sq-quimica",
+    client: "SQ Química",
+    segment: "Indústria",
+    services: "Vídeo institucional e cobertura de feiras com foto e vídeo",
+    proof: "video" as const,
+    videoSlug: "sq-quimica-unidade-vinhedo",
+  },
+  {
+    to: "/cases/abradilan",
+    client: "ABRADILAN",
+    segment: "Eventos corporativos",
+    services: "Cobertura de fóruns, convenções e eventos em vídeo",
+    proof: "video" as const,
+    videoSlug: "11-forum-abradilan-2026",
+  },
 ];
 
 export const Route = createFileRoute("/cases/")({
@@ -30,7 +46,7 @@ export const Route = createFileRoute("/cases/")({
     meta: buildMeta({
       title: "Cases de Fotografia e Vídeo Corporativo | Alê Fotógrafo",
       description:
-        "Cases reais de fotografia e vídeo corporativo para empresas, organizados por cliente e segmento. ATIVA Logística e Rocha & Queiroz Advogados.",
+        "Cases reais de fotografia e vídeo corporativo para empresas, organizados por cliente e segmento: ATIVA Logística, Rocha & Queiroz Advogados, SQ Química e ABRADILAN.",
       path: PATH,
     }),
     links: [{ rel: "canonical", href: `${SITE_ORIGIN}${PATH}` }],

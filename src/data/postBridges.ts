@@ -92,6 +92,24 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "fotografia-estande-feiras-eventos-setor": {
+    paragraphs: [
+      [
+        "Um exemplo de cobertura com foto e vídeo na mesma operação é o trabalho feito para a SQ Química na FCE Pharma e no ABRAFATI Show, reunido no ",
+        { to: "/cases/sq-quimica", label: "case SQ Química" },
+        ".",
+      ],
+    ],
+  },
+  "fotografia-industrial-fabrica-operacao": {
+    paragraphs: [
+      [
+        "Na indústria química, produzimos vídeo institucional da unidade de Vinhedo e coberturas de feiras do setor para a SQ Química — veja o ",
+        { to: "/cases/sq-quimica", label: "case SQ Química" },
+        " com as produções publicadas.",
+      ],
+    ],
+  },
   "case-ativa-logistica-fotografia-video": {
     paragraphs: [
       [

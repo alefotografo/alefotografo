@@ -33,3 +33,6 @@ dist-ssr
 
 # Export estático para Hostinger (gerado por scripts/export-static.mjs)
 hostinger/
+
+# Segredos — nunca commitar (a Netlify bloqueia deploy com secrets no repo)
+.env

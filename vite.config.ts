@@ -43,7 +43,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
     pages: staticPages,
-    prerender: { enabled: true, autoStaticPathsDiscovery: false },
+    // SKIP_PRERENDER=1 desliga o crawl de pré-render (usado na fase 2 do build
+    // da Netlify: o preset "netlify" não expõe um servidor Node para o crawl,
+    // então o HTML estático vem da fase 1 e as functions da fase 2).
+    prerender: { enabled: process.env.SKIP_PRERENDER !== "1", autoStaticPathsDiscovery: false },
   },
 
   vite: {

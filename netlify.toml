@@ -13,7 +13,7 @@
   publish = ".output/public"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "20"
 
 # Assets com hash no nome: cache imutável de 1 ano (o vite já gera nomes
 # versionados, então invalidação é automática a cada deploy).

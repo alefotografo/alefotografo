@@ -1,3 +1,17 @@
+// Atributos de anotação WebMCP (agentes preenchendo o formulário) — não existem nos tipos do React.
+declare module "react" {
+  interface FormHTMLAttributes<T> {
+    toolname?: string;
+    tooldescription?: string;
+  }
+  interface TextareaHTMLAttributes<T> {
+    toolparamdescription?: string;
+  }
+  interface InputHTMLAttributes<T> {
+    toolparamdescription?: string;
+  }
+}
+
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { buildMeta } from "@/lib/seo";

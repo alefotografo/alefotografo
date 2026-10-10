@@ -4,7 +4,7 @@ import { posts } from "@/data/catalog";
 import { site } from "@/data/site";
 import { postDateRFC822 } from "@/lib/postDate";
 
-const BASE_URL = "https://www.alefotografo.com.br";
+const BASE_URL = "https://alefotografo.com.br";
 
 function esc(s: string): string {
   return s

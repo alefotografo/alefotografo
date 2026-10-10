@@ -43,7 +43,7 @@ export const Route = createFileRoute("/videos/")({
       path: "/videos",
     }),
     links: [
-      { rel: "canonical", href: "https://www.alefotografo.com.br/videos" },
+      { rel: "canonical", href: "https://alefotografo.com.br/videos" },
       { rel: "dns-prefetch", href: "https://i.ytimg.com" },
       { rel: "preconnect", href: "https://i.ytimg.com", crossOrigin: "" },
       { rel: "dns-prefetch", href: "https://vumbnail.com" },
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/videos/")({
             name: site.name,
             telephone: `+${site.whatsapp}`,
             email: site.email,
-            url: "https://www.alefotografo.com.br",
+            url: "https://alefotografo.com.br",
           },
         }),
       },
@@ -80,7 +80,7 @@ export const Route = createFileRoute("/videos/")({
           itemListElement: videos.slice(0, 30).map((v, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            url: `https://www.alefotografo.com.br/videos/${v.slug}`,
+            url: `https://alefotografo.com.br/videos/${v.slug}`,
             name: v.title,
           })),
         }),

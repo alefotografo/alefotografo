@@ -21,7 +21,7 @@ export const Route = createFileRoute("/sobre")({
       type: "article",
     }),
     links: [
-      { rel: "canonical", href: "https://www.alefotografo.com.br/sobre" },
+      { rel: "canonical", href: "https://alefotografo.com.br/sobre" },
       // O preload do retrato é emitido automaticamente pelo React a partir do
       // <img> eager fetchPriority="high"; declarar aqui duplicava a tag.
     ],
@@ -31,14 +31,14 @@ export const Route = createFileRoute("/sobre")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "@id": "https://www.alefotografo.com.br/sobre",
-          url: "https://www.alefotografo.com.br/sobre",
+          "@id": "https://alefotografo.com.br/sobre",
+          url: "https://alefotografo.com.br/sobre",
           inLanguage: "pt-BR",
-          isPartOf: { "@id": "https://www.alefotografo.com.br/#website" },
-          about: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
+          isPartOf: { "@id": "https://alefotografo.com.br/#website" },
+          about: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
           mainEntity: {
             "@type": "Person",
-            "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person",
+            "@id": "https://alefotografo.com.br/quem-e-o-ale#person",
             name: "Alexandre Machado",
             alternateName: "Alê Fotógrafo",
             jobTitle: "Fotógrafo de retrato corporativo",
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/sobre")({
               "Fotógrafo com mais de 30 anos de carreira em São Paulo, especializado em retrato profissional, headshot para LinkedIn e retratos de executivos e equipes.",
             image:
               "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-            url: "https://www.alefotografo.com.br/quem-e-o-ale",
+            url: "https://alefotografo.com.br/quem-e-o-ale",
             knowsAbout: [
               "Retrato corporativo",
               "Headshot profissional",
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/sobre")({
               "Direção de pose",
               "Iluminação de retrato",
             ],
-            worksFor: { "@id": "https://www.alefotografo.com.br/#business" },
+            worksFor: { "@id": "https://alefotografo.com.br/#business" },
             sameAs: [site.linkedin, site.instagram],
           },
         }),
@@ -70,9 +70,9 @@ export const Route = createFileRoute("/sobre")({
           worksFor: {
             "@type": "Organization",
             name: "Alê Fotógrafo Corporativo",
-            url: "https://www.alefotografo.com.br",
+            url: "https://alefotografo.com.br",
           },
-          url: "https://www.alefotografo.com.br",
+          url: "https://alefotografo.com.br",
           sameAs: [site.instagram, site.linkedin],
         }),
       },

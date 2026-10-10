@@ -21,7 +21,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
-    const url = `https://www.alefotografo.com.br/fotografo-corporativo-em/${params.bairro}`;
+    const url = `https://alefotografo.com.br/fotografo-corporativo-em/${params.bairro}`;
     const h1 = `Fotógrafo Corporativo em ${loaderData.nome}, São Paulo`;
     const title = `Fotógrafo Corporativo em ${loaderData.nome} SP | Alê Fotógrafo`;
     const description = `Fotógrafo corporativo na ${loaderData.nome} (${loaderData.regiao}): retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência em SP.`;
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
             buildBreadcrumbList([
               {
                 name: "Fotógrafo Corporativo São Paulo",
-                item: "https://www.alefotografo.com.br/fotografo-corporativo",
+                item: "https://alefotografo.com.br/fotografo-corporativo",
               },
               {
                 name: h1,
@@ -224,7 +224,7 @@ function BairroPage() {
           </div>
 
           <div className="mt-10">
-            <LinkFixo url={`https://www.alefotografo.com.br/fotografo-corporativo-em/${b.slug}`} />
+            <LinkFixo url={`https://alefotografo.com.br/fotografo-corporativo-em/${b.slug}`} />
           </div>
         </div>
       </section>

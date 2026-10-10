@@ -12,7 +12,7 @@ export const site = {
   email: "comercial@alefotografo.com.br",
   instagram: "https://www.instagram.com/alefotografo",
   linkedin: "https://www.linkedin.com/in/alefotografo",
-  originalUrl: "https://www.alefotografo.com.br",
+  originalUrl: "https://alefotografo.com.br",
   cnpj: "03230626/0001-82",
   foundingYear: 1999,
   address: {

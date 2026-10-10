@@ -15,7 +15,7 @@ export const Route = createFileRoute("/busca")({
   validateSearch: (search: Record<string, unknown>): { q: string } => ({ q: typeof search.q === "string" ? search.q.slice(0, 120) : "" }),
   head: () => ({
     meta: [...buildMeta({ title: "Busca no site | Alê Fotógrafo", description: "Encontre galerias de fotografia corporativa, vídeos e artigos do Alê Fotógrafo.", path: "/busca" }), { name: "robots", content: "noindex, follow" }],
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/busca" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/busca" }],
   }),
   component: BuscaPage,
 });

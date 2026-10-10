@@ -85,16 +85,17 @@ function redirectHttps(request: Request): Response | undefined {
   return undefined;
 }
 
-// Host canônico final: COM www (www.alefotografo.com.br).
-// Mantém fallback em código para apex → www caso a borda não aplique o primário.
-const REDIRECT_APEX_TO_WWW = true;
+// Host canônico final: SEM www (alefotografo.com.br) — mesmo comportamento da
+// borda Netlify (domínio primário é o apex; www → apex). O fallback em código
+// existe para requisições que chegam à function sem passar pela regra de domínio.
+const REDIRECT_WWW_TO_APEX = true;
 
 function redirectCanonicalHost(request: Request): Response | undefined {
-  if (!REDIRECT_APEX_TO_WWW) return undefined;
+  if (!REDIRECT_WWW_TO_APEX) return undefined;
   const url = new URL(request.url);
-  if (url.hostname !== "alefotografo.com.br") return undefined;
+  if (url.hostname !== "www.alefotografo.com.br") return undefined;
 
-  url.hostname = "www.alefotografo.com.br";
+  url.hostname = "alefotografo.com.br";
   url.protocol = "https:";
   return new Response(null, {
     status: 301,

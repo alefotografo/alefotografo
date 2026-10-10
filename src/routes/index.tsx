@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       return m;
     }),
     links: [
-      { rel: "canonical", href: "https://www.alefotografo.com.br/" },
+      { rel: "canonical", href: "https://alefotografo.com.br/" },
       // Foto principal da home: inicia download o mais cedo possível,
       // reduzindo LCP. O imagesrcset/imageSizes deixa o navegador escolher
       // a largura correta para cada viewport, igual ao <img> do hero.
@@ -71,9 +71,9 @@ export const Route = createFileRoute("/")({
           worksFor: {
             "@type": "Organization",
             name: "Alê Fotógrafo Corporativo",
-            url: "https://www.alefotografo.com.br",
+            url: "https://alefotografo.com.br",
           },
-          url: "https://www.alefotografo.com.br",
+          url: "https://alefotografo.com.br",
           sameAs: [site.instagram, site.linkedin],
         }),
       },

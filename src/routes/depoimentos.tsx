@@ -17,7 +17,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 // duas notas agregadas para o mesmo negócio.
 const reviewsSchema = {
   "@context": "https://schema.org",
-  "@id": "https://www.alefotografo.com.br/#business",
+  "@id": "https://alefotografo.com.br/#business",
   review: allTestimonials.map((t) => ({
     "@type": "Review",
     author: { "@type": "Person", name: t.name },
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/depoimentos")({
         "Depoimentos reais de empresas e executivos que contrataram Alê Fotógrafo para fotos corporativas, retratos e vídeo institucional em São Paulo.",
       path: "/depoimentos",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/depoimentos" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/depoimentos" }],
     scripts: [
       {
         type: "application/ld+json",

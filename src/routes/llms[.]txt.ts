@@ -5,7 +5,7 @@ import { posts } from "@/data/catalog";
 import { site } from "@/data/site";
 import { aggregateRatingSchema } from "@/data/reviews";
 
-const BASE = "https://www.alefotografo.com.br";
+const BASE = "https://alefotografo.com.br";
 
 /** Ordem de apresentação das regiões no bloco de cobertura. */
 const REGIOES = [

@@ -144,7 +144,7 @@ export const Route = createFileRoute("/portfolio/")({
         "Cases reais de retrato corporativo, médicos, advogados, empresas, eventos, feiras, indústria e vídeo em São Paulo. Veja a prova e fale direto comigo pelo WhatsApp.",
       path: "/portfolio",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/portfolio" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/portfolio" }],
   }),
   component: PortfolioHub,
 });

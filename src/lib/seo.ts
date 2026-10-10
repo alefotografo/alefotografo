@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 
-export const SITE_ORIGIN = "https://www.alefotografo.com.br";
+export const SITE_ORIGIN = "https://alefotografo.com.br";
 
 // Site irmão, operado pela equipe (eventos, feiras, congressos, coberturas
 // simultâneas). Declarado apenas como `sameAs`/link editorial — nunca como

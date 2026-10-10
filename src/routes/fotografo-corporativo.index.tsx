@@ -13,14 +13,14 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
       description: "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Veja trabalhos para empresas, executivos, indústria, logística, saúde e eventos.",
       path: "/fotografo-corporativo",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/fotografo-corporativo" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/fotografo-corporativo" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify(buildBreadcrumbList([
           {
             name: "Fotógrafo Corporativo São Paulo",
-            item: "https://www.alefotografo.com.br/fotografo-corporativo",
+            item: "https://alefotografo.com.br/fotografo-corporativo",
           },
         ])),
       },

@@ -1,4 +1,4 @@
-Agentmap: https://www.alefotografo.com.br/.well-known/ai-catalog.json
+Agentmap: https://alefotografo.com.br/.well-known/ai-catalog.json
 
 User-agent: *
 Allow: /
@@ -39,7 +39,7 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://www.alefotografo.com.br/sitemap-index.xml
+Sitemap: https://alefotografo.com.br/sitemap-index.xml
 
 # Resumo do site para agentes de IA
-# For AI/LLM reference: https://www.alefotografo.com.br/llms.txt
+# For AI/LLM reference: https://alefotografo.com.br/llms.txt

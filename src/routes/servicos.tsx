@@ -16,7 +16,7 @@ export const Route = createFileRoute("/servicos")({
         "Todos os formatos de retrato que eu fotografo em São Paulo: individual, LinkedIn, executivo, equipes, médicos, advogados e clínicas — com direção de pose.",
       path: "/servicos",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/servicos" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/servicos" }],
   }),
   component: ServicosPage,
 });

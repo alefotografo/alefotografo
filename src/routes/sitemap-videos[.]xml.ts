@@ -4,7 +4,7 @@ import { videos } from "@/data/catalog";
 import { site } from "@/data/site";
 import { videoThumb } from "@/lib/videoThumb";
 
-const BASE_URL = "https://www.alefotografo.com.br";
+const BASE_URL = "https://alefotografo.com.br";
 
 function esc(s: string): string {
   return s

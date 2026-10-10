@@ -5,7 +5,7 @@ import { bairros } from "@/data/bairros";
 import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 
 // Base URL do site publicado. Atualize se mudar o domínio final.
-const BASE_URL = "https://www.alefotografo.com.br";
+const BASE_URL = "https://alefotografo.com.br";
 
 interface SitemapEntry {
   path: string;

@@ -21,7 +21,7 @@ export const Route = createFileRoute("/faq")({
         "Preço, duração, direção de pose, roupa, prazo de entrega e direitos de uso do retrato profissional em São Paulo — respondido por Alexandre Machado.",
       path: "/faq",
     }),
-    links: [{ rel: "canonical", href: "https://www.alefotografo.com.br/faq" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/faq" }],
     scripts: [
       {
         type: "application/ld+json",

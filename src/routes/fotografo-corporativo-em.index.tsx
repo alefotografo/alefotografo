@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ArrowUpRight, MapPin } from "lucide-react";
 
 const PATH = "/fotografo-corporativo-em";
-const URL_ABS = `https://www.alefotografo.com.br${PATH}`;
+const URL_ABS = `https://alefotografo.com.br${PATH}`;
 const TITLE = "Fotógrafo Corporativo por Bairro em São Paulo e ABC";
 const DESCRIPTION =
   "Escolha o bairro e veja como atendemos: retratos executivos, fotos para LinkedIn, eventos e vídeo institucional em 35 regiões de São Paulo e do ABC.";
@@ -35,14 +35,14 @@ export const Route = createFileRoute("/fotografo-corporativo-em/")({
           name: TITLE,
           description: DESCRIPTION,
           url: URL_ABS,
-          publisher: { "@type": "LocalBusiness", name: site.name, url: "https://www.alefotografo.com.br" },
+          publisher: { "@type": "LocalBusiness", name: site.name, url: "https://alefotografo.com.br" },
           mainEntity: {
             "@type": "ItemList",
             itemListElement: bairros.map((b, i) => ({
               "@type": "ListItem",
               position: i + 1,
               name: `Fotógrafo corporativo ${b.prep ?? "na"} ${b.nome}`,
-              url: `https://www.alefotografo.com.br/fotografo-corporativo-em/${b.slug}`,
+              url: `https://alefotografo.com.br/fotografo-corporativo-em/${b.slug}`,
             })),
           },
         }),

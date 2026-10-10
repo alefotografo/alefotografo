@@ -7,7 +7,7 @@ import { bairros, type Bairro } from "@/data/bairros";
 import { BUSINESS_ID, PERSON_ID } from "@/data/person";
 import { aggregateRatingSchema } from "@/data/reviews";
 
-const SITE_ORIGIN = "https://www.alefotografo.com.br";
+const SITE_ORIGIN = "https://alefotografo.com.br";
 
 /** Cidade real de cada região usada em `bairros.regiao`. */
 function cidadeDaRegiao(regiao: string): string {

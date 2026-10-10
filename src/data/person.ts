@@ -1,6 +1,6 @@
 import { site } from "./site";
 
-const ORIGIN = "https://www.alefotografo.com.br";
+const ORIGIN = "https://alefotografo.com.br";
 
 export const PERSON_ID = `${ORIGIN}/quem-e-o-ale#person`;
 export const BUSINESS_ID = `${ORIGIN}/#business`;

@@ -164,7 +164,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "ai-catalog", href: "/.well-known/ai-catalog.json", type: "application/json" },
         // Feed anunciado em todas as páginas: agregadores e crawlers de IA
         // descobrem publicação nova sem passar pelo hub /blog.
-        { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://www.alefotografo.com.br/blog/rss.xml" },
+        { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://alefotografo.com.br/blog/rss.xml" },
 
         // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
         // apontava toda página para a home e conflitava com o canonical.
@@ -185,7 +185,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": ["PhotographyBusiness", "LocalBusiness"],
-              "@id": "https://www.alefotografo.com.br/#business",
+              "@id": "https://alefotografo.com.br/#business",
               name: site.fullName,
               alternateName: site.name,
               legalName: "Alexandre Machado Fotografia",
@@ -194,7 +194,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               slogan: site.tagline,
               image:
                 "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-              url: "https://www.alefotografo.com.br",
+              url: "https://alefotografo.com.br",
               telephone: "+55-11-91355-0533",
               email: site.email,
               foundingDate: String(site.foundingYear),
@@ -239,8 +239,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "Fotografia de equipe em escritório",
                 "Direção de pose",
               ],
-              founder: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
-              employee: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
+              founder: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
+              employee: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
               sameAs: [
                 site.instagram,
                 site.linkedin,
@@ -261,7 +261,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "Vídeo corporativo e institucional",
               ].map((name) => ({
                 "@type": "Offer",
-                itemOffered: { "@type": "Service", name, provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                itemOffered: { "@type": "Service", name, provider: { "@id": "https://alefotografo.com.br/#business" } },
               })),
             },
             // Entidade principal do domínio: Alexandre Machado. Nó único
@@ -271,12 +271,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             personSchema,
             {
               "@type": "WebSite",
-              "@id": "https://www.alefotografo.com.br/#website",
-              url: "https://www.alefotografo.com.br",
+              "@id": "https://alefotografo.com.br/#website",
+              url: "https://alefotografo.com.br",
               name: site.name,
               inLanguage: "pt-BR",
-              publisher: { "@id": "https://www.alefotografo.com.br/#business" },
-              author: { "@id": "https://www.alefotografo.com.br/quem-e-o-ale#person" },
+              publisher: { "@id": "https://alefotografo.com.br/#business" },
+              author: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
             },
 
           ],
@@ -290,7 +290,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Alê Fotógrafo Corporativo",
           description:
             "Fotografia corporativa profissional em São Paulo — retratos, headshots e eventos empresariais.",
-          url: "https://www.alefotografo.com.br",
+          url: "https://alefotografo.com.br",
           telephone: "+55-11-91355-0533",
           image:
             "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",

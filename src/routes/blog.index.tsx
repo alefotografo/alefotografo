@@ -18,7 +18,7 @@ export const Route = createFileRoute("/blog/")({
       path: "/blog",
     }),
     links: [
-      { rel: "canonical", href: "https://www.alefotografo.com.br/blog" },
+      { rel: "canonical", href: "https://alefotografo.com.br/blog" },
       // O rel="alternate" do RSS vive em __root (links concatenam; aqui duplicaria).
     ],
     scripts: [

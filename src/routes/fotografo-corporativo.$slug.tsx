@@ -17,6 +17,8 @@ import { EditorialBlock } from "@/components/site/EditorialBlock";
 import { relatedCategories, relatedPosts } from "@/lib/related";
 import { autoLink } from "@/lib/autoLink";
 import { serviceFor } from "@/lib/serviceMatch";
+import { CASE_PROOF_BY_GALLERY } from "@/data/cases";
+import { CaseProof } from "@/components/site/CaseProof";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 /**
@@ -235,6 +237,8 @@ function CategoryPage() {
         />
       </section>
 
+
+      {CASE_PROOF_BY_GALLERY[cat.slug] && <CaseProof caseTo={CASE_PROOF_BY_GALLERY[cat.slug]} />}
 
       {pageFaqs(cat.slug) && (
         <section className="border-t border-border">

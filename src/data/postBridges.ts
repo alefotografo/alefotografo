@@ -119,6 +119,71 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "retrato-executivo-x-foto-de-cracha-3-diferencas": {
+    paragraphs: [
+      [
+        "A diferença entre as duas fotos está menos na câmera e mais na condução: direção de pose, luz desenhada para o rosto e seleção do melhor enquadramento. É esse o padrão que produzimos no ",
+        { to: "/fotografia-executiva", label: "ensaio de retrato executivo" },
+        ", feito para diretoria e C-level em São Paulo.",
+      ],
+    ],
+  },
+  "foto-para-linkedin-o-que-realmente-funciona": {
+    paragraphs: [
+      [
+        "O que funciona no LinkedIn é o mesmo que funciona numa reunião de negócio: clareza, postura e naturalidade. É assim que produzimos a ",
+        { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
+        " — no escritório do cliente ou em locação, com direção durante toda a sessão.",
+      ],
+    ],
+  },
+  "headshots-equipe-escala-50-colaboradores-um-dia": {
+    paragraphs: [
+      [
+        "Escala desse tamanho só funciona com método: mesmo fundo, mesma luz e sessão cronometrada por pessoa. É o formato que aplicamos nos ",
+        { to: "/fotos-corporativas", label: "ensaio de fotos corporativas para equipes" },
+        ", no escritório da empresa, sem tirar o time da rotina por mais tempo do que o necessário.",
+      ],
+    ],
+  },
+  "12-dicas-de-como-planejar-sua-festa-de-confraternizacao-fotografo-de-eventos": {
+    paragraphs: [
+      [
+        "Depois do planejamento, a festa precisa de registro para valer o investimento: fotos de presença, de entrega de premiações e do clima da noite. Produzimos essa cobertura como ",
+        { to: "/fotografo-corporativo/fotografo-festa-de-confraternizacao", label: "fotografia de festa de confraternização empresarial" },
+        ", com entrega ágil das imagens.",
+      ],
+    ],
+  },
+  "retratos-corporativos-advogados-contadores": {
+    paragraphs: [
+      [
+        "Sócios de escritório pedem um retrato ainda mais controlado: terno, fundo sóbrio e expressão que transmita confiança sem rigidez. É o padrão que produzimos na ",
+        { to: "/fotografia-para-advogados", label: "fotografia para advogados e sócios" },
+        ", individualmente ou para o quadro inteiro do escritório.",
+      ],
+    ],
+  },
+  "fotografia-logistica-centros-distribuicao": {
+    paragraphs: [
+      [
+        "Fotografar operação logística exige acesso, segurança e leitura do processo — do recebimento ao expedição. Produzimos esse tipo de ",
+        { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística e centros de distribuição" },
+        " com equipe própria; a ",
+        { to: "/cases/ativa-logistica", label: "ATIVA Logística" },
+        " é um case comercial com as produções publicadas.",
+      ],
+    ],
+  },
+  "uso-de-drones-e-eventos-corporativos-tem-feito-toda-a-diferenca": {
+    paragraphs: [
+      [
+        "Imagem aérea acrescenta o contexto que o chão não alcança: a fachada, o estande, o público em escala. Nossa equipe produz ",
+        { to: "/fotografo-corporativo/fotos-aereas", label: "fotos e vídeo aéreo com drone" },
+        " para empresas e eventos em São Paulo, com operador habilitado.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

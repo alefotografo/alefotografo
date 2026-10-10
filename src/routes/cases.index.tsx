@@ -1,45 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { videoBySlug } from "@/data/catalog";
+import { CASES } from "@/data/cases";
 import { videoThumb } from "@/lib/videoThumb";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
 const PATH = "/cases";
-
-const CASES = [
-  {
-    to: "/cases/ativa-logistica",
-    client: "ATIVA Logística",
-    segment: "Logística",
-    services: "Fotografia corporativa e produção de vídeo",
-    proof: "video" as const,
-    videoSlug: "ativa-log-estrutura-operacao-e-eficiencia-logistica",
-  },
-  {
-    to: "/cases/rocha-e-queiroz-advogados",
-    client: "Rocha & Queiroz Advogados Associados",
-    segment: "Advocacia",
-    services: "Vídeo institucional e fotografia",
-    proof: "video" as const,
-    videoSlug: "video-institucional-rocha-queiroz-advogados",
-  },
-  {
-    to: "/cases/sq-quimica",
-    client: "SQ Química",
-    segment: "Indústria",
-    services: "Vídeo institucional e cobertura de feiras com foto e vídeo",
-    proof: "video" as const,
-    videoSlug: "sq-quimica-unidade-vinhedo",
-  },
-  {
-    to: "/cases/abradilan",
-    client: "ABRADILAN",
-    segment: "Eventos corporativos",
-    services: "Cobertura de fóruns, convenções e eventos em vídeo",
-    proof: "video" as const,
-    videoSlug: "11-forum-abradilan-2026",
-  },
-];
 
 export const Route = createFileRoute("/cases/")({
   head: () => ({

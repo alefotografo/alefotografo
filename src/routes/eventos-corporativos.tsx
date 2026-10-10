@@ -68,6 +68,13 @@ const cfg: ServicePageConfig = {
     "fotografo-festa-de-confraternizacao",
     "totem-fotografico-totem-mania",
   ],
+  caseLinks: [
+    {
+      to: "/cases/abradilan",
+      label: "ABRADILAN",
+      desc: "cobertura em vídeo do 7º ao 11º Fórum de Desenvolvimento Empresarial, da 15ª Convenção em Punta Cana e das comemorações de 25 anos.",
+    },
+  ],
   faqs: [
     { q: "Fazem cobertura de eventos corporativos?", a: "Sim: congressos, convenções, palestras, premiações, kick-offs, lançamentos e confraternizações, em foto e vídeo." },
     { q: "Quanto custa a cobertura de um evento?", a: "O valor depende da duração, do número de ambientes, da necessidade de vídeo e de segundo fotógrafo. Envie data, local e horário pelo WhatsApp e receba o orçamento fechado." },

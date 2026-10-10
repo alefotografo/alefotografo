@@ -278,6 +278,15 @@ function VideoFeirasStands() {
           <Link to="/videos" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
             Ver todas as produções de vídeo corporativo →
           </Link>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Case completo:{" "}
+            <Link
+              to="/cases/sq-quimica"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              SQ Química — FCE Pharma e ABRAFATI Show 2022, com foto e vídeo
+            </Link>
+          </p>
         </div>
       </section>
 

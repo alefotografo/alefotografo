@@ -37,6 +37,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/cases", changefreq: "monthly", priority: "0.8" },
           { path: "/cases/ativa-logistica", changefreq: "monthly", priority: "0.7" },
           { path: "/cases/rocha-e-queiroz-advogados", changefreq: "monthly", priority: "0.7" },
+          { path: "/cases/sq-quimica", changefreq: "monthly", priority: "0.7" },
+          { path: "/cases/abradilan", changefreq: "monthly", priority: "0.7" },
           { path: "/videos", changefreq: "weekly", priority: "0.9" },
           { path: "/video-institucional", changefreq: "weekly", priority: "0.9" },
           { path: "/video-de-eventos-corporativos", changefreq: "weekly", priority: "0.9" },

@@ -245,6 +245,14 @@ function VideoInstitucional() {
             <Link to="/cases/rocha-e-queiroz-advogados" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Rocha & Queiroz Advogados
             </Link>
+            ,{" "}
+            <Link to="/cases/sq-quimica" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              SQ Química
+            </Link>{" "}
+            e{" "}
+            <Link to="/cases/abradilan" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              ABRADILAN
+            </Link>
             .
           </p>
         </div>

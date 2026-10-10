@@ -1,5 +1,5 @@
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
-const PREFERRED_HOST = "www.alefotografo.com.br";
+const PREFERRED_HOST = "alefotografo.com.br";
 
 export type InspectionResult = {
   url: string;

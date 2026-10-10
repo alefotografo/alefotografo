@@ -12,7 +12,7 @@ export const Route = createFileRoute("/cases/")({
     meta: buildMeta({
       title: "Cases de Fotografia e Vídeo Corporativo | Alê Fotógrafo",
       description:
-        "Cases reais de fotografia e vídeo corporativo para empresas, organizados por cliente e segmento: ATIVA Logística, Rocha & Queiroz Advogados, SQ Química e ABRADILAN.",
+        "Cases reais de fotografia e vídeo corporativo para empresas, organizados por cliente e segmento: ATIVA Logística, Rocha & Queiroz, SQ Química, ABRADILAN, Tecnisa, Nitriflex, Fiorde Logística, Germed e Galena.",
       path: PATH,
     }),
     links: [{ rel: "canonical", href: `${SITE_ORIGIN}${PATH}` }],

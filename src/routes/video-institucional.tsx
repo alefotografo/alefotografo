@@ -253,6 +253,18 @@ function VideoInstitucional() {
             <Link to="/cases/abradilan" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               ABRADILAN
             </Link>
+            ,{" "}
+            <Link to="/cases/nitriflex" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              Nitriflex
+            </Link>{" "}
+            e{" "}
+            <Link to="/cases/fiorde" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              Fiorde Logística
+            </Link>
+            . Todos os cases estão no{" "}
+            <Link to="/cases" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+              índice de cases
+            </Link>
             .
           </p>
         </div>

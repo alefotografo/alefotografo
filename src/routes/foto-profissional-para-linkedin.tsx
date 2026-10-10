@@ -36,10 +36,22 @@ const pageFaqs: Faq[] = [
     q: "Quantas fotos eu recebo?",
     a: "Você escolhe as favoritas do ensaio e recebe as imagens tratadas em alta resolução, com versão quadrada para o LinkedIn e versão horizontal para site, currículo e apresentações.",
   },
+  {
+    q: "Foto de perfil e foto de capa do LinkedIn são a mesma coisa?",
+    a: "Não. A foto de perfil é o retrato circular que acompanha seu nome em toda a plataforma; a capa é a faixa horizontal no topo do perfil, que pode mostrar sua empresa, sua atuação ou um ambiente de trabalho. Produzimos os dois formatos, e temos um artigo sobre como explorar a foto de capa do perfil.",
+  },
+  {
+    q: "Que roupa usar na foto do LinkedIn?",
+    a: "A roupa deve espelhar o padrão do seu setor: terno ou camisa social para ambientes corporativos e jurídicos; camisa polo ou social sem gravata para tecnologia e negócios menos formais. Cores neutras e lisas funcionam melhor no recorte circular. Se houver dúvida, levamos opções de fundo que combinam com o look escolhido.",
+  },
+  {
+    q: "Em quanto tempo recebo a foto de perfil pronta?",
+    a: "As fotos tratadas são entregues em até 1 dia útil, conforme o escopo contratado. A sessão em si leva entre 20 e 40 minutos, e você já revisa as imagens no dia da captação.",
+  },
 ];
 
 const ANSWER_BLOCK =
-  "Foto profissional para LinkedIn é o retrato enquadrado para o formato circular da plataforma, com fundo neutro, expressão profissional e recorte que mantém o rosto legível em miniatura. É indicada para executivos, profissionais liberais e quem busca recolocação. Fotografo em São Paulo e entrego as imagens tratadas em até 1 dia útil, conforme o escopo.";
+  "Foto profissional para LinkedIn (também chamada de headshot ou foto de perfil profissional) é o retrato enquadrado para o formato circular da plataforma, com fundo neutro, expressão profissional e recorte que mantém o rosto legível em miniatura. É indicada para executivos, profissionais liberais e quem busca recolocação. Fotografo em São Paulo e entrego as imagens tratadas em até 1 dia útil, conforme o escopo.";
 
 const FORMATS: SessionFormat[] = [
   { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil" },

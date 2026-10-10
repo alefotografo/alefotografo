@@ -16,9 +16,12 @@ import { BlockText } from "@/components/site/BlockText";
 const URL_PATH = "/foto-profissional";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Foto Profissional em SP | Alexandre Machado — Direção de Pose";
+// MISSÃO-CTR-001 (teste 28 dias a partir de 2026-10-10): title/description com
+// benefício + prazo na frente. Baseline GSC: query "foto profissional" pos 3.92,
+// 64.837 impressões, CTR 0,28%. Rollback: reverter este commit. Não alterar H1.
+const TITLE = "Foto Profissional em SP: Orçamento em 1 Dia Útil | Alê Fotógrafo";
 const DESCRIPTION =
-  "Ensaio de foto profissional em São Paulo com direção de pose do início ao fim. Ideal para LinkedIn, currículo e marca pessoal. Podendo ser fotografado pessoalmente por Alexandre Machado, conforme agenda. Solicite orçamento.";
+  "Retrato profissional com direção de pose no seu escritório ou locação. Fotos tratadas em até 1 dia útil. 30+ anos de experiência. Peça orçamento pelo WhatsApp.";
 
 const GALLERY_SLUGS = [
   "retrato-corporativo",

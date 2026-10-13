@@ -253,6 +253,15 @@ function CasePage() {
             <Link to="/videos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeos para empresas
             </Link>
+            <Link to="/fotos-profissionais-medicos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Fotos profissionais para médicos
+            </Link>
+            <Link to="/fotografia-para-clinicas" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Fotografia para clínicas
+            </Link>
+            <Link to="/fotos-corporativas" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Fotos corporativas de equipe
+            </Link>
           </div>
         </div>
       </section>

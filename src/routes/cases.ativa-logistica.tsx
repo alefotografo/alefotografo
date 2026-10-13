@@ -321,6 +321,15 @@ function CaseAtiva() {
             <Link to="/videos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeos para empresas
             </Link>
+            <Link to="/fotos-corporativas" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Fotos corporativas de equipe
+            </Link>
+            <Link to="/fotografo-empresarial" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Fotógrafo empresarial
+            </Link>
+            <Link to="/eventos-corporativos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              Fotografia de eventos
+            </Link>
           </div>
         </div>
       </section>

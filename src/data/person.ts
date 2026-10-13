@@ -26,7 +26,12 @@ export const personKnowsAbout = [
 /**
  * Perfis oficiais. Só entram URLs confirmadas — `sameAs` é o que permite ao
  * Google reconciliar a entidade, e um link errado quebra a reconciliação.
- * Quando o item no Wikidata existir, acrescentar a URL aqui.
+ *
+ * ADICIONAR quando os perfis estiverem criados:
+ *   Wikidata:   "https://www.wikidata.org/wiki/Q<ID>"
+ *   Crunchbase: "https://www.crunchbase.com/person/alexandre-machado-ale"
+ *   Clutch:     "https://clutch.co/profile/ale-fotografo"
+ *   LinkedIn empresa: "https://www.linkedin.com/company/ale-fotografo"
  */
 export const personSameAs = [site.instagram, site.linkedin];
 

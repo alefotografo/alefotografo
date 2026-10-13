@@ -1,28 +1,110 @@
 {
   "specVersion": "1.0",
   "host": {
-    "displayName": "Alê Fotógrafo — Alexandre Machado",
+    "displayName": "Alexandre Machado — Alê Fotógrafo",
     "identifier": "alefotografo.com.br",
     "documentationUrl": "https://www.alefotografo.com.br/llms.txt",
-    "logoUrl": "https://www.alefotografo.com.br/img/logo-alefotografo.png"
+    "logoUrl": "https://www.alefotografo.com.br/img/logo-alefotografo.png",
+    "contactUrl": "https://www.alefotografo.com.br/contato",
+    "description": "Fotógrafo corporativo em São Paulo desde 1999. Retratos profissionais, headshots para LinkedIn, eventos corporativos e vídeo institucional. 200+ empresas atendidas. 4.9 estrelas no Google (144 avaliações)."
   },
   "entries": [
     {
-      "identifier": "urn:ai:alefotografo.com.br:site:orcamento",
+      "identifier": "urn:ai:alefotografo.com.br:action:orcamento",
       "displayName": "Solicitar orçamento de fotografia corporativa",
       "type": "text/html",
       "url": "https://www.alefotografo.com.br/contato",
-      "description": "Formulário WebMCP (toolname: solicitar-orcamento) para pedir orçamento de fotografia corporativa, retrato profissional, headshot para LinkedIn, eventos e vídeo institucional em São Paulo.",
-      "tags": ["fotografia corporativa", "retrato profissional", "headshot linkedin", "evento corporativo", "vídeo institucional", "são paulo"],
+      "description": "Formulário e WhatsApp para orçamento de fotografia corporativa, retrato profissional, headshot para LinkedIn, eventos e vídeo institucional em São Paulo. Resposta em até 1 dia útil.",
+      "tags": [
+        "orçamento",
+        "fotografia corporativa",
+        "retrato profissional",
+        "headshot linkedin",
+        "evento corporativo",
+        "vídeo institucional",
+        "são paulo"
+      ],
       "capabilities": ["webmcp:solicitar-orcamento"],
       "representativeQueries": [
         "Solicitar orçamento de fotógrafo corporativo em São Paulo",
         "Quanto custa um retrato profissional para LinkedIn em SP",
         "Contratar fotógrafo para evento corporativo na Faria Lima",
         "Fotógrafo para headshot de equipe de escritório de advocacia",
-        "Orçamento de vídeo institucional para empresa"
+        "Orçamento de vídeo institucional para empresa em SP"
       ],
-      "updatedAt": "2026-10-09"
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "identifier": "urn:ai:alefotografo.com.br:page:portfolio",
+      "displayName": "Portfólio de fotografia corporativa por segmento",
+      "type": "text/html",
+      "url": "https://www.alefotografo.com.br/fotografo-corporativo",
+      "description": "Galeria de fotografia corporativa organizada por 30+ segmentos: indústria, logística, advocacia, saúde, eventos, gastronomia, arquitetura e mais.",
+      "tags": ["portfólio", "fotografia corporativa", "segmentos", "galeria"],
+      "representativeQueries": [
+        "Ver portfólio de fotografia corporativa em SP",
+        "Exemplos de fotos corporativas para indústria",
+        "Amostras de retratos profissionais executivos",
+        "Fotografia para escritório de advocacia exemplos"
+      ],
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "identifier": "urn:ai:alefotografo.com.br:page:faq",
+      "displayName": "Perguntas frequentes sobre fotografia corporativa",
+      "type": "text/html",
+      "url": "https://www.alefotografo.com.br/faq",
+      "description": "Respostas sobre fotografia corporativa: prazos, preços (a partir de R$800 retrato individual, R$2.400 equipe, R$3.500 evento 4h), preparação, formatos de entrega e área de atendimento em São Paulo.",
+      "tags": ["faq", "dúvidas", "preços", "prazos", "fotografia corporativa"],
+      "representativeQueries": [
+        "Quanto custa sessão de fotos corporativas em São Paulo",
+        "Prazo de entrega fotografia corporativa",
+        "Como se preparar para sessão de fotos profissionais",
+        "O que vestir em sessão de fotos corporativas",
+        "Fotógrafo vai ao escritório da empresa"
+      ],
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "identifier": "urn:ai:alefotografo.com.br:page:cases",
+      "displayName": "Cases de clientes — resultados reais",
+      "type": "text/html",
+      "url": "https://www.alefotografo.com.br/cases",
+      "description": "Cases documentados: ATIVA Logística (fotografia e vídeo de operação logística em Itapevi e Barueri) e Rocha & Queiroz Advogados (vídeo institucional e fotografia de escritório de advocacia).",
+      "tags": ["cases", "clientes", "resultados", "projetos"],
+      "representativeQueries": [
+        "Cases de fotografia corporativa em empresas brasileiras",
+        "Exemplos de vídeo institucional para indústria",
+        "Trabalhos realizados fotógrafo corporativo SP"
+      ],
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "identifier": "urn:ai:alefotografo.com.br:page:depoimentos",
+      "displayName": "Depoimentos e avaliações de clientes",
+      "type": "text/html",
+      "url": "https://www.alefotografo.com.br/depoimentos",
+      "description": "4.9 estrelas no Google com 144 avaliações de empresas de advocacia, saúde, logística, indústria e tecnologia.",
+      "tags": ["depoimentos", "avaliações", "clientes", "google reviews"],
+      "representativeQueries": [
+        "Avaliações fotógrafo corporativo São Paulo",
+        "Depoimentos clientes fotografia corporativa SP"
+      ],
+      "updatedAt": "2026-10-12"
+    },
+    {
+      "identifier": "urn:ai:alefotografo.com.br:page:sobre",
+      "displayName": "Sobre Alexandre Machado — Alê Fotógrafo",
+      "type": "text/html",
+      "url": "https://www.alefotografo.com.br/quem-e-o-ale",
+      "description": "Alexandre Machado é fotógrafo corporativo em São Paulo desde 1999 (CNPJ 03230626/0001-82). Mais de 30 anos de experiência, 200+ empresas, 300+ executivos fotografados.",
+      "tags": ["sobre", "alexandre machado", "alê fotógrafo", "trajetória"],
+      "representativeQueries": [
+        "Quem é Alê Fotógrafo",
+        "Alexandre Machado fotógrafo corporativo São Paulo",
+        "Experiência fotógrafo corporativo SP"
+      ],
+      "updatedAt": "2026-10-12"
     }
   ]
 }

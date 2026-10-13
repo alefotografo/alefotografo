@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotos de Pessoas em Eventos de Empresa — SP | Alexandre Machado";
+const TITLE = "Fotos em Eventos Corporativos em SP";
 const DESCRIPTION =
   "Registro de pessoas em eventos de empresa em São Paulo: retratos no local, fotos de equipe, palestrantes e homenageados, com direção de pose e prévia no mesmo dia quando prevista no escopo. Orçamento em até 1 dia útil.";
 

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Retrato Executivo em SP | Alexandre Machado — Diretoria e Sócios";
+const TITLE = "Retrato Executivo em SP | Diretoria e Sócios";
 const DESCRIPTION =
   "Retrato de liderança que pode ser fotografado pessoalmente por Alexandre Machado, conforme agenda, no seu escritório ou em estúdio: 15 minutos por executivo e padrão visual igual para toda a diretoria. Orçamento pelo WhatsApp.";
 

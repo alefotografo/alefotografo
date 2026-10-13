@@ -45,7 +45,7 @@ export const Route = createFileRoute("/faq")({
 function FaqFallback() {
   return (
     <section className="mx-auto max-w-4xl px-5 py-24 md:px-8">
-      <h1 className="font-display text-3xl font-semibold">Perguntas frequentes</h1>
+      <p className="font-display text-3xl font-semibold">Perguntas frequentes</p>
       <p className="mt-4 text-muted-foreground">
         Não conseguimos carregar esta seção agora. Fale direto com Alexandre Machado pelo WhatsApp
         que retornamos em até 1 dia útil.

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotos de Equipe em Feiras de Negócios — SP | Alexandre Machado";
+const TITLE = "Fotógrafo de Feira de Negócios em SP";
 const DESCRIPTION =
   "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia quando prevista no escopo. Peça orçamento.";
 

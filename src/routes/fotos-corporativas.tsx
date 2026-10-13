@@ -16,7 +16,7 @@ import { BlockText } from "@/components/site/BlockText";
 const URL_PATH = "/fotos-corporativas";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
-const TITLE = "Fotos Corporativas em SP | Retratos de Equipe — Alexandre Machado";
+const TITLE = "Fotos Corporativas em SP | Retratos de Equipe";
 const DESCRIPTION =
   "Fotografamos o time inteiro no seu escritório — produção dirigida por Alexandre Machado, com equipe conforme o escopo — com o mesmo fundo, luz e enquadramento: 15 a 25 pessoas em meio período, padrão visual igual para site e LinkedIn. Peça orçamento.";
 

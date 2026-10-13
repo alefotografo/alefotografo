@@ -9,7 +9,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
     meta: buildMeta({
-      title: "Fotógrafo Corporativo em São Paulo | Portfólio",
+      title: "Fotógrafo Corporativo SP | 30 Anos, Nota 4,9",
       description: "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Veja trabalhos para empresas, executivos, indústria, logística, saúde e eventos.",
       path: "/fotografo-corporativo",
     }),

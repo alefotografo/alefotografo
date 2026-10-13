@@ -67,6 +67,7 @@ export function buildMeta({
     { name: "twitter:description", content: clampedDescription },
     { name: "twitter:image", content: absoluteImage },
     { name: "twitter:image:alt", content: fullTitle },
+    { name: "twitter:creator", content: "@alefotografo" },
   ];
   return meta;
 }

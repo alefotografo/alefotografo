@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
 
-const TITLE = "Fotos para Advogados em SP | Alexandre Machado — Sócios e Banca";
+const TITLE = "Fotos para Advogados em SP | Sócios e Banca";
 const DESCRIPTION =
   "Retratos de sócios e da banca inteira em São Paulo, feitos no próprio escritório: postura sóbria, luz de retrato e padrão único para site, LinkedIn e imprensa. Peça orçamento.";
 

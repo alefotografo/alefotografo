@@ -11,7 +11,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: buildMeta({
-      title: "Retrato Profissional em SP — Todos os Formatos",
+      title: "Serviços de Fotografia Corporativa em SP",
       description:
         "Todos os formatos de retrato que eu fotografo em São Paulo: individual, LinkedIn, executivo, equipes, médicos, advogados e clínicas — com direção de pose.",
       path: "/servicos",

@@ -33,7 +33,11 @@ export const personKnowsAbout = [
  *   Clutch:     "https://clutch.co/profile/ale-fotografo"
  *   LinkedIn empresa: "https://www.linkedin.com/company/ale-fotografo"
  */
-export const personSameAs = [site.instagram, site.linkedin];
+export const personSameAs = [
+  site.instagram,
+  site.linkedin,
+  "https://www.wikidata.org/wiki/Q141715599", // Wikidata entity — criado 2026-10-12
+];
 
 /**
  * Definição única da entidade Alexandre Machado. Referenciada por @id no

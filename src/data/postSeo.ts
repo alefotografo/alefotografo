@@ -751,4 +751,149 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Como o vídeo institucional apresenta estrutura, operação e equipes de transportadoras — com cases reais produzidos para ATIVA, Fiorde e BMX.",
   },
+  "7-erros-que-voce-deve-evitar-na-foto-de-perfil-no-linkedin": {
+    title: "7 Erros na Foto de Perfil do LinkedIn — Evite Já",
+    description:
+      "Foto desfocada, plano de fundo bagunçado, expressão fechada: os 7 erros mais comuns na foto do LinkedIn e o que fazer para cada um.",
+  },
+  "headhunter-o-que-e-o-que-faz-e-qual-seu-papel-no-mundo-corporativo": {
+    title: "Headhunter: O Que É e Por Que Sua Foto Importa",
+    description:
+      "O que faz um headhunter e por que a foto do LinkedIn é o primeiro filtro antes de qualquer entrevista — com dicas para ser chamado.",
+  },
+  "dress-code-corporativo-o-que-vestir-numa-sessao-de-fotos-profissionais": {
+    title: "Dress Code para Sessão de Fotos Profissionais",
+    description:
+      "O que vestir na sessão de fotos corporativas: cores, estampas, decotes e detalhes que valorizam ou atrapalham o retrato profissional.",
+  },
+  "direitos-autorais-na-fotografia-e-nos-retratos-como-funciona-1": {
+    title: "Direitos Autorais na Fotografia: Como Funciona",
+    description:
+      "Quem é dono da foto — o fotógrafo ou quem contratou? Entenda os direitos autorais na fotografia corporativa e o que deve constar no contrato.",
+  },
+  "posicionamento-e-reposicionamento-de-imagem-voce-sabe-qual-a-diferenca": {
+    title: "Posicionamento de Imagem: Diferença do Reposicionamento",
+    description:
+      "Quando construir uma imagem do zero e quando mudar a percepção já existente — e como a fotografia profissional ancora as duas estratégias.",
+  },
+  "posicionamento-de-imagem-profissional-o-que-e-e-como-aplicar": {
+    title: "Posicionamento de Imagem Profissional: O Que É",
+    description:
+      "Como a foto profissional, o perfil do LinkedIn e a presença visual constroem a percepção de autoridade — e como aplicar no dia a dia.",
+  },
+  "a-sua-foto-de-perfil-pode-representar-mais-do-que-voce-imagina": {
+    title: "Sua Foto de Perfil Representa Mais do Que Imagina",
+    description:
+      "Estudos mostram que recrutadores formam opinião em milissegundos pela foto. Veja o que a foto de perfil comunica antes de qualquer palavra.",
+  },
+  "linguagem-corporal-na-fotografia-de-retratos": {
+    title: "Linguagem Corporal no Retrato Profissional",
+    description:
+      "Postura, inclinação, expressão e mãos: como a linguagem corporal muda o que a foto transmite — e como o fotógrafo dirige cada detalhe.",
+  },
+  "networking-como-criar-uma-boa-rede-de-contatos-profissionais-para-voce-e-sua-empresa": {
+    title: "Networking: Como Criar uma Boa Rede Profissional",
+    description:
+      "Estratégias para ampliar contatos profissionais de forma genuína — e por que a foto do LinkedIn é o cartão de visitas da rede.",
+  },
+  "11-ideias-para-o-plano-de-fundo-de-seu-retrato-profissional": {
+    title: "11 Fundos para Retrato Profissional: Qual Escolher",
+    description:
+      "Fundo branco, preto, cinza, texturizado, desfocado ou em locação: prós e contras de cada opção e qual combina com cada perfil profissional.",
+  },
+  "saiba-quais-sao-os-melhores-de-postagem-nas-redes-sociais": {
+    title: "Melhores Horários para Postar nas Redes Sociais",
+    description:
+      "LinkedIn, Instagram e Facebook: os horários com mais alcance orgânico por plataforma e como planejar o calendário de conteúdo corporativo.",
+  },
+  "como-explorar-a-foto-de-capa-do-seu-perfil-no-linkedin": {
+    title: "Foto de Capa do LinkedIn: Como Usar Corretamente",
+    description:
+      "Tamanho, resolução, proporção e o que comunicar na foto de capa do LinkedIn para completar a identidade visual do seu perfil profissional.",
+  },
+  "10-lugares-em-sao-paulo-para-tirar-boas-fotos": {
+    title: "10 Locações em São Paulo para Fotos Profissionais",
+    description:
+      "Parques, arquitetura moderna e espaços urbanos na capital paulista que funcionam como cenário para retratos corporativos e editoriais.",
+  },
+  "decifrando-o-dress-code-masculino": {
+    title: "Dress Code Masculino: Guia para Fotos Corporativas",
+    description:
+      "Social, business casual ou esporte fino: como montar o look masculino ideal para a sessão de fotos profissionais e o perfil do LinkedIn.",
+  },
+  "a-importancia-do-retrato-corporativo-para-influenciadores-digitais-1": {
+    title: "Retrato Corporativo para Influenciadores Digitais",
+    description:
+      "Por que influenciadores e criadores de conteúdo precisam de retrato profissional — e como a foto corporativa diferencia a imagem de marca pessoal.",
+  },
+  "psicologia-das-cores-e-fotografia-saiba-como-elas-interagem": {
+    title: "Psicologia das Cores na Fotografia Corporativa",
+    description:
+      "Como as cores da roupa, do fundo e da luz influenciam a percepção da foto — e quais combinações transmitem autoridade, confiança e proximidade.",
+  },
+  "contratar-fotografos-pode-deixar-seu-evento-mais-divertido": {
+    title: "Por Que Contratar Fotógrafo para o Seu Evento",
+    description:
+      "Um fotógrafo profissional no evento corporativo faz mais do que registrar: cria memória, engaja participantes e entrega material para as redes.",
+  },
+  "youtube-live-como-fazer-uma-transmissao-ao-vivo-e-divulgar-sua-empresa": {
+    title: "YouTube Live: Transmissão ao Vivo para Empresas",
+    description:
+      "Como fazer uma live no YouTube para divulgar sua empresa: roteiro, equipamento, qualidade de imagem e como usar a transmissão como conteúdo.",
+  },
+  "adobe-lightroom-como-tratar-fotos-de-maneira-profissional": {
+    title: "Adobe Lightroom: Como Tratar Fotos Profissionalmente",
+    description:
+      "Exposição, balanço de branco, tonalidade e exportação: o fluxo básico de edição no Lightroom para quem quer melhorar a qualidade das fotos.",
+  },
+  "7-dicas-para-voce-nunca-mais-errar-na-aparencia-ao-tirar-fotos-profissionais": {
+    title: "7 Dicas de Aparência para Fotos Profissionais",
+    description:
+      "Cabelo, barba, make, roupa e acessórios: sete cuidados com a aparência que fazem diferença no resultado final do retrato corporativo.",
+  },
+  "10-dicas-para-ter-um-ambiente-agradavel-para-o-seu-evento-fotografia-de-evento": {
+    title: "10 Dicas de Ambiente para Eventos Corporativos",
+    description:
+      "Iluminação, decoração, sinalização e flow de convidados: como preparar o espaço do evento corporativo para render boas fotos e boa experiência.",
+  },
+  "dicas-fotografo-saia-do-fundo-branco-agora-1": {
+    title: "Saia do Fundo Branco: Alternativas para o Retrato",
+    description:
+      "Por que o fundo branco não funciona para todo mundo — e quais alternativas de fundo valorizam mais o retrato profissional no LinkedIn.",
+  },
+  "blazer-inspiracao-e-tendencia": {
+    title: "Blazer: Inspiração e Tendência para Fotos Corporativas",
+    description:
+      "Modelos, cores e tecidos de blazer que funcionam bem em fotos profissionais — e como usá-lo para transmitir autoridade no retrato corporativo.",
+  },
+  "adobe-photoshop-deixe-seus-projetos-mais-ageis-usando-os-principais-atalhos-do-teclado": {
+    title: "Photoshop: Principais Atalhos de Teclado",
+    description:
+      "Os atalhos do Photoshop que fotógrafos e designers mais usam no dia a dia — acelere o fluxo de trabalho e ganhe tempo na edição.",
+  },
+  "mindfulness-saiba-o-que-e-e-como-essa-tecnica-pode-ajudar-voce-em-sua-vida-pessoal-e-profissional": {
+    title: "Mindfulness: O Que É e Como Ajuda na Carreira",
+    description:
+      "O que é mindfulness, quais técnicas usar no trabalho e como a prática influencia a postura, a expressão e a presença na foto profissional.",
+  },
+  "clinica-par": {
+    title: "Fotos de Clínica de Psicologia em Moema — Case",
+    description:
+      "Fotografia de ambientes e retratos dos psicólogos da Clínica PAR em Moema: como planejar e executar a sessão em clínica de saúde mental.",
+  },
+  "sua-empresa-funciona-sem-voce-aprenda-a-profissionalizar-a-gestao-para-que-ela-continue-a-existir-sem-voce": {
+    title: "Sua Empresa Funciona Sem Você? Como Profissionalizar",
+    description:
+      "Gestão por processos, delegação e imagem corporativa: como estruturar a empresa para crescer além do fundador — e o papel da foto institucional.",
+  },
+  "comportamento-do-consumidor-como-a-fotografia-pode-ser-usada-para-influenciar-beneficamente": {
+    title: "Comportamento do Consumidor e Fotografia Corporativa",
+    description:
+      "Como imagens profissionais influenciam a decisão de compra: psicologia visual, trust signals e o impacto da foto na conversão de clientes.",
+  },
+  "produtividade-em-tempos-dificeis-tudo-o-que-voce-precisa-saber-para-se-tornar-mais-produtivo": {
+    title: "Produtividade em Tempos Difíceis: Guia Completo",
+    description:
+      "Técnicas de foco, organização e gestão de energia para manter a produtividade em períodos de crise — aplicadas à rotina do profissional autônomo.",
+  },
 };

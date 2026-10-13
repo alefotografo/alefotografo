@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Registro de pessoas em eventos de empresa em São Paulo: retratos no local, fotos de equipe, palestrantes e homenageados, com direção de pose e prévia no mesmo dia quando prevista no escopo. Orçamento em até 1 dia útil.";
 
 const cfg: ServicePageConfig = {
-  path: "/eventos-corporativos",
+  path: "/eventos-corporativos/",
   breadcrumb: "Eventos corporativos",
   eyebrow: "Pessoas em eventos",
   subtitle:

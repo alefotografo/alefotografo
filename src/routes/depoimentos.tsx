@@ -39,9 +39,9 @@ export const Route = createFileRoute("/depoimentos")({
       title: "Depoimentos de Clientes de Fotos Corporativas",
       description:
         "Depoimentos reais de empresas e executivos que contrataram Alê Fotógrafo para fotos corporativas, retratos e vídeo institucional em São Paulo.",
-      path: "/depoimentos",
+      path: "/depoimentos/",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/depoimentos" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/depoimentos/" }],
     scripts: [
       {
         type: "application/ld+json",

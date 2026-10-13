@@ -141,9 +141,9 @@ export const Route = createFileRoute("/portfolio/")({
       title: "Portfólio — Cases de Fotografia Corporativa em SP",
       description:
         "Cases reais de retrato corporativo, médicos, advogados, empresas, eventos, feiras, indústria e vídeo em São Paulo. Veja a prova e fale direto comigo pelo WhatsApp.",
-      path: "/portfolio",
+      path: "/portfolio/",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/portfolio" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/portfolio/" }],
     scripts: [
       {
         type: "application/ld+json",

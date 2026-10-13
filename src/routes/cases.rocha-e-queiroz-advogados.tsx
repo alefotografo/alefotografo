@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/rocha-e-queiroz-advogados";
+const PATH = "/cases/rocha-e-queiroz-advogados/";
 const TITLE = "Case Rocha & Queiroz Advogados | Fotografia e Vídeo";
 const DESCRIPTION =
   "Case real de fotografia e vídeo institucional para Rocha & Queiroz Advogados Associados, com produções publicadas e depoimento da equipe.";

@@ -13,7 +13,7 @@ import { serviceStats, statsLead } from "@/data/stats";
 import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import { BlockText } from "@/components/site/BlockText";
 
-const URL_PATH = "/fotos-corporativas";
+const URL_PATH = "/fotos-corporativas/";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const TITLE = "Fotos Corporativas em SP | Retratos de Equipe";

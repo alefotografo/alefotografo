@@ -69,9 +69,9 @@ export const Route = createFileRoute("/contato")({
     meta: buildMeta({
       title: "Contato e Orçamento de Fotos Corporativas em SP",
       description: "Peça orçamento de fotos corporativas, retratos profissionais e vídeo institucional em São Paulo. Estúdio no Jardim Paulista e atendimento na sua empresa.",
-      path: "/contato",
+      path: "/contato/",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/contato" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/contato/" }],
     scripts: [
       {
         type: "application/ld+json",

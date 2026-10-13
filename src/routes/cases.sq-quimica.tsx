@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/sq-quimica";
+const PATH = "/cases/sq-quimica/";
 const TITLE = "Case SQ Química | Fotografia e Vídeo para Indústria";
 const DESCRIPTION =
   "Produções de fotografia e vídeo realizadas para a SQ Química: cobertura de feiras, vídeo institucional da unidade de Vinhedo e registro do Prêmio SITIVESP.";

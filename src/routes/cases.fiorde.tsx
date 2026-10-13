@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/fiorde";
+const PATH = "/cases/fiorde/";
 const TITLE = "Case Fiorde Logística | Vídeo da Operação Logística";
 const DESCRIPTION = "Vídeo institucional produzido para a Fiorde Logística: estrutura operacional, transporte, armazenagem e distribuição registrados em imagem.";
 const WA = "Olá Alexandre, vi o case da Fiorde Logística e quero um orçamento de vídeo institucional para minha operação logística.";

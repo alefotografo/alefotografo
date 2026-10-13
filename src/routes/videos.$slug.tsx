@@ -28,7 +28,7 @@ export const Route = createFileRoute("/videos/$slug")({
       scripts: image
         ? [
             {
-              type: "application/ld+json",
+              type: /"application/ld+json",
               children: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "VideoObject",

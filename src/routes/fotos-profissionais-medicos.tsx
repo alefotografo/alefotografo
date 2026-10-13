@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Retrato profissional de médicos e dentistas em São Paulo, com jaleco ou traje social: confiança sem distância, podendo ser fotografado pessoalmente por Alexandre Machado, conforme agenda e formato. Solicite orçamento.";
 
 const cfg: ServicePageConfig = {
-  path: "/fotos-profissionais-medicos",
+  path: "/fotos-profissionais-medicos/",
   breadcrumb: "Fotos para médicos",
   eyebrow: "Saúde",
   h1: "Fotos profissionais para médicos e clínicas em São Paulo",

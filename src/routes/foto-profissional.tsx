@@ -13,7 +13,7 @@ import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable
 import type { Faq } from "@/lib/faqs";
 import { BlockText } from "@/components/site/BlockText";
 
-const URL_PATH = "/foto-profissional";
+const URL_PATH = "/foto-profissional/";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 // MISSÃO-CTR-001 (teste 28 dias a partir de 2026-10-10): title/description com

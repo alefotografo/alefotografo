@@ -16,12 +16,12 @@ export const Route = createFileRoute("/quem-e-o-ale")({
       title: "Quem é o Alê — o fotógrafo que dirige o seu retrato",
       description:
         "Alexandre Machado, o Alê Fotógrafo: 30 anos fotografando pessoas em São Paulo. Direção de pose, atendimento direto e retratos que não parecem foto de crachá.",
-      path: "/quem-e-o-ale",
+      path: "/quem-e-o-ale/",
       image: PORTRAIT,
       type: "article",
     }),
     links: [
-      { rel: "canonical", href: `${SITE_ORIGIN}/quem-e-o-ale` },
+      { rel: "canonical", href: `${SITE_ORIGIN}/quem-e-o-ale/` },
       // O preload do retrato é emitido automaticamente pelo React a partir do
       // <img> eager fetchPriority="high"; declarar aqui duplicava a tag.
     ],

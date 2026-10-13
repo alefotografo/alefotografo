@@ -5,7 +5,7 @@ import { CASES } from "@/data/cases";
 import { videoThumb } from "@/lib/videoThumb";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
-const PATH = "/cases";
+const PATH = "/cases/";
 
 export const Route = createFileRoute("/cases/")({
   head: () => ({

@@ -40,10 +40,10 @@ export const Route = createFileRoute("/videos/")({
       title: "Vídeos Corporativos em São Paulo | Produção para Empresas",
       description:
         "Produção de vídeos corporativos em São Paulo para empresas: institucional, eventos, treinamento e comunicação interna, com roteiro, captação e edição.",
-      path: "/videos",
+      path: "/videos/",
     }),
     links: [
-      { rel: "canonical", href: "https://alefotografo.com.br/videos" },
+      { rel: "canonical", href: "https://alefotografo.com.br/videos/" },
       { rel: "dns-prefetch", href: "https://i.ytimg.com" },
       { rel: "preconnect", href: "https://i.ytimg.com", crossOrigin: "" },
       { rel: "dns-prefetch", href: "https://vumbnail.com" },

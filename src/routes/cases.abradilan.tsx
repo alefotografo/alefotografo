@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/abradilan";
+const PATH = "/cases/abradilan/";
 const TITLE = "Case ABRADILAN | Cobertura de Eventos Corporativos";
 const DESCRIPTION =
   "Coberturas em vídeo de fóruns, convenções e eventos da ABRADILAN — do 7º ao 11º Fórum de Desenvolvimento Empresarial, convenção internacional e produções comemorativas.";

@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/galena";
+const PATH = "/cases/galena/";
 const TITLE = "Case Galena | Vídeos de Eventos Comemorativos";
 const DESCRIPTION = "Produções em vídeo realizadas para a Galena: o evento Galena Celebra com parceiros e o vídeo dos 35 anos da empresa.";
 const WA = "Olá Alexandre, vi o case da Galena e quero um orçamento de vídeo para o evento da minha empresa.";

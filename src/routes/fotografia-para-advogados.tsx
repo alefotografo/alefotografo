@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Retratos de sócios e da banca inteira em São Paulo, feitos no próprio escritório: postura sóbria, luz de retrato e padrão único para site, LinkedIn e imprensa. Peça orçamento.";
 
 const cfg: ServicePageConfig = {
-  path: "/fotografia-para-advogados",
+  path: "/fotografia-para-advogados/",
   breadcrumb: "Fotos para advogados",
   eyebrow: "Jurídico",
   h1: "Fotografia profissional para advogados e escritórios de advocacia",

@@ -15,10 +15,10 @@ export const Route = createFileRoute("/blog/")({
     meta: buildMeta({
       title: "Blog de Fotografia Corporativa em São Paulo",
       description: "Artigos sobre fotografia profissional, retratos corporativos, LinkedIn, vídeo e dicas para fortalecer sua imagem profissional.",
-      path: "/blog",
+      path: "/blog/",
     }),
     links: [
-      { rel: "canonical", href: "https://alefotografo.com.br/blog" },
+      { rel: "canonical", href: "https://alefotografo.com.br/blog/" },
       // O rel="alternate" do RSS vive em __root (links concatenam; aqui duplicaria).
     ],
     scripts: [

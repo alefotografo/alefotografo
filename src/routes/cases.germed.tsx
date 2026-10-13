@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/germed";
+const PATH = "/cases/germed/";
 const TITLE = "Case Germed | Cobertura de Evento em Vídeo";
 const DESCRIPTION = "Cobertura em vídeo do Encontro de Craques da Germed, evento corporativo realizado no Museu do Futebol, em São Paulo.";
 const WA = "Olá Alexandre, vi o case da Germed e quero um orçamento de cobertura de evento em vídeo.";

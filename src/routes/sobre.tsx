@@ -16,12 +16,12 @@ export const Route = createFileRoute("/sobre")({
     meta: buildMeta({
       title: "Alexandre Machado — fotógrafo de retrato corporativo",
       description: "Sou Alexandre Machado, fotógrafo e diretor de imagem em São Paulo, com mais de 30 anos de experiência. Dirijo projetos de retrato e fotografia corporativa, executados por mim e/ou pela equipe conforme o escopo.",
-      path: "/sobre",
+      path: "/sobre/",
       image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
     }),
     links: [
-      { rel: "canonical", href: "https://alefotografo.com.br/sobre" },
+      { rel: "canonical", href: "https://alefotografo.com.br/sobre/" },
       // O preload do retrato é emitido automaticamente pelo React a partir do
       // <img> eager fetchPriority="high"; declarar aqui duplicava a tag.
     ],

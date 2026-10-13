@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Imagens de gente trabalhando em São Paulo: equipe, liderança, escritório e operação, com retratos individuais na mesma visita. Atendimento direto comigo.";
 
 const cfg: ServicePageConfig = {
-  path: "/fotografo-empresarial",
+  path: "/fotografo-empresarial/",
   breadcrumb: "Fotógrafo empresarial",
   eyebrow: "Fotografia empresarial",
   h1: "Fotógrafo empresarial em São Paulo para equipe, escritório e operação",

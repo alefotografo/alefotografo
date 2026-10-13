@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Fotos do time comercial em feiras de negócios em São Paulo: retratos no stand, atendimentos e apresentações, prontos para LinkedIn e propostas. Prévia no mesmo dia quando prevista no escopo. Peça orçamento.";
 
 const cfg: ServicePageConfig = {
-  path: "/fotografo-de-feira-de-negocios",
+  path: "/fotografo-de-feira-de-negocios/",
   breadcrumb: "Fotógrafo de feira de negócios",
   eyebrow: "Time comercial em feiras",
   h1: "Retratos da equipe comercial em feiras de negócios",

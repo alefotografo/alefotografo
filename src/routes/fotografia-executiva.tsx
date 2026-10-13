@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Retrato de liderança que pode ser fotografado pessoalmente por Alexandre Machado, conforme agenda, no seu escritório ou em estúdio: 15 minutos por executivo e padrão visual igual para toda a diretoria. Orçamento pelo WhatsApp.";
 
 const cfg: ServicePageConfig = {
-  path: "/fotografia-executiva",
+  path: "/fotografia-executiva/",
   breadcrumb: "Fotografia executiva",
   eyebrow: "Retrato executivo",
   h1: "Fotografia executiva em São Paulo para diretoria, sócios e lideranças",

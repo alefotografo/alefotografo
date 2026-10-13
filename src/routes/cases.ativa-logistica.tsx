@@ -11,7 +11,7 @@ import { Masonry } from "@/components/site/Masonry";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/ativa-logistica";
+const PATH = "/cases/ativa-logistica/";
 const TITLE = "Case ATIVA Logística | Fotografia e Vídeo Corporativo";
 const DESCRIPTION =
   "Fotografia e vídeo produzidos para a ATIVA Logística, com registros de estrutura, operação e unidades em Itapevi e Barueri. Veja o case e as produções.";

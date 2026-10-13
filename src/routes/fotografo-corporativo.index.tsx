@@ -11,9 +11,9 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
     meta: buildMeta({
       title: "Fotógrafo Corporativo SP | 30 Anos, Nota 4,9",
       description: "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Veja trabalhos para empresas, executivos, indústria, logística, saúde e eventos.",
-      path: "/fotografo-corporativo",
+      path: "/fotografo-corporativo/",
     }),
-    links: [{ rel: "canonical", href: "https://alefotografo.com.br/fotografo-corporativo" }],
+    links: [{ rel: "canonical", href: "https://alefotografo.com.br/fotografo-corporativo/" }],
     scripts: [
       {
         type: "application/ld+json",

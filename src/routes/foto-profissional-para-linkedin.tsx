@@ -8,7 +8,7 @@ import { StatsBand } from "@/components/site/StatsBand";
 import { serviceStats, statsLead } from "@/data/stats";
 import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 
-const URL_PATH = "/foto-profissional-para-linkedin";
+const URL_PATH = "/foto-profissional-para-linkedin/";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const TITLE = "Headshot para LinkedIn em SP | Alexandre Machado";

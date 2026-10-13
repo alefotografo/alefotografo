@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/nitriflex";
+const PATH = "/cases/nitriflex/";
 const TITLE = "Case Nitriflex | Vídeo Institucional de Indústria Química";
 const DESCRIPTION = "Vídeo institucional produzido para a Nitriflex, indústria química com mais de 50 anos de mercado: registro da planta industrial, da operação e das equipes.";
 const WA = "Olá Alexandre, vi o case da Nitriflex e quero um orçamento de vídeo institucional para a minha indústria.";

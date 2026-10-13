@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ArrowUpRight, MapPin } from "lucide-react";
 
-const PATH = "/fotografo-corporativo-em";
+const PATH = "/fotografo-corporativo-em/";
 const URL_ABS = `https://alefotografo.com.br${PATH}`;
 const TITLE = "Fotógrafo Corporativo por Bairro em São Paulo e ABC";
 const DESCRIPTION =

@@ -14,7 +14,7 @@ import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable
 import { BlockText } from "@/components/site/BlockText";
 
 
-const URL_PATH = "/fotografia-para-clinicas";
+const URL_PATH = "/fotografia-para-clinicas/";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
 const CDN = "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com";

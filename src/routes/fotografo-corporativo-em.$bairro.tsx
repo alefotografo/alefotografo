@@ -21,7 +21,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
-    const url = `https://alefotografo.com.br/fotografo-corporativo-em/${params.bairro}`;
+    const url = `https://alefotografo.com.br/fotografo-corporativo-em/${params.bairro}/`;
     const h1 = `Fotógrafo Corporativo em ${loaderData.nome}, São Paulo`;
     const title = `Fotógrafo Corporativo em ${loaderData.nome} SP | Alê Fotógrafo`;
     const description = `Fotógrafo corporativo na ${loaderData.nome} (${loaderData.regiao}): retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência em SP.`;

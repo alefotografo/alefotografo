@@ -10,7 +10,7 @@ import type { Faq } from "@/lib/faqs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { waLink } from "@/lib/whatsapp";
 
-const PATH = "/cases/tecnisa";
+const PATH = "/cases/tecnisa/";
 const TITLE = "Case Tecnisa | Cobertura de Convenção, Fornecedores e Confraternização";
 const DESCRIPTION = "Produções de fotografia e vídeo realizadas para a Tecnisa: convenção de vendas com foto e vídeo no Expo São Paulo, almoço com fornecedores e festa de confraternização.";
 const WA = "Olá Alexandre, vi o case da Tecnisa e quero um orçamento de cobertura de evento com fotografia e vídeo.";

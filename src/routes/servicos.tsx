@@ -17,6 +17,41 @@ export const Route = createFileRoute("/servicos")({
       path: "/servicos",
     }),
     links: [{ rel: "canonical", href: "https://alefotografo.com.br/servicos" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Quanto custa uma sessão de fotografia corporativa em São Paulo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Fotografia corporativa começa em R$ 800 para retrato individual (headshot ou foto para LinkedIn), R$ 2.400 para sessão de equipe de até 10 pessoas e R$ 3.500 para cobertura de evento corporativo de 4 horas. O orçamento exato é enviado em até 1 dia útil.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Qual é o preço de uma foto profissional para LinkedIn em São Paulo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "A sessão de headshot individual para LinkedIn custa a partir de R$ 800. Inclui sessão fotográfica, direção de pose e entrega das imagens editadas em alta resolução.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "O fotógrafo atende em escritório ou apenas em estúdio?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "O Alê Fotógrafo atende tanto em estúdio (Alameda Santos, 1165, Jardim Paulista) quanto no escritório do cliente em toda São Paulo e Grande SP.",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ServicosPage,
 });

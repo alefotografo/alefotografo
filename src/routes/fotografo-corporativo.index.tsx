@@ -35,7 +35,7 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
               name: "Quanto custa uma sessão de fotografia corporativa em São Paulo?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "O valor depende do escopo: número de pessoas, locação, duração e uso das imagens. O orçamento fechado é enviado em até 1 dia útil após o briefing.",
+                text: "Fotografia corporativa em São Paulo começa a partir de R$ 800 para retratos individuais (headshot / foto para LinkedIn), R$ 2.400 para sessões de equipe de até 10 pessoas e R$ 3.500 para cobertura de evento corporativo de 4 horas. O orçamento exato é enviado em até 1 dia útil após o briefing.",
               },
             },
             {

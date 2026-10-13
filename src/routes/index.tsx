@@ -74,7 +74,7 @@ export const Route = createFileRoute("/")({
             url: "https://alefotografo.com.br",
           },
           url: "https://alefotografo.com.br",
-          sameAs: [site.instagram, site.linkedin],
+          sameAs: [site.instagram, site.linkedin, "https://www.wikidata.org/wiki/Q141715599"],
         }),
       },
       // A empresa e a pessoa (Alexandre Machado) são declaradas uma única vez

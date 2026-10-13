@@ -15,6 +15,11 @@ export interface PostSeo {
 }
 
 export const postSeo: Record<string, PostSeo> = {
+  "fotografo-para-confraternizacao-de-empresa-em-sp": {
+    title: "Fotógrafo para Confraternização em SP: Como Contratar",
+    description:
+      "Quando contratar, o que pedir no orçamento, diferença entre cobertura e totem, e como não errar na escolha do fotógrafo para a confraternização da sua empresa em São Paulo.",
+  },
   "linkedin-como-criar-um-perfil-campeao-e-bombar-na-rede-de-negocios": {
     title: "LinkedIn: Como Criar um Perfil Campeão",
     description:

@@ -256,6 +256,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 googleBusinessProfileUrl,
                 "https://alefotografos.com.br",
                 "https://www.wikidata.org/wiki/Q141715599",
+                "https://www.linkedin.com/company/alefotografo",
               ],
               aggregateRating: aggregateRatingSchema,
               // Avaliações reais publicadas por clientes no Perfil da Empresa

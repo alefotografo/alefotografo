@@ -37,6 +37,7 @@ export const personSameAs = [
   site.instagram,
   site.linkedin,
   "https://www.wikidata.org/wiki/Q141715599", // Wikidata entity — criado 2026-10-12
+  "https://www.linkedin.com/company/alefotografo", // LinkedIn empresa — atualizado 2026-10-12
 ];
 
 /**

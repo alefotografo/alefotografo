@@ -89,6 +89,14 @@ export const Route = createFileRoute("/videos/")({
         type: "application/ld+json",
         children: JSON.stringify(faqJsonLd(featuredFaqs)),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".video-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: VideosIndex,

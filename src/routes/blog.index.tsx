@@ -39,6 +39,14 @@ export const Route = createFileRoute("/blog/")({
           })),
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: BlogIndex,

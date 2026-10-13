@@ -27,6 +27,14 @@ export const Route = createFileRoute("/faq")({
         type: "application/ld+json",
         children: JSON.stringify(faqJsonLd(allFaqs)),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".faq-lead", "[data-faq-question]"],
+        }),
+      },
     ],
   }),
   component: FaqPage,

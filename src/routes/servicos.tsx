@@ -51,6 +51,14 @@ export const Route = createFileRoute("/servicos")({
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".services-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: ServicosPage,

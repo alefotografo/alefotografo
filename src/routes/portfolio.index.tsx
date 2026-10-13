@@ -144,6 +144,16 @@ export const Route = createFileRoute("/portfolio/")({
       path: "/portfolio",
     }),
     links: [{ rel: "canonical", href: "https://alefotografo.com.br/portfolio" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "main p:first-of-type"],
+        }),
+      },
+    ],
   }),
   component: PortfolioHub,
 });

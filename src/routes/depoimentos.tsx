@@ -47,6 +47,14 @@ export const Route = createFileRoute("/depoimentos")({
         type: "application/ld+json",
         children: JSON.stringify(reviewsSchema),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".testimonial-lead", "[data-review-body]"],
+        }),
+      },
     ],
   }),
   component: Depoimentos,

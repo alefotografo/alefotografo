@@ -15,6 +15,11 @@ export interface PostSeo {
 }
 
 export const postSeo: Record<string, PostSeo> = {
+  "totem-fotografico-para-evento-corporativo": {
+    title: "Totem Fotográfico para Evento Corporativo: Guia Completo",
+    description:
+      "Como funciona o totem fotográfico em confraternização de empresa, diferença para cabine de fotos, o que pedir no orçamento e quanto custa em São Paulo.",
+  },
   "fotografo-para-confraternizacao-de-empresa-em-sp": {
     title: "Fotógrafo para Confraternização em SP: Como Contratar",
     description:

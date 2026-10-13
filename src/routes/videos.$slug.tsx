@@ -53,6 +53,10 @@ export const Route = createFileRoute("/videos/$slug")({
                   },
                 },
                 inLanguage: "pt-BR",
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", ".video-description"],
+                },
               }),
             },
           ]

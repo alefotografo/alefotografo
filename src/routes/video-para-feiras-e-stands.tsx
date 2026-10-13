@@ -141,6 +141,14 @@ export const Route = createFileRoute("/video-para-feiras-e-stands")({
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".answer-block", "article p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: VideoFeirasStands,

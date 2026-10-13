@@ -38,11 +38,46 @@ export const Route = createFileRoute("/quem-e-o-ale")({
           // Definição única da entidade — src/data/person.ts, o mesmo nó
           // publicado no @graph do root.
           mainEntity: personSchema,
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", ".person-lead", "article p:first-of-type"],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Quem é o Alê Fotógrafo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Alê Fotógrafo é Alexandre Machado, fotógrafo de retrato corporativo em São Paulo com mais de 30 anos de experiência. Dirige sessões de headshot, retrato executivo, foto para LinkedIn e coberturas de eventos e equipes.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Onde fica o estúdio do Alê Fotógrafo em São Paulo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "O estúdio do Alê Fotógrafo fica na Alameda Santos, 1165, Jardim Paulista, São Paulo. Também atende no escritório do cliente em toda a Grande São Paulo.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "O Alê Fotógrafo atende fora do estúdio?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sim. Alexandre Machado atende em estúdio próprio (Alameda Santos, 1165) e no escritório ou locação do cliente em São Paulo e Grande SP. Para eventos e convenções, atende também em outras cidades.",
+              },
+            },
+          ],
         }),
       },
     ],
-
-
   }),
   component: QuemEOAlePage,
 });

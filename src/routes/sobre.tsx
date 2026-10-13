@@ -76,8 +76,48 @@ export const Route = createFileRoute("/sobre")({
           sameAs: [site.instagram, site.linkedin],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Quem é Alexandre Machado, o Alê Fotógrafo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Alexandre Machado, conhecido como Alê Fotógrafo, é fotógrafo de retrato corporativo e diretor de imagem em São Paulo com mais de 30 anos de experiência. Especializado em headshots para LinkedIn, retratos executivos, fotografia de médicos e advogados, e produções audiovisuais institucionais.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Quais são as especialidades do Alê Fotógrafo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Retrato corporativo e executivo, headshot para LinkedIn, retratos de médicos e advogados, fotografia de equipes e eventos corporativos, e vídeo institucional. Atende em estúdio próprio (Alameda Santos, 1165, SP) e no escritório do cliente.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Quanto tempo de experiência tem o Alê Fotógrafo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Alexandre Machado tem mais de 30 anos de experiência em fotografia e produção de imagem, com centenas de projetos realizados para empresas, executivos, médicos, advogados e agências em São Paulo.",
+              },
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".about-lead", "article p:first-of-type"],
+        }),
+      },
     ],
-
   }),
   component: SobrePage,
 });

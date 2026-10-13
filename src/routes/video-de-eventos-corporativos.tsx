@@ -99,6 +99,14 @@ export const Route = createFileRoute("/video-de-eventos-corporativos")({
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".answer-block", "article p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: VideoEventosCorporativos,

@@ -35,6 +35,10 @@ RewriteRule ^blog/(categoria|category|tag)/.*$ /blog [R=301,L]
 RewriteRule ^blog/page/[0-9]+/?$ /blog [R=301,L]
 RewriteRule ^portfolio-do-fotografo/(.+)$ /fotografo-corporativo/$1 [R=301,L]
 
+# Consolidação de duplicatas (lote 2): galeria "Festa de Confraternização"
+# aponta para a canônica "Festa da Firma".
+RewriteRule ^fotografo-corporativo/fotografo-festa-de-confraternizacao-1-1/?$ /fotografo-corporativo/fotografo-festa-de-confraternizacao [R=301,L]
+
 
 # Serve o HTML pré-gerado de cada rota
 RewriteCond %{REQUEST_FILENAME} !-f

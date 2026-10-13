@@ -229,6 +229,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 { "@type": "City", name: "São Caetano do Sul" },
                 { "@type": "City", name: "Diadema" },
                 { "@type": "City", name: "Barueri" },
+                // Regiões comerciais onde o estúdio atua com frequência.
+                "Vila Olímpia",
+                "Itaim Bibi",
+                "Faria Lima",
+                "Paulista",
+                "Jardins",
+                "Pinheiros",
+                "Moema",
+                "Brooklin",
               ],
               knowsLanguage: ["pt-BR", "en"],
               knowsAbout: [
@@ -253,16 +262,52 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               review: reviewSchema,
 
               priceRange: "$$",
-              makesOffer: [
-                "Fotografia corporativa",
-                "Retrato executivo e foto para LinkedIn",
-                "Fotografia de eventos corporativos",
-                "Fotografia de produto",
-                "Vídeo corporativo e institucional",
-              ].map((name) => ({
-                "@type": "Offer",
-                itemOffered: { "@type": "Service", name, provider: { "@id": "https://alefotografo.com.br/#business" } },
-              })),
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Serviços de fotografia corporativa",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    name: "Retrato individual (headshot / foto para LinkedIn)",
+                    description: "Sessão de headshot ou retrato executivo individual, estúdio ou locação no escritório do cliente.",
+                    price: "800",
+                    priceCurrency: "BRL",
+                    priceSpecification: { "@type": "PriceSpecification", minPrice: "800", priceCurrency: "BRL" },
+                    itemOffered: { "@type": "Service", name: "Retrato individual", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                    areaServed: { "@type": "City", name: "São Paulo" },
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Sessão de equipe (até 10 pessoas)",
+                    description: "Retratos individuais padronizados para equipe inteira, mesmo dia, estúdio ou escritório.",
+                    price: "2400",
+                    priceCurrency: "BRL",
+                    priceSpecification: { "@type": "PriceSpecification", minPrice: "2400", priceCurrency: "BRL" },
+                    itemOffered: { "@type": "Service", name: "Sessão de equipe", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Cobertura de evento corporativo (4 horas)",
+                    description: "Cobertura fotográfica de convenção, kick-off, feira ou cerimônia de premiação.",
+                    price: "3500",
+                    priceCurrency: "BRL",
+                    priceSpecification: { "@type": "PriceSpecification", minPrice: "3500", priceCurrency: "BRL" },
+                    itemOffered: { "@type": "Service", name: "Evento corporativo", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Banco de imagens corporativo",
+                    description: "Produção completa de 1 dia: equipe, instalações, processos e produto para uso em marketing e comunicação.",
+                    itemOffered: { "@type": "Service", name: "Banco de imagens corporativo", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Vídeo institucional corporativo",
+                    description: "Roteiro, filmagem, edição e entrega de vídeo institucional para empresas em São Paulo.",
+                    itemOffered: { "@type": "Service", name: "Vídeo institucional", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                  },
+                ],
+              },
             },
             // Entidade principal do domínio: Alexandre Machado. Nó único
             // definido em src/data/person.ts e referenciado por @id em todas
@@ -280,50 +325,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
 
           ],
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": ["LocalBusiness", "ProfessionalService"],
-          name: "Alê Fotógrafo Corporativo",
-          description:
-            "Fotografia corporativa profissional em São Paulo — retratos, headshots e eventos empresariais.",
-          url: "https://alefotografo.com.br",
-          telephone: "+55-11-91355-0533",
-          image:
-            "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: site.address.street,
-            addressLocality: site.address.locality,
-            addressRegion: site.address.region,
-            postalCode: site.address.postalCode,
-            addressCountry: site.address.country,
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: Number(site.geo.lat),
-            longitude: Number(site.geo.lon),
-          },
-          areaServed: [
-            "Vila Olímpia",
-            "Itaim Bibi",
-            "Faria Lima",
-            "Paulista",
-            "Jardins",
-            "Pinheiros",
-            "Moema",
-            "Brooklin",
-          ],
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "144",
-            bestRating: "5",
-          },
-          priceRange: "$$",
         }),
       },
      ],

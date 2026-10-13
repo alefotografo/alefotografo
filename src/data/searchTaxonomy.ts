@@ -27,7 +27,7 @@ export const photoTaxonomy: SearchTaxonomyEntry[] = [
   {
     label: "Eventos, feiras e confraternizações",
     keywords: ["evento", "feira", "stand", "estande", "congresso", "convencao", "palestra", "confraternizacao", "festa"],
-    slugs: ["fotografo-de-eventos-corporativos", "fotografo-feiras-stands", "fotografo-festa-de-confraternizacao", "fotografo-festa-de-confraternizacao-1-1"],
+    slugs: ["fotografo-de-eventos-corporativos", "fotografo-feiras-stands", "fotografo-festa-de-confraternizacao"],
     priority: 9,
   },
   {

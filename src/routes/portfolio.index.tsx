@@ -84,7 +84,6 @@ const BLOCKS = [
     gals: [
       "fotografo-de-eventos-corporativos",
       "fotografo-festa-de-confraternizacao",
-      "fotografo-festa-de-confraternizacao-1-1",
       "fotografo-de-drinks-coqueteis",
     ],
   },

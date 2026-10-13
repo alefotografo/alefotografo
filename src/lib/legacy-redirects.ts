@@ -32,6 +32,8 @@ const CATEGORY_ALIASES: Record<string, string> = {
   "fotografia-industrial": "fotografia-industrial-em-sp",
   "fotografo-de-retratos-profissionais": "banco-de-imagens-para-empresas",
   "eventos-corporativos": "fotografo-de-eventos-corporativos",
+  // Lote 2: duplicata "Festa de Confraternização" → canônica "Festa da Firma".
+  "fotografo-festa-de-confraternizacao-1-1": "fotografo-festa-de-confraternizacao",
 };
 
 // Resolve alias de categoria para o slug final (evita cadeia de 301).
@@ -44,6 +46,7 @@ export const REDIRECTED_CATEGORY_SLUGS = new Set([
   "fotografia-industrial",
   "fotografo-de-retratos-profissionais",
   "eventos-corporativos",
+  "fotografo-festa-de-confraternizacao-1-1",
 ]);
 
 // Slugs de categoria válidos no site novo (usados pelas regras dinâmicas).
@@ -62,6 +65,9 @@ const CATEGORY_SLUGS = new Set([
   "foto-impressa-na-hora",
   "fotografo-de-grupos-times-e-equipes",
   "fotografo-festa-de-confraternizacao",
+  // Slug consolidado (301): permanece para canonicalizar referências legadas
+  // de outros prefixos, igual ao lote 1.
+  "fotografo-festa-de-confraternizacao-1-1",
   "totem-fotografico-totem-mania",
   "fotografo-de-drinks-coqueteis",
   "fotografo-de-eventos-corporativos",

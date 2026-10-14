@@ -10,7 +10,7 @@ import { faqJsonLd } from "@/lib/faqs";
 import { waLink } from "@/lib/whatsapp";
 import type { Faq } from "@/lib/faqs";
 
-const PATH = "/video-de-eventos-corporativos";
+const PATH = "/video-de-eventos-corporativos/";
 const TITLE = "Vídeo de Eventos Corporativos em São Paulo | Produção";
 const DESCRIPTION =
   "Produção de vídeo de eventos corporativos em São Paulo: congressos, convenções, fóruns e premiações, com captação no local, entrevistas e edição.";

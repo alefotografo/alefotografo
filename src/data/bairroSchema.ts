@@ -72,9 +72,44 @@ export function bairroServiceGraph(args: {
   const cidade = cidadeDaRegiao(b.regiao);
   const vizinhos = bairros.filter((x) => x.regiao === b.regiao && x.slug !== b.slug);
 
+  const prep = b.prep ?? "na";
+
   return {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", ".bairro-lead", "main p:first-of-type"],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `Fotógrafo corporativo ${prep} ${b.nome}: quanto custa e como contratar?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Alexandre Machado atende ${prep} ${b.nome} para retratos executivos, headshots para LinkedIn, fotos de equipe e cobertura de eventos corporativos. Orçamento pelo WhatsApp (11) 91355-0533 ou pelo formulário em alefotografo.com.br/contato. Sessão de retrato individual a partir de R$800; equipe a partir de R$2.400; evento a partir de R$3.500.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: `O fotógrafo vai até ${b.nome} ou é necessário ir ao estúdio?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `O atendimento é on-location: o fotógrafo se desloca até o escritório, sede ou espaço de evento ${prep} ${b.nome}. O estúdio no Bela Vista (Alameda Santos) também está disponível quando o ambiente da empresa não tem condições ideais de luz ou espaço.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Qual o prazo de entrega das fotos corporativas ${prep} ${b.nome}?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `O prazo padrão é de 5 a 7 dias úteis após a sessão. Para eventos ou urgências, combinar no briefing. As fotos são entregues em alta resolução por link de download, prontas para LinkedIn, site e materiais da empresa.`,
+            },
+          },
+        ],
+      },
       {
         "@type": "ProfessionalService",
         "@id": `${url}#service`,

@@ -10,7 +10,7 @@ import { faqJsonLd } from "@/lib/faqs";
 import { waLink } from "@/lib/whatsapp";
 import type { Faq } from "@/lib/faqs";
 
-const PATH = "/video-para-feiras-e-stands";
+const PATH = "/video-para-feiras-e-stands/";
 const TITLE = "Vídeo para Feiras e Stands em São Paulo | Produção";
 const DESCRIPTION =
   "Produção de vídeos para feiras e stands em São Paulo. Cobertura audiovisual para expositores, empresas e marcas em feiras de negócios e eventos profissionais.";

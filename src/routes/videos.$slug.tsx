@@ -24,7 +24,7 @@ export const Route = createFileRoute("/videos/$slug")({
         path: `/videos/${params.slug}`,
         type: "article",
       }),
-      links: [{ rel: "canonical", href: `https://alefotografo.com.br/videos/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://alefotografo.com.br/videos/${params.slug}/` }],
       scripts: image
         ? [
             {

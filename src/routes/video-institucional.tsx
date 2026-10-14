@@ -10,7 +10,7 @@ import { faqJsonLd } from "@/lib/faqs";
 import { waLink } from "@/lib/whatsapp";
 import type { Faq } from "@/lib/faqs";
 
-const PATH = "/video-institucional";
+const PATH = "/video-institucional/";
 const TITLE = "Vídeo Institucional em São Paulo | Produção para Empresas";
 const DESCRIPTION =
   "Produção de vídeo institucional em São Paulo para apresentar empresas, estruturas, equipes, serviços e operações. Roteiro, captação, direção e edição.";

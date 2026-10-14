@@ -906,4 +906,9 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Técnicas de foco, organização e gestão de energia para manter a produtividade em períodos de crise — aplicadas à rotina do profissional autônomo.",
   },
+  "cobertura-foto-e-video-na-confraternizacao": {
+    title: "Foto e Vídeo para Confraternização: Vale Contratar Junto?",
+    description:
+      "Foto e vídeo juntos na confraternização de fim de ano: quando faz sentido contratar os dois, o que cada serviço entrega e como um fornecedor único simplifica a logística.",
+  },
 };

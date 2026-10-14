@@ -28,7 +28,7 @@ export const Route = createFileRoute("/videos/$slug")({
       scripts: image
         ? [
             {
-              type: /"application/ld+json",
+              type: "application/ld+json",
               children: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "VideoObject",
@@ -57,6 +57,39 @@ export const Route = createFileRoute("/videos/$slug")({
                   "@type": "SpeakableSpecification",
                   cssSelector: ["h1", ".video-description"],
                 },
+              }),
+            },
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: `Como contratar produção de vídeo similar a "${loaderData.title}"?`,
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Entre em contato pelo WhatsApp (11) 91355-0533 ou pelo formulário em alefotografo.com.br/contato. Enviamos orçamento em até 1 dia útil após o briefing.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Quanto custa um vídeo institucional em São Paulo?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "O valor de um vídeo institucional em São Paulo varia conforme duração, locações e complexidade de edição. Vídeos corporativos completos (captação + edição + trilha) partem de R$ 3.500. Solicite um orçamento personalizado pelo WhatsApp (11) 91355-0533.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Qual o prazo de entrega de um vídeo corporativo?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "O prazo padrão é de 10 a 15 dias úteis após a captação, incluindo uma rodada de revisão. Para entregas urgentes, consulte disponibilidade no briefing.",
+                    },
+                  },
+                ],
               }),
             },
           ]

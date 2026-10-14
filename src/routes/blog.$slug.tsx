@@ -109,6 +109,7 @@ export const Route = createFileRoute("/blog/$slug")({
 
             datePublished: toISODate(loaderData.date),
             dateModified: toISODate(loaderData.updatedAt ?? loaderData.date),
+            wordCount: loaderData.body?.join(" ").split(/\s+/).filter(Boolean).length || undefined,
             speakable: {
               "@type": "SpeakableSpecification",
               cssSelector: ["h1", ".post-lead", "article p:first-of-type"],

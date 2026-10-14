@@ -13,6 +13,7 @@ export const Route = createFileRoute("/sitemap-index.xml")({
           `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
           `  <sitemap><loc>${BASE_URL}/sitemap.xml</loc></sitemap>`,
           `  <sitemap><loc>${BASE_URL}/sitemap-videos.xml</loc></sitemap>`,
+          `  <sitemap><loc>${BASE_URL}/blog/rss.xml</loc></sitemap>`,
           `</sitemapindex>`,
         ].join("\n");
 

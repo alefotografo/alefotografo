@@ -127,6 +127,14 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
               },
             ]
           : []),
+        {
+          type: "application/ld+json" as const,
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", ".gallery-lead", "main p:first-of-type"],
+          }),
+        },
       ],
     };
   },

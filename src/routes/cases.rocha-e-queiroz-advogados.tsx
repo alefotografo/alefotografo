@@ -53,6 +53,7 @@ export const Route = createFileRoute("/cases/rocha-e-queiroz-advogados")({
           about: { "@type": "Organization", name: "Rocha & Queiroz Advogados Associados" },
         }),
       },
+      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),
   component: CaseRochaQueiroz,

@@ -96,6 +96,7 @@ export const Route = createFileRoute("/cases/ativa-logistica")({
         }),
       },
       { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),
   component: CaseAtiva,

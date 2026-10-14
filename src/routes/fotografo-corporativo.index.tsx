@@ -65,6 +65,14 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".gallery-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: PortfolioIndex,

@@ -239,9 +239,8 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   const feed = path.match(/^\/(.+)\/feed$/);
   if (feed) return "/blog/rss.xml";
 
-
-  // Normalização de barra final
-  if (path !== pathname) return path;
-
+  // Sem "normalização de barra final" aqui: o canônico do site É com barra
+  // (sitemap e tags canonical usam /blog/, /cases/x/ etc.). Quem resolve a
+  // barra é redirectTrailingSlash em src/server.ts (sem-barra → com-barra).
   return undefined;
 }

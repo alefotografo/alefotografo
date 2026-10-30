@@ -36,3 +36,4 @@ hostinger/
 
 # Segredos — nunca commitar (a Netlify bloqueia deploy com secrets no repo)
 .env
+.netlify

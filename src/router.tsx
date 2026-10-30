@@ -10,6 +10,10 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // URL canônica com barra final (mesmo padrão do sitemap e dos canonicals).
+    // Sem isso o router redireciona /blog/ -> /blog e briga com o
+    // redirectTrailingSlash de src/server.ts (loop 301).
+    trailingSlash: "always",
   });
 
   return router;

@@ -8,6 +8,7 @@ import {
   Scripts,
   useRouterState,
 } from "@tanstack/react-router";
+import { isNotFound } from "@tanstack/router-core";
 import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -130,7 +131,14 @@ function ErrorComponent({ error, reset }: { error: unknown; reset: () => void })
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => {
+  head: ({ match, matches }) => {
+    // 404 global: nenhuma rota casou, então só existe o match raiz (com o erro
+    // NotFound marcado). Title próprio + noindex evitam que URL inexistente
+    // entre no índice com title genérico.
+    const is404 =
+      matches.length === 1 ||
+      (match as { _notFound?: boolean })._notFound === true ||
+      (!!match.error && isNotFound(match.error));
     return {
       meta: [
         { charSet: "utf-8" },
@@ -149,7 +157,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: DEFAULT_OG_IMAGE },
         { name: "twitter:site", content: "@alefotografo" },
-        { title: site.name },
+        { title: is404 ? "Página não encontrada | Alê Fotógrafo" : site.name },
+        ...(is404 ? [{ name: "robots", content: "noindex, follow" }] : []),
         { name: "description", content: "Alexandre Machado dirige retratos profissionais e fotografia corporativa em São Paulo: headshots para LinkedIn, fotos de executivos e equipes. Mais de 30 anos de experiência." },
       ],
       links: [

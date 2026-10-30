@@ -164,6 +164,15 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "video-institucional-para-transportadoras": {
+    paragraphs: [
+      [
+        "Na prática, essa estrutura só se entende vendo um caso real: para a BMX Soluções Logísticas fotografamos a frota e produzimos o vídeo institucional junto de uma série de roteiros temáticos — do transporte químico à logística promocional. O resultado está no ",
+        { to: "/cases/bmx-logistica", label: "case BMX Soluções Logísticas" },
+        ".",
+      ],
+    ],
+  },
   "fotografia-logistica-centros-distribuicao": {
     paragraphs: [
       [

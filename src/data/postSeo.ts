@@ -763,8 +763,11 @@ export const postSeo: Record<string, PostSeo> = {
   },
   "7-erros-que-voce-deve-evitar-na-foto-de-perfil-no-linkedin": {
     title: "7 Erros na Foto de Perfil do LinkedIn — Evite Já",
+    // MISSÃO-CTR-002 item 1 (baseline 14 meses: pos 2,27; 330.576 impressões;
+    // CTR 0,26%). Title editorial congelado; só a description entra no teste.
+    // Medir em 28 dias após publicação; rollback = reverter esta linha.
     description:
-      "Foto desfocada, plano de fundo bagunçado, expressão fechada: os 7 erros mais comuns na foto do LinkedIn e o que fazer para cada um.",
+      "Veja os 7 erros que prejudicam a foto de perfil do LinkedIn — e a correção de cada um, explicada por um fotógrafo corporativo com 30 anos de experiência.",
   },
   "headhunter-o-que-e-o-que-faz-e-qual-seu-papel-no-mundo-corporativo": {
     title: "Headhunter: O Que É e Por Que Sua Foto Importa",

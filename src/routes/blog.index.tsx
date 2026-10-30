@@ -8,7 +8,7 @@ import { SmartImage } from "@/components/site/SmartImage";
 import { postDateISO } from "@/lib/postDate";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 12;
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({

@@ -37,7 +37,10 @@ export const Route = createFileRoute("/videos/$slug")({
                   loaderData.description ||
                   `${loaderData.title} — Produção audiovisual por Alê Fotógrafo`,
                 thumbnailUrl: [image],
-                uploadDate: "2024-01-01T00:00:00-03:00",
+                // Data real conferida no YouTube (campo `uploaded` do catálogo).
+                // Quando ausente, o campo é omitido — nunca usar data fictícia
+                // (o GSC rejeita e a regra de verdade do projeto proíbe).
+                uploadDate: loaderData.uploaded,
                 embedUrl: loaderData.youtube
                   ? `https://www.youtube.com/embed/${loaderData.youtube}`
                   : undefined,

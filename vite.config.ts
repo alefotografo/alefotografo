@@ -5,37 +5,14 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { bairros } from "./src/data/bairros";
 
-// Páginas com HTML idêntico para todo visitante: geradas no build e servidas
-// como arquivo estático pela borda (TTFB ~50ms em vez de 1,2s de SSR).
-// Nada de área logada aqui — e autoStaticPathsDiscovery fica desligado para
-// que /auth e /admin/* nunca entrem por descoberta automática.
-const staticPages = [
-  "/",
-  "/servicos",
-  "/quem-e-o-ale",
-  "/sobre",
-  "/contato",
-  "/faq",
-  "/depoimentos",
-  "/foto-profissional",
-  "/foto-profissional-para-linkedin",
-  "/fotografia-executiva",
-  "/fotografia-para-advogados",
-  "/fotografia-para-clinicas",
-  "/fotografo-de-feira-de-negocios",
-  "/fotografo-empresarial",
-  "/fotos-corporativas",
-  "/fotos-profissionais-medicos",
-  "/eventos-corporativos",
-  "/fotografo-corporativo",
-  "/fotografo-corporativo-em",
-  "/blog",
-  "/videos",
-  "/portfolio",
-  ...bairros.map((b) => `/fotografo-corporativo-em/${b.slug}`),
-].map((path) => ({ path }));
+// Páginas pré-renderizadas: NENHUMA. Desde o lote "CSP com nonce" todo HTML
+// vem do SSR (src/server.ts injeta um CSP nonce por requisição — impossível
+// em arquivo estático). A borda continua rápida porque o HTML tem
+// s-maxage=86400 (withEdgeCache). Nada de área logada — e
+// autoStaticPathsDiscovery fica desligado para que /auth e /admin/* nunca
+// entrem por descoberta automática.
+const staticPages: Array<{ path: string }> = [];
 
 export default defineConfig({
   tanstackStart: {
@@ -43,10 +20,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
     pages: staticPages,
-    // SKIP_PRERENDER=1 desliga o crawl de pré-render (usado na fase 2 do build
-    // da Netlify: o preset "netlify" não expõe um servidor Node para o crawl,
-    // então o HTML estático vem da fase 1 e as functions da fase 2).
-    prerender: { enabled: process.env.SKIP_PRERENDER !== "1", autoStaticPathsDiscovery: false },
+    // Pré-render desligado: com páginas vazias o crawl só serviria para
+    // regenerar HTML estático — e o HTML agora é 100% SSR (CSP nonce por
+    // requisição, ver src/server.ts). Um build único com o preset netlify
+    // gera functions + assets públicos.
+    prerender: { enabled: false, autoStaticPathsDiscovery: false },
   },
 
   vite: {

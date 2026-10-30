@@ -16,7 +16,8 @@ const DESCRIPTION = "Produções de fotografia e vídeo realizadas para a Tecnis
 const WA = "Olá Alexandre, vi o case da Tecnisa e quero um orçamento de cobertura de evento com fotografia e vídeo.";
 
 /* Produções publicadas no catálogo de vídeos (slugs reais). */
-const VIDEO_MAIN = "convencao-de-vendas-2023-tecnisa";
+const VIDEO_MAIN = "convencao-de-vendas-2023-tecnisa"
+const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);;
 const VIDEOS_MORE = ["tecnisa-almoco-com-fornecedores", "festa-de-confraternizacao-2022-tecnisa"];
 
 const APLICACOES = ["Comunicação interna", "Materiais de convenção", "Registro institucional", "Reconhecimento de equipes", "Conteúdo para canais da empresa"];
@@ -61,7 +62,20 @@ export const Route = createFileRoute("/cases/tecnisa")({
           about: { "@type": "Organization", name: "Tecnisa" },
         }),
       },
-      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+            {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: MAIN_VIDEO?.title,
+          description: MAIN_VIDEO?.description,
+          uploadDate: MAIN_VIDEO?.uploaded,
+          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
+          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          inLanguage: "pt-BR",
+        }),
+      },
+{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
       { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),

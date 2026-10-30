@@ -60,7 +60,7 @@ export function Footer() {
                   >
                     <img
                       src={imgUrl(tile.src, 300)}
-                      srcSet={imgSrcSet(tile.src, [200, 300, 480])}
+                      srcSet={imgSrcSet(tile.src, [300])}
                       sizes="(max-width: 640px) 25vw, 12vw"
                       alt={tile.title}
                       width={300}

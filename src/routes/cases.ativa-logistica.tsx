@@ -18,7 +18,8 @@ const DESCRIPTION =
 const WA = "Olá Alexandre, vi o case da ATIVA Logística e quero um orçamento de fotografia e vídeo para minha empresa.";
 
 /* Produções ATIVA publicadas no catálogo de vídeos (slugs reais). */
-const VIDEOS_MAIN = "ativa-log-estrutura-operacao-e-eficiencia-logistica";
+const VIDEOS_MAIN = "ativa-log-estrutura-operacao-e-eficiencia-logistica"
+const MAIN_VIDEO = videoBySlug(VIDEOS_MAIN);;
 const VIDEOS_MORE = [
   "ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi",
   "ativa-logistica-unidade-barueri",
@@ -95,7 +96,20 @@ export const Route = createFileRoute("/cases/ativa-logistica")({
           about: { "@type": "Organization", name: "ATIVA Logística" },
         }),
       },
-      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+            {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: MAIN_VIDEO?.title,
+          description: MAIN_VIDEO?.description,
+          uploadDate: MAIN_VIDEO?.uploaded,
+          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
+          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          inLanguage: "pt-BR",
+        }),
+      },
+{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
       { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),

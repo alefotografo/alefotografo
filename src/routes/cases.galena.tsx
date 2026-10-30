@@ -16,7 +16,8 @@ const DESCRIPTION = "Produções em vídeo realizadas para a Galena: o evento Ga
 const WA = "Olá Alexandre, vi o case da Galena e quero um orçamento de vídeo para o evento da minha empresa.";
 
 /* Produções publicadas no catálogo de vídeos (slugs reais). */
-const VIDEO_MAIN = "galena-35-anos";
+const VIDEO_MAIN = "galena-35-anos"
+const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);;
 const VIDEOS_MORE = ["galena-celebra"];
 
 const APLICACOES = ["Comunicação institucional", "Eventos com parceiros", "Celebrações de marca", "Canais da empresa", "Material comemorativo"];
@@ -57,7 +58,20 @@ export const Route = createFileRoute("/cases/galena")({
           about: { "@type": "Organization", name: "Galena" },
         }),
       },
-      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+            {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: MAIN_VIDEO?.title,
+          description: MAIN_VIDEO?.description,
+          uploadDate: MAIN_VIDEO?.uploaded,
+          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
+          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          inLanguage: "pt-BR",
+        }),
+      },
+{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
       { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),

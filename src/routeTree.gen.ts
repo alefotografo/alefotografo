@@ -42,6 +42,7 @@ import { Route as BlogRssDotxmlRouteImport } from './routes/blog.rss[.]xml'
 import { Route as CasesIndexRouteImport } from './routes/cases.index'
 import { Route as CasesAbradilanRouteImport } from './routes/cases.abradilan'
 import { Route as CasesAtivaLogisticaRouteImport } from './routes/cases.ativa-logistica'
+import { Route as CasesBmxLogisticaRouteImport } from './routes/cases.bmx-logistica'
 import { Route as CasesFiordeRouteImport } from './routes/cases.fiorde'
 import { Route as CasesGalenaRouteImport } from './routes/cases.galena'
 import { Route as CasesGermedRouteImport } from './routes/cases.germed'
@@ -233,6 +234,11 @@ const CasesAtivaLogisticaRoute = CasesAtivaLogisticaRouteImport.update({
   path: '/cases/ativa-logistica',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasesBmxLogisticaRoute = CasesBmxLogisticaRouteImport.update({
+  id: '/cases/bmx-logistica',
+  path: '/cases/bmx-logistica',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CasesFiordeRoute = CasesFiordeRouteImport.update({
   id: '/cases/fiorde',
   path: '/cases/fiorde',
@@ -384,6 +390,7 @@ export interface FileRoutesByFullPath {
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/cases/abradilan': typeof CasesAbradilanRoute
   '/cases/ativa-logistica': typeof CasesAtivaLogisticaRoute
+  '/cases/bmx-logistica': typeof CasesBmxLogisticaRoute
   '/cases/fiorde': typeof CasesFiordeRoute
   '/cases/galena': typeof CasesGalenaRoute
   '/cases/germed': typeof CasesGermedRoute
@@ -440,6 +447,7 @@ export interface FileRoutesByTo {
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/cases/abradilan': typeof CasesAbradilanRoute
   '/cases/ativa-logistica': typeof CasesAtivaLogisticaRoute
+  '/cases/bmx-logistica': typeof CasesBmxLogisticaRoute
   '/cases/fiorde': typeof CasesFiordeRoute
   '/cases/galena': typeof CasesGalenaRoute
   '/cases/germed': typeof CasesGermedRoute
@@ -498,6 +506,7 @@ export interface FileRoutesById {
   '/blog/rss.xml': typeof BlogRssDotxmlRoute
   '/cases/abradilan': typeof CasesAbradilanRoute
   '/cases/ativa-logistica': typeof CasesAtivaLogisticaRoute
+  '/cases/bmx-logistica': typeof CasesBmxLogisticaRoute
   '/cases/fiorde': typeof CasesFiordeRoute
   '/cases/galena': typeof CasesGalenaRoute
   '/cases/germed': typeof CasesGermedRoute
@@ -556,6 +565,7 @@ export interface FileRouteTypes {
     | '/blog/rss.xml'
     | '/cases/abradilan'
     | '/cases/ativa-logistica'
+    | '/cases/bmx-logistica'
     | '/cases/fiorde'
     | '/cases/galena'
     | '/cases/germed'
@@ -612,6 +622,7 @@ export interface FileRouteTypes {
     | '/blog/rss.xml'
     | '/cases/abradilan'
     | '/cases/ativa-logistica'
+    | '/cases/bmx-logistica'
     | '/cases/fiorde'
     | '/cases/galena'
     | '/cases/germed'
@@ -669,6 +680,7 @@ export interface FileRouteTypes {
     | '/blog/rss.xml'
     | '/cases/abradilan'
     | '/cases/ativa-logistica'
+    | '/cases/bmx-logistica'
     | '/cases/fiorde'
     | '/cases/galena'
     | '/cases/germed'
@@ -727,6 +739,7 @@ export interface RootRouteChildren {
   BlogRssDotxmlRoute: typeof BlogRssDotxmlRoute
   CasesAbradilanRoute: typeof CasesAbradilanRoute
   CasesAtivaLogisticaRoute: typeof CasesAtivaLogisticaRoute
+  CasesBmxLogisticaRoute: typeof CasesBmxLogisticaRoute
   CasesFiordeRoute: typeof CasesFiordeRoute
   CasesGalenaRoute: typeof CasesGalenaRoute
   CasesGermedRoute: typeof CasesGermedRoute
@@ -983,6 +996,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasesAtivaLogisticaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cases/bmx-logistica': {
+      id: '/cases/bmx-logistica'
+      path: '/cases/bmx-logistica'
+      fullPath: '/cases/bmx-logistica'
+      preLoaderRoute: typeof CasesBmxLogisticaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cases/fiorde': {
       id: '/cases/fiorde'
       path: '/cases/fiorde'
@@ -1187,6 +1207,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRssDotxmlRoute: BlogRssDotxmlRoute,
   CasesAbradilanRoute: CasesAbradilanRoute,
   CasesAtivaLogisticaRoute: CasesAtivaLogisticaRoute,
+  CasesBmxLogisticaRoute: CasesBmxLogisticaRoute,
   CasesFiordeRoute: CasesFiordeRoute,
   CasesGalenaRoute: CasesGalenaRoute,
   CasesGermedRoute: CasesGermedRoute,

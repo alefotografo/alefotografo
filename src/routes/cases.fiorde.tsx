@@ -16,7 +16,8 @@ const DESCRIPTION = "Vídeo institucional produzido para a Fiorde Logística: es
 const WA = "Olá Alexandre, vi o case da Fiorde Logística e quero um orçamento de vídeo institucional para minha operação logística.";
 
 /* Produções publicadas no catálogo de vídeos (slugs reais). */
-const VIDEO_MAIN = "fiorde-logistica-solucoes-logisticas-integradas-para-empresas";
+const VIDEO_MAIN = "fiorde-logistica-solucoes-logisticas-integradas-para-empresas"
+const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);;
 const VIDEOS_MORE: string[] = [];
 
 const APLICACOES = ["Site institucional", "Prospecção comercial", "Apresentação da operação", "Materiais de vendas", "Comunicação com clientes"];
@@ -57,7 +58,20 @@ export const Route = createFileRoute("/cases/fiorde")({
           about: { "@type": "Organization", name: "Fiorde Logística" },
         }),
       },
-      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+            {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: MAIN_VIDEO?.title,
+          description: MAIN_VIDEO?.description,
+          uploadDate: MAIN_VIDEO?.uploaded,
+          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
+          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          inLanguage: "pt-BR",
+        }),
+      },
+{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
       { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),

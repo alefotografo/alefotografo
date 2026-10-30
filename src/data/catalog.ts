@@ -32,6 +32,8 @@ export interface Video {
   seo_title: string;
   youtube: string | null;
   vimeo: string | null;
+  /** Data real de publicação no YouTube (AAAA-MM-DD), quando conferida. */
+  uploaded?: string;
 }
 
 /**

@@ -10,7 +10,8 @@ export type CasePath =
   | "/cases/nitriflex"
   | "/cases/fiorde"
   | "/cases/germed"
-  | "/cases/galena";
+  | "/cases/galena"
+  | "/cases/bmx-logistica";
 
 export type CaseSummary = {
   to: CasePath;
@@ -93,6 +94,14 @@ export const CASES: CaseSummary[] = [
     services: "Vídeo de eventos comemorativos e institucionais",
     proof: "video",
     videoSlug: "galena-35-anos",
+  },
+  {
+    to: "/cases/bmx-logistica",
+    client: "BMX Soluções Logísticas",
+    segment: "Logística",
+    services: "Fotografia da frota e série de vídeos institucionais",
+    proof: "video",
+    videoSlug: "video-institucional-bmx-logistica",
   },
 ];
 

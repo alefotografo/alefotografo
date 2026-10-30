@@ -9,7 +9,7 @@ import HomeHeroNovo from "@/components/site/home/HomeHeroNovo";
 import SolucoesEmpresa from "@/components/site/home/SolucoesEmpresa";
 import { HERO_WEBP_480, HERO_WEBP_SRCSET } from "@/components/site/home/heroAssets";
 
-const homeFaqs = faqsComerciais.slice(0, 8);
+const homeFaqs = faqsComerciais.slice(0, 6);
 
 const BancoDeImagens = lazyAfterInteractive(() => import("@/components/site/home/BancoDeImagens"));
 const VideoProducao = lazyAfterInteractive(() => import("@/components/site/home/VideoProducao"));

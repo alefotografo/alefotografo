@@ -14,6 +14,7 @@ const DESCRIPTION =
 const WA = "Olá Alexandre, vi o case da Rocha & Queiroz Advogados e quero um orçamento de fotografia e vídeo institucional.";
 
 /* Produções Rocha & Queiroz publicadas no catálogo de vídeos (slugs e IDs reais). */
+const MAIN_VIDEO = videoBySlug("video-institucional-rocha-queiroz-advogados");
 const VIDEOS = [
   { slug: "video-institucional-rocha-queiroz-advogados", youtube: "ITBhZlBQd6E" },
   { slug: "video-escritorio-rocha-e-queiroz", youtube: "3Jm3PyVBZDo" },
@@ -53,7 +54,20 @@ export const Route = createFileRoute("/cases/rocha-e-queiroz-advogados")({
           about: { "@type": "Organization", name: "Rocha & Queiroz Advogados Associados" },
         }),
       },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
+            {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: MAIN_VIDEO?.title,
+          description: MAIN_VIDEO?.description,
+          uploadDate: MAIN_VIDEO?.uploaded,
+          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
+          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          inLanguage: "pt-BR",
+        }),
+      },
+{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),
   component: CaseRochaQueiroz,

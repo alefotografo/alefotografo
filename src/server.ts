@@ -127,6 +127,81 @@ function redirectLegacy(request: Request): Response | undefined {
 const HTML_EDGE_CACHE = "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400";
 const NO_EDGE_CACHE = /^\/(auth|admin|api)(\/|$)/;
 
+// ─── CSP com nonce por requisição ────────────────────────────────────────────
+// Política completa de Content-Security-Policy: bloqueia XSS injetado e scripts
+// de terceiros não autorizados. Cada resposta HTML recebe um nonce único,
+// injetado em TODAS as tags <script> (os scripts do próprio TanStack, os
+// blocos JSON-LD e os scripts inline de analytics). 'strict-dynamic' permite
+// que esses scripts insiram outros (gtm.js, gtag.js, pixel) sem nonce;
+// navegadores antigos sem suporte caem para a lista de hosts.
+// Só é possível porque TODO HTML agora vem do SSR — páginas estáticas
+// pré-renderizadas não teriam como receber nonce por requisição.
+
+function generateCspNonce(): string {
+  const bytes = new Uint8Array(16);
+  crypto.getRandomValues(bytes);
+  let bin = "";
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin);
+}
+
+function buildCsp(nonce: string): string {
+  return [
+    "default-src 'self'",
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net`,
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: https:",
+    "font-src 'self'",
+    "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
+    "media-src 'self'",
+    "connect-src 'self' https:",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    "upgrade-insecure-requests",
+  ].join("; ");
+}
+
+async function withCsp(request: Request, response: Response): Promise<Response> {
+  const nonce = generateCspNonce();
+  const headers = new Headers(response.headers);
+  headers.set("content-security-policy", buildCsp(nonce));
+
+  const isHtml = (headers.get("content-type") ?? "").includes("text/html");
+  if (!isHtml || !response.body || request.method === "HEAD") {
+    return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  }
+
+  // Injeta o nonce em cada <script> que ainda não tem um. O HTML é gerado por
+  // nós (SSR), com padrão estável de atributos — regex segura aqui.
+  const html = (await response.text()).replace(
+    /<script(?=\s|>)(?![^>]*\snonce=)/g,
+    `<script nonce="${nonce}"`,
+  );
+  headers.delete("content-length");
+  return new Response(html, { status: response.status, statusText: response.statusText, headers });
+}
+
+// URL canônica com barra final: antes a borda servia arquivos estáticos e
+// fazia esse 301 sozinha; com HTML 100% SSR o redirecionamento passa a ser
+// nosso. Sem extensão = página; com extensão = arquivo/rota de arquivo
+// (sitemap.xml, rss.xml), que não se redireciona.
+function redirectTrailingSlash(request: Request): Response | undefined {
+  const url = new URL(request.url);
+  const path = url.pathname;
+  if (path === "/" || path.endsWith("/")) return undefined;
+  if (/\.[a-zA-Z0-9]{1,5}$/.test(path)) return undefined;
+  url.pathname = `${path}/`;
+  return new Response(null, {
+    status: 301,
+    headers: {
+      location: url.toString(),
+      "cache-control": "public, max-age=86400",
+    },
+  });
+}
+
 function withEdgeCache(request: Request, response: Response): Response {
   if (response.status !== 200) return response;
   if (!(response.headers.get("content-type") ?? "").includes("text/html")) return response;
@@ -169,10 +244,12 @@ export default {
     const legacyRedirect = redirectLegacy(request);
     if (legacyRedirect) return legacyRedirect;
 
+    const slashRedirect = redirectTrailingSlash(request);
+    if (slashRedirect) return slashRedirect;
 
     try {
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      const response = await withCsp(request, await handler.fetch(request, env, ctx));
       return withStaticCache(
         request,
         withEdgeCache(request, await normalizeCatastrophicSsrResponse(request, response)),

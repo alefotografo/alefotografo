@@ -12,7 +12,7 @@ const GALLERY_DIMS = categoryDims as unknown as Record<string, number[]>;
 // pintura. A paginação incremental foi removida porque cada lote adicionado
 // rebalanceava as colunas e fazia fotos visíveis pularem de posição.
 // O lazy loading nativo das imagens mantém o custo de rede sob controle.
-export function Masonry({ images, alt }: { images: string[]; alt: string }) {
+export function Masonry({ images, alt }: { images: string[]; alt: string | string[] }) {
   const [broken, setBroken] = useState<Set<string>>(new Set());
 
   const visible = Array.from(new Set(images)).filter((src) => !broken.has(src));
@@ -30,7 +30,7 @@ export function Masonry({ images, alt }: { images: string[]; alt: string }) {
           >
             <SmartImage
               src={src}
-              alt={`${alt} — foto ${i + 1}`}
+              alt={Array.isArray(alt) ? alt[i] : `${alt} — foto ${i + 1}`}
               priority={i === 0}
               baseWidth={768}
               placeholderRatio={d && d.length >= 2 ? `${d[0]} / ${d[1]}` : "4 / 3"}

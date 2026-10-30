@@ -16,7 +16,8 @@ const DESCRIPTION = "Cobertura em vídeo do Encontro de Craques da Germed, event
 const WA = "Olá Alexandre, vi o case da Germed e quero um orçamento de cobertura de evento em vídeo.";
 
 /* Produções publicadas no catálogo de vídeos (slugs reais). */
-const VIDEO_MAIN = "encontro-de-craques-germed-1";
+const VIDEO_MAIN = "encontro-de-craques-germed-1"
+const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);;
 const VIDEOS_MORE: string[] = [];
 
 const APLICACOES = ["Comunicação interna", "Registro institucional", "Canais da empresa", "Relacionamento com parceiros", "Conteúdo pós-evento"];
@@ -57,7 +58,20 @@ export const Route = createFileRoute("/cases/germed")({
           about: { "@type": "Organization", name: "Germed" },
         }),
       },
-      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+            {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: MAIN_VIDEO?.title,
+          description: MAIN_VIDEO?.description,
+          uploadDate: MAIN_VIDEO?.uploaded,
+          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
+          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          inLanguage: "pt-BR",
+        }),
+      },
+{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
       { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
     ],
   }),

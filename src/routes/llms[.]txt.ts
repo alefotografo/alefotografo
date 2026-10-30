@@ -95,6 +95,7 @@ const CASES_SECTION = `## Cases de clientes
 - [Fiorde Logística](${BASE}/cases/fiorde) — vídeo institucional da operação logística integrada da empresa.
 - [Germed](${BASE}/cases/germed) — cobertura em vídeo do Encontro de Craques, evento corporativo realizado no Museu do Futebol, em São Paulo.
 - [Galena](${BASE}/cases/galena) — vídeos dos eventos comemorativos da Galena: os 35 anos da empresa e o Galena Celebra com parceiros.
+- [BMX Soluções Logísticas](${BASE}/cases/bmx-logistica) — fotografia da frota e série de vídeos institucionais produzidos em 2025: vídeo institucional principal e roteiros temáticos (transporte químico, containers, FTL/milk run/dedicado, aeroportos, armazenagem, logística promocional e carga emergencial).
 `;
 
 const FAQ = `## Perguntas frequentes (respostas publicadas no site)

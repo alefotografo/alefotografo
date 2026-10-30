@@ -63,6 +63,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/cases/fiorde/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
           { path: "/cases/germed/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
           { path: "/cases/galena/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
+          { path: "/cases/bmx-logistica/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
           { path: "/videos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
           { path: "/video-institucional/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
           { path: "/video-de-eventos-corporativos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },

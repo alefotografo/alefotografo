@@ -37,3 +37,7 @@
   [headers.values]
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # includeSubDomains exige HTTPS em TODOS os subdomínios antes de submeter em
+    # hstspreload.org. Verificar www.alefotografo.com.br e qualquer subdomínio
+    # ativo antes da submissão; remover `preload` se houver exceção.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"

@@ -67,12 +67,16 @@ function objectPathFromUrl(raw) {
   return decodeURIComponent(u.pathname).replace(/^\/+/, "");
 }
 
+// Chaves novas do Supabase (sb_publishable_/sb_secret_) são opacas: vão só no
+// header apikey. JWTs antigos (eyJ...) também precisam do Authorization Bearer.
+const isNewStyleKey = (k) => k.startsWith("sb_publishable_") || k.startsWith("sb_secret_");
+
 async function api(pathname, init = {}) {
   const res = await fetch(`${SUPABASE_URL}/storage/v1${pathname}`, {
     ...init,
     headers: {
       apikey: SERVICE_KEY,
-      authorization: `Bearer ${SERVICE_KEY}`,
+      ...(isNewStyleKey(SERVICE_KEY) ? {} : { authorization: `Bearer ${SERVICE_KEY}` }),
       ...(init.body ? { "content-type": "application/octet-stream" } : {}),
       ...init.headers,
     },
@@ -141,6 +145,7 @@ async function main() {
     .map((l) => l.trim())
     .filter(Boolean);
   const slice = LIMIT > 0 ? all.slice(OFFSET, OFFSET + LIMIT) : all.slice(OFFSET);
+  console.log(`Projeto: ${SUPABASE_URL}`);
   console.log(
     `Inventário: ${all.length} URLs | fatia: ${slice.length} (offset=${OFFSET}, limit=${LIMIT}) | concorrência=${CONCURRENCY} | dry_run=${DRY_RUN}`,
   );

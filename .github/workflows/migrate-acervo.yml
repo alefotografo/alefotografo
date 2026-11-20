@@ -24,6 +24,9 @@ on:
       allow_failures:
         description: "Não falhar o job com erros parciais (true/false)"
         default: "false"
+      acervo_url:
+        description: "URL do projeto Supabase do acervo"
+        default: "https://nyvidofcihftvdkdebil.supabase.co"
 
 permissions:
   contents: read
@@ -41,7 +44,9 @@ jobs:
 
       - name: Migrar acervo (idempotente)
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          # Acervo no projeto carteira-ale-fotografo-v2 (conta do dono);
+          # sobrescrever com -f acervo_url se mudar.
+          ACERVO_SUPABASE_URL: ${{ inputs.acervo_url }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           LIMIT: ${{ inputs.limit }}
           OFFSET: ${{ inputs.offset }}

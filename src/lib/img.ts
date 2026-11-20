@@ -3,7 +3,9 @@
 // permanente — nenhum host de terceiro aparece no HTML entregue ao navegador.
 // Reduz de ~300–500 KB para ~20–60 KB por foto, em WebP redimensionado.
 
-const ENDPOINT = "/api/public/img";
+// Barra final obrigatória: sem ela, o roteador devolve 301 para /api/public/img/
+// e cada imagem paga um round-trip extra (~190 ms) antes de começar a baixar.
+const ENDPOINT = "/api/public/img/";
 const REMOTE_HOSTS = [".rackcdn.com"];
 
 

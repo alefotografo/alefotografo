@@ -8,7 +8,8 @@ export const site = {
   city: "São Paulo",
   state: "SP",
   whatsapp: "5511913550533",
-  phoneDisplay: "11913550533",
+  /** Formatação brasileira para exibição; wa.me/tel:/schema usam `whatsapp` (E.164). */
+  phoneDisplay: "(11) 91355-0533",
   email: "comercial@alefotografo.com.br",
   instagram: "https://www.instagram.com/alefotografo",
   linkedin: "https://www.linkedin.com/in/alefotografo",

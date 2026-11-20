@@ -1,0 +1,40 @@
+name: Lint fix
+
+# Execução manual: roda `eslint --fix` e commita o resultado no branch atual.
+# Uso: gh workflow run fix-lint.yml --ref <branch>
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci --no-audit --no-fund
+
+      - name: eslint --fix
+        run: npx eslint . --fix || true
+
+      - name: Commitar correções de formatação
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add -A
+            git commit -m "style: eslint --fix (formatação prettier)"
+            git push
+          else
+            echo "Nada a corrigir."
+          fi

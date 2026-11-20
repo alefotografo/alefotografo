@@ -30,11 +30,17 @@ const UPSTREAM = "https://images.weserv.nl/";
 
 // Migração Rackspace → Supabase Storage: enquanto o objeto correspondente
 // não existir no bucket, o proxy cai no fluxo legado automaticamente. Sem
-// SUPABASE_URL configurada, o comportamento é exatamente o de antes.
+// ACERVO_SUPABASE_URL/SUPABASE_URL configurada, o comportamento é exatamente
+// o de antes.
+// O acervo pode viver em projeto Supabase DIFERENTE do banco do site
+// (auth/CRM) — por isso a variável dedicada.
 const ACERVO_BUCKET = "acervo";
 
 function supabasePublicUrl(src: URL): string | undefined {
-  const base = (process.env.SUPABASE_URL ?? "").replace(/\/+$/, "");
+  const base = (process.env.ACERVO_SUPABASE_URL ?? process.env.SUPABASE_URL ?? "").replace(
+    /\/+$/,
+    "",
+  );
   if (!base) return undefined;
   return `${base}/storage/v1/object/public/${ACERVO_BUCKET}${src.pathname}`;
 }

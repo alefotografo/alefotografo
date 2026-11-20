@@ -31,7 +31,12 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const LIST_FILE = join(ROOT, "scripts", "acervo-urls.txt");
 const REPORT_FILE = join(ROOT, "migrate-report.json");
 
-const SUPABASE_URL = (process.env.SUPABASE_URL || "").replace(/\/+$/, "");
+// O acervo pode estar em projeto diferente do banco do site: ACERVO_SUPABASE_URL
+// tem precedência; SUPABASE_URL é o fallback.
+const SUPABASE_URL = (process.env.ACERVO_SUPABASE_URL || process.env.SUPABASE_URL || "").replace(
+  /\/+$/,
+  "",
+);
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 const LIMIT = Number.parseInt(process.env.LIMIT || "0", 10);
 const OFFSET = Number.parseInt(process.env.OFFSET || "0", 10);

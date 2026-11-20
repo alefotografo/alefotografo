@@ -5,6 +5,9 @@ name: Lint fix
 
 on:
   workflow_dispatch:
+  # temporário: dispara na push para executar a correção inicial de formatação
+  push:
+    branches: [fix/ci-lint-hostinger]
 
 permissions:
   contents: write

@@ -17,6 +17,11 @@ jobs:
           node-version: 22
           cache: npm
 
+      # npm 10.x (bundled) tem bug "Exit handler never called!" em instalação
+      # limpa — o mesmo que derruba os previews da Netlify. npm 11 resolve.
+      - name: Atualizar npm
+        run: npm install -g npm@11 --no-audit --no-fund
+
       - name: Instalar dependências
         run: npm ci --no-audit --no-fund
 

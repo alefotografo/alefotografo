@@ -15,6 +15,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
+# npm 10.x bundled tem bug "Exit handler never called!" na instalação limpa
+# (derrubava todos os deploy-previews). npm@11 estabiliza.
+NPM_VERSION = "11"
 
 # Assets com hash no nome: cache imutável de 1 ano (o vite já gera nomes
 # versionados, então invalidação é automática a cada deploy).

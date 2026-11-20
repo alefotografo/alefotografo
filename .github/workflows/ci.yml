@@ -5,22 +5,21 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: npm
-
-      # npm 10.x (bundled) tem bug "Exit handler never called!" em instalação
-      # limpa — o mesmo que derruba os previews da Netlify. npm 11 resolve.
-      - name: Atualizar npm
-        run: npm install -g npm@11 --no-audit --no-fund
 
       - name: Instalar dependências
         run: npm ci --no-audit --no-fund

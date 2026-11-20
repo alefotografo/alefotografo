@@ -205,7 +205,7 @@ function VideoEventosCorporativos() {
               return (
                 <li key={c.slug}>
                   <Link
-                    to="/videos/$slug"
+                    to="/videos/$slug/"
                     params={{ slug: c.slug }}
                     preload="intent"
                     className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
@@ -241,16 +241,16 @@ function VideoEventosCorporativos() {
               );
             })}
           </ul>
-          <Link to="/videos" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/videos/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
             Ver todas as produções de vídeo corporativo →
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
             Cases comerciais com o contexto completo do projeto:{" "}
-            <Link to="/cases/abradilan" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/abradilan/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               ABRADILAN — fóruns e convenções
             </Link>{" "}
             e{" "}
-            <Link to="/cases/ativa-logistica" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/ativa-logistica/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               ATIVA Logística
             </Link>
             .
@@ -279,12 +279,12 @@ function VideoEventosCorporativos() {
             </h2>
             <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
               A mesma cobertura pode reunir vídeo e fotografia, com equipe dimensionada para os dois entregáveis e o mesmo planejamento de captação. Veja{" "}
-              <Link to="/eventos-corporativos" className="text-ember hover:underline">
+              <Link to="/eventos-corporativos/" className="text-ember hover:underline">
                 fotografia de eventos corporativos
               </Link>{" "}
               e a{" "}
               <Link
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: "fotografo-de-eventos-corporativos" }}
                 className="text-ember hover:underline"
               >

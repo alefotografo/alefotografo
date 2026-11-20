@@ -240,13 +240,13 @@ function FotografiaParaClinicasPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Solicitar orçamento
             </Link>
             <Link
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: "fotos-para-clinicas-medicas" }}
               className="inline-flex rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember"
             >
@@ -335,7 +335,7 @@ function FotografiaParaClinicasPage() {
                   <p className="mt-2 text-xs uppercase tracking-[0.15em] text-ember">{s.escopo}</p>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
                   <Link
-                    to="/fotografo-corporativo/$slug"
+                    to="/fotografo-corporativo/$slug/"
                     params={{ slug: s.slug }}
                     className="mt-5 text-sm font-medium text-ember hover:underline"
                   >
@@ -358,7 +358,7 @@ function FotografiaParaClinicasPage() {
           {cats.map((c) => (
             <li key={c.slug}>
               <Link
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: c.slug }}
                 className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
               >
@@ -368,7 +368,7 @@ function FotografiaParaClinicasPage() {
           ))}
           <li>
             <Link
-              to="/fotos-corporativas"
+              to="/fotos-corporativas/"
               className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
             >
               Fotos corporativas
@@ -376,7 +376,7 @@ function FotografiaParaClinicasPage() {
           </li>
           <li>
             <Link
-              to="/foto-profissional-para-linkedin"
+              to="/foto-profissional-para-linkedin/"
               className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
             >
               Foto profissional para LinkedIn
@@ -394,7 +394,7 @@ function FotografiaParaClinicasPage() {
             {bairros.slice(0, 24).map((b) => (
               <li key={b.slug}>
                 <Link
-                  to="/fotografo-corporativo-em/$bairro"
+                  to="/fotografo-corporativo-em/$bairro/"
                   params={{ bairro: b.slug }}
                   className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
                 >
@@ -414,7 +414,7 @@ function FotografiaParaClinicasPage() {
           <FaqList items={pageFaqs} />
           <div className="mt-12 text-center">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Pedir orçamento para minha clínica

@@ -65,7 +65,7 @@ export const Route = createFileRoute("/servicos")({
 });
 
 type CardLink =
-  | { kind: "route"; to: "/foto-profissional" | "/fotos-corporativas" | "/fotografia-executiva" | "/foto-profissional-para-linkedin" | "/eventos-corporativos" | "/videos" | "/fotos-profissionais-medicos" | "/fotografia-para-clinicas" | "/fotografia-para-advogados" | "/fotografo-empresarial" | "/fotografo-de-feira-de-negocios" }
+  | { kind: "route"; to: "/foto-profissional/" | "/fotos-corporativas/" | "/fotografia-executiva/" | "/foto-profissional-para-linkedin/" | "/eventos-corporativos/" | "/videos/" | "/fotos-profissionais-medicos/" | "/fotografia-para-clinicas/" | "/fotografia-para-advogados/" | "/fotografo-empresarial/" | "/fotografo-de-feira-de-negocios/" }
   | { kind: "gallery"; slug: string };
 
 type ServiceCard = {
@@ -85,37 +85,37 @@ const PRINCIPAIS: ServiceCard[] = [
     title: "Foto profissional",
     line: "Retrato individual com presença e credibilidade.",
     cover: cover("fotografo-de-retratos-profissionais"),
-    link: { kind: "route", to: "/foto-profissional" },
+    link: { kind: "route", to: "/foto-profissional/" },
   },
   {
     title: "Fotografia corporativa",
     line: "Equipe, diretoria, ambientes e processos.",
     cover: cover("fotografia-corporativa-em-sao-paulo"),
-    link: { kind: "route", to: "/fotos-corporativas" },
+    link: { kind: "route", to: "/fotos-corporativas/" },
   },
   {
     title: "Fotografia executiva",
     line: "Retratos de liderança e board.",
     cover: cover("fotografo-de-retratos-corporativos"),
-    link: { kind: "route", to: "/fotografia-executiva" },
+    link: { kind: "route", to: "/fotografia-executiva/" },
   },
   {
     title: "Foto para LinkedIn",
     line: "Perfil que transmite autoridade.",
     cover: cover("fotografo-profissional-em-sao-paulo"),
-    link: { kind: "route", to: "/foto-profissional-para-linkedin" },
+    link: { kind: "route", to: "/foto-profissional-para-linkedin/" },
   },
   {
     title: "Eventos corporativos",
     line: "Congressos, convenções e lançamentos.",
     cover: cover("fotografo-de-eventos-corporativos"),
-    link: { kind: "route", to: "/eventos-corporativos" },
+    link: { kind: "route", to: "/eventos-corporativos/" },
   },
   {
     title: "Vídeo institucional",
     line: "Empresa, estrutura e time em vídeo.",
     cover: cover("banco-de-imagens-para-empresas"),
-    link: { kind: "route", to: "/videos" },
+    link: { kind: "route", to: "/videos/" },
   },
 ];
 
@@ -124,31 +124,31 @@ const PUBLICOS: ServiceCard[] = [
     title: "Médicos",
     line: "Retratos para saúde e consultórios.",
     cover: cover("fotos-profissionais-para-medicos"),
-    link: { kind: "route", to: "/fotos-profissionais-medicos" },
+    link: { kind: "route", to: "/fotos-profissionais-medicos/" },
   },
   {
     title: "Clínicas",
     line: "Ambientes, equipe e atendimento.",
     cover: cover("fotos-para-clinicas-medicas"),
-    link: { kind: "route", to: "/fotografia-para-clinicas" },
+    link: { kind: "route", to: "/fotografia-para-clinicas/" },
   },
   {
     title: "Advogados",
     line: "Escritórios, sócios e equipe.",
     cover: cover("fotografia-para-escritorios-de-advocacia"),
-    link: { kind: "route", to: "/fotografia-para-advogados" },
+    link: { kind: "route", to: "/fotografia-para-advogados/" },
   },
   {
     title: "Empresas e indústrias",
     line: "Banco de imagens institucional.",
     cover: cover("fotografia-industrial"),
-    link: { kind: "route", to: "/fotografo-empresarial" },
+    link: { kind: "route", to: "/fotografo-empresarial/" },
   },
   {
     title: "Feiras de negócios",
     line: "Stands, ativações e relacionamento.",
     cover: cover("fotografo-feiras-stands"),
-    link: { kind: "route", to: "/fotografo-de-feira-de-negocios" },
+    link: { kind: "route", to: "/fotografo-de-feira-de-negocios/" },
   },
   {
     title: "Times e equipes",
@@ -205,7 +205,7 @@ function CardShell({
     </Link>
   ) : (
     <Link
-      to="/fotografo-corporativo/$slug"
+      to="/fotografo-corporativo/$slug/"
       params={{ slug: card.link.slug }}
       className={cls}
     >
@@ -270,7 +270,7 @@ function ServicosPage() {
             Especialidades e galerias
           </h2>
           <Link
-            to="/fotografo-corporativo"
+            to="/fotografo-corporativo/"
             className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
           >
             Ver galerias por segmento <ArrowUpRight size={14} />
@@ -282,7 +282,7 @@ function ServicosPage() {
             .map((c) => (
             <Link
               key={c.slug}
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: c.slug }}
               className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
@@ -322,7 +322,7 @@ function ServicosPage() {
             {site.name} atende demandas customizadas de foto e vídeo em todo São Paulo.
           </p>
           <Link
-            to="/contato"
+            to="/contato/"
             className="mt-6 inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
             Solicitar orçamento

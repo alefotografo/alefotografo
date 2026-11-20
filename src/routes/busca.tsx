@@ -50,7 +50,7 @@ function BuscaPage() {
     <main id="conteudo" className="mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
       <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">Busca</p>
       <h1 className="font-display text-3xl font-semibold md:text-4xl">{q ? `Resultados para “${q}”` : "O que você procura?"}</h1>
-      <form role="search" className="mt-8" onSubmit={(event) => { event.preventDefault(); navigate({ to: "/busca", search: { q: term.trim().slice(0, 120) } }); }}>
+      <form role="search" className="mt-8" onSubmit={(event) => { event.preventDefault(); navigate({ to: "/busca/", search: { q: term.trim().slice(0, 120) } }); }}>
         <label htmlFor="busca-input" className="sr-only">Buscar no site</label>
         <div className="flex items-center gap-2 rounded-sm border border-border bg-surface px-3 focus-within:border-ember">
           <Search size={16} className="shrink-0 text-muted-foreground" aria-hidden="true" />

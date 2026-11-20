@@ -254,7 +254,7 @@ function IndexingReportPage() {
                   {topUrls.map((r) => (
                     <tr key={r.slug} className="border-t">
                       <td className="p-3">
-                        <Link to="/blog/$slug" params={{ slug: r.slug }} className="hover:underline">
+                        <Link to="/blog/$slug/" params={{ slug: r.slug }} className="hover:underline">
                           {r.title}
                         </Link>
                         <span className="block text-xs text-muted-foreground">
@@ -285,7 +285,7 @@ function IndexingReportPage() {
             <ul className="grid gap-2 md:grid-cols-2">
               {zeroUrls.map((r) => (
                 <li key={r.slug} className="rounded-lg border bg-card p-3 text-sm">
-                  <Link to="/blog/$slug" params={{ slug: r.slug }} className="font-medium hover:underline">
+                  <Link to="/blog/$slug/" params={{ slug: r.slug }} className="font-medium hover:underline">
                     {r.title}
                   </Link>
                   <span className="block text-xs text-muted-foreground">

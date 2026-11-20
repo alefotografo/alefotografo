@@ -99,7 +99,7 @@ function PortfolioIndex() {
           {categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).map((c, i) => (
             <Link
               key={c.slug}
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: c.slug }}
               className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-ember [content-visibility:auto] [contain-intrinsic-size:auto_360px]"
             >
@@ -142,7 +142,7 @@ function PortfolioIndex() {
             Atendemos demandas customizadas. Fale com {site.name}.
           </p>
           <Link
-            to="/contato"
+            to="/contato/"
             className="mt-6 inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
             Solicitar orçamento

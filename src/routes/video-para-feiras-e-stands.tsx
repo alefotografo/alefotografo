@@ -247,7 +247,7 @@ function VideoFeirasStands() {
               return (
                 <li key={c.slug}>
                   <Link
-                    to="/videos/$slug"
+                    to="/videos/$slug/"
                     params={{ slug: c.slug }}
                     preload="intent"
                     className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
@@ -283,13 +283,13 @@ function VideoFeirasStands() {
               );
             })}
           </ul>
-          <Link to="/videos" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/videos/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
             Ver todas as produções de vídeo corporativo →
           </Link>
           <p className="mt-3 text-sm text-muted-foreground">
             Case completo:{" "}
             <Link
-              to="/cases/sq-quimica"
+              to="/cases/sq-quimica/"
               className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
             >
               SQ Química — FCE Pharma e ABRAFATI Show 2022, com foto e vídeo
@@ -307,12 +307,12 @@ function VideoFeirasStands() {
             </h2>
             <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
               Fotografia e vídeo são entregáveis diferentes e podem fazer parte do mesmo planejamento de cobertura da feira, com equipe dimensionada para os dois. Veja o trabalho de{" "}
-              <Link to="/fotografo-de-feira-de-negocios" className="text-ember hover:underline">
+              <Link to="/fotografo-de-feira-de-negocios/" className="text-ember hover:underline">
                 fotografia de feira de negócios
               </Link>{" "}
               e a{" "}
               <Link
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: "fotografo-feiras-stands" }}
                 className="text-ember hover:underline"
               >

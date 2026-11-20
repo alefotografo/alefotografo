@@ -129,7 +129,7 @@ type Bloco = {
   p: string;
   img: string;
   catSlug?: string;
-  to?: "/videos";
+  to?: "/videos/";
   linkLabel: string;
 };
 
@@ -173,7 +173,7 @@ const blocos: Bloco[] = [
     h: "Vídeo corporativo integrado",
     p: "A mesma diária pode gerar fotos e vídeo institucional, depoimentos de clientes e cortes verticais para redes sociais — com a mesma direção e identidade visual.",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
-    to: "/videos",
+    to: "/videos/",
     linkLabel: "Ver vídeos corporativos",
   },
 ];
@@ -195,7 +195,7 @@ const maisEspecialidades: { slug: string; label: string }[] = [
 function FotosCorporativasPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos" }, { label: "Fotos corporativas" }]} />
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos/" }, { label: "Fotos corporativas" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
@@ -210,7 +210,7 @@ function FotosCorporativasPage() {
             logística, esse material inclui frota, armazéns e centros de distribuição, como mostra a
             página de{" "}
             <Link
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: "fotografia-de-logistica" }}
               className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
             >
@@ -220,13 +220,13 @@ function FotosCorporativasPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Solicitar orçamento
             </Link>
             <Link
-              to="/fotografo-corporativo"
+              to="/fotografo-corporativo/"
               className="inline-flex rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Ver portfólio
@@ -279,7 +279,7 @@ function FotosCorporativasPage() {
                   </Link>
                 ) : b.catSlug ? (
                   <Link
-                    to="/fotografo-corporativo/$slug"
+                    to="/fotografo-corporativo/$slug/"
                     params={{ slug: b.catSlug }}
                     className="mt-5 text-sm font-medium text-ember hover:underline"
                   >
@@ -299,7 +299,7 @@ function FotosCorporativasPage() {
             Em projetos de fotografia corporativa, também documentamos estrutura e operação. No
             trabalho realizado para a{" "}
             <Link
-              to="/cases/ativa-logistica"
+              to="/cases/ativa-logistica/"
               className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
             >
               ATIVA Logística
@@ -323,7 +323,7 @@ function FotosCorporativasPage() {
             {maisEspecialidades.map((e) => (
               <Link
                 key={e.slug}
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: e.slug }}
                 className="group flex flex-col overflow-hidden rounded-sm border border-border bg-background transition-colors hover:border-ember"
               >
@@ -365,7 +365,7 @@ function FotosCorporativasPage() {
               .map((c) => (
               <li key={c.slug}>
                 <Link
-                  to="/fotografo-corporativo/$slug"
+                  to="/fotografo-corporativo/$slug/"
                   params={{ slug: c.slug }}
                   className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
                 >
@@ -375,7 +375,7 @@ function FotosCorporativasPage() {
             ))}
             <li>
               <Link
-                to="/fotografia-para-clinicas"
+                to="/fotografia-para-clinicas/"
                 className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
               >
                 Fotografia para clínicas
@@ -383,7 +383,7 @@ function FotosCorporativasPage() {
             </li>
             <li>
               <Link
-                to="/foto-profissional-para-linkedin"
+                to="/foto-profissional-para-linkedin/"
                 className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
               >
                 Foto profissional para LinkedIn
@@ -401,7 +401,7 @@ function FotosCorporativasPage() {
           {bairros.slice(0, 24).map((b) => (
             <li key={b.slug}>
               <Link
-                to="/fotografo-corporativo-em/$bairro"
+                to="/fotografo-corporativo-em/$bairro/"
                 params={{ bairro: b.slug }}
                 className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
               >
@@ -420,7 +420,7 @@ function FotosCorporativasPage() {
           <FaqList items={pageFaqs} />
           <div className="mt-12 text-center">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Pedir orçamento de fotos corporativas

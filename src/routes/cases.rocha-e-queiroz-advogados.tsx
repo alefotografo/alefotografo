@@ -21,14 +21,14 @@ const VIDEOS = [
 ];
 
 type ServicoLink =
-  | { to: "/fotografia-para-advogados" | "/video-institucional" | "/videos"; label: string }
-  | { to: "/fotografo-corporativo/$slug"; slug: string; label: string };
+  | { to: "/fotografia-para-advogados/" | "/video-institucional/" | "/videos/"; label: string }
+  | { to: "/fotografo-corporativo/$slug/"; slug: string; label: string };
 
 const SERVICOS: ServicoLink[] = [
-  { to: "/fotografia-para-advogados", label: "Fotografia para advogados" },
-  { to: "/fotografo-corporativo/$slug", slug: "fotografia-para-escritorios-de-advocacia", label: "Fotografia para escritórios de advocacia" },
-  { to: "/video-institucional", label: "Vídeo institucional" },
-  { to: "/videos", label: "Vídeos para empresas" },
+  { to: "/fotografia-para-advogados/", label: "Fotografia para advogados" },
+  { to: "/fotografo-corporativo/$slug/", slug: "fotografia-para-escritorios-de-advocacia", label: "Fotografia para escritórios de advocacia" },
+  { to: "/video-institucional/", label: "Vídeo institucional" },
+  { to: "/videos/", label: "Vídeos para empresas" },
 ];
 
 export const Route = createFileRoute("/cases/rocha-e-queiroz-advogados")({
@@ -79,7 +79,7 @@ function CaseRochaQueiroz() {
       <Breadcrumbs
         items={[
           { label: "Início", to: "/" },
-          { label: "Cases", to: "/cases" },
+          { label: "Cases", to: "/cases/" },
           { label: "Rocha & Queiroz Advogados" },
         ]}
       />
@@ -206,7 +206,7 @@ function CaseRochaQueiroz() {
             })}
           </div>
           <p className="mt-6">
-            <Link to="/videos" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -240,7 +240,7 @@ function CaseRochaQueiroz() {
             </footer>
           </blockquote>
           <p className="mt-6">
-            <Link to="/depoimentos" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/depoimentos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Ver todos os depoimentos →
             </Link>
           </p>
@@ -258,7 +258,7 @@ function CaseRochaQueiroz() {
               "slug" in s ? (
                 <Link
                   key={s.label}
-                  to="/fotografo-corporativo/$slug"
+                  to="/fotografo-corporativo/$slug/"
                   params={{ slug: s.slug }}
                   className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
                 >

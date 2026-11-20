@@ -167,7 +167,7 @@ function CategoryPage() {
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotos", to: "/fotografo-corporativo" }, { label: cat.title }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-          <Link to="/fotografo-corporativo" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/fotografo-corporativo/" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
             <ArrowLeft size={14} /> Todos os segmentos
           </Link>
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotos</p>
@@ -189,7 +189,7 @@ function CategoryPage() {
               {related.slice(0, 5).map((r) => (
                 <Link
                   key={r.slug}
-                  to="/fotografo-corporativo/$slug"
+                  to="/fotografo-corporativo/$slug/"
                   params={{ slug: r.slug }}
                   className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-ember hover:text-ember"
                 >
@@ -223,7 +223,7 @@ function CategoryPage() {
             </Link>
             . Para ver os cases organizados por segmento, veja o{" "}
             <Link
-              to="/portfolio"
+              to="/portfolio/"
               className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
             >
               portfólio completo
@@ -256,7 +256,7 @@ function CategoryPage() {
               Perguntas frequentes sobre {cat.title.toLowerCase()}
             </h2>
             <FaqList items={pageFaqs(cat.slug)!} />
-            <Link to="/faq" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
+            <Link to="/faq/" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
               Ver todas as perguntas →
             </Link>
           </div>
@@ -269,7 +269,7 @@ function CategoryPage() {
       <section className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-4 px-5 py-12 md:grid-cols-2 md:px-8">
           <Link
-            to="/fotografo-corporativo/$slug"
+            to="/fotografo-corporativo/$slug/"
             params={{ slug: prev.slug }}
             className="group flex items-center gap-4 rounded-sm border border-border bg-background p-5 hover:border-ember"
           >
@@ -280,7 +280,7 @@ function CategoryPage() {
             </div>
           </Link>
           <Link
-            to="/fotografo-corporativo/$slug"
+            to="/fotografo-corporativo/$slug/"
             params={{ slug: next.slug }}
             className="group flex items-center justify-end gap-4 rounded-sm border border-border bg-background p-5 text-right hover:border-ember"
           >

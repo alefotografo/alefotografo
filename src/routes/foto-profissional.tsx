@@ -248,14 +248,14 @@ function FotoProfissionalPage() {
               Solicitar orçamento no WhatsApp
             </a>
             <Link
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: "retrato-corporativo" }}
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Ver galeria de retratos
             </Link>
             <Link
-              to="/foto-profissional-para-linkedin"
+              to="/foto-profissional-para-linkedin/"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Foto para LinkedIn
@@ -343,7 +343,7 @@ function FotoProfissionalPage() {
             {gallery.map((c) => (
               <Link
                 key={c.slug}
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: c.slug }}
                 className="group block overflow-hidden rounded-sm border border-border bg-background transition-colors hover:border-ember"
               >
@@ -388,7 +388,7 @@ function FotoProfissionalPage() {
               Solicitar orçamento no WhatsApp
             </a>
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Outras formas de contato

@@ -443,7 +443,7 @@ function VideosIndex() {
 
               <p className="mt-10 text-sm text-muted-foreground">
                 Não sabe qual formato precisa?{" "}
-                <Link to="/contato" className="text-ember underline underline-offset-4">
+                <Link to="/contato/" className="text-ember underline underline-offset-4">
                   Fale comigo
                 </Link>
               </p>
@@ -464,7 +464,7 @@ function VideosIndex() {
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground text-pretty">
             Catálogo completo em ordem alfabética. Para retratos de pessoas e equipes, veja o{" "}
-            <Link to="/portfolio" className="text-ember underline underline-offset-4">
+            <Link to="/portfolio/" className="text-ember underline underline-offset-4">
               portfólio de fotografia
             </Link>
             .
@@ -487,7 +487,7 @@ function VideosIndex() {
               .map((v) => (
                 <li key={v.slug}>
                   <Link
-                    to="/videos/$slug"
+                    to="/videos/$slug/"
                     params={{ slug: v.slug }}
                     className="text-muted-foreground hover:text-ember"
                   >
@@ -600,7 +600,7 @@ function VideosIndex() {
               <p className="mt-4 text-muted-foreground text-pretty">
                 Entendo o posicionamento, o público e o objetivo da comunicação antes de iniciar qualquer produção. Atendimento direto, sem intermediários, com estúdio próprio e estrutura móvel para gravar na sua empresa.
               </p>
-              <Link to="/quem-e-o-ale" className="mt-6 inline-flex text-sm text-ember hover:underline">
+              <Link to="/quem-e-o-ale/" className="mt-6 inline-flex text-sm text-ember hover:underline">
                 Conhecer o Alê →
               </Link>
             </div>
@@ -629,7 +629,7 @@ function VideosIndex() {
             Dúvidas frequentes sobre vídeo corporativo
           </h2>
           <FaqList items={featuredFaqs} />
-          <Link to="/faq" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/faq/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
             Ver todas as perguntas →
           </Link>
         </div>
@@ -667,7 +667,7 @@ function VideosIndex() {
               Solicitar orçamento no WhatsApp
             </a>
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex items-center justify-center rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:bg-surface"
             >
               Enviar briefing pelo formulário
@@ -691,7 +691,7 @@ function VideoGrid({ items, className = "" }: { items: typeof videos; className?
             style={{ contentVisibility: i < 8 ? "visible" : "auto", containIntrinsicSize: "320px 280px" }}
           >
             <Link
-              to="/videos/$slug"
+              to="/videos/$slug/"
               params={{ slug: v.slug }}
               preload="intent"
               className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"

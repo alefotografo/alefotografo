@@ -199,7 +199,7 @@ export function autoLink(text: string, opts: AutoLinkOptions = {}): ReactNode[] 
       ) : (
         <Link
           key={`al-${i}-${m.slug}`}
-          to="/fotografo-corporativo/$slug"
+          to="/fotografo-corporativo/$slug/"
           params={{ slug: m.slug }}
           className={className}
         >

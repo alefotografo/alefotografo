@@ -139,7 +139,7 @@ export function TestimonialsCarousel({
                 Ver no Google
               </a>{" "}
               ·{" "}
-              <Link to="/depoimentos" className="inline-flex min-h-11 items-center text-ember underline underline-offset-4 md:min-h-0">
+              <Link to="/depoimentos/" className="inline-flex min-h-11 items-center text-ember underline underline-offset-4 md:min-h-0">
                 Todos os depoimentos
               </Link>
             </p>

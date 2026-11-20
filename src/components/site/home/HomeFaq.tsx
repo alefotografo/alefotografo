@@ -14,7 +14,7 @@ export default function HomeFaq() {
           <div className="[&_button]:min-h-11 [&_button]:py-4 md:[&_button]:py-5">
             <FaqList items={faqsComerciais.slice(0, 6)} />
           </div>
-          <Link to="/faq" className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:mt-8">
+          <Link to="/faq/" className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:mt-8">
             Ver todas as perguntas <ArrowUpRight size={14} />
           </Link>
         </div>

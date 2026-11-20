@@ -108,7 +108,7 @@ export const Route = createFileRoute("/blog/$slug")({
             },
 
             datePublished: toISODate(loaderData.date),
-            dateModified: toISODate(loaderData.updatedAt ?? loaderData.date),
+            dateModified: toISODate((loaderData as { updatedAt?: string }).updatedAt ?? loaderData.date),
             wordCount: loaderData.body?.join(" ").split(/\s+/).filter(Boolean).length || undefined,
             speakable: {
               "@type": "SpeakableSpecification",
@@ -137,7 +137,7 @@ function PostPage() {
     <>
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog" }, { label: p.title }]} />
       <article className="mx-auto max-w-3xl px-5 py-12 md:px-8 md:py-16">
-        <Link to="/blog" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+        <Link to="/blog/" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft size={14} /> Voltar ao blog
         </Link>
         <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-ember">
@@ -195,7 +195,7 @@ function PostPage() {
             </div>
           )}
           <p className="mt-8 rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
-            Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
+            Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
           </p>
         </div>
 
@@ -215,10 +215,10 @@ function PostPage() {
 
 
         <div className="mt-10 flex flex-wrap gap-3 border-t border-border pt-8">
-          <Link to="/contato" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
+          <Link to="/contato/" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
             Solicitar orçamento
           </Link>
-          <Link to="/fotografo-corporativo" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+          <Link to="/fotografo-corporativo/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
             Ver fotos
           </Link>
         </div>
@@ -231,7 +231,7 @@ function PostPage() {
             {more.map((o) => (
               <Link
                 key={o.slug}
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: o.slug }}
                 className="group block rounded-sm border border-border bg-background p-5 hover:border-ember"
               >

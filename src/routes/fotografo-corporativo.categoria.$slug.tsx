@@ -7,8 +7,8 @@ export const Route = createFileRoute("/fotografo-corporativo/categoria/$slug")({
   loader: ({ params }) => {
     const cat = categoryBySlug(params.slug);
     if (cat) {
-      throw redirect({ to: "/fotografo-corporativo/$slug", params: { slug: params.slug }, statusCode: 301 });
+      throw redirect({ to: "/fotografo-corporativo/$slug/", params: { slug: params.slug }, statusCode: 301 });
     }
-    throw redirect({ to: "/fotografo-corporativo", statusCode: 301 });
+    throw redirect({ to: "/fotografo-corporativo/", statusCode: 301 });
   },
 });

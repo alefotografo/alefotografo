@@ -104,7 +104,7 @@ function FaqPage() {
             Pedir orçamento pelo WhatsApp
           </a>
           <Link
-            to="/foto-profissional"
+            to="/foto-profissional/"
             className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:bg-surface"
           >
             Ver foto profissional
@@ -123,7 +123,7 @@ function FaqPage() {
             </p>
           </div>
           <Link
-            to="/contato"
+            to="/contato/"
             className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3 font-medium text-accent-foreground hover:bg-ember-glow"
           >
             Solicitar orçamento <ArrowUpRight size={16} />

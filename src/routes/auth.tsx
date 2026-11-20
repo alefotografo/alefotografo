@@ -31,7 +31,7 @@ function AuthPage() {
       setError("E-mail ou senha inválidos.");
       return;
     }
-    navigate({ to: "/admin/indexacao", replace: true });
+    navigate({ to: "/admin/indexacao/", replace: true });
   }
 
   return (

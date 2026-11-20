@@ -129,7 +129,7 @@ function VideoPage() {
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Vídeos", to: "/videos" }, { label: v.title }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 md:py-16">
-          <Link to="/videos" className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/videos/" className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
             <ArrowLeft size={14} /> Todos os vídeos
           </Link>
           <h1 className="font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">{v.title}</h1>
@@ -154,11 +154,11 @@ function VideoPage() {
               {service.label}
             </Link>{" "}
             ou explore os{" "}
-            <Link to="/portfolio" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/portfolio/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               cases do portfólio
             </Link>
             . Produção de vídeo completa em{" "}
-            <Link to="/videos" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/videos/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               vídeo corporativo
             </Link>
             .
@@ -173,7 +173,7 @@ function VideoPage() {
             {others.map((o) => (
               <Link
                 key={o.slug}
-                to="/videos/$slug"
+                to="/videos/$slug/"
                 params={{ slug: o.slug }}
                 className="group block overflow-hidden rounded-sm bg-background ring-1 ring-border hover:ring-ember"
               >

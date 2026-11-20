@@ -110,7 +110,7 @@ function BlogIndex() {
         {visible.length === 0 ? (
           <p className="text-muted-foreground">
             Nenhum artigo encontrado para “{query}”. Tente outro termo ou{" "}
-            <Link to="/contato" className="text-ember underline underline-offset-2">
+            <Link to="/contato/" className="text-ember underline underline-offset-2">
               fale comigo
             </Link>
             .
@@ -120,7 +120,7 @@ function BlogIndex() {
             {visible.map((p, i) => (
               <Link
                 key={p.slug}
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: p.slug }}
                 className="group flex flex-col overflow-hidden rounded-sm border border-border bg-surface transition-colors hover:border-ember"
               >
@@ -178,7 +178,7 @@ function BlogIndex() {
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground text-pretty">
             Catálogo completo em ordem alfabética. Para ver os trabalhos, vá ao{" "}
-            <Link to="/portfolio" className="text-ember underline underline-offset-4">
+            <Link to="/portfolio/" className="text-ember underline underline-offset-4">
               portfólio de cases
             </Link>
             .
@@ -189,7 +189,7 @@ function BlogIndex() {
               .map((p) => (
                 <li key={p.slug}>
                   <Link
-                    to="/blog/$slug"
+                    to="/blog/$slug/"
                     params={{ slug: p.slug }}
                     className="text-muted-foreground hover:text-ember"
                   >

@@ -65,7 +65,7 @@ export default function RetratoProfissional() {
             </div>
 
             <p className="mt-8">
-              <Link to="/foto-profissional" className={LINK_CLASS}>
+              <Link to="/foto-profissional/" className={LINK_CLASS}>
                 Conhecer Retratos Profissionais
               </Link>
             </p>

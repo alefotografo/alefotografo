@@ -214,7 +214,7 @@ function CaseAtiva() {
             <p>
               Contamos o trabalho em detalhes no{" "}
               <Link
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: "case-ativa-logistica-fotografia-video" }}
                 className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
               >
@@ -263,7 +263,7 @@ function CaseAtiva() {
               return (
                 <li key={slug}>
                   <Link
-                    to="/videos/$slug"
+                    to="/videos/$slug/"
                     params={{ slug }}
                     className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
                     aria-label={`Assistir: ${video.title}`}
@@ -294,7 +294,7 @@ function CaseAtiva() {
             })}
           </ul>
           <p className="mt-6">
-            <Link to="/videos" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -324,25 +324,25 @@ function CaseAtiva() {
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/fotografo-corporativo/$slug" params={{ slug: "fotografia-de-logistica" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotografia-de-logistica" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotografia de logística
             </Link>
-            <Link to="/fotografo-corporativo/$slug" params={{ slug: "banco-de-imagens-para-empresas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "banco-de-imagens-para-empresas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Banco de imagens para empresas
             </Link>
-            <Link to="/video-institucional" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/video-institucional/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeo institucional
             </Link>
-            <Link to="/videos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeos para empresas
             </Link>
-            <Link to="/fotos-corporativas" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotos-corporativas/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotos corporativas de equipe
             </Link>
-            <Link to="/fotografo-empresarial" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-empresarial/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotógrafo empresarial
             </Link>
-            <Link to="/eventos-corporativos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotografia de eventos
             </Link>
           </div>

@@ -66,7 +66,7 @@ export default function HomeHeroNovo() {
                   Solicitar orçamento
                 </a>
                 <Link
-                  to="/fotografo-corporativo"
+                  to="/fotografo-corporativo/"
                   className="inline-flex w-full items-center justify-center rounded-sm border border-border-strong bg-background/40 px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
                 >
                   Ver portfólio corporativo

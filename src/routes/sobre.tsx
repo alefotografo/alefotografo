@@ -220,7 +220,7 @@ function SobrePage() {
           <h2 className="max-w-2xl font-display text-3xl font-semibold md:text-4xl">
             Segmentos atendidos
           </h2>
-          <Link to="/fotografo-corporativo" className="text-sm text-ember hover:underline">
+          <Link to="/fotografo-corporativo/" className="text-sm text-ember hover:underline">
             Ver fotos completas →
           </Link>
         </div>
@@ -230,7 +230,7 @@ function SobrePage() {
             .map((c) => (
             <Link
               key={c.slug}
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: c.slug }}
               className="rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted-foreground hover:border-ember hover:text-foreground"
             >
@@ -245,7 +245,7 @@ function SobrePage() {
           <h2 className="max-w-xl font-display text-3xl font-semibold md:text-4xl text-balance">
             Vamos conversar sobre seu próximo projeto?
           </h2>
-          <Link to="/contato" className="rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow">
+          <Link to="/contato/" className="rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow">
             Entrar em contato
           </Link>
         </div>

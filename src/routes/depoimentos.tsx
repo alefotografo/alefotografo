@@ -165,7 +165,7 @@ function Depoimentos() {
         <p className="mt-10 text-sm text-muted-foreground">
           O depoimento de Vanessa Cantieri, da Rocha & Queiroz Advogados Associados, também está no{" "}
           <Link
-            to="/cases/rocha-e-queiroz-advogados"
+            to="/cases/rocha-e-queiroz-advogados/"
             className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
           >
             case comercial do escritório
@@ -180,7 +180,7 @@ function Depoimentos() {
             <h2 className="font-display text-2xl font-semibold md:text-3xl">Quer ser o próximo depoimento?</h2>
             <p className="mt-2 text-muted-foreground">Solicite um orçamento sem compromisso.</p>
           </div>
-          <Link to="/contato" className="rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
+          <Link to="/contato/" className="rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
             Entrar em contato
           </Link>
         </div>

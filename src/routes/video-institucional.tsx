@@ -205,7 +205,7 @@ function VideoInstitucional() {
               return (
                 <li key={c.slug}>
                   <Link
-                    to="/videos/$slug"
+                    to="/videos/$slug/"
                     params={{ slug: c.slug }}
                     preload="intent"
                     className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
@@ -241,36 +241,36 @@ function VideoInstitucional() {
               );
             })}
           </ul>
-          <Link to="/videos" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/videos/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
             Ver todas as produções de vídeo corporativo →
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
             Cases comerciais com o contexto completo do projeto:{" "}
-            <Link to="/cases/ativa-logistica" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/ativa-logistica/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               ATIVA Logística
             </Link>{" "}
             e{" "}
-            <Link to="/cases/rocha-e-queiroz-advogados" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/rocha-e-queiroz-advogados/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Rocha & Queiroz Advogados
             </Link>
             ,{" "}
-            <Link to="/cases/sq-quimica" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/sq-quimica/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               SQ Química
             </Link>{" "}
             e{" "}
-            <Link to="/cases/abradilan" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/abradilan/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               ABRADILAN
             </Link>
             ,{" "}
-            <Link to="/cases/nitriflex" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/nitriflex/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Nitriflex
             </Link>{" "}
             e{" "}
-            <Link to="/cases/fiorde" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/fiorde/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Fiorde Logística
             </Link>
             . Todos os cases estão no{" "}
-            <Link to="/cases" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               índice de cases
             </Link>
             .
@@ -299,12 +299,12 @@ function VideoInstitucional() {
             </h2>
             <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
               Quando o projeto exige, a mesma produção reúne vídeo institucional, retratos profissionais, banco de imagens corporativo e fotografia de ambientes, equipes e operações — aproveitando a preparação já feita no local. Veja{" "}
-              <Link to="/fotos-corporativas" className="text-ember hover:underline">
+              <Link to="/fotos-corporativas/" className="text-ember hover:underline">
                 fotografia corporativa
               </Link>{" "}
               e{" "}
               <Link
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: "banco-de-imagens-para-empresas" }}
                 className="text-ember hover:underline"
               >

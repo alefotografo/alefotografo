@@ -233,7 +233,7 @@ function QuemEOAlePage() {
             </h2>
           </div>
           <Link
-            to="/fotografo-corporativo"
+            to="/fotografo-corporativo/"
             className="inline-flex items-center gap-2 text-sm text-ember hover:underline"
           >
             Ver todos os segmentos <ArrowUpRight size={14} />
@@ -243,7 +243,7 @@ function QuemEOAlePage() {
           {highlightCats.map((c) => (
             <Link
               key={c.slug}
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: c.slug }}
               className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
@@ -283,7 +283,7 @@ function QuemEOAlePage() {
             {recentPosts.map((p) => (
               <Link
                 key={p.slug}
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: p.slug }}
                 className="group block rounded-sm border border-border bg-background p-6 transition-colors hover:border-ember"
               >
@@ -311,7 +311,7 @@ function QuemEOAlePage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link
-              to="/contato"
+              to="/contato/"
               className="rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Entrar em contato

@@ -72,7 +72,7 @@ export function EditorialBlock({ data }: { data: CategoryEditorial }) {
             {data.ctaLabel}
           </a>
           <Link
-            to="/contato"
+            to="/contato/"
             className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
           >
             Solicitar orçamento

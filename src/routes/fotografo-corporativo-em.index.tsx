@@ -80,13 +80,13 @@ function BairrosIndex() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Solicitar orçamento <ArrowUpRight size={16} />
             </Link>
             <Link
-              to="/fotografo-corporativo"
+              to="/fotografo-corporativo/"
               className="inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember hover:text-ember"
             >
               Ver portfólio completo
@@ -103,7 +103,7 @@ function BairrosIndex() {
               {g.itens.map((b) => (
                 <Link
                   key={b.slug}
-                  to="/fotografo-corporativo-em/$bairro"
+                  to="/fotografo-corporativo-em/$bairro/"
                   params={{ bairro: b.slug }}
                   className="group rounded-sm border border-border bg-surface p-5 transition-colors hover:border-ember"
                 >

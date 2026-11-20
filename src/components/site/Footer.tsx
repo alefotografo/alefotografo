@@ -100,20 +100,20 @@ export function Footer() {
             Fotografia
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/servicos" className="hover:text-foreground">Todos os serviços</Link></li>
-            <li><Link to="/foto-profissional" className="hover:text-foreground">Foto profissional</Link></li>
-            <li><Link to="/foto-profissional-para-linkedin" className="hover:text-foreground">Foto para LinkedIn</Link></li>
-            <li><Link to="/fotos-corporativas" className="hover:text-foreground">Fotografia corporativa</Link></li>
-            <li><Link to="/fotografia-executiva" className="hover:text-foreground">Fotografia executiva</Link></li>
-            <li><Link to="/fotografo-empresarial" className="hover:text-foreground">Fotógrafo empresarial</Link></li>
-            <li><Link to="/fotografo-corporativo/$slug" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
-            <li><Link to="/eventos-corporativos" className="hover:text-foreground">Eventos corporativos</Link></li>
-            <li><Link to="/fotografo-de-feira-de-negocios" className="hover:text-foreground">Fotógrafo de feira de negócios</Link></li>
-            <li><Link to="/fotografia-para-clinicas" className="hover:text-foreground">Fotografia para clínicas</Link></li>
-            <li><Link to="/fotos-profissionais-medicos" className="hover:text-foreground">Fotos para médicos</Link></li>
-            <li><Link to="/fotografia-para-advogados" className="hover:text-foreground">Fotos para advogados</Link></li>
-            <li><Link to="/portfolio" className="hover:text-foreground">Portfólio de cases</Link></li>
-            <li><Link to="/fotografo-corporativo" className="hover:text-foreground">Galerias por segmento</Link></li>
+            <li><Link to="/servicos/" className="hover:text-foreground">Todos os serviços</Link></li>
+            <li><Link to="/foto-profissional/" className="hover:text-foreground">Foto profissional</Link></li>
+            <li><Link to="/foto-profissional-para-linkedin/" className="hover:text-foreground">Foto para LinkedIn</Link></li>
+            <li><Link to="/fotos-corporativas/" className="hover:text-foreground">Fotografia corporativa</Link></li>
+            <li><Link to="/fotografia-executiva/" className="hover:text-foreground">Fotografia executiva</Link></li>
+            <li><Link to="/fotografo-empresarial/" className="hover:text-foreground">Fotógrafo empresarial</Link></li>
+            <li><Link to="/fotografo-corporativo/$slug/" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
+            <li><Link to="/eventos-corporativos/" className="hover:text-foreground">Eventos corporativos</Link></li>
+            <li><Link to="/fotografo-de-feira-de-negocios/" className="hover:text-foreground">Fotógrafo de feira de negócios</Link></li>
+            <li><Link to="/fotografia-para-clinicas/" className="hover:text-foreground">Fotografia para clínicas</Link></li>
+            <li><Link to="/fotos-profissionais-medicos/" className="hover:text-foreground">Fotos para médicos</Link></li>
+            <li><Link to="/fotografia-para-advogados/" className="hover:text-foreground">Fotos para advogados</Link></li>
+            <li><Link to="/portfolio/" className="hover:text-foreground">Portfólio de cases</Link></li>
+            <li><Link to="/fotografo-corporativo/" className="hover:text-foreground">Galerias por segmento</Link></li>
           </ul>
         </div>
 
@@ -122,12 +122,12 @@ export function Footer() {
             Vídeo
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/videos" className="hover:text-foreground">Vídeo corporativo</Link></li>
-            <li><Link to="/video-institucional" className="hover:text-foreground">Vídeo institucional</Link></li>
-            <li><Link to="/video-de-eventos-corporativos" className="hover:text-foreground">Vídeos de Eventos Corporativos</Link></li>
-            <li><Link to="/video-para-feiras-e-stands" className="hover:text-foreground">Vídeos para Feiras e Stands</Link></li>
-            <li><Link to="/videos" hash="portfolio" className="hover:text-foreground">Portfólio de vídeos</Link></li>
-            <li><Link to="/videos" hash="portfolio" className="hover:text-foreground">Reels e social</Link></li>
+            <li><Link to="/videos/" className="hover:text-foreground">Vídeo corporativo</Link></li>
+            <li><Link to="/video-institucional/" className="hover:text-foreground">Vídeo institucional</Link></li>
+            <li><Link to="/video-de-eventos-corporativos/" className="hover:text-foreground">Vídeos de Eventos Corporativos</Link></li>
+            <li><Link to="/video-para-feiras-e-stands/" className="hover:text-foreground">Vídeos para Feiras e Stands</Link></li>
+            <li><Link to="/videos/" hash="portfolio" className="hover:text-foreground">Portfólio de vídeos</Link></li>
+            <li><Link to="/videos/" hash="portfolio" className="hover:text-foreground">Reels e social</Link></li>
           </ul>
         </div>
 
@@ -179,11 +179,11 @@ export function Footer() {
             Solicitar orçamento no WhatsApp
           </a>
           <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
-            <li><Link to="/quem-e-o-ale" className="hover:text-foreground">Quem é o Alê</Link></li>
-            <li><Link to="/sobre" className="hover:text-foreground">Sobre Alexandre</Link></li>
-            <li><Link to="/depoimentos" className="hover:text-foreground">Depoimentos</Link></li>
-            <li><Link to="/faq" className="hover:text-foreground">Perguntas frequentes</Link></li>
+            <li><Link to="/contato/" className="hover:text-foreground">Contato</Link></li>
+            <li><Link to="/quem-e-o-ale/" className="hover:text-foreground">Quem é o Alê</Link></li>
+            <li><Link to="/sobre/" className="hover:text-foreground">Sobre Alexandre</Link></li>
+            <li><Link to="/depoimentos/" className="hover:text-foreground">Depoimentos</Link></li>
+            <li><Link to="/faq/" className="hover:text-foreground">Perguntas frequentes</Link></li>
           </ul>
         </div>
       </div>
@@ -192,7 +192,7 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-5 py-8 md:px-8">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Fotógrafo corporativo em São Paulo —{" "}
-            <Link to="/fotografo-corporativo-em" className="text-ember underline underline-offset-4">
+            <Link to="/fotografo-corporativo-em/" className="text-ember underline underline-offset-4">
               todas as páginas por bairro
             </Link>
           </p>
@@ -201,7 +201,7 @@ export function Footer() {
             {bairros.map((b) => (
               <Link
                 key={b.slug}
-                to="/fotografo-corporativo-em/$bairro"
+                to="/fotografo-corporativo-em/$bairro/"
                 params={{ bairro: b.slug }}
                 className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-ember hover:text-ember"
               >

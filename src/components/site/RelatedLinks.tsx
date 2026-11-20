@@ -21,7 +21,7 @@ export function RelatedLinks({
             {cats.map((c) => (
               <li key={c.slug}>
                 <Link
-                  to="/fotografo-corporativo/$slug"
+                  to="/fotografo-corporativo/$slug/"
                   params={{ slug: c.slug }}
                   className="inline-flex rounded-sm border border-border-strong px-3 py-1.5 text-sm text-foreground/90 transition-colors hover:border-ember hover:text-ember"
                   title={c.title}
@@ -40,7 +40,7 @@ export function RelatedLinks({
             {posts.map((p) => (
               <li key={p.slug}>
                 <Link
-                  to="/blog/$slug"
+                  to="/blog/$slug/"
                   params={{ slug: p.slug }}
                   className="group block rounded-sm border border-border bg-background p-4 hover:border-ember"
                 >

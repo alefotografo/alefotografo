@@ -70,14 +70,14 @@ export default function VideoProducao() {
         <p className="mt-4 max-w-[68ch] text-[16px] leading-[1.6] text-muted-foreground md:text-[17px]">
           Especializações:{" "}
           <Link
-            to="/video-institucional"
+            to="/video-institucional/"
             className="text-ember hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             Vídeo Institucional
           </Link>{" "}
           e{" "}
           <Link
-            to="/video-de-eventos-corporativos"
+            to="/video-de-eventos-corporativos/"
             className="text-ember hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             Vídeos de Eventos Corporativos
@@ -104,7 +104,7 @@ export default function VideoProducao() {
 
         <p className="mt-6 text-center">
           <Link
-            to="/videos"
+            to="/videos/"
             className="inline-flex min-h-11 items-center text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none md:min-h-0"
           >
             Ver todos os vídeos

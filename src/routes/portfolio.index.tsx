@@ -20,8 +20,8 @@ const BLOCKS = [
     blurb:
       "Retratos individuais com direção de pose, fundo controlado e leitura de autoridade — a base de qualquer comunicação profissional.",
     services: [
-      { to: "/foto-profissional", label: "Contratar foto profissional" },
-      { to: "/foto-profissional-para-linkedin", label: "Headshot para LinkedIn" },
+      { to: "/foto-profissional/", label: "Contratar foto profissional" },
+      { to: "/foto-profissional-para-linkedin/", label: "Headshot para LinkedIn" },
     ],
     gals: ["retrato-corporativo", "fotografo-de-retratos-corporativos"],
   },
@@ -30,7 +30,7 @@ const BLOCKS = [
     label: "Executivos e liderança",
     blurb:
       "Retratos de C-level, sócios e conselhos para relatórios, releases, sites institucionais e imprensa.",
-    services: [{ to: "/fotografia-executiva", label: "Ver fotografia executiva" }],
+    services: [{ to: "/fotografia-executiva/", label: "Ver fotografia executiva" }],
     gals: ["fotografo-profissional-em-sao-paulo", "ensaio-fotografico-para-redes-sociais"],
   },
   {
@@ -39,8 +39,8 @@ const BLOCKS = [
     blurb:
       "Retratos de médicos e médicas, corpo clínico e ambientes de clínica — imagem de confiança para pacientes e convênios.",
     services: [
-      { to: "/fotos-profissionais-medicos", label: "Fotos para médicos" },
-      { to: "/fotografia-para-clinicas", label: "Fotografia para clínicas" },
+      { to: "/fotos-profissionais-medicos/", label: "Fotos para médicos" },
+      { to: "/fotografia-para-clinicas/", label: "Fotografia para clínicas" },
     ],
     gals: [
       "retratos-de-medicos",
@@ -55,7 +55,7 @@ const BLOCKS = [
     label: "Advogados e escritórios",
     blurb:
       "Retratos de sócios e associados, além de ambientes do escritório, com a sobriedade que o setor jurídico exige.",
-    services: [{ to: "/fotografia-para-advogados", label: "Fotografia para advogados" }],
+    services: [{ to: "/fotografia-para-advogados/", label: "Fotografia para advogados" }],
     gals: ["fotografia-para-escritorios-de-advocacia"],
   },
   {
@@ -64,8 +64,8 @@ const BLOCKS = [
     blurb:
       "Fotos de equipe, rotina de trabalho e banco de imagens próprio para site, campanhas e comunicação interna.",
     services: [
-      { to: "/fotos-corporativas", label: "Fotografia corporativa" },
-      { to: "/fotografo-empresarial", label: "Fotógrafo empresarial" },
+      { to: "/fotos-corporativas/", label: "Fotografia corporativa" },
+      { to: "/fotografo-empresarial/", label: "Fotógrafo empresarial" },
     ],
     gals: [
       "fotografia-corporativa-em-sao-paulo",
@@ -80,7 +80,7 @@ const BLOCKS = [
     label: "Eventos corporativos",
     blurb:
       "Retratos de pessoas e equipes durante convenções, palestras e confraternizações, sem interromper o evento.",
-    services: [{ to: "/eventos-corporativos", label: "Eventos corporativos" }],
+    services: [{ to: "/eventos-corporativos/", label: "Eventos corporativos" }],
     gals: [
       "fotografo-de-eventos-corporativos",
       "fotografo-festa-de-confraternizacao",
@@ -92,7 +92,7 @@ const BLOCKS = [
     label: "Feiras e stands",
     blurb:
       "Cobertura de stand, ativações e retratos de time comercial em feiras de negócios — material pronto para usar no mesmo dia.",
-    services: [{ to: "/fotografo-de-feira-de-negocios", label: "Fotógrafo de feira de negócios" }],
+    services: [{ to: "/fotografo-de-feira-de-negocios/", label: "Fotógrafo de feira de negócios" }],
     gals: ["fotografo-feiras-stands", "totem-fotografico-totem-mania", "foto-impressa-na-hora"],
   },
   {
@@ -100,21 +100,21 @@ const BLOCKS = [
     label: "Indústria e logística",
     blurb:
       "Operação, planta, frota e centros de distribuição fotografados com segurança e leitura técnica do processo.",
-    services: [{ to: "/fotografo-empresarial", label: "Falar sobre projeto industrial" }],
+    services: [{ to: "/fotografo-empresarial/", label: "Falar sobre projeto industrial" }],
     gals: ["fotografia-industrial-em-sp", "fotografia-de-logistica", "fotos-aereas"],
   },
   {
     id: "arquitetura",
     label: "Arquitetura e ambientes",
     blurb: "Escritórios, empreendimentos e interiores corporativos com controle de luz e perspectiva.",
-    services: [{ to: "/servicos", label: "Ver todos os serviços" }],
+    services: [{ to: "/servicos/", label: "Ver todos os serviços" }],
     gals: ["fotografo-de-arquitetura-e-interiores", "empreendimentos-imobiliarios"],
   },
   {
     id: "gastronomia",
     label: "Gastronomia e produto",
     blurb: "Pratos, drinks e produto para menu, delivery e redes sociais de restaurantes e marcas.",
-    services: [{ to: "/servicos", label: "Ver todos os serviços" }],
+    services: [{ to: "/servicos/", label: "Ver todos os serviços" }],
     gals: [
       "fotografo-de-culinaria",
       "fotos-de-hamburguer",
@@ -128,7 +128,7 @@ const BLOCKS = [
     label: "Vídeo e audiovisual",
     blurb:
       "Vídeo institucional, depoimentos e conteúdo para redes — roteiro, captação e edição com a mesma direção dos retratos.",
-    services: [{ to: "/videos", label: "Ver produções em vídeo" }],
+    services: [{ to: "/videos/", label: "Ver produções em vídeo" }],
     gals: [],
   },
 ] as const;
@@ -201,7 +201,7 @@ function PortfolioHub() {
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             <Link
-              to="/cases/ativa-logistica"
+              to="/cases/ativa-logistica/"
               className="group block rounded-sm border border-border bg-background p-6 transition-all hover:border-ember"
             >
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Logística</p>
@@ -211,7 +211,7 @@ function PortfolioHub() {
               </p>
             </Link>
             <Link
-              to="/cases/rocha-e-queiroz-advogados"
+              to="/cases/rocha-e-queiroz-advogados/"
               className="group block rounded-sm border border-border bg-background p-6 transition-all hover:border-ember"
             >
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Advocacia</p>
@@ -222,7 +222,7 @@ function PortfolioHub() {
             </Link>
           </div>
           <p className="mt-6">
-            <Link to="/cases" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/cases/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Ver todos os cases →
             </Link>
           </p>
@@ -261,7 +261,7 @@ function PortfolioHub() {
                   {gals.map((c, i) => (
                     <li key={c.slug}>
                       <Link
-                        to="/fotografo-corporativo/$slug"
+                        to="/fotografo-corporativo/$slug/"
                         params={{ slug: c.slug }}
                         className="group relative block overflow-hidden rounded-sm bg-background ring-1 ring-border transition-all hover:ring-ember"
                       >
@@ -315,7 +315,7 @@ function PortfolioHub() {
               .map((c) => (
                 <li key={c.slug}>
                   <Link
-                    to="/fotografo-corporativo/$slug"
+                    to="/fotografo-corporativo/$slug/"
                     params={{ slug: c.slug }}
                     className="text-muted-foreground hover:text-ember"
                   >
@@ -344,7 +344,7 @@ function PortfolioHub() {
               Solicitar orçamento no WhatsApp
             </a>
             <Link
-              to="/servicos"
+              to="/servicos/"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:bg-surface"
             >
               Ver todos os serviços

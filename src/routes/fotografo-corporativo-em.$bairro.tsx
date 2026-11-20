@@ -88,13 +88,13 @@ function BairroPage() {
           <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">{b.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex items-center gap-2 rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Solicitar orçamento <ArrowUpRight size={16} />
             </Link>
             <Link
-              to="/fotografo-corporativo"
+              to="/fotografo-corporativo/"
               className="inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember hover:text-ember"
             >
               Ver portfólio completo
@@ -156,7 +156,7 @@ function BairroPage() {
             {cats.map((c) => (
               <Link
                 key={c.slug}
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: c.slug }}
                 className="group rounded-sm border border-border bg-background p-4 text-sm transition-colors hover:border-ember hover:text-ember"
               >
@@ -186,7 +186,7 @@ function BairroPage() {
                 {vizinhos.map((x) => (
                   <Link
                     key={x.slug}
-                    to="/fotografo-corporativo-em/$bairro"
+                    to="/fotografo-corporativo-em/$bairro/"
                     params={{ bairro: x.slug }}
                     className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-ember hover:text-ember"
                   >
@@ -206,7 +206,7 @@ function BairroPage() {
               .map((x) => (
                 <Link
                   key={x.slug}
-                  to="/fotografo-corporativo-em/$bairro"
+                  to="/fotografo-corporativo-em/$bairro/"
                   params={{ bairro: x.slug }}
                   className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground hover:border-ember hover:text-ember"
                 >
@@ -216,7 +216,7 @@ function BairroPage() {
           </div>
           <div className="mt-6">
             <Link
-              to="/fotografo-corporativo-em"
+              to="/fotografo-corporativo-em/"
               className="inline-flex items-center gap-2 text-sm font-medium text-ember hover:underline"
             >
               Ver todas as páginas por bairro <ArrowUpRight size={14} />

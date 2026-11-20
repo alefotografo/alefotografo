@@ -93,7 +93,7 @@ export function Header() {
     if (!q) return;
     setSearchOpen(false);
     setMobileOpen(false);
-    navigate({ to: "/busca", search: { q } });
+    navigate({ to: "/busca/", search: { q } });
   };
 
   // fecha tudo ao trocar de rota
@@ -372,7 +372,7 @@ export function Header() {
             </div>
 
             <Link
-              to="/contato"
+              to="/contato/"
               className="ml-1 whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-[13px] font-medium text-accent-foreground hover:bg-ember-glow xl:px-4 xl:text-sm"
             >
               Orçamento
@@ -382,7 +382,7 @@ export function Header() {
           {/* Ações mobile/tablet (< 1280px): só Orçamento + Menu */}
           <div className="flex items-center gap-2 xl:hidden">
             <Link
-              to="/contato"
+              to="/contato/"
               className="flex min-h-12 items-center whitespace-nowrap rounded-sm bg-ember px-3 py-2 text-xs font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Orçamento
@@ -519,7 +519,7 @@ export function Header() {
               </nav>
 
               <Link
-                to="/contato"
+                to="/contato/"
                 aria-label="Solicitar orçamento — página de contato"
                 className="mt-6 flex min-h-12 items-center justify-center rounded-sm bg-ember px-4 py-3 text-sm font-medium text-accent-foreground"
               >

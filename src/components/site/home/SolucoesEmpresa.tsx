@@ -19,7 +19,7 @@ const CARDS = [
     texto:
       "Produções fotográficas para empresas, equipes, ambientes e operações, alinhadas à identidade e aos objetivos de comunicação de cada organização.",
     slug: null,
-    to: "/fotos-corporativas",
+    to: "/fotos-corporativas/",
     img: `${CDN}/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0005.jpg`,
     alt: "Executivo analisando documentos em ambiente corporativo",
   },
@@ -28,7 +28,7 @@ const CARDS = [
     texto:
       "Retratos de executivos, profissionais e equipes para LinkedIn, sites, apresentações, imprensa e comunicação corporativa.",
     slug: null,
-    to: "/foto-profissional",
+    to: "/foto-profissional/",
     img: `${CDN}/102590/fotografia-corporativa-em-sao-paulo_adv-62.jpg`,
     alt: "Retrato profissional de executivos em escritório",
   },
@@ -37,7 +37,7 @@ const CARDS = [
     texto:
       "Fotografia e vídeo para congressos, convenções, feiras, palestras e encontros empresariais.",
     slug: null,
-    to: "/eventos-corporativos",
+    to: "/eventos-corporativos/",
     img: `${CDN}/66941/eventos-corporativos_fotografo-de-eventos-corporativos-eventos-pessoas-em-evento-fotos-de-eventos-corporaticos-alefotografo0174.JPG`,
     alt: "Fotógrafo de Eventos Empresariais — foto 1",
   },
@@ -46,7 +46,7 @@ const CARDS = [
     texto:
       "Produção audiovisual para apresentar empresas, serviços, estruturas, equipes, projetos e cases.",
     slug: null,
-    to: "/videos",
+    to: "/videos/",
     img: "https://img.youtube.com/vi/nkHJbeXx5Qo/hqdefault.jpg",
     alt: "Capa do vídeo institucional da Ativa Logística",
   },
@@ -55,7 +55,7 @@ const CARDS = [
     texto:
       "Produção de vídeos para congressos, convenções, fóruns e encontros empresariais, com captação de palco, plateia, entrevistas e melhores momentos.",
     slug: null,
-    to: "/video-de-eventos-corporativos",
+    to: "/video-de-eventos-corporativos/",
     img: "https://img.youtube.com/vi/gSngB97GbcQ/hqdefault.jpg",
     alt: "Capa do vídeo do 11º Fórum ABRADILAN",
   },
@@ -98,7 +98,7 @@ export default function SolucoesEmpresa() {
                 <h3 className="font-display text-[18px] font-semibold leading-[1.3] text-foreground md:text-[20px]">
                   {card.slug ? (
                     <Link
-                      to="/fotografo-corporativo/$slug"
+                      to="/fotografo-corporativo/$slug/"
                       params={{ slug: card.slug }}
                       className={LINK_CLASS}
                     >
@@ -122,7 +122,7 @@ export default function SolucoesEmpresa() {
         <p className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[14px] leading-[1.4] text-muted-foreground">
           <span>Outras soluções:</span>
           <Link
-            to="/fotografo-corporativo/$slug"
+            to="/fotografo-corporativo/$slug/"
             params={{ slug: "fotografo-de-grupos-times-e-equipes" }}
             className="inline-flex min-h-11 items-center underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:min-h-0"
           >
@@ -130,7 +130,7 @@ export default function SolucoesEmpresa() {
           </Link>
           <span aria-hidden="true">·</span>
           <Link
-            to="/fotografo-corporativo/$slug"
+            to="/fotografo-corporativo/$slug/"
             params={{ slug: "fotografo-feiras-stands" }}
             className="inline-flex min-h-11 items-center underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:min-h-0"
           >

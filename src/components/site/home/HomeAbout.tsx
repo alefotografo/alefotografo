@@ -33,10 +33,10 @@ export default function HomeAbout() {
               A experiência construída em projetos para empresas, executivos, indústrias, eventos e diferentes segmentos orienta um trabalho baseado em planejamento, cuidado técnico e compreensão das necessidades de cada cliente.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/sobre" className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+              <Link to="/sobre/" className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
                 Conheça nossa trajetória <ArrowUpRight size={14} />
               </Link>
-              <Link to="/depoimentos" className="inline-flex min-h-11 items-center gap-2 text-sm text-ember hover:underline md:min-h-0">
+              <Link to="/depoimentos/" className="inline-flex min-h-11 items-center gap-2 text-sm text-ember hover:underline md:min-h-0">
                 Ver depoimentos de clientes
               </Link>
             </div>

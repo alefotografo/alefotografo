@@ -45,7 +45,7 @@ function CasesHub() {
             return (
               <Link
                 key={c.to}
-                to={c.to}
+                to={`${c.to}/` as `${typeof c.to}/`}
                 className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
               >
                 <div className="relative aspect-video overflow-hidden bg-black">

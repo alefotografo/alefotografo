@@ -59,25 +59,25 @@ function NotFoundComponent() {
         </p>
         <ul className="mt-8 grid w-full gap-3 sm:grid-cols-2">
           <li>
-            <Link to="/fotografo-corporativo" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link to="/fotografo-corporativo/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
               <span className="text-xs uppercase tracking-wider text-ember">Fotos</span>
               <p className="mt-1 font-display font-semibold">Galeria por segmento</p>
             </Link>
           </li>
           <li>
-            <Link to="/blog" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link to="/blog/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
               <span className="text-xs uppercase tracking-wider text-ember">Blog</span>
               <p className="mt-1 font-display font-semibold">Artigos sobre fotografia</p>
             </Link>
           </li>
           <li>
-            <Link to="/quem-e-o-ale" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link to="/quem-e-o-ale/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
               <span className="text-xs uppercase tracking-wider text-ember">Sobre</span>
               <p className="mt-1 font-display font-semibold">Quem é o Alê</p>
             </Link>
           </li>
           <li>
-            <Link to="/contato" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link to="/contato/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
               <span className="text-xs uppercase tracking-wider text-ember">Contato</span>
               <p className="mt-1 font-display font-semibold">Solicitar orçamento</p>
             </Link>

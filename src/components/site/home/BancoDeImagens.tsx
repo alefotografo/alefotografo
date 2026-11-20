@@ -20,7 +20,7 @@ export default function BancoDeImagens() {
           </p>
           <p className="mt-12 flex flex-wrap justify-center gap-3">
             <Link
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: "banco-de-imagens-para-empresas" }}
               className="inline-block rounded-sm bg-ember px-6 py-3 text-[16px] font-medium leading-[1.6] text-accent-foreground transition-colors hover:bg-ember-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
             >
@@ -40,7 +40,7 @@ export default function BancoDeImagens() {
 
           <p className="mt-6 text-center">
             <Link
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: "banco-de-imagens-para-empresas" }}
               className="inline-flex min-h-11 items-center text-[14px] leading-[1.4] text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none md:min-h-0"
             >

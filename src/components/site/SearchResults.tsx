@@ -14,7 +14,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
 
 function GallerySegmentCard({ item, query, onSelect }: { item: PhotoResult; query: string; onSelect?: () => void }) {
   return (
-    <Link to="/fotografo-corporativo/$slug" params={{ slug: item.slug }} onClick={onSelect} className="group grid min-h-24 grid-cols-[6rem_1fr] overflow-hidden rounded-sm border border-border bg-surface hover:border-ember">
+    <Link to="/fotografo-corporativo/$slug/" params={{ slug: item.slug }} onClick={onSelect} className="group grid min-h-24 grid-cols-[6rem_1fr] overflow-hidden rounded-sm border border-border bg-surface hover:border-ember">
       <div className="aspect-square bg-surface-elevated">
         {item.cover ? <img src={imgUrl(item.cover, 400)} alt="" width={160} height={160} loading="lazy" decoding="async" className="h-full w-full object-cover" /> : <ImageIcon className="m-auto h-full text-muted-foreground" aria-hidden="true" />}
       </div>
@@ -28,7 +28,7 @@ function GallerySegmentCard({ item, query, onSelect }: { item: PhotoResult; quer
 
 function VideoSegmentCard({ item, query, onSelect }: { item: VideoResult; query: string; onSelect?: () => void }) {
   return (
-    <Link to="/videos/$slug" params={{ slug: item.slug }} onClick={onSelect} className="group grid min-h-24 grid-cols-[6rem_1fr] overflow-hidden rounded-sm border border-border bg-surface hover:border-ember">
+    <Link to="/videos/$slug/" params={{ slug: item.slug }} onClick={onSelect} className="group grid min-h-24 grid-cols-[6rem_1fr] overflow-hidden rounded-sm border border-border bg-surface hover:border-ember">
       <div className="relative aspect-video self-center bg-surface-elevated">
         {item.thumbnail ? <img src={item.thumbnail} alt="" width={320} height={180} loading="lazy" decoding="async" className="h-full w-full object-cover" /> : null}
         <span className="absolute inset-0 grid place-items-center bg-background/25"><Play size={22} className="fill-foreground" aria-hidden="true" /></span>
@@ -43,7 +43,7 @@ function VideoSegmentCard({ item, query, onSelect }: { item: VideoResult; query:
 
 function BlogResultCard({ item, query, onSelect }: { item: BlogResult; query: string; onSelect?: () => void }) {
   return (
-    <Link to="/blog/$slug" params={{ slug: item.slug }} onClick={onSelect} className="group grid min-h-24 grid-cols-[6rem_1fr] overflow-hidden rounded-sm border border-border bg-surface hover:border-ember">
+    <Link to="/blog/$slug/" params={{ slug: item.slug }} onClick={onSelect} className="group grid min-h-24 grid-cols-[6rem_1fr] overflow-hidden rounded-sm border border-border bg-surface hover:border-ember">
       <div className="aspect-square bg-surface-elevated">
         {item.cover ? <img src={imgUrl(item.cover, 400)} alt="" width={160} height={160} loading="lazy" decoding="async" className="h-full w-full object-cover" /> : <Newspaper className="m-auto h-full text-muted-foreground" aria-hidden="true" />}
       </div>
@@ -69,7 +69,7 @@ export function SearchResults({ query, results, onSelect, compact = false }: { q
       {results.photos.length ? <ResultSection title="Fotos" count={results.photos.length} compact={compact}>{results.photos.map((item) => <GallerySegmentCard key={item.slug} item={item} query={query} onSelect={onSelect} />)}</ResultSection> : null}
       {results.videos.length ? <ResultSection title="Vídeos" count={results.videos.length} compact={compact}>{results.videos.map((item) => <VideoSegmentCard key={item.slug} item={item} query={query} onSelect={onSelect} />)}</ResultSection> : null}
       {results.blog.length ? <ResultSection title="Blog" count={results.blog.length} compact={compact}>{results.blog.map((item) => <BlogResultCard key={item.slug} item={item} query={query} onSelect={onSelect} />)}</ResultSection> : null}
-      {compact ? <Link to="/busca" search={{ q: query.trim().slice(0, 120) }} onClick={onSelect} className="inline-flex items-center gap-1 text-sm text-ember underline underline-offset-4">Ver resultados em página inteira <ArrowUpRight size={14} /></Link> : null}
+      {compact ? <Link to="/busca/" search={{ q: query.trim().slice(0, 120) }} onClick={onSelect} className="inline-flex items-center gap-1 text-sm text-ember underline underline-offset-4">Ver resultados em página inteira <ArrowUpRight size={14} /></Link> : null}
     </div>
   );
 }

@@ -169,13 +169,13 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               {cfg.ctaLabel}
             </a>
             <Link
-              to="/portfolio"
+              to="/portfolio/"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Ver cases no portfólio
             </Link>
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Falar com o Alê
@@ -290,7 +290,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               As galerias abaixo servem como prova do resultado. A contratação, o que está incluído e o
               orçamento ficam nesta página; para ver todos os cases por segmento, vá ao{" "}
               <Link
-                to="/portfolio"
+                to="/portfolio/"
                 className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
               >
                 portfólio completo
@@ -317,7 +317,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               {gallery.map((c) => (
                 <li key={c.slug}>
                   <Link
-                    to="/fotografo-corporativo/$slug"
+                    to="/fotografo-corporativo/$slug/"
                     params={{ slug: c.slug }}
                     className="group block overflow-hidden rounded-sm border border-border bg-surface hover:border-ember"
                   >
@@ -384,7 +384,7 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               Solicitar orçamento no WhatsApp
             </a>
             <Link
-              to="/faq"
+              to="/faq/"
               className="inline-flex rounded-sm border border-border-strong px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Ver perguntas sobre orçamento

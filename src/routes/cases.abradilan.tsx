@@ -217,7 +217,7 @@ function CaseAbradilan() {
               return (
                 <li key={slug}>
                   <Link
-                    to="/videos/$slug"
+                    to="/videos/$slug/"
                     params={{ slug }}
                     className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
                     aria-label={`Assistir: ${video.title}`}
@@ -248,7 +248,7 @@ function CaseAbradilan() {
             })}
           </ul>
           <p className="mt-6">
-            <Link to="/videos" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -278,25 +278,25 @@ function CaseAbradilan() {
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/video-de-eventos-corporativos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/video-de-eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeo de eventos corporativos
             </Link>
-            <Link to="/eventos-corporativos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotografia de eventos corporativos
             </Link>
-            <Link to="/fotografo-de-feira-de-negocios" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-de-feira-de-negocios/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotógrafo de feiras de negócios
             </Link>
-            <Link to="/video-institucional" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/video-institucional/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeo institucional
             </Link>
-            <Link to="/videos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeos para empresas
             </Link>
-            <Link to="/fotos-corporativas" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotos-corporativas/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotos corporativas de equipe
             </Link>
-            <Link to="/fotografo-empresarial" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-empresarial/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotógrafo empresarial
             </Link>
           </div>

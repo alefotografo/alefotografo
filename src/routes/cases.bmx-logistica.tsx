@@ -264,7 +264,7 @@ function CaseBmx() {
           {/* Grade de roteiros temáticos: entra aqui quando os vídeos forem
               publicados no YouTube (VIDEOS_MORE acima). */}
           <p className="mt-6">
-            <Link to="/videos" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -294,22 +294,22 @@ function CaseBmx() {
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/fotografo-corporativo/$slug" params={{ slug: "fotografia-de-logistica" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotografia-de-logistica" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotografia de logística
             </Link>
-            <Link to="/fotografo-corporativo/$slug" params={{ slug: "banco-de-imagens-para-empresas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "banco-de-imagens-para-empresas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Banco de imagens para empresas
             </Link>
-            <Link to="/fotografo-corporativo/$slug" params={{ slug: "fotos-aereas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotos-aereas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotos aéreas de empresas
             </Link>
-            <Link to="/video-institucional" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/video-institucional/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeo institucional
             </Link>
-            <Link to="/videos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Vídeos para empresas
             </Link>
-            <Link to="/fotografo-empresarial" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link to="/fotografo-empresarial/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
               Fotógrafo empresarial
             </Link>
           </div>

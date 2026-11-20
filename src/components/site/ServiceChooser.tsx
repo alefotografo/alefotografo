@@ -9,7 +9,7 @@ type Service = {
   cta: string;
   wa: string;
   see: string;
-  to?: "/fotos-corporativas" | "/foto-profissional" | "/eventos-corporativos" | "/videos" | "/fotografo-empresarial";
+  to?: "/fotos-corporativas/" | "/foto-profissional/" | "/eventos-corporativos/" | "/videos/" | "/fotografo-empresarial/";
   catSlug?: string;
   img: string;
 };
@@ -21,7 +21,7 @@ const SERVICES: Service[] = [
     cta: "Solicitar orçamento",
     wa: "Olá Alexandre, preciso de fotografia corporativa para minha empresa. Pode me enviar um orçamento?",
     see: "Ver fotografia corporativa",
-    to: "/fotos-corporativas",
+    to: "/fotos-corporativas/",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg",
   },
   {
@@ -30,7 +30,7 @@ const SERVICES: Service[] = [
     cta: "Solicitar orçamento",
     wa: "Olá Alexandre, quero fazer um retrato profissional. Pode me passar valores e disponibilidade?",
     see: "Ver retratos profissionais",
-    to: "/foto-profissional",
+    to: "/foto-profissional/",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
   },
   {
@@ -39,7 +39,7 @@ const SERVICES: Service[] = [
     cta: "Solicitar orçamento",
     wa: "Olá Alexandre, gostaria de orçar a cobertura de um evento corporativo.",
     see: "Ver eventos corporativos",
-    to: "/eventos-corporativos",
+    to: "/eventos-corporativos/",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_encontro-farmarcas-2022-2467.JPG",
   },
   {
@@ -48,7 +48,7 @@ const SERVICES: Service[] = [
     cta: "Solicitar orçamento",
     wa: "Olá Alexandre, quero planejar um vídeo corporativo para minha empresa.",
     see: "Ver vídeos corporativos",
-    to: "/videos",
+    to: "/videos/",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
   },
   {
@@ -66,7 +66,7 @@ const SERVICES: Service[] = [
     cta: "Solicitar orçamento",
     wa: "Olá Alexandre, preciso de fotografia industrial para minha empresa. Pode me enviar um orçamento?",
     see: "Ver fotografia industrial",
-    to: "/fotografo-empresarial",
+    to: "/fotografo-empresarial/",
     img: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66655/industrial_dsc7266.jpg",
   },
 ];
@@ -120,7 +120,7 @@ export function ServiceChooser() {
                   </Link>
                 ) : (
                   <Link
-                    to="/fotografo-corporativo/$slug"
+                    to="/fotografo-corporativo/$slug/"
                     params={{ slug: s.catSlug as string }}
                     className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-ember"
                   >
@@ -134,7 +134,7 @@ export function ServiceChooser() {
 
         <div className="mt-10 flex justify-end border-t border-border pt-8">
           <Link
-            to="/fotografo-corporativo"
+            to="/fotografo-corporativo/"
             className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-muted-foreground hover:text-ember"
           >
             Ver todas as especialidades <ArrowUpRight size={14} />

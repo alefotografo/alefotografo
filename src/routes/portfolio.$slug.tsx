@@ -4,7 +4,7 @@ import { createFileRoute, redirect } from "@tanstack/react-router";
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
     throw redirect({
-      to: "/fotografo-corporativo/$slug",
+      to: "/fotografo-corporativo/$slug/",
       params: { slug: params.slug },
       statusCode: 301,
     });

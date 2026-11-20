@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 
 const items = [
-  { to: "/admin/desempenho", label: "Desempenho" },
-  { to: "/admin/indexacao", label: "Indexação" },
-  { to: "/admin/monitoramento", label: "Monitoramento" },
+  { to: "/admin/desempenho/", label: "Desempenho" },
+  { to: "/admin/indexacao/", label: "Indexação" },
+  { to: "/admin/monitoramento/", label: "Monitoramento" },
 ] as const;
 
 /** Navegação entre os painéis internos de administração. */

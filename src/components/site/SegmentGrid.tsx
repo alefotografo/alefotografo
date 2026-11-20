@@ -8,7 +8,7 @@ type Segment = {
   alt: string;
   width: number;
   height: number;
-  to?: "/fotografo-empresarial" | "/fotos-profissionais-medicos" | "/fotografia-para-advogados" | "/fotos-corporativas" | "/eventos-corporativos";
+  to?: "/fotografo-empresarial/" | "/fotos-profissionais-medicos/" | "/fotografia-para-advogados/" | "/fotos-corporativas/" | "/eventos-corporativos/";
   catSlug?: string;
   seeLabel: string;
 };
@@ -20,7 +20,7 @@ const SEGMENTS: Segment[] = [
     alt: "Máquina em linha de produção industrial",
     width: 1920,
     height: 1285,
-    to: "/fotografo-empresarial",
+    to: "/fotografo-empresarial/",
     seeLabel: "Ver fotografia industrial",
   },
   {
@@ -38,7 +38,7 @@ const SEGMENTS: Segment[] = [
     alt: "Fotografia profissional para médicos e clínicas",
     width: 1920,
     height: 1277,
-    to: "/fotos-profissionais-medicos",
+    to: "/fotos-profissionais-medicos/",
     seeLabel: "Ver fotografia para saúde",
   },
   {
@@ -47,7 +47,7 @@ const SEGMENTS: Segment[] = [
     alt: "Fotografia para escritórios de advocacia",
     width: 1920,
     height: 1280,
-    to: "/fotografia-para-advogados",
+    to: "/fotografia-para-advogados/",
     seeLabel: "Ver fotografia para advocacia",
   },
   {
@@ -56,7 +56,7 @@ const SEGMENTS: Segment[] = [
     alt: "Equipe corporativa reunida em escritório em São Paulo",
     width: 1920,
     height: 1623,
-    to: "/fotos-corporativas",
+    to: "/fotos-corporativas/",
     seeLabel: "Ver fotografia corporativa",
   },
   {
@@ -65,7 +65,7 @@ const SEGMENTS: Segment[] = [
     alt: "Fotografia de eventos corporativos e feiras",
     width: 1920,
     height: 1278,
-    to: "/eventos-corporativos",
+    to: "/eventos-corporativos/",
     seeLabel: "Ver eventos e feiras",
   },
 ];
@@ -110,7 +110,7 @@ export function SegmentGrid() {
                   </Link>
                 ) : (
                   <Link
-                    to="/fotografo-corporativo/$slug"
+                    to="/fotografo-corporativo/$slug/"
                     params={{ slug: s.catSlug as string }}
                     className="mt-4 inline-flex min-h-[44px] items-center gap-1 text-sm text-muted-foreground hover:text-ember"
                   >

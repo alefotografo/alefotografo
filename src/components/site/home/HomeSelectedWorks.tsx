@@ -18,7 +18,7 @@ export default function HomeSelectedWorks() {
             </p>
           </div>
           <Link
-            to="/fotografo-corporativo"
+            to="/fotografo-corporativo/"
             className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:min-h-0"
           >
             Ver todos os segmentos <ArrowUpRight size={14} />
@@ -29,7 +29,7 @@ export default function HomeSelectedWorks() {
           {selectedWorks.map((w) => (
             <Link
               key={w.src}
-              to="/fotografo-corporativo/$slug"
+              to="/fotografo-corporativo/$slug/"
               params={{ slug: w.gallery }}
               className="group relative block aspect-[4/3] overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
             >
@@ -63,7 +63,7 @@ export default function HomeSelectedWorks() {
             "categorySlug" in c ? (
               <Link
                 key={c.label}
-                to="/fotografo-corporativo/$slug"
+                to="/fotografo-corporativo/$slug/"
                 params={{ slug: c.categorySlug }}
                 className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
               >
@@ -72,7 +72,7 @@ export default function HomeSelectedWorks() {
             ) : (
               <Link
                 key={c.label}
-                to="/eventos-corporativos"
+                to="/eventos-corporativos/"
                 className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
               >
                 {c.label} <ArrowUpRight size={14} />

@@ -36,7 +36,7 @@ export function WhatsappCta() {
             WhatsApp
           </a>
           <Link
-            to="/contato"
+            to="/contato/"
             className="inline-flex min-h-12 items-center justify-center rounded-sm bg-ember text-sm font-medium text-accent-foreground"
           >
             Orçamento

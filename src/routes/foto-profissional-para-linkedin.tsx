@@ -192,19 +192,19 @@ function LinkedinPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/contato"
+              to="/contato/"
               className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Agendar minha foto
             </Link>
             <Link
-              to="/fotos-corporativas"
+              to="/fotos-corporativas/"
               className="inline-flex rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Fotos para o time todo
             </Link>
             <Link
-              to="/fotografia-para-clinicas"
+              to="/fotografia-para-clinicas/"
               className="inline-flex rounded-sm border border-border px-6 py-3 text-sm font-medium hover:border-ember"
             >
               Sou da área da saúde
@@ -262,7 +262,7 @@ function LinkedinPage() {
         <FaqList items={pageFaqs} />
         <div className="mt-12 text-center">
           <Link
-            to="/contato"
+            to="/contato/"
             className="inline-flex rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
           >
             Quero minha foto de LinkedIn

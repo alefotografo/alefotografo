@@ -30,19 +30,19 @@ export function QuoteBlock() {
           Solicitar orçamento pelo WhatsApp
         </a>
         <Link
-          to="/foto-profissional"
+          to="/foto-profissional/"
           className="inline-flex rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-background"
         >
           Ver retratos profissionais
         </Link>
         <Link
-          to="/foto-profissional-para-linkedin"
+          to="/foto-profissional-para-linkedin/"
           className="inline-flex rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-background"
         >
           Ver foto para LinkedIn
         </Link>
         <Link
-          to="/fotos-corporativas"
+          to="/fotos-corporativas/"
           className="inline-flex rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-background"
         >
           Ver fotografia corporativa
@@ -50,28 +50,28 @@ export function QuoteBlock() {
       </div>
       <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted-foreground">
         <li>
-          <Link to="/foto-profissional" className="text-ember underline underline-offset-4">
+          <Link to="/foto-profissional/" className="text-ember underline underline-offset-4">
             Foto Profissional em São Paulo
           </Link>
         </li>
         <li>
-          <Link to="/fotografo-corporativo/$slug" params={{ slug: "retrato-corporativo" }} className="text-ember underline underline-offset-4">
+          <Link to="/fotografo-corporativo/$slug/" params={{ slug: "retrato-corporativo" }} className="text-ember underline underline-offset-4">
             Retrato Profissional
           </Link>
         </li>
         <li>
-          <Link to="/foto-profissional-para-linkedin" className="text-ember underline underline-offset-4">
+          <Link to="/foto-profissional-para-linkedin/" className="text-ember underline underline-offset-4">
             Foto para LinkedIn
           </Link>
         </li>
         <li>
-          <Link to="/fotos-corporativas" className="text-ember underline underline-offset-4">
+          <Link to="/fotos-corporativas/" className="text-ember underline underline-offset-4">
             Fotografia Corporativa
           </Link>
         </li>
         <li>
           <Link
-            to="/fotografo-corporativo/$slug"
+            to="/fotografo-corporativo/$slug/"
             params={{ slug: "fotografo-de-eventos-corporativos" }}
             className="text-ember underline underline-offset-4"
           >

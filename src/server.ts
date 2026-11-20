@@ -152,7 +152,7 @@ function buildCsp(nonce: string): string {
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: https:",
     "font-src 'self'",
-    "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
+    "frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.openstreetmap.org",
     "media-src 'self'",
     "connect-src 'self' https:",
     "object-src 'none'",
@@ -190,6 +190,8 @@ async function withCsp(request: Request, response: Response): Promise<Response> 
 function redirectTrailingSlash(request: Request): Response | undefined {
   const url = new URL(request.url);
   const path = url.pathname;
+  if (request.method !== "GET" && request.method !== "HEAD") return undefined;
+  if (NO_EDGE_CACHE.test(path) || path.startsWith("/_serverFn")) return undefined;
   if (path === "/" || path.endsWith("/")) return undefined;
   if (/\.[a-zA-Z0-9]{1,5}$/.test(path)) return undefined;
   url.pathname = `${path}/`;

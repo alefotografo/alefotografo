@@ -155,7 +155,7 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   const path = normalize(pathname);
 
   // Rotas próprias: apenas normalização de barra final (301), sem regras legadas.
-  if (OWN_ROUTES.has(path)) return path !== pathname ? path : undefined;
+  if (OWN_ROUTES.has(path)) return undefined;
 
   const exact = EXACT[path];
   if (exact) return exact;

@@ -109,7 +109,21 @@ export const Route = createFileRoute("/blog/$slug")({
 
             datePublished: toISODate(loaderData.date),
             dateModified: toISODate((loaderData as { updatedAt?: string }).updatedAt ?? loaderData.date),
-            wordCount: loaderData.body?.join(" ").split(/\s+/).filter(Boolean).length || undefined,
+            // Conta todo o texto legível do artigo: corpo + lead (description) +
+            // ponte editorial. Antes contava só body — subinformava ~120 palavras.
+            wordCount: (() => {
+              const wc = (s: string | undefined) => (s ?? "").split(/\s+/).filter(Boolean).length;
+              const bridge = bridgeFor(loaderData.slug);
+              const bridgeText = bridge
+                ? bridge.paragraphs
+                    .flat()
+                    .map((seg) => (typeof seg === "string" ? seg : seg.label))
+                    .join(" ")
+                : "";
+              const total =
+                wc(loaderData.body?.join(" ")) + wc(loaderData.description) + wc(bridgeText);
+              return total > 0 ? total : undefined;
+            })(),
             speakable: {
               "@type": "SpeakableSpecification",
               cssSelector: ["h1", ".post-lead", "article p:first-of-type"],

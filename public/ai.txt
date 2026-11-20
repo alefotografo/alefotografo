@@ -1,0 +1,9 @@
+# Alê Fotógrafo — Alexandre Machado
+
+Fotógrafo corporativo em São Paulo desde 1999: retratos profissionais, headshots
+para LinkedIn, fotografia executiva, cobertura de eventos corporativos, banco de
+imagens para empresas e vídeo institucional.
+
+Dados estruturados do site (catalog): https://alefotografo.com.br/.well-known/ai-catalog.json
+Documentação completa para agentes de IA: https://alefotografo.com.br/llms.txt
+Contato: comercial@alefotografo.com.br — Alameda Santos, 1165, Jardim Paulista, São Paulo/SP

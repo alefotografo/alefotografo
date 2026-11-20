@@ -124,10 +124,10 @@ async function downloadWithRetry(url, tries = 3) {
 }
 
 async function upload(objectPath, buf) {
-  const res = await api(
-    `/object/${BUCKET}/${encodeURI(objectPath)}?upsert=false`,
-    { method: "POST", body: buf },
-  );
+  const res = await api(`/object/${BUCKET}/${encodeURI(objectPath)}?upsert=false`, {
+    method: "POST",
+    body: buf,
+  });
   // 409/400 com "Duplicate" = já existe (corrida benigna) — tratar como ok.
   if (res.ok) return "uploaded";
   const text = await res.text();

@@ -166,6 +166,15 @@ async function withCsp(request: Request, response: Response): Promise<Response> 
   const headers = new Headers(response.headers);
   headers.set("content-security-policy", buildCsp(nonce));
 
+  // Headers de segurança estáticos. public/_headers e netlify.toml só se
+  // aplicam a arquivos servidos direto da CDN — como o HTML agora é 100% SSR,
+  // as respostas da function precisam defini-los aqui (espelho de _headers).
+  // HSTS fica de fora de propósito: vem do painel Netlify (Site settings → HTTPS).
+  headers.set("x-content-type-options", "nosniff");
+  headers.set("x-frame-options", "DENY");
+  headers.set("referrer-policy", "strict-origin-when-cross-origin");
+  headers.set("permissions-policy", "camera=(), microphone=(), geolocation=()");
+
   const isHtml = (headers.get("content-type") ?? "").includes("text/html");
   if (!isHtml || !response.body || request.method === "HEAD") {
     return new Response(response.body, {

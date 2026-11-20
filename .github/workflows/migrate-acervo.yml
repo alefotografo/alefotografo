@@ -1,0 +1,58 @@
+name: Migrar acervo para Supabase
+
+# Upload em massa das fotos do Rackspace para o Supabase Storage.
+# Manual e idempotente: re-rodar pula objetos já existentes.
+# Requer o secret SUPABASE_SERVICE_ROLE_KEY (Settings → API no painel Supabase).
+#
+# Uso:
+#   gh workflow run migrate-acervo.yml -f dry_run=true
+#   gh workflow run migrate-acervo.yml -f limit=50
+#   gh workflow run migrate-acervo.yml   # inventário completo (~2305 arquivos)
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Máx. de arquivos (0 = todos)"
+        default: "0"
+      offset:
+        description: "Pular N primeiros"
+        default: "0"
+      dry_run:
+        description: "Dry-run (true/false)"
+        default: "true"
+      allow_failures:
+        description: "Não falhar o job com erros parciais (true/false)"
+        default: "false"
+
+permissions:
+  contents: read
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Migrar acervo (idempotente)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          LIMIT: ${{ inputs.limit }}
+          OFFSET: ${{ inputs.offset }}
+          DRY_RUN: ${{ inputs.dry_run == 'true' && '1' || '0' }}
+          ALLOW_FAILURES: ${{ inputs.allow_failures == 'true' && '1' || '0' }}
+          CONCURRENCY: "8"
+        run: node scripts/migrate-acervo.mjs
+
+      - name: Publicar relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: migrate-report
+          path: migrate-report.json

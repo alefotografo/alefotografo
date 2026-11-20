@@ -18,11 +18,13 @@ const SOLUCOES = [
   },
   {
     title: "Reconhecimento facial",
-    texto: "Cada participante pode localizar suas fotografias por reconhecimento facial e fazer o download diretamente no celular.",
+    texto:
+      "Cada participante pode localizar suas fotografias por reconhecimento facial e fazer o download diretamente no celular.",
   },
   {
     title: "Produção audiovisual e aftermovie",
-    texto: "Filmagem integral, captação em takes e produção de vídeos com os principais momentos do evento.",
+    texto:
+      "Filmagem integral, captação em takes e produção de vídeos com os principais momentos do evento.",
   },
 ] as const;
 

@@ -125,11 +125,12 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Fundo, luz, enquadramento e postura em reuniões remotas. Veja como manter uma imagem profissional consistente trabalhando de casa.",
   },
-  "fotografo-ensina-que-foto-profissional-aparece-14-vezes-mais-do-que-uma-foto-amadora-no-linkedin": {
-    title: "Foto Profissional Aparece 14x Mais no LinkedIn",
-    description:
-      "Perfis com foto profissional recebem muito mais visualizações do que perfis com foto amadora. Entenda o porquê e o que muda no seu retrato.",
-  },
+  "fotografo-ensina-que-foto-profissional-aparece-14-vezes-mais-do-que-uma-foto-amadora-no-linkedin":
+    {
+      title: "Foto Profissional Aparece 14x Mais no LinkedIn",
+      description:
+        "Perfis com foto profissional recebem muito mais visualizações do que perfis com foto amadora. Entenda o porquê e o que muda no seu retrato.",
+    },
   "fotografo-de-retrato-corporativo": {
     title: "Retratos Corporativos da Diretoria da ASUS",
     description:
@@ -884,21 +885,23 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Os atalhos do Photoshop que fotógrafos e designers mais usam no dia a dia — acelere o fluxo de trabalho e ganhe tempo na edição.",
   },
-  "mindfulness-saiba-o-que-e-e-como-essa-tecnica-pode-ajudar-voce-em-sua-vida-pessoal-e-profissional": {
-    title: "Mindfulness: O Que É e Como Ajuda na Carreira",
-    description:
-      "O que é mindfulness, quais técnicas usar no trabalho e como a prática influencia a postura, a expressão e a presença na foto profissional.",
-  },
+  "mindfulness-saiba-o-que-e-e-como-essa-tecnica-pode-ajudar-voce-em-sua-vida-pessoal-e-profissional":
+    {
+      title: "Mindfulness: O Que É e Como Ajuda na Carreira",
+      description:
+        "O que é mindfulness, quais técnicas usar no trabalho e como a prática influencia a postura, a expressão e a presença na foto profissional.",
+    },
   "clinica-par": {
     title: "Fotos de Clínica de Psicologia em Moema — Case",
     description:
       "Fotografia de ambientes e retratos dos psicólogos da Clínica PAR em Moema: como planejar e executar a sessão em clínica de saúde mental.",
   },
-  "sua-empresa-funciona-sem-voce-aprenda-a-profissionalizar-a-gestao-para-que-ela-continue-a-existir-sem-voce": {
-    title: "Sua Empresa Funciona Sem Você? Como Profissionalizar",
-    description:
-      "Gestão por processos, delegação e imagem corporativa: como estruturar a empresa para crescer além do fundador — e o papel da foto institucional.",
-  },
+  "sua-empresa-funciona-sem-voce-aprenda-a-profissionalizar-a-gestao-para-que-ela-continue-a-existir-sem-voce":
+    {
+      title: "Sua Empresa Funciona Sem Você? Como Profissionalizar",
+      description:
+        "Gestão por processos, delegação e imagem corporativa: como estruturar a empresa para crescer além do fundador — e o papel da foto institucional.",
+    },
   "comportamento-do-consumidor-como-a-fotografia-pode-ser-usada-para-influenciar-beneficamente": {
     title: "Comportamento do Consumidor e Fotografia Corporativa",
     description:

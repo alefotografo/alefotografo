@@ -47,10 +47,30 @@ const ANSWER_BLOCK =
   "Fotografia corporativa é o conjunto de imagens que representa uma empresa: retratos da equipe e da diretoria, escritório, operação e eventos internos. É indicada para empresas que precisam de material próprio para site, LinkedIn, propostas e imprensa. Fotografamos em São Paulo e entregamos as imagens tratadas em até 1 dia útil, conforme o escopo.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
-  { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
-  { formato: "Cobertura de evento", onde: "No local do evento, em São Paulo e região", duracao: "Pelo período contratado da cobertura", entrega: "Seleção das melhores imagens no mesmo dia, quando prevista no escopo" },
+  {
+    formato: "Retrato individual",
+    onde: "Meu estúdio, o seu escritório ou locação externa",
+    duracao: "Cerca de 1 hora de captação",
+    entrega: "Imagens tratadas em até 1 dia útil",
+  },
+  {
+    formato: "Retratos de equipe ou diretoria",
+    onde: "No escritório da empresa, em blocos de horário",
+    duracao: "Cerca de 15 minutos por pessoa",
+    entrega: "Mesmo padrão visual para todos, em até 1 dia útil",
+  },
+  {
+    formato: "Ambiente e operação",
+    onde: "Na sede, escritório, clínica ou planta",
+    duracao: "Bloco de horas definido no orçamento",
+    entrega: "Imagens tratadas em até 1 dia útil",
+  },
+  {
+    formato: "Cobertura de evento",
+    onde: "No local do evento, em São Paulo e região",
+    duracao: "Pelo período contratado da cobertura",
+    entrega: "Seleção das melhores imagens no mesmo dia, quando prevista no escopo",
+  },
 ];
 
 export const Route = createFileRoute("/fotos-corporativas")({
@@ -191,11 +211,16 @@ const maisEspecialidades: { slug: string; label: string }[] = [
   { slug: "banco-de-imagens-para-empresas", label: "Banco de imagens para empresas" },
 ];
 
-
 function FotosCorporativasPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos/" }, { label: "Fotos corporativas" }]} />
+      <Breadcrumbs
+        items={[
+          { label: "Início", to: "/" },
+          { label: "Serviços", to: "/servicos/" },
+          { label: "Fotos corporativas" },
+        ]}
+      />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
@@ -272,7 +297,10 @@ function FotosCorporativasPage() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-                <BlockText text={b.p} className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground" />
+                <BlockText
+                  text={b.p}
+                  className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground"
+                />
                 {b.to ? (
                   <Link to={b.to} className="mt-5 text-sm font-medium text-ember hover:underline">
                     {b.linkLabel} →
@@ -294,7 +322,9 @@ function FotosCorporativasPage() {
 
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8 md:pb-20">
         <div className="max-w-3xl border-l-2 border-ember pl-5">
-          <h2 className="font-display text-xl font-semibold md:text-2xl">Prova real: estrutura e operação</h2>
+          <h2 className="font-display text-xl font-semibold md:text-2xl">
+            Prova real: estrutura e operação
+          </h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
             Em projetos de fotografia corporativa, também documentamos estrutura e operação. No
             trabalho realizado para a{" "}
@@ -349,13 +379,9 @@ function FotosCorporativasPage() {
         </div>
       </section>
 
-
       <section className="border-t border-border">
-
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 className="font-display text-2xl font-semibold md:text-4xl">
-            Galerias por segmento
-          </h2>
+          <h2 className="font-display text-2xl font-semibold md:text-4xl">Galerias por segmento</h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             Veja trabalhos reais em cada especialidade de fotografia corporativa.
           </p>
@@ -363,16 +389,16 @@ function FotosCorporativasPage() {
             {categories
               .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
               .map((c) => (
-              <li key={c.slug}>
-                <Link
-                  to="/fotografo-corporativo/$slug/"
-                  params={{ slug: c.slug }}
-                  className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
-                >
-                  {c.title}
-                </Link>
-              </li>
-            ))}
+                <li key={c.slug}>
+                  <Link
+                    to="/fotografo-corporativo/$slug/"
+                    params={{ slug: c.slug }}
+                    className="inline-flex rounded-full border border-border px-4 py-2 text-sm hover:border-ember hover:text-ember"
+                  >
+                    {c.title}
+                  </Link>
+                </li>
+              ))}
             <li>
               <Link
                 to="/fotografia-para-clinicas/"

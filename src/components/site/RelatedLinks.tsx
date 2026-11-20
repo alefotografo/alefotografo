@@ -12,11 +12,16 @@ export function RelatedLinks({
 }) {
   if (!cats.length && !posts.length) return null;
   return (
-    <aside className="mt-12 rounded-sm border border-border bg-surface p-6 md:p-8" aria-label={title}>
+    <aside
+      className="mt-12 rounded-sm border border-border bg-surface p-6 md:p-8"
+      aria-label={title}
+    >
       <h2 className="font-display text-xl font-semibold">{title}</h2>
       {cats.length > 0 && (
         <div className="mt-5">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Segmentos relacionados</p>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Segmentos relacionados
+          </p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {cats.map((c) => (
               <li key={c.slug}>
@@ -35,7 +40,9 @@ export function RelatedLinks({
       )}
       {posts.length > 0 && (
         <div className="mt-6">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Leituras recomendadas</p>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Leituras recomendadas
+          </p>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             {posts.map((p) => (
               <li key={p.slug}>

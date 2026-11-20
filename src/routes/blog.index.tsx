@@ -14,7 +14,8 @@ export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: buildMeta({
       title: "Blog de Fotografia Corporativa em São Paulo",
-      description: "Artigos sobre fotografia profissional, retratos corporativos, LinkedIn, vídeo e dicas para fortalecer sua imagem profissional.",
+      description:
+        "Artigos sobre fotografia profissional, retratos corporativos, LinkedIn, vídeo e dicas para fortalecer sua imagem profissional.",
       path: "/blog/",
     }),
     links: [
@@ -53,7 +54,10 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function normalize(s: string) {
-  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  return s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 }
 
 function BlogIndex() {
@@ -78,7 +82,8 @@ function BlogIndex() {
             Insights sobre fotografia e imagem profissional
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            {posts.length} artigos publicados sobre retrato corporativo, LinkedIn, equipamentos, dicas e estratégia de imagem para profissionais e empresas.
+            {posts.length} artigos publicados sobre retrato corporativo, LinkedIn, equipamentos,
+            dicas e estratégia de imagem para profissionais e empresas.
           </p>
 
           <div className="mt-8 max-w-md">
@@ -100,7 +105,8 @@ function BlogIndex() {
               />
             </div>
             <p className="mt-2 text-xs text-muted-foreground" aria-live="polite">
-              {filtered.length} {filtered.length === 1 ? "artigo encontrado" : "artigos encontrados"}
+              {filtered.length}{" "}
+              {filtered.length === 1 ? "artigo encontrado" : "artigos encontrados"}
             </p>
           </div>
         </div>
@@ -142,13 +148,22 @@ function BlogIndex() {
                 )}
                 <div className="flex flex-1 flex-col p-6">
                   {p.date && (
-                    <time dateTime={postDateISO(p.date)} className="text-xs uppercase tracking-wider text-muted-foreground">
+                    <time
+                      dateTime={postDateISO(p.date)}
+                      className="text-xs uppercase tracking-wider text-muted-foreground"
+                    >
                       {p.date}
                     </time>
                   )}
-                  <h2 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">{p.title}</h2>
-                  <p className="mt-3 line-clamp-3 flex-1 text-sm text-muted-foreground">{p.description}</p>
-                  <span className="mt-4 text-xs font-medium uppercase tracking-wider text-ember">Ler artigo →</span>
+                  <h2 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">
+                    {p.title}
+                  </h2>
+                  <p className="mt-3 line-clamp-3 flex-1 text-sm text-muted-foreground">
+                    {p.description}
+                  </p>
+                  <span className="mt-4 text-xs font-medium uppercase tracking-wider text-ember">
+                    Ler artigo →
+                  </span>
                 </div>
               </Link>
             ))}

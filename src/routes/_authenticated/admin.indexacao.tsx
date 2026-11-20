@@ -25,7 +25,10 @@ export const Route = createFileRoute("/_authenticated/admin/indexacao")({
     meta: [
       { title: "Relatório de indexação por lote | Alê Fotógrafo" },
       { name: "robots", content: "noindex, nofollow" },
-      { name: "description", content: "Painel interno de acompanhamento de indexação dos lotes de posts." },
+      {
+        name: "description",
+        content: "Painel interno de acompanhamento de indexação dos lotes de posts.",
+      },
     ],
   }),
   component: IndexingReportPage,
@@ -85,12 +88,13 @@ function IndexingReportPage() {
   );
 
   const chartData = useMemo(
-    () => [...batchStats].reverse().map((b) => ({
-      name: b.label.replace("Semana de ", ""),
-      Cobertura: b.coverage,
-      Impressões: b.impressions,
-      Cliques: b.clicks,
-    })),
+    () =>
+      [...batchStats].reverse().map((b) => ({
+        name: b.label.replace("Semana de ", ""),
+        Cobertura: b.coverage,
+        Impressões: b.impressions,
+        Cliques: b.clicks,
+      })),
     [batchStats],
   );
 
@@ -128,7 +132,8 @@ function IndexingReportPage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Relatório semanal de indexação</h1>
           <p className="mt-2 text-muted-foreground">
-            Dados do Google Search Console dos últimos 28 dias, agrupados pelos lotes semanais de publicação.
+            Dados do Google Search Console dos últimos 28 dias, agrupados pelos lotes semanais de
+            publicação.
           </p>
         </div>
         <div className="flex gap-2 print:hidden">
@@ -157,8 +162,8 @@ function IndexingReportPage() {
       {data?.ok && (
         <>
           <p className="mb-6 text-sm text-muted-foreground">
-            Propriedade: <span className="font-medium text-foreground">{data.siteUrl}</span> · Período:{" "}
-            {data.range?.start} a {data.range?.end}
+            Propriedade: <span className="font-medium text-foreground">{data.siteUrl}</span> ·
+            Período: {data.range?.start} a {data.range?.end}
           </p>
 
           <section className="mb-10 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -200,8 +205,20 @@ function IndexingReportPage() {
                   <YAxis tick={{ fontSize: 11 }} />
                   <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="Impressões" stroke="oklch(0.68 0.18 38)" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="Cliques" stroke="oklch(0.78 0 0)" strokeWidth={2} dot={false} />
+                  <Line
+                    type="monotone"
+                    dataKey="Impressões"
+                    stroke="oklch(0.68 0.18 38)"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="Cliques"
+                    stroke="oklch(0.78 0 0)"
+                    strokeWidth={2}
+                    dot={false}
+                  />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -254,7 +271,11 @@ function IndexingReportPage() {
                   {topUrls.map((r) => (
                     <tr key={r.slug} className="border-t">
                       <td className="p-3">
-                        <Link to="/blog/$slug/" params={{ slug: r.slug }} className="hover:underline">
+                        <Link
+                          to="/blog/$slug/"
+                          params={{ slug: r.slug }}
+                          className="hover:underline"
+                        >
                           {r.title}
                         </Link>
                         <span className="block text-xs text-muted-foreground">
@@ -285,7 +306,11 @@ function IndexingReportPage() {
             <ul className="grid gap-2 md:grid-cols-2">
               {zeroUrls.map((r) => (
                 <li key={r.slug} className="rounded-lg border bg-card p-3 text-sm">
-                  <Link to="/blog/$slug/" params={{ slug: r.slug }} className="font-medium hover:underline">
+                  <Link
+                    to="/blog/$slug/"
+                    params={{ slug: r.slug }}
+                    className="font-medium hover:underline"
+                  >
                     {r.title}
                   </Link>
                   <span className="block text-xs text-muted-foreground">
@@ -293,7 +318,11 @@ function IndexingReportPage() {
                   </span>
                 </li>
               ))}
-              {!zeroUrls.length && <li className="text-sm text-muted-foreground">Todos os posts já têm impressões. 🎉</li>}
+              {!zeroUrls.length && (
+                <li className="text-sm text-muted-foreground">
+                  Todos os posts já têm impressões. 🎉
+                </li>
+              )}
             </ul>
           </section>
         </>

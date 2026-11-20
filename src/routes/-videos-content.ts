@@ -97,8 +97,10 @@ export const SERVICOS: Servico[] = [
   {
     title: "Vídeo institucional",
     quem: "Indústrias, logística, escritórios e companhias que precisam apresentar estrutura e credibilidade.",
-    quando: "Em propostas comerciais, no site, em licitações, em feiras e na apresentação para novos clientes.",
-    entrega: "Roteiro, direção de cena, captação nas suas unidades, edição, color grading, trilha e versões para site, YouTube e apresentações.",
+    quando:
+      "Em propostas comerciais, no site, em licitações, em feiras e na apresentação para novos clientes.",
+    entrega:
+      "Roteiro, direção de cena, captação nas suas unidades, edição, color grading, trilha e versões para site, YouTube e apresentações.",
     cta: "Planejar meu vídeo institucional",
     wa: "vídeo institucional",
     thumbSlug: "video-institucional-bmx-logistica",
@@ -106,8 +108,10 @@ export const SERVICOS: Servico[] = [
   {
     title: "Vídeo de treinamento",
     quem: "RH, qualidade, segurança do trabalho e áreas técnicas que treinam equipes em várias unidades.",
-    quando: "Quando o mesmo treinamento se repete presencialmente, há alta rotatividade ou o procedimento precisa ser padronizado.",
-    entrega: "Roteiro didático a partir do procedimento da empresa, gravação em operação, narração, legendas e módulos por tema.",
+    quando:
+      "Quando o mesmo treinamento se repete presencialmente, há alta rotatividade ou o procedimento precisa ser padronizado.",
+    entrega:
+      "Roteiro didático a partir do procedimento da empresa, gravação em operação, narração, legendas e módulos por tema.",
     cta: "Falar sobre meu vídeo de treinamento",
     wa: "vídeo de treinamento",
     thumbSlug: "curso-de-prestacao-de-contas-eleitorais-2026-turma-sao-paulo",
@@ -115,8 +119,10 @@ export const SERVICOS: Servico[] = [
   {
     title: "Vídeo de integração",
     quem: "RH e comunicação interna que recebem novos colaboradores todo mês e querem padronizar o onboarding.",
-    quando: "No primeiro dia do colaborador, na apresentação da cultura, das normas internas e da estrutura.",
-    entrega: "Vídeo de boas-vindas, tour pelas áreas, mensagem da liderança, versões curtas por assunto e formato pronto para o portal de RH.",
+    quando:
+      "No primeiro dia do colaborador, na apresentação da cultura, das normas internas e da estrutura.",
+    entrega:
+      "Vídeo de boas-vindas, tour pelas áreas, mensagem da liderança, versões curtas por assunto e formato pronto para o portal de RH.",
     cta: "Planejar meu vídeo de integração",
     wa: "vídeo de integração",
     thumbSlug: "onemba",
@@ -124,8 +130,10 @@ export const SERVICOS: Servico[] = [
   {
     title: "Depoimentos em vídeo",
     quem: "Times comerciais que precisam de prova real para encurtar a decisão de compra em vendas B2B.",
-    quando: "Em propostas, no funil de vendas, em landing pages e quando o cliente pede referências antes de fechar.",
-    entrega: "Condução da entrevista, direção para quem não é acostumado à câmera, áudio limpo e cortes de 30s, 60s e versão completa.",
+    quando:
+      "Em propostas, no funil de vendas, em landing pages e quando o cliente pede referências antes de fechar.",
+    entrega:
+      "Condução da entrevista, direção para quem não é acostumado à câmera, áudio limpo e cortes de 30s, 60s e versão completa.",
     cta: "Quero gravar depoimentos de clientes",
     wa: "depoimentos em vídeo com clientes",
     thumbSlug: "depoimento-de-cliente-hausy-robotton-producao-ale-fotografo",
@@ -133,8 +141,10 @@ export const SERVICOS: Servico[] = [
   {
     title: "Cobertura de eventos corporativos",
     quem: "Empresas e associações que realizam convenções, fóruns, premiações, SIPAT e confraternizações.",
-    quando: "Quando o evento precisa render conteúdo depois: relatório para a diretoria, divulgação da próxima edição e comunicação interna.",
-    entrega: "Cobertura durante o evento, entrevistas com participantes, aftermovie, cortes para redes sociais e entrega acelerada.",
+    quando:
+      "Quando o evento precisa render conteúdo depois: relatório para a diretoria, divulgação da próxima edição e comunicação interna.",
+    entrega:
+      "Cobertura durante o evento, entrevistas com participantes, aftermovie, cortes para redes sociais e entrega acelerada.",
     cta: "Orçar cobertura do meu evento",
     wa: "cobertura de vídeo do meu evento corporativo",
     thumbSlug: "ibde-rio2026",
@@ -142,15 +152,23 @@ export const SERVICOS: Servico[] = [
   {
     title: "Reels corporativos",
     quem: "Marketing e comunicação que precisam alimentar LinkedIn e Instagram com constância e padrão profissional.",
-    quando: "Em ações recorrentes de marca empregadora, bastidores, lançamentos e presença em eventos.",
-    entrega: "Captação vertical, edição dinâmica, legendas queimadas e pacotes com vários cortes gravados na mesma diária.",
+    quando:
+      "Em ações recorrentes de marca empregadora, bastidores, lançamentos e presença em eventos.",
+    entrega:
+      "Captação vertical, edição dinâmica, legendas queimadas e pacotes com vários cortes gravados na mesma diária.",
     cta: "Falar sobre reels corporativos",
     wa: "reels corporativos",
     thumbSlug: "9faznegocios",
   },
 ];
 
-export type Segmento = { title: string; desafio: string; indicado: string; beneficio: string; cta: string };
+export type Segmento = {
+  title: string;
+  desafio: string;
+  indicado: string;
+  beneficio: string;
+  cta: string;
+};
 
 export const SEGMENTOS: Segmento[] = [
   {
@@ -162,7 +180,8 @@ export const SEGMENTOS: Segmento[] = [
   },
   {
     title: "Clínicas e hospitais",
-    desafio: "O paciente decide por confiança e chega ao site sem conhecer a estrutura nem a equipe.",
+    desafio:
+      "O paciente decide por confiança e chega ao site sem conhecer a estrutura nem a equipe.",
     indicado: "Vídeo institucional da estrutura e vídeos curtos explicando procedimentos.",
     beneficio: "Reduz a insegurança antes do agendamento e valoriza o atendimento.",
     cta: "Quero um vídeo para minha clínica",
@@ -199,12 +218,14 @@ export const SEGMENTOS: Segmento[] = [
     title: "Eventos corporativos",
     desafio: "O evento acontece, gera investimento alto e sobra pouco material aproveitável.",
     indicado: "Cobertura em vídeo, aftermovie, gravação de palestras e depoimentos no local.",
-    beneficio: "Transforma o evento em conteúdo para relatório interno e divulgação da próxima edição.",
+    beneficio:
+      "Transforma o evento em conteúdo para relatório interno e divulgação da próxima edição.",
     cta: "Orçar cobertura de evento",
   },
   {
     title: "Profissionais liberais",
-    desafio: "A venda depende de reputação pessoal, mas não há nada em vídeo que mostre o trabalho.",
+    desafio:
+      "A venda depende de reputação pessoal, mas não há nada em vídeo que mostre o trabalho.",
     indicado: "Vídeo de apresentação profissional e cortes verticais para redes.",
     beneficio: "Aproxima o cliente antes do primeiro contato e diferencia da concorrência.",
     cta: "Falar sobre meu projeto",
@@ -212,20 +233,50 @@ export const SEGMENTOS: Segmento[] = [
 ];
 
 export const PROCESSO = [
-  { n: "01", title: "Briefing e roteiro", text: "Entendemos o objetivo comercial e desenhamos a narrativa." },
-  { n: "02", title: "Pré-produção", text: "Planejamento, locações, equipe e cronograma definidos." },
+  {
+    n: "01",
+    title: "Briefing e roteiro",
+    text: "Entendemos o objetivo comercial e desenhamos a narrativa.",
+  },
+  {
+    n: "02",
+    title: "Pré-produção",
+    text: "Planejamento, locações, equipe e cronograma definidos.",
+  },
   { n: "03", title: "Captação", text: "Filmagem com equipamentos de cinema e direção de cena." },
   { n: "04", title: "Edição e finalização", text: "Montagem, color grading, trilha e mixagem." },
-  { n: "05", title: "Entrega", text: "Versões para institucional, Reels, YouTube e apresentações." },
+  {
+    n: "05",
+    title: "Entrega",
+    text: "Versões para institucional, Reels, YouTube e apresentações.",
+  },
 ];
 
 export const DIFERENCIAIS = [
-  { title: "Mais de 30 anos em imagem corporativa", text: "Repertório em indústria, logística, saúde, jurídico e eventos." },
-  { title: "Direção de cena", text: "Executivos e colaboradores raramente são atores. Conduzimos a gravação para a fala sair natural." },
-  { title: "Captação profissional", text: "Câmeras de cinema, iluminação e áudio dedicados, com equipe treinada para gravar na empresa em operação." },
-  { title: "Edição voltada à comunicação", text: "Montagem clara, no tempo certo do canal e alinhada à identidade visual da companhia." },
-  { title: "Atendimento em São Paulo e região", text: "Grande SP, ABC, Alphaville, Faria Lima, Paulista e Berrini — e projetos em todo o Brasil." },
-  { title: "Processo previsível", text: "Cronograma, escopo e aprovações definidos antes da primeira diária." },
+  {
+    title: "Mais de 30 anos em imagem corporativa",
+    text: "Repertório em indústria, logística, saúde, jurídico e eventos.",
+  },
+  {
+    title: "Direção de cena",
+    text: "Executivos e colaboradores raramente são atores. Conduzimos a gravação para a fala sair natural.",
+  },
+  {
+    title: "Captação profissional",
+    text: "Câmeras de cinema, iluminação e áudio dedicados, com equipe treinada para gravar na empresa em operação.",
+  },
+  {
+    title: "Edição voltada à comunicação",
+    text: "Montagem clara, no tempo certo do canal e alinhada à identidade visual da companhia.",
+  },
+  {
+    title: "Atendimento em São Paulo e região",
+    text: "Grande SP, ABC, Alphaville, Faria Lima, Paulista e Berrini — e projetos em todo o Brasil.",
+  },
+  {
+    title: "Processo previsível",
+    text: "Cronograma, escopo e aprovações definidos antes da primeira diária.",
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -239,7 +290,9 @@ export const GROUP_DEFS = [
     blurb:
       "Conte a história, os valores e o diferencial da sua empresa em um filme que transmite credibilidade.",
     test: (t: string) =>
-      /institucional|manifesto|unidade|estrutura|opera[çc][ãa]o|log[íi]stic|ind[úu]stri|solu[çc][õo]es|sustentabilidade|centro de distribui|moda infantil/i.test(t),
+      /institucional|manifesto|unidade|estrutura|opera[çc][ãa]o|log[íi]stic|ind[úu]stri|solu[çc][õo]es|sustentabilidade|centro de distribui|moda infantil/i.test(
+        t,
+      ),
   },
   {
     id: "eventos",
@@ -247,7 +300,9 @@ export const GROUP_DEFS = [
     blurb:
       "Cobertura completa de convenções, congressos, lançamentos e confraternizações, com entrega ágil e qualidade de cinema.",
     test: (t: string) =>
-      /f[óo]rum|congress|conven[çc][ãa]o|festa|confraterniza|encontro|jantar|pr[êe]mio|celebra|summit|kick ?off|meeting|curso|aul[ãa]o|evento|sipat|almo[çc]o|coquetel|anos|boas festas|women in tech|fincon|mba/i.test(t),
+      /f[óo]rum|congress|conven[çc][ãa]o|festa|confraterniza|encontro|jantar|pr[êe]mio|celebra|summit|kick ?off|meeting|curso|aul[ãa]o|evento|sipat|almo[çc]o|coquetel|anos|boas festas|women in tech|fincon|mba/i.test(
+        t,
+      ),
   },
   {
     id: "feiras",
@@ -255,7 +310,9 @@ export const GROUP_DEFS = [
     blurb:
       "Registro e aftermovie da sua participação em feiras, para gerar conteúdo e provar resultado.",
     test: (t: string) =>
-      /feira|beauty fair|abrafati|febrava|fce pharma|hospitalar|conex[ãa]o farma|show|stand/i.test(t),
+      /feira|beauty fair|abrafati|febrava|fce pharma|hospitalar|conex[ãa]o farma|show|stand/i.test(
+        t,
+      ),
   },
   {
     id: "reels",

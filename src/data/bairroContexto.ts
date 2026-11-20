@@ -7,7 +7,7 @@
  */
 export const bairroContexto: Record<string, string[]> = {
   "vila-olimpia": [
-        "A Vila Olímpia virou endereço corporativo depois da abertura da Ponte Estaiada e da verticalização das ruas Gomes de Carvalho, Fidêncio Ramos e Casa do Ator. O bairro mistura torres de escritório com prédios baixos reformados: no mesmo quarteirão há uma gestora com recepção de vidro e uma agência instalada num sobrado adaptado. Isso muda a produção — em torre trabalho com o que a sala oferece (janela do piso alto, sala de reunião, corredor neutro); em sobrado costumo montar fundo e luz portátil, porque o pé-direito e o mobiliário raramente ajudam.",
+    "A Vila Olímpia virou endereço corporativo depois da abertura da Ponte Estaiada e da verticalização das ruas Gomes de Carvalho, Fidêncio Ramos e Casa do Ator. O bairro mistura torres de escritório com prédios baixos reformados: no mesmo quarteirão há uma gestora com recepção de vidro e uma agência instalada num sobrado adaptado. Isso muda a produção — em torre trabalho com o que a sala oferece (janela do piso alto, sala de reunião, corredor neutro); em sobrado costumo montar fundo e luz portátil, porque o pé-direito e o mobiliário raramente ajudam.",
     "Na prática, a região concentra clientes de tecnologia, publicidade, saúde estética e escritórios de serviços. Os pedidos mais comuns são retrato individual para LinkedIn de time inteiro em uma manhã, foto de ambiente para site e cobertura de convenção nos hotéis da Nações Unidas e da Funchal. A garagem quase sempre é curta e o acesso passa por portaria com cadastro prévio, então peço nome completo, documento e horário de janela com antecedência para não perder tempo de estúdio no lobby.",
   ],
   "faria-lima": [
@@ -148,7 +148,16 @@ export const bairroContexto: Record<string, string[]> = {
  */
 export const bairroLinks: Record<string, { to: string; label: string }> = {
   lapa: { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
-  "agua-branca": { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
-  "rudge-ramos": { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
-  "centro-diadema": { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+  "agua-branca": {
+    to: "/fotografo-corporativo/fotografia-de-logistica",
+    label: "fotografia de logística",
+  },
+  "rudge-ramos": {
+    to: "/fotografo-corporativo/fotografia-de-logistica",
+    label: "fotografia de logística",
+  },
+  "centro-diadema": {
+    to: "/fotografo-corporativo/fotografia-de-logistica",
+    label: "fotografia de logística",
+  },
 };

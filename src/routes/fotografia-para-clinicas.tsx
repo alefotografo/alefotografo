@@ -13,7 +13,6 @@ import { serviceStats, statsLead } from "@/data/stats";
 import { FormatsTable, type SessionFormat } from "@/components/site/FormatsTable";
 import { BlockText } from "@/components/site/BlockText";
 
-
 const URL_PATH = "/fotografia-para-clinicas/";
 const CANONICAL = `${SITE_ORIGIN}${URL_PATH}`;
 
@@ -58,9 +57,24 @@ const ANSWER_BLOCK =
   "Fotografia para clínicas é o conjunto de imagens da estrutura e da equipe de saúde: retrato dos profissionais, recepção, consultórios e atendimento. É indicada para clínicas médicas, odontológicas e estéticas em São Paulo. Realizo a produção no seu endereço, com respeito à rotina de pacientes, e entrego as imagens tratadas em até 1 dia útil.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
-  { formato: "Consultório e recepção", onde: "Na clínica, com a operação em funcionamento", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
+  {
+    formato: "Retrato individual",
+    onde: "Meu estúdio, o seu escritório ou locação externa",
+    duracao: "Cerca de 1 hora de captação",
+    entrega: "Imagens tratadas em até 1 dia útil",
+  },
+  {
+    formato: "Retratos de equipe ou diretoria",
+    onde: "No escritório da empresa, em blocos de horário",
+    duracao: "Cerca de 15 minutos por pessoa",
+    entrega: "Mesmo padrão visual para todos, em até 1 dia útil",
+  },
+  {
+    formato: "Consultório e recepção",
+    onde: "Na clínica, com a operação em funcionamento",
+    duracao: "Bloco de horas definido no orçamento",
+    entrega: "Imagens tratadas em até 1 dia útil",
+  },
 ];
 
 export const Route = createFileRoute("/fotografia-para-clinicas")({
@@ -126,7 +140,12 @@ export const Route = createFileRoute("/fotografia-para-clinicas")({
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Início", item: SITE_ORIGIN },
-                { "@type": "ListItem", position: 2, name: "Fotografia para clínicas", item: CANONICAL },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Fotografia para clínicas",
+                  item: CANONICAL,
+                },
               ],
             },
           ],
@@ -199,8 +218,6 @@ const segmentos = [
   },
 ];
 
-
-
 function FotografiaParaClinicasPage() {
   const cats = clinicCategorySlugs
     .map((slug) => categories.find((c) => c.slug === slug))
@@ -208,7 +225,13 @@ function FotografiaParaClinicasPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos" }, { label: "Fotografia para clínicas" }]} />
+      <Breadcrumbs
+        items={[
+          { label: "Início", to: "/" },
+          { label: "Serviços", to: "/servicos" },
+          { label: "Fotografia para clínicas" },
+        ]}
+      />
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
@@ -226,7 +249,6 @@ function FotografiaParaClinicasPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
         </div>
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
             Saúde e bem-estar
           </p>
@@ -278,7 +300,10 @@ function FotografiaParaClinicasPage() {
           {blocos.map((b) => (
             <article key={b.h} className="rounded-sm border border-border bg-surface p-6">
               <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
+              <BlockText
+                text={b.p}
+                className="mt-3 text-sm leading-relaxed text-muted-foreground"
+              />
             </article>
           ))}
         </div>
@@ -314,7 +339,10 @@ function FotografiaParaClinicasPage() {
           {segmentos.map((s) => {
             const cover = categories.find((c) => c.slug === s.slug)?.cover;
             return (
-              <article key={s.h} className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface">
+              <article
+                key={s.h}
+                className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface"
+              >
                 {cover ? (
                   <div className="aspect-[3/2] w-full overflow-hidden bg-background">
                     <img
@@ -346,11 +374,7 @@ function FotografiaParaClinicasPage() {
             );
           })}
         </div>
-
       </section>
-
-
-
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <h2 className="font-display text-2xl font-semibold md:text-4xl">Galerias relacionadas</h2>

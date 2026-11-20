@@ -14,8 +14,7 @@ const PATH = "/video-institucional/";
 const TITLE = "Vídeo Institucional em São Paulo | Produção para Empresas";
 const DESCRIPTION =
   "Produção de vídeo institucional em São Paulo para apresentar empresas, estruturas, equipes, serviços e operações. Roteiro, captação, direção e edição.";
-const WA =
-  "Olá Alexandre, quero um orçamento de vídeo institucional para minha empresa.";
+const WA = "Olá Alexandre, quero um orçamento de vídeo institucional para minha empresa.";
 
 /* Aplicações do vídeo institucional. */
 const APLICACOES = [
@@ -31,22 +30,57 @@ const APLICACOES = [
 
 /* Cases institucionais reais já publicados no catálogo de vídeos. */
 const CASES: { slug: string; label: string; segmento: string }[] = [
-  { slug: "flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional", label: "FlexFunds", segmento: "Financeiro" },
+  {
+    slug: "flexfunds-solucoes-financeiras-inteligentes-para-empresas-video-institucional",
+    label: "FlexFunds",
+    segmento: "Financeiro",
+  },
   { slug: "ativa-log", label: "ATIVA Log", segmento: "Logística" },
-  { slug: "video-institucional-rocha-queiroz-advogados", label: "Rocha & Queiroz", segmento: "Jurídico" },
-  { slug: "nitriflex-industria-quimica-de-polimeros-especiais-e-borrachas-nitrilicas", label: "Nitriflex", segmento: "Indústria química" },
-  { slug: "fiorde-logistica-solucoes-logisticas-integradas-para-empresas", label: "Fiorde Logística", segmento: "Logística" },
+  {
+    slug: "video-institucional-rocha-queiroz-advogados",
+    label: "Rocha & Queiroz",
+    segmento: "Jurídico",
+  },
+  {
+    slug: "nitriflex-industria-quimica-de-polimeros-especiais-e-borrachas-nitrilicas",
+    label: "Nitriflex",
+    segmento: "Indústria química",
+  },
+  {
+    slug: "fiorde-logistica-solucoes-logisticas-integradas-para-empresas",
+    label: "Fiorde Logística",
+    segmento: "Logística",
+  },
   { slug: "video-institucional-bmx-logistica", label: "BMX Logística", segmento: "Logística" },
   { slug: "unitec-video-institucional", label: "UNITEC", segmento: "Indústria" },
-  { slug: "sq-quimica-unidade-vinhedo", label: "SQ Química — Unidade Vinhedo", segmento: "Química" },
+  {
+    slug: "sq-quimica-unidade-vinhedo",
+    label: "SQ Química — Unidade Vinhedo",
+    segmento: "Química",
+  },
 ];
 
 const PROCESSO: { h: string; p: string }[] = [
-  { h: "1. Briefing", p: "Entendemos o objetivo do vídeo, o público, os canais de uso e o que a empresa precisa comunicar." },
-  { h: "2. Planejamento e roteiro", p: "Estruturamos a narrativa, a ordem dos assuntos, as locações e o cronograma de captação." },
-  { h: "3. Captação", p: "Gravamos entrevistas, ambientes, equipes e operações com direção durante toda a produção." },
-  { h: "4. Edição", p: "Montagem, tratamento de imagem e som, trilha e inserção de gráficos quando necessário." },
-  { h: "5. Entrega", p: "Versão final aprovada e, quando o projeto pede, versões adaptadas para diferentes canais." },
+  {
+    h: "1. Briefing",
+    p: "Entendemos o objetivo do vídeo, o público, os canais de uso e o que a empresa precisa comunicar.",
+  },
+  {
+    h: "2. Planejamento e roteiro",
+    p: "Estruturamos a narrativa, a ordem dos assuntos, as locações e o cronograma de captação.",
+  },
+  {
+    h: "3. Captação",
+    p: "Gravamos entrevistas, ambientes, equipes e operações com direção durante toda a produção.",
+  },
+  {
+    h: "4. Edição",
+    p: "Montagem, tratamento de imagem e som, trilha e inserção de gráficos quando necessário.",
+  },
+  {
+    h: "5. Entrega",
+    p: "Versão final aprovada e, quando o projeto pede, versões adaptadas para diferentes canais.",
+  },
 ];
 
 const FAQS: Faq[] = [
@@ -133,7 +167,9 @@ function VideoInstitucional() {
             Vídeo institucional para empresas em {site.city}
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produzimos vídeos institucionais para apresentar empresas, estruturas, equipes, serviços e operações com comunicação clara e profissional. Cuidamos do planejamento, roteiro, captação, direção e edição de cada produção.
+            Produzimos vídeos institucionais para apresentar empresas, estruturas, equipes, serviços
+            e operações com comunicação clara e profissional. Cuidamos do planejamento, roteiro,
+            captação, direção e edição de cada produção.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -157,18 +193,27 @@ function VideoInstitucional() {
       {/* Produção completa */}
       <section className="border-b border-border bg-surface" aria-labelledby="producao">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="producao" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="producao"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produção completa de vídeo institucional
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
             <p>
-              Cada produção começa pelo planejamento: entendemos o objetivo do vídeo, o público e os canais em que ele será utilizado, e a partir disso desenvolvemos o roteiro e a sequência de gravação.
+              Cada produção começa pelo planejamento: entendemos o objetivo do vídeo, o público e os
+              canais em que ele será utilizado, e a partir disso desenvolvemos o roteiro e a
+              sequência de gravação.
             </p>
             <p>
-              Na captação, nossa equipe grava ambientes, equipes, serviços e operações, com entrevistas de executivos e colaboradores quando o projeto pede, além das imagens de apoio que sustentam a narrativa.
+              Na captação, nossa equipe grava ambientes, equipes, serviços e operações, com
+              entrevistas de executivos e colaboradores quando o projeto pede, além das imagens de
+              apoio que sustentam a narrativa.
             </p>
             <p>
-              Na edição, montamos o material com tratamento de imagem e som, trilha e locução quando aplicável, e preparamos versões adaptadas para diferentes canais quando o vídeo será usado em site, apresentações e redes.
+              Na edição, montamos o material com tratamento de imagem e som, trilha e locução quando
+              aplicável, e preparamos versões adaptadas para diferentes canais quando o vídeo será
+              usado em site, apresentações e redes.
             </p>
           </div>
         </div>
@@ -177,7 +222,10 @@ function VideoInstitucional() {
       {/* Aplicações */}
       <section className="border-b border-border" aria-labelledby="aplicacoes">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="aplicacoes" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="aplicacoes"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Onde o vídeo institucional pode ser utilizado
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -191,10 +239,19 @@ function VideoInstitucional() {
       </section>
 
       {/* Cases */}
-      <section id="trabalhos" className="border-b border-border scroll-mt-20" aria-labelledby="trabalhos-titulo">
+      <section
+        id="trabalhos"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="trabalhos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
-          <h2 id="trabalhos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Portfólio
+          </p>
+          <h2
+            id="trabalhos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Vídeos institucionais realizados
           </h2>
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -241,36 +298,60 @@ function VideoInstitucional() {
               );
             })}
           </ul>
-          <Link to="/videos/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/videos/"
+            className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground"
+          >
             Ver todas as produções de vídeo corporativo →
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
             Cases comerciais com o contexto completo do projeto:{" "}
-            <Link to="/cases/ativa-logistica/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/ativa-logistica/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               ATIVA Logística
             </Link>{" "}
             e{" "}
-            <Link to="/cases/rocha-e-queiroz-advogados/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/rocha-e-queiroz-advogados/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Rocha & Queiroz Advogados
             </Link>
             ,{" "}
-            <Link to="/cases/sq-quimica/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/sq-quimica/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               SQ Química
             </Link>{" "}
             e{" "}
-            <Link to="/cases/abradilan/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/abradilan/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               ABRADILAN
             </Link>
             ,{" "}
-            <Link to="/cases/nitriflex/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/nitriflex/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Nitriflex
             </Link>{" "}
             e{" "}
-            <Link to="/cases/fiorde/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/fiorde/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Fiorde Logística
             </Link>
             . Todos os cases estão no{" "}
-            <Link to="/cases/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               índice de cases
             </Link>
             .
@@ -281,11 +362,17 @@ function VideoInstitucional() {
       {/* Autoridade */}
       <section className="border-b border-border bg-surface" aria-labelledby="segmentos">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="segmentos" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="segmentos"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Experiência em produções para diferentes segmentos
           </h2>
           <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
-            São mais de 30 anos produzindo imagem corporativa para empresas de logística, indústria, química, financeiro e jurídico, entre outros setores. Essa bagagem permite entrar em operações, plantas, centros de distribuição e escritórios com agilidade, respeitando rotina, segurança e cronograma de cada empresa.
+            São mais de 30 anos produzindo imagem corporativa para empresas de logística, indústria,
+            química, financeiro e jurídico, entre outros setores. Essa bagagem permite entrar em
+            operações, plantas, centros de distribuição e escritórios com agilidade, respeitando
+            rotina, segurança e cronograma de cada empresa.
           </p>
         </div>
       </section>
@@ -294,11 +381,16 @@ function VideoInstitucional() {
       <LazySection minHeight={320}>
         <section className="border-b border-border" aria-labelledby="foto-video">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <h2 id="foto-video" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            <h2
+              id="foto-video"
+              className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Fotografia e vídeo na mesma produção
             </h2>
             <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
-              Quando o projeto exige, a mesma produção reúne vídeo institucional, retratos profissionais, banco de imagens corporativo e fotografia de ambientes, equipes e operações — aproveitando a preparação já feita no local. Veja{" "}
+              Quando o projeto exige, a mesma produção reúne vídeo institucional, retratos
+              profissionais, banco de imagens corporativo e fotografia de ambientes, equipes e
+              operações — aproveitando a preparação já feita no local. Veja{" "}
               <Link to="/fotos-corporativas/" className="text-ember hover:underline">
                 fotografia corporativa
               </Link>{" "}
@@ -319,7 +411,10 @@ function VideoInstitucional() {
       {/* Processo */}
       <section className="border-b border-border bg-surface" aria-labelledby="processo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="processo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="processo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Como funciona a produção
           </h2>
           <ol className="mt-10 grid gap-5 md:grid-cols-3 lg:grid-cols-5">
@@ -337,7 +432,10 @@ function VideoInstitucional() {
       <section className="border-b border-border" aria-labelledby="faq-video-institucional">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
-          <h2 id="faq-video-institucional" className="mb-8 font-display text-3xl font-semibold md:text-4xl">
+          <h2
+            id="faq-video-institucional"
+            className="mb-8 font-display text-3xl font-semibold md:text-4xl"
+          >
             Dúvidas frequentes sobre vídeo institucional
           </h2>
           <FaqList items={FAQS} />
@@ -348,11 +446,15 @@ function VideoInstitucional() {
       <section aria-labelledby="cta-video-institucional">
         <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-center md:px-8">
           <div className="max-w-xl">
-            <h2 id="cta-video-institucional" className="font-display text-2xl font-semibold md:text-3xl">
+            <h2
+              id="cta-video-institucional"
+              className="font-display text-2xl font-semibold md:text-3xl"
+            >
               Vamos conversar sobre seu vídeo institucional
             </h2>
             <p className="mt-3 text-muted-foreground text-pretty">
-              Conte para nossa equipe o objetivo do projeto e onde o vídeo será utilizado. A partir dessas informações, estruturamos a produção de acordo com a necessidade da empresa.
+              Conte para nossa equipe o objetivo do projeto e onde o vídeo será utilizado. A partir
+              dessas informações, estruturamos a produção de acordo com a necessidade da empresa.
             </p>
           </div>
           <a

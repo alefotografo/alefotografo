@@ -14,14 +14,15 @@ const PATH = "/cases/bmx-logistica/";
 const TITLE = "Case BMX Soluções Logísticas | Fotografia de Frota e Vídeo Institucional";
 const DESCRIPTION =
   "Fotografia da frota e vídeos institucionais produzidos para a BMX Soluções Logísticas em 2025 — registro do Centro de Armazenagem e Distribuição e das operações. Veja o case.";
-const WA = "Olá Alexandre, vi o case da BMX Soluções Logísticas e quero um orçamento de fotografia e vídeo para minha empresa.";
+const WA =
+  "Olá Alexandre, vi o case da BMX Soluções Logísticas e quero um orçamento de fotografia e vídeo para minha empresa.";
 
 /* Produção principal publicada no catálogo de vídeos (slug real). A série de
    roteiros temáticos (químico, containers, FTL/milk run, aeroportos,
    armazenagem, promocional e carga emergencial) será adicionada a esta grade
    quando publicada no YouTube. */
-const VIDEOS_MAIN = "video-institucional-bmx-logistica"
-const MAIN_VIDEO = videoBySlug(VIDEOS_MAIN);;
+const VIDEOS_MAIN = "video-institucional-bmx-logistica";
+const MAIN_VIDEO = videoBySlug(VIDEOS_MAIN);
 const VIDEOS_MORE: string[] = [];
 
 /* Fotografias da frota BMX (capitação 2025, acervo local otimizado). */
@@ -111,7 +112,7 @@ export const Route = createFileRoute("/cases/bmx-logistica")({
           about: { "@type": "Organization", name: "BMX Soluções Logísticas" },
         }),
       },
-            {
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
@@ -119,13 +120,24 @@ export const Route = createFileRoute("/cases/bmx-logistica")({
           name: MAIN_VIDEO?.title,
           description: MAIN_VIDEO?.description,
           uploadDate: MAIN_VIDEO?.uploaded,
-          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
-          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          thumbnailUrl: MAIN_VIDEO?.youtube
+            ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg`
+            : undefined,
+          embedUrl: MAIN_VIDEO?.youtube
+            ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}`
+            : undefined,
           inLanguage: "pt-BR",
         }),
       },
-{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
+      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".case-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: CaseBmx,
@@ -146,9 +158,12 @@ function CaseBmx() {
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Case · Logística</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Case · Logística
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            BMX Soluções Logísticas — fotografia da frota e vídeo institucional para apresentar a operação
+            BMX Soluções Logísticas — fotografia da frota e vídeo institucional para apresentar a
+            operação
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
             Produzimos em 2025 a fotografia da frota e os vídeos institucionais da BMX Soluções
@@ -177,30 +192,46 @@ function CaseBmx() {
       {/* Resumo do projeto */}
       <section className="border-b border-border bg-surface" aria-labelledby="resumo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">Resumo do projeto</h2>
+          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">
+            Resumo do projeto
+          </h2>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Cliente</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Cliente
+              </dt>
               <dd className="mt-1 font-semibold">BMX Soluções Logísticas</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Segmento</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Segmento
+              </dt>
               <dd className="mt-1 font-semibold">Logística</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Serviços</dt>
-              <dd className="mt-1 font-semibold">Fotografia da frota e produção de vídeo institucional</dd>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Serviços
+              </dt>
+              <dd className="mt-1 font-semibold">
+                Fotografia da frota e produção de vídeo institucional
+              </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Local documentado</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Local documentado
+              </dt>
               <dd className="mt-1 font-semibold">Centro de Armazenagem e Distribuição BMX</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Ano</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Ano
+              </dt>
               <dd className="mt-1 font-semibold">2025</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Produção</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Produção
+              </dt>
               <dd className="mt-1 font-semibold">Alê Fotógrafo — Alexandre Machado e equipe</dd>
             </div>
           </dl>
@@ -210,7 +241,10 @@ function CaseBmx() {
       {/* Desafio + o que produzimos */}
       <section className="border-b border-border" aria-labelledby="desafio">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="desafio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="desafio"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             O que a operação precisava mostrar
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
@@ -218,15 +252,15 @@ function CaseBmx() {
               A BMX Soluções Logísticas opera transporte rodoviário de cargas — com transporte
               químico, containers, operações FTL, milk run e dedicadas, atuação em portos e
               aeroportos — e mantém um Centro de Armazenagem e Distribuição com docas, pátio de
-              manobra e frota própria. A comunicação visual precisava apresentar essa estrutura
-              com a dimensão que ela tem.
+              manobra e frota própria. A comunicação visual precisava apresentar essa estrutura com
+              a dimensão que ela tem.
             </p>
             <p>
               O trabalho produzido em 2025 combinou captação fotográfica da frota e do centro de
-              distribuição — incluindo registros aéreos — com uma série de vídeos institucionais:
-              o vídeo institucional principal e roteiros temáticos dedicados a cada operação,
-              do transporte químico à logística promocional. O material é usado pela empresa em
-              site institucional, materiais comerciais e apresentação da estrutura.
+              distribuição — incluindo registros aéreos — com uma série de vídeos institucionais: o
+              vídeo institucional principal e roteiros temáticos dedicados a cada operação, do
+              transporte químico à logística promocional. O material é usado pela empresa em site
+              institucional, materiais comerciais e apresentação da estrutura.
             </p>
           </div>
         </div>
@@ -235,8 +269,13 @@ function CaseBmx() {
       {/* Fotografias */}
       <section className="border-b border-border bg-surface" aria-labelledby="fotos">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotografia</p>
-          <h2 id="fotos" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Fotografia
+          </p>
+          <h2
+            id="fotos"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Fotografias da frota e do centro de distribuição
           </h2>
           <p className="mt-4 max-w-3xl text-muted-foreground text-pretty">
@@ -250,10 +289,17 @@ function CaseBmx() {
       </section>
 
       {/* Produções em vídeo */}
-      <section id="producoes" className="border-b border-border scroll-mt-20" aria-labelledby="videos-titulo">
+      <section
+        id="producoes"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="videos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Vídeo</p>
-          <h2 id="videos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="videos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produções em vídeo publicadas
           </h2>
           {main && (
@@ -264,7 +310,10 @@ function CaseBmx() {
           {/* Grade de roteiros temáticos: entra aqui quando os vídeos forem
               publicados no YouTube (VIDEOS_MORE acima). */}
           <p className="mt-6">
-            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/videos/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -274,12 +323,18 @@ function CaseBmx() {
       {/* Aplicações */}
       <section className="border-b border-border bg-surface" aria-labelledby="aplicacoes">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="aplicacoes" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="aplicacoes"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Onde o material é usado
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {APLICACOES.map((a) => (
-              <li key={a} className="rounded-sm border border-border bg-background px-4 py-3 text-sm">
+              <li
+                key={a}
+                className="rounded-sm border border-border bg-background px-4 py-3 text-sm"
+              >
                 {a}
               </li>
             ))}
@@ -290,26 +345,50 @@ function CaseBmx() {
       {/* Serviços relacionados */}
       <section className="border-b border-border" aria-labelledby="relacionados">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="relacionados" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="relacionados"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotografia-de-logistica" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-corporativo/$slug/"
+              params={{ slug: "fotografia-de-logistica" }}
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotografia de logística
             </Link>
-            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "banco-de-imagens-para-empresas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-corporativo/$slug/"
+              params={{ slug: "banco-de-imagens-para-empresas" }}
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Banco de imagens para empresas
             </Link>
-            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotos-aereas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-corporativo/$slug/"
+              params={{ slug: "fotos-aereas" }}
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotos aéreas de empresas
             </Link>
-            <Link to="/video-institucional/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/video-institucional/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeo institucional
             </Link>
-            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/videos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeos para empresas
             </Link>
-            <Link to="/fotografo-empresarial/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-empresarial/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotógrafo empresarial
             </Link>
           </div>
@@ -333,9 +412,7 @@ function CaseBmx() {
           <h2 className="font-display text-2xl font-semibold md:text-3xl">
             Precisa produzir fotografia e vídeo para a sua operação?
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Fale com {site.name} sobre o seu projeto.
-          </p>
+          <p className="mt-3 text-muted-foreground">Fale com {site.name} sobre o seu projeto.</p>
           <a
             href={waLink(WA)}
             target="_blank"

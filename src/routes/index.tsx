@@ -15,10 +15,12 @@ const BancoDeImagens = lazyAfterInteractive(() => import("@/components/site/home
 const VideoProducao = lazyAfterInteractive(() => import("@/components/site/home/VideoProducao"));
 const EventoCompleto = lazyAfterInteractive(() => import("@/components/site/home/EventoCompleto"));
 const AgilidadeProva = lazyAfterInteractive(() => import("@/components/site/home/AgilidadeProva"));
-const RetratoProfissional = lazyAfterInteractive(() =>
-  import("@/components/site/home/RetratoProfissional"),
+const RetratoProfissional = lazyAfterInteractive(
+  () => import("@/components/site/home/RetratoProfissional"),
 );
-const HomeSelectedWorks = lazyAfterInteractive(() => import("@/components/site/home/HomeSelectedWorks"));
+const HomeSelectedWorks = lazyAfterInteractive(
+  () => import("@/components/site/home/HomeSelectedWorks"),
+);
 const SegmentGrid = lazyAfterInteractive(() =>
   import("@/components/site/SegmentGrid").then((module) => ({ default: module.SegmentGrid })),
 );
@@ -26,7 +28,6 @@ const HomeAbout = lazyAfterInteractive(() => import("@/components/site/home/Home
 const HomeBlog = lazyAfterInteractive(() => import("@/components/site/home/HomeBlog"));
 const HomeFaq = lazyAfterInteractive(() => import("@/components/site/home/HomeFaq"));
 const HomeCta = lazyAfterInteractive(() => import("@/components/site/home/HomeCta"));
-
 
 const HOME_TITLE = "Fotógrafo Corporativo em São Paulo | Fotografia Profissional";
 const HOME_DESCRIPTION =
@@ -38,7 +39,8 @@ export const Route = createFileRoute("/")({
       if ("title" in m) return { title: HOME_TITLE };
       if (m.name === "description") return { name: "description", content: HOME_DESCRIPTION };
       if (m.property === "og:title") return { property: "og:title", content: HOME_TITLE };
-      if (m.property === "og:description") return { property: "og:description", content: HOME_DESCRIPTION };
+      if (m.property === "og:description")
+        return { property: "og:description", content: HOME_DESCRIPTION };
       return m;
     }),
     links: [
@@ -89,7 +91,6 @@ export const Route = createFileRoute("/")({
       // no @graph do __root (#business e #person). Repetir aqui como
       // "#organization" criava duas entidades para o mesmo negócio, com
       // aggregateRating duplicado.
-
     ],
   }),
   component: Home,

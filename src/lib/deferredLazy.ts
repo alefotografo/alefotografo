@@ -43,4 +43,3 @@ export function lazyAfterInteractive<T extends ComponentType<any>>(
 ) {
   return lazy<T>(() => ready.then(factory));
 }
-

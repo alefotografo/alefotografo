@@ -36,7 +36,10 @@ function daysAgo(n: number) {
   return d.toISOString().slice(0, 10);
 }
 
-export async function getIndexingReportForDays(supabase: SupabaseClient, days: number): Promise<GscReport> {
+export async function getIndexingReportForDays(
+  supabase: SupabaseClient,
+  days: number,
+): Promise<GscReport> {
   try {
     const { assertAdmin } = await import("@/lib/authz.server");
     await assertAdmin(supabase);
@@ -45,11 +48,16 @@ export async function getIndexingReportForDays(supabase: SupabaseClient, days: n
 
     const sitesRes = await fetch(`${GATEWAY}/webmasters/v3/sites`, { headers: h });
     if (!sitesRes.ok) {
-      return { ok: false, error: `Search Console (${sitesRes.status}): ${await sitesRes.text()}`, rows: [] };
+      return {
+        ok: false,
+        error: `Search Console (${sitesRes.status}): ${await sitesRes.text()}`,
+        rows: [],
+      };
     }
     const sites = (await sitesRes.json()) as { siteEntry?: { siteUrl: string }[] };
     const entries = sites.siteEntry ?? [];
-    if (!entries.length) return { ok: false, error: "Nenhuma propriedade verificada na conta conectada.", rows: [] };
+    if (!entries.length)
+      return { ok: false, error: "Nenhuma propriedade verificada na conta conectada.", rows: [] };
 
     const score = (u: string) => {
       let s = 0;
@@ -83,7 +91,13 @@ export async function getIndexingReportForDays(supabase: SupabaseClient, days: n
         continue;
       }
       const json = (await res.json()) as {
-        rows?: { keys: string[]; clicks: number; impressions: number; ctr: number; position: number }[];
+        rows?: {
+          keys: string[];
+          clicks: number;
+          impressions: number;
+          ctr: number;
+          position: number;
+        }[];
       };
       const rows: GscRow[] = (json.rows ?? []).map((r) => ({
         page: r.keys[0] ?? "",

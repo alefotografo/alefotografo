@@ -20,7 +20,8 @@ export const Route = createFileRoute("/videos/$slug")({
     return {
       meta: buildMeta({
         title: loaderData.title,
-        description: loaderData.description || `${loaderData.title} — Produção audiovisual por Alê Fotógrafo`,
+        description:
+          loaderData.description || `${loaderData.title} — Produção audiovisual por Alê Fotógrafo`,
         path: `/videos/${params.slug}`,
         type: "article",
       }),
@@ -102,7 +103,6 @@ export const Route = createFileRoute("/videos/$slug")({
   component: VideoPage,
 });
 
-
 function VideoPage() {
   const v = Route.useLoaderData();
   const seed = `${v.title} ${v.subtitle ?? ""} ${v.description ?? ""}`;
@@ -117,7 +117,10 @@ function VideoPage() {
     .filter((w) => w.length > 4);
   const others = [...pool]
     .map((o) => {
-      const t = o.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const t = o.title
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
       return { o, s: words.reduce((n, w) => (t.includes(w) ? n + 1 : n), 0) };
     })
     .sort((a, b) => b.s - a.s)
@@ -126,13 +129,24 @@ function VideoPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Vídeos", to: "/videos" }, { label: v.title }]} />
+      <Breadcrumbs
+        items={[
+          { label: "Início", to: "/" },
+          { label: "Vídeos", to: "/videos" },
+          { label: v.title },
+        ]}
+      />
       <section className="border-b border-border">
         <div className="mx-auto max-w-5xl px-5 py-12 md:px-8 md:py-16">
-          <Link to="/videos/" className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/videos/"
+            className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+          >
             <ArrowLeft size={14} /> Todos os vídeos
           </Link>
-          <h1 className="font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">{v.title}</h1>
+          <h1 className="font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">
+            {v.title}
+          </h1>
           {v.subtitle && <p className="mt-4 text-muted-foreground md:text-lg">{v.subtitle}</p>}
         </div>
       </section>
@@ -150,15 +164,24 @@ function VideoPage() {
         <div className="mt-10 rounded-sm border border-border bg-surface p-6">
           <p className="text-sm text-muted-foreground text-pretty">
             Precisa desse tipo de material para a sua empresa? Veja como funciona meu trabalho de{" "}
-            <Link to={service.to} className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to={service.to}
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               {service.label}
             </Link>{" "}
             ou explore os{" "}
-            <Link to="/portfolio/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/portfolio/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               cases do portfólio
             </Link>
             . Produção de vídeo completa em{" "}
-            <Link to="/videos/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/videos/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               vídeo corporativo
             </Link>
             .
@@ -197,12 +220,16 @@ function VideoPage() {
                         className="h-full w-full object-cover"
                       />
                     ) : (
-                      <div className="flex h-full items-center justify-center"><VideoIcon className="text-ember/60" /></div>
+                      <div className="flex h-full items-center justify-center">
+                        <VideoIcon className="text-ember/60" />
+                      </div>
                     );
                   })()}
                 </div>
                 <div className="p-4">
-                  <h3 className="line-clamp-2 text-sm font-medium group-hover:text-ember">{o.title}</h3>
+                  <h3 className="line-clamp-2 text-sm font-medium group-hover:text-ember">
+                    {o.title}
+                  </h3>
                 </div>
               </Link>
             ))}
@@ -211,9 +238,12 @@ function VideoPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
-        <LinkHub seed={`${v.title} vídeo institucional depoimento evento`} exclude={["/videos"]} title="10 páginas relacionadas" />
+        <LinkHub
+          seed={`${v.title} vídeo institucional depoimento evento`}
+          exclude={["/videos"]}
+          title="10 páginas relacionadas"
+        />
       </section>
     </>
-
   );
 }

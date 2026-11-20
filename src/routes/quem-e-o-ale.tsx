@@ -84,18 +84,11 @@ export const Route = createFileRoute("/quem-e-o-ale")({
 
 function QuemEOAlePage() {
   const recentPosts = posts.slice(0, 3);
-  const highlightCats = categories
-    .filter((c) => c.cover)
-    .slice(0, 6);
+  const highlightCats = categories.filter((c) => c.cover).slice(0, 6);
 
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: "Início", to: "/" },
-          { label: "Quem é o Alê" },
-        ]}
-      />
+      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Quem é o Alê" }]} />
 
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:gap-16 md:px-8 md:py-24">
@@ -107,9 +100,8 @@ function QuemEOAlePage() {
               Alexandre Machado — o fotógrafo por trás do Alê Fotógrafo
             </h1>
             <p className="mt-6 text-muted-foreground md:text-lg">
-              Conheça Alexandre Machado, o Alê Fotógrafo. 30 anos especializando
-              em fotografia corporativa, com centenas de empresas atendidas em
-              São Paulo e no Brasil.
+              Conheça Alexandre Machado, o Alê Fotógrafo. 30 anos especializando em fotografia
+              corporativa, com centenas de empresas atendidas em São Paulo e no Brasil.
             </p>
           </div>
           <div className="md:col-span-5">
@@ -141,7 +133,9 @@ function QuemEOAlePage() {
           <dl className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {personFacts.map((fact) => (
               <div key={fact.term}>
-                <dt className="text-xs uppercase tracking-wider text-muted-foreground">{fact.term}</dt>
+                <dt className="text-xs uppercase tracking-wider text-muted-foreground">
+                  {fact.term}
+                </dt>
                 <dd className="mt-1 text-sm font-medium text-foreground">{fact.value}</dd>
               </div>
             ))}
@@ -152,35 +146,30 @@ function QuemEOAlePage() {
       <section className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
         <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
           <p>
-            Alexandre Machado, conhecido como Alê Fotógrafo, é fotógrafo
-            profissional em São Paulo com mais de 30 anos de experiência,
-            atendendo centenas de empresas com fotografia corporativa,
-            retratos profissionais, cobertura de eventos e produção de vídeo
+            Alexandre Machado, conhecido como Alê Fotógrafo, é fotógrafo profissional em São Paulo
+            com mais de 30 anos de experiência, atendendo centenas de empresas com fotografia
+            corporativa, retratos profissionais, cobertura de eventos e produção de vídeo
             institucional.
           </p>
           <p className="text-muted-foreground">
-            Como fotógrafo profissional em São Paulo, seu trabalho é voltado
-            para empresas e profissionais que precisam fortalecer sua imagem,
-            transmitir autoridade e se posicionar com mais consistência no
-            mercado. Ao longo de três décadas, já produziu imagens para
-            empresas de diferentes segmentos, sempre com foco em resultado:
-            gerar confiança, valor e percepção profissional.
+            Como fotógrafo profissional em São Paulo, seu trabalho é voltado para empresas e
+            profissionais que precisam fortalecer sua imagem, transmitir autoridade e se posicionar
+            com mais consistência no mercado. Ao longo de três décadas, já produziu imagens para
+            empresas de diferentes segmentos, sempre com foco em resultado: gerar confiança, valor e
+            percepção profissional.
           </p>
           <p className="text-muted-foreground">
-            Sua atuação como fotógrafo corporativo em São Paulo é baseada em
-            um método claro: entender o posicionamento do cliente, o público
-            que será impactado e o objetivo da comunicação antes de iniciar
-            qualquer produção. Isso garante que cada fotografia ou vídeo
-            tenha intenção estratégica — e não apenas estética.
+            Sua atuação como fotógrafo corporativo em São Paulo é baseada em um método claro:
+            entender o posicionamento do cliente, o público que será impactado e o objetivo da
+            comunicação antes de iniciar qualquer produção. Isso garante que cada fotografia ou
+            vídeo tenha intenção estratégica — e não apenas estética.
           </p>
         </div>
       </section>
 
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">
-            Método
-          </p>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">Método</p>
           <h2 className="mb-12 max-w-2xl font-display text-3xl font-semibold md:text-4xl">
             Pilares do trabalho
           </h2>
@@ -207,14 +196,9 @@ function QuemEOAlePage() {
                 desc: "Imagens que convertem, transmitem autoridade e valorizam sua marca.",
               },
             ].map((p) => (
-              <div
-                key={p.title}
-                className="rounded-sm border border-border bg-background p-6"
-              >
+              <div key={p.title} className="rounded-sm border border-border bg-background p-6">
                 <p.icon className="text-ember" size={26} strokeWidth={1.5} />
-                <h3 className="mt-4 font-display text-lg font-semibold">
-                  {p.title}
-                </h3>
+                <h3 className="mt-4 font-display text-lg font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
               </div>
             ))}
@@ -262,9 +246,7 @@ function QuemEOAlePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-5">
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  {c.title}
-                </h3>
+                <h3 className="font-display text-lg font-semibold text-foreground">{c.title}</h3>
               </div>
             </Link>
           ))}
@@ -273,9 +255,7 @@ function QuemEOAlePage() {
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">
-            Do blog
-          </p>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">Do blog</p>
           <h2 className="mb-10 font-display text-3xl font-semibold md:text-4xl">
             Artigos escritos por Alexandre
           </h2>
@@ -295,9 +275,7 @@ function QuemEOAlePage() {
                 <h3 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember">
                   {p.title}
                 </h3>
-                <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">
-                  {p.description}
-                </p>
+                <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{p.description}</p>
               </Link>
             ))}
           </div>

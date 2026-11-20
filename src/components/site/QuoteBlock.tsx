@@ -55,12 +55,19 @@ export function QuoteBlock() {
           </Link>
         </li>
         <li>
-          <Link to="/fotografo-corporativo/$slug/" params={{ slug: "retrato-corporativo" }} className="text-ember underline underline-offset-4">
+          <Link
+            to="/fotografo-corporativo/$slug/"
+            params={{ slug: "retrato-corporativo" }}
+            className="text-ember underline underline-offset-4"
+          >
             Retrato Profissional
           </Link>
         </li>
         <li>
-          <Link to="/foto-profissional-para-linkedin/" className="text-ember underline underline-offset-4">
+          <Link
+            to="/foto-profissional-para-linkedin/"
+            className="text-ember underline underline-offset-4"
+          >
             Foto para LinkedIn
           </Link>
         </li>

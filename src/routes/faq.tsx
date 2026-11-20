@@ -62,7 +62,6 @@ function FaqFallback() {
   );
 }
 
-
 function FaqPage() {
   return (
     <>
@@ -92,7 +91,6 @@ function FaqPage() {
         </LazySection>
 
         <div className="mt-10 flex flex-wrap gap-3">
-
           <a
             href={waLink(
               "Olá Alexandre, tenho uma dúvida e gostaria de um orçamento de fotografia.",

@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { companiesStat, ratingStat } from "@/data/stats";
-import { HERO_JPG_FALLBACK, HERO_JPG_SRCSET, HERO_WEBP_SRCSET } from "@/components/site/home/heroAssets";
+import {
+  HERO_JPG_FALLBACK,
+  HERO_JPG_SRCSET,
+  HERO_WEBP_SRCSET,
+} from "@/components/site/home/heroAssets";
 import { WA_DEFAULT, waLink } from "@/lib/whatsapp";
 
 // Foto de origem: /fotografo-corporativo/fotografo-de-grupos-times-e-equipes (grupos-3, horizontal).

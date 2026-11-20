@@ -91,11 +91,15 @@ export const personFacts: { term: string; value: string }[] = [
   { term: "Também conhecido como", value: "Alê Fotógrafo" },
   { term: "Atuação", value: "Fotógrafo de retrato corporativo e executivo" },
   { term: "Anos de experiência", value: "Mais de 30 anos em fotografia e produção de imagem" },
-  { term: "Base", value: `${site.address.street} — ${site.address.district}, ${site.address.locality}/${site.address.region}` },
+  {
+    term: "Base",
+    value: `${site.address.street} — ${site.address.district}, ${site.address.locality}/${site.address.region}`,
+  },
   { term: "Atende", value: "São Paulo e região metropolitana" },
   {
     term: "Especializações",
-    value: "Retrato executivo, headshot para LinkedIn, médicos, advogados, equipes e eventos corporativos",
+    value:
+      "Retrato executivo, headshot para LinkedIn, médicos, advogados, equipes e eventos corporativos",
   },
   { term: "Idiomas", value: "Português e inglês" },
 ];

@@ -28,7 +28,9 @@ export function Section({
             </h2>
           )}
           {description && (
-            <p className="mt-5 text-base text-muted-foreground md:text-lg text-pretty">{description}</p>
+            <p className="mt-5 text-base text-muted-foreground md:text-lg text-pretty">
+              {description}
+            </p>
           )}
         </header>
       )}

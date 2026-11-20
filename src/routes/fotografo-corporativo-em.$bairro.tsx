@@ -26,7 +26,12 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
     const title = `Fotógrafo Corporativo em ${loaderData.nome} SP | Alê Fotógrafo`;
     const description = `Fotógrafo corporativo na ${loaderData.nome} (${loaderData.regiao}): retratos executivos, LinkedIn, eventos e vídeo institucional. 30 anos de experiência em SP.`;
     return {
-      meta: buildMeta({ title, description, path: `/fotografo-corporativo-em/${params.bairro}`, type: "article" }),
+      meta: buildMeta({
+        title,
+        description,
+        path: `/fotografo-corporativo-em/${params.bairro}`,
+        type: "article",
+      }),
       links: [{ rel: "canonical", href: url }],
       scripts: [
         {
@@ -34,9 +39,7 @@ export const Route = createFileRoute("/fotografo-corporativo-em/$bairro")({
           // ProfessionalService com serviceArea (GeoCircle a partir do
           // estúdio), geo do estúdio e areaServed com o bairro, os vizinhos da
           // região e todas as cidades cobertas. Fonte: src/data/bairroSchema.ts.
-          children: JSON.stringify(
-            bairroServiceGraph({ b: loaderData, url, title, description }),
-          ),
+          children: JSON.stringify(bairroServiceGraph({ b: loaderData, url, title, description })),
         },
         {
           type: "application/ld+json",
@@ -65,7 +68,6 @@ function BairroPage() {
   const contexto: string[] = bairroContexto[b.slug] ?? [];
   const logisticaLink = bairroLinks[b.slug];
   const vizinhos = bairros.filter((x) => x.regiao === b.regiao && x.slug !== b.slug);
-
 
   return (
     <>
@@ -117,8 +119,8 @@ function BairroPage() {
               ))}
               {logisticaLink && (
                 <p className="text-muted-foreground md:text-lg">
-                  Para produções em operações logísticas — frota, armazéns e centros de distribuição —
-                  temos uma página dedicada a esse recorte:{" "}
+                  Para produções em operações logísticas — frota, armazéns e centros de distribuição
+                  — temos uma página dedicada a esse recorte:{" "}
                   <Link
                     to={logisticaLink.to}
                     className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
@@ -172,7 +174,10 @@ function BairroPage() {
           <p className="text-xs uppercase tracking-wider text-muted-foreground">Também atendemos</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {b.landmarks.map((l: string) => (
-              <span key={l} className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground">
+              <span
+                key={l}
+                className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted-foreground"
+              >
                 {l}
               </span>
             ))}
@@ -229,7 +234,6 @@ function BairroPage() {
         </div>
       </section>
 
-
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
@@ -248,6 +252,5 @@ function BairroPage() {
         />
       </section>
     </>
-
   );
 }

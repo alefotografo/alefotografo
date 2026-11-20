@@ -5,7 +5,10 @@ import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 
 // Normalize string: lowercase + strip accents
 function norm(s: string): string {
-  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
 // Generate ranked keyword phrases for a category.
@@ -15,7 +18,7 @@ function phrasesFor(c: Category): string[] {
   const t = c.title;
   out.add(t);
 
-  let s = t
+  const s = t
     .replace(/^Fot[óo]grafo de\s+/i, "")
     .replace(/^Fot[óo]grafo\s+/i, "")
     .replace(/^Fotografia (de|para|em)\s+/i, "")
@@ -33,13 +36,22 @@ function phrasesFor(c: Category): string[] {
 
   // Curated extras per slug
   const extras: Record<string, string[]> = {
-    "fotografia-para-escritorios-de-advocacia": ["escritórios de advocacia", "advogados", "escritório de advocacia"],
+    "fotografia-para-escritorios-de-advocacia": [
+      "escritórios de advocacia",
+      "advogados",
+      "escritório de advocacia",
+    ],
     "retrato-corporativo": ["retrato corporativo", "retratos corporativos", "retrato profissional"],
     "retratos-de-medicos": ["retrato de médico", "médicos", "fotos de médicos"],
     "retratos-de-medicas": ["retratos de médicas", "médicas"],
     "fotos-para-clinicas-medicas": ["clínica médica", "clínicas médicas", "consultório médico"],
     "fotografia-corporativa-em-sao-paulo": ["fotografia corporativa", "corporativo em são paulo"],
-    "fotografo-de-eventos-corporativos": ["eventos corporativos", "evento corporativo", "evento empresarial", "eventos empresariais"],
+    "fotografo-de-eventos-corporativos": [
+      "eventos corporativos",
+      "evento corporativo",
+      "evento empresarial",
+      "eventos empresariais",
+    ],
     "fotografo-feiras-stands": ["feiras e stands", "feira de negócios", "stand"],
     "totem-fotografico-totem-mania": ["totem fotográfico", "totem mania"],
     "foto-impressa-na-hora": [
@@ -52,13 +64,26 @@ function phrasesFor(c: Category): string[] {
     ],
     "fotografia-de-logistica": ["logística", "armazém", "operação logística"],
     "ensaio-fotografico-para-dentistas": ["dentistas", "dentista", "consultório odontológico"],
-    "fotografo-de-arquitetura-e-interiores": ["arquitetura", "interiores", "arquitetura e interiores"],
+    "fotografo-de-arquitetura-e-interiores": [
+      "arquitetura",
+      "interiores",
+      "arquitetura e interiores",
+    ],
     "banco-de-imagens-para-empresas": ["banco de imagens", "banco de imagens corporativo"],
     "fotografia-institucional-em-saopaulo": ["fotografia institucional", "institucional"],
     "ensaio-fotografico-para-redes-sociais": ["redes sociais", "instagram", "linkedin"],
     "fotos-aereas": ["fotos aéreas", "drone", "imagens aéreas"],
-    "empreendimentos-imobiliarios": ["empreendimentos imobiliários", "imobiliário", "incorporadora"],
-    "fotografo-festa-de-confraternizacao": ["festa da firma", "confraternização", "festa de confraternização", "confraternização da empresa"],
+    "empreendimentos-imobiliarios": [
+      "empreendimentos imobiliários",
+      "imobiliário",
+      "incorporadora",
+    ],
+    "fotografo-festa-de-confraternizacao": [
+      "festa da firma",
+      "confraternização",
+      "festa de confraternização",
+      "confraternização da empresa",
+    ],
     "fotografo-profissional-em-sao-paulo": ["fotógrafo profissional"],
     "banco-de-imagens-para-escolas": ["escolas", "escola", "instituição de ensino"],
     "fotografo-de-grupos-times-e-equipes": ["grupos", "times", "equipes", "time da empresa"],
@@ -85,11 +110,22 @@ const PILLAR_PAGES: Array<{ path: string; phrases: string[] }> = [
   },
   {
     path: "/foto-profissional-para-linkedin",
-    phrases: ["foto para linkedin", "foto profissional para linkedin", "foto de perfil do linkedin", "headshot para linkedin"],
+    phrases: [
+      "foto para linkedin",
+      "foto profissional para linkedin",
+      "foto de perfil do linkedin",
+      "headshot para linkedin",
+    ],
   },
   {
     path: "/fotografia-para-clinicas",
-    phrases: ["fotografia para clínicas", "fotografia para clínica", "fotos para clínica", "foto em clínica", "fotos de clínica"],
+    phrases: [
+      "fotografia para clínicas",
+      "fotografia para clínica",
+      "fotos para clínica",
+      "foto em clínica",
+      "fotos de clínica",
+    ],
   },
   {
     path: "/fotografo-empresarial",
@@ -170,7 +206,13 @@ export function autoLink(text: string, opts: AutoLinkOptions = {}): ReactNode[] 
       const isBoundary = /[^a-z0-9]/.test(before) && /[^a-z0-9]/.test(after);
       const overlap = taken.some(([s, e]) => found < e && end > s);
       if (isBoundary && !overlap) {
-        matches.push({ start: found, end, slug: entry.slug, path: entry.path, phrase: entry.phrase });
+        matches.push({
+          start: found,
+          end,
+          slug: entry.slug,
+          path: entry.path,
+          phrase: entry.phrase,
+        });
         taken.push([found, end]);
         localUsedSlugs.add(entry.slug);
         localUsedPhrases.add(entry.normalized);

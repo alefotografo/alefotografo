@@ -223,7 +223,10 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               className="rounded-sm border border-border bg-surface p-6 transition-colors hover:border-ember"
             >
               <h2 className="font-display text-lg font-semibold">{b.h}</h2>
-              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
+              <BlockText
+                text={b.p}
+                className="mt-3 text-sm leading-relaxed text-muted-foreground"
+              />
             </article>
           ))}
         </div>
@@ -253,7 +256,9 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-2xl font-semibold md:text-3xl">Onde usar as imagens</h2>
+            <h2 className="font-display text-2xl font-semibold md:text-3xl">
+              Onde usar as imagens
+            </h2>
             <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
               {cfg.ondeUsar.map((i) => (
                 <li key={i} className="flex gap-3">
@@ -287,8 +292,8 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
               Prova visual: cases desse tipo de trabalho
             </h2>
             <p className="mt-3 max-w-3xl text-sm text-muted-foreground text-pretty">
-              As galerias abaixo servem como prova do resultado. A contratação, o que está incluído e o
-              orçamento ficam nesta página; para ver todos os cases por segmento, vá ao{" "}
+              As galerias abaixo servem como prova do resultado. A contratação, o que está incluído
+              e o orçamento ficam nesta página; para ver todos os cases por segmento, vá ao{" "}
               <Link
                 to="/portfolio/"
                 className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
@@ -338,7 +343,9 @@ export function ServicePage({ cfg }: { cfg: ServicePageConfig }) {
                       <h3 className="font-display text-base font-semibold group-hover:text-ember">
                         {c.title}
                       </h3>
-                      <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{c.subtitle}</p>
+                      <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                        {c.subtitle}
+                      </p>
                     </div>
                   </Link>
                 </li>

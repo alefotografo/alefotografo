@@ -41,7 +41,9 @@ export const Route = createFileRoute("/blog/rss.xml")({
             `      <description>${esc(p.description || p.title)}</description>`,
             enclosure,
             `    </item>`,
-          ].filter(Boolean).join("\n");
+          ]
+            .filter(Boolean)
+            .join("\n");
         });
 
         const xml = [

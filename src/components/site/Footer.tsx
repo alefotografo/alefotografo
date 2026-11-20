@@ -6,17 +6,40 @@ import { waLink } from "@/lib/whatsapp";
 import { useTrackConversion } from "@/hooks/useTrackConversion";
 import { imgUrl, imgSrcSet } from "@/lib/img";
 
-
 // Curadoria de capas (8 destaques) para a faixa "Siga no Instagram" do rodapé.
 const instagramTiles = [
-  { title: "Retrato Corporativo", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg" },
-  { title: "Retratos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90047/fotografo-de-retratos-corporativos_retratos-corporativos-27.jpg" },
-  { title: "Fotógrafo de Eventos Corporativos", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_cristalia-latino-farma-convencao-2022-169.jpg" },
-  { title: "Fotografia Corporativa", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg" },
-  { title: "Fotografia Institucional", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg" },
-  { title: "Fotografia Industrial", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-11.JPG" },
-  { title: "Fotos para Clínicas Médicas", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG" },
-  { title: "Fotógrafo de Grupos, Times e Equipes", src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg" },
+  {
+    title: "Retrato Corporativo",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66874/retrato-corporativo_helio-martins-borges-filho-4.jpg",
+  },
+  {
+    title: "Retratos",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90047/fotografo-de-retratos-corporativos_retratos-corporativos-27.jpg",
+  },
+  {
+    title: "Fotógrafo de Eventos Corporativos",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/90046/fotografo-de-eventos-corporativos_cristalia-latino-farma-convencao-2022-169.jpg",
+  },
+  {
+    title: "Fotografia Corporativa",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_antonio-logigo-120.jpg",
+  },
+  {
+    title: "Fotografia Institucional",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66911/banco-de-imagem-de-empresa_banco-de-imagens-empresas-negocios-alefotografo-fotografo0002.jpg",
+  },
+  {
+    title: "Fotografia Industrial",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-11.JPG",
+  },
+  {
+    title: "Fotos para Clínicas Médicas",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/172233/fotos-para-clinicas-medicas_clinica-gran-life-63.JPG",
+  },
+  {
+    title: "Fotógrafo de Grupos, Times e Equipes",
+    src: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg",
+  },
 ] as const;
 
 export function Footer() {
@@ -29,8 +52,13 @@ export function Footer() {
           <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-14">
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.25em] text-ember">Instagram</p>
-                <h2 id="footer-instagram" className="mt-2 font-display text-2xl font-semibold md:text-3xl">
+                <p className="text-xs font-medium uppercase tracking-[0.25em] text-ember">
+                  Instagram
+                </p>
+                <h2
+                  id="footer-instagram"
+                  className="mt-2 font-display text-2xl font-semibold md:text-3xl"
+                >
                   Siga no Instagram
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -84,12 +112,17 @@ export function Footer() {
       )}
 
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-5">
-
         <div className="md:col-span-2">
-          <img src="/img/logo-alefotografo.png" alt="Alê Fotógrafo — fotografia corporativa em São Paulo" width={200} height={60} loading="lazy" decoding="async" className="h-14 w-auto" />
-          <p className="mt-4 max-w-md text-sm text-muted-foreground">
-            {site.description}
-          </p>
+          <img
+            src="/img/logo-alefotografo.png"
+            alt="Alê Fotógrafo — fotografia corporativa em São Paulo"
+            width={200}
+            height={60}
+            loading="lazy"
+            decoding="async"
+            className="h-14 w-auto"
+          />
+          <p className="mt-4 max-w-md text-sm text-muted-foreground">{site.description}</p>
           <p className="mt-4 text-xs text-muted-foreground">
             {site.city}, {site.state} — Grande São Paulo e outras regiões do Brasil sob consulta.
           </p>
@@ -100,20 +133,80 @@ export function Footer() {
             Fotografia
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/servicos/" className="hover:text-foreground">Todos os serviços</Link></li>
-            <li><Link to="/foto-profissional/" className="hover:text-foreground">Foto profissional</Link></li>
-            <li><Link to="/foto-profissional-para-linkedin/" className="hover:text-foreground">Foto para LinkedIn</Link></li>
-            <li><Link to="/fotos-corporativas/" className="hover:text-foreground">Fotografia corporativa</Link></li>
-            <li><Link to="/fotografia-executiva/" className="hover:text-foreground">Fotografia executiva</Link></li>
-            <li><Link to="/fotografo-empresarial/" className="hover:text-foreground">Fotógrafo empresarial</Link></li>
-            <li><Link to="/fotografo-corporativo/$slug/" params={{ slug: "retrato-corporativo" }} className="hover:text-foreground">Retrato corporativo</Link></li>
-            <li><Link to="/eventos-corporativos/" className="hover:text-foreground">Eventos corporativos</Link></li>
-            <li><Link to="/fotografo-de-feira-de-negocios/" className="hover:text-foreground">Fotógrafo de feira de negócios</Link></li>
-            <li><Link to="/fotografia-para-clinicas/" className="hover:text-foreground">Fotografia para clínicas</Link></li>
-            <li><Link to="/fotos-profissionais-medicos/" className="hover:text-foreground">Fotos para médicos</Link></li>
-            <li><Link to="/fotografia-para-advogados/" className="hover:text-foreground">Fotos para advogados</Link></li>
-            <li><Link to="/portfolio/" className="hover:text-foreground">Portfólio de cases</Link></li>
-            <li><Link to="/fotografo-corporativo/" className="hover:text-foreground">Galerias por segmento</Link></li>
+            <li>
+              <Link to="/servicos/" className="hover:text-foreground">
+                Todos os serviços
+              </Link>
+            </li>
+            <li>
+              <Link to="/foto-profissional/" className="hover:text-foreground">
+                Foto profissional
+              </Link>
+            </li>
+            <li>
+              <Link to="/foto-profissional-para-linkedin/" className="hover:text-foreground">
+                Foto para LinkedIn
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotos-corporativas/" className="hover:text-foreground">
+                Fotografia corporativa
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotografia-executiva/" className="hover:text-foreground">
+                Fotografia executiva
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotografo-empresarial/" className="hover:text-foreground">
+                Fotógrafo empresarial
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/fotografo-corporativo/$slug/"
+                params={{ slug: "retrato-corporativo" }}
+                className="hover:text-foreground"
+              >
+                Retrato corporativo
+              </Link>
+            </li>
+            <li>
+              <Link to="/eventos-corporativos/" className="hover:text-foreground">
+                Eventos corporativos
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotografo-de-feira-de-negocios/" className="hover:text-foreground">
+                Fotógrafo de feira de negócios
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotografia-para-clinicas/" className="hover:text-foreground">
+                Fotografia para clínicas
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotos-profissionais-medicos/" className="hover:text-foreground">
+                Fotos para médicos
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotografia-para-advogados/" className="hover:text-foreground">
+                Fotos para advogados
+              </Link>
+            </li>
+            <li>
+              <Link to="/portfolio/" className="hover:text-foreground">
+                Portfólio de cases
+              </Link>
+            </li>
+            <li>
+              <Link to="/fotografo-corporativo/" className="hover:text-foreground">
+                Galerias por segmento
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -122,15 +215,38 @@ export function Footer() {
             Vídeo
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/videos/" className="hover:text-foreground">Vídeo corporativo</Link></li>
-            <li><Link to="/video-institucional/" className="hover:text-foreground">Vídeo institucional</Link></li>
-            <li><Link to="/video-de-eventos-corporativos/" className="hover:text-foreground">Vídeos de Eventos Corporativos</Link></li>
-            <li><Link to="/video-para-feiras-e-stands/" className="hover:text-foreground">Vídeos para Feiras e Stands</Link></li>
-            <li><Link to="/videos/" hash="portfolio" className="hover:text-foreground">Portfólio de vídeos</Link></li>
-            <li><Link to="/videos/" hash="portfolio" className="hover:text-foreground">Reels e social</Link></li>
+            <li>
+              <Link to="/videos/" className="hover:text-foreground">
+                Vídeo corporativo
+              </Link>
+            </li>
+            <li>
+              <Link to="/video-institucional/" className="hover:text-foreground">
+                Vídeo institucional
+              </Link>
+            </li>
+            <li>
+              <Link to="/video-de-eventos-corporativos/" className="hover:text-foreground">
+                Vídeos de Eventos Corporativos
+              </Link>
+            </li>
+            <li>
+              <Link to="/video-para-feiras-e-stands/" className="hover:text-foreground">
+                Vídeos para Feiras e Stands
+              </Link>
+            </li>
+            <li>
+              <Link to="/videos/" hash="portfolio" className="hover:text-foreground">
+                Portfólio de vídeos
+              </Link>
+            </li>
+            <li>
+              <Link to="/videos/" hash="portfolio" className="hover:text-foreground">
+                Reels e social
+              </Link>
+            </li>
           </ul>
         </div>
-
 
         <div>
           <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
@@ -151,8 +267,10 @@ export function Footer() {
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 shrink-0 text-ember" size={16} aria-hidden="true" />
               <span>
-                {site.address.street}<br />
-                {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                {site.address.street}
+                <br />
+                {site.address.district}, {site.address.locality} — {site.address.region}
+                <br />
                 CEP {site.address.postalCode}, Brasil
               </span>
             </li>
@@ -179,11 +297,31 @@ export function Footer() {
             Solicitar orçamento no WhatsApp
           </a>
           <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/contato/" className="hover:text-foreground">Contato</Link></li>
-            <li><Link to="/quem-e-o-ale/" className="hover:text-foreground">Quem é o Alê</Link></li>
-            <li><Link to="/sobre/" className="hover:text-foreground">Sobre Alexandre</Link></li>
-            <li><Link to="/depoimentos/" className="hover:text-foreground">Depoimentos</Link></li>
-            <li><Link to="/faq/" className="hover:text-foreground">Perguntas frequentes</Link></li>
+            <li>
+              <Link to="/contato/" className="hover:text-foreground">
+                Contato
+              </Link>
+            </li>
+            <li>
+              <Link to="/quem-e-o-ale/" className="hover:text-foreground">
+                Quem é o Alê
+              </Link>
+            </li>
+            <li>
+              <Link to="/sobre/" className="hover:text-foreground">
+                Sobre Alexandre
+              </Link>
+            </li>
+            <li>
+              <Link to="/depoimentos/" className="hover:text-foreground">
+                Depoimentos
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq/" className="hover:text-foreground">
+                Perguntas frequentes
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -192,7 +330,10 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-5 py-8 md:px-8">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Fotógrafo corporativo em São Paulo —{" "}
-            <Link to="/fotografo-corporativo-em/" className="text-ember underline underline-offset-4">
+            <Link
+              to="/fotografo-corporativo-em/"
+              className="text-ember underline underline-offset-4"
+            >
               todas as páginas por bairro
             </Link>
           </p>
@@ -211,7 +352,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-8 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-8">
@@ -240,7 +380,10 @@ export function Footer() {
               Alexandre Machado Fotografia — CNPJ {site.cnpj} — 30+ anos de experiência
             </p>
           </div>
-          <p>© {new Date().getFullYear()} Alê Fotógrafo — Alexandre Machado. Todos os direitos reservados.</p>
+          <p>
+            © {new Date().getFullYear()} Alê Fotógrafo — Alexandre Machado. Todos os direitos
+            reservados.
+          </p>
         </div>
       </div>
     </footer>

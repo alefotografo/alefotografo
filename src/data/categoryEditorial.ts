@@ -210,7 +210,10 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
           ],
           [
             "Se você quer ver o raciocínio antes de marcar, escrevi um texto que resume bem o que costumo ajustar na prática: ",
-            { to: "/blog/fotografo-5-poses-para-retrato-corporativo", label: "5 poses para retrato corporativo" },
+            {
+              to: "/blog/fotografo-5-poses-para-retrato-corporativo",
+              label: "5 poses para retrato corporativo",
+            },
             ".",
           ],
         ],
@@ -567,7 +570,10 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
           ],
           [
             "O roteiro também pode incluir as pessoas que movem a operação — equipes, motoristas, liderança e executivos — e a estrutura física que sustenta o processo. Tudo é definido no briefing, conforme o que cada empresa precisa mostrar. No blog, detalhamos ",
-            { to: "/blog/fotografia-para-transportadoras", label: "o que fotografar para montar o acervo de uma transportadora" },
+            {
+              to: "/blog/fotografia-para-transportadoras",
+              label: "o que fotografar para montar o acervo de uma transportadora",
+            },
             " — da frota às docas.",
           ],
           [
@@ -591,7 +597,10 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
         paragraphs: [
           [
             "Transportadoras e operadores logísticos usam esse material no site institucional, em apresentações comerciais e propostas, na comunicação corporativa e interna, em materiais de RH e recrutamento e nas redes profissionais da empresa. Para quem precisa de acervo contínuo, estruturamos um ",
-            { to: "/fotografo-corporativo/banco-de-imagens-para-empresas", label: "banco de imagens corporativo" },
+            {
+              to: "/fotografo-corporativo/banco-de-imagens-para-empresas",
+              label: "banco de imagens corporativo",
+            },
             " com as fotografias organizadas por tema, prontas para uso ao longo do ano.",
           ],
           [
@@ -603,7 +612,11 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
             "Projetos podem ainda unir fotografia e ",
             { to: "/videos", label: "produção de vídeos corporativos" },
             " em um mesmo planejamento, quando isso faz sentido para o objetivo da empresa — um único roteiro de captação alimenta os dois materiais. No blog, mostramos ",
-            { to: "/blog/video-institucional-para-transportadoras", label: "como o vídeo institucional apresenta estrutura, operação e pessoas de uma transportadora" },
+            {
+              to: "/blog/video-institucional-para-transportadoras",
+              label:
+                "como o vídeo institucional apresenta estrutura, operação e pessoas de uma transportadora",
+            },
             ", com cases reais do setor.",
           ],
         ],
@@ -621,9 +634,15 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
         paragraphs: [
           [
             "Nossa equipe já produziu fotografia e vídeo para empresas do setor logístico. Na ATIVA Logística, desenvolvemos uma série de projetos que documentam a operação e a estrutura da empresa — como o vídeo ",
-            { to: "/videos/ativa-log-estrutura-operacao-e-eficiencia-logistica", label: "Estrutura, Operação e Eficiência Logística" },
+            {
+              to: "/videos/ativa-log-estrutura-operacao-e-eficiencia-logistica",
+              label: "Estrutura, Operação e Eficiência Logística",
+            },
             ", a apresentação do ",
-            { to: "/videos/ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi", label: "Centro de Distribuição em Itapevi" },
+            {
+              to: "/videos/ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi",
+              label: "Centro de Distribuição em Itapevi",
+            },
             " e o registro da ",
             { to: "/videos/ativa-logistica-unidade-barueri", label: "unidade de Barueri" },
             " — além de outros projetos institucionais e comemorativos. Contamos esse trabalho em detalhes no ",
@@ -634,7 +653,10 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
           ],
           [
             "Também produzimos vídeos institucionais para outras empresas do setor, como a ",
-            { to: "/videos/fiorde-logistica-solucoes-logisticas-integradas-para-empresas", label: "Fiorde Logística" },
+            {
+              to: "/videos/fiorde-logistica-solucoes-logisticas-integradas-para-empresas",
+              label: "Fiorde Logística",
+            },
             " e a ",
             { to: "/videos/video-institucional-bmx-logistica", label: "BMX Logística" },
             ". Quando o projeto prevê, fotografia e audiovisual são planejados em conjunto — conheça a variedade de formatos em ",
@@ -689,7 +711,10 @@ export const categoryEditorial: Record<string, CategoryEditorial> = {
         paragraphs: [
           [
             "Parte do nosso acervo vem de operações industriais e logísticas: frotas, armazéns, centros de distribuição, docas e equipes em operação. Para empresas do setor, o banco é estruturado com esse recorte — o mesmo trabalho que detalhamos na página de ",
-            { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística" },
+            {
+              to: "/fotografo-corporativo/fotografia-de-logistica",
+              label: "fotografia de logística",
+            },
             ".",
           ],
         ],

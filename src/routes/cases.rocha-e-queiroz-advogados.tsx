@@ -11,7 +11,8 @@ const PATH = "/cases/rocha-e-queiroz-advogados/";
 const TITLE = "Case Rocha & Queiroz Advogados | Fotografia e Vídeo";
 const DESCRIPTION =
   "Case real de fotografia e vídeo institucional para Rocha & Queiroz Advogados Associados, com produções publicadas e depoimento da equipe.";
-const WA = "Olá Alexandre, vi o case da Rocha & Queiroz Advogados e quero um orçamento de fotografia e vídeo institucional.";
+const WA =
+  "Olá Alexandre, vi o case da Rocha & Queiroz Advogados e quero um orçamento de fotografia e vídeo institucional.";
 
 /* Produções Rocha & Queiroz publicadas no catálogo de vídeos (slugs e IDs reais). */
 const MAIN_VIDEO = videoBySlug("video-institucional-rocha-queiroz-advogados");
@@ -26,7 +27,11 @@ type ServicoLink =
 
 const SERVICOS: ServicoLink[] = [
   { to: "/fotografia-para-advogados/", label: "Fotografia para advogados" },
-  { to: "/fotografo-corporativo/$slug/", slug: "fotografia-para-escritorios-de-advocacia", label: "Fotografia para escritórios de advocacia" },
+  {
+    to: "/fotografo-corporativo/$slug/",
+    slug: "fotografia-para-escritorios-de-advocacia",
+    label: "Fotografia para escritórios de advocacia",
+  },
   { to: "/video-institucional/", label: "Vídeo institucional" },
   { to: "/videos/", label: "Vídeos para empresas" },
 ];
@@ -54,7 +59,7 @@ export const Route = createFileRoute("/cases/rocha-e-queiroz-advogados")({
           about: { "@type": "Organization", name: "Rocha & Queiroz Advogados Associados" },
         }),
       },
-            {
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
@@ -62,12 +67,23 @@ export const Route = createFileRoute("/cases/rocha-e-queiroz-advogados")({
           name: MAIN_VIDEO?.title,
           description: MAIN_VIDEO?.description,
           uploadDate: MAIN_VIDEO?.uploaded,
-          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
-          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          thumbnailUrl: MAIN_VIDEO?.youtube
+            ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg`
+            : undefined,
+          embedUrl: MAIN_VIDEO?.youtube
+            ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}`
+            : undefined,
           inLanguage: "pt-BR",
         }),
       },
-{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".case-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: CaseRochaQueiroz,
@@ -87,7 +103,9 @@ function CaseRochaQueiroz() {
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Case · Advocacia</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Case · Advocacia
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             Rocha & Queiroz Advogados — fotografia e vídeo institucional
           </h1>
@@ -118,30 +136,44 @@ function CaseRochaQueiroz() {
       {/* Resumo do projeto */}
       <section className="border-b border-border bg-surface" aria-labelledby="resumo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">Resumo do projeto</h2>
+          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">
+            Resumo do projeto
+          </h2>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Cliente</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Cliente
+              </dt>
               <dd className="mt-1 font-semibold">Rocha & Queiroz Advogados Associados</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Segmento</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Segmento
+              </dt>
               <dd className="mt-1 font-semibold">Advocacia</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Serviços comprovados</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Serviços comprovados
+              </dt>
               <dd className="mt-1 font-semibold">Vídeo institucional e fotografia</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Produções em vídeo</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Produções em vídeo
+              </dt>
               <dd className="mt-1 font-semibold">2 publicadas</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Fonte de prova</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Fonte de prova
+              </dt>
               <dd className="mt-1 font-semibold">Portfólio público + recomendação no LinkedIn</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Produção</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Produção
+              </dt>
               <dd className="mt-1 font-semibold">Alê Fotógrafo — Alexandre Machado e equipe</dd>
             </div>
           </dl>
@@ -151,7 +183,10 @@ function CaseRochaQueiroz() {
       {/* Produção audiovisual */}
       <section className="border-b border-border" aria-labelledby="producao">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="producao" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="producao"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produção audiovisual
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
@@ -173,7 +208,10 @@ function CaseRochaQueiroz() {
       {/* Trabalho fotográfico */}
       <section className="border-b border-border bg-surface" aria-labelledby="fotografia">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="fotografia" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="fotografia"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Trabalho fotográfico
           </h2>
           <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
@@ -185,10 +223,17 @@ function CaseRochaQueiroz() {
       </section>
 
       {/* Vídeos publicados */}
-      <section id="videos" className="border-b border-border scroll-mt-20" aria-labelledby="videos-titulo">
+      <section
+        id="videos"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="videos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Vídeo</p>
-          <h2 id="videos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="videos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Vídeos publicados
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -196,17 +241,25 @@ function CaseRochaQueiroz() {
               const video = videoBySlug(slug);
               if (!video) return null;
               return (
-                <figure key={slug} className="overflow-hidden rounded-sm bg-black ring-1 ring-border">
+                <figure
+                  key={slug}
+                  className="overflow-hidden rounded-sm bg-black ring-1 ring-border"
+                >
                   <div className="aspect-video">
                     <VideoPlayer video={video} />
                   </div>
-                  <figcaption className="bg-surface px-4 py-3 text-sm font-medium">{video.title}</figcaption>
+                  <figcaption className="bg-surface px-4 py-3 text-sm font-medium">
+                    {video.title}
+                  </figcaption>
                 </figure>
               );
             })}
           </div>
           <p className="mt-6">
-            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/videos/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -216,7 +269,9 @@ function CaseRochaQueiroz() {
       {/* Depoimento */}
       <section className="border-b border-border bg-surface" aria-labelledby="depoimento">
         <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Depoimento</p>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Depoimento
+          </p>
           <h2 id="depoimento" className="font-display text-2xl font-semibold md:text-3xl">
             O que a equipe do escritório disse
           </h2>
@@ -240,7 +295,10 @@ function CaseRochaQueiroz() {
             </footer>
           </blockquote>
           <p className="mt-6">
-            <Link to="/depoimentos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/depoimentos/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver todos os depoimentos →
             </Link>
           </p>
@@ -250,7 +308,10 @@ function CaseRochaQueiroz() {
       {/* Serviços relacionados */}
       <section className="border-b border-border" aria-labelledby="relacionados">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="relacionados" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="relacionados"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -284,9 +345,7 @@ function CaseRochaQueiroz() {
           <h2 className="font-display text-2xl font-semibold md:text-3xl">
             Precisa produzir fotografia e vídeo para o seu escritório?
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Fale com {site.name} sobre o seu projeto.
-          </p>
+          <p className="mt-3 text-muted-foreground">Fale com {site.name} sobre o seu projeto.</p>
           <a
             href={waLink(WA)}
             target="_blank"

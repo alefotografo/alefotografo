@@ -14,7 +14,10 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "Pose se aprende lendo, mas quase nunca se executa sozinho na frente do espelho — o que faz a foto funcionar é alguém corrigindo ombro, queixo e olhar no momento do clique. É exatamente isso que eu faço no ",
-        { to: "/fotografo-corporativo/retrato-corporativo", label: "meu trabalho de retrato corporativo" },
+        {
+          to: "/fotografo-corporativo/retrato-corporativo",
+          label: "meu trabalho de retrato corporativo",
+        },
         ", em São Paulo, com direção do começo ao fim do ensaio.",
       ],
       [
@@ -36,7 +39,10 @@ export const postBridges: Record<string, PostBridge> = {
         "Eu sou Alexandre Machado e dirijo pessoalmente esse tipo de produção em São Paulo — retratos individuais podem ser fotografados por mim, conforme agenda e formato —, seja como ",
         { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
         " ou como parte de um ",
-        { to: "/fotografo-corporativo/retrato-corporativo", label: "ensaio de retrato corporativo" },
+        {
+          to: "/fotografo-corporativo/retrato-corporativo",
+          label: "ensaio de retrato corporativo",
+        },
         " com mais enquadramentos e usos.",
       ],
     ],
@@ -50,7 +56,10 @@ export const postBridges: Record<string, PostBridge> = {
       ],
       [
         "Quando as fotos são para a empresa inteira — time, site e materiais — o formato é o ",
-        { to: "/fotografo-corporativo/retrato-corporativo", label: "ensaio de retrato corporativo" },
+        {
+          to: "/fotografo-corporativo/retrato-corporativo",
+          label: "ensaio de retrato corporativo",
+        },
         ", realizado no seu escritório.",
       ],
     ],
@@ -64,7 +73,10 @@ export const postBridges: Record<string, PostBridge> = {
       ],
       [
         "Para equipes, realizamos a ",
-        { to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo", label: "fotografia corporativa no escritório" },
+        {
+          to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo",
+          label: "fotografia corporativa no escritório",
+        },
         ", padronizando a aparência de todo o time em uma única produção.",
       ],
     ],
@@ -78,20 +90,24 @@ export const postBridges: Record<string, PostBridge> = {
       ],
       [
         "Para empresas, desenvolvemos ",
-        { to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo", label: "ensaios corporativos em São Paulo" },
+        {
+          to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo",
+          label: "ensaios corporativos em São Paulo",
+        },
         " com equipes e times, no escritório ou em locação externa.",
       ],
     ],
   },
-  "fotografo-ensina-que-foto-profissional-aparece-14-vezes-mais-do-que-uma-foto-amadora-no-linkedin": {
-    paragraphs: [
-      [
-        "Para atualizar o perfil com esse padrão, produzimos a ",
-        { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
-        " com direção de pose pensada para o recorte do perfil e a leitura no feed.",
+  "fotografo-ensina-que-foto-profissional-aparece-14-vezes-mais-do-que-uma-foto-amadora-no-linkedin":
+    {
+      paragraphs: [
+        [
+          "Para atualizar o perfil com esse padrão, produzimos a ",
+          { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
+          " com direção de pose pensada para o recorte do perfil e a leitura no feed.",
+        ],
       ],
-    ],
-  },
+    },
   "fotografia-estande-feiras-eventos-setor": {
     paragraphs: [
       [
@@ -150,7 +166,10 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "Depois do planejamento, a festa precisa de registro para valer o investimento: fotos de presença, de entrega de premiações e do clima da noite. Produzimos essa cobertura como ",
-        { to: "/fotografo-corporativo/fotografo-festa-de-confraternizacao", label: "fotografia de festa de confraternização empresarial" },
+        {
+          to: "/fotografo-corporativo/fotografo-festa-de-confraternizacao",
+          label: "fotografia de festa de confraternização empresarial",
+        },
         ", com entrega ágil das imagens.",
       ],
     ],
@@ -177,7 +196,10 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "Fotografar operação logística exige acesso, segurança e leitura do processo — do recebimento ao expedição. Produzimos esse tipo de ",
-        { to: "/fotografo-corporativo/fotografia-de-logistica", label: "fotografia de logística e centros de distribuição" },
+        {
+          to: "/fotografo-corporativo/fotografia-de-logistica",
+          label: "fotografia de logística e centros de distribuição",
+        },
         " com equipe própria; a ",
         { to: "/cases/ativa-logistica", label: "ATIVA Logística" },
         " é um case comercial com as produções publicadas.",

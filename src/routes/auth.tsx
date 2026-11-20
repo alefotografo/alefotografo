@@ -42,7 +42,9 @@ function AuthPage() {
       </p>
       <form onSubmit={onSubmit} className="mt-6 space-y-4">
         <div>
-          <label htmlFor="email" className="text-sm font-medium">E-mail</label>
+          <label htmlFor="email" className="text-sm font-medium">
+            E-mail
+          </label>
           <input
             id="email"
             type="email"
@@ -53,7 +55,9 @@ function AuthPage() {
           />
         </div>
         <div>
-          <label htmlFor="password" className="text-sm font-medium">Senha</label>
+          <label htmlFor="password" className="text-sm font-medium">
+            Senha
+          </label>
           <input
             id="password"
             type="password"

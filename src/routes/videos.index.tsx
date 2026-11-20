@@ -12,7 +12,15 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { VideoPlayer } from "@/components/site/VideoPlayer";
 import { LazySection } from "@/components/site/LazySection";
 import { waLink } from "@/lib/whatsapp";
-import { TIPOS, SERVICOS, SEGMENTOS, PROCESSO, DIFERENCIAIS, GROUP_DEFS, type Group } from "./-videos-content";
+import {
+  TIPOS,
+  SERVICOS,
+  SEGMENTOS,
+  PROCESSO,
+  DIFERENCIAIS,
+  GROUP_DEFS,
+  type Group,
+} from "./-videos-content";
 
 /* FAQ exclusivamente audiovisual/corporativo. Não filtrar o pool geral
    (faqs) por palavras-chave: o filtro anterior puxava perguntas de retrato
@@ -106,7 +114,6 @@ export const Route = createFileRoute("/videos/")({
 /* Conteúdo                                                            */
 /* ------------------------------------------------------------------ */
 
-
 function VideosIndex() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<string>("institucional");
@@ -152,34 +159,49 @@ function VideosIndex() {
       {/* Herói */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">+30 anos produzindo imagem corporativa</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            +30 anos produzindo imagem corporativa
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
-            Vídeos corporativos em {site.city} para empresas que precisam vender, treinar e comunicar melhor.
+            Vídeos corporativos em {site.city} para empresas que precisam vender, treinar e
+            comunicar melhor.
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produção de vídeo institucional, treinamento, integração, depoimentos, eventos corporativos e conteúdo para comunicação empresarial. Roteiro, captação e edição com mais de 30 anos de bagagem — em {site.city} e em todo o Brasil.
+            Produção de vídeo institucional, treinamento, integração, depoimentos, eventos
+            corporativos e conteúdo para comunicação empresarial. Roteiro, captação e edição com
+            mais de 30 anos de bagagem — em {site.city} e em todo o Brasil.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href={waLink("Olá Alexandre, quero um orçamento de vídeo corporativo para minha empresa.")}
+              href={waLink(
+                "Olá Alexandre, quero um orçamento de vídeo corporativo para minha empresa.",
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
             >
               Solicitar orçamento no WhatsApp
             </a>
-            <a href="#tipos" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <a
+              href="#tipos"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Ver tipos de vídeo
             </a>
-            <a href="#portfolio" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <a
+              href="#portfolio"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Ver portfólio
             </a>
           </div>
 
           <div className="mt-10 flex max-w-xl items-center gap-2 rounded-sm border border-border bg-surface px-3 py-2 focus-within:border-ember">
             <Search size={16} className="text-muted-foreground" aria-hidden="true" />
-            <label htmlFor="video-search" className="sr-only">Buscar vídeos</label>
+            <label htmlFor="video-search" className="sr-only">
+              Buscar vídeos
+            </label>
             <input
               id="video-search"
               type="search"
@@ -206,7 +228,9 @@ function VideosIndex() {
       {showreel && (
         <section className="border-b border-border" aria-labelledby="showreel">
           <div className="mx-auto max-w-5xl px-5 py-14 md:px-8 md:py-16">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Showreel</p>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Showreel
+            </p>
             <h2 id="showreel" className="mb-6 font-display text-2xl font-semibold md:text-3xl">
               {showreel.title}
             </h2>
@@ -221,20 +245,36 @@ function VideosIndex() {
       <section className="border-b border-border bg-surface" aria-label="Empresas atendidas">
         <div className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-12">
           <p className="text-sm text-muted-foreground text-pretty md:text-base">
-            Mais de 30 anos atendendo empresas como <strong className="text-foreground">Tecnisa</strong>, <strong className="text-foreground">Convatec</strong>, <strong className="text-foreground">Accor</strong>, <strong className="text-foreground">ABRADILAN</strong>, <strong className="text-foreground">Galena</strong> e <strong className="text-foreground">Germed</strong> — em projetos por todo o Brasil.
+            Mais de 30 anos atendendo empresas como{" "}
+            <strong className="text-foreground">Tecnisa</strong>,{" "}
+            <strong className="text-foreground">Convatec</strong>,{" "}
+            <strong className="text-foreground">Accor</strong>,{" "}
+            <strong className="text-foreground">ABRADILAN</strong>,{" "}
+            <strong className="text-foreground">Galena</strong> e{" "}
+            <strong className="text-foreground">Germed</strong> — em projetos por todo o Brasil.
           </p>
         </div>
       </section>
 
       {/* Tipos de vídeo */}
-      <section id="tipos" className="border-b border-border scroll-mt-20" aria-labelledby="tipos-titulo">
+      <section
+        id="tipos"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="tipos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Tipos de vídeo para empresas</p>
-          <h2 id="tipos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Tipos de vídeo para empresas
+          </p>
+          <h2
+            id="tipos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Que tipo de vídeo sua empresa precisa?
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
-            Um vídeo corporativo bem produzido apresenta a estrutura, explica serviços, treina equipes e gera confiança em canais digitais, reuniões e apresentações comerciais.
+            Um vídeo corporativo bem produzido apresenta a estrutura, explica serviços, treina
+            equipes e gera confiança em canais digitais, reuniões e apresentações comerciais.
           </p>
 
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -242,7 +282,10 @@ function VideosIndex() {
               const thumbVideo = videoBySlug(t.thumbSlug);
               const thumb = thumbVideo ? videoThumb(thumbVideo, "sm") : null;
               return (
-                <li key={t.title} className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface">
+                <li
+                  key={t.title}
+                  className="flex flex-col overflow-hidden rounded-sm border border-border bg-surface"
+                >
                   <div className="relative aspect-video overflow-hidden bg-black">
                     {thumb ? (
                       <img
@@ -268,10 +311,14 @@ function VideosIndex() {
                   </div>
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="font-display text-lg font-semibold">{t.title}</h3>
-                    <p className="mt-2 flex-1 text-sm text-muted-foreground text-pretty">{t.text}</p>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground text-pretty">
+                      {t.text}
+                    </p>
                     <div className="mt-4 flex flex-wrap items-center gap-4">
                       <a
-                        href={waLink(`Olá Alexandre, quero um orçamento de ${t.wa} para minha empresa.`)}
+                        href={waLink(
+                          `Olá Alexandre, quero um orçamento de ${t.wa} para minha empresa.`,
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-ember hover:underline"
@@ -279,7 +326,10 @@ function VideosIndex() {
                         Solicitar orçamento
                       </a>
                       {t.to && (
-                        <Link to={t.to} className="text-sm text-muted-foreground hover:text-foreground">
+                        <Link
+                          to={t.to}
+                          className="text-sm text-muted-foreground hover:text-foreground"
+                        >
                           Saber mais →
                         </Link>
                       )}
@@ -296,12 +346,19 @@ function VideosIndex() {
       <LazySection minHeight={600}>
         <section className="border-b border-border bg-surface" aria-labelledby="servicos-titulo">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
-            <h2 id="servicos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Serviços
+            </p>
+            <h2
+              id="servicos-titulo"
+              className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Vídeos que ajudam sua empresa a vender, treinar e comunicar melhor.
             </h2>
             <p className="mt-4 max-w-3xl text-muted-foreground text-pretty">
-              Produção de vídeo corporativo em {site.city} para indústrias, logística, clínicas e hospitais, escritórios de advocacia e áreas de marketing, RH e comunicação interna. Cada projeto começa pelo objetivo comercial — não pelo equipamento.
+              Produção de vídeo corporativo em {site.city} para indústrias, logística, clínicas e
+              hospitais, escritórios de advocacia e áreas de marketing, RH e comunicação interna.
+              Cada projeto começa pelo objetivo comercial — não pelo equipamento.
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -309,7 +366,10 @@ function VideosIndex() {
                 const thumbVideo = videoBySlug(s.thumbSlug);
                 const thumb = thumbVideo ? videoThumb(thumbVideo, "sm") : null;
                 return (
-                  <article key={s.title} className="overflow-hidden rounded-sm border border-border bg-background">
+                  <article
+                    key={s.title}
+                    className="overflow-hidden rounded-sm border border-border bg-background"
+                  >
                     <div className="flex items-center gap-4 border-b border-border bg-surface p-4 sm:gap-5 sm:p-5">
                       <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-sm bg-black ring-1 ring-border sm:w-36">
                         {thumb ? (
@@ -339,15 +399,21 @@ function VideosIndex() {
                     <div className="p-6">
                       <dl className="space-y-4 text-sm">
                         <div>
-                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">Para quem é</dt>
+                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">
+                            Para quem é
+                          </dt>
                           <dd className="mt-1 text-muted-foreground text-pretty">{s.quem}</dd>
                         </div>
                         <div>
-                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">Quando usar</dt>
+                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">
+                            Quando usar
+                          </dt>
                           <dd className="mt-1 text-muted-foreground text-pretty">{s.quando}</dd>
                         </div>
                         <div>
-                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">O que entregamos</dt>
+                          <dt className="text-xs uppercase tracking-[0.18em] text-ember">
+                            O que entregamos
+                          </dt>
                           <dd className="mt-1 text-muted-foreground text-pretty">{s.entrega}</dd>
                         </div>
                       </dl>
@@ -369,25 +435,42 @@ function VideosIndex() {
       </LazySection>
 
       {/* Portfólio */}
-      <section id="portfolio" className="border-b border-border scroll-mt-20" aria-labelledby="servicos-portfolio">
+      <section
+        id="portfolio"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="servicos-portfolio"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
-          <h2 id="servicos-portfolio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Portfólio
+          </p>
+          <h2
+            id="servicos-portfolio"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Frentes de produção, um único padrão de qualidade.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
-            Escolha a frente e veja trabalhos reais entregues para empresas. Expanda cada seção para conferir mais cases do mesmo serviço.
+            Escolha a frente e veja trabalhos reais entregues para empresas. Expanda cada seção para
+            conferir mais cases do mesmo serviço.
           </p>
 
           {q ? (
             <>
-              <p className="mt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground" aria-live="polite">
+              <p
+                className="mt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground"
+                aria-live="polite"
+              >
                 {filtered.length} {filtered.length === 1 ? "vídeo" : "vídeos"} para "{q}"
               </p>
               {filtered.length === 0 ? (
                 <div className="mt-6 rounded-sm border border-dashed border-border p-12 text-center text-muted-foreground">
                   <p>Nenhum vídeo encontrado para esta busca.</p>
-                  <button type="button" onClick={() => setQ("")} className="mt-4 text-sm text-ember hover:underline">
+                  <button
+                    type="button"
+                    onClick={() => setQ("")}
+                    className="mt-4 text-sm text-ember hover:underline"
+                  >
                     Limpar filtro
                   </button>
                 </div>
@@ -397,7 +480,11 @@ function VideosIndex() {
             </>
           ) : (
             <>
-              <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Frentes de produção">
+              <div
+                className="mt-8 flex flex-wrap gap-2"
+                role="tablist"
+                aria-label="Frentes de produção"
+              >
                 {grouped.map((g) => (
                   <button
                     key={g.id}
@@ -503,14 +590,22 @@ function VideosIndex() {
       <LazySection minHeight={600}>
         <section className="border-b border-border bg-surface" aria-labelledby="segmentos-titulo">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Segmentos atendidos</p>
-            <h2 id="segmentos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Segmentos atendidos
+            </p>
+            <h2
+              id="segmentos-titulo"
+              className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Produção de vídeo para diferentes segmentos
             </h2>
 
             <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {SEGMENTOS.map((s) => (
-                <li key={s.title} className="flex flex-col rounded-sm border border-border bg-background p-6">
+                <li
+                  key={s.title}
+                  className="flex flex-col rounded-sm border border-border bg-background p-6"
+                >
                   <h3 className="font-display text-base font-semibold">{s.title}</h3>
                   <dl className="mt-4 flex-1 space-y-3 text-sm">
                     <div>
@@ -518,16 +613,22 @@ function VideosIndex() {
                       <dd className="mt-1 text-muted-foreground text-pretty">{s.desafio}</dd>
                     </div>
                     <div>
-                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">Vídeo indicado</dt>
+                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">
+                        Vídeo indicado
+                      </dt>
                       <dd className="mt-1 text-muted-foreground text-pretty">{s.indicado}</dd>
                     </div>
                     <div>
-                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">Benefício comercial</dt>
+                      <dt className="text-xs uppercase tracking-[0.16em] text-ember">
+                        Benefício comercial
+                      </dt>
                       <dd className="mt-1 text-muted-foreground text-pretty">{s.beneficio}</dd>
                     </div>
                   </dl>
                   <a
-                    href={waLink(`Olá Alexandre, ${s.cta.toLowerCase()}. Pode me enviar um orçamento?`)}
+                    href={waLink(
+                      `Olá Alexandre, ${s.cta.toLowerCase()}. Pode me enviar um orçamento?`,
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-5 text-sm font-medium text-ember hover:underline"
@@ -543,10 +644,19 @@ function VideosIndex() {
 
       {/* Processo */}
       <LazySection minHeight={400}>
-        <section id="processo" className="border-b border-border scroll-mt-20" aria-labelledby="processo-titulo">
+        <section
+          id="processo"
+          className="border-b border-border scroll-mt-20"
+          aria-labelledby="processo-titulo"
+        >
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Processo</p>
-            <h2 id="processo-titulo" className="font-display text-3xl font-semibold md:text-4xl text-balance">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Processo
+            </p>
+            <h2
+              id="processo-titulo"
+              className="font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Do briefing à entrega, sem improviso.
             </h2>
             <p className="mt-4 max-w-2xl text-muted-foreground text-pretty">
@@ -567,10 +677,18 @@ function VideosIndex() {
 
       {/* Diferenciais */}
       <LazySection minHeight={400}>
-        <section className="border-b border-border bg-surface" aria-labelledby="diferenciais-titulo">
+        <section
+          className="border-b border-border bg-surface"
+          aria-labelledby="diferenciais-titulo"
+        >
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Diferenciais</p>
-            <h2 id="diferenciais-titulo" className="font-display text-3xl font-semibold md:text-4xl text-balance">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Diferenciais
+            </p>
+            <h2
+              id="diferenciais-titulo"
+              className="font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Por que empresas contratam este serviço
             </h2>
             <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -590,17 +708,29 @@ function VideosIndex() {
         <section className="border-b border-border" aria-labelledby="sobre-titulo">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
             <div>
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Sobre</p>
-              <h2 id="sobre-titulo" className="font-display text-3xl font-semibold md:text-4xl text-balance">
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+                Sobre
+              </p>
+              <h2
+                id="sobre-titulo"
+                className="font-display text-3xl font-semibold md:text-4xl text-balance"
+              >
                 Imagem corporativa com intenção estratégica, não apenas estética.
               </h2>
               <p className="mt-5 text-muted-foreground text-pretty">
-                Sou Alexandre Machado, o Alê Fotógrafo. Há mais de 30 anos atendo empresas em {site.city} com fotografia corporativa, retratos profissionais, cobertura de eventos e vídeo institucional.
+                Sou Alexandre Machado, o Alê Fotógrafo. Há mais de 30 anos atendo empresas em{" "}
+                {site.city} com fotografia corporativa, retratos profissionais, cobertura de eventos
+                e vídeo institucional.
               </p>
               <p className="mt-4 text-muted-foreground text-pretty">
-                Entendo o posicionamento, o público e o objetivo da comunicação antes de iniciar qualquer produção. Atendimento direto, sem intermediários, com estúdio próprio e estrutura móvel para gravar na sua empresa.
+                Entendo o posicionamento, o público e o objetivo da comunicação antes de iniciar
+                qualquer produção. Atendimento direto, sem intermediários, com estúdio próprio e
+                estrutura móvel para gravar na sua empresa.
               </p>
-              <Link to="/quem-e-o-ale/" className="mt-6 inline-flex text-sm text-ember hover:underline">
+              <Link
+                to="/quem-e-o-ale/"
+                className="mt-6 inline-flex text-sm text-ember hover:underline"
+              >
                 Conhecer o Alê →
               </Link>
             </div>
@@ -629,26 +759,41 @@ function VideosIndex() {
             Dúvidas frequentes sobre vídeo corporativo
           </h2>
           <FaqList items={featuredFaqs} />
-          <Link to="/faq/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/faq/"
+            className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground"
+          >
             Ver todas as perguntas →
           </Link>
         </div>
       </section>
 
       {/* Contato */}
-      <section id="contato" className="border-t border-border scroll-mt-20" aria-labelledby="contato-titulo">
+      <section
+        id="contato"
+        className="border-t border-border scroll-mt-20"
+        aria-labelledby="contato-titulo"
+      >
         <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-8 px-5 py-16 md:flex-row md:items-center md:px-8">
           <div className="max-w-xl">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Contato</p>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+              Contato
+            </p>
             <h2 id="contato-titulo" className="font-display text-2xl font-semibold md:text-3xl">
               Vamos produzir o vídeo da sua empresa?
             </h2>
             <p className="mt-3 text-muted-foreground text-pretty">
-              Conte sobre o seu projeto. Respondo em até 1 dia útil com uma primeira conversa estratégica, sem compromisso.
+              Conte sobre o seu projeto. Respondo em até 1 dia útil com uma primeira conversa
+              estratégica, sem compromisso.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               WhatsApp{" "}
-              <a href={waLink("Olá Alexandre, quero conversar sobre um vídeo corporativo.")} target="_blank" rel="noopener noreferrer" className="text-ember underline underline-offset-4">
+              <a
+                href={waLink("Olá Alexandre, quero conversar sobre um vídeo corporativo.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ember underline underline-offset-4"
+              >
                 (11) 91355-0533
               </a>{" "}
               · E-mail{" "}
@@ -659,7 +804,9 @@ function VideosIndex() {
           </div>
           <div className="flex flex-col gap-3">
             <a
-              href={waLink("Olá Alexandre, quero um orçamento de vídeo corporativo para minha empresa.")}
+              href={waLink(
+                "Olá Alexandre, quero um orçamento de vídeo corporativo para minha empresa.",
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-ember px-6 py-3 font-medium text-accent-foreground hover:bg-ember-glow"
@@ -688,7 +835,10 @@ function VideoGrid({ items, className = "" }: { items: typeof videos; className?
         return (
           <li
             key={v.slug}
-            style={{ contentVisibility: i < 8 ? "visible" : "auto", containIntrinsicSize: "320px 280px" }}
+            style={{
+              contentVisibility: i < 8 ? "visible" : "auto",
+              containIntrinsicSize: "320px 280px",
+            }}
           >
             <Link
               to="/videos/$slug/"
@@ -723,7 +873,13 @@ function VideoGrid({ items, className = "" }: { items: typeof videos; className?
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="rounded-full bg-ember/90 p-4 text-accent-foreground shadow-lg transition-transform group-hover:scale-110">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>

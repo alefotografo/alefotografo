@@ -54,9 +54,24 @@ const ANSWER_BLOCK =
   "Foto profissional para LinkedIn (também chamada de headshot ou foto de perfil profissional) é o retrato enquadrado para o formato circular da plataforma, com fundo neutro, expressão profissional e recorte que mantém o rosto legível em miniatura. É indicada para executivos, profissionais liberais e quem busca recolocação. Fotografo em São Paulo e entrego as imagens tratadas em até 1 dia útil, conforme o escopo.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil" },
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+  {
+    formato: "Retrato para LinkedIn",
+    onde: "Meu estúdio, o seu escritório ou locação externa",
+    duracao: "Cerca de 1 hora de captação",
+    entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil",
+  },
+  {
+    formato: "Retrato individual",
+    onde: "Meu estúdio, o seu escritório ou locação externa",
+    duracao: "Cerca de 1 hora de captação",
+    entrega: "Imagens tratadas em até 1 dia útil",
+  },
+  {
+    formato: "Retratos de equipe ou diretoria",
+    onde: "No escritório da empresa, em blocos de horário",
+    duracao: "Cerca de 15 minutos por pessoa",
+    entrega: "Mesmo padrão visual para todos, em até 1 dia útil",
+  },
 ];
 
 export const Route = createFileRoute("/foto-profissional-para-linkedin")({
@@ -114,7 +129,12 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Início", item: SITE_ORIGIN },
-                { "@type": "ListItem", position: 2, name: "Foto profissional para LinkedIn", item: CANONICAL },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Foto profissional para LinkedIn",
+                  item: CANONICAL,
+                },
               ],
             },
           ],
@@ -159,10 +179,19 @@ export const Route = createFileRoute("/foto-profissional-para-linkedin")({
 });
 
 const passos = [
-  { h: "1. Briefing rápido", p: "Definimos o objetivo do perfil, o estilo de fundo e o figurino mais adequado ao seu setor." },
-  { h: "2. Sessão de 20 a 40 min", p: "Direção de pose e expressão em estúdio ou no seu escritório, com revisão das fotos na hora." },
+  {
+    h: "1. Briefing rápido",
+    p: "Definimos o objetivo do perfil, o estilo de fundo e o figurino mais adequado ao seu setor.",
+  },
+  {
+    h: "2. Sessão de 20 a 40 min",
+    p: "Direção de pose e expressão em estúdio ou no seu escritório, com revisão das fotos na hora.",
+  },
   { h: "3. Seleção", p: "Você escolhe as favoritas em uma galeria online, sem pressa." },
-  { h: "4. Tratamento e entrega", p: "Retoque natural, ajuste de cor e recortes prontos para LinkedIn, site e currículo em até 1 dia útil, conforme o escopo." },
+  {
+    h: "4. Tratamento e entrega",
+    p: "Retoque natural, ajuste de cor e recortes prontos para LinkedIn, site e currículo em até 1 dia útil, conforme o escopo.",
+  },
 ];
 
 const checklist = [
@@ -176,7 +205,13 @@ const checklist = [
 function LinkedinPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços", to: "/servicos" }, { label: "Foto para LinkedIn" }]} />
+      <Breadcrumbs
+        items={[
+          { label: "Início", to: "/" },
+          { label: "Serviços", to: "/servicos" },
+          { label: "Foto para LinkedIn" },
+        ]}
+      />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
@@ -247,7 +282,10 @@ function LinkedinPage() {
           <ul className="mt-8 space-y-3 text-muted-foreground">
             {checklist.map((c) => (
               <li key={c} className="flex gap-3">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
+                <span
+                  aria-hidden="true"
+                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember"
+                />
                 <span>{c}</span>
               </li>
             ))}

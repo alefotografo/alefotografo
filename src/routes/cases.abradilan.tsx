@@ -14,11 +14,12 @@ const PATH = "/cases/abradilan/";
 const TITLE = "Case ABRADILAN | Cobertura de Eventos Corporativos";
 const DESCRIPTION =
   "Coberturas em vídeo de fóruns, convenções e eventos da ABRADILAN — do 7º ao 11º Fórum de Desenvolvimento Empresarial, convenção internacional e produções comemorativas.";
-const WA = "Olá Alexandre, vi o case da ABRADILAN e quero um orçamento de cobertura de evento corporativo.";
+const WA =
+  "Olá Alexandre, vi o case da ABRADILAN e quero um orçamento de cobertura de evento corporativo.";
 
 /* Produções ABRADILAN publicadas no catálogo de vídeos (slugs reais). */
-const VIDEO_MAIN = "11-forum-abradilan-2026"
-const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);;
+const VIDEO_MAIN = "11-forum-abradilan-2026";
+const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);
 const VIDEOS_MORE = [
   "video-corporativo-do-11o-forum-abradilan-2026-cobertura-de-evento-empresarial",
   "9-forum-abradilan",
@@ -78,7 +79,7 @@ export const Route = createFileRoute("/cases/abradilan")({
           about: { "@type": "Organization", name: "ABRADILAN" },
         }),
       },
-            {
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
@@ -86,13 +87,24 @@ export const Route = createFileRoute("/cases/abradilan")({
           name: MAIN_VIDEO?.title,
           description: MAIN_VIDEO?.description,
           uploadDate: MAIN_VIDEO?.uploaded,
-          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
-          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          thumbnailUrl: MAIN_VIDEO?.youtube
+            ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg`
+            : undefined,
+          embedUrl: MAIN_VIDEO?.youtube
+            ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}`
+            : undefined,
           inLanguage: "pt-BR",
         }),
       },
-{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
+      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".case-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: CaseAbradilan,
@@ -113,14 +125,16 @@ function CaseAbradilan() {
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Case · Eventos corporativos</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Case · Eventos corporativos
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             ABRADILAN — cobertura de fóruns e convenções
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
             Produzimos as coberturas em vídeo dos fóruns de desenvolvimento empresarial da
-            ABRADILAN, da 15ª Convenção Internacional em Punta Cana e das produções comemorativas
-            da entidade.
+            ABRADILAN, da 15ª Convenção Internacional em Punta Cana e das produções comemorativas da
+            entidade.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -144,30 +158,48 @@ function CaseAbradilan() {
       {/* Resumo do projeto */}
       <section className="border-b border-border bg-surface" aria-labelledby="resumo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">Resumo do projeto</h2>
+          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">
+            Resumo do projeto
+          </h2>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Cliente</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Cliente
+              </dt>
               <dd className="mt-1 font-semibold">ABRADILAN</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Segmento</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Segmento
+              </dt>
               <dd className="mt-1 font-semibold">Eventos corporativos e entidades</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Serviços</dt>
-              <dd className="mt-1 font-semibold">Cobertura de eventos em vídeo e produção comemorativa</dd>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Serviços
+              </dt>
+              <dd className="mt-1 font-semibold">
+                Cobertura de eventos em vídeo e produção comemorativa
+              </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Eventos documentados</dt>
-              <dd className="mt-1 font-semibold">Fóruns (7º, 9º e 11º), 15ª Convenção em Punta Cana, confraternização e 25 anos</dd>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Eventos documentados
+              </dt>
+              <dd className="mt-1 font-semibold">
+                Fóruns (7º, 9º e 11º), 15ª Convenção em Punta Cana, confraternização e 25 anos
+              </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Material publicado</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Material publicado
+              </dt>
               <dd className="mt-1 font-semibold">7 produções em vídeo</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Produção</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Produção
+              </dt>
               <dd className="mt-1 font-semibold">Alê Fotógrafo — Alexandre Machado e equipe</dd>
             </div>
           </dl>
@@ -177,20 +209,23 @@ function CaseAbradilan() {
       {/* Contexto */}
       <section className="border-b border-border" aria-labelledby="desafio">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="desafio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="desafio"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             O que a entidade precisava registrar
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
             <p>
               Entidades que promovem eventos anuais precisam de um registro audiovisual que
-              documente cada edição e comunique o encontro para associados e patrocinadores. Para
-              a ABRADILAN, produzimos as coberturas em vídeo dos fóruns de desenvolvimento
-              empresarial — da 7ª à 11ª edição — e o registro da 15ª Convenção ABRADILAN, realizada
-              no Barceló Bavaro Palace, em Punta Cana.
+              documente cada edição e comunique o encontro para associados e patrocinadores. Para a
+              ABRADILAN, produzimos as coberturas em vídeo dos fóruns de desenvolvimento empresarial
+              — da 7ª à 11ª edição — e o registro da 15ª Convenção ABRADILAN, realizada no Barceló
+              Bavaro Palace, em Punta Cana.
             </p>
             <p>
-              O conjunto inclui ainda a cobertura de uma confraternização e o vídeo comemorativo
-              dos 25 anos da entidade. O material é usado pela organização em aberturas de evento,
+              O conjunto inclui ainda a cobertura de uma confraternização e o vídeo comemorativo dos
+              25 anos da entidade. O material é usado pela organização em aberturas de evento,
               comunicação com associados e acervo institucional.
             </p>
           </div>
@@ -198,10 +233,17 @@ function CaseAbradilan() {
       </section>
 
       {/* Produções em vídeo */}
-      <section id="producoes" className="border-b border-border scroll-mt-20" aria-labelledby="videos-titulo">
+      <section
+        id="producoes"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="videos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-ember">Vídeo</p>
-          <h2 id="videos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="videos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produções em vídeo publicadas
           </h2>
           {main && (
@@ -248,7 +290,10 @@ function CaseAbradilan() {
             })}
           </ul>
           <p className="mt-6">
-            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/videos/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -258,12 +303,18 @@ function CaseAbradilan() {
       {/* Aplicações */}
       <section className="border-b border-border bg-surface" aria-labelledby="aplicacoes">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="aplicacoes" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="aplicacoes"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Onde o material é usado
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {APLICACOES.map((a) => (
-              <li key={a} className="rounded-sm border border-border bg-background px-4 py-3 text-sm">
+              <li
+                key={a}
+                className="rounded-sm border border-border bg-background px-4 py-3 text-sm"
+              >
                 {a}
               </li>
             ))}
@@ -274,29 +325,53 @@ function CaseAbradilan() {
       {/* Serviços relacionados */}
       <section className="border-b border-border" aria-labelledby="relacionados">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="relacionados" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="relacionados"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/video-de-eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/video-de-eventos-corporativos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeo de eventos corporativos
             </Link>
-            <Link to="/eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/eventos-corporativos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotografia de eventos corporativos
             </Link>
-            <Link to="/fotografo-de-feira-de-negocios/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-de-feira-de-negocios/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotógrafo de feiras de negócios
             </Link>
-            <Link to="/video-institucional/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/video-institucional/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeo institucional
             </Link>
-            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/videos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeos para empresas
             </Link>
-            <Link to="/fotos-corporativas/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotos-corporativas/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotos corporativas de equipe
             </Link>
-            <Link to="/fotografo-empresarial/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-empresarial/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotógrafo empresarial
             </Link>
           </div>

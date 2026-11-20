@@ -5,81 +5,80 @@ import { galleryTitle, selectedWorks, worksCtas } from "@/data/homeCuration";
 
 export default function HomeSelectedWorks() {
   return (
+    <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-6 md:mb-10">
+        <div className="max-w-2xl">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotos</p>
+          <h2 className="font-display text-3xl font-semibold text-balance md:text-5xl">
+            Trabalhos selecionados
+          </h2>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
+            Uma seleção de projetos realizados para empresas, profissionais e diferentes segmentos.
+          </p>
+        </div>
+        <Link
+          to="/fotografo-corporativo/"
+          className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:min-h-0"
+        >
+          Ver todos os segmentos <ArrowUpRight size={14} />
+        </Link>
+      </div>
 
-      <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-6 md:mb-10">
-          <div className="max-w-2xl">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotos</p>
-            <h2 className="font-display text-3xl font-semibold text-balance md:text-5xl">
-              Trabalhos selecionados
-            </h2>
-            <p className="mt-4 max-w-2xl text-muted-foreground">
-              Uma seleção de projetos realizados para empresas, profissionais e diferentes segmentos.
-            </p>
-          </div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {selectedWorks.map((w) => (
           <Link
-            to="/fotografo-corporativo/"
-            className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground md:min-h-0"
+            key={w.src}
+            to="/fotografo-corporativo/$slug/"
+            params={{ slug: w.gallery }}
+            className="group relative block aspect-[4/3] overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
           >
-            Ver todos os segmentos <ArrowUpRight size={14} />
+            <img
+              src={imgUrl(w.src, 640)}
+              srcSet={imgSrcSet(w.src, GRID_WIDTHS, w.width)}
+              sizes="(max-width: 768px) 96vw, 45vw"
+              alt={w.alt}
+              width={w.width}
+              height={w.height}
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-3 md:p-5">
+              <h3 className="font-display text-sm font-semibold text-foreground md:text-lg">
+                {w.title ?? galleryTitle(w.gallery)}
+              </h3>
+              <span className="mt-1 hidden items-center gap-1 text-xs text-ember opacity-0 transition-opacity group-hover:opacity-100 md:inline-flex">
+                Ver galeria <ArrowUpRight size={12} />
+              </span>
+            </div>
           </Link>
-        </div>
+        ))}
+      </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {selectedWorks.map((w) => (
+      <div className="mt-10 flex flex-wrap gap-3">
+        {worksCtas.map((c) =>
+          "categorySlug" in c ? (
             <Link
-              key={w.src}
+              key={c.label}
               to="/fotografo-corporativo/$slug/"
-              params={{ slug: w.gallery }}
-              className="group relative block aspect-[4/3] overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
+              params={{ slug: c.categorySlug }}
+              className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
             >
-              <img
-                src={imgUrl(w.src, 640)}
-                srcSet={imgSrcSet(w.src, GRID_WIDTHS, w.width)}
-                sizes="(max-width: 768px) 96vw, 45vw"
-                alt={w.alt}
-                width={w.width}
-                height={w.height}
-                loading="lazy"
-                decoding="async"
-                fetchPriority="low"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-3 md:p-5">
-                <h3 className="font-display text-sm font-semibold text-foreground md:text-lg">
-                  {w.title ?? galleryTitle(w.gallery)}
-                </h3>
-                <span className="mt-1 hidden items-center gap-1 text-xs text-ember opacity-0 transition-opacity group-hover:opacity-100 md:inline-flex">
-                  Ver galeria <ArrowUpRight size={12} />
-                </span>
-              </div>
+              {c.label} <ArrowUpRight size={14} />
             </Link>
-          ))}
-        </div>
-
-        <div className="mt-10 flex flex-wrap gap-3">
-          {worksCtas.map((c) =>
-            "categorySlug" in c ? (
-              <Link
-                key={c.label}
-                to="/fotografo-corporativo/$slug/"
-                params={{ slug: c.categorySlug }}
-                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
-              >
-                {c.label} <ArrowUpRight size={14} />
-              </Link>
-            ) : (
-              <Link
-                key={c.label}
-                to="/eventos-corporativos/"
-                className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
-              >
-                {c.label} <ArrowUpRight size={14} />
-              </Link>
-            ),
-          )}
-        </div>
-      </section>
+          ) : (
+            <Link
+              key={c.label}
+              to="/eventos-corporativos/"
+              className="inline-flex items-center gap-2 rounded-sm border border-border-strong px-6 py-3.5 text-sm font-medium hover:bg-surface"
+            >
+              {c.label} <ArrowUpRight size={14} />
+            </Link>
+          ),
+        )}
+      </div>
+    </section>
   );
 }

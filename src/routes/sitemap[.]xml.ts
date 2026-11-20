@@ -8,9 +8,19 @@ import { REDIRECTED_CATEGORY_SLUGS } from "@/lib/legacy-redirects";
 const BASE_URL = "https://alefotografo.com.br";
 
 const MONTHS_PT: Record<string, string> = {
-  janeiro: "01", fevereiro: "02", março: "03", marco: "03", abril: "04",
-  maio: "05", junho: "06", julho: "07", agosto: "08", setembro: "09",
-  outubro: "10", novembro: "11", dezembro: "12",
+  janeiro: "01",
+  fevereiro: "02",
+  março: "03",
+  marco: "03",
+  abril: "04",
+  maio: "05",
+  junho: "06",
+  julho: "07",
+  agosto: "08",
+  setembro: "09",
+  outubro: "10",
+  novembro: "11",
+  dezembro: "12",
 };
 
 function toISODate(input?: string): string | undefined {
@@ -40,34 +50,154 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "1.0" },
           { path: "/servicos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotografo-corporativo/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotos-corporativas/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/foto-profissional/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/foto-profissional-para-linkedin/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotografia-para-clinicas/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotografia-executiva/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotos-profissionais-medicos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotografia-para-advogados/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/eventos-corporativos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotografo-empresarial/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/fotografo-de-feira-de-negocios/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
+          {
+            path: "/fotografo-corporativo/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotos-corporativas/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/foto-profissional/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/foto-profissional-para-linkedin/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotografia-para-clinicas/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotografia-executiva/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotos-profissionais-medicos/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotografia-para-advogados/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/eventos-corporativos/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotografo-empresarial/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/fotografo-de-feira-de-negocios/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
 
           { path: "/portfolio/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.8" },
           { path: "/cases/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.8" },
-          { path: "/cases/ativa-logistica/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/rocha-e-queiroz-advogados/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/sq-quimica/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/abradilan/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/tecnisa/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/nitriflex/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/fiorde/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/germed/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/galena/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
-          { path: "/cases/bmx-logistica/", lastmod: CASES_LASTMOD, changefreq: "monthly", priority: "0.7" },
+          {
+            path: "/cases/ativa-logistica/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/rocha-e-queiroz-advogados/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/sq-quimica/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/abradilan/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/tecnisa/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/nitriflex/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/fiorde/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/germed/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/galena/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/cases/bmx-logistica/",
+            lastmod: CASES_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.7",
+          },
           { path: "/videos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/video-institucional/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/video-de-eventos-corporativos/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
-          { path: "/video-para-feiras-e-stands/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
+          {
+            path: "/video-institucional/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/video-de-eventos-corporativos/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/video-para-feiras-e-stands/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "weekly",
+            priority: "0.9",
+          },
           { path: "/blog/", lastmod: CORE_LASTMOD, changefreq: "weekly", priority: "0.9" },
           { path: "/sobre/", lastmod: CORE_LASTMOD, changefreq: "monthly", priority: "0.8" },
           { path: "/quem-e-o-ale/", lastmod: CORE_LASTMOD, changefreq: "monthly", priority: "0.8" },
@@ -76,17 +206,42 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/contato/", lastmod: CORE_LASTMOD, changefreq: "monthly", priority: "0.8" },
           ...categories
             .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
-            .map((c) => ({ path: `/fotografo-corporativo/${c.slug}/`, lastmod: CORE_LASTMOD, changefreq: "monthly" as const, priority: "0.8" })),
-          { path: "/fotografo-corporativo-em/", lastmod: CORE_LASTMOD, changefreq: "monthly", priority: "0.8" },
-          ...bairros.map((b) => ({ path: `/fotografo-corporativo-em/${b.slug}/`, lastmod: CORE_LASTMOD, changefreq: "monthly" as const, priority: "0.8" })),
+            .map((c) => ({
+              path: `/fotografo-corporativo/${c.slug}/`,
+              lastmod: CORE_LASTMOD,
+              changefreq: "monthly" as const,
+              priority: "0.8",
+            })),
+          {
+            path: "/fotografo-corporativo-em/",
+            lastmod: CORE_LASTMOD,
+            changefreq: "monthly",
+            priority: "0.8",
+          },
+          ...bairros.map((b) => ({
+            path: `/fotografo-corporativo-em/${b.slug}/`,
+            lastmod: CORE_LASTMOD,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
 
           // URLs alias (/portfolio/:slug e /fotografo-corporativo/categoria/:slug)
           // apontam para /fotografo-corporativo/:slug via canonical/redirect.
           // Não devem entrar no sitemap: geram "Página com redirecionamento" no GSC.
-          ...videos.map((v) => ({ path: `/videos/${v.slug}/`, lastmod: CORE_LASTMOD, changefreq: "monthly" as const, priority: "0.7" })),
+          ...videos.map((v) => ({
+            path: `/videos/${v.slug}/`,
+            lastmod: CORE_LASTMOD,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
           // <lastmod> populado com a data de publicação do post para priorização
           // de crawl budget pelo Googlebot.
-          ...posts.map((p) => ({ path: `/blog/${p.slug}/`, lastmod: toISODate(p.date), changefreq: "monthly" as const, priority: "0.7" })),
+          ...posts.map((p) => ({
+            path: `/blog/${p.slug}/`,
+            lastmod: toISODate(p.date),
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
         ];
 
         const urls = entries.map((e) =>

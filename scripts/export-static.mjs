@@ -16,12 +16,7 @@ const ORIGIN = process.env.EXPORT_ORIGIN || "http://localhost:4173";
 const OUT = path.resolve("hostinger");
 const CLIENT_DIR = path.resolve("dist/client");
 
-const XML_ROUTES = [
-  "/sitemap.xml",
-  "/sitemap-index.xml",
-  "/sitemap-videos.xml",
-  "/blog/rss.xml",
-];
+const XML_ROUTES = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap-videos.xml", "/blog/rss.xml"];
 
 async function fetchText(url) {
   const res = await fetch(url, { redirect: "manual" });
@@ -208,9 +203,9 @@ async function main() {
 
   // 4. página 404
   try {
-    const { body } = await fetchText(`${ORIGIN}/pagina-inexistente-404`).catch(
-      async () => ({ body: (await fetchText(`${ORIGIN}/`)).body }),
-    );
+    const { body } = await fetchText(`${ORIGIN}/pagina-inexistente-404`).catch(async () => ({
+      body: (await fetchText(`${ORIGIN}/`)).body,
+    }));
     await writeFileSafe(path.join(OUT, "404.html"), body);
   } catch {
     /* noop */

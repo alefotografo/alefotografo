@@ -10,12 +10,15 @@ export type MonitorPayload = {
 /** Estado atual + histórico semanal de indexação das URLs monitoradas. */
 export const getIndexingMonitor = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((data: { refresh?: boolean } | undefined) => ({ refresh: data?.refresh === true }))
+  .inputValidator((data: { refresh?: boolean } | undefined) => ({
+    refresh: data?.refresh === true,
+  }))
   .handler(async ({ data, context }): Promise<MonitorPayload> => {
     const { assertAdmin } = await import("@/lib/authz.server");
     await assertAdmin(context.supabase);
 
-    const { runIndexingSnapshot, readSnapshotHistory } = await import("@/lib/indexing-monitor.server");
+    const { runIndexingSnapshot, readSnapshotHistory } =
+      await import("@/lib/indexing-monitor.server");
     const run = await runIndexingSnapshot(data.refresh);
     let history: SnapshotRow[] = [];
     try {

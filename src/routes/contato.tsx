@@ -22,53 +22,51 @@ import GoogleMapCard from "@/components/site/GoogleMapCard";
 import { Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 
-
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Alê Fotógrafo — Alexandre Machado",
-  "description": "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
-  "url": "https://alefotografo.com.br",
-  "telephone": "+55-11-91355-0533",
-  "email": "comercial@alefotografo.com.br",
-  "image": "https://alefotografo.com.br/og-image.jpg",
-  "address": {
+  name: "Alê Fotógrafo — Alexandre Machado",
+  description:
+    "Fotógrafo corporativo em São Paulo, 30 anos de experiência: retratos profissionais, fotografia para empresas, eventos e vídeo institucional.",
+  url: "https://alefotografo.com.br",
+  telephone: "+55-11-91355-0533",
+  email: "comercial@alefotografo.com.br",
+  image: "https://alefotografo.com.br/og-image.jpg",
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "Alameda Santos, 1165",
-    "addressLocality": "São Paulo",
-    "addressRegion": "SP",
-    "postalCode": "01419-002",
-    "addressCountry": "BR"
+    streetAddress: "Alameda Santos, 1165",
+    addressLocality: "São Paulo",
+    addressRegion: "SP",
+    postalCode: "01419-002",
+    addressCountry: "BR",
   },
-  "geo": {
+  geo: {
     "@type": "GeoCoordinates",
-    "latitude": "-23.5640870",
-    "longitude": "-46.6553543"
+    latitude: "-23.5640870",
+    longitude: "-46.6553543",
   },
-  "openingHoursSpecification": [
+  openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    }
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
   ],
-  "sameAs": [
-    "https://www.instagram.com/alefotografo",
-    "https://www.linkedin.com/in/alefotografo"
-  ],
-  "priceRange": "R$",
-  "areaServed": {
+  sameAs: ["https://www.instagram.com/alefotografo", "https://www.linkedin.com/in/alefotografo"],
+  priceRange: "R$",
+  areaServed: {
     "@type": "City",
-    "name": "São Paulo"
-  }
+    name: "São Paulo",
+  },
 };
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: buildMeta({
       title: "Contato e Orçamento de Fotos Corporativas em SP",
-      description: "Peça orçamento de fotos corporativas, retratos profissionais e vídeo institucional em São Paulo. Estúdio no Jardim Paulista e atendimento na sua empresa.",
+      description:
+        "Peça orçamento de fotos corporativas, retratos profissionais e vídeo institucional em São Paulo. Estúdio no Jardim Paulista e atendimento na sua empresa.",
       path: "/contato/",
     }),
     links: [{ rel: "canonical", href: "https://alefotografo.com.br/contato/" }],
@@ -134,15 +132,44 @@ function Contato() {
             tooldescription="Solicita um orçamento de fotografia corporativa, retrato profissional, evento ou vídeo em São Paulo. Preenche nome, e-mail, empresa, telefone e mensagem, e abre a conversa no WhatsApp do estúdio."
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Nome" name="nome" required autoComplete="name" toolparamdescription="Nome completo da pessoa que solicita o orçamento" />
-              <Field label="E-mail" name="email" type="email" required autoComplete="email" inputMode="email" toolparamdescription="E-mail corporativo de contato para retorno do orçamento" />
+              <Field
+                label="Nome"
+                name="nome"
+                required
+                autoComplete="name"
+                toolparamdescription="Nome completo da pessoa que solicita o orçamento"
+              />
+              <Field
+                label="E-mail"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                inputMode="email"
+                toolparamdescription="E-mail corporativo de contato para retorno do orçamento"
+              />
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Empresa (opcional)" name="empresa" autoComplete="organization" toolparamdescription="Nome da empresa contratante, se houver" />
-              <Field label="Telefone (opcional)" name="telefone" type="tel" autoComplete="tel" inputMode="tel" toolparamdescription="Telefone ou WhatsApp com DDD" />
+              <Field
+                label="Empresa (opcional)"
+                name="empresa"
+                autoComplete="organization"
+                toolparamdescription="Nome da empresa contratante, se houver"
+              />
+              <Field
+                label="Telefone (opcional)"
+                name="telefone"
+                type="tel"
+                autoComplete="tel"
+                inputMode="tel"
+                toolparamdescription="Telefone ou WhatsApp com DDD"
+              />
             </div>
             <div>
-              <label htmlFor="mensagem" className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <label
+                htmlFor="mensagem"
+                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              >
                 Mensagem
               </label>
               <textarea
@@ -163,7 +190,11 @@ function Contato() {
               Enviar via WhatsApp
             </button>
             {sent && (
-              <div role="status" aria-live="polite" className="rounded-sm border border-ember/40 bg-ember/10 p-4 text-sm">
+              <div
+                role="status"
+                aria-live="polite"
+                className="rounded-sm border border-ember/40 bg-ember/10 p-4 text-sm"
+              >
                 <p className="font-medium text-foreground">Mensagem pronta para envio!</p>
                 <p className="mt-1 text-muted-foreground">
                   Abrimos o WhatsApp em uma nova aba. Se não abriu,{" "}
@@ -180,7 +211,8 @@ function Contato() {
               </div>
             )}
             <p className="text-xs text-muted-foreground">
-              Resposta normalmente em até 1 dia útil. Seus dados são usados apenas para responder seu contato.
+              Resposta normalmente em até 1 dia útil. Seus dados são usados apenas para responder
+              seu contato.
             </p>
           </form>
         </div>
@@ -203,25 +235,45 @@ function Contato() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 text-ember" size={18} />
-                <a href={`mailto:${site.email}`} onClick={() => track("email")} className="hover:text-ember">
+                <a
+                  href={`mailto:${site.email}`}
+                  onClick={() => track("email")}
+                  className="hover:text-ember"
+                >
                   {site.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 text-ember" size={18} />
                 <span className="text-muted-foreground">
-                  {site.address.street}<br />
-                  {site.address.district}, {site.address.locality} — {site.address.region}<br />
+                  {site.address.street}
+                  <br />
+                  {site.address.district}, {site.address.locality} — {site.address.region}
+                  <br />
                   Atendemos toda a Grande São Paulo e outras regiões do Brasil sob consulta
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Linkedin className="mt-0.5 text-ember" size={18} />
-                <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ember">LinkedIn</a>
+                <a
+                  href={site.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-ember"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Instagram className="mt-0.5 text-ember" size={18} />
-                <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-ember">Instagram</a>
+                <a
+                  href={site.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-ember"
+                >
+                  Instagram
+                </a>
               </li>
             </ul>
           </div>
@@ -230,11 +282,11 @@ function Contato() {
             <GoogleMapCard />
           </LazySection>
 
-
           <div className="rounded-sm border border-border bg-gradient-to-br from-surface to-background p-6">
             <h2 className="font-display text-lg font-semibold">Horário de atendimento</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Segunda a sexta, 9h às 19h.<br />
+              Segunda a sexta, 9h às 19h.
+              <br />
               Sábados sob demanda para eventos.
             </p>
           </div>
@@ -244,10 +296,21 @@ function Contato() {
   );
 }
 
-function Field({ label, name, ...props }: { label: string; name: string; toolparamdescription?: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+function Field({
+  label,
+  name,
+  ...props
+}: {
+  label: string;
+  name: string;
+  toolparamdescription?: string;
+} & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <label
+        htmlFor={name}
+        className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+      >
         {label}
       </label>
       <input

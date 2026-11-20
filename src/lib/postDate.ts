@@ -1,7 +1,17 @@
 const MONTHS_PT: Record<string, string> = {
-  janeiro: "01", fevereiro: "02", "março": "03", marco: "03", abril: "04",
-  maio: "05", junho: "06", julho: "07", agosto: "08", setembro: "09",
-  outubro: "10", novembro: "11", dezembro: "12",
+  janeiro: "01",
+  fevereiro: "02",
+  março: "03",
+  marco: "03",
+  abril: "04",
+  maio: "05",
+  junho: "06",
+  julho: "07",
+  agosto: "08",
+  setembro: "09",
+  outubro: "10",
+  novembro: "11",
+  dezembro: "12",
 };
 
 export function postDateISO(input?: string): string | undefined {
@@ -71,4 +81,3 @@ export function isPublishedDate(input?: string): boolean {
   if (Number(today.slice(0, 4)) < MIN_VALID_YEAR) return true;
   return iso <= today;
 }
-

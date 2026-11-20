@@ -4,7 +4,6 @@ import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 import { resolveLegacyPath } from "./lib/legacy-redirects";
 
-
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
@@ -63,7 +62,6 @@ async function normalizeCatastrophicSsrResponse(
     headers: { "content-type": "text/html; charset=utf-8" },
   });
 }
-
 
 function redirectHttps(request: Request): Response | undefined {
   const url = new URL(request.url);
@@ -170,7 +168,11 @@ async function withCsp(request: Request, response: Response): Promise<Response> 
 
   const isHtml = (headers.get("content-type") ?? "").includes("text/html");
   if (!isHtml || !response.body || request.method === "HEAD") {
-    return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
   }
 
   // Injeta o nonce em cada <script> que ainda não tem um. O HTML é gerado por
@@ -214,7 +216,11 @@ function withEdgeCache(request: Request, response: Response): Response {
   const headers = new Headers(response.headers);
   headers.set("cache-control", HTML_EDGE_CACHE);
   headers.set("vary", "Accept-Encoding");
-  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 // Fontes e imagens da pasta pública têm nome estável e conteúdo imutável, mas a
@@ -231,9 +237,12 @@ function withStaticCache(request: Request, response: Response): Response {
 
   const headers = new Headers(response.headers);
   headers.set("cache-control", "public, max-age=31536000, immutable");
-  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
-
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
@@ -256,9 +265,7 @@ export default {
         request,
         withEdgeCache(request, await normalizeCatastrophicSsrResponse(request, response)),
       );
-
     } catch (error) {
-
       if (isClientAbort(request, error)) {
         return new Response(null, { status: CLIENT_CLOSED_REQUEST });
       }
@@ -268,6 +275,5 @@ export default {
         headers: { "content-type": "text/html; charset=utf-8" },
       });
     }
-
   },
 };

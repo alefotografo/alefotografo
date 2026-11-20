@@ -173,7 +173,11 @@ export function bairroServiceGraph(args: {
             "Vídeo institucional",
           ].map((n) => ({
             "@type": "Offer",
-            itemOffered: { "@type": "Service", name: n, areaServed: { "@type": "City", name: cidade } },
+            itemOffered: {
+              "@type": "Service",
+              name: n,
+              areaServed: { "@type": "City", name: cidade },
+            },
           })),
         },
       },

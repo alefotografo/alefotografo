@@ -5,7 +5,13 @@ import { Check, Copy, Link2 } from "lucide-react";
  * Bloco com o link permanente (canônico) da página, para reuso em
  * Google Business Profile, redes sociais, propostas e assinatura de e-mail.
  */
-export function LinkFixo({ url, label = "Link fixo desta página" }: { url: string; label?: string }) {
+export function LinkFixo({
+  url,
+  label = "Link fixo desta página",
+}: {
+  url: string;
+  label?: string;
+}) {
   const [copiado, setCopiado] = useState(false);
 
   const copiar = async () => {

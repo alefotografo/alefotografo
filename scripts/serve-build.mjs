@@ -32,11 +32,7 @@ const MIME = {
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://localhost:${PORT}`);
   const staticFile = path.join(CLIENT, decodeURIComponent(url.pathname));
-  if (
-    url.pathname !== "/" &&
-    fs.existsSync(staticFile) &&
-    fs.statSync(staticFile).isFile()
-  ) {
+  if (url.pathname !== "/" && fs.existsSync(staticFile) && fs.statSync(staticFile).isFile()) {
     res.writeHead(200, {
       "content-type": MIME[path.extname(staticFile)] || "application/octet-stream",
     });
@@ -44,10 +40,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  const body =
-    req.method === "GET" || req.method === "HEAD"
-      ? undefined
-      : Readable.toWeb(req);
+  const body = req.method === "GET" || req.method === "HEAD" ? undefined : Readable.toWeb(req);
   const request = new Request(url, {
     method: req.method,
     headers: req.headers,

@@ -10,14 +10,15 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 const PORTRAIT =
   "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG";
 
-
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: buildMeta({
       title: "Alexandre Machado — fotógrafo de retrato corporativo",
-      description: "Sou Alexandre Machado, fotógrafo e diretor de imagem em São Paulo, com mais de 30 anos de experiência. Dirijo projetos de retrato e fotografia corporativa, executados por mim e/ou pela equipe conforme o escopo.",
+      description:
+        "Sou Alexandre Machado, fotógrafo e diretor de imagem em São Paulo, com mais de 30 anos de experiência. Dirijo projetos de retrato e fotografia corporativa, executados por mim e/ou pela equipe conforme o escopo.",
       path: "/sobre/",
-      image: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
+      image:
+        "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
       type: "article",
     }),
     links: [
@@ -154,7 +155,6 @@ function SobrePage() {
                 decoding="async"
                 className="h-full w-full object-cover"
               />
-
             </div>
           </div>
         </div>
@@ -171,8 +171,8 @@ function SobrePage() {
           <p className="text-muted-foreground">
             A maior parte das pessoas que fotografo diz, no começo, que não se sai bem em foto. Isso
             é direção, não genética: eu conduzo postura, ângulo de rosto, olhar e respiração durante
-            todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem dirige
-            os projetos deste site — e quem fotografa nos retratos individuais.
+            todo o ensaio. É a parte que não dá para delegar, e é por isso que sou eu quem dirige os
+            projetos deste site — e quem fotografa nos retratos individuais.
           </p>
           <p className="text-muted-foreground">
             Antes de fotografar, alinho o objetivo: onde a imagem vai ser usada, que público vai
@@ -200,10 +200,26 @@ function SobrePage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-4">
             {[
-              { icon: Target, title: "Direção de pose", desc: "Eu conduzo postura, ângulo, olhar e expressão do início ao fim do ensaio." },
-              { icon: Camera, title: "Luz de retrato", desc: "30 anos de bagagem em iluminação de rosto, composição e retoque natural de pele." },
-              { icon: Zap, title: "Agenda enxuta", desc: "10 a 15 minutos por pessoa no seu escritório, sem travar a operação do time." },
-              { icon: Award, title: "Atendimento direto", desc: "Você fala comigo do orçamento à entrega — sem intermediários." },
+              {
+                icon: Target,
+                title: "Direção de pose",
+                desc: "Eu conduzo postura, ângulo, olhar e expressão do início ao fim do ensaio.",
+              },
+              {
+                icon: Camera,
+                title: "Luz de retrato",
+                desc: "30 anos de bagagem em iluminação de rosto, composição e retoque natural de pele.",
+              },
+              {
+                icon: Zap,
+                title: "Agenda enxuta",
+                desc: "10 a 15 minutos por pessoa no seu escritório, sem travar a operação do time.",
+              },
+              {
+                icon: Award,
+                title: "Atendimento direto",
+                desc: "Você fala comigo do orçamento à entrega — sem intermediários.",
+              },
             ].map((p) => (
               <div key={p.title} className="rounded-sm border border-border bg-background p-6">
                 <p.icon className="text-ember" size={26} strokeWidth={1.5} />
@@ -228,15 +244,15 @@ function SobrePage() {
           {categories
             .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
             .map((c) => (
-            <Link
-              key={c.slug}
-              to="/fotografo-corporativo/$slug/"
-              params={{ slug: c.slug }}
-              className="rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted-foreground hover:border-ember hover:text-foreground"
-            >
-              {c.title}
-            </Link>
-          ))}
+              <Link
+                key={c.slug}
+                to="/fotografo-corporativo/$slug/"
+                params={{ slug: c.slug }}
+                className="rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted-foreground hover:border-ember hover:text-foreground"
+              >
+                {c.title}
+              </Link>
+            ))}
         </div>
       </section>
 
@@ -245,7 +261,10 @@ function SobrePage() {
           <h2 className="max-w-xl font-display text-3xl font-semibold md:text-4xl text-balance">
             Vamos conversar sobre seu próximo projeto?
           </h2>
-          <Link to="/contato/" className="rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow">
+          <Link
+            to="/contato/"
+            className="rounded-sm bg-ember px-7 py-4 font-medium text-accent-foreground hover:bg-ember-glow"
+          >
             Entrar em contato
           </Link>
         </div>

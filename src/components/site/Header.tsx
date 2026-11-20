@@ -19,21 +19,41 @@ const NAV: Entry[] = [
   {
     label: "Serviços",
     items: [
-      { to: "/foto-profissional", label: "Retrato profissional", hint: "Ensaio individual com direção" },
-      { to: "/foto-profissional-para-linkedin", label: "Foto para LinkedIn", hint: "Headshot de perfil" },
+      {
+        to: "/foto-profissional",
+        label: "Retrato profissional",
+        hint: "Ensaio individual com direção",
+      },
+      {
+        to: "/foto-profissional-para-linkedin",
+        label: "Foto para LinkedIn",
+        hint: "Headshot de perfil",
+      },
       { to: "/fotografia-executiva", label: "Fotografia executiva", hint: "Retratos de liderança" },
-      { to: "/fotos-corporativas", label: "Retratos de equipe", hint: "Times e ambiente de escritório" },
+      {
+        to: "/fotos-corporativas",
+        label: "Retratos de equipe",
+        hint: "Times e ambiente de escritório",
+      },
       { to: "/fotos-profissionais-medicos", label: "Médicos", hint: "Retratos para saúde" },
       { to: "/fotografia-para-advogados", label: "Advogados", hint: "Sócios e escritórios" },
       { to: "/fotografia-para-clinicas", label: "Clínicas", hint: "Equipe e ambientes" },
-      { to: "/eventos-corporativos", label: "Pessoas em eventos", hint: "Retratos e fotos de time" },
+      {
+        to: "/eventos-corporativos",
+        label: "Pessoas em eventos",
+        hint: "Retratos e fotos de time",
+      },
       { to: "/portfolio", label: "Ver todos os serviços", hint: "Panorama completo com fotos" },
     ],
   },
   {
     label: "Portfólio",
     items: [
-      { to: "/fotografo-corporativo", label: "Galerias por segmento", hint: "Fotos por especialidade" },
+      {
+        to: "/fotografo-corporativo",
+        label: "Galerias por segmento",
+        hint: "Fotos por especialidade",
+      },
       { to: "/portfolio", label: "Portfólio", hint: "Trabalhos selecionados" },
       { to: "/depoimentos", label: "Depoimentos", hint: "O que dizem os clientes" },
     ],
@@ -245,7 +265,11 @@ export function Header() {
             aria-label="Alê Fotógrafo — Início"
           >
             <picture>
-              <source srcSet="/img/logo-alefotografo-112.webp 112w, /img/logo-alefotografo-192.webp 192w" sizes="(max-width: 639px) 57px, (max-width: 1023px) 72px, 86px" type="image/webp" />
+              <source
+                srcSet="/img/logo-alefotografo-112.webp 112w, /img/logo-alefotografo-192.webp 192w"
+                sizes="(max-width: 639px) 57px, (max-width: 1023px) 72px, 86px"
+                type="image/webp"
+              />
               <img
                 src="/img/logo-alefotografo-192.webp"
                 alt="Alê Fotógrafo"
@@ -298,7 +322,10 @@ export function Header() {
                     }`}
                   >
                     {entry.label}
-                    <ChevronDown size={14} className={open ? "rotate-180 transition-transform" : "transition-transform"} />
+                    <ChevronDown
+                      size={14}
+                      className={open ? "rotate-180 transition-transform" : "transition-transform"}
+                    />
                   </button>
                   {open && (
                     <div className="absolute right-0 top-full z-50 w-[min(20rem,calc(100vw-2rem))] pt-2">
@@ -312,7 +339,9 @@ export function Header() {
                             >
                               <span className="block text-sm text-foreground">{item.label}</span>
                               {item.hint && (
-                                <span className="mt-0.5 block text-xs text-muted-foreground">{item.hint}</span>
+                                <span className="mt-0.5 block text-xs text-muted-foreground">
+                                  {item.hint}
+                                </span>
                               )}
                             </Link>
                           </li>
@@ -348,7 +377,17 @@ export function Header() {
                     placeholder="Buscar no site"
                     className="w-40 bg-transparent py-2 text-[13px] text-foreground outline-none placeholder:text-muted-foreground xl:w-52"
                   />
-                  {term ? <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}><X size={14} /></Button> : null}
+                  {term ? (
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      aria-label="Limpar busca"
+                      onClick={() => setTerm("")}
+                    >
+                      <X size={14} />
+                    </Button>
+                  ) : null}
                 </form>
               ) : (
                 <button
@@ -364,8 +403,17 @@ export function Header() {
               )}
               {searchOpen && (
                 <div className="absolute right-0 top-full z-50 mt-2 max-h-[min(70vh,42rem)] w-[min(32rem,calc(100vw-2rem))] overflow-y-auto overscroll-contain rounded-sm border border-border bg-background shadow-xl shadow-background/60">
-                  <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
-                    <SearchResults query={debouncedTerm} results={results} compact onSelect={closeSearch} />
+                  <Suspense
+                    fallback={
+                      <p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>
+                    }
+                  >
+                    <SearchResults
+                      query={debouncedTerm}
+                      results={results}
+                      compact
+                      onSelect={closeSearch}
+                    />
                   </Suspense>
                 </div>
               )}
@@ -458,16 +506,34 @@ export function Header() {
                   className="min-h-12 min-w-0 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground"
                 />
                 {term ? (
-                  <Button type="button" variant="ghost" size="icon" aria-label="Limpar busca" onClick={() => setTerm("")}>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Limpar busca"
+                    onClick={() => setTerm("")}
+                  >
                     <X size={18} />
                   </Button>
                 ) : null}
               </form>
 
               {debouncedTerm.length >= 2 && (
-                <div className="mt-2 overflow-hidden rounded-sm border border-border" aria-live="polite">
-                  <Suspense fallback={<p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>}>
-                    <SearchResults query={debouncedTerm} results={results} compact onSelect={() => setMobileOpen(false)} />
+                <div
+                  className="mt-2 overflow-hidden rounded-sm border border-border"
+                  aria-live="polite"
+                >
+                  <Suspense
+                    fallback={
+                      <p className="p-5 text-sm text-muted-foreground">Preparando busca…</p>
+                    }
+                  >
+                    <SearchResults
+                      query={debouncedTerm}
+                      results={results}
+                      compact
+                      onSelect={() => setMobileOpen(false)}
+                    />
                   </Suspense>
                 </div>
               )}
@@ -486,7 +552,10 @@ export function Header() {
                     );
                   }
                   const open = mobileGroup === entry.label;
-                  const groupId = `mobile-group-${entry.label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`;
+                  const groupId = `mobile-group-${entry.label
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")}`;
                   return (
                     <div key={entry.label} className="border-b border-border/40">
                       <button
@@ -497,7 +566,12 @@ export function Header() {
                         className="flex min-h-12 w-full items-center justify-between text-left text-foreground"
                       >
                         {entry.label}
-                        <ChevronDown size={18} className={open ? "rotate-180 transition-transform" : "transition-transform"} />
+                        <ChevronDown
+                          size={18}
+                          className={
+                            open ? "rotate-180 transition-transform" : "transition-transform"
+                          }
+                        />
                       </button>
                       {open && (
                         <ul id={groupId} className="pb-1">

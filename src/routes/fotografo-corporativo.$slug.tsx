@@ -45,7 +45,6 @@ function pageFaqs(slug: string) {
   return null;
 }
 
-
 export const Route = createFileRoute("/fotografo-corporativo/$slug")({
   loader: async ({ params }) => {
     const cat = categoryBySlug(params.slug);
@@ -69,7 +68,12 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
         type: "article",
       }),
 
-      links: [{ rel: "canonical", href: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}/` }],
+      links: [
+        {
+          rel: "canonical",
+          href: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}/`,
+        },
+      ],
       scripts: [
         {
           type: "application/ld+json",
@@ -80,17 +84,25 @@ export const Route = createFileRoute("/fotografo-corporativo/$slug")({
             description: loaderData.description,
             url: `https://alefotografo.com.br/fotografo-corporativo/${params.slug}/`,
             inLanguage: "pt-BR",
-            author: { "@type": "Person", name: "Alexandre Machado", url: "https://alefotografo.com.br/quem-e-o-ale" },
+            author: {
+              "@type": "Person",
+              name: "Alexandre Machado",
+              url: "https://alefotografo.com.br/quem-e-o-ale",
+            },
             image: loaderData.images.slice(0, 8),
             associatedMedia: loaderData.images.slice(0, 8).map((src: string, i: number) => ({
               "@type": "Photograph",
               name: `${loaderData.title} — foto ${i + 1}`,
               creator: { "@type": "Person", name: "Alexandre Machado" },
               copyrightHolder: { "@id": "https://alefotografo.com.br/#business" },
-              image: { "@type": "ImageObject", contentUrl: src, url: src, representativeOfPage: i === 0 },
+              image: {
+                "@type": "ImageObject",
+                contentUrl: src,
+                url: src,
+                representativeOfPage: i === 0,
+              },
             })),
           }),
-
         },
         {
           type: "application/ld+json",
@@ -164,10 +176,19 @@ function CategoryPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotos", to: "/fotografo-corporativo" }, { label: cat.title }]} />
+      <Breadcrumbs
+        items={[
+          { label: "Início", to: "/" },
+          { label: "Fotos", to: "/fotografo-corporativo" },
+          { label: cat.title },
+        ]}
+      />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-          <Link to="/fotografo-corporativo/" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/fotografo-corporativo/"
+            className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+          >
             <ArrowLeft size={14} /> Todos os segmentos
           </Link>
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotos</p>
@@ -202,7 +223,6 @@ function CategoryPage() {
       </section>
 
       {editorial && editorial.sections.length > 0 && <EditorialBlock data={editorial} />}
-
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <Masonry images={cat.images} alt={cat.title} />
@@ -245,7 +265,6 @@ function CategoryPage() {
         />
       </section>
 
-
       {CASE_PROOF_BY_GALLERY[cat.slug] && <CaseProof caseTo={CASE_PROOF_BY_GALLERY[cat.slug]} />}
 
       {pageFaqs(cat.slug) && (
@@ -256,15 +275,15 @@ function CategoryPage() {
               Perguntas frequentes sobre {cat.title.toLowerCase()}
             </h2>
             <FaqList items={pageFaqs(cat.slug)!} />
-            <Link to="/faq/" className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline">
+            <Link
+              to="/faq/"
+              className="mt-6 inline-flex items-center gap-2 text-sm text-ember hover:underline"
+            >
               Ver todas as perguntas →
             </Link>
           </div>
         </section>
       )}
-
-
-
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-4 px-5 py-12 md:grid-cols-2 md:px-8">
@@ -276,7 +295,9 @@ function CategoryPage() {
             <ArrowLeft size={18} className="text-ember" />
             <div>
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Anterior</p>
-              <p className="font-display text-base font-semibold group-hover:text-ember">{prev.title}</p>
+              <p className="font-display text-base font-semibold group-hover:text-ember">
+                {prev.title}
+              </p>
             </div>
           </Link>
           <Link
@@ -286,7 +307,9 @@ function CategoryPage() {
           >
             <div>
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Próximo</p>
-              <p className="font-display text-base font-semibold group-hover:text-ember">{next.title}</p>
+              <p className="font-display text-base font-semibold group-hover:text-ember">
+                {next.title}
+              </p>
             </div>
             <ArrowUpRight size={18} className="text-ember" />
           </Link>

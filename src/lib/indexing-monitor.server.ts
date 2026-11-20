@@ -23,7 +23,12 @@ export async function runIndexingSnapshot(persist = true): Promise<MonitorRun> {
   try {
     const candidates = await listVerifiedSites();
     if (!candidates.length) {
-      return { ok: false, error: "Nenhuma propriedade verificada na conta conectada.", urls: [], sitemaps: [] };
+      return {
+        ok: false,
+        error: "Nenhuma propriedade verificada na conta conectada.",
+        urls: [],
+        sitemaps: [],
+      };
     }
 
     // Escolhe a primeira propriedade que consegue inspecionar a home.

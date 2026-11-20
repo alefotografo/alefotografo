@@ -72,9 +72,7 @@ export function buildMeta({
   return meta;
 }
 
-export function buildBreadcrumbList(
-  items: Array<{ name: string; item: string }>,
-) {
+export function buildBreadcrumbList(items: Array<{ name: string; item: string }>) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

@@ -121,9 +121,24 @@ const ANSWER_BLOCK =
   "Foto profissional é o retrato feito com luz, direção de pose e tratamento adequados ao uso profissional: LinkedIn, currículo, site, propostas e imprensa. É indicada para quem precisa de uma imagem confiável de si mesmo, em qualquer área. Retratos individuais podem ser realizados por mim pessoalmente, conforme agenda e formato contratado. Entrego as imagens tratadas em até 1 dia útil.";
 
 const FORMATS: SessionFormat[] = [
-  { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
-  { formato: "Retrato para LinkedIn", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil" },
-  { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
+  {
+    formato: "Retrato individual",
+    onde: "Meu estúdio, o seu escritório ou locação externa",
+    duracao: "Cerca de 1 hora de captação",
+    entrega: "Imagens tratadas em até 1 dia útil",
+  },
+  {
+    formato: "Retrato para LinkedIn",
+    onde: "Meu estúdio, o seu escritório ou locação externa",
+    duracao: "Cerca de 1 hora de captação",
+    entrega: "Recorte quadrado, vertical e horizontal em até 1 dia útil",
+  },
+  {
+    formato: "Retratos de equipe ou diretoria",
+    onde: "No escritório da empresa, em blocos de horário",
+    duracao: "Cerca de 15 minutos por pessoa",
+    entrega: "Mesmo padrão visual para todos, em até 1 dia útil",
+  },
 ];
 
 export const Route = createFileRoute("/foto-profissional")({
@@ -288,7 +303,10 @@ function FotoProfissionalPage() {
           {paraQuem.map((b) => (
             <article key={b.h} className="rounded-sm border border-border bg-surface p-6">
               <h3 className="font-display text-lg font-semibold">{b.h}</h3>
-              <BlockText text={b.p} className="mt-3 text-sm leading-relaxed text-muted-foreground" />
+              <BlockText
+                text={b.p}
+                className="mt-3 text-sm leading-relaxed text-muted-foreground"
+              />
             </article>
           ))}
         </div>
@@ -350,7 +368,7 @@ function FotoProfissionalPage() {
                 <div className="aspect-[3/2] w-full overflow-hidden">
                   <img
                     src={imgUrl(c.cover as string, 768)}
-                        srcSet={imgSrcSet(c.cover as string, [480, 768, 1024])}
+                    srcSet={imgSrcSet(c.cover as string, [480, 768, 1024])}
                     alt={`Foto profissional — ${c.title}`}
                     width={900}
                     height={600}
@@ -370,7 +388,6 @@ function FotoProfissionalPage() {
           </div>
         </div>
       </section>
-
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">

@@ -24,9 +24,15 @@ export const Route = createFileRoute("/_authenticated/admin/monitoramento")({
 function light(verdict?: string | null, coverage?: string | null) {
   const v = (verdict ?? "").toUpperCase();
   const c = (coverage ?? "").toLowerCase();
-  if (c.includes("404") || c.includes("not found")) return { color: "bg-destructive", label: "404 no histórico" };
+  if (c.includes("404") || c.includes("not found"))
+    return { color: "bg-destructive", label: "404 no histórico" };
   if (v === "PASS") return { color: "bg-emerald-500", label: "Indexada" };
-  if (v === "NEUTRAL" || c.includes("descoberta") || c.includes("discovered") || c.includes("crawled"))
+  if (
+    v === "NEUTRAL" ||
+    c.includes("descoberta") ||
+    c.includes("discovered") ||
+    c.includes("crawled")
+  )
     return { color: "bg-amber-500", label: "Descoberta, não indexada" };
   if (v === "FAIL") return { color: "bg-destructive", label: "Com erro" };
   return { color: "bg-muted-foreground", label: verdict ?? "Sem dados" };
@@ -34,7 +40,11 @@ function light(verdict?: string | null, coverage?: string | null) {
 
 function fmt(date?: string | null) {
   if (!date) return "—";
-  return new Date(date).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" });
+  return new Date(date).toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
 }
 
 function path(url: string) {
@@ -53,7 +63,10 @@ function MonitoramentoPage() {
   const run = data?.run;
 
   const history = useMemo(() => {
-    const byUrl = new Map<string, { checked_at: string; verdict: string | null; coverage_state: string | null }[]>();
+    const byUrl = new Map<
+      string,
+      { checked_at: string; verdict: string | null; coverage_state: string | null }[]
+    >();
     for (const row of data?.history ?? []) {
       const list = byUrl.get(row.url) ?? [];
       list.push(row);
@@ -68,11 +81,13 @@ function MonitoramentoPage() {
 
       <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">Monitoramento semanal de indexação</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">
+            Monitoramento semanal de indexação
+          </h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Leitura direta do índice do Google para as URLs-chave. O snapshot é gravado toda semana pelo agendador — o
-            histórico mostra quando <code>/videos</code> e <code>/fotos-corporativas</code> deixam de aparecer com 404
-            antigo.
+            Leitura direta do índice do Google para as URLs-chave. O snapshot é gravado toda semana
+            pelo agendador — o histórico mostra quando <code>/videos</code> e{" "}
+            <code>/fotos-corporativas</code> deixam de aparecer com 404 antigo.
           </p>
         </div>
         <div className="flex gap-2 print:hidden">
@@ -106,8 +121,8 @@ function MonitoramentoPage() {
 
       {run?.siteUrl && (
         <p className="mb-6 text-sm text-muted-foreground">
-          Propriedade: <span className="font-medium text-foreground">{run.siteUrl}</span> · Consulta:{" "}
-          {fmt(run.checkedAt)}
+          Propriedade: <span className="font-medium text-foreground">{run.siteUrl}</span> ·
+          Consulta: {fmt(run.checkedAt)}
         </p>
       )}
 
@@ -137,12 +152,18 @@ function MonitoramentoPage() {
                           <span className={`inline-block h-2.5 w-2.5 rounded-full ${l.color}`} />
                           {l.label}
                         </span>
-                        {u.error && <span className="block text-xs text-destructive">{u.error}</span>}
+                        {u.error && (
+                          <span className="block text-xs text-destructive">{u.error}</span>
+                        )}
                       </td>
                       <td className="p-3 text-muted-foreground">{u.coverageState ?? "—"}</td>
                       <td className="p-3 text-muted-foreground">{fmt(u.lastCrawl)}</td>
-                      <td className="p-3 text-xs text-muted-foreground">{u.canonicalGoogle ?? "—"}</td>
-                      <td className="p-3 text-muted-foreground">{history.get(u.url)?.length ?? 0}</td>
+                      <td className="p-3 text-xs text-muted-foreground">
+                        {u.canonicalGoogle ?? "—"}
+                      </td>
+                      <td className="p-3 text-muted-foreground">
+                        {history.get(u.url)?.length ?? 0}
+                      </td>
                     </tr>
                   );
                 })}
@@ -174,7 +195,9 @@ function MonitoramentoPage() {
                     <td className="p-3 text-muted-foreground">{fmt(s.lastSubmitted)}</td>
                     <td className="p-3 text-muted-foreground">{fmt(s.lastDownloaded)}</td>
                     <td className="p-3 text-muted-foreground">{s.submitted ?? "—"}</td>
-                    <td className={`p-3 ${s.errors ? "text-destructive" : "text-muted-foreground"}`}>
+                    <td
+                      className={`p-3 ${s.errors ? "text-destructive" : "text-muted-foreground"}`}
+                    >
                       {s.errors ?? "—"}
                     </td>
                     <td className="p-3 text-muted-foreground">{s.warnings ?? "—"}</td>

@@ -21,11 +21,7 @@ export type AutoLinkCtx = {
 const INLINE = /(\*\*[^*]+\*\*|\*[^*\n]+\*|\[[^\]]+\]\([^)\s]+\))/g;
 
 /** Inline markdown → ReactNode. Texto puro passa pelo autoLink quando pedido. */
-export function inlineMarkdown(
-  text: string,
-  ctx?: AutoLinkCtx,
-  maxLinks = 3,
-): ReactNode[] {
+export function inlineMarkdown(text: string, ctx?: AutoLinkCtx, maxLinks = 3): ReactNode[] {
   const parts = text.split(INLINE).filter((s) => s !== "");
   return parts.map((part, i) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) {
@@ -53,11 +49,7 @@ export function inlineMarkdown(
         </a>
       );
     }
-    return (
-      <span key={i}>
-        {ctx ? autoLink(part, { ...ctx, maxLinks }) : part}
-      </span>
-    );
+    return <span key={i}>{ctx ? autoLink(part, { ...ctx, maxLinks }) : part}</span>;
   });
 }
 
@@ -83,14 +75,20 @@ export function MarkdownBlock({
     const content = inlineMarkdown(heading[2].trim());
     if (level === 2) {
       return (
-        <h2 id={headingId} className="mt-12 font-display text-2xl font-semibold leading-tight text-foreground md:text-3xl">
+        <h2
+          id={headingId}
+          className="mt-12 font-display text-2xl font-semibold leading-tight text-foreground md:text-3xl"
+        >
           {content}
         </h2>
       );
     }
     if (level === 3) {
       return (
-        <h3 id={headingId} className="mt-9 font-display text-lg font-semibold leading-snug text-foreground md:text-xl">
+        <h3
+          id={headingId}
+          className="mt-9 font-display text-lg font-semibold leading-snug text-foreground md:text-xl"
+        >
           {content}
         </h3>
       );
@@ -102,7 +100,10 @@ export function MarkdownBlock({
     );
   }
 
-  const lines = raw.split("\n").map((l) => l.trim()).filter(Boolean);
+  const lines = raw
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
 
   // Tabela markdown: cabeçalho, linha separadora (|---|---|) e corpo.
   const isTable =
@@ -111,7 +112,10 @@ export function MarkdownBlock({
     /^\|[\s:-]*\|[\s:|-]*$/.test(lines[1]!);
   if (isTable) {
     const cells = (l: string) =>
-      l.slice(1, -1).split("|").map((c) => c.trim());
+      l
+        .slice(1, -1)
+        .split("|")
+        .map((c) => c.trim());
     const head = cells(lines[0]!);
     const rows = lines.slice(2).map(cells);
     return (
@@ -173,8 +177,6 @@ export function MarkdownBlock({
   }
 
   return (
-    <p className="text-base leading-relaxed text-muted-foreground">
-      {inlineMarkdown(raw, ctx)}
-    </p>
+    <p className="text-base leading-relaxed text-muted-foreground">{inlineMarkdown(raw, ctx)}</p>
   );
 }

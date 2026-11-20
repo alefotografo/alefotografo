@@ -14,8 +14,7 @@ const PATH = "/video-de-eventos-corporativos/";
 const TITLE = "Vídeo de Eventos Corporativos em São Paulo | Produção";
 const DESCRIPTION =
   "Produção de vídeo de eventos corporativos em São Paulo: congressos, convenções, fóruns e premiações, com captação no local, entrevistas e edição.";
-const WA =
-  "Olá Alexandre, quero um orçamento de vídeo para um evento corporativo.";
+const WA = "Olá Alexandre, quero um orçamento de vídeo para um evento corporativo.";
 
 /* Formatos de evento presentes no acervo de produções já realizadas. */
 const TIPOS = [
@@ -31,22 +30,61 @@ const TIPOS = [
 
 /* Cases de evento reais já publicados no catálogo de vídeos. */
 const CASES: { slug: string; label: string; tipo: string }[] = [
-  { slug: "video-corporativo-do-11o-forum-abradilan-2026-cobertura-de-evento-empresarial", label: "11º Fórum ABRADILAN", tipo: "Fórum" },
-  { slug: "15-convencao-abradilan-barcelo-bavaro-palace-punta-cana-01-a-06-nov-2022", label: "15ª Convenção ABRADILAN", tipo: "Convenção internacional" },
-  { slug: "convencao-de-vendas-2023-tecnisa", label: "Tecnisa — Convenção de Vendas", tipo: "Convenção" },
+  {
+    slug: "video-corporativo-do-11o-forum-abradilan-2026-cobertura-de-evento-empresarial",
+    label: "11º Fórum ABRADILAN",
+    tipo: "Fórum",
+  },
+  {
+    slug: "15-convencao-abradilan-barcelo-bavaro-palace-punta-cana-01-a-06-nov-2022",
+    label: "15ª Convenção ABRADILAN",
+    tipo: "Convenção internacional",
+  },
+  {
+    slug: "convencao-de-vendas-2023-tecnisa",
+    label: "Tecnisa — Convenção de Vendas",
+    tipo: "Convenção",
+  },
   { slug: "ibde-rio2026", label: "IBDE — Congresso no Rio", tipo: "Congresso" },
-  { slug: "ibde-mendoza-iii-congresso-internacional", label: "IBDE Mendoza", tipo: "Congresso internacional" },
-  { slug: "passion-for-excellence-latam-sales-meeting-2021-convatec", label: "Convatec — Latam Sales Meeting", tipo: "Sales meeting" },
-  { slug: "copapharma-coquetel-de-lancamento", label: "Copapharma — Coquetel de lançamento", tipo: "Lançamento" },
+  {
+    slug: "ibde-mendoza-iii-congresso-internacional",
+    label: "IBDE Mendoza",
+    tipo: "Congresso internacional",
+  },
+  {
+    slug: "passion-for-excellence-latam-sales-meeting-2021-convatec",
+    label: "Convatec — Latam Sales Meeting",
+    tipo: "Sales meeting",
+  },
+  {
+    slug: "copapharma-coquetel-de-lancamento",
+    label: "Copapharma — Coquetel de lançamento",
+    tipo: "Lançamento",
+  },
   { slug: "22-forum-de-comprasive-university", label: "22º Fórum de Compras", tipo: "Fórum" },
 ];
 
 const PROCESSO: { h: string; p: string }[] = [
-  { h: "1. Briefing", p: "Entendemos o formato do evento, o público, os momentos prioritários e o uso previsto do material." },
-  { h: "2. Planejamento", p: "A partir do roteiro do evento, definimos pontos de captação, entrevistas e a equipe necessária." },
-  { h: "3. Captação", p: "Nossa equipe grava palco, plateia, ambientes, bastidores e entrevistas ao longo da programação." },
-  { h: "4. Edição", p: "Montagem, tratamento de imagem e som, trilha e cortes adaptados aos canais de divulgação." },
-  { h: "5. Entrega", p: "Versão final aprovada e, quando o projeto pede, versões curtas para redes e comunicação interna." },
+  {
+    h: "1. Briefing",
+    p: "Entendemos o formato do evento, o público, os momentos prioritários e o uso previsto do material.",
+  },
+  {
+    h: "2. Planejamento",
+    p: "A partir do roteiro do evento, definimos pontos de captação, entrevistas e a equipe necessária.",
+  },
+  {
+    h: "3. Captação",
+    p: "Nossa equipe grava palco, plateia, ambientes, bastidores e entrevistas ao longo da programação.",
+  },
+  {
+    h: "4. Edição",
+    p: "Montagem, tratamento de imagem e som, trilha e cortes adaptados aos canais de divulgação.",
+  },
+  {
+    h: "5. Entrega",
+    p: "Versão final aprovada e, quando o projeto pede, versões curtas para redes e comunicação interna.",
+  },
 ];
 
 const FAQS: Faq[] = [
@@ -133,7 +171,8 @@ function VideoEventosCorporativos() {
             Vídeo de eventos corporativos em {site.city}
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produzimos vídeos de congressos, convenções, fóruns, premiações e confraternizações, com captação no local, entrevistas e edição voltada ao uso do material depois do evento.
+            Produzimos vídeos de congressos, convenções, fóruns, premiações e confraternizações, com
+            captação no local, entrevistas e edição voltada ao uso do material depois do evento.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -157,18 +196,27 @@ function VideoEventosCorporativos() {
       {/* Produção */}
       <section className="border-b border-border bg-surface" aria-labelledby="producao">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="producao" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="producao"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produção de vídeo em eventos corporativos
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
             <p>
-              A produção começa pelo roteiro do evento: definimos quais momentos são prioridade, onde a equipe fica posicionada e quais depoimentos precisam ser gravados durante a programação.
+              A produção começa pelo roteiro do evento: definimos quais momentos são prioridade,
+              onde a equipe fica posicionada e quais depoimentos precisam ser gravados durante a
+              programação.
             </p>
             <p>
-              Na captação, nossa equipe registra palco, plateia, credenciamento, ambientes e bastidores, com entrevistas de diretoria, palestrantes, patrocinadores e participantes quando o projeto prevê.
+              Na captação, nossa equipe registra palco, plateia, credenciamento, ambientes e
+              bastidores, com entrevistas de diretoria, palestrantes, patrocinadores e participantes
+              quando o projeto prevê.
             </p>
             <p>
-              Na edição, o material é montado com tratamento de imagem e som, trilha e cortes adaptados aos canais em que o evento será divulgado, do relatório interno à comunicação da próxima edição.
+              Na edição, o material é montado com tratamento de imagem e som, trilha e cortes
+              adaptados aos canais em que o evento será divulgado, do relatório interno à
+              comunicação da próxima edição.
             </p>
           </div>
         </div>
@@ -177,7 +225,10 @@ function VideoEventosCorporativos() {
       {/* Tipos de evento */}
       <section className="border-b border-border" aria-labelledby="tipos">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="tipos" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="tipos"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Tipos de evento atendidos
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -191,10 +242,19 @@ function VideoEventosCorporativos() {
       </section>
 
       {/* Cases */}
-      <section id="trabalhos" className="border-b border-border scroll-mt-20" aria-labelledby="trabalhos-titulo">
+      <section
+        id="trabalhos"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="trabalhos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
-          <h2 id="trabalhos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Portfólio
+          </p>
+          <h2
+            id="trabalhos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Vídeos de eventos realizados
           </h2>
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -241,16 +301,25 @@ function VideoEventosCorporativos() {
               );
             })}
           </ul>
-          <Link to="/videos/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/videos/"
+            className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground"
+          >
             Ver todas as produções de vídeo corporativo →
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
             Cases comerciais com o contexto completo do projeto:{" "}
-            <Link to="/cases/abradilan/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/abradilan/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               ABRADILAN — fóruns e convenções
             </Link>{" "}
             e{" "}
-            <Link to="/cases/ativa-logistica/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/ativa-logistica/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               ATIVA Logística
             </Link>
             .
@@ -261,11 +330,18 @@ function VideoEventosCorporativos() {
       {/* Autoridade */}
       <section className="border-b border-border bg-surface" aria-labelledby="setores">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="setores" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="setores"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Experiência em eventos de diferentes setores
           </h2>
           <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
-            Nossas produções de evento incluem fóruns e convenções do setor de distribuição, encontros das áreas farmacêutica e química, congressos jurídicos, convenções de vendas do mercado imobiliário e eventos da área de saúde — no Brasil e no exterior. Essa experiência permite trabalhar dentro da programação, sem interferir no andamento do evento.
+            Nossas produções de evento incluem fóruns e convenções do setor de distribuição,
+            encontros das áreas farmacêutica e química, congressos jurídicos, convenções de vendas
+            do mercado imobiliário e eventos da área de saúde — no Brasil e no exterior. Essa
+            experiência permite trabalhar dentro da programação, sem interferir no andamento do
+            evento.
           </p>
         </div>
       </section>
@@ -274,11 +350,15 @@ function VideoEventosCorporativos() {
       <LazySection minHeight={320}>
         <section className="border-b border-border" aria-labelledby="foto-video">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <h2 id="foto-video" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            <h2
+              id="foto-video"
+              className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Foto e vídeo no mesmo evento
             </h2>
             <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
-              A mesma cobertura pode reunir vídeo e fotografia, com equipe dimensionada para os dois entregáveis e o mesmo planejamento de captação. Veja{" "}
+              A mesma cobertura pode reunir vídeo e fotografia, com equipe dimensionada para os dois
+              entregáveis e o mesmo planejamento de captação. Veja{" "}
               <Link to="/eventos-corporativos/" className="text-ember hover:underline">
                 fotografia de eventos corporativos
               </Link>{" "}
@@ -299,7 +379,10 @@ function VideoEventosCorporativos() {
       {/* Processo */}
       <section className="border-b border-border bg-surface" aria-labelledby="processo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="processo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="processo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Como funciona a cobertura
           </h2>
           <ol className="mt-10 grid gap-5 md:grid-cols-3 lg:grid-cols-5">
@@ -317,7 +400,10 @@ function VideoEventosCorporativos() {
       <section className="border-b border-border" aria-labelledby="faq-video-eventos">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
-          <h2 id="faq-video-eventos" className="mb-8 font-display text-3xl font-semibold md:text-4xl">
+          <h2
+            id="faq-video-eventos"
+            className="mb-8 font-display text-3xl font-semibold md:text-4xl"
+          >
             Dúvidas frequentes sobre vídeo de eventos corporativos
           </h2>
           <FaqList items={FAQS} />
@@ -332,7 +418,8 @@ function VideoEventosCorporativos() {
               Vamos planejar o vídeo do seu evento
             </h2>
             <p className="mt-3 text-muted-foreground text-pretty">
-              Informe data, local, formato do evento e o uso previsto do material. A partir dessas informações, estruturamos a cobertura de acordo com a programação.
+              Informe data, local, formato do evento e o uso previsto do material. A partir dessas
+              informações, estruturamos a cobertura de acordo com a programação.
             </p>
           </div>
           <a

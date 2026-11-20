@@ -143,7 +143,6 @@ export const Route = createFileRoute("/api/public/img")({
           }
         }
         return response;
-
       },
     },
   },

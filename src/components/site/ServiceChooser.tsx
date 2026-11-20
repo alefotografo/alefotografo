@@ -9,7 +9,12 @@ type Service = {
   cta: string;
   wa: string;
   see: string;
-  to?: "/fotos-corporativas/" | "/foto-profissional/" | "/eventos-corporativos/" | "/videos/" | "/fotografo-empresarial/";
+  to?:
+    | "/fotos-corporativas/"
+    | "/foto-profissional/"
+    | "/eventos-corporativos/"
+    | "/videos/"
+    | "/fotografo-empresarial/";
   catSlug?: string;
   img: string;
 };
@@ -76,11 +81,15 @@ export function ServiceChooser() {
     <section className="border-b border-border bg-surface" aria-labelledby="escolha-servico">
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Serviços</p>
-        <h2 id="escolha-servico" className="font-display text-3xl font-semibold text-balance md:text-4xl">
+        <h2
+          id="escolha-servico"
+          className="font-display text-3xl font-semibold text-balance md:text-4xl"
+        >
           Soluções em fotografia e vídeo para empresas
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Cada projeto recebe planejamento, execução e entrega alinhados aos objetivos de comunicação da empresa.
+          Cada projeto recebe planejamento, execução e entrega alinhados aos objetivos de
+          comunicação da empresa.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -102,7 +111,9 @@ export function ServiceChooser() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-lg font-semibold">{s.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {s.text}
+                </p>
                 <a
                   href={waLink(s.wa)}
                   target="_blank"

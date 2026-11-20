@@ -18,7 +18,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Instalar dependências
@@ -32,12 +32,23 @@ jobs:
 
       # Checagens do playbook da rotina de gerência (rotina-monitoramento.md):
       # sitemap acessível, robots com sitemap, 404 real. Falha o job se quebrar.
+      # O deploy da Netlify pode levar alguns minutos para propagar após o push;
+      # por isso as checagens rodam em loop com retry (até ~15 min).
       - name: Checagens do site (após push no main)
         if: github.ref == 'refs/heads/main'
         run: |
-          set -e
-          test "$(curl -s -o /dev/null -w '%{http_code}' https://alefotografo.com.br/)" = "200"
-          test "$(curl -s -o /dev/null -w '%{http_code}' https://alefotografo.com.br/robots.txt)" = "200"
-          curl -s https://alefotografo.com.br/robots.txt | grep -q "Sitemap:"
-          test "$(curl -s -o /dev/null -w '%{http_code}' https://alefotografo.com.br/sitemap-index.xml)" = "200"
-          test "$(curl -sL -o /dev/null -w '%{http_code}' https://alefotografo.com.br/url-que-nao-existe-ci)" = "404"
+          for i in $(seq 1 15); do
+            echo "== Tentativa $i/15 =="
+            if \
+              test "$(curl -s -o /dev/null -w '%{http_code}' https://alefotografo.com.br/)" = "200" && \
+              test "$(curl -s -o /dev/null -w '%{http_code}' https://alefotografo.com.br/robots.txt)" = "200" && \
+              curl -s https://alefotografo.com.br/robots.txt | grep -q "Sitemap:" && \
+              test "$(curl -s -o /dev/null -w '%{http_code}' https://alefotografo.com.br/sitemap-index.xml)" = "200" && \
+              test "$(curl -sL -o /dev/null -w '%{http_code}' https://alefotografo.com.br/url-que-nao-existe-ci)" = "404"; then
+              echo "Todas as checagens passaram."
+              exit 0
+            fi
+            sleep 60
+          done
+          echo "Checagens falharam após 15 tentativas."
+          exit 1

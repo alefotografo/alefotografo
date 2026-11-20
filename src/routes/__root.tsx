@@ -26,14 +26,8 @@ import { Tracking } from "../components/site/Tracking";
 import { site } from "../data/site";
 import { aggregateRatingSchema, googleBusinessProfileUrl, reviewSchema } from "../data/reviews";
 import { personSchema } from "../data/person";
-import {
-  DEFAULT_OG_IMAGE,
-  DEFAULT_OG_IMAGE_HEIGHT,
-  DEFAULT_OG_IMAGE_WIDTH,
-} from "../lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_HEIGHT, DEFAULT_OG_IMAGE_WIDTH } from "../lib/seo";
 import { lazyAfterInteractive } from "../lib/deferredLazy";
-
-
 
 const Footer = lazyAfterInteractive(() =>
   import("../components/site/Footer").then((module) => ({ default: module.Footer })),
@@ -45,39 +39,52 @@ const TestimonialsCarousel = lazyAfterInteractive(() =>
   })),
 );
 
-
-
 function NotFoundComponent() {
   return (
     <>
       <Header />
       <main className="mx-auto flex min-h-[60vh] max-w-3xl flex-col items-center justify-center px-5 py-20 text-center md:px-8">
         <p className="font-display text-sm uppercase tracking-[0.3em] text-ember">404</p>
-        <h1 className="mt-4 font-display text-4xl font-semibold md:text-5xl">Página não encontrada</h1>
+        <h1 className="mt-4 font-display text-4xl font-semibold md:text-5xl">
+          Página não encontrada
+        </h1>
         <p className="mt-3 max-w-md text-sm text-muted-foreground">
-          O conteúdo que você procura foi movido ou nunca existiu. Talvez alguma destas páginas ajude:
+          O conteúdo que você procura foi movido ou nunca existiu. Talvez alguma destas páginas
+          ajude:
         </p>
         <ul className="mt-8 grid w-full gap-3 sm:grid-cols-2">
           <li>
-            <Link to="/fotografo-corporativo/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link
+              to="/fotografo-corporativo/"
+              className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember"
+            >
               <span className="text-xs uppercase tracking-wider text-ember">Fotos</span>
               <p className="mt-1 font-display font-semibold">Galeria por segmento</p>
             </Link>
           </li>
           <li>
-            <Link to="/blog/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link
+              to="/blog/"
+              className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember"
+            >
               <span className="text-xs uppercase tracking-wider text-ember">Blog</span>
               <p className="mt-1 font-display font-semibold">Artigos sobre fotografia</p>
             </Link>
           </li>
           <li>
-            <Link to="/quem-e-o-ale/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link
+              to="/quem-e-o-ale/"
+              className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember"
+            >
               <span className="text-xs uppercase tracking-wider text-ember">Sobre</span>
               <p className="mt-1 font-display font-semibold">Quem é o Alê</p>
             </Link>
           </li>
           <li>
-            <Link to="/contato/" className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember">
+            <Link
+              to="/contato/"
+              className="block rounded-sm border border-border bg-surface p-4 text-left hover:border-ember"
+            >
               <span className="text-xs uppercase tracking-wider text-ember">Contato</span>
               <p className="mt-1 font-display font-semibold">Solicitar orçamento</p>
             </Link>
@@ -144,7 +151,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "theme-color", content: "#1a1a1a" },
-        { name: "google-site-verification", content: "v9fgg9CFkZcU72isBJ8We8unyyHJmM9vtA140QnDzpY" },
+        {
+          name: "google-site-verification",
+          content: "v9fgg9CFkZcU72isBJ8We8unyyHJmM9vtA140QnDzpY",
+        },
         { name: "author", content: "Alexandre Machado" },
         { property: "og:site_name", content: site.name },
         { property: "og:locale", content: "pt_BR" },
@@ -159,21 +169,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:site", content: "@alefotografo" },
         { title: is404 ? "Página não encontrada | Alê Fotógrafo" : site.name },
         ...(is404 ? [{ name: "robots", content: "noindex, follow" }] : []),
-        { name: "description", content: "Alexandre Machado dirige retratos profissionais e fotografia corporativa em São Paulo: headshots para LinkedIn, fotos de executivos e equipes. Mais de 30 anos de experiência." },
+        {
+          name: "description",
+          content:
+            "Alexandre Machado dirige retratos profissionais e fotografia corporativa em São Paulo: headshots para LinkedIn, fotos de executivos e equipes. Mais de 30 anos de experiência.",
+        },
       ],
       links: [
-
         // Fontes acima da dobra: carregam em paralelo com o CSS. Todas usam
         // font-display: optional para nunca bloquear a primeira renderização.
-        { rel: "preload", as: "font", type: "font/woff2", href: fontDmSans400, crossOrigin: "anonymous" },
-        { rel: "preload", as: "font", type: "font/woff2", href: fontDmSans500, crossOrigin: "anonymous" },
-        { rel: "preload", as: "font", type: "font/woff2", href: fontSpaceGrotesk600, crossOrigin: "anonymous" },
+        {
+          rel: "preload",
+          as: "font",
+          type: "font/woff2",
+          href: fontDmSans400,
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          as: "font",
+          type: "font/woff2",
+          href: fontDmSans500,
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          as: "font",
+          type: "font/woff2",
+          href: fontSpaceGrotesk600,
+          crossOrigin: "anonymous",
+        },
         { rel: "stylesheet", href: appCss },
         { rel: "llms.txt", href: "/llms.txt", type: "text/plain" },
         { rel: "ai-catalog", href: "/.well-known/ai-catalog.json", type: "application/json" },
         // Feed anunciado em todas as páginas: agregadores e crawlers de IA
         // descobrem publicação nova sem passar pelo hub /blog.
-        { rel: "alternate", type: "application/rss+xml", title: "Alê Fotógrafo — Blog RSS", href: "https://alefotografo.com.br/blog/rss.xml" },
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          title: "Alê Fotógrafo — Blog RSS",
+          href: "https://alefotografo.com.br/blog/rss.xml",
+        },
 
         // Site monolíngue (lang="pt-BR" no <html>): sem hreflang, que antes
         // apontava toda página para a home e conflitava com o canonical.
@@ -184,161 +220,196 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         // Otimizador de imagens do acervo: antecipa DNS/TLS antes da primeira foto.
         { rel: "dns-prefetch", href: "https://images.weserv.nl" },
         { rel: "preconnect", href: "https://images.weserv.nl", crossOrigin: "anonymous" },
-
       ],
       scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": ["PhotographyBusiness", "LocalBusiness"],
-              "@id": "https://alefotografo.com.br/#business",
-              name: site.fullName,
-              alternateName: site.name,
-              legalName: "Alexandre Machado Fotografia",
-              taxID: site.cnpj,
-              description: site.description,
-              slogan: site.tagline,
-              image:
-                "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
-              url: "https://alefotografo.com.br",
-              telephone: "+55-11-91355-0533",
-              email: site.email,
-              foundingDate: String(site.foundingYear),
-              currenciesAccepted: "BRL",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: site.address.street,
-                addressLocality: site.address.locality,
-                addressRegion: site.address.region,
-                postalCode: site.address.postalCode,
-                addressCountry: site.address.country,
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: site.geo.lat,
-                longitude: site.geo.lon,
-              },
-              // Aponta para o Perfil da Empresa no Google, não para uma busca por coordenadas.
-              hasMap: googleBusinessProfileUrl,
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  opens: "09:00",
-                  closes: "19:00",
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": ["PhotographyBusiness", "LocalBusiness"],
+                "@id": "https://alefotografo.com.br/#business",
+                name: site.fullName,
+                alternateName: site.name,
+                legalName: "Alexandre Machado Fotografia",
+                taxID: site.cnpj,
+                description: site.description,
+                slogan: site.tagline,
+                image:
+                  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/PaginaConteudo/alexandre-machado-1.JPG",
+                url: "https://alefotografo.com.br",
+                telephone: "+55-11-91355-0533",
+                email: site.email,
+                foundingDate: String(site.foundingYear),
+                currenciesAccepted: "BRL",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: site.address.street,
+                  addressLocality: site.address.locality,
+                  addressRegion: site.address.region,
+                  postalCode: site.address.postalCode,
+                  addressCountry: site.address.country,
                 },
-              ],
-              areaServed: [
-                { "@type": "City", name: "São Paulo" },
-                { "@type": "City", name: "Santo André" },
-                { "@type": "City", name: "São Bernardo do Campo" },
-                { "@type": "City", name: "São Caetano do Sul" },
-                { "@type": "City", name: "Diadema" },
-                { "@type": "City", name: "Barueri" },
-                // Regiões comerciais onde o estúdio atua com frequência.
-                "Vila Olímpia",
-                "Itaim Bibi",
-                "Faria Lima",
-                "Paulista",
-                "Jardins",
-                "Pinheiros",
-                "Moema",
-                "Brooklin",
-              ],
-              knowsLanguage: ["pt-BR", "en"],
-              knowsAbout: [
-                "Retrato corporativo",
-                "Headshot profissional",
-                "Foto para LinkedIn",
-                "Retrato executivo",
-                "Fotografia de equipe em escritório",
-                "Direção de pose",
-              ],
-              founder: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
-              employee: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
-              sameAs: [
-                site.instagram,
-                site.linkedin,
-                googleBusinessProfileUrl,
-                "https://alefotografos.com.br",
-                "https://www.wikidata.org/wiki/Q141715599",
-                "https://www.linkedin.com/company/alefotografo",
-              ],
-              aggregateRating: aggregateRatingSchema,
-              // Avaliações reais publicadas por clientes no Perfil da Empresa
-              // no Google — mesma fonte da nota agregada.
-              review: reviewSchema,
-
-              priceRange: "$$",
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Serviços de fotografia corporativa",
-                itemListElement: [
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: site.geo.lat,
+                  longitude: site.geo.lon,
+                },
+                // Aponta para o Perfil da Empresa no Google, não para uma busca por coordenadas.
+                hasMap: googleBusinessProfileUrl,
+                openingHoursSpecification: [
                   {
-                    "@type": "Offer",
-                    name: "Retrato individual (headshot / foto para LinkedIn)",
-                    description: "Sessão de headshot ou retrato executivo individual, estúdio ou locação no escritório do cliente.",
-                    price: "800",
-                    priceCurrency: "BRL",
-                    priceSpecification: { "@type": "PriceSpecification", minPrice: "800", priceCurrency: "BRL" },
-                    itemOffered: { "@type": "Service", name: "Retrato individual", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
-                    areaServed: { "@type": "City", name: "São Paulo" },
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Sessão de equipe (até 10 pessoas)",
-                    description: "Retratos individuais padronizados para equipe inteira, mesmo dia, estúdio ou escritório.",
-                    price: "2400",
-                    priceCurrency: "BRL",
-                    priceSpecification: { "@type": "PriceSpecification", minPrice: "2400", priceCurrency: "BRL" },
-                    itemOffered: { "@type": "Service", name: "Sessão de equipe", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Cobertura de evento corporativo (4 horas)",
-                    description: "Cobertura fotográfica de convenção, kick-off, feira ou cerimônia de premiação.",
-                    price: "3500",
-                    priceCurrency: "BRL",
-                    priceSpecification: { "@type": "PriceSpecification", minPrice: "3500", priceCurrency: "BRL" },
-                    itemOffered: { "@type": "Service", name: "Evento corporativo", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Banco de imagens corporativo",
-                    description: "Produção completa de 1 dia: equipe, instalações, processos e produto para uso em marketing e comunicação.",
-                    itemOffered: { "@type": "Service", name: "Banco de imagens corporativo", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Vídeo institucional corporativo",
-                    description: "Roteiro, filmagem, edição e entrega de vídeo institucional para empresas em São Paulo.",
-                    itemOffered: { "@type": "Service", name: "Vídeo institucional", provider: { "@id": "https://www.alefotografo.com.br/#business" } },
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    opens: "09:00",
+                    closes: "19:00",
                   },
                 ],
-              },
-            },
-            // Entidade principal do domínio: Alexandre Machado. Nó único
-            // definido em src/data/person.ts e referenciado por @id em todas
-            // as páginas (autor dos posts, fundador do negócio, mainEntity de
-            // /quem-e-o-ale).
-            personSchema,
-            {
-              "@type": "WebSite",
-              "@id": "https://alefotografo.com.br/#website",
-              url: "https://alefotografo.com.br",
-              name: site.name,
-              inLanguage: "pt-BR",
-              publisher: { "@id": "https://alefotografo.com.br/#business" },
-              author: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
-            },
+                areaServed: [
+                  { "@type": "City", name: "São Paulo" },
+                  { "@type": "City", name: "Santo André" },
+                  { "@type": "City", name: "São Bernardo do Campo" },
+                  { "@type": "City", name: "São Caetano do Sul" },
+                  { "@type": "City", name: "Diadema" },
+                  { "@type": "City", name: "Barueri" },
+                  // Regiões comerciais onde o estúdio atua com frequência.
+                  "Vila Olímpia",
+                  "Itaim Bibi",
+                  "Faria Lima",
+                  "Paulista",
+                  "Jardins",
+                  "Pinheiros",
+                  "Moema",
+                  "Brooklin",
+                ],
+                knowsLanguage: ["pt-BR", "en"],
+                knowsAbout: [
+                  "Retrato corporativo",
+                  "Headshot profissional",
+                  "Foto para LinkedIn",
+                  "Retrato executivo",
+                  "Fotografia de equipe em escritório",
+                  "Direção de pose",
+                ],
+                founder: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
+                employee: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
+                sameAs: [
+                  site.instagram,
+                  site.linkedin,
+                  googleBusinessProfileUrl,
+                  "https://alefotografos.com.br",
+                  "https://www.wikidata.org/wiki/Q141715599",
+                  "https://www.linkedin.com/company/alefotografo",
+                ],
+                aggregateRating: aggregateRatingSchema,
+                // Avaliações reais publicadas por clientes no Perfil da Empresa
+                // no Google — mesma fonte da nota agregada.
+                review: reviewSchema,
 
-          ],
-        }),
-      },
-     ],
+                priceRange: "$$",
+                hasOfferCatalog: {
+                  "@type": "OfferCatalog",
+                  name: "Serviços de fotografia corporativa",
+                  itemListElement: [
+                    {
+                      "@type": "Offer",
+                      name: "Retrato individual (headshot / foto para LinkedIn)",
+                      description:
+                        "Sessão de headshot ou retrato executivo individual, estúdio ou locação no escritório do cliente.",
+                      price: "800",
+                      priceCurrency: "BRL",
+                      priceSpecification: {
+                        "@type": "PriceSpecification",
+                        minPrice: "800",
+                        priceCurrency: "BRL",
+                      },
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Retrato individual",
+                        provider: { "@id": "https://www.alefotografo.com.br/#business" },
+                      },
+                      areaServed: { "@type": "City", name: "São Paulo" },
+                    },
+                    {
+                      "@type": "Offer",
+                      name: "Sessão de equipe (até 10 pessoas)",
+                      description:
+                        "Retratos individuais padronizados para equipe inteira, mesmo dia, estúdio ou escritório.",
+                      price: "2400",
+                      priceCurrency: "BRL",
+                      priceSpecification: {
+                        "@type": "PriceSpecification",
+                        minPrice: "2400",
+                        priceCurrency: "BRL",
+                      },
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Sessão de equipe",
+                        provider: { "@id": "https://www.alefotografo.com.br/#business" },
+                      },
+                    },
+                    {
+                      "@type": "Offer",
+                      name: "Cobertura de evento corporativo (4 horas)",
+                      description:
+                        "Cobertura fotográfica de convenção, kick-off, feira ou cerimônia de premiação.",
+                      price: "3500",
+                      priceCurrency: "BRL",
+                      priceSpecification: {
+                        "@type": "PriceSpecification",
+                        minPrice: "3500",
+                        priceCurrency: "BRL",
+                      },
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Evento corporativo",
+                        provider: { "@id": "https://www.alefotografo.com.br/#business" },
+                      },
+                    },
+                    {
+                      "@type": "Offer",
+                      name: "Banco de imagens corporativo",
+                      description:
+                        "Produção completa de 1 dia: equipe, instalações, processos e produto para uso em marketing e comunicação.",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Banco de imagens corporativo",
+                        provider: { "@id": "https://www.alefotografo.com.br/#business" },
+                      },
+                    },
+                    {
+                      "@type": "Offer",
+                      name: "Vídeo institucional corporativo",
+                      description:
+                        "Roteiro, filmagem, edição e entrega de vídeo institucional para empresas em São Paulo.",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Vídeo institucional",
+                        provider: { "@id": "https://www.alefotografo.com.br/#business" },
+                      },
+                    },
+                  ],
+                },
+              },
+              // Entidade principal do domínio: Alexandre Machado. Nó único
+              // definido em src/data/person.ts e referenciado por @id em todas
+              // as páginas (autor dos posts, fundador do negócio, mainEntity de
+              // /quem-e-o-ale).
+              personSchema,
+              {
+                "@type": "WebSite",
+                "@id": "https://alefotografo.com.br/#website",
+                url: "https://alefotografo.com.br",
+                name: site.name,
+                inLanguage: "pt-BR",
+                publisher: { "@id": "https://alefotografo.com.br/#business" },
+                author: { "@id": "https://alefotografo.com.br/quem-e-o-ale#person" },
+              },
+            ],
+          }),
+        },
+      ],
     };
   },
   shellComponent: RootShell,
@@ -390,4 +461,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
-import { ServicePage, servicePageSchema, type ServicePageConfig } from "@/components/site/ServicePage";
+import {
+  ServicePage,
+  servicePageSchema,
+  type ServicePageConfig,
+} from "@/components/site/ServicePage";
 
 const TITLE = "Fotos para Advogados em SP | Sócios e Banca";
 const DESCRIPTION =
@@ -17,9 +21,24 @@ const cfg: ServicePageConfig = {
   answerBlock:
     "Fotografia para advogados é o retrato institucional de sócios, associados e escritório, com linguagem sóbria adequada ao setor jurídico. É indicada para bancas de qualquer tamanho, advogados autônomos e departamentos jurídicos em São Paulo. Realizo a produção no escritório ou em estúdio e entrego as imagens tratadas em até 1 dia útil, conforme o escopo.",
   formats: [
-    { formato: "Retrato individual", onde: "Meu estúdio, o seu escritório ou locação externa", duracao: "Cerca de 1 hora de captação", entrega: "Imagens tratadas em até 1 dia útil" },
-    { formato: "Retratos de equipe ou diretoria", onde: "No escritório da empresa, em blocos de horário", duracao: "Cerca de 15 minutos por pessoa", entrega: "Mesmo padrão visual para todos, em até 1 dia útil" },
-    { formato: "Ambiente e operação", onde: "Na sede, escritório, clínica ou planta", duracao: "Bloco de horas definido no orçamento", entrega: "Imagens tratadas em até 1 dia útil" },
+    {
+      formato: "Retrato individual",
+      onde: "Meu estúdio, o seu escritório ou locação externa",
+      duracao: "Cerca de 1 hora de captação",
+      entrega: "Imagens tratadas em até 1 dia útil",
+    },
+    {
+      formato: "Retratos de equipe ou diretoria",
+      onde: "No escritório da empresa, em blocos de horário",
+      duracao: "Cerca de 15 minutos por pessoa",
+      entrega: "Mesmo padrão visual para todos, em até 1 dia útil",
+    },
+    {
+      formato: "Ambiente e operação",
+      onde: "Na sede, escritório, clínica ou planta",
+      duracao: "Bloco de horas definido no orçamento",
+      entrega: "Imagens tratadas em até 1 dia útil",
+    },
   ],
   intro: [
     "No jurídico, a percepção de solidez começa antes da primeira reunião. Retratos padronizados de sócios e equipe, somados a imagens reais do escritório, sustentam o posicionamento do escritório em site, LinkedIn e propostas.",
@@ -28,12 +47,30 @@ const cfg: ServicePageConfig = {
   serviceType: "Fotografia para advogados e escritórios de advocacia",
   description: DESCRIPTION,
   blocks: [
-    { h: "Retratos de sócios", p: "Retrato corporativo de sócios e fundadores, com luz e fundo consistentes em todo o quadro societário." },
-    { h: "Fotos da equipe", p: "Retratos individuais de advogados, associados e áreas de apoio, no mesmo padrão visual." },
-    { h: "Fotos para LinkedIn", p: "Enquadramento adequado ao perfil, prontos para uso em publicações, artigos e propostas." },
-    { h: "Fotos para o site do escritório", p: "Imagens de páginas institucionais, áreas de atuação e página de equipe." },
-    { h: "Fotos para apresentações e propostas", p: "Retratos e ambientes para pitches, RFPs e materiais comerciais." },
-    { h: "Banco de imagens do escritório", p: "Acervo próprio de arquitetura, salas de reunião, biblioteca e rotina de trabalho." },
+    {
+      h: "Retratos de sócios",
+      p: "Retrato corporativo de sócios e fundadores, com luz e fundo consistentes em todo o quadro societário.",
+    },
+    {
+      h: "Fotos da equipe",
+      p: "Retratos individuais de advogados, associados e áreas de apoio, no mesmo padrão visual.",
+    },
+    {
+      h: "Fotos para LinkedIn",
+      p: "Enquadramento adequado ao perfil, prontos para uso em publicações, artigos e propostas.",
+    },
+    {
+      h: "Fotos para o site do escritório",
+      p: "Imagens de páginas institucionais, áreas de atuação e página de equipe.",
+    },
+    {
+      h: "Fotos para apresentações e propostas",
+      p: "Retratos e ambientes para pitches, RFPs e materiais comerciais.",
+    },
+    {
+      h: "Banco de imagens do escritório",
+      p: "Acervo próprio de arquitetura, salas de reunião, biblioteca e rotina de trabalho.",
+    },
   ],
   paraQuem: [
     "Sócios e fundadores",
@@ -52,12 +89,30 @@ const cfg: ServicePageConfig = {
     "Recrutamento e comunicação interna",
   ],
   comoFunciona: [
-    { h: "1. Briefing rápido", p: "Você informa quantos advogados serão retratados, os ambientes e os usos previstos das imagens." },
-    { h: "2. Orientação de imagem", p: "Cada profissional recebe orientação de figurino para manter coerência entre os retratos." },
-    { h: "3. Direção na sessão", p: "Fotografamos por blocos de horário, com direção de pose e postura, sem interromper a operação." },
-    { h: "4. Seleção", p: "Galeria online organizada por nome e por área para escolha das imagens." },
-    { h: "5. Tratamento profissional", p: "Ajuste de cor, luz e retoque discreto, adequado ao tom sóbrio do setor." },
-    { h: "6. Entrega digital", p: "Alta resolução e versões web em até 1 dia útil, com uso comercial liberado sem prazo." },
+    {
+      h: "1. Briefing rápido",
+      p: "Você informa quantos advogados serão retratados, os ambientes e os usos previstos das imagens.",
+    },
+    {
+      h: "2. Orientação de imagem",
+      p: "Cada profissional recebe orientação de figurino para manter coerência entre os retratos.",
+    },
+    {
+      h: "3. Direção na sessão",
+      p: "Fotografamos por blocos de horário, com direção de pose e postura, sem interromper a operação.",
+    },
+    {
+      h: "4. Seleção",
+      p: "Galeria online organizada por nome e por área para escolha das imagens.",
+    },
+    {
+      h: "5. Tratamento profissional",
+      p: "Ajuste de cor, luz e retoque discreto, adequado ao tom sóbrio do setor.",
+    },
+    {
+      h: "6. Entrega digital",
+      p: "Alta resolução e versões web em até 1 dia útil, com uso comercial liberado sem prazo.",
+    },
   ],
   gallerySlugs: [
     "fotografia-para-escritorios-de-advocacia",
@@ -75,12 +130,30 @@ const cfg: ServicePageConfig = {
     },
   ],
   faqs: [
-    { q: "Fazem fotos para advogados?", a: "Sim. Produzimos retratos de sócios e equipe, além de fotos do escritório para site, LinkedIn, propostas e imprensa." },
-    { q: "Quanto custa fotografar um escritório de advocacia?", a: "O orçamento é por escopo: número de advogados, ambientes e tempo de captação. Meia diária cobre sócios e parte da equipe; diária completa inclui ambientes e banco de imagens." },
-    { q: "Vocês atendem no escritório?", a: "Sim, em toda a Grande São Paulo, com iluminação e fundo portátil levados ao local." },
-    { q: "Fazem retratos para equipes?", a: "Sim. Padronizamos fundo, luz, enquadramento e tratamento para que todos os retratos tenham a mesma linguagem visual." },
-    { q: "As fotos recebem tratamento?", a: "Sim, com ajuste de cor, luz e retoque profissional discreto, preservando a naturalidade." },
-    { q: "Como pedir orçamento pelo WhatsApp?", a: "Envie o número de advogados, o bairro do escritório e a data pretendida para receber a proposta fechada." },
+    {
+      q: "Fazem fotos para advogados?",
+      a: "Sim. Produzimos retratos de sócios e equipe, além de fotos do escritório para site, LinkedIn, propostas e imprensa.",
+    },
+    {
+      q: "Quanto custa fotografar um escritório de advocacia?",
+      a: "O orçamento é por escopo: número de advogados, ambientes e tempo de captação. Meia diária cobre sócios e parte da equipe; diária completa inclui ambientes e banco de imagens.",
+    },
+    {
+      q: "Vocês atendem no escritório?",
+      a: "Sim, em toda a Grande São Paulo, com iluminação e fundo portátil levados ao local.",
+    },
+    {
+      q: "Fazem retratos para equipes?",
+      a: "Sim. Padronizamos fundo, luz, enquadramento e tratamento para que todos os retratos tenham a mesma linguagem visual.",
+    },
+    {
+      q: "As fotos recebem tratamento?",
+      a: "Sim, com ajuste de cor, luz e retoque profissional discreto, preservando a naturalidade.",
+    },
+    {
+      q: "Como pedir orçamento pelo WhatsApp?",
+      a: "Envie o número de advogados, o bairro do escritório e a data pretendida para receber a proposta fechada.",
+    },
   ],
   wa: "Olá Alexandre, quero orçamento de fotos profissionais para o meu escritório de advocacia.",
   ctaLabel: "Solicitar orçamento para escritório",

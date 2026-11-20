@@ -10,19 +10,22 @@ export const Route = createFileRoute("/fotografo-corporativo/")({
   head: () => ({
     meta: buildMeta({
       title: "Fotógrafo Corporativo SP | 30 Anos, Nota 4,9",
-      description: "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Veja trabalhos para empresas, executivos, indústria, logística, saúde e eventos.",
+      description:
+        "Fotógrafo corporativo em São Paulo com mais de 30 anos de experiência. Veja trabalhos para empresas, executivos, indústria, logística, saúde e eventos.",
       path: "/fotografo-corporativo/",
     }),
     links: [{ rel: "canonical", href: "https://alefotografo.com.br/fotografo-corporativo/" }],
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(buildBreadcrumbList([
-          {
-            name: "Fotógrafo Corporativo São Paulo",
-            item: "https://alefotografo.com.br/fotografo-corporativo",
-          },
-        ])),
+        children: JSON.stringify(
+          buildBreadcrumbList([
+            {
+              name: "Fotógrafo Corporativo São Paulo",
+              item: "https://alefotografo.com.br/fotografo-corporativo",
+            },
+          ]),
+        ),
       },
       {
         type: "application/ld+json",
@@ -84,52 +87,60 @@ function PortfolioIndex() {
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Fotógrafo Corporativo" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Fotógrafo Corporativo</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Fotógrafo Corporativo
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             Fotógrafo corporativo em São Paulo
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg">
-            Há mais de 30 anos, produzimos fotografia profissional para empresas, executivos e equipes em São Paulo. Explore o portfólio por especialidade, com trabalhos em ambientes corporativos, indústria, logística, saúde, advocacia, eventos e outros segmentos.
+            Há mais de 30 anos, produzimos fotografia profissional para empresas, executivos e
+            equipes em São Paulo. Explore o portfólio por especialidade, com trabalhos em ambientes
+            corporativos, indústria, logística, saúde, advocacia, eventos e outros segmentos.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).map((c, i) => (
-            <Link
-              key={c.slug}
-              to="/fotografo-corporativo/$slug/"
-              params={{ slug: c.slug }}
-              className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-ember [content-visibility:auto] [contain-intrinsic-size:auto_360px]"
-            >
-              <div className={`relative ${i % 6 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}>
-                {c.cover ? (
-                  <SmartImage
-                    src={c.cover}
-                    alt={c.title}
-                    baseWidth={768}
-                    priority={i < 3}
-                    width={1200}
-                    height={i % 6 === 0 ? 1500 : 900}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
-                    className="h-full w-full transform-gpu object-cover transition-[opacity,transform] duration-200 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background text-muted-foreground">
-                    Sem imagem
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <h2 className="font-display text-lg font-semibold leading-tight">{c.title}</h2>
-                {c.image_count > 0 && (
-                  <p className="mt-1 text-xs text-muted-foreground">{c.image_count} fotos</p>
-                )}
-              </div>
-            </Link>
-          ))}
+          {categories
+            .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
+            .map((c, i) => (
+              <Link
+                key={c.slug}
+                to="/fotografo-corporativo/$slug/"
+                params={{ slug: c.slug }}
+                className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-[box-shadow] duration-200 hover:ring-ember [content-visibility:auto] [contain-intrinsic-size:auto_360px]"
+              >
+                <div
+                  className={`relative ${i % 6 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} overflow-hidden`}
+                >
+                  {c.cover ? (
+                    <SmartImage
+                      src={c.cover}
+                      alt={c.title}
+                      baseWidth={768}
+                      priority={i < 3}
+                      width={1200}
+                      height={i % 6 === 0 ? 1500 : 900}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+                      className="h-full w-full transform-gpu object-cover transition-[opacity,transform] duration-200 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-gradient-to-br from-surface to-background text-muted-foreground">
+                      Sem imagem
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <h2 className="font-display text-lg font-semibold leading-tight">{c.title}</h2>
+                  {c.image_count > 0 && (
+                    <p className="mt-1 text-xs text-muted-foreground">{c.image_count} fotos</p>
+                  )}
+                </div>
+              </Link>
+            ))}
         </div>
       </section>
 

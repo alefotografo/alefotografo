@@ -63,7 +63,9 @@ function CasesHub() {
                   )}
                 </div>
                 <div className="p-6">
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">{c.segment}</p>
+                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">
+                    {c.segment}
+                  </p>
                   <h2 className="mt-2 font-display text-2xl font-semibold group-hover:text-ember">
                     {c.client}
                   </h2>

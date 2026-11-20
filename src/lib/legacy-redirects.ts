@@ -7,7 +7,6 @@ import { videos, allPosts } from "@/data/catalog";
 
 const POST_SLUGS = new Set(allPosts.map((p) => p.slug));
 
-
 const VIDEO_SLUGS = new Set(videos.map((v) => v.slug));
 
 // Vídeos que saíram do ar no YouTube e foram removidos do catálogo.
@@ -141,8 +140,6 @@ const EXACT: Record<string, string> = {
   "/contact": "/contato",
 };
 
-
-
 function normalize(pathname: string) {
   if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
   return pathname;
@@ -180,13 +177,16 @@ export function resolveLegacyPath(pathname: string): string | undefined {
   const removedVideo = path.match(/^\/videos\/([^/]+)$/);
   if (removedVideo && REMOVED_VIDEO_SLUGS.has(removedVideo[1])) return "/videos";
 
-
   // Loja antiga Epics (pacotes de retrato) → destino semanticamente equivalente.
   // Inventário (Wayback, 2020–2025): pacotes Prata/Ouro/Diamante/Safira,
   // Ensaio VIP, Influencer e Pacote dos Sonhos eram todos ensaios individuais
   // de retrato → /foto-profissional. Gerenciamento de redes sociais → /servicos.
   // Qualquer outra URL sob /loja/ cai no fallback de orçamento abaixo.
-  if (/^\/loja\/(pacote-(prata|ouro|diamante|safira|influencer|dos-sonhos)|retrato-profissional|ensaio-vip|ensaio-fotografico-pacote-dos-sonhos)/.test(path)) {
+  if (
+    /^\/loja\/(pacote-(prata|ouro|diamante|safira|influencer|dos-sonhos)|retrato-profissional|ensaio-vip|ensaio-fotografico-pacote-dos-sonhos)/.test(
+      path,
+    )
+  ) {
     return "/foto-profissional";
   }
   if (path === "/loja/gerenciamento-de-redes-sociais-mensal") return "/servicos";

@@ -15,16 +15,18 @@ function clean(value: unknown, max: number) {
  * referenciador e um identificador anônimo de sessão gerado no navegador.
  */
 export const trackConversion = createServerFn({ method: "POST" })
-  .inputValidator((data: { type: string; path?: string; referrer?: string; sessionId?: string }) => {
-    const type = CONVERSION_TYPES.find((t) => t === data?.type);
-    if (!type) throw new Error("Tipo de conversão inválido.");
-    return {
-      type,
-      path: clean(data?.path, 300) ?? "/",
-      referrer: clean(data?.referrer, 300),
-      sessionId: clean(data?.sessionId, 64),
-    };
-  })
+  .inputValidator(
+    (data: { type: string; path?: string; referrer?: string; sessionId?: string }) => {
+      const type = CONVERSION_TYPES.find((t) => t === data?.type);
+      if (!type) throw new Error("Tipo de conversão inválido.");
+      return {
+        type,
+        path: clean(data?.path, 300) ?? "/",
+        referrer: clean(data?.referrer, 300),
+        sessionId: clean(data?.sessionId, 64),
+      };
+    },
+  )
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin.from("conversion_events").insert({

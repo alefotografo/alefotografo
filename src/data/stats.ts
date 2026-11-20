@@ -22,7 +22,8 @@ export const deliveryStat: Record<DeliveryKind, BusinessStat> = {
   retrato: {
     value: "1 dia útil",
     label: "Entrega das fotos",
-    detail: "Imagens tratadas, com cor e retoque natural, entregues em até 1 dia útil, conforme o escopo.",
+    detail:
+      "Imagens tratadas, com cor e retoque natural, entregues em até 1 dia útil, conforme o escopo.",
   },
   evento: {
     value: "Mesmo dia",

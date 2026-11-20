@@ -35,7 +35,11 @@ export const Route = createFileRoute("/fotografo-corporativo-em/")({
           name: TITLE,
           description: DESCRIPTION,
           url: URL_ABS,
-          publisher: { "@type": "LocalBusiness", name: site.name, url: "https://alefotografo.com.br" },
+          publisher: {
+            "@type": "LocalBusiness",
+            name: site.name,
+            url: "https://alefotografo.com.br",
+          },
           mainEntity: {
             "@type": "ItemList",
             itemListElement: bairros.map((b, i) => ({

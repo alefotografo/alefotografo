@@ -17,9 +17,7 @@ export const MONITORED_PATHS = [
   "/contato",
 ] as const;
 
-export const MONITORED_URLS = MONITORED_PATHS.map(
-  (p) => `${SITE_ORIGIN}${p === "/" ? "/" : p}`,
-);
+export const MONITORED_URLS = MONITORED_PATHS.map((p) => `${SITE_ORIGIN}${p === "/" ? "/" : p}`);
 
 export const MONITORED_SITEMAPS = [
   `${SITE_ORIGIN}/sitemap-index.xml`,

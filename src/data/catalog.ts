@@ -108,8 +108,8 @@ export const scheduledPosts: Post[] = /* @__PURE__ */ lazyList(
  */
 export const featuredPosts: Post[] = /* @__PURE__ */ lazyList(
   () => [
-    ...POST_ORDER.map((slug) => posts.find((p) => p.slug === slug)).filter(
-      (p): p is Post => Boolean(p),
+    ...POST_ORDER.map((slug) => posts.find((p) => p.slug === slug)).filter((p): p is Post =>
+      Boolean(p),
     ),
     ...posts.filter((p) => !POST_ORDER.includes(p.slug)),
   ],

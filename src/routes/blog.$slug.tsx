@@ -5,8 +5,6 @@ import { site } from "@/data/site";
 // por import dinâmico: são ~40 KB que ficavam no bundle de entrada de todas as
 // páginas do site só porque o head desta rota os lia diretamente.
 
-
-
 import { buildMeta, SITE_ORIGIN } from "@/lib/seo";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { PillarLinks } from "@/components/site/PillarLinks";
@@ -23,9 +21,19 @@ import { Segments } from "@/components/site/EditorialBlock";
 import { ArrowLeft } from "lucide-react";
 
 const MONTHS_PT: Record<string, string> = {
-  janeiro: "01", fevereiro: "02", "março": "03", marco: "03", abril: "04",
-  maio: "05", junho: "06", julho: "07", agosto: "08", setembro: "09",
-  outubro: "10", novembro: "11", dezembro: "12",
+  janeiro: "01",
+  fevereiro: "02",
+  março: "03",
+  marco: "03",
+  abril: "04",
+  maio: "05",
+  junho: "06",
+  julho: "07",
+  agosto: "08",
+  setembro: "09",
+  outubro: "10",
+  novembro: "11",
+  dezembro: "12",
 };
 
 function toISODate(input?: string): string | undefined {
@@ -58,15 +66,18 @@ export const Route = createFileRoute("/blog/$slug")({
       meta: buildMeta({
         title: override
           ? override.title
-          : loaderData.title.length > 60 ? `${loaderData.title.slice(0, 57).trimEnd()}…` : loaderData.title,
-        description: override ? override.description : (() => {
-
-          const base = (loaderData.description || loaderData.title || "").trim();
-          if (base.length > 158) return `${base.slice(0, 155).trimEnd()}…`;
-          if (base.length >= 50) return base;
-          const suffix = ` — dicas de Alexandre Machado, fotógrafo corporativo em São Paulo.`;
-          return `${base}${suffix}`.slice(0, 160);
-        })(),
+          : loaderData.title.length > 60
+            ? `${loaderData.title.slice(0, 57).trimEnd()}…`
+            : loaderData.title,
+        description: override
+          ? override.description
+          : (() => {
+              const base = (loaderData.description || loaderData.title || "").trim();
+              if (base.length > 158) return `${base.slice(0, 155).trimEnd()}…`;
+              if (base.length >= 50) return base;
+              const suffix = ` — dicas de Alexandre Machado, fotógrafo corporativo em São Paulo.`;
+              return `${base}${suffix}`.slice(0, 160);
+            })(),
 
         path: `/blog/${params.slug}`,
         image: postCover(loaderData),
@@ -108,7 +119,9 @@ export const Route = createFileRoute("/blog/$slug")({
             },
 
             datePublished: toISODate(loaderData.date),
-            dateModified: toISODate((loaderData as { updatedAt?: string }).updatedAt ?? loaderData.date),
+            dateModified: toISODate(
+              (loaderData as { updatedAt?: string }).updatedAt ?? loaderData.date,
+            ),
             // Conta todo o texto legível do artigo: corpo + lead (description) +
             // ponte editorial. Antes contava só body — subinformava ~120 palavras.
             wordCount: (() => {
@@ -141,7 +154,10 @@ function PostPage() {
   const seed = `${p.title} ${p.description}`;
   const relCats = relatedCategories(seed, undefined, 6);
   const relPostList = relatedPosts(seed, p.slug, 4);
-  const more = (relPostList.length ? relPostList : posts.filter((x) => x.slug !== p.slug)).slice(0, 3);
+  const more = (relPostList.length ? relPostList : posts.filter((x) => x.slug !== p.slug)).slice(
+    0,
+    3,
+  );
   const bridge = bridgeFor(p.slug);
   // Shared trackers so the same category isn't linked twice across paragraphs
   const usedSlugs = new Set<string>();
@@ -149,9 +165,14 @@ function PostPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog" }, { label: p.title }]} />
+      <Breadcrumbs
+        items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog" }, { label: p.title }]}
+      />
       <article className="mx-auto max-w-3xl px-5 py-12 md:px-8 md:py-16">
-        <Link to="/blog/" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+        <Link
+          to="/blog/"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
           <ArrowLeft size={14} /> Voltar ao blog
         </Link>
         <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-ember">
@@ -161,7 +182,9 @@ function PostPage() {
           </span>
         </div>
 
-        <h1 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">{p.title}</h1>
+        <h1 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-5xl text-balance">
+          {p.title}
+        </h1>
         {p.description && (
           <p className="mt-6 text-lg text-muted-foreground text-pretty">
             {autoLink(p.description, { usedSlugs, usedPhrases, maxLinks: 2 })}
@@ -170,7 +193,15 @@ function PostPage() {
 
         {postCover(p) && (
           <figure className="my-10 overflow-hidden rounded-sm ring-1 ring-border">
-            <SmartImage src={postCover(p)!} alt={p.title} className="w-full" baseWidth={768} widths={[400, 640, 768]} priority sizes="(max-width: 768px) 100vw, 768px" />
+            <SmartImage
+              src={postCover(p)!}
+              alt={p.title}
+              className="w-full"
+              baseWidth={768}
+              widths={[400, 640, 768]}
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
             {p.cover_credit && (
               <figcaption className="bg-surface px-4 py-2 text-xs italic text-muted-foreground">
                 Foto: {p.cover_credit}
@@ -187,12 +218,17 @@ function PostPage() {
                 <MarkdownBlock text={para} ctx={{ usedSlugs, usedPhrases }} />
                 {img && (
                   <figure className="my-8 overflow-hidden rounded-sm ring-1 ring-border">
-                    <SmartImage src={img.src} alt={img.alt} className="w-full" baseWidth={768} widths={[400, 640, 768]} sizes="(max-width: 768px) 100vw, 768px" />
+                    <SmartImage
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full"
+                      baseWidth={768}
+                      widths={[400, 640, 768]}
+                      sizes="(max-width: 768px) 100vw, 768px"
+                    />
                     <figcaption className="bg-surface px-4 py-2 text-xs text-muted-foreground">
                       {img.alt}
-                      {img.credit && (
-                        <span className="mt-1 block italic">Foto: {img.credit}</span>
-                      )}
+                      {img.credit && <span className="mt-1 block italic">Foto: {img.credit}</span>}
                     </figcaption>
                   </figure>
                 )}
@@ -209,7 +245,22 @@ function PostPage() {
             </div>
           )}
           <p className="mt-8 rounded-sm border border-border bg-surface p-5 text-sm text-muted-foreground">
-            Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre fotografia profissional. Para conversar sobre um projeto, <Link to="/contato/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">entre em contato</Link> ou veja a <Link to="/fotografo-corporativo/" className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">galeria completa de fotos</Link>.
+            Este artigo faz parte da série de conteúdos publicados por Alexandre Machado sobre
+            fotografia profissional. Para conversar sobre um projeto,{" "}
+            <Link
+              to="/contato/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              entre em contato
+            </Link>{" "}
+            ou veja a{" "}
+            <Link
+              to="/fotografo-corporativo/"
+              className="text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
+              galeria completa de fotos
+            </Link>
+            .
           </p>
         </div>
 
@@ -226,13 +277,17 @@ function PostPage() {
 
         <RelatedLinks cats={relCats} posts={relPostList} title="Assuntos relacionados" />
 
-
-
         <div className="mt-10 flex flex-wrap gap-3 border-t border-border pt-8">
-          <Link to="/contato/" className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
+          <Link
+            to="/contato/"
+            className="rounded-sm bg-ember px-5 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+          >
             Solicitar orçamento
           </Link>
-          <Link to="/fotografo-corporativo/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+          <Link
+            to="/fotografo-corporativo/"
+            className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+          >
             Ver fotos
           </Link>
         </div>
@@ -249,8 +304,14 @@ function PostPage() {
                 params={{ slug: o.slug }}
                 className="group block rounded-sm border border-border bg-background p-5 hover:border-ember"
               >
-                {o.date && <time className="text-xs uppercase tracking-wider text-muted-foreground">{o.date}</time>}
-                <h3 className="mt-3 line-clamp-2 font-display text-base font-semibold group-hover:text-ember">{o.title}</h3>
+                {o.date && (
+                  <time className="text-xs uppercase tracking-wider text-muted-foreground">
+                    {o.date}
+                  </time>
+                )}
+                <h3 className="mt-3 line-clamp-2 font-display text-base font-semibold group-hover:text-ember">
+                  {o.title}
+                </h3>
               </Link>
             ))}
           </div>

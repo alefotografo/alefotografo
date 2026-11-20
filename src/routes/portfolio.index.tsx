@@ -106,7 +106,8 @@ const BLOCKS = [
   {
     id: "arquitetura",
     label: "Arquitetura e ambientes",
-    blurb: "Escritórios, empreendimentos e interiores corporativos com controle de luz e perspectiva.",
+    blurb:
+      "Escritórios, empreendimentos e interiores corporativos com controle de luz e perspectiva.",
     services: [{ to: "/servicos/", label: "Ver todos os serviços" }],
     gals: ["fotografo-de-arquitetura-e-interiores", "empreendimentos-imobiliarios"],
   },
@@ -164,13 +165,16 @@ function PortfolioHub() {
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Portfólio" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Portfólio</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Portfólio
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             Cases de fotografia corporativa em São Paulo
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            {categories.length} galerias e {videos.length} produções em vídeo, organizadas pela demanda que
-            resolvem. Cada bloco leva à página do serviço correspondente e aos cases daquele segmento.
+            {categories.length} galerias e {videos.length} produções em vídeo, organizadas pela
+            demanda que resolvem. Cada bloco leva à página do serviço correspondente e aos cases
+            daquele segmento.
           </p>
           <nav aria-label="Índice do portfólio" className="mt-10">
             <ul className="flex flex-wrap gap-2">
@@ -197,7 +201,8 @@ function PortfolioHub() {
             Cases de clientes
           </h2>
           <p className="mt-4 max-w-3xl text-muted-foreground text-pretty">
-            Projetos reais organizados por cliente, com as produções publicadas e o contexto de cada trabalho.
+            Projetos reais organizados por cliente, com as produções publicadas e o contexto de cada
+            trabalho.
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             <Link
@@ -205,7 +210,9 @@ function PortfolioHub() {
               className="group block rounded-sm border border-border bg-background p-6 transition-all hover:border-ember"
             >
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Logística</p>
-              <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-ember">ATIVA Logística</h3>
+              <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-ember">
+                ATIVA Logística
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Fotografia de operação e 8 produções em vídeo — Itapevi e Barueri.
               </p>
@@ -215,14 +222,19 @@ function PortfolioHub() {
               className="group block rounded-sm border border-border bg-background p-6 transition-all hover:border-ember"
             >
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-ember">Advocacia</p>
-              <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-ember">Rocha & Queiroz Advogados</h3>
+              <h3 className="mt-2 font-display text-xl font-semibold group-hover:text-ember">
+                Rocha & Queiroz Advogados
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Vídeo institucional, fotografia e depoimento da equipe.
               </p>
             </Link>
           </div>
           <p className="mt-6">
-            <Link to="/cases/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/cases/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver todos os cases →
             </Link>
           </p>
@@ -230,7 +242,9 @@ function PortfolioHub() {
       </section>
 
       {BLOCKS.map((b, bi) => {
-        const gals = b.gals.map((s) => bySlug.get(s)).filter((c): c is NonNullable<typeof c> => Boolean(c));
+        const gals = b.gals
+          .map((s) => bySlug.get(s))
+          .filter((c): c is NonNullable<typeof c> => Boolean(c));
         return (
           <section
             key={b.id}
@@ -289,7 +303,9 @@ function PortfolioHub() {
                             {c.title}
                           </h3>
                           {c.image_count > 0 && (
-                            <p className="mt-1 text-xs text-muted-foreground">{c.image_count} fotos</p>
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              {c.image_count} fotos
+                            </p>
                           )}
                         </div>
                       </Link>
@@ -304,9 +320,12 @@ function PortfolioHub() {
 
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16">
-          <h2 className="font-display text-2xl font-semibold md:text-3xl">Índice completo de galerias</h2>
+          <h2 className="font-display text-2xl font-semibold md:text-3xl">
+            Índice completo de galerias
+          </h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-            Todas as {categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).length} galerias, em ordem alfabética.
+            Todas as {categories.filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).length}{" "}
+            galerias, em ordem alfabética.
           </p>
           <ul className="mt-8 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[...categories]
@@ -329,7 +348,9 @@ function PortfolioHub() {
 
       <section className="bg-surface">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8">
-          <h2 className="font-display text-2xl font-semibold md:text-3xl">Tem um projeto em mente?</h2>
+          <h2 className="font-display text-2xl font-semibold md:text-3xl">
+            Tem um projeto em mente?
+          </h2>
           <p className="mt-3 text-muted-foreground">
             Me conte o objetivo da imagem e eu indico o formato certo. Falo direto com você — sem
             intermediário. {site.name}, São Paulo.

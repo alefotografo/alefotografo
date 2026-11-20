@@ -8,7 +8,6 @@
 const ENDPOINT = "/api/public/img/";
 const REMOTE_HOSTS = [".rackcdn.com"];
 
-
 /** Larguras para imagens grandes (hero, capa de página). */
 export const IMG_WIDTHS = [480, 720, 1024, 1440];
 
@@ -35,7 +34,6 @@ export function imgUrl(src: string, width?: number, quality = DEFAULT_QUALITY): 
   if (width) params.set("w", String(width));
   return `${ENDPOINT}?${params.toString()}`;
 }
-
 
 /**
  * srcset responsivo; vazio quando a imagem não é remota

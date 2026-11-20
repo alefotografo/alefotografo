@@ -23,14 +23,55 @@ const REGIOES = [
 
 /** Temas do blog e os termos que identificam cada artigo pelo slug/título. */
 const TEMAS: { titulo: string; termos: string[]; limite: number }[] = [
-  { titulo: "Preparação para o ensaio (roupa, pele, expressão)", termos: ["preparar", "preparacao", "roupa", "vestir", "maquiagem", "camisa", "terno", "figurino"], limite: 6 },
-  { titulo: "Foto para LinkedIn e perfis profissionais", termos: ["linkedin", "headshot", "curriculo", "perfil-profissional"], limite: 6 },
-  { titulo: "Retrato executivo, liderança e C-level", termos: ["executiv", "ceo", "diretor", "lideranca", "c-level", "conselho"], limite: 6 },
-  { titulo: "Poses, direção e expressão", termos: ["pose", "expressao", "linguagem-corporal", "sorriso", "direcao-de-pose"], limite: 6 },
-  { titulo: "Profissionais de saúde e jurídico", termos: ["medico", "medicos", "dentista", "clinica", "advogad", "saude"], limite: 6 },
-  { titulo: "Imagem pessoal e marca profissional", termos: ["imagem-pessoal", "marca-pessoal", "autoridade", "reputacao", "personal-branding"], limite: 6 },
-  { titulo: "Fotografia corporativa de empresas e equipes", termos: ["equipe", "empresa", "escritorio", "endomarketing", "cultura"], limite: 6 },
-  { titulo: "Preço, contratação e direitos de uso", termos: ["preco", "quanto-custa", "orcamento", "contratar", "direitos-de-uso", "licenca"], limite: 6 },
+  {
+    titulo: "Preparação para o ensaio (roupa, pele, expressão)",
+    termos: [
+      "preparar",
+      "preparacao",
+      "roupa",
+      "vestir",
+      "maquiagem",
+      "camisa",
+      "terno",
+      "figurino",
+    ],
+    limite: 6,
+  },
+  {
+    titulo: "Foto para LinkedIn e perfis profissionais",
+    termos: ["linkedin", "headshot", "curriculo", "perfil-profissional"],
+    limite: 6,
+  },
+  {
+    titulo: "Retrato executivo, liderança e C-level",
+    termos: ["executiv", "ceo", "diretor", "lideranca", "c-level", "conselho"],
+    limite: 6,
+  },
+  {
+    titulo: "Poses, direção e expressão",
+    termos: ["pose", "expressao", "linguagem-corporal", "sorriso", "direcao-de-pose"],
+    limite: 6,
+  },
+  {
+    titulo: "Profissionais de saúde e jurídico",
+    termos: ["medico", "medicos", "dentista", "clinica", "advogad", "saude"],
+    limite: 6,
+  },
+  {
+    titulo: "Imagem pessoal e marca profissional",
+    termos: ["imagem-pessoal", "marca-pessoal", "autoridade", "reputacao", "personal-branding"],
+    limite: 6,
+  },
+  {
+    titulo: "Fotografia corporativa de empresas e equipes",
+    termos: ["equipe", "empresa", "escritorio", "endomarketing", "cultura"],
+    limite: 6,
+  },
+  {
+    titulo: "Preço, contratação e direitos de uso",
+    termos: ["preco", "quanto-custa", "orcamento", "contratar", "direitos-de-uso", "licenca"],
+    limite: 6,
+  },
 ];
 
 const HEADER = `# Alê Fotógrafo — Alexandre Machado | Fotografia corporativa e vídeo em São Paulo
@@ -181,7 +222,15 @@ export const Route = createFileRoute("/llms.txt")({
   server: {
     handlers: {
       GET: async () => {
-        const body = [HEADER, coberturaBlock(), PAGINAS, CASES_SECTION, blogBlock(), FAQ, CONTATO].join("\n");
+        const body = [
+          HEADER,
+          coberturaBlock(),
+          PAGINAS,
+          CASES_SECTION,
+          blogBlock(),
+          FAQ,
+          CONTATO,
+        ].join("\n");
         return new Response(body, {
           headers: {
             "Content-Type": "text/plain; charset=utf-8",

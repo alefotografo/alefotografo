@@ -175,7 +175,10 @@ function VideoFeirasStands() {
             Vídeos para feiras e stands em {site.city}
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produzimos vídeos para empresas e expositores que participam de feiras de negócios, exposições e eventos profissionais. Nossa equipe realiza a captação durante o evento e desenvolve conteúdos para apresentar a participação da empresa, fortalecer a comunicação da marca e ampliar o aproveitamento do evento em canais digitais.
+            Produzimos vídeos para empresas e expositores que participam de feiras de negócios,
+            exposições e eventos profissionais. Nossa equipe realiza a captação durante o evento e
+            desenvolve conteúdos para apresentar a participação da empresa, fortalecer a comunicação
+            da marca e ampliar o aproveitamento do evento em canais digitais.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -199,18 +202,24 @@ function VideoFeirasStands() {
       {/* Produção */}
       <section className="border-b border-border bg-surface" aria-labelledby="producao">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="producao" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="producao"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produção audiovisual para empresas expositoras
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
             <p>
-              A produção registra a participação da empresa no evento: o stand, o ambiente da feira e os momentos definidos como prioridade no planejamento.
+              A produção registra a participação da empresa no evento: o stand, o ambiente da feira
+              e os momentos definidos como prioridade no planejamento.
             </p>
             <p>
-              O resultado é um conteúdo audiovisual que a empresa utiliza na comunicação corporativa, mostrando presença no mercado e no calendário do setor.
+              O resultado é um conteúdo audiovisual que a empresa utiliza na comunicação
+              corporativa, mostrando presença no mercado e no calendário do setor.
             </p>
             <p>
-              O escopo de cada projeto é definido antes do evento, de acordo com o formato da participação e com os canais em que o material será publicado.
+              O escopo de cada projeto é definido antes do evento, de acordo com o formato da
+              participação e com os canais em que o material será publicado.
             </p>
           </div>
         </div>
@@ -219,7 +228,10 @@ function VideoFeirasStands() {
       {/* Aplicações */}
       <section className="border-b border-border" aria-labelledby="aplicacoes">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="aplicacoes" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="aplicacoes"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Conteúdo em vídeo para aproveitar melhor a participação na feira
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -233,10 +245,19 @@ function VideoFeirasStands() {
       </section>
 
       {/* Cases */}
-      <section id="trabalhos" className="border-b border-border scroll-mt-20" aria-labelledby="trabalhos-titulo">
+      <section
+        id="trabalhos"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="trabalhos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Portfólio</p>
-          <h2 id="trabalhos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Portfólio
+          </p>
+          <h2
+            id="trabalhos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Feiras e stands registrados em vídeo
           </h2>
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -283,7 +304,10 @@ function VideoFeirasStands() {
               );
             })}
           </ul>
-          <Link to="/videos/" className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            to="/videos/"
+            className="mt-8 inline-flex text-sm text-muted-foreground hover:text-foreground"
+          >
             Ver todas as produções de vídeo corporativo →
           </Link>
           <p className="mt-3 text-sm text-muted-foreground">
@@ -302,11 +326,16 @@ function VideoFeirasStands() {
       <LazySection minHeight={320}>
         <section className="border-b border-border bg-surface" aria-labelledby="foto-video-feira">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-            <h2 id="foto-video-feira" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+            <h2
+              id="foto-video-feira"
+              className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+            >
               Fotografia e vídeo para feiras de negócios
             </h2>
             <p className="mt-6 max-w-3xl text-muted-foreground text-pretty">
-              Fotografia e vídeo são entregáveis diferentes e podem fazer parte do mesmo planejamento de cobertura da feira, com equipe dimensionada para os dois. Veja o trabalho de{" "}
+              Fotografia e vídeo são entregáveis diferentes e podem fazer parte do mesmo
+              planejamento de cobertura da feira, com equipe dimensionada para os dois. Veja o
+              trabalho de{" "}
               <Link to="/fotografo-de-feira-de-negocios/" className="text-ember hover:underline">
                 fotografia de feira de negócios
               </Link>{" "}
@@ -327,7 +356,10 @@ function VideoFeirasStands() {
       {/* Processo */}
       <section className="border-b border-border" aria-labelledby="processo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="processo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="processo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Como planejamos a produção em vídeo para feiras
           </h2>
           <ol className="mt-10 grid gap-5 md:grid-cols-3 lg:grid-cols-5">
@@ -345,7 +377,10 @@ function VideoFeirasStands() {
       <section className="border-b border-border" aria-labelledby="faq-video-feiras">
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">FAQ</p>
-          <h2 id="faq-video-feiras" className="mb-8 font-display text-3xl font-semibold md:text-4xl">
+          <h2
+            id="faq-video-feiras"
+            className="mb-8 font-display text-3xl font-semibold md:text-4xl"
+          >
             Dúvidas frequentes sobre vídeo para feiras e stands
           </h2>
           <FaqList items={FAQS} />
@@ -360,7 +395,9 @@ function VideoFeirasStands() {
               Vamos conversar sobre sua próxima feira
             </h2>
             <p className="mt-3 text-muted-foreground text-pretty">
-              Conte para nossa equipe qual é o evento, como será a participação da empresa e como o conteúdo será utilizado. A partir dessas informações, planejamos a produção audiovisual adequada ao projeto.
+              Conte para nossa equipe qual é o evento, como será a participação da empresa e como o
+              conteúdo será utilizado. A partir dessas informações, planejamos a produção
+              audiovisual adequada ao projeto.
             </p>
           </div>
           <a

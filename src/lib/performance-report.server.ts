@@ -5,8 +5,20 @@ const PREFERRED_HOST = "www.alefotografo.com.br";
 
 export type SearchTotals = { clicks: number; impressions: number; ctr: number; position: number };
 export type DayRow = { date: string; clicks: number; impressions: number };
-export type PageRow = { page: string; clicks: number; impressions: number; ctr: number; position: number };
-export type QueryRow = { query: string; clicks: number; impressions: number; ctr: number; position: number };
+export type PageRow = {
+  page: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+};
+export type QueryRow = {
+  query: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+};
 
 export type ConversionTotals = {
   total: number;
@@ -56,7 +68,9 @@ function dayISO(offset: number) {
 
 const EMPTY_TOTALS: SearchTotals = { clicks: 0, impressions: 0, ctr: 0, position: 0 };
 
-function sumTotals(rows: { clicks: number; impressions: number; position: number }[]): SearchTotals {
+function sumTotals(
+  rows: { clicks: number; impressions: number; position: number }[],
+): SearchTotals {
   const clicks = rows.reduce((a, r) => a + r.clicks, 0);
   const impressions = rows.reduce((a, r) => a + r.impressions, 0);
   const weighted = rows.reduce((a, r) => a + r.position * r.impressions, 0);
@@ -68,7 +82,13 @@ function sumTotals(rows: { clicks: number; impressions: number; position: number
   };
 }
 
-type GscApiRow = { keys?: string[]; clicks?: number; impressions?: number; ctr?: number; position?: number };
+type GscApiRow = {
+  keys?: string[];
+  clicks?: number;
+  impressions?: number;
+  ctr?: number;
+  position?: number;
+};
 
 async function query(
   siteUrl: string,
@@ -87,7 +107,9 @@ async function query(
 async function resolveSite(h: Record<string, string>) {
   const res = await fetch(`${GATEWAY}/webmasters/v3/sites`, { headers: h });
   if (!res.ok) throw new Error(`Search Console (${res.status}): ${await res.text()}`);
-  const json = (await res.json()) as { siteEntry?: { siteUrl: string; permissionLevel?: string }[] };
+  const json = (await res.json()) as {
+    siteEntry?: { siteUrl: string; permissionLevel?: string }[];
+  };
   const entries = (json.siteEntry ?? []).filter((e) => e.permissionLevel !== "siteUnverifiedUser");
   if (!entries.length) throw new Error("Nenhuma propriedade verificada na conta conectada.");
   const score = (u: string) => {
@@ -118,7 +140,12 @@ async function searchSection(days: number) {
           query(siteUrl, { ...base, dimensions: ["query"], rowLimit: 2000 }, h),
           query(
             siteUrl,
-            { startDate: previousRange.start, endDate: previousRange.end, dimensions: ["date"], rowLimit: 500 },
+            {
+              startDate: previousRange.start,
+              endDate: previousRange.end,
+              dimensions: ["date"],
+              rowLimit: 500,
+            },
             h,
           ),
         ]);
@@ -221,7 +248,9 @@ async function conversionsSection(days: number) {
       const k = String(row[key] ?? "");
       map.set(k, (map.get(k) ?? 0) + 1);
     }
-    return [...map.entries()].map(([k, v]) => ({ key: k, count: v })).sort((a, b) => b.count - a.count);
+    return [...map.entries()]
+      .map(([k, v]) => ({ key: k, count: v }))
+      .sort((a, b) => b.count - a.count);
   };
 
   const byDayMap = new Map<string, number>();
@@ -254,7 +283,10 @@ export async function getPerformanceReportForDays(
   const { assertAdmin } = await import("@/lib/authz.server");
   await assertAdmin(supabase);
 
-  const [searchPart, conversions] = await Promise.all([searchSection(days), conversionsSection(days)]);
+  const [searchPart, conversions] = await Promise.all([
+    searchSection(days),
+    conversionsSection(days),
+  ]);
 
   return {
     days,

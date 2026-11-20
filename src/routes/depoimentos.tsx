@@ -32,7 +32,6 @@ const reviewsSchema = {
   })),
 };
 
-
 export const Route = createFileRoute("/depoimentos")({
   head: () => ({
     meta: buildMeta({
@@ -81,7 +80,11 @@ function Card({ t }: { t: Testimonial }) {
         aria-hidden="true"
       />
       <div className="flex items-center gap-2">
-        <span role="img" className="flex items-center gap-0.5 text-ember" aria-label={`${t.rating} de 5 estrelas`}>
+        <span
+          role="img"
+          className="flex items-center gap-0.5 text-ember"
+          aria-label={`${t.rating} de 5 estrelas`}
+        >
           {Array.from({ length: t.rating }).map((_, i) => (
             <span key={i} aria-hidden="true">
               ★
@@ -126,7 +129,9 @@ function Depoimentos() {
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Depoimentos" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Depoimentos</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Depoimentos
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             O que dizem nossos clientes
           </h1>
@@ -177,10 +182,15 @@ function Depoimentos() {
       <section className="border-t border-border bg-surface">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-center md:px-8">
           <div>
-            <h2 className="font-display text-2xl font-semibold md:text-3xl">Quer ser o próximo depoimento?</h2>
+            <h2 className="font-display text-2xl font-semibold md:text-3xl">
+              Quer ser o próximo depoimento?
+            </h2>
             <p className="mt-2 text-muted-foreground">Solicite um orçamento sem compromisso.</p>
           </div>
-          <Link to="/contato/" className="rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow">
+          <Link
+            to="/contato/"
+            className="rounded-sm bg-ember px-6 py-3 text-sm font-medium text-accent-foreground hover:bg-ember-glow"
+          >
             Entrar em contato
           </Link>
         </div>

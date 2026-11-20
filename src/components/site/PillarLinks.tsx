@@ -8,14 +8,34 @@ const PILLARS: Pillar[] = [
   {
     path: "/fotos-corporativas",
     label: "Fotos corporativas em São Paulo",
-    blurb: "Retratos, equipes, escritório e produtos com entrega em até 1 dia útil, conforme o escopo.",
-    keys: ["corporativ", "empresa", "equipe", "escritório", "evento", "indústria", "institucional", "banco de imagens"],
+    blurb:
+      "Retratos, equipes, escritório e produtos com entrega em até 1 dia útil, conforme o escopo.",
+    keys: [
+      "corporativ",
+      "empresa",
+      "equipe",
+      "escritório",
+      "evento",
+      "indústria",
+      "institucional",
+      "banco de imagens",
+    ],
   },
   {
     path: "/foto-profissional",
     label: "Foto profissional em São Paulo",
     blurb: "Retrato profissional com direção de pose para LinkedIn, currículo, site e imprensa.",
-    keys: ["foto profissional", "ensaio", "retrato", "pose", "estúdio", "lugares para tirar foto", "são paulo", "carreira", "marca pessoal"],
+    keys: [
+      "foto profissional",
+      "ensaio",
+      "retrato",
+      "pose",
+      "estúdio",
+      "lugares para tirar foto",
+      "são paulo",
+      "carreira",
+      "marca pessoal",
+    ],
   },
   {
     path: "/foto-profissional-para-linkedin",
@@ -27,19 +47,46 @@ const PILLARS: Pillar[] = [
     path: "/fotografia-para-clinicas",
     label: "Fotografia para clínicas",
     blurb: "Ambientes, equipe, equipamentos e retratos de médicos com padrão de credibilidade.",
-    keys: ["clínica", "clinic", "médic", "saúde", "consultório", "dentista", "paciente", "hospital"],
+    keys: [
+      "clínica",
+      "clinic",
+      "médic",
+      "saúde",
+      "consultório",
+      "dentista",
+      "paciente",
+      "hospital",
+    ],
   },
   {
     path: "/fotografia-executiva",
     label: "Fotografia executiva",
     blurb: "Retratos de diretoria, sócios e lideranças com padrão único para toda a empresa.",
-    keys: ["executiv", "diretor", "sócio", "liderança", "c-level", "gestor", "autoridade", "palestrante"],
+    keys: [
+      "executiv",
+      "diretor",
+      "sócio",
+      "liderança",
+      "c-level",
+      "gestor",
+      "autoridade",
+      "palestrante",
+    ],
   },
   {
     path: "/fotos-profissionais-medicos",
     label: "Fotos profissionais para médicos",
     blurb: "Retrato médico, equipe e ambientes para site, Google e plataformas de agendamento.",
-    keys: ["médic", "doutor", "clínica", "consultório", "dentista", "paciente", "saúde", "doctoralia"],
+    keys: [
+      "médic",
+      "doutor",
+      "clínica",
+      "consultório",
+      "dentista",
+      "paciente",
+      "saúde",
+      "doctoralia",
+    ],
   },
   {
     path: "/fotografia-para-advogados",
@@ -50,14 +97,26 @@ const PILLARS: Pillar[] = [
   {
     path: "/eventos-corporativos",
     label: "Eventos corporativos",
-    blurb: "Congressos, convenções, palestras e premiações em foto e vídeo, com prévia no mesmo dia quando prevista no escopo.",
-    keys: ["evento", "congresso", "convenção", "palestra", "premiação", "kick-off", "feira", "confraterniza"],
+    blurb:
+      "Congressos, convenções, palestras e premiações em foto e vídeo, com prévia no mesmo dia quando prevista no escopo.",
+    keys: [
+      "evento",
+      "congresso",
+      "convenção",
+      "palestra",
+      "premiação",
+      "kick-off",
+      "feira",
+      "confraterniza",
+    ],
   },
 ];
 
-
 function norm(s: string) {
-  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
 export function PillarLinks({ seed, max = 2 }: { seed: string; max?: number }) {

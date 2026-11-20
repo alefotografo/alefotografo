@@ -17,7 +17,8 @@ export function videoThumb(
 
 // Fallback chain caso a variante falhe.
 export function ytFallback(src: string): string | null {
-  if (src.endsWith("/maxresdefault.jpg")) return src.replace("/maxresdefault.jpg", "/hqdefault.jpg");
+  if (src.endsWith("/maxresdefault.jpg"))
+    return src.replace("/maxresdefault.jpg", "/hqdefault.jpg");
   if (src.endsWith("/hqdefault.jpg")) return src.replace("/hqdefault.jpg", "/mqdefault.jpg");
   if (src.endsWith("/mqdefault.jpg")) return src.replace("/mqdefault.jpg", "/default.jpg");
   return null;

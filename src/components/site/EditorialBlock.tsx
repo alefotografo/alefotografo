@@ -39,7 +39,9 @@ export function EditorialBlock({ data }: { data: CategoryEditorial }) {
         <div className="mt-8 space-y-12">
           {data.sections.map((s) => (
             <div key={s.h}>
-              <h2 className="font-display text-2xl font-semibold text-balance md:text-3xl">{s.h}</h2>
+              <h2 className="font-display text-2xl font-semibold text-balance md:text-3xl">
+                {s.h}
+              </h2>
               <div className="mt-5 space-y-4">
                 {s.paragraphs.map((parts, i) => (
                   <p key={i} className="text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -50,7 +52,10 @@ export function EditorialBlock({ data }: { data: CategoryEditorial }) {
               {s.bullets && (
                 <ul className="mt-6 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
                   {s.bullets.map((b) => (
-                    <li key={b} className="flex gap-3 rounded-sm border border-border bg-background px-4 py-3">
+                    <li
+                      key={b}
+                      className="flex gap-3 rounded-sm border border-border bg-background px-4 py-3"
+                    >
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
                       {b}
                     </li>

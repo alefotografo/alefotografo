@@ -30,7 +30,9 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
             {i > 0 && <li aria-hidden="true">/</li>}
             <li>
               {c.to && i < items.length - 1 ? (
-                <Link to={c.to} className="hover:text-foreground">{c.label}</Link>
+                <Link to={c.to} className="hover:text-foreground">
+                  {c.label}
+                </Link>
               ) : (
                 <span className="text-foreground">{c.label}</span>
               )}
@@ -38,7 +40,10 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
           </Fragment>
         ))}
       </ol>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </nav>
   );
 }

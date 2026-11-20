@@ -46,7 +46,6 @@ export const Route = createFileRoute("/api/public/cron-indexing")({
           headers: { "Content-Type": "application/json" },
         });
       },
-
     },
   },
 });

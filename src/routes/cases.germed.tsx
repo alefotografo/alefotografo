@@ -12,17 +12,26 @@ import { waLink } from "@/lib/whatsapp";
 
 const PATH = "/cases/germed/";
 const TITLE = "Case Germed | Cobertura de Evento em Vídeo";
-const DESCRIPTION = "Cobertura em vídeo do Encontro de Craques da Germed, evento corporativo realizado no Museu do Futebol, em São Paulo.";
-const WA = "Olá Alexandre, vi o case da Germed e quero um orçamento de cobertura de evento em vídeo.";
+const DESCRIPTION =
+  "Cobertura em vídeo do Encontro de Craques da Germed, evento corporativo realizado no Museu do Futebol, em São Paulo.";
+const WA =
+  "Olá Alexandre, vi o case da Germed e quero um orçamento de cobertura de evento em vídeo.";
 
 /* Produções publicadas no catálogo de vídeos (slugs reais). */
-const VIDEO_MAIN = "encontro-de-craques-germed-1"
-const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);;
+const VIDEO_MAIN = "encontro-de-craques-germed-1";
+const MAIN_VIDEO = videoBySlug(VIDEO_MAIN);
 const VIDEOS_MORE: string[] = [];
 
-const APLICACOES = ["Comunicação interna", "Registro institucional", "Canais da empresa", "Relacionamento com parceiros", "Conteúdo pós-evento"];
+const APLICACOES = [
+  "Comunicação interna",
+  "Registro institucional",
+  "Canais da empresa",
+  "Relacionamento com parceiros",
+  "Conteúdo pós-evento",
+];
 
-const FAQS: Faq[] = [  {
+const FAQS: Faq[] = [
+  {
     q: "O que foi produzido para a Germed?",
     a: "A cobertura em vídeo do Encontro de Craques, evento corporativo da Germed realizado no Museu do Futebol, em São Paulo. O vídeo está publicado no catálogo de produções.",
   },
@@ -33,7 +42,8 @@ const FAQS: Faq[] = [  {
   {
     q: "O vídeo de evento serve para quê?",
     a: "Para registrar o encontro, alimentar canais internos e institucionais e manter o registro do relacionamento da empresa com convidados e parceiros.",
-  }];
+  },
+];
 
 export const Route = createFileRoute("/cases/germed")({
   head: () => ({
@@ -58,7 +68,7 @@ export const Route = createFileRoute("/cases/germed")({
           about: { "@type": "Organization", name: "Germed" },
         }),
       },
-            {
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
@@ -66,13 +76,24 @@ export const Route = createFileRoute("/cases/germed")({
           name: MAIN_VIDEO?.title,
           description: MAIN_VIDEO?.description,
           uploadDate: MAIN_VIDEO?.uploaded,
-          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
-          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          thumbnailUrl: MAIN_VIDEO?.youtube
+            ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg`
+            : undefined,
+          embedUrl: MAIN_VIDEO?.youtube
+            ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}`
+            : undefined,
           inLanguage: "pt-BR",
         }),
       },
-{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
+      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".case-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: CasePage,
@@ -93,12 +114,16 @@ function CasePage() {
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Case · Eventos corporativos</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Case · Eventos corporativos
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             Germed — Encontro de Craques no Museu do Futebol
           </h1>
           <p className="mt-6 max-w-2xl text-muted-foreground md:text-lg text-pretty">
-            Produzimos a cobertura em vídeo do Encontro de Craques da Germed, evento corporativo realizado no Museu do Futebol, em São Paulo — registro do encontro, das pessoas e do clima do evento.
+            Produzimos a cobertura em vídeo do Encontro de Craques da Germed, evento corporativo
+            realizado no Museu do Futebol, em São Paulo — registro do encontro, das pessoas e do
+            clima do evento.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -122,30 +147,44 @@ function CasePage() {
       {/* Resumo do projeto */}
       <section className="border-b border-border bg-surface" aria-labelledby="resumo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">Resumo do projeto</h2>
+          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">
+            Resumo do projeto
+          </h2>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Cliente</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Cliente
+              </dt>
               <dd className="mt-1 font-semibold">Germed</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Segmento</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Segmento
+              </dt>
               <dd className="mt-1 font-semibold">Farmacêutico</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Serviços</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Serviços
+              </dt>
               <dd className="mt-1 font-semibold">Cobertura de evento corporativo em vídeo</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Locais documentados</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Locais documentados
+              </dt>
               <dd className="mt-1 font-semibold">Museu do Futebol, São Paulo</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Material publicado</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Material publicado
+              </dt>
               <dd className="mt-1 font-semibold">1 produção em vídeo</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Produção</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Produção
+              </dt>
               <dd className="mt-1 font-semibold">Alê Fotógrafo — Alexandre Machado e equipe</dd>
             </div>
           </dl>
@@ -155,7 +194,10 @@ function CasePage() {
       {/* Contexto */}
       <section className="border-b border-border" aria-labelledby="desafio">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="desafio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="desafio"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Evento corporativo pede registro do clima, não só do palco
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
@@ -174,10 +216,17 @@ function CasePage() {
       </section>
 
       {/* Produções em vídeo */}
-      <section id="producoes" className="border-b border-border scroll-mt-20" aria-labelledby="videos-titulo">
+      <section
+        id="producoes"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="videos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Vídeo</p>
-          <h2 id="videos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="videos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produções em vídeo publicadas
           </h2>
           {main && (
@@ -186,47 +235,52 @@ function CasePage() {
             </div>
           )}
           {VIDEOS_MORE.length > 0 && (
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {VIDEOS_MORE.map((slug) => {
-              const video = videoBySlug(slug);
-              if (!video) return null;
-              const thumb = videoThumb(video, "sm");
-              return (
-                <li key={slug}>
-                  <Link
-                    to="/videos/$slug/"
-                    params={ { slug } }
-                    className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
-                    aria-label={`Assistir: ${video.title}`}
-                  >
-                    <div className="relative aspect-video overflow-hidden bg-black">
-                      {thumb && (
-                        <img
-                          src={thumb}
-                          alt={`Capa do vídeo ${video.title}`}
-                          width={640}
-                          height={360}
-                          loading="lazy"
-                          decoding="async"
-                          referrerPolicy="no-referrer"
-                          onError={(e) => {
-                            const img = e.currentTarget;
-                            const next = ytFallback(img.src);
-                            if (next && next !== img.src) img.src = next;
-                          }}
-                          className="h-full w-full object-cover"
-                        />
-                      )}
-                    </div>
-                    <p className="p-4 text-sm font-medium group-hover:text-ember">{video.title}</p>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+            <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {VIDEOS_MORE.map((slug) => {
+                const video = videoBySlug(slug);
+                if (!video) return null;
+                const thumb = videoThumb(video, "sm");
+                return (
+                  <li key={slug}>
+                    <Link
+                      to="/videos/$slug/"
+                      params={{ slug }}
+                      className="group block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
+                      aria-label={`Assistir: ${video.title}`}
+                    >
+                      <div className="relative aspect-video overflow-hidden bg-black">
+                        {thumb && (
+                          <img
+                            src={thumb}
+                            alt={`Capa do vídeo ${video.title}`}
+                            width={640}
+                            height={360}
+                            loading="lazy"
+                            decoding="async"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const img = e.currentTarget;
+                              const next = ytFallback(img.src);
+                              if (next && next !== img.src) img.src = next;
+                            }}
+                            className="h-full w-full object-cover"
+                          />
+                        )}
+                      </div>
+                      <p className="p-4 text-sm font-medium group-hover:text-ember">
+                        {video.title}
+                      </p>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           )}
           <p className="mt-6">
-            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/videos/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -236,12 +290,18 @@ function CasePage() {
       {/* Aplicações */}
       <section className="border-b border-border bg-surface" aria-labelledby="aplicacoes">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="aplicacoes" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="aplicacoes"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Onde o material é usado
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {APLICACOES.map((a) => (
-              <li key={a} className="rounded-sm border border-border bg-background px-4 py-3 text-sm">
+              <li
+                key={a}
+                className="rounded-sm border border-border bg-background px-4 py-3 text-sm"
+              >
                 {a}
               </li>
             ))}
@@ -252,29 +312,54 @@ function CasePage() {
       {/* Serviços relacionados */}
       <section className="border-b border-border" aria-labelledby="relacionados">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="relacionados" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="relacionados"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/video-de-eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/video-de-eventos-corporativos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeo de eventos corporativos
             </Link>
-            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotografo-de-eventos-corporativos" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-corporativo/$slug/"
+              params={{ slug: "fotografo-de-eventos-corporativos" }}
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotografia de eventos corporativos
             </Link>
-            <Link to="/cases/abradilan/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/cases/abradilan/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Case ABRADILAN
             </Link>
-            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/videos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeos para empresas
             </Link>
-            <Link to="/fotos-profissionais-medicos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotos-profissionais-medicos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotos profissionais para médicos
             </Link>
-            <Link to="/fotografia-para-clinicas/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografia-para-clinicas/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotografia para clínicas
             </Link>
-            <Link to="/fotos-corporativas/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotos-corporativas/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotos corporativas de equipe
             </Link>
           </div>
@@ -298,9 +383,7 @@ function CasePage() {
           <h2 className="font-display text-2xl font-semibold md:text-3xl">
             Vai realizar um evento corporativo?
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Fale com {site.name} sobre o seu projeto.
-          </p>
+          <p className="mt-3 text-muted-foreground">Fale com {site.name} sobre o seu projeto.</p>
           <a
             href={waLink(WA)}
             target="_blank"

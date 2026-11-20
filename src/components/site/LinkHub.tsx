@@ -13,23 +13,87 @@ import { relatedCategories, relatedPosts } from "@/lib/related";
 type Item = { to: string; label: string; kind: "servico" | "galeria" | "bairro" | "post" };
 
 const SERVICOS: Array<{ to: string; label: string; keys: string[] }> = [
-  { to: "/fotos-corporativas", label: "Fotos corporativas em São Paulo", keys: ["corporativ", "empresa", "equipe", "escritório", "institucional", "banco de imagens"] },
-  { to: "/foto-profissional", label: "Foto profissional em São Paulo", keys: ["foto profissional", "ensaio", "retrato", "pose", "estúdio", "carreira"] },
-  { to: "/foto-profissional-para-linkedin", label: "Foto profissional para LinkedIn", keys: ["linkedin", "perfil", "currículo", "headshot", "recrut"] },
-  { to: "/fotografia-executiva", label: "Fotografia executiva", keys: ["executiv", "diretor", "sócio", "liderança", "c-level", "palestrante"] },
-  { to: "/fotografo-corporativo/fotografia-de-logistica", label: "Fotografia de logística", keys: ["logistica", "transportadora", "frota", "armazem", "centro de distribuicao", "expedicao", "doca", "carga"] },
-  { to: "/fotografo-empresarial", label: "Fotógrafo empresarial", keys: ["empresarial", "empresa", "negócio", "indústria", "operação"] },
-  { to: "/fotografia-para-clinicas", label: "Fotografia para clínicas", keys: ["clínica", "clinic", "saúde", "consultório", "dentista", "paciente"] },
-  { to: "/fotos-profissionais-medicos", label: "Fotos profissionais para médicos", keys: ["médic", "doutor", "consultório", "doctoralia", "saúde"] },
-  { to: "/fotografia-para-advogados", label: "Fotografia para advogados", keys: ["advogad", "advocacia", "jurídic", "direito", "compliance"] },
-  { to: "/eventos-corporativos", label: "Eventos corporativos", keys: ["evento", "congresso", "convenção", "palestra", "premiação", "confraterniza"] },
-  { to: "/fotografo-de-feira-de-negocios", label: "Fotógrafo de feira de negócios", keys: ["feira", "stand", "expositor", "congresso", "evento"] },
-  { to: "/videos", label: "Vídeo institucional e depoimentos", keys: ["vídeo", "video", "depoimento", "institucional", "youtube"] },
-  { to: "/fotografo-corporativo", label: "Galeria de fotos corporativas", keys: ["galeria", "portfólio", "portfolio", "fotos"] },
+  {
+    to: "/fotos-corporativas",
+    label: "Fotos corporativas em São Paulo",
+    keys: ["corporativ", "empresa", "equipe", "escritório", "institucional", "banco de imagens"],
+  },
+  {
+    to: "/foto-profissional",
+    label: "Foto profissional em São Paulo",
+    keys: ["foto profissional", "ensaio", "retrato", "pose", "estúdio", "carreira"],
+  },
+  {
+    to: "/foto-profissional-para-linkedin",
+    label: "Foto profissional para LinkedIn",
+    keys: ["linkedin", "perfil", "currículo", "headshot", "recrut"],
+  },
+  {
+    to: "/fotografia-executiva",
+    label: "Fotografia executiva",
+    keys: ["executiv", "diretor", "sócio", "liderança", "c-level", "palestrante"],
+  },
+  {
+    to: "/fotografo-corporativo/fotografia-de-logistica",
+    label: "Fotografia de logística",
+    keys: [
+      "logistica",
+      "transportadora",
+      "frota",
+      "armazem",
+      "centro de distribuicao",
+      "expedicao",
+      "doca",
+      "carga",
+    ],
+  },
+  {
+    to: "/fotografo-empresarial",
+    label: "Fotógrafo empresarial",
+    keys: ["empresarial", "empresa", "negócio", "indústria", "operação"],
+  },
+  {
+    to: "/fotografia-para-clinicas",
+    label: "Fotografia para clínicas",
+    keys: ["clínica", "clinic", "saúde", "consultório", "dentista", "paciente"],
+  },
+  {
+    to: "/fotos-profissionais-medicos",
+    label: "Fotos profissionais para médicos",
+    keys: ["médic", "doutor", "consultório", "doctoralia", "saúde"],
+  },
+  {
+    to: "/fotografia-para-advogados",
+    label: "Fotografia para advogados",
+    keys: ["advogad", "advocacia", "jurídic", "direito", "compliance"],
+  },
+  {
+    to: "/eventos-corporativos",
+    label: "Eventos corporativos",
+    keys: ["evento", "congresso", "convenção", "palestra", "premiação", "confraterniza"],
+  },
+  {
+    to: "/fotografo-de-feira-de-negocios",
+    label: "Fotógrafo de feira de negócios",
+    keys: ["feira", "stand", "expositor", "congresso", "evento"],
+  },
+  {
+    to: "/videos",
+    label: "Vídeo institucional e depoimentos",
+    keys: ["vídeo", "video", "depoimento", "institucional", "youtube"],
+  },
+  {
+    to: "/fotografo-corporativo",
+    label: "Galeria de fotos corporativas",
+    keys: ["galeria", "portfólio", "portfolio", "fotos"],
+  },
 ];
 
 function norm(s: string) {
-  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return (s || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
 export function LinkHub({
@@ -58,7 +122,9 @@ export function LinkHub({
     .map((s) => ({ to: s.to, label: s.label, kind: "servico" as const }));
 
   const cats = relatedCategories(seed, excludeSlug, 3);
-  const catFallback = categories.filter((c) => c.slug !== excludeSlug && !REDIRECTED_CATEGORY_SLUGS.has(c.slug)).slice(0, 3);
+  const catFallback = categories
+    .filter((c) => c.slug !== excludeSlug && !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
+    .slice(0, 3);
   const galerias: Item[] = (cats.length ? cats : catFallback).slice(0, 3).map((c) => ({
     to: `/fotografo-corporativo/${c.slug}`,
     label: c.title,
@@ -123,7 +189,13 @@ export function LinkHub({
               className="group flex items-start gap-2 rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground/90 transition-colors hover:border-ember hover:text-ember"
             >
               <span className="mt-0.5 text-xs uppercase tracking-wider text-ember">
-                {i.kind === "post" ? "Blog" : i.kind === "galeria" ? "Fotos" : i.kind === "bairro" ? "Região" : "Serviço"}
+                {i.kind === "post"
+                  ? "Blog"
+                  : i.kind === "galeria"
+                    ? "Fotos"
+                    : i.kind === "bairro"
+                      ? "Região"
+                      : "Serviço"}
               </span>
               <span className="line-clamp-2 font-medium">{i.label}</span>
             </Link>

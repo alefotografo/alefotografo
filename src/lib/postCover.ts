@@ -12,7 +12,8 @@ import { curatedCovers } from "@/data/postCovers";
  *   3. `undefined` — nenhum fallback automático (regex/tema, hash entre
  *      galerias). O artigo renderiza layout textual.
  */
-export function postCover(p: Pick<Post, "slug" | "title"> & { cover?: string | null }): string | undefined {
+export function postCover(
+  p: Pick<Post, "slug" | "title"> & { cover?: string | null },
+): string | undefined {
   return p.cover || curatedCovers[p.slug] || undefined;
 }
-

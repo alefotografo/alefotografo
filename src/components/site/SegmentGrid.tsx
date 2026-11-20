@@ -8,7 +8,12 @@ type Segment = {
   alt: string;
   width: number;
   height: number;
-  to?: "/fotografo-empresarial/" | "/fotos-profissionais-medicos/" | "/fotografia-para-advogados/" | "/fotos-corporativas/" | "/eventos-corporativos/";
+  to?:
+    | "/fotografo-empresarial/"
+    | "/fotos-profissionais-medicos/"
+    | "/fotografia-para-advogados/"
+    | "/fotos-corporativas/"
+    | "/eventos-corporativos/";
   catSlug?: string;
   seeLabel: string;
 };

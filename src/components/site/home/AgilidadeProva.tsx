@@ -21,11 +21,7 @@ const NUMEROS: readonly NumeroItem[] = [
 
 function StarRow({ ariaLabel }: { ariaLabel: string }) {
   return (
-    <span
-      role="img"
-      aria-label={ariaLabel}
-      className="text-ember"
-    >
+    <span role="img" aria-label={ariaLabel} className="text-ember">
       ★★★★★
     </span>
   );
@@ -42,8 +38,8 @@ export default function AgilidadeProva() {
             </h2>
             <p className="mt-4 text-[16px] leading-[1.6] text-muted-foreground md:mt-6 md:text-[17px]">
               Mais de três décadas de atuação profissional trouxeram experiência em diferentes
-              ambientes, segmentos e desafios de produção. Esse repertório orienta o planejamento,
-              a execução e a entrega de cada projeto.
+              ambientes, segmentos e desafios de produção. Esse repertório orienta o planejamento, a
+              execução e a entrega de cada projeto.
             </p>
           </div>
 
@@ -77,10 +73,7 @@ export default function AgilidadeProva() {
         </div>
       </section>
 
-       <TestimonialsCarousel
-         title="Depoimentos de clientes"
-         testimonials={googleTestimonials}
-       />
+      <TestimonialsCarousel title="Depoimentos de clientes" testimonials={googleTestimonials} />
     </>
   );
 }

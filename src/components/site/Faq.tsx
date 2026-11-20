@@ -29,7 +29,12 @@ export function FaqList({
               aria-controls={answerId}
               className="flex w-full items-start justify-between gap-4 py-5 text-left"
             >
-              <Heading data-faq-question className="font-display text-base font-semibold leading-snug md:text-lg">{f.q}</Heading>
+              <Heading
+                data-faq-question
+                className="font-display text-base font-semibold leading-snug md:text-lg"
+              >
+                {f.q}
+              </Heading>
               <span className="mt-1 shrink-0 rounded-full border border-border p-1.5 text-ember">
                 {isOpen ? <Minus size={14} /> : <Plus size={14} />}
               </span>

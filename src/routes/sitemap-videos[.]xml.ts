@@ -30,9 +30,7 @@ export const Route = createFileRoute("/sitemap-videos.xml")({
               ? `https://www.youtube-nocookie.com/embed/${v.youtube}`
               : `https://player.vimeo.com/video/${v.vimeo}`;
             const title = esc(v.title);
-            const description = esc(
-              (v.description || v.subtitle || v.title).slice(0, 2048),
-            );
+            const description = esc((v.description || v.subtitle || v.title).slice(0, 2048));
 
             return [
               `  <url>`,

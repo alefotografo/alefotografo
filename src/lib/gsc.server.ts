@@ -40,7 +40,9 @@ export function gscHeaders() {
 export async function listVerifiedSites(): Promise<string[]> {
   const res = await fetch(`${GATEWAY}/webmasters/v3/sites`, { headers: gscHeaders() });
   if (!res.ok) throw new Error(`Search Console (${res.status}): ${await res.text()}`);
-  const json = (await res.json()) as { siteEntry?: { siteUrl: string; permissionLevel?: string }[] };
+  const json = (await res.json()) as {
+    siteEntry?: { siteUrl: string; permissionLevel?: string }[];
+  };
   const entries = (json.siteEntry ?? []).filter((e) => e.permissionLevel !== "siteUnverifiedUser");
   const score = (u: string) => {
     let s = 0;
@@ -53,7 +55,10 @@ export async function listVerifiedSites(): Promise<string[]> {
   return entries.map((e) => e.siteUrl).sort((a, b) => score(b) - score(a));
 }
 
-export async function inspectUrl(siteUrl: string, inspectionUrl: string): Promise<InspectionResult> {
+export async function inspectUrl(
+  siteUrl: string,
+  inspectionUrl: string,
+): Promise<InspectionResult> {
   try {
     const res = await fetch(`${GATEWAY}/v1/urlInspection/index:inspect`, {
       method: "POST",
@@ -110,8 +115,7 @@ export async function sitemapStatus(siteUrl: string, sitemapUrl: string): Promis
       contents?: { submitted?: string | number; indexed?: string | number }[];
     };
     const contents = json.contents ?? [];
-    const sum = (k: "submitted" | "indexed") =>
-      contents.reduce((s, c) => s + Number(c[k] ?? 0), 0);
+    const sum = (k: "submitted" | "indexed") => contents.reduce((s, c) => s + Number(c[k] ?? 0), 0);
     return {
       path: sitemapUrl,
       isPending: json.isPending,

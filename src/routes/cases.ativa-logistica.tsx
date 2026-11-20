@@ -15,11 +15,12 @@ const PATH = "/cases/ativa-logistica/";
 const TITLE = "Case ATIVA Logística | Fotografia e Vídeo Corporativo";
 const DESCRIPTION =
   "Fotografia e vídeo produzidos para a ATIVA Logística, com registros de estrutura, operação e unidades em Itapevi e Barueri. Veja o case e as produções.";
-const WA = "Olá Alexandre, vi o case da ATIVA Logística e quero um orçamento de fotografia e vídeo para minha empresa.";
+const WA =
+  "Olá Alexandre, vi o case da ATIVA Logística e quero um orçamento de fotografia e vídeo para minha empresa.";
 
 /* Produções ATIVA publicadas no catálogo de vídeos (slugs reais). */
-const VIDEOS_MAIN = "ativa-log-estrutura-operacao-e-eficiencia-logistica"
-const MAIN_VIDEO = videoBySlug(VIDEOS_MAIN);;
+const VIDEOS_MAIN = "ativa-log-estrutura-operacao-e-eficiencia-logistica";
+const MAIN_VIDEO = videoBySlug(VIDEOS_MAIN);
 const VIDEOS_MORE = [
   "ativa-logistica-apresenta-o-seu-centro-de-distribuicao-em-itapevi",
   "ativa-logistica-unidade-barueri",
@@ -96,7 +97,7 @@ export const Route = createFileRoute("/cases/ativa-logistica")({
           about: { "@type": "Organization", name: "ATIVA Logística" },
         }),
       },
-            {
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
@@ -104,13 +105,24 @@ export const Route = createFileRoute("/cases/ativa-logistica")({
           name: MAIN_VIDEO?.title,
           description: MAIN_VIDEO?.description,
           uploadDate: MAIN_VIDEO?.uploaded,
-          thumbnailUrl: MAIN_VIDEO?.youtube ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg` : undefined,
-          embedUrl: MAIN_VIDEO?.youtube ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}` : undefined,
+          thumbnailUrl: MAIN_VIDEO?.youtube
+            ? `https://i.ytimg.com/vi/${MAIN_VIDEO.youtube}/maxresdefault.jpg`
+            : undefined,
+          embedUrl: MAIN_VIDEO?.youtube
+            ? `https://www.youtube-nocookie.com/embed/${MAIN_VIDEO.youtube}`
+            : undefined,
           inLanguage: "pt-BR",
         }),
       },
-{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", ".case-lead", "main p:first-of-type"] }) },
+      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".case-lead", "main p:first-of-type"],
+        }),
+      },
     ],
   }),
   component: CaseAtiva,
@@ -131,7 +143,9 @@ function CaseAtiva() {
       {/* Hero */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Case · Logística</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Case · Logística
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             ATIVA Logística — fotografia e vídeo para mostrar estrutura e operação
           </h1>
@@ -161,30 +175,44 @@ function CaseAtiva() {
       {/* Resumo do projeto */}
       <section className="border-b border-border bg-surface" aria-labelledby="resumo">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">Resumo do projeto</h2>
+          <h2 id="resumo" className="font-display text-2xl font-semibold md:text-3xl">
+            Resumo do projeto
+          </h2>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Cliente</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Cliente
+              </dt>
               <dd className="mt-1 font-semibold">ATIVA Logística</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Segmento</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Segmento
+              </dt>
               <dd className="mt-1 font-semibold">Logística</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Serviços</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Serviços
+              </dt>
               <dd className="mt-1 font-semibold">Fotografia corporativa e produção de vídeo</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Locais documentados</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Locais documentados
+              </dt>
               <dd className="mt-1 font-semibold">Itapevi e Barueri</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Material publicado</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Material publicado
+              </dt>
               <dd className="mt-1 font-semibold">Fotografias de operação e 8 produções em vídeo</dd>
             </div>
             <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Produção</dt>
+              <dt className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                Produção
+              </dt>
               <dd className="mt-1 font-semibold">Alê Fotógrafo — Alexandre Machado e equipe</dd>
             </div>
           </dl>
@@ -194,7 +222,10 @@ function CaseAtiva() {
       {/* Desafio + o que produzimos */}
       <section className="border-b border-border" aria-labelledby="desafio">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="desafio" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="desafio"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             O que a operação precisava mostrar
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-muted-foreground text-pretty">
@@ -229,8 +260,13 @@ function CaseAtiva() {
       {/* Fotografias */}
       <section className="border-b border-border bg-surface" aria-labelledby="fotos">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Fotografia</p>
-          <h2 id="fotos" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">
+            Fotografia
+          </p>
+          <h2
+            id="fotos"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Fotografias da operação
           </h2>
           <p className="mt-4 max-w-3xl text-muted-foreground text-pretty">
@@ -244,10 +280,17 @@ function CaseAtiva() {
       </section>
 
       {/* Produções em vídeo */}
-      <section id="producoes" className="border-b border-border scroll-mt-20" aria-labelledby="videos-titulo">
+      <section
+        id="producoes"
+        className="border-b border-border scroll-mt-20"
+        aria-labelledby="videos-titulo"
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-ember">Vídeo</p>
-          <h2 id="videos-titulo" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="videos-titulo"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Produções em vídeo publicadas
           </h2>
           {main && (
@@ -294,7 +337,10 @@ function CaseAtiva() {
             })}
           </ul>
           <p className="mt-6">
-            <Link to="/videos/" className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember">
+            <Link
+              to="/videos/"
+              className="text-sm text-ember underline decoration-ember/40 underline-offset-2 hover:decoration-ember"
+            >
               Ver catálogo completo de vídeos →
             </Link>
           </p>
@@ -304,12 +350,18 @@ function CaseAtiva() {
       {/* Aplicações */}
       <section className="border-b border-border bg-surface" aria-labelledby="aplicacoes">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="aplicacoes" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="aplicacoes"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Onde o material é usado
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {APLICACOES.map((a) => (
-              <li key={a} className="rounded-sm border border-border bg-background px-4 py-3 text-sm">
+              <li
+                key={a}
+                className="rounded-sm border border-border bg-background px-4 py-3 text-sm"
+              >
                 {a}
               </li>
             ))}
@@ -320,29 +372,55 @@ function CaseAtiva() {
       {/* Serviços relacionados */}
       <section className="border-b border-border" aria-labelledby="relacionados">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-          <h2 id="relacionados" className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance">
+          <h2
+            id="relacionados"
+            className="max-w-3xl font-display text-3xl font-semibold md:text-4xl text-balance"
+          >
             Serviços relacionados
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "fotografia-de-logistica" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-corporativo/$slug/"
+              params={{ slug: "fotografia-de-logistica" }}
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotografia de logística
             </Link>
-            <Link to="/fotografo-corporativo/$slug/" params={{ slug: "banco-de-imagens-para-empresas" }} className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-corporativo/$slug/"
+              params={{ slug: "banco-de-imagens-para-empresas" }}
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Banco de imagens para empresas
             </Link>
-            <Link to="/video-institucional/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/video-institucional/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeo institucional
             </Link>
-            <Link to="/videos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/videos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Vídeos para empresas
             </Link>
-            <Link to="/fotos-corporativas/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotos-corporativas/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotos corporativas de equipe
             </Link>
-            <Link to="/fotografo-empresarial/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/fotografo-empresarial/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotógrafo empresarial
             </Link>
-            <Link to="/eventos-corporativos/" className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface">
+            <Link
+              to="/eventos-corporativos/"
+              className="rounded-sm border border-border-strong px-5 py-3 text-sm font-medium hover:bg-surface"
+            >
               Fotografia de eventos
             </Link>
           </div>
@@ -366,9 +444,7 @@ function CaseAtiva() {
           <h2 className="font-display text-2xl font-semibold md:text-3xl">
             Precisa produzir fotografia e vídeo para a sua operação?
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Fale com {site.name} sobre o seu projeto.
-          </p>
+          <p className="mt-3 text-muted-foreground">Fale com {site.name} sobre o seu projeto.</p>
           <a
             href={waLink(WA)}
             target="_blank"

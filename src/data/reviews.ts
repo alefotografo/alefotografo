@@ -31,40 +31,35 @@ export const googleReviews: GoogleReview[] = [
     rating: 5,
     date: "2026-05-12",
     when: "3 meses atrás",
-    text:
-      "Satisfação e agradecimento. Profissional dedicado e que busca entender seu momento para estruturar o trabalho a atender às suas expectativas. Recomendo sem dúvida e com a certeza de que me acompanhará daqui para frente.",
+    text: "Satisfação e agradecimento. Profissional dedicado e que busca entender seu momento para estruturar o trabalho a atender às suas expectativas. Recomendo sem dúvida e com a certeza de que me acompanhará daqui para frente.",
   },
   {
     author: "Patricia Martinelli",
     rating: 5,
     date: "2025-12-05",
     when: "8 meses atrás",
-    text:
-      "Ale é um fotógrafo sensacional! Muito profissional e super detalhista. Te deixa à vontade e confiante para tirar as melhores fotos.",
+    text: "Ale é um fotógrafo sensacional! Muito profissional e super detalhista. Te deixa à vontade e confiante para tirar as melhores fotos.",
   },
   {
     author: "alessandro chagas",
     rating: 5,
     date: "2025-08-11",
     when: "12 meses atrás",
-    text:
-      "Simplesmente fantástico! É um baita profissional, uma pessoa paciente, super do bem. Carismático, atencioso e perfeccionista no que faz. Super recomendo!",
+    text: "Simplesmente fantástico! É um baita profissional, uma pessoa paciente, super do bem. Carismático, atencioso e perfeccionista no que faz. Super recomendo!",
   },
   {
     author: "Silvio Valente",
     rating: 5,
     date: "2025-07-01",
     when: "um ano atrás",
-    text:
-      "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve, e assim extrai o melhor resultado. Recomendo fortemente.",
+    text: "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve, e assim extrai o melhor resultado. Recomendo fortemente.",
   },
   {
     author: "Isabelle Bianchi",
     rating: 5,
     date: "2025-04-16",
     when: "um ano atrás",
-    text:
-      "Parabenizo o Ale Fotógrafo pelo profissionalismo impecável. Seu trabalho é sensacional, com fotos de extrema qualidade, autenticidade, beleza e harmonia. Recomendo de olhos fechados!",
+    text: "Parabenizo o Ale Fotógrafo pelo profissionalismo impecável. Seu trabalho é sensacional, com fotos de extrema qualidade, autenticidade, beleza e harmonia. Recomendo de olhos fechados!",
   },
 ];
 

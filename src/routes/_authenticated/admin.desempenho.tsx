@@ -65,15 +65,7 @@ function dayLabel(date: string) {
   return `${d}/${m}`;
 }
 
-function Card({
-  label,
-  value,
-  hint,
-}: {
-  label: string;
-  value: string;
-  hint?: string;
-}) {
+function Card({ label, value, hint }: { label: string; value: string; hint?: string }) {
   return (
     <div className="rounded-xl border p-4">
       <p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
@@ -97,7 +89,10 @@ function PerformancePage() {
   const conv = data?.conversions;
 
   const combinedDaily = useMemo(() => {
-    const map = new Map<string, { date: string; cliques: number; impressoes: number; conversoes: number }>();
+    const map = new Map<
+      string,
+      { date: string; cliques: number; impressoes: number; conversoes: number }
+    >();
     for (const row of search?.byDay ?? []) {
       map.set(row.date, {
         date: row.date,
@@ -126,7 +121,10 @@ function PerformancePage() {
       const key = pathOf(`https://x${row.path}`);
       conversions.set(key, (conversions.get(key) ?? 0) + row.count);
     }
-    const rows = new Map<string, { path: string; clicks: number; impressions: number; conversions: number }>();
+    const rows = new Map<
+      string,
+      { path: string; clicks: number; impressions: number; conversions: number }
+    >();
     for (const page of search?.pages ?? []) {
       const key = pathOf(page.page);
       const prev = rows.get(key);
@@ -138,7 +136,8 @@ function PerformancePage() {
       });
     }
     for (const [key, count] of conversions) {
-      if (!rows.has(key)) rows.set(key, { path: key, clicks: 0, impressions: 0, conversions: count });
+      if (!rows.has(key))
+        rows.set(key, { path: key, clicks: 0, impressions: 0, conversions: count });
     }
     return [...rows.values()]
       .sort((a, b) => b.conversions - a.conversions || b.clicks - a.clicks)
@@ -162,7 +161,8 @@ function PerformancePage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Desempenho: SEO e conversões</h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Cliques e impressões vindos do Google somados às ações de contato registradas no próprio site.
+            Cliques e impressões vindos do Google somados às ações de contato registradas no próprio
+            site.
           </p>
         </div>
         <div className="flex flex-wrap gap-2 print:hidden">
@@ -189,8 +189,8 @@ function PerformancePage() {
       {data && (
         <>
           <p className="mb-6 text-sm text-muted-foreground">
-            Período: {data.range.start} a {data.range.end} · comparado com {data.previousRange.start} a{" "}
-            {data.previousRange.end}
+            Período: {data.range.start} a {data.range.end} · comparado com{" "}
+            {data.previousRange.start} a {data.previousRange.end}
             {search?.siteUrl ? ` · propriedade ${search.siteUrl}` : ""}
           </p>
 
@@ -210,7 +210,11 @@ function PerformancePage() {
               value={String(search?.totals.impressions ?? 0)}
               hint={`vs. anterior: ${delta(search?.totals.impressions ?? 0, search?.previousTotals.impressions ?? 0)}`}
             />
-            <Card label="CTR" value={pct(search?.totals.ctr ?? 0)} hint={`anterior: ${pct(search?.previousTotals.ctr ?? 0)}`} />
+            <Card
+              label="CTR"
+              value={pct(search?.totals.ctr ?? 0)}
+              hint={`anterior: ${pct(search?.previousTotals.ctr ?? 0)}`}
+            />
             <Card
               label="Posição média"
               value={(search?.totals.position ?? 0).toFixed(1)}
@@ -243,9 +247,30 @@ function PerformancePage() {
                     <YAxis yAxisId="right" orientation="right" fontSize={12} />
                     <Tooltip />
                     <Legend />
-                    <Line yAxisId="right" type="monotone" dataKey="impressoes" name="Impressões" dot={false} stroke="#94a3b8" />
-                    <Line yAxisId="left" type="monotone" dataKey="cliques" name="Cliques" dot={false} stroke="#0ea5e9" />
-                    <Line yAxisId="left" type="monotone" dataKey="conversoes" name="Conversões" dot={false} stroke="#f97316" />
+                    <Line
+                      yAxisId="right"
+                      type="monotone"
+                      dataKey="impressoes"
+                      name="Impressões"
+                      dot={false}
+                      stroke="#94a3b8"
+                    />
+                    <Line
+                      yAxisId="left"
+                      type="monotone"
+                      dataKey="cliques"
+                      name="Cliques"
+                      dot={false}
+                      stroke="#0ea5e9"
+                    />
+                    <Line
+                      yAxisId="left"
+                      type="monotone"
+                      dataKey="conversoes"
+                      name="Conversões"
+                      dot={false}
+                      stroke="#f97316"
+                    />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
@@ -371,9 +396,12 @@ function PerformancePage() {
 
           {!!opportunities.length && (
             <section className="mb-10">
-              <h2 className="mb-2 text-xl font-semibold">Oportunidades: muita impressão, CTR baixo</h2>
+              <h2 className="mb-2 text-xl font-semibold">
+                Oportunidades: muita impressão, CTR baixo
+              </h2>
               <p className="mb-4 text-sm text-muted-foreground">
-                Páginas que aparecem muito no Google mas recebem poucos cliques — vale revisar título e descrição.
+                Páginas que aparecem muito no Google mas recebem poucos cliques — vale revisar
+                título e descrição.
               </p>
               <div className="overflow-x-auto rounded-xl border">
                 <table className="w-full text-sm">
@@ -433,8 +461,8 @@ function PerformancePage() {
           )}
 
           <section className="rounded-xl border p-4 text-sm text-muted-foreground">
-            O Google Analytics continua ativo no site, mas não libera leitura de relatórios pela nossa conexão. Para
-            funis e públicos, abra{" "}
+            O Google Analytics continua ativo no site, mas não libera leitura de relatórios pela
+            nossa conexão. Para funis e públicos, abra{" "}
             <a
               href="https://analytics.google.com/"
               target="_blank"

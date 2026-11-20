@@ -189,7 +189,6 @@ export const categorySeo: Record<string, CategorySeo> = {
   },
 };
 
-
 /** Limpa descrições longas raspadas do site antigo para uso em meta description. */
 export function cleanDescription(raw: string, max = 158): string {
   const lines = raw

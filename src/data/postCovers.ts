@@ -7,8 +7,7 @@
 // deliberadamente sem capa, pois não existe foto do acervo que os
 // represente com honestidade.
 
-const CDN =
-  "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/";
+const CDN = "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/";
 
 const paths: Record<string, string> = {
   "o-que-vestir-sessao-de-fotos-corporativa":
@@ -23,10 +22,8 @@ const paths: Record<string, string> = {
     "GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-1.jpg",
   "digitalizacao-restauracao-acervo-historico-empresa":
     "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-224.jpg",
-  "fotografia-entrega-no-cliente-antes-e-depois":
-    "GaleriaImagem/66655/industrial_dsc7266.jpg",
-  "fotografia-processo-tecnico-metodo":
-    "GaleriaImagem/66655/industrial_vrantec.jpg",
+  "fotografia-entrega-no-cliente-antes-e-depois": "GaleriaImagem/66655/industrial_dsc7266.jpg",
+  "fotografia-processo-tecnico-metodo": "GaleriaImagem/66655/industrial_vrantec.jpg",
   "como-medir-retorno-fotografia-corporativa":
     "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-21.jpg",
   "onde-publicar-suas-fotos-pontos-de-contato":
@@ -49,8 +46,7 @@ const paths: Record<string, string> = {
     "GaleriaImagem/102590/fotografia-corporativa-em-sao-paulo_assurant-brazil-83.jpg",
   "espaco-negativo-fotos-com-area-para-texto":
     "GaleriaImagem/66835/interiores_fotografo-de-interiores-fotos-de-residencias-casas-apartamentos-decorados-30.jpg",
-  "fotografia-campanhas-seguranca-epi-prevencao":
-    "GaleriaImagem/66655/industrial_maqplashigh.jpg",
+  "fotografia-campanhas-seguranca-epi-prevencao": "GaleriaImagem/66655/industrial_maqplashigh.jpg",
   "fotografia-certificacoes-conformidade-qualidade":
     "GaleriaImagem/66836/processos-de-producao_fotografo-industrial-processos-de-producao-11.JPG",
   "registro-fotografico-periodico-de-obra":
@@ -141,12 +137,10 @@ const paths: Record<string, string> = {
     "GaleriaImagem/66838/editorial_fotos-editoriais-escola-adolescentes-alunos-em-aprendizagem-rotinas-de-escola-estudo-aprendizado.jpg",
   "representatividade-imagens-corporativas":
     "GaleriaImagem/77681/grupos-fotos-de-grupos-ou-equipes_grupos-29.jpg",
-  "fotografia-energia-infraestrutura-usinas":
-    "GaleriaImagem/66655/industrial_foto3.jpg",
+  "fotografia-energia-infraestrutura-usinas": "GaleriaImagem/66655/industrial_foto3.jpg",
   "storytelling-visual-fotografia-corporativa":
     "GaleriaImagem/125396/banco-de-imagens-para-empresas_ativa-itapevi-260.jpg",
-  "fotografia-agronegocio-corporativo":
-    "GaleriaImagem/66655/industrial_foto2.jpg",
+  "fotografia-agronegocio-corporativo": "GaleriaImagem/66655/industrial_foto2.jpg",
   "fotografia-logistica-centros-distribuicao":
     "GaleriaImagem/124025/fotografia-de-logistica_fotografo-de-logistica-1.jpg",
   "calendario-producao-fotografica-anual":

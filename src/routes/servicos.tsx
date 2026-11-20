@@ -65,7 +65,21 @@ export const Route = createFileRoute("/servicos")({
 });
 
 type CardLink =
-  | { kind: "route"; to: "/foto-profissional/" | "/fotos-corporativas/" | "/fotografia-executiva/" | "/foto-profissional-para-linkedin/" | "/eventos-corporativos/" | "/videos/" | "/fotos-profissionais-medicos/" | "/fotografia-para-clinicas/" | "/fotografia-para-advogados/" | "/fotografo-empresarial/" | "/fotografo-de-feira-de-negocios/" }
+  | {
+      kind: "route";
+      to:
+        | "/foto-profissional/"
+        | "/fotos-corporativas/"
+        | "/fotografia-executiva/"
+        | "/foto-profissional-para-linkedin/"
+        | "/eventos-corporativos/"
+        | "/videos/"
+        | "/fotos-profissionais-medicos/"
+        | "/fotografia-para-clinicas/"
+        | "/fotografia-para-advogados/"
+        | "/fotografo-empresarial/"
+        | "/fotografo-de-feira-de-negocios/";
+    }
   | { kind: "gallery"; slug: string };
 
 type ServiceCard = {
@@ -178,7 +192,9 @@ function CardShell({
             priority={priority}
             placeholderRatio={ratio}
             width={1200}
-            height={Math.round(1200 / (ratio === "4 / 5" ? 4 / 5 : ratio === "4 / 3" ? 4 / 3 : 3 / 2))}
+            height={Math.round(
+              1200 / (ratio === "4 / 5" ? 4 / 5 : ratio === "4 / 3" ? 4 / 3 : 3 / 2),
+            )}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
             className="h-full w-full object-cover group-hover:scale-105"
           />
@@ -204,11 +220,7 @@ function CardShell({
       {inner}
     </Link>
   ) : (
-    <Link
-      to="/fotografo-corporativo/$slug/"
-      params={{ slug: card.link.slug }}
-      className={cls}
-    >
+    <Link to="/fotografo-corporativo/$slug/" params={{ slug: card.link.slug }} className={cls}>
       {inner}
     </Link>
   );
@@ -220,7 +232,9 @@ function ServicosPage() {
       <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Serviços" }]} />
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">Serviços</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-ember">
+            Serviços
+          </p>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-tight text-balance md:text-6xl">
             Todos os serviços de foto e vídeo
           </h1>
@@ -240,7 +254,10 @@ function ServicosPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16" aria-labelledby="principais">
+      <section
+        className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16"
+        aria-labelledby="principais"
+      >
         <h2 id="principais" className="font-display text-2xl font-semibold md:text-3xl">
           Serviços principais
         </h2>
@@ -264,7 +281,10 @@ function ServicosPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16" aria-labelledby="especialidades">
+      <section
+        className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16"
+        aria-labelledby="especialidades"
+      >
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 id="especialidades" className="font-display text-2xl font-semibold md:text-3xl">
             Especialidades e galerias
@@ -280,36 +300,36 @@ function ServicosPage() {
           {categories
             .filter((c) => !REDIRECTED_CATEGORY_SLUGS.has(c.slug))
             .map((c) => (
-            <Link
-              key={c.slug}
-              to="/fotografo-corporativo/$slug/"
-              params={{ slug: c.slug }}
-              className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
-            >
-              <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
-                {c.cover ? (
-                  <SmartImage
-                    src={c.cover}
-                    alt={c.title}
-                    baseWidth={480}
-                    placeholderRatio="4 / 3"
-                    width={1200}
-                    height={900}
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
-                    className="h-full w-full object-cover group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
-                    Sem imagem
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-3">
-                <h3 className="font-display text-sm font-semibold leading-tight">{c.title}</h3>
-              </div>
-            </Link>
-          ))}
+              <Link
+                key={c.slug}
+                to="/fotografo-corporativo/$slug/"
+                params={{ slug: c.slug }}
+                className="group relative block overflow-hidden rounded-sm bg-surface ring-1 ring-border transition-all hover:ring-ember"
+              >
+                <div className="relative overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
+                  {c.cover ? (
+                    <SmartImage
+                      src={c.cover}
+                      alt={c.title}
+                      baseWidth={480}
+                      placeholderRatio="4 / 3"
+                      width={1200}
+                      height={900}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                      className="h-full w-full object-cover group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
+                      Sem imagem
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-3">
+                  <h3 className="font-display text-sm font-semibold leading-tight">{c.title}</h3>
+                </div>
+              </Link>
+            ))}
         </div>
       </section>
 

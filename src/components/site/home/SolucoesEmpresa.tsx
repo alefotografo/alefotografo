@@ -137,7 +137,6 @@ export default function SolucoesEmpresa() {
             Feiras e stands
           </Link>
         </p>
-
       </div>
     </section>
   );

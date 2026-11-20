@@ -19,7 +19,11 @@ import {
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div role="img" className="flex items-center gap-0.5 text-ember" aria-label={`${rating} de 5 estrelas`}>
+    <div
+      role="img"
+      className="flex items-center gap-0.5 text-ember"
+      aria-label={`${rating} de 5 estrelas`}
+    >
       {Array.from({ length: rating }).map((_, i) => (
         <span key={i} aria-hidden="true">
           ★
@@ -99,7 +103,10 @@ export function TestimonialsCarousel({
 
   useEffect(() => {
     if (!api || paused) return;
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       return;
     }
     const id = window.setInterval(() => {
@@ -139,18 +146,17 @@ export function TestimonialsCarousel({
                 Ver no Google
               </a>{" "}
               ·{" "}
-              <Link to="/depoimentos/" className="inline-flex min-h-11 items-center text-ember underline underline-offset-4 md:min-h-0">
+              <Link
+                to="/depoimentos/"
+                className="inline-flex min-h-11 items-center text-ember underline underline-offset-4 md:min-h-0"
+              >
                 Todos os depoimentos
               </Link>
             </p>
           </div>
         </div>
 
-        <Carousel
-          className="mt-10"
-          setApi={setApi}
-          opts={{ align: "start", loop: true }}
-        >
+        <Carousel className="mt-10" setApi={setApi} opts={{ align: "start", loop: true }}>
           <CarouselContent className="-ml-6 items-stretch">
             {testimonials.map((t) => (
               <CarouselItem
@@ -163,7 +169,11 @@ export function TestimonialsCarousel({
           </CarouselContent>
 
           <div className="mt-6 flex items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Selecionar depoimento">
+            <div
+              className="flex flex-wrap items-center gap-2"
+              role="group"
+              aria-label="Selecionar depoimento"
+            >
               {Array.from({ length: count }).map((_, i) => (
                 <button
                   key={i}
@@ -180,7 +190,6 @@ export function TestimonialsCarousel({
                     }`}
                   />
                 </button>
-
               ))}
             </div>
             <div className="flex items-center gap-2">

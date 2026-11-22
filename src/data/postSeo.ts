@@ -917,4 +917,31 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Foto e vídeo juntos na confraternização de fim de ano: quando faz sentido contratar os dois, o que cada serviço entrega e como um fornecedor único simplifica a logística.",
   },
+  // Lote 1 do calendário editorial (publicação programada: 22 a 26/11/2026)
+"5-erros-que-fazem-sua-foto-de-perfil-parecer-amadora": {
+    title: "5 Erros que Arruinam sua Foto de Perfil no LinkedIn",
+    description:
+      "Recorte apertado, fundo bagunçado, roupa errada, expressão forçada e foto antiga: os 5 erros mais comuns na foto de perfil e como corrigir cada um antes de perder o clique.",
+  },
+  "melhores-apps-gratuitos-para-editar-fotos-no-celular": {
+    title: "5 Melhores Apps Gratuitos para Editar Foto no Celular",
+    description:
+      "Snapseed, Lightroom Mobile, Canva, Remini e Fotor: os melhores apps gratuitos de 2026 para editar fotos no celular — e para que tipo de foto cada um serve de verdade.",
+  },
+  "ensaio-corporativo-externo-ou-em-estudio": {
+    title: "Ensaio Corporativo: Externo ou em Estúdio?",
+    description:
+      "Luz controlada e fundo neutro do estúdio contra o contexto e a naturalidade da rua: os prós e contras de cada formato de ensaio corporativo e a regra prática para decidir.",
+  },
+  "6-spots-para-ensaio-corporativo-em-sao-paulo": {
+    title: "6 Spots em SP para Ensaio Corporativo Externo",
+    description:
+      "Paulista, Ibirapuera, Bixiga e mais: 6 locais em São Paulo com luz e cenário certos para retrato corporativo externo — e o horário ideal de cada um.",
+  },
+  "por-que-padronizar-as-fotos-da-sua-equipe": {
+    title: "Por que Padronizar as Fotos da sua Equipe",
+    description:
+      "Foto de celular ao lado de retrato profissional: o que a falta de padronização faz com a percepção da sua empresa e o padrão mínimo que resolve 90% do problema.",
+  },
+
 };

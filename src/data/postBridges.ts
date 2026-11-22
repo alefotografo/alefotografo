@@ -215,6 +215,53 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  // Lote 1 do calendário editorial (publicação programada: 22 a 26/11/2026)
+"5-erros-que-fazem-sua-foto-de-perfil-parecer-amadora": {
+    paragraphs: [
+      [
+        "Corrigir os cinco erros é metade do caminho; a outra metade é a foto nascer certa, com enquadramento, luz e direção pensados para o LinkedIn. É isso que fazemos no ensaio de ",
+        { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
+        ", produzido para durar dois ou três anos de uso — sem parecer datado na semana seguinte.",
+      ],
+    ],
+  },
+  "melhores-apps-gratuitos-para-editar-fotos-no-celular": {
+    paragraphs: [
+      [
+        "App de edição recupera margem, não cria luz nem direção. Quando a foto é o cartão de visita de uma empresa inteira — equipe, site, proposta — o caminho é a ",
+        { to: "/fotos-corporativas", label: "fotografia corporativa com padrão profissional" },
+        ", feita uma vez e usada por anos em todas as superfícies da marca.",
+      ],
+    ],
+  },
+  "ensaio-corporativo-externo-ou-em-estudio": {
+    paragraphs: [
+      [
+        "Nos dois formatos, o que decide o resultado é a direção de quem está atrás da câmera. No ",
+        { to: "/fotografia-executiva", label: "ensaio de fotografia executiva" },
+        " que produzimos, a decisão entre estúdio e rua é tomada junto com você, no briefing — com base no uso que a foto vai ter, não na moda do momento.",
+      ],
+    ],
+  },
+  "6-spots-para-ensaio-corporativo-em-sao-paulo": {
+    paragraphs: [
+      [
+        "Spot bom é o que tem luz certa no horário certo — e isso se planeja antes do dia da sessão. Nos ",
+        { to: "/fotografo-corporativo/fotografia-corporativa-em-sao-paulo", label: "ensaios corporativos em São Paulo" },
+        " que produzimos, roteiro de locação e horário de luz fazem parte do planejamento junto com a escolha do figurino.",
+      ],
+    ],
+  },
+  "por-que-padronizar-as-fotos-da-sua-equipe": {
+    paragraphs: [
+      [
+        "Padronizar não exige semana de produção: no modelo de ",
+        { to: "/fotos-corporativas", label: "fotos corporativas feitas no escritório" },
+        ", o cenário é montado uma vez e cada pessoa passa poucos minutos — a equipe inteira sai padronizada em um único dia.",
+      ],
+    ],
+  },
+
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

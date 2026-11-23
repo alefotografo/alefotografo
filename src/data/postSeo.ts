@@ -943,5 +943,30 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Foto de celular ao lado de retrato profissional: o que a falta de padronização faz com a percepção da sua empresa e o padrão mínimo que resolve 90% do problema.",
   },
-
+  // Lote fotolembrança — posicionamento em impressão de fotos em eventos (27/11 a 01/12/2026)
+  "que-lembranca-e-melhor-que-uma-foto": {
+    title: "Que Lembrança é Melhor que uma Foto?",
+    description:
+      "Foto digital fica na nuvem e nunca mais se vê; a foto revelada vai para a geladeira, a parede ou a carteira. Por que a impressão física ainda é a melhor lembrança de um evento.",
+  },
+  "fotolembranca-o-que-e-e-como-funciona-em-eventos": {
+    title: "Fotolembrança: Impressão de Fotos na Hora em Eventos",
+    description:
+      "O convidado fotografa e sai com a foto impressa em minutos: entenda como funciona a fotolembrança em eventos, o que é preciso contratar e onde ela se encaixa em São Paulo.",
+  },
+  "foto-impressa-x-digital-qual-lembranca-o-convidado-guarda": {
+    title: "Foto Impressa x Digital: Qual Lembrança Fica?",
+    description:
+      "O convidado tira cem fotos no celular e não revela nenhuma; no evento com impressão na hora ele sai com uma — e essa fica. A diferença prática entre as duas lembranças.",
+  },
+  "formatos-de-foto-para-imprimir-em-eventos-corporativos": {
+    title: "Formatos de Foto Impressa para Eventos Corporativos",
+    description:
+      "10x15, retrato vertical, imã de geladeira, foto com moldura da marca: os formatos de impressão fotográfica para eventos e como escolher o certo para cada tipo de evento.",
+  },
+  "foto-impressa-com-a-marca-do-evento-a-lembranca-que-vira-marketing": {
+    title: "Foto com a Marca do Evento: Lembrança que Vira Marketing",
+    description:
+      "A foto com a moldura da marca vai parar na geladeira ou no escritório do convidado — exposta por anos, sem custo de mídia. O efeito de marketing da impressão em eventos.",
+  },
 };

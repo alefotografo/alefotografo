@@ -262,6 +262,63 @@ export const postBridges: Record<string, PostBridge> = {
     ],
   },
 
+  // Ponte do cluster de totem para o novo cluster de fotolembrança (interna)
+  "totem-fotografico-para-evento-corporativo": {
+    paragraphs: [
+      [
+        "Se a pergunta é o que o convidado tira de verdade do evento, vale ler também: ",
+        { to: "/blog/que-lembranca-e-melhor-que-uma-foto/", label: "Que lembrança é melhor que uma foto?" },
+        " — a diferença entre a foto que fica na galeria e a que vai para a geladeira.",
+      ],
+    ],
+  },
+
+  // Lote fotolembrança — pontes para a página de eventos corporativos
+  "que-lembranca-e-melhor-que-uma-foto": {
+    paragraphs: [
+      [
+        "Em eventos, essa lembrança não depende de boa vontade: ela é entregue na mão do convidado minutos depois do clique. É a ",
+        { to: "/eventos-corporativos", label: "fotolembrança produzida em eventos corporativos" },
+        " — captura profissional, impressão na hora e entrega física, dentro do próprio evento.",
+      ],
+    ],
+  },
+  "fotolembranca-o-que-e-e-como-funciona-em-eventos": {
+    paragraphs: [
+      [
+        "A operação completa — estação de captura, impressão na hora e entrega ao convidado — é o que produzimos nos ",
+        { to: "/eventos-corporativos", label: "eventos corporativos em São Paulo" },
+        ", geralmente integrada à cobertura fotográfica, com um único fornecedor e um único briefing.",
+      ],
+    ],
+  },
+  "foto-impressa-x-digital-qual-lembranca-o-convidado-guarda": {
+    paragraphs: [
+      [
+        "A escolha entre digital e impressa deixa de ser dilema quando o evento entrega as duas: a cobertura registra tudo e a ",
+        { to: "/eventos-corporativos", label: "estação de impressão entrega a lembrança" },
+        " que o convidado realmente guarda.",
+      ],
+    ],
+  },
+  "formatos-de-foto-para-imprimir-em-eventos-corporativos": {
+    paragraphs: [
+      [
+        "Os formatos certos nascem do briefing do evento — e é assim que planejamos cada ",
+        { to: "/eventos-corporativos", label: "produção com impressão na hora" },
+        ": uso, volume de convidados e identidade da marca definem o formato antes do dia do evento.",
+      ],
+    ],
+  },
+  "foto-impressa-com-a-marca-do-evento-a-lembranca-que-vira-marketing": {
+    paragraphs: [
+      [
+        "Para a marca circular, a foto precisa sair do evento na mão de alguém. É exatamente o ciclo que montamos na ",
+        { to: "/eventos-corporativos", label: "fotolembrança corporativa com moldura personalizada" },
+        ": captura, impressão com a marca e entrega — a lembrança trabalhando para o evento por anos.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

@@ -57,6 +57,7 @@ const INTERNAL_LINKS: { to: string; label: string }[] = [
   { to: "/fotografo-empresarial", label: "Fotógrafo empresarial" },
   { to: "/fotografo-de-feira-de-negocios", label: "Fotógrafo de feira de negócios" },
   { to: "/eventos-corporativos", label: "Eventos corporativos" },
+  { to: "/fotolembranca", label: "Fotolembrança — impressão de fotos na hora" },
   { to: "/video-institucional", label: "Vídeo institucional" },
   { to: "/video-de-eventos-corporativos", label: "Vídeo de eventos corporativos" },
   { to: "/video-para-feiras-e-stands", label: "Vídeo para feiras e stands" },

@@ -178,6 +178,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/fotolembranca/" className="hover:text-foreground">
+                Fotolembrança — impressão na hora
+              </Link>
+            </li>
+            <li>
               <Link to="/fotografo-de-feira-de-negocios/" className="hover:text-foreground">
                 Fotógrafo de feira de negócios
               </Link>

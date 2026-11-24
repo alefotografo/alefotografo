@@ -105,6 +105,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.9",
           },
           {
+            path: "/fotolembranca/",
+            lastmod: "2026-11-24",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
             path: "/fotografo-empresarial/",
             lastmod: CORE_LASTMOD,
             changefreq: "weekly",

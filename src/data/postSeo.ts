@@ -969,4 +969,41 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "A foto com a moldura da marca vai parar na geladeira ou no escritório do convidado — exposta por anos, sem custo de mídia. O efeito de marketing da impressão em eventos.",
   },
+
+  // Lote 2 do calendário editorial (publicação programada: 02 a 08/12/2026)
+  "jpeg-ou-heic-qual-formato-usar": {
+    title: "JPEG ou HEIC: Qual Formato Usar nas Suas Fotos?",
+    description:
+      "JPEG, HEIC, PNG e RAW: o que muda na prática entre os formatos de imagem, onde cada um causa problema e o formato certo para enviar, editar e imprimir fotos.",
+  },
+  "como-escolher-o-fundo-do-retrato-executivo": {
+    title: "Como Escolher o Fundo do Retrato Executivo",
+    description:
+      "O fundo decide metade da leitura do retrato: executivo, neutro, de escritório, externo ou texturizado. Como escolher o fundo certo para cada objetivo de carreira.",
+  },
+  "ensaio-feminino-corporativo-como-se-preparar-do-inicio-ao-fim": {
+    title: "Ensaio Feminino Corporativo: Prepare-se do Início ao Fim",
+    description:
+      "Do provador de looks à pose final: o passo a passo completo para a mulher se preparar para um ensaio corporativo e sair com fotos que combinam com a posição que ocupa.",
+  },
+  "poses-para-foto-de-equipe-e-diretoria": {
+    title: "Poses para Foto de Equipe e Diretoria",
+    description:
+      "A foto de equipe errada transmite desorganização. As composições de pose que funcionam para time completo, diretoria e dupla de sócios — e o que evitar.",
+  },
+  "cores-da-roupa-no-linkedin-o-que-cada-tom-comunica": {
+    title: "Cores da Roupa no LinkedIn: O Que Cada Tom Comunica",
+    description:
+      "Azul confia, vermelho impõe, preto formaliza, branco abre. O guia prático das cores de roupa para a foto de perfil do LinkedIn e o que cada tom comunica sobre você.",
+  },
+  "lightroom-na-pratica-edite-suas-fotos-em-10-minutos": {
+    title: "Lightroom na Prática: Edite Suas Fotos em 10 Minutos",
+    description:
+      "Um fluxo simples de edição no Lightroom mobile e desktop: exposição, recorte, cor e nitidez em 10 minutos por foto, sem conhecimento técnico.",
+  },
+  "o-que-levar-para-o-dia-do-ensaio-corporativo": {
+    title: "O Que Levar para o Dia do Ensaio Corporativo",
+    description:
+      "Roupas, acessórios, cuidados pessoais e o checklist completo do que levar (e do que deixar em casa) no dia do ensaio corporativo para nada dar errado.",
+  },
 };

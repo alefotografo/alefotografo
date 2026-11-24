@@ -273,12 +273,12 @@ export const postBridges: Record<string, PostBridge> = {
     ],
   },
 
-  // Lote fotolembrança — pontes para a página de eventos corporativos
+  // Lote fotolembrança — pontes para a página de serviço /fotolembranca
   "que-lembranca-e-melhor-que-uma-foto": {
     paragraphs: [
       [
         "Em eventos, essa lembrança não depende de boa vontade: ela é entregue na mão do convidado minutos depois do clique. É a ",
-        { to: "/eventos-corporativos", label: "fotolembrança produzida em eventos corporativos" },
+        { to: "/fotolembranca", label: "fotolembrança produzida em eventos corporativos" },
         " — captura profissional, impressão na hora e entrega física, dentro do próprio evento.",
       ],
     ],
@@ -287,7 +287,7 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "A operação completa — estação de captura, impressão na hora e entrega ao convidado — é o que produzimos nos ",
-        { to: "/eventos-corporativos", label: "eventos corporativos em São Paulo" },
+        { to: "/fotolembranca", label: "eventos corporativos em São Paulo" },
         ", geralmente integrada à cobertura fotográfica, com um único fornecedor e um único briefing.",
       ],
     ],
@@ -296,7 +296,7 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "A escolha entre digital e impressa deixa de ser dilema quando o evento entrega as duas: a cobertura registra tudo e a ",
-        { to: "/eventos-corporativos", label: "estação de impressão entrega a lembrança" },
+        { to: "/fotolembranca", label: "estação de impressão entrega a lembrança" },
         " que o convidado realmente guarda.",
       ],
     ],
@@ -305,7 +305,7 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "Os formatos certos nascem do briefing do evento — e é assim que planejamos cada ",
-        { to: "/eventos-corporativos", label: "produção com impressão na hora" },
+        { to: "/fotolembranca", label: "produção com impressão na hora" },
         ": uso, volume de convidados e identidade da marca definem o formato antes do dia do evento.",
       ],
     ],
@@ -314,8 +314,73 @@ export const postBridges: Record<string, PostBridge> = {
     paragraphs: [
       [
         "Para a marca circular, a foto precisa sair do evento na mão de alguém. É exatamente o ciclo que montamos na ",
-        { to: "/eventos-corporativos", label: "fotolembrança corporativa com moldura personalizada" },
+        { to: "/fotolembranca", label: "fotolembrança corporativa com moldura personalizada" },
         ": captura, impressão com a marca e entrega — a lembrança trabalhando para o evento por anos.",
+      ],
+    ],
+  },
+
+  // Lote 2 do calendário editorial (publicação programada: 02 a 08/12/2026)
+  "jpeg-ou-heic-qual-formato-usar": {
+    paragraphs: [
+      [
+        "Formato é meio, não fim: o que manda é o resultado. Se a meta é uma ",
+        { to: "/foto-profissional", label: "foto profissional em São Paulo" },
+        " que funcione no LinkedIn, no site e no cartão, o formato certo é o que preserva a qualidade até a entrega final.",
+      ],
+    ],
+  },
+  "como-escolher-o-fundo-do-retrato-executivo": {
+    paragraphs: [
+      [
+        "Escolher o fundo é metade da direção de um retrato — a outra metade é a condução de pose. É o trabalho de uma ",
+        { to: "/fotografia-executiva", label: "sessão de fotografia executiva" },
+        ", onde fundo, luz e expressão são decididos antes do clique.",
+      ],
+    ],
+  },
+  "ensaio-feminino-corporativo-como-se-preparar-do-inicio-ao-fim": {
+    paragraphs: [
+      [
+        "Com a preparação certa, o dia do ensaio vira o momento mais leve da semana. É assim que conduzo o ",
+        { to: "/fotografo-corporativo/ensaio-feminino", label: "ensaio corporativo feminino em São Paulo" },
+        ": direção em cada etapa, do look à entrega.",
+      ],
+    ],
+  },
+  "poses-para-foto-de-equipe-e-diretoria": {
+    paragraphs: [
+      [
+        "As melhores poses de grupo nascem de uma direção conduzida, não de improviso. No serviço de ",
+        { to: "/fotos-corporativas", label: "fotos corporativas para empresas" },
+        ", cada composição é montada com o time completo em minutos.",
+      ],
+    ],
+  },
+  "cores-da-roupa-no-linkedin-o-que-cada-tom-comunica": {
+    paragraphs: [
+      [
+        "Cor é estratégia, mas não substitui direção de pose e luz. Para a foto que carrega sua carreira, combine a cor certa com uma ",
+        { to: "/foto-profissional-para-linkedin", label: "foto profissional para LinkedIn" },
+        " feita com direção completa.",
+      ],
+    ],
+  },
+  "lightroom-na-pratica-edite-suas-fotos-em-10-minutos": {
+    paragraphs: [
+      [
+        "Edição boa é a que ninguém percebe. Na entrega de uma ",
+        { to: "/foto-profissional", label: "foto profissional feita em estúdio" },
+        ", o tratamento segue esse mesmo princípio: correção realista, sem filtros que denunciam retoque.",
+      ],
+    ],
+  },
+  "o-que-levar-para-o-dia-do-ensaio-corporativo": {
+    paragraphs: [
+      [
+        "O checklist existe para o dia correr sem imprevisto — e a entrega final é o que justifica o cuidado. Veja o que uma ",
+        { to: "/fotos-corporativas", label: "produção de fotos corporativas" },
+        " entrega depois do dia do ensaio.",
       ],
     ],
   },

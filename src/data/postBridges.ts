@@ -447,6 +447,69 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "fotografo-para-estande-de-feira-o-que-levar-em-conta": {
+    paragraphs: [
+      [
+        "O padrão descrito aqui é o de uma ",
+        { to: "/eventos-corporativos", label: "cobertura de feiras e eventos" },
+        " pensada para gerar conteúdo, não só registrar presença.",
+      ],
+    ],
+  },
+  "ensaio-masculino-corporativo-roupa-barba-e-postura": {
+    paragraphs: [
+      [
+        "Essas decisões são acertadas de uma vez num ",
+        { to: "/fotografia-executiva", label: "retrato executivo" },
+        " — com direção de postura incluída no trabalho.",
+      ],
+    ],
+  },
+  "como-funciona-a-edicao-de-fotos-corporativas-o-que-muda-e-o-que-nao-muda": {
+    paragraphs: [
+      [
+        "Esse padrão de edição acompanha qualquer ",
+        { to: "/fotos-corporativas", label: "produção de fotos corporativas" },
+        " séria — sem custo extra e sem surpresa na entrega.",
+      ],
+    ],
+  },
+  "retrato-de-diretoria-como-organizar-a-foto-do-conselho": {
+    paragraphs: [
+      [
+        "A composição de diretoria é caso sério de ",
+        { to: "/fotografia-executiva", label: "retrato executivo e de diretoria" },
+        " — vale ensaio dedicado, não foto de celular no corredor.",
+      ],
+    ],
+  },
+  "video-institucional-quanto-custa-e-o-que-inclui": {
+    paragraphs: [
+      [
+        "O formato completo é o de uma ",
+        { to: "/eventos-corporativos", label: "produção de vídeo institucional" },
+        " com equipe dedicada de vídeo — foto e filme no mesmo dia.",
+      ],
+    ],
+  },
+  "fotos-de-aniversario-de-empresa-o-que-nao-pode-faltar": {
+    paragraphs: [
+      [
+        "Aniversário, confraternização, feira: tudo segue o mesmo padrão de ",
+        { to: "/eventos-corporativos", label: "cobertura de eventos corporativos" },
+        " — briefing, contrato e checklist de momentos-chave.",
+      ],
+    ],
+  },
+  "foto-de-perfil-do-whatsapp-para-empresarios-o-que-usar": {
+    paragraphs: [
+      [
+        "O retrato que resolve WhatsApp, LinkedIn e site de uma vez é um único ",
+        { to: "/foto-profissional", label: "ensaio de foto profissional" },
+        " bem feito.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

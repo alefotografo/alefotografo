@@ -1041,4 +1041,39 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "O que fazer com cabelo, barba e pele nos três dias antes do retrato corporativo — cortes, hidratação, bronze e os procedimentos de última hora que estragam a foto.",
   },
+  "fotografo-para-estande-de-feira-o-que-levar-em-conta": {
+    title: "Fotógrafo para Estande de Feira: Guia de Contratação",
+    description:
+      "Feiras geram as fotos mais úteis do ano: equipe em ação, demonstrações, visitantes no estande. O que contratar para a cobertura do estande render conteúdo por 12 meses.",
+  },
+  "ensaio-masculino-corporativo-roupa-barba-e-postura": {
+    title: "Ensaio Masculino Corporativo: Roupa, Barba e Postura",
+    description:
+      "O guia direto para o ensaio masculino corporativo: quais roupas levar, como resolver a barba no dia, postura que funciona na foto e os erros que envelhecem o retrato.",
+  },
+  "como-funciona-a-edicao-de-fotos-corporativas-o-que-muda-e-o-que-nao-muda": {
+    title: "Como Funciona a Edição de Fotos Corporativas",
+    description:
+      "Correção de cor, tratamento de pele, ajuste de fundo e o limite ético: o que a edição profissional faz nas fotos corporativas e onde ela não pode passar.",
+  },
+  "retrato-de-diretoria-como-organizar-a-foto-do-conselho": {
+    title: "Retrato de Diretoria: Como Organizar a Foto do Conselho",
+    description:
+      "Hierarquia sem rigidez: como posicionar diretoria e conselho na foto oficial — quem fica onde, alturas, profundidade e os detalhes que separam foto de relatório anual de foto de formatura.",
+  },
+  "video-institucional-quanto-custa-e-o-que-inclui": {
+    title: "Vídeo Institucional: Quanto Custa e O que Inclui",
+    description:
+      "Depoimentos, bastidores, drone e a pergunta do custo: o que compõe um vídeo institucional profissional, como é o roteiro mínimo e como orçar sem susto.",
+  },
+  "fotos-de-aniversario-de-empresa-o-que-nao-pode-faltar": {
+    title: "Fotos de Aniversário de Empresa: Checklist dos Momentos",
+    description:
+      "Bolo, discurso, time completo e o brinde: a checklist dos momentos-chave da cobertura de aniversário corporativo — do coffee da manhã à festa de fim de dia.",
+  },
+  "foto-de-perfil-do-whatsapp-para-empresarios-o-que-usar": {
+    title: "Foto de Perfil do WhatsApp para Empresários",
+    description:
+      "O WhatsApp é onde o cliente te vê primeiro: qual foto de perfil usar no WhatsApp Business, por que foto de paisagem e logo matam a confiança, e o padrão que converte.",
+  },
 };

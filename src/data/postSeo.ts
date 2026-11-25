@@ -1006,4 +1006,39 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Roupas, acessórios, cuidados pessoais e o checklist completo do que levar (e do que deixar em casa) no dia do ensaio corporativo para nada dar errado.",
   },
+  "como-contratar-fotografo-para-confraternizacao-de-fim-de-ano": {
+    title: "Como Contratar Fotógrafo para Confraternização de Fim de Ano",
+    description:
+      "Dezembro é o mês em que todo fotógrafo corporativo bom fecha a agenda. Quando contratar, o que pedir no briefing e como garantir cobertura completa da confraternização — do brinde ao grupo completo.",
+  },
+  "sorriso-no-retrato-corporativo-quando-sorrir-e-quando-nao": {
+    title: "Sorriso no Retrato Corporativo: Quando Sorrir",
+    description:
+      "Sorrisão de identidade, sério de passaporte ou o meio-termo que a maioria dos executivos deveria usar: como decidir a expressão do retrato corporativo conforme o uso da foto.",
+  },
+  "o-que-um-fotografo-de-evento-entrega-alem-das-fotos": {
+    title: "O que um Fotógrafo de Evento Entrega Além das Fotos",
+    description:
+      "Contrato, nota fiscal, briefing, equipamento reserva, pontualidade e entrega em galeria privada: o que separa um fotógrafo de evento profissional de um amigo com câmera boa.",
+  },
+  "retrato-corporativo-para-times-que-trabalham-de-casa": {
+    title: "Retrato Corporativo para Times Remotos",
+    description:
+      "Home office deixou o site e o LinkedIn da empresa com fotos de 2019. Como atualizar o retrato do time distribuído sem juntar todo mundo no mesmo dia — e o que fazer com quem está em outra cidade.",
+  },
+  "quanto-custa-fotografo-para-evento-de-fim-de-ano-em-sao-paulo": {
+    title: "Quanto Custa Fotógrafo para Evento de Fim de Ano em SP",
+    description:
+      "Os fatores que definem o preço de um fotógrafo para confraternização e evento de fim de ano em São Paulo: horas de cobertura, equipe, impressão na hora e entrega — com faixas de referência para orçar.",
+  },
+  "os-5-erros-na-foto-de-perfil-do-linkedin": {
+    title: "5 Erros na Foto de Perfil do LinkedIn",
+    description:
+      "Foto cortada do casamento, óculos escuros, distância demais da câmera e outros erros comuns que enfraquecem o perfil no LinkedIn — e como corrigir cada um em minutos.",
+  },
+  "cabelo-barba-e-pele-no-dia-do-retrato-o-cuidado-de-72-horas": {
+    title: "Cabelo, Barba e Pele no Dia do Retrato Corporativo",
+    description:
+      "O que fazer com cabelo, barba e pele nos três dias antes do retrato corporativo — cortes, hidratação, bronze e os procedimentos de última hora que estragam a foto.",
+  },
 };

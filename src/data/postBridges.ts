@@ -384,6 +384,69 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "como-contratar-fotografo-para-confraternizacao-de-fim-de-ano": {
+    paragraphs: [
+      [
+        "A confraternização é o evento do ano — e a cobertura segue o mesmo padrão de qualquer ",
+        { to: "/eventos-corporativos", label: "cobertura de eventos corporativos" },
+        ": briefing claro, contrato, NF e entrega em galeria privada.",
+      ],
+    ],
+  },
+  "sorriso-no-retrato-corporativo-quando-sorrir-e-quando-nao": {
+    paragraphs: [
+      [
+        "A expressão certa é decisão de ensaio, não de sorte — em um ",
+        { to: "/fotografia-executiva", label: "retrato executivo" },
+        " a direção de expressão faz parte do trabalho.",
+      ],
+    ],
+  },
+  "o-que-um-fotografo-de-evento-entrega-alem-das-fotos": {
+    paragraphs: [
+      [
+        "Este é o padrão de um trabalho sério de ",
+        { to: "/eventos-corporativos", label: "fotografia de eventos" },
+        " — e vale para qualquer evento, de 20 a mil pessoas.",
+      ],
+    ],
+  },
+  "retrato-corporativo-para-times-que-trabalham-de-casa": {
+    paragraphs: [
+      [
+        "O padrão unificado nasce de um ",
+        { to: "/fotos-corporativas", label: "ensaio corporativo em estúdio" },
+        " com briefing técnico documentado — a base para qualquer time remoto.",
+      ],
+    ],
+  },
+  "quanto-custa-fotografo-para-evento-de-fim-de-ano-em-sao-paulo": {
+    paragraphs: [
+      [
+        "Se o orçamento permitir um item que eleva a festa, some ",
+        { to: "/fotolembranca", label: "fotolembrança com impressão na hora" },
+        " — a lembrança que o convidado leva para casa.",
+      ],
+    ],
+  },
+  "os-5-erros-na-foto-de-perfil-do-linkedin": {
+    paragraphs: [
+      [
+        "O padrão acima é exatamente o que um ",
+        { to: "/foto-profissional-para-linkedin", label: "retrato profissional para LinkedIn" },
+        " entrega em 20 minutos de sessão.",
+      ],
+    ],
+  },
+  "cabelo-barba-e-pele-no-dia-do-retrato-o-cuidado-de-72-horas": {
+    paragraphs: [
+      [
+        "Com essa preparação, o ",
+        { to: "/foto-profissional", label: "ensaio de foto profissional" },
+        " rende o dobro: mais opções boas na seleção final.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

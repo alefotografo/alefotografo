@@ -1,4 +1,5 @@
-Agentmap: https://alefotografo.com.br/.well-known/ai-catalog.json
+# Catálogo de agentes de IA (especificação Agentmap, em adoção)
+# Agentmap: https://alefotografo.com.br/.well-known/ai-catalog.json
 
 User-agent: *
 Allow: /

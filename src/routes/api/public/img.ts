@@ -162,14 +162,16 @@ export const Route = createFileRoute("/api/public/img")({
         // Origem 1 (migração): mesmo caminho de objeto no Supabase Storage.
         // Enquanto o objeto não existir, weserv devolve erro e caímos na
         // origem 2 sem custo extra relevante.
-        let converted: { body: ArrayBuffer; contentType: string } | null = null;
+        // As duas origens são consultadas em paralelo: a que responder primeiro
+        // vence. Sem isso, enquanto a migração Rackspace → Supabase não
+        // estiver completa, toda imagem pagava uma consulta falha ao Supabase
+        // antes de cair no legado (latência dobrada no LCP da página).
         const sbUrl = supabasePublicUrl(src);
-        if (sbUrl) converted = await fetchWebp(sbUrl, width, quality);
-
-        // Origem 2 (legado): CDN Rackspace, como antes da migração.
-        if (!converted) {
-          converted = await fetchWebp(src.toString(), width, quality);
-        }
+        const [fromSb, fromRs] = await Promise.all([
+          sbUrl ? fetchWebp(sbUrl, width, quality) : Promise.resolve(null),
+          fetchWebp(src.toString(), width, quality),
+        ]);
+        const converted = fromSb ?? fromRs;
 
         if (!converted) return await serveOriginal();
 

@@ -1081,4 +1081,9 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Em 23/11/2026, a Casa Bisutti recebeu 250 convidados do Jantar Anual Fecofar, com premiação e vídeo do evento. Veja como foi a cobertura completa em fotografia e vídeo.",
   },
+  "upseller-nexus-2026-mercado-pago-hall": {
+    title: "UpSeller NEXUS 2026: Cobertura em Fotografia e Vídeo",
+    description:
+      "Em 5/11/2026, o Mercado Pago Hall recebeu cerca de 2 mil participantes da 1ª edição do UpSeller NEXUS, com 14 palestras e lançamentos para 2027. Veja como foi a cobertura completa em fotografia e vídeo.",
+  },
 };

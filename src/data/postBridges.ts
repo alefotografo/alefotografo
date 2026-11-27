@@ -519,6 +519,15 @@ export const postBridges: Record<string, PostBridge> = {
       ],
     ],
   },
+  "upseller-nexus-2026-mercado-pago-hall": {
+    paragraphs: [
+      [
+        "Eventos assim têm uma janela curta: a foto certa, no dia certo, vale mais que mil posts depois. Para planejar a ",
+        { to: "/eventos-corporativos", label: "cobertura de eventos corporativos" },
+        " da sua empresa com fotografia e vídeo do evento, o melhor momento para conversar é antes do cronograma fechar.",
+      ],
+    ],
+  },
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

@@ -31,6 +31,11 @@ const TIPOS = [
 /* Cases de evento reais já publicados no catálogo de vídeos. */
 const CASES: { slug: string; label: string; tipo: string }[] = [
   {
+    slug: "faz-negocios-10",
+    label: "Faz Farma — 10º Faz Negócios",
+    tipo: "Convenção",
+  },
+  {
     slug: "video-corporativo-do-11o-forum-abradilan-2026-cobertura-de-evento-empresarial",
     label: "11º Fórum ABRADILAN",
     tipo: "Fórum",

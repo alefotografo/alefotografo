@@ -1086,4 +1086,8 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "Em 5/11/2026, o Mercado Pago Hall recebeu cerca de 2 mil participantes da 1ª edição do UpSeller NEXUS, com 14 palestras e lançamentos para 2027. Veja como foi a cobertura completa em fotografia e vídeo.",
   },
+  "faz-negocios-10-fazfarma-2026": {
+    title: "10º Faz Negócios Faz Farma: Cobertura em Fotografia | Alê Fotógrafo",
+    description: "Em novembro de 2026, a Rede Fazfarma reuniu seus licenciados na 10ª edição da Convenção Faz Negócios, no Mavsa Resort, em Cesário Lange (SP). Veja como foi a cobertura completa em fotografia.",
+  },
 };

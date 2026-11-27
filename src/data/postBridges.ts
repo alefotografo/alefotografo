@@ -527,7 +527,12 @@ export const postBridges: Record<string, PostBridge> = {
         " da sua empresa com fotografia e vídeo do evento, o melhor momento para conversar é antes do cronograma fechar.",
       ],
     ],
+  },  "faz-negocios-10-fazfarma-2026": {
+    paragraphs: [
+      ["Uma convenção de rede tem uma janela curta: acontece, emociona e passa. O que fica é o material de comunicação produzido ali — e a experiência de quem entende o timing de um evento corporativo. Se sua empresa vai reunir pessoas em torno de um objetivo, ", { to: "/eventos-corporativos", label: "cobertura de eventos corporativos" }, " é a ponte entre o dia do evento e os resultados que ele precisa gerar depois."],
+    ],
   },
+
 };
 
 export function bridgeFor(slug: string): PostBridge | undefined {

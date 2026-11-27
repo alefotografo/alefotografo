@@ -1076,4 +1076,9 @@ export const postSeo: Record<string, PostSeo> = {
     description:
       "O WhatsApp é onde o cliente te vê primeiro: qual foto de perfil usar no WhatsApp Business, por que foto de paisagem e logo matam a confiança, e o padrão que converte.",
   },
+  "fecofar-jantar-anual-2026-casa-bisutti": {
+    title: "Jantar Anual Fecofar 2026: Cobertura em Fotografia e Vídeo",
+    description:
+      "Em 23/11/2026, a Casa Bisutti recebeu 250 convidados do Jantar Anual Fecofar, com premiação e vídeo do evento. Veja como foi a cobertura completa em fotografia e vídeo.",
+  },
 };

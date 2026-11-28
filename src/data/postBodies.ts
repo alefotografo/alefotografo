@@ -10,6 +10,8 @@ export interface PostImage {
 export interface PostBody {
   body: string[];
   images?: PostImage[];
+  /** ID do YouTube para embed do vídeo do evento ao final do post. */
+  youtube?: string;
 }
 
 const bodies = raw as Record<string, PostBody>;

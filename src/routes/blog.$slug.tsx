@@ -235,6 +235,23 @@ function PostPage() {
               </div>
             );
           })}
+          {p.youtube && (
+            <figure className="my-10 overflow-hidden rounded-sm ring-1 ring-border">
+              <div className="aspect-video bg-black">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${p.youtube}?rel=0`}
+                  title="Vídeo do evento"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="h-full w-full"
+                />
+              </div>
+              <figcaption className="bg-surface px-4 py-2 text-xs text-muted-foreground">
+                Vídeo do evento — assista também no YouTube
+              </figcaption>
+            </figure>
+          )}
           {bridge && (
             <div className="mt-8 space-y-4 border-l-2 border-ember/50 pl-5">
               {bridge.paragraphs.map((parts, i) => (
